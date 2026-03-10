@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workout_file>
+    <author>Low Torque Training</author>
+    <name>Threshold Block – Torque (93% FTP, 60 rpm)</name>
+    <description>Two 20-minute threshold blocks at 93% FTP and 60 rpm, with 5 minutes recovery between. The sustained duration at threshold combined with low cadence makes this one of the hardest sessions in the library. Use sparingly — once every 2-3 weeks. Not a session to do on tired legs. Seated throughout.</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="900" PowerLow="0.40" PowerHigh="0.75" cadence="90">
+            <textevent timeoffset="10" message="Threshold block session. Two 20-minute efforts at 93% FTP and 60rpm."/>
+            <textevent timeoffset="150" message="This is the most demanding session in the library in terms of sustained effort. 20 minutes at threshold is hard. 20 minutes at threshold with 60rpm is significantly harder."/>
+            <textevent timeoffset="330" message="Use this session once every 2-3 weeks at most. It requires genuine recovery — do not do this on legs that are still tired from other hard sessions."/>
+            <textevent timeoffset="510" message="SEATED: Non-negotiable. At 93% FTP and 60rpm, staying seated for 20 minutes requires real discipline. This is the hardest application of that rule in this programme."/>
+            <textevent timeoffset="690" message="KNEE PRIORITY: 20 minutes of sustained load at 60rpm is the longest continuous joint stress in this programme. If your knees feel anything other than normal within the first 5 minutes, reduce cadence to 65 or stop the interval."/>
+            <textevent timeoffset="840" message="First block in 1 minute. 60rpm. 93% FTP. 20 minutes."/>
+        </Warmup>
+
+        <SteadyState Duration="1200" Power="0.93" cadence="60">
+            <textevent timeoffset="0" message="STAY SEATED. 60rpm. 93% FTP. 20 minutes."/>
+            <textevent timeoffset="60" message="First minute. Settle into the cadence before the effort fully registers."/>
+            <textevent timeoffset="180" message="3 minutes. Breathing should be noticeably elevated. Legs working hard. Both at once — that is threshold torque."/>
+            <textevent timeoffset="300" message="5 minutes in. Knees okay? Check in. This is the right time to catch any discomfort before it builds."/>
+            <textevent timeoffset="480" message="8 minutes. The first real test of discipline comes around here. Hold cadence. Do not stand. Do not back off power."/>
+            <textevent timeoffset="600" message="10 minutes. Halfway. You are doing something very few cyclists do: sustained threshold power at real torque. The study's low-cadence group improved maximal power by 8.1% doing this kind of work."/>
+            <textevent timeoffset="720" message="12 minutes. The back half. Harder than the front. Stay seated."/>
+            <textevent timeoffset="900" message="15 minutes. 5 to go. This is where threshold sessions separate — hold everything together for 5 more minutes."/>
+            <textevent timeoffset="1020" message="17 minutes. 3 to go. Cadence at 60? Power at 93%? Good."/>
+            <textevent timeoffset="1140" message="19 minutes. Final minute. Do not stand. Do not spin up."/>
+            <textevent timeoffset="1190" message="10 seconds. Finish seated."/>
+        </SteadyState>
+
+        <SteadyState Duration="300" Power="0.50" cadence="85">
+            <textevent timeoffset="0" message="5-minute recovery. Spin up. Breathe."/>
+            <textevent timeoffset="60" message="One block done. One to go. Honest question: can you do another 20 minutes at the same standard? If not, reduce power to 88% for block 2 rather than grinding through bad form."/>
+            <textevent timeoffset="180" message="Knee check. Fine after that sustained effort? Good sign."/>
+            <textevent timeoffset="240" message="Second block in 60 seconds. STAY SEATED. 60rpm. 93% FTP."/>
+        </SteadyState>
+
+        <SteadyState Duration="1200" Power="0.93" cadence="60">
+            <textevent timeoffset="0" message="STAY SEATED. Block 2. 60rpm. 93% FTP. 20 minutes."/>
+            <textevent timeoffset="120" message="Block 2 always feels harder from the start. That is normal. The body is already carrying fatigue."/>
+            <textevent timeoffset="300" message="5 minutes. Knees? Power still at 93%? Cadence still 60?"/>
+            <textevent timeoffset="480" message="8 minutes. The low-cadence effect is cumulative — each pedal stroke is taxing a muscle state that is already tired. This is exactly the stimulus that drives adaptation."/>
+            <textevent timeoffset="600" message="10 minutes. Halfway through block 2. This is the hardest point in the session."/>
+            <textevent timeoffset="780" message="13 minutes. 7 to go. You are past the worst of it mentally."/>
+            <textevent timeoffset="960" message="16 minutes. 4 to go. Hold everything."/>
+            <textevent timeoffset="1080" message="18 minutes. The final push. 93% FTP, 60rpm, seated. Two minutes."/>
+            <textevent timeoffset="1140" message="1 minute. Last minute of the session."/>
+            <textevent timeoffset="1190" message="10 seconds. Do not stand."/>
+        </SteadyState>
+
+        <Cooldown Duration="900" PowerLow="0.75" PowerHigh="0.40" cadence="90">
+            <textevent timeoffset="10" message="Done. Both blocks complete. That is one of the hardest sessions in this library."/>
+            <textevent timeoffset="180" message="40 minutes of threshold work at 60rpm. Recovery after this takes longer than the other sessions — plan an easy day tomorrow."/>
+            <textevent timeoffset="420" message="Use this session once every 2-3 weeks, not as a weekly staple. Sweet Spot Torque or the Pyramid are better weekly drivers."/>
+            <textevent timeoffset="660" message="Post-session knee check is important after sustained threshold load. Note anything unusual."/>
+            <textevent timeoffset="840" message="Log this. Well done."/>
+        </Cooldown>
+    </workout>
+</workout_file>

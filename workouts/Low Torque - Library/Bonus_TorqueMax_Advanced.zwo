@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workout_file>
+    <author>Low Torque Training</author>
+    <name>Bonus – TorqueMax (110% FTP, 55 rpm) Advanced</name>
+    <description>Advanced session. Do not attempt until you have completed the 8-week block AND have been doing consistent low-cadence work for several months. Six 2-minute intervals at 110% FTP and 55 rpm, 4-minute recovery. Highest force combination in the programme. Elevated injury risk. Seated throughout.</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="1200" PowerLow="0.40" PowerHigh="0.75" cadence="90">
+            <textevent timeoffset="10" message="TorqueMax session. This is the advanced progression from the sweet spot torque work."/>
+            <textevent timeoffset="120" message="Prerequisites: you have completed the 8-week block. You have been doing regular low-cadence sessions for several months. Your knees have been consistently fine."/>
+            <textevent timeoffset="270" message="If any of those prerequisites are not met, do the Sweet Spot Torque session instead. This is not a shortcut — it is a step on from established work."/>
+            <textevent timeoffset="420" message="110% FTP at 55rpm. The highest above-threshold power in this programme, at the lowest cadence. Patellofemoral load is at its maximum."/>
+            <textevent timeoffset="600" message="Coach guidance flags this format as carrying elevated injury risk — it requires a foundation of torque work to do safely. (Source: EVOQ.BIKE)"/>
+            <textevent timeoffset="780" message="SEATED: More critical here than anywhere else. At 110% FTP and 55rpm, standing would shift the load in ways that increase injury risk further. Stay down. Always."/>
+            <textevent timeoffset="900" message="Six intervals. 2 minutes each. 4 minutes recovery. Short but intense."/>
+            <textevent timeoffset="1050" message="Openers coming. Then the main set."/>
+            <textevent timeoffset="1140" message="Find your gear. Hard gear. 55rpm at 110% FTP."/>
+        </Warmup>
+
+        <SteadyState Duration="30" Power="1.10" cadence="90">
+            <textevent timeoffset="0" message="Opener 1. Normal cadence."/>
+        </SteadyState>
+        <SteadyState Duration="270" Power="0.55" cadence="90">
+            <textevent timeoffset="0" message="Easy spin. Opener 2 coming."/>
+            <textevent timeoffset="210" message="Last recovery before the main set. Gear ready. 55rpm. SEATED."/>
+        </SteadyState>
+        <SteadyState Duration="30" Power="1.10" cadence="90">
+            <textevent timeoffset="0" message="Opener 2."/>
+        </SteadyState>
+        <SteadyState Duration="270" Power="0.55" cadence="90">
+            <textevent timeoffset="180" message="First interval in 90 seconds. STAY SEATED. 55rpm. 110% FTP. 2 minutes."/>
+        </SteadyState>
+
+        <IntervalsT Repeat="6" OnDuration="120" OffDuration="240" OnPower="1.10" OffPower="0.50" cadence="55" cadenceResting="85">
+            <textevent timeoffset="0" message="STAY SEATED. 55rpm. 110% FTP. GO."/>
+            <textevent timeoffset="20" message="Hard gear. Force yourself down to 55rpm."/>
+            <textevent timeoffset="60" message="1 minute in. Halfway. Legs and lungs both working hard."/>
+            <textevent timeoffset="100" message="20 seconds. Do not stand. Do not spin up."/>
+            <textevent timeoffset="115" message="5 seconds."/>
+            <textevent timeoffset="122" message="Recovery. 4 minutes."/>
+            <textevent timeoffset="180" message="Knee check. Anything beyond muscle burn?"/>
+            <textevent timeoffset="210" message="Next interval coming. Find your gear. Seated."/>
+        </IntervalsT>
+
+        <Cooldown Duration="900" PowerLow="0.75" PowerHigh="0.40" cadence="90">
+            <textevent timeoffset="10" message="TorqueMax complete. Six intervals done."/>
+            <textevent timeoffset="150" message="This session represents the top end of what the low-cadence protocol calls for. Beyond this, the injury risk outweighs the incremental benefit for most cyclists."/>
+            <textevent timeoffset="360" message="Post-session knee check is especially important here. Note anything — even mild aching — in the calendar."/>
+            <textevent timeoffset="600" message="The 2024 study found significant improvements in VO2max and maximal power with the low-cadence protocol. The science supports this training. Your knees are the limiting factor to respect."/>
+            <textevent timeoffset="780" message="Log the session. Note knee feedback. Well done."/>
+        </Cooldown>
+    </workout>
+</workout_file>

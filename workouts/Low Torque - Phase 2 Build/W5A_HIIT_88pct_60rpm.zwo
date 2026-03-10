@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workout_file>
+    <author>Low Torque Training</author>
+    <name>W5A – HIIT Low Cadence (88% FTP, 60 rpm)</name>
+    <description>Week 5, Session A. Four 4-minute intervals at 88% FTP and 60 rpm with 8-minute recovery. One more rep than week 4, slightly harder power, slightly lower cadence. Seated throughout.</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="900" PowerLow="0.40" PowerHigh="0.72" cadence="90">
+            <textevent timeoffset="10" message="Week 5. One step up from last week: 88% FTP, 60rpm, four intervals instead of three."/>
+            <textevent timeoffset="150" message="Small progressions matter. 2% more power and 2rpm less cadence sounds modest, but it compounds over weeks."/>
+            <textevent timeoffset="300" message="At 60rpm and 88% FTP, you are approaching the force levels used in the actual study. The researchers used 90-100% of maximal aerobic power at 60-70rpm."/>
+            <textevent timeoffset="450" message="SEATED: The rule does not change. Every interval is seated, start to finish. It is not a suggestion — standing changes the mechanics entirely."/>
+            <textevent timeoffset="600" message="Knee check before starting: both knees feeling good after last week? If there is any residual ache, consider staying at Week 4 levels today."/>
+            <textevent timeoffset="750" message="Four intervals coming. 4 minutes each. 8 minutes recovery. Quality over speed."/>
+            <textevent timeoffset="840" message="Find your gear. 60rpm at 88% FTP. Harder gear than last week."/>
+        </Warmup>
+
+        <IntervalsT Repeat="4" OnDuration="240" OffDuration="480" OnPower="0.88" OffPower="0.50" cadence="60" cadenceResting="85">
+            <textevent timeoffset="0" message="STAY SEATED. 60rpm. 88% FTP."/>
+            <textevent timeoffset="20" message="Cadence target: 60. Shift harder if you are still spinning above that."/>
+            <textevent timeoffset="60" message="You should feel this more in your legs than your lungs. That imbalance is the signature of torque training working correctly."/>
+            <textevent timeoffset="120" message="Halfway. 2 minutes to go. Hold the cadence. Resist the urge to speed up."/>
+            <textevent timeoffset="180" message="Last minute. If form is breaking down — rocking hips, wandering cadence — that is useful feedback. Hold it together."/>
+            <textevent timeoffset="220" message="20 seconds. Finish seated."/>
+            <textevent timeoffset="242" message="Recovery. Spin up. Full 8 minutes."/>
+            <textevent timeoffset="310" message="Research note: combining low cadence with high intensity likely triggers adaptation in both slow-twitch AND fast-twitch muscle fibers simultaneously."/>
+            <textevent timeoffset="430" message="Knee check during recovery. Any discomfort beyond normal muscle fatigue?"/>
+            <textevent timeoffset="450" message="Next interval coming. Find your gear. Stay seated."/>
+        </IntervalsT>
+
+        <Cooldown Duration="900" PowerLow="0.72" PowerHigh="0.40" cadence="90">
+            <textevent timeoffset="10" message="Four intervals done. Well done."/>
+            <textevent timeoffset="150" message="This week's HIIT session is the hardest low-cadence effort you have done so far. The legs should feel genuinely worked."/>
+            <textevent timeoffset="360" message="One more HIIT step up next week: 90% FTP, 59rpm. If today felt manageable, you are on track."/>
+            <textevent timeoffset="600" message="W5B coming later this week: Zone 2, 65rpm. Keep it easy. The HIIT is the hard session."/>
+            <textevent timeoffset="780" message="Log the session. Note the knee response specifically."/>
+        </Cooldown>
+    </workout>
+</workout_file>

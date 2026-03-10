@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workout_file>
+    <author>Low Torque Training</author>
+    <name>W6B – Endurance Low Cadence (65% FTP, 63 rpm)</name>
+    <description>Week 6, Session B. Three 15-minute Zone 2 blocks at 63 rpm. Highest endurance volume of the build phase. Easy intensity, lower cadence. Seated throughout.</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="900" PowerLow="0.40" PowerHigh="0.68" cadence="90">
+            <textevent timeoffset="10" message="Final endurance session of Phase 2. Three blocks today instead of two. Zone 2, 63rpm."/>
+            <textevent timeoffset="240" message="45 minutes total of low-cadence endurance work today. This is the highest endurance volume so far."/>
+            <textevent timeoffset="420" message="SEATED RULE: All three blocks, start to finish, seated. Zone 2 is easy enough that standing is never justified."/>
+            <textevent timeoffset="600" message="Research context: the study's low-intensity endurance sessions were done at the first ventilatory threshold (VT1) — the point where breathing first becomes slightly harder. Zone 2 is roughly equivalent for most trained cyclists."/>
+            <textevent timeoffset="780" message="First block in 2 minutes. 63rpm. Zone 2. Settle in."/>
+        </Warmup>
+
+        <SteadyState Duration="900" Power="0.65" cadence="63">
+            <textevent timeoffset="0" message="STAY SEATED. 63rpm. Zone 2."/>
+            <textevent timeoffset="120" message="Six weeks of consistent low-cadence work. Your tendons, patella, and quad muscles have been adapting systematically."/>
+            <textevent timeoffset="300" message="The slow cadence should feel almost normal now compared to Week 1. That adaptation is real."/>
+            <textevent timeoffset="540" message="6 minutes in. Still comfortable. Knees fine. Good."/>
+            <textevent timeoffset="750" message="2.5 minutes left. Easy finish."/>
+            <textevent timeoffset="870" message="30 seconds."/>
+        </SteadyState>
+
+        <SteadyState Duration="300" Power="0.50" cadence="85">
+            <textevent timeoffset="0" message="5-minute recovery. Spin up."/>
+            <textevent timeoffset="120" message="The 2024 PLOS One study was published in November 2024. It is one of the most specific and well-designed studies on low-cadence training to date — but it is one study with 24 participants. More research is needed."/>
+            <textevent timeoffset="240" message="Second block in 60 seconds."/>
+        </SteadyState>
+
+        <SteadyState Duration="900" Power="0.65" cadence="63">
+            <textevent timeoffset="0" message="STAY SEATED. Block 2. 63rpm. Zone 2."/>
+            <textevent timeoffset="180" message="One thing the study did NOT measure: knee health or injury rates. The absence of data here is a gap. Monitor your own knees carefully — you are the data point the research is missing."/>
+            <textevent timeoffset="360" message="If you have had any patellofemoral pain (pain around or behind the kneecap) in your cycling history, low-cadence training carries elevated risk for you."/>
+            <textevent timeoffset="600" message="10 minutes into the session. Two blocks done after this one."/>
+            <textevent timeoffset="780" message="2 minutes left."/>
+            <textevent timeoffset="870" message="30 seconds."/>
+        </SteadyState>
+
+        <SteadyState Duration="300" Power="0.50" cadence="85">
+            <textevent timeoffset="0" message="Final recovery. Last block coming."/>
+            <textevent timeoffset="120" message="After this session, Phase 2 is complete. Phase 3 is the full study protocol — sprint intervals and VO2max efforts at low cadence."/>
+            <textevent timeoffset="240" message="Third and final block in 60 seconds."/>
+        </SteadyState>
+
+        <SteadyState Duration="900" Power="0.65" cadence="63">
+            <textevent timeoffset="0" message="STAY SEATED. Final block. 63rpm. Zone 2."/>
+            <textevent timeoffset="120" message="Phase 2 endurance work complete after this. You have built a solid foundation."/>
+            <textevent timeoffset="360" message="The overall study group (both cadence groups combined) improved VO2max by 6.8% and maximal power by 5.6% over 8 weeks. Both groups improved. Low cadence just improved more."/>
+            <textevent timeoffset="600" message="10 minutes total low-cadence endurance today after this interval. That is meaningful training stimulus at Zone 2."/>
+            <textevent timeoffset="750" message="Final 2.5 minutes. Finish strong — or rather, finish calmly."/>
+            <textevent timeoffset="870" message="30 seconds. Last effort. Stay seated."/>
+        </SteadyState>
+
+        <Cooldown Duration="600" PowerLow="0.68" PowerHigh="0.40" cadence="90">
+            <textevent timeoffset="10" message="Phase 2 complete. Six weeks of progressive low-cadence work in the bank."/>
+            <textevent timeoffset="180" message="Before starting Phase 3: honestly assess your knees. Fine throughout? Proceed. Any residual discomfort? Rest an extra week."/>
+            <textevent timeoffset="360" message="Phase 3 is two sessions per microcycle: Day 1 sprints, Day 2 VO2max intervals. Both are significantly harder than anything in Phase 2."/>
+            <textevent timeoffset="480" message="Log this session and your Phase 2 summary."/>
+        </Cooldown>
+    </workout>
+</workout_file>

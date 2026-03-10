@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workout_file>
+    <author>Low Torque Training</author>
+    <name>W2 – Low Cadence Endurance (65 rpm)</name>
+    <description>Week 2 adaptation session. Two 15-minute Zone 2 blocks at 65 rpm — slightly lower cadence and longer duration than week 1. Still adaptation only: no intensity above Zone 2. Seated throughout.</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="900" PowerLow="0.40" PowerHigh="0.68" cadence="90">
+            <textevent timeoffset="10" message="Warmup at normal cadence. Enjoy the easy spinning."/>
+            <textevent timeoffset="120" message="Week 2. Cadence drops to 65rpm today, intervals grow to 15 minutes. Still Zone 2 only."/>
+            <textevent timeoffset="240" message="WHY SEATED? Standing lets you use your body weight on the downstroke. The point of this training is forcing your muscles to generate all the force themselves."/>
+            <textevent timeoffset="420" message="The scientific term is 'high torque training'. Torque = force × crank arm length. Lower cadence at the same power = more torque per stroke."/>
+            <textevent timeoffset="600" message="INJURY WATCH: Do not dismiss dull knee aches as normal soreness. Low cadence increases patellofemoral joint load significantly."/>
+            <textevent timeoffset="750" message="Interval in 2 minutes. Harder gear than last week. Target: 65rpm. Stay seated."/>
+            <textevent timeoffset="840" message="If your knees felt off after last session, consider staying at 68rpm today. Adaptation &gt; progression."/>
+        </Warmup>
+
+        <SteadyState Duration="900" Power="0.65" cadence="65">
+            <textevent timeoffset="0" message="STAY SEATED. Settle into 65rpm. Zone 2 power."/>
+            <textevent timeoffset="30" message="Cadence still above 65? Shift to a harder gear."/>
+            <textevent timeoffset="120" message="At 65rpm and Zone 2 power, you are producing roughly 50% more force per stroke than you would at 90rpm for the same wattage."/>
+            <textevent timeoffset="240" message="This heavier, almost grinding sensation is normal. Your quads are doing real work. Glutes and hamstrings too."/>
+            <textevent timeoffset="360" message="6 minutes in. Knees tracking well? Good. Hips staying level? Keep them stable."/>
+            <textevent timeoffset="480" message="Halfway. Zone 2 should mean you can still hold a conversation. If you are gasping, reduce power slightly."/>
+            <textevent timeoffset="600" message="The study showed the low cadence group improved maximal aerobic power by 8.1% vs 3.0%. More force = more adaptation."/>
+            <textevent timeoffset="720" message="3 minutes left. Do not let cadence drift upward as fatigue sets in. If it does, shift harder."/>
+            <textevent timeoffset="840" message="30 seconds. Stay seated to the end."/>
+        </SteadyState>
+
+        <SteadyState Duration="300" Power="0.50" cadence="85">
+            <textevent timeoffset="0" message="Recovery. Spin up. Normal cadence. Shake it out."/>
+            <textevent timeoffset="90" message="Low cadence training is thought to be especially useful for cyclists who naturally pedal at high cadence (90+rpm) — it exposes a muscular weakness those riders never otherwise address."/>
+            <textevent timeoffset="210" message="Second block in 90 seconds. Same deal: 65rpm, Zone 2, seated. Find your gear now."/>
+        </SteadyState>
+
+        <SteadyState Duration="900" Power="0.65" cadence="65">
+            <textevent timeoffset="0" message="STAY SEATED. 65rpm. Zone 2."/>
+            <textevent timeoffset="60" message="If your legs feel more fatigued than your lungs, that is exactly the point. This is muscular training disguised as aerobic training."/>
+            <textevent timeoffset="180" message="Think of these sessions as laying groundwork. Phase 2 (next week) adds intensity on top of this cadence. Your tendons need to be ready."/>
+            <textevent timeoffset="360" message="Halfway through the second block. How are the knees? Any pain that feels joint-related (not muscle burn) means stop."/>
+            <textevent timeoffset="480" message="Muscle burn in the quads is fine. Dull ache around the patella (kneecap) is a warning. Sharp, tracking pain = stop now."/>
+            <textevent timeoffset="660" message="4 minutes left. Maintain cadence. Resist the urge to speed up."/>
+            <textevent timeoffset="780" message="2 minutes. Good discipline if you have held 65rpm throughout."/>
+            <textevent timeoffset="870" message="30 seconds. Last push."/>
+        </SteadyState>
+
+        <Cooldown Duration="600" PowerLow="0.68" PowerHigh="0.40" cadence="90">
+            <textevent timeoffset="10" message="Cooldown. Spin easy. Back to normal cadence."/>
+            <textevent timeoffset="150" message="Two sessions down. How did Week 2 compare to Week 1? Log any knee feedback in the calendar."/>
+            <textevent timeoffset="360" message="Week 3 next: 3x10min at 62rpm. More volume, slightly lower cadence. Still Zone 2."/>
+            <textevent timeoffset="480" message="After Week 3, intensity enters the picture. Make sure your knees are ready before moving on."/>
+        </Cooldown>
+    </workout>
+</workout_file>
