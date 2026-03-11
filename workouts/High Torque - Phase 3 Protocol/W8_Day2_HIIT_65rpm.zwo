@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workout_file>
+    <author>High Torque Training</author>
+    <name>Phase 3 – Week 8 Day 2: HIIT (110% FTP, 65 rpm)</name>
+    <description>Week 8 progression of the Hebisz &amp; Hebisz (2024) HIIT protocol. Volume increases from 4 to 6 intervals: six 4-minute efforts at 110% FTP and 65 rpm, with 8 minutes easy recovery between each. Seated throughout.</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="900" PowerLow="0.40" PowerHigh="0.75" cadence="90">
+            <textevent timeoffset="10" message="Week 8, Day 2. Volume progression: 6 intervals today instead of 4."/>
+            <textevent timeoffset="150" message="The study increased HIIT volume from 4 reps (weeks 1-4) to 6 reps (weeks 5-8). This session matches the higher-volume phase."/>
+            <textevent timeoffset="300" message="110% FTP at 65rpm. Same intensity as Week 7, but two extra intervals. The additional volume is where the study found its strongest results."/>
+            <textevent timeoffset="480" message="Six intervals. 4 minutes each. 8-minute recovery between them. 24 minutes of total VO2max work at low cadence."/>
+            <textevent timeoffset="600" message="SEATED: Every interval, every second. By interval 5 and 6, fatigue will make standing very tempting. That is when it matters most to stay down."/>
+            <textevent timeoffset="720" message="KNEE PRIORITY: Six intervals is 50% more joint stress than four. If Week 7 caused any knee discomfort, do the 4-interval version instead."/>
+            <textevent timeoffset="840" message="Openers coming, then the main set."/>
+        </Warmup>
+
+        <SteadyState Duration="30" Power="1.10" cadence="90">
+            <textevent timeoffset="0" message="Opener 1 — normal cadence."/>
+        </SteadyState>
+        <SteadyState Duration="120" Power="0.55" cadence="90">
+            <textevent timeoffset="0" message="Easy spin. Second opener coming."/>
+            <textevent timeoffset="90" message="How do the legs feel? Ready? Good."/>
+        </SteadyState>
+        <SteadyState Duration="30" Power="1.10" cadence="90">
+            <textevent timeoffset="0" message="Opener 2."/>
+        </SteadyState>
+        <SteadyState Duration="120" Power="0.55" cadence="90">
+            <textevent timeoffset="0" message="Last recovery before the main set. Find your gear. 65rpm at 110% FTP."/>
+            <textevent timeoffset="60" message="30 seconds. First interval. STAY SEATED throughout. 110% FTP."/>
+            <textevent timeoffset="90" message="High-torque intervals begin now. The study used 60-70 RPM — Zwift shows 65 as the target, but anywhere in that range is correct."/>
+        </SteadyState>
+
+        <IntervalsT Repeat="6" OnDuration="240" OffDuration="480" OnPower="1.10" OffPower="0.50" cadence="65" cadenceResting="85">
+            <textevent timeoffset="0" message="STAY SEATED. 60-70 RPM — aim for 65. 110% FTP. GO."/>
+            <textevent timeoffset="20" message="Legs AND lungs working simultaneously. This is supposed to be hard."/>
+            <textevent timeoffset="60" message="1 minute in. The high muscular force at this power and cadence recruits both slow and fast-twitch fibers."/>
+            <textevent timeoffset="120" message="Halfway. 2 minutes to go. Hold the cadence. Do not spin up."/>
+            <textevent timeoffset="180" message="Last minute. Stay seated. Hold form."/>
+            <textevent timeoffset="210" message="30 seconds. Everything now. Do not stand."/>
+            <textevent timeoffset="235" message="10 seconds."/>
+            <textevent timeoffset="242" message="Recovery. 8 full minutes. Use every second. You need them more with 6 reps."/>
+            <textevent timeoffset="300" message="The study's low-cadence group improved VO2max by 8.7% over 8 weeks. This higher-volume phase is where the adaptation accelerated."/>
+            <textevent timeoffset="420" message="Knee check in recovery. Any discomfort that feels joint-related?"/>
+            <textevent timeoffset="450" message="Next interval coming. Same: seated, 65rpm, 110% FTP."/>
+        </IntervalsT>
+
+        <Cooldown Duration="900" PowerLow="0.75" PowerHigh="0.40" cadence="90">
+            <textevent timeoffset="10" message="Week 8 Day 2 complete. Six VO2max intervals at low cadence — full study volume."/>
+            <textevent timeoffset="150" message="You have now done the complete Hebisz &amp; Hebisz (2024) protocol at its highest volume. Well done."/>
+            <textevent timeoffset="360" message="Day 3 is a long easy ride at normal cadence. Day 4 is active recovery."/>
+            <textevent timeoffset="540" message="After this week, the 8-week block is complete. Move to the library sessions: 2 low-cadence sessions per week for continued gains."/>
+            <textevent timeoffset="720" message="Log this session. Note knee feedback. The block is done."/>
+        </Cooldown>
+    </workout>
+</workout_file>

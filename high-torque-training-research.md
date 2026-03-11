@@ -1,4 +1,4 @@
-# Low Torque (Low Cadence) Training for Cyclists
+# High Torque (Low Cadence) Training for Cyclists
 **Research summary + annotated training plan**
 Last reviewed: March 2026
 
@@ -6,7 +6,7 @@ Last reviewed: March 2026
 
 ## Who this is for
 
-A cyclist doing ~10 hours/week of mixed Zwift and outdoor training — fit, consistent, used to structured intervals. Not a beginner, but not a full-time athlete either. This document collects the current research on low-torque (low-cadence) training, explains why it might work, what we know and don't know, and gives a concrete 8-week training block based on the best available evidence.
+A cyclist doing ~10 hours/week of mixed Zwift and outdoor training — fit, consistent, used to structured intervals. Not a beginner, but not a full-time athlete either. This document collects the current research on high-torque (low-cadence) training, explains why it might work, what we know and don't know, and gives a concrete 8-week training block based on the best available evidence.
 
 ---
 
@@ -126,13 +126,26 @@ The "5×5 minutes at ~90% FTP / 50–60 RPM" format is a well-established coach-
 ### Phase 3 — Full Protocol (Weeks 7–8)
 **Goal:** Match the study protocol closely. Only proceed if knees have felt fine throughout Phases 1 and 2.
 
-This is a direct adaptation of the Hebisz & Hebisz (2024) 4-day microcycle. The SIT sessions (30-second all-out at 50–60 RPM) mirror the study's weeks 1–4 structure.
+This is a direct adaptation of the Hebisz & Hebisz (2024) 4-day microcycle. The study progressed volume across its 8 weeks: **weeks 1–4 used 8 SIT reps and 4 HIIT reps, weeks 5–8 increased to 12 SIT reps and 6 HIIT reps** [Hebisz & Hebisz 2024]. Our Phase 3 mirrors this: Week 7 uses the lower volume, Week 8 the higher.
+
+> **FTP translation note:** The study prescribes HIIT at 90–100% of maximal aerobic power (Pmax). For most trained cyclists, Pmax sits at roughly 110–120% of FTP, so 90–100% Pmax ≈ 100–120% FTP. The workouts use **110% FTP** as a practical mid-range target.
+
+**Week 7 — Study weeks 1–4 volume:**
 
 | Day | Session | Details |
 |-----|---------|---------|
-| Day 1 — SIT | Sprint Interval Training | Warm up 20 min. **8× 30 sec maximal effort at 50–60 RPM**, 90 sec easy spin recovery between each rep. After every 4 reps: 25 min easy riding. Cool down 15 min. |
-| Day 2 — HIIT | High-Intensity Intervals | Warm up 20 min. **4× 4 min at 90–100% max aerobic power, 60–70 RPM**, 8 min easy spin recovery between. Cool down 15 min. |
+| Day 1 — SIT | Sprint Interval Training | Warm up 20 min. **8× 30 sec maximal effort at 50–60 RPM** (2 sets of 4), 90 sec easy spin recovery between each rep. 25 min easy riding between sets. Cool down 15 min. |
+| Day 2 — HIIT | High-Intensity Intervals | Warm up 15 min. **4× 4 min at ≈110% FTP, 60–70 RPM**, 8 min easy spin recovery between. Cool down 15 min. |
 | Day 3 — LIT | Long easy ride | 90–120 min Zone 2 at **normal cadence** (no low-cadence work here) |
+| Day 4 — AR | Active recovery | 45–60 min easy spin, normal cadence, power well below VT1 |
+
+**Week 8 — Study weeks 5–8 volume (progression):**
+
+| Day | Session | Details |
+|-----|---------|---------|
+| Day 1 — SIT | Sprint Interval Training | Warm up 20 min. **12× 30 sec maximal effort at 50–60 RPM** (3 sets of 4), 90 sec recovery between reps. 25 min easy riding between sets. Cool down 15 min. |
+| Day 2 — HIIT | High-Intensity Intervals | Warm up 15 min. **6× 4 min at ≈110% FTP, 60–70 RPM**, 8 min easy spin recovery between. Cool down 15 min. |
+| Day 3 — LIT | Long easy ride | 90–120 min Zone 2 at **normal cadence** |
 | Day 4 — AR | Active recovery | 45–60 min easy spin, normal cadence, power well below VT1 |
 
 ---
@@ -161,6 +174,43 @@ The study used 8 hrs/week structured across 4 days. For a 10 hr/week Zwift + out
 
 ---
 
+## After the 8-week block — ongoing protocol
+
+The study only measured outcomes at 8 weeks and offers no guidance on what to do next. The recommendations below are based on coach consensus, not controlled trials.
+
+### Frequency: 2 low-cadence sessions per week
+
+Every coaching source converges on the same ceiling: **no more than 2 low-cadence sessions per week**, with at least one normal-cadence day between them.
+
+- Neal Henderson (coached Rohan Dennis, Taylor Phinney): *"Generally I do about one of these sessions a week, at most two."* He has never programmed back-to-back big gear sessions and stresses the musculoskeletal load. [Fast Talk Labs podcast]
+- EVOQ.BIKE: Start with 1/week, work up to 2/week during base season. [EVOQ.BIKE]
+- EF Pro Cycling (Peter Schep): Progressive approach; recreational riders should proceed cautiously. [EF Pro Cycling]
+
+### How to structure the week
+
+Pick **2 sessions from the library per week**. A good default:
+
+- **Session 1 (harder):** Sweet Spot Torque, Pyramid, Over-Under, or Threshold Block
+- **Session 2 (easier):** Torque Endurance or a repeat of a lighter library session
+
+Rotate the harder session to get variety. Use TorqueMax sparingly — monthly at most, and only after several months of consistent library work.
+
+All other training that week should be at normal cadence: endurance rides, recovery rides, any non-torque intervals.
+
+### If not racing — maximizing continued gains
+
+If you're not entering a race season and want to keep building:
+
+- Stay at 2 low-cadence sessions per week indefinitely. There is no evidence that more than 2/week adds benefit, and the joint stress argues against it.
+- Periodically (every 6–8 weeks), consider repeating the Phase 3 microcycle for 1–2 weeks to reintroduce the sprint + VO2max combination at full study intensity. Then return to library sessions.
+- Retest FTP regularly. As FTP increases, all the percentage-based workouts automatically scale up in absolute power, maintaining the training stimulus.
+
+### If racing — maintenance mode
+
+During race season: 1–2 low-cadence sessions per month is sufficient to preserve the adaptation [EVOQ.BIKE]. Use Sweet Spot Torque or Pyramid as the maintenance session — they offer the best stimulus-to-recovery ratio.
+
+---
+
 ## What we'd update this document for
 
 This section exists so future versions of this plan can track what changed and why.
@@ -173,6 +223,8 @@ This section exists so future versions of this plan can track what changed and w
 | Seated requirement | High — biomechanically obvious | No plausible mechanism to change this |
 | 8-week adaptation timeline | Low — no study on this specific progression | Controlled trial comparing fast vs gradual introduction |
 | Applicability to recreational male cyclists | Unknown | Studies on non-elite, mixed-gender, or masters populations |
+| 2/week ongoing frequency ceiling | Medium — coach consensus (Henderson, EVOQ, EF), no controlled trial | A dose-response study comparing 1, 2, and 3 sessions/week |
+| Volume progression (8→12 SIT, 4→6 HIIT) | Medium — from the study design, not tested in isolation | A study isolating the effect of volume progression vs constant volume |
 
 ---
 
@@ -191,3 +243,7 @@ This section exists so future versions of this plan can track what changed and w
 6. **Secondary analysis and commentary on the 2024 study:** Knowledge is Watt (Substack), issue 58 — *High Intensity Torque Training Can Increase Cycling Performance*. https://knowledgeiswatt.substack.com/p/58-high-intensity-torque-training
 
 7. **Overview of cadence research landscape:** W/KG — *Have Low Cadence Training Come Full Circle?* https://www.wattkg.com/low-cadence-training/
+
+8. **Ongoing frequency guidance (coach):** Neal Henderson on Fast Talk Labs — *Put It in the Big Gear — We Explore Low-Cadence, High-Torque Training*. https://www.fasttalklabs.com/fast-talk/neal-henderson-put-it-in-the-big-gear-we-explore-low-cadence-high-torque-training/
+
+9. **Pro team protocol:** EF Pro Cycling — *Pro Workouts: Torque Efforts with Noemi Rüegg*. https://www.efprocycling.com/tips-recipes/noemi-rueegg-torque-workouts/

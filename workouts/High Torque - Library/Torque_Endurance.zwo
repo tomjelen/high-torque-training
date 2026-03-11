@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workout_file>
-    <author>Low Torque Training</author>
-    <name>Bonus – Torque Endurance (75% FTP, 60 rpm)</name>
+    <author>High Torque Training</author>
+    <name>Torque Endurance (75% FTP, 60 rpm)</name>
     <description>Higher volume, lower intensity torque session. Four 15-minute blocks at 75% FTP and 60 rpm. Good for base season weeks or as a second low-cadence session in a week. 60 minutes of actual low-cadence work. Seated throughout.</description>
     <sportType>bike</sportType>
     <tags/>

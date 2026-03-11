@@ -1,4 +1,4 @@
-# Low Torque Training — Calendar
+# High Torque Training — Calendar
 
 Track each session by replacing `[ ]` with `[x]`. Add notes in the Notes column — how your knees felt, whether you hit the cadence targets, anything worth remembering.
 
@@ -32,9 +32,11 @@ Two low-cadence sessions per week: one HIIT (A), one endurance (B). Do not do A 
 ---
 
 ## Phase 3 — Full Protocol (Weeks 7–8)
-Four-day microcycle from the study. Repeat twice (weeks 7 and 8).
+Four-day microcycle from the study. Week 8 increases volume to match the study's weeks 5–8 progression.
 
 **Microcycle order:** Day 1 → Day 2 → Day 3 (easy, normal cadence) → Day 4 (rest/recovery)
+
+**Week 7** — Study weeks 1–4 volume (8 SIT reps, 4 HIIT reps):
 
 | # | Workout | Done | Date | Notes |
 |---|---------|------|------|-------|
@@ -42,15 +44,20 @@ Four-day microcycle from the study. Repeat twice (weeks 7 and 8).
 | 11 | **Week 7 · Day 2** – HIIT · 4×4min @ 110% FTP · 65 rpm · ~83 min | [ ] | | |
 | 12 | **Week 7 · Day 3** – LIT · 90–120 min easy ride · normal cadence | [ ] | | |
 | 13 | **Week 7 · Day 4** – Active recovery · 45–60 min · easy spin | [ ] | | |
-| 14 | **Week 8 · Day 1** – SIT · 2×(4×30sec max) · 55 rpm · ~76 min | [ ] | | |
-| 15 | **Week 8 · Day 2** – HIIT · 4×4min @ 110% FTP · 65 rpm · ~83 min | [ ] | | |
+
+**Week 8** — Study weeks 5–8 volume (12 SIT reps, 6 HIIT reps):
+
+| # | Workout | Done | Date | Notes |
+|---|---------|------|------|-------|
+| 14 | **Week 8 · Day 1** – SIT · 3×(4×30sec max) · 55 rpm · ~109 min | [ ] | | |
+| 15 | **Week 8 · Day 2** – HIIT · 6×4min @ 110% FTP · 65 rpm · ~107 min | [ ] | | |
 | 16 | **Week 8 · Day 3** – LIT · 90–120 min easy ride · normal cadence | [ ] | | |
 | 17 | **Week 8 · Day 4** – Active recovery · 45–60 min · easy spin | [ ] | | |
 
 ---
 
 ## Library Sessions
-These are the ongoing sessions once the 8-week block is done. Pull from them based on where you are in your training year.
+Ongoing sessions once the 8-week block is done. **2 low-cadence sessions per week maximum** (coach consensus: Henderson, EVOQ, EF Pro Cycling). Pick one harder and one easier session. All other training at normal cadence.
 
 | Frequency guide | Session |
 |-----------------|---------|

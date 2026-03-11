@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workout_file>
-    <author>Low Torque Training</author>
+    <author>High Torque Training</author>
     <name>Phase 3 – Day 2: HIIT (110% FTP, 65 rpm)</name>
     <description>Phase 3 Day 2. The HIIT session from Hebisz &amp; Hebisz (2024). Four 4-minute intervals at 110% FTP and 65 rpm, with 8 minutes easy recovery between each. VO2max-level effort with high torque. Seated throughout.</description>
     <sportType>bike</sportType>
@@ -19,20 +19,21 @@
         <SteadyState Duration="30" Power="1.10" cadence="90">
             <textevent timeoffset="0" message="Opener 1 — normal cadence. Wake the system up."/>
         </SteadyState>
-        <SteadyState Duration="270" Power="0.55" cadence="90">
-            <textevent timeoffset="0" message="Easy. 4.5 minutes to recover from opener. Second opener coming."/>
-            <textevent timeoffset="180" message="How do the legs feel? Ready? Good."/>
+        <SteadyState Duration="120" Power="0.55" cadence="90">
+            <textevent timeoffset="0" message="Easy spin. Second opener coming."/>
+            <textevent timeoffset="90" message="How do the legs feel? Ready? Good."/>
         </SteadyState>
         <SteadyState Duration="30" Power="1.10" cadence="90">
             <textevent timeoffset="0" message="Opener 2."/>
         </SteadyState>
-        <SteadyState Duration="270" Power="0.55" cadence="90">
+        <SteadyState Duration="120" Power="0.55" cadence="90">
             <textevent timeoffset="0" message="Last recovery before the main set. Find your gear. 65rpm at 110% FTP needs a harder gear than normal VO2max work."/>
-            <textevent timeoffset="180" message="30 seconds. First interval. STAY SEATED throughout. 65rpm. 110% FTP."/>
+            <textevent timeoffset="60" message="30 seconds. First interval. STAY SEATED throughout. 110% FTP."/>
+            <textevent timeoffset="90" message="High-torque intervals begin now. The study used 60-70 RPM — Zwift shows 65 as the target, but anywhere in that range is correct."/>
         </SteadyState>
 
         <IntervalsT Repeat="4" OnDuration="240" OffDuration="480" OnPower="1.10" OffPower="0.50" cadence="65" cadenceResting="85">
-            <textevent timeoffset="0" message="STAY SEATED. 65rpm. 110% FTP. GO."/>
+            <textevent timeoffset="0" message="STAY SEATED. 60-70 RPM — aim for 65. 110% FTP. GO."/>
             <textevent timeoffset="20" message="This is supposed to be hard. Legs AND lungs working simultaneously."/>
             <textevent timeoffset="60" message="1 minute in. The leg fatigue at this power and cadence is the whole point. This is what drove the 8.7% VO2max improvement in the study."/>
             <textevent timeoffset="120" message="Halfway. 2 minutes to go. Hold the cadence. Do not spin up."/>
