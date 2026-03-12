@@ -25,10 +25,11 @@ site/
 │   ├── data/
 │   │   └── workouts.ts              # all workout data (see "Data model" below)
 │   ├── components/
-│   │   ├── App.tsx                   # root: header, phase sections, download button
+│   │   ├── App.tsx                   # root: header, research panel, phase sections, footer
+│   │   ├── ResearchPanel.tsx         # collapsible <details> accordion with research, caveats, sources
 │   │   ├── PhaseSection.tsx          # one phase: title, description, lock state, workout list
 │   │   ├── WorkoutCard.tsx           # one workout: name, stats, checkbox, download, profile
-│   │   └── WorkoutProfile.tsx        # SVG power/cadence profile visualization
+│   │   └── WorkoutProfile.tsx        # SVG power profile (Zwift-style power zone colors)
 │   ├── hooks/
 │   │   └── useLocalStorage.ts        # generic useLocalStorage hook
 │   ├── main.tsx                      # ReactDOM.createRoot
@@ -307,20 +308,23 @@ Segments:
 
 ### `App.tsx`
 
-- Renders a `<main>` with `<header>`, phase sections, and a footer
+- Renders a `<main>` with `<header>`, a `ResearchPanel`, phase sections, and a footer
 - Header: "High Torque Training" title, one-line tagline ("Low-cadence training for cyclists — based on Hebisz & Hebisz 2024"), and a "Download All Workouts" button linking to `/workouts/high-torque-workouts.zip`
+- Renders `ResearchPanel` immediately after the header (before Phase 1)
 - Renders 4 `PhaseSection` components in order
-- Computes lock state: Phase 2 locked until all Phase 1 workouts are checked. Phase 3 locked until all Phase 2 workouts are checked. Library is never locked.
-- Footer: brief credit line, link to the research document (could be a future addition — for now just "Based on Hebisz & Hebisz (2024, PLOS One)")
+- Computes lock state: Phase 2 locked until all Phase 1 workouts are checked OR force-unlocked. Phase 3 locked until all Phase 2 workouts are checked OR force-unlocked. Library is never locked.
+- Manages `forcedUnlocked` state (from `useLocalStorage("ht-unlocked", {})`) and passes `onForceUnlock` to each PhaseSection
+- Footer: "Based on Hebisz & Hebisz (2024, PLOS One)" with a link to the paper
 
 ### `PhaseSection.tsx`
 
-Props: phase data, locked boolean, completion state, onToggle callback
+Props: phase data, locked boolean, completion state, onToggle callback, onForceUnlock callback
 
 - Renders phase name, subtitle, and description
-- If locked: show the section visually muted/dimmed with a lock indicator. Show workout names but disable interaction. Keep it simple — CSS opacity + a text note like "Complete Phase N to unlock" is fine.
+- If locked: show the section visually muted/dimmed with a lock indicator. Show workout names but disable interaction. Keep it simple — CSS opacity + a text note like "Complete Phase N to unlock" is fine. Also show a small "Unlock anyway →" button below the lock message that calls `onForceUnlock`. This allows users to skip ahead if needed.
 - If unlocked: renders list of `WorkoutCard` components
 - Show progress: "3/6 completed" or similar
+- Forced-unlocked phases are stored in localStorage alongside completion state (key: `"ht-unlocked"`, a `Record<string, boolean>`)
 
 ### `WorkoutCard.tsx`
 
@@ -350,12 +354,33 @@ Renders an SVG visualization of the workout power profile. This is the classic Z
   - `steady`: a rectangle at the power level
   - `intervals`: for each repeat, draw an "on" rectangle at onPower and an "off" rectangle at offPower, alternating
   - `cooldown`: a trapezoid from powerLow to powerHigh (descending)
-- Color the blocks by cadence: use a simple color scale.
-  - Low cadence (≤60 rpm): strong accent color (e.g. orange/amber)
-  - Medium cadence (61-70 rpm): moderate accent
-  - Normal cadence (>70 rpm): neutral/grey
-  - This visually shows "where the low-cadence work is" at a glance
+- Color the blocks by **power zone** (Zwift-style), not cadence:
+  - Zone 1 recovery (≤55% FTP): `#9E9E9E` (grey)
+  - Zone 2 endurance (56–75% FTP): `#42A5F5` (blue)
+  - Zone 3 tempo (76–90% FTP): `#66BB6A` (green)
+  - Zone 4 threshold (91–105% FTP): `#FFA726` (amber)
+  - Zone 5 VO2max (106–120% FTP): `#FF7043` (orange-red)
+  - Zone 6+ anaerobic (>120% FTP): `#E53935` (red)
+  - For warmup/cooldown ramps: approximate as 20 thin slices, each slice colored by its power zone
 - No axes labels, no gridlines, no tooltip. Just the shapes. Keep it dead simple.
+
+### `ResearchPanel.tsx`
+
+A `<details>` / `<summary>` accordion placed between the header and Phase 1. Collapsed by default.
+
+Summary text: "Why this works — Research & Safety"
+
+Content sections:
+
+1. **The core idea** — High torque = more force per pedal stroke. Benefit likely only emerges when combining low cadence with high intensity.
+
+2. **The key study** — Hebisz & Hebisz (2024, PLOS One). What they did, what they found (+8.7% vs +4.6% VO2max). Link to the paper: `https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0311833`
+
+3. **Evidence caveats** — One small study (n=12/group), female-only youth cohort (17–20 yr), no injury monitoring. Mixed literature: moderate-intensity low-cadence showed no advantage ([Muñoz et al. 2014](https://pmc.ncbi.nlm.nih.gov/articles/PMC3907705/)).
+
+4. **Knee safety** — Patellofemoral load increases with knee flexion. All low-cadence work must be seated. Stop if knees ache. No back-to-back low-cadence days. Skip if history of PFPS or patellar tendinopathy. Links to Physio-pedia and PMC5717478.
+
+5. **Sources** — Numbered list linking to all 9 sources from `high-torque-training-research.md`.
 
 ### `useLocalStorage.ts`
 
@@ -386,7 +411,18 @@ Store all completion state in a single key (`"ht-completed"`) as a JSON object `
 - Copy all `.zwo` files from `../workouts/` into `site/public/workouts/` maintaining the folder structure
 - Create `high-torque-workouts.zip` containing all 4 workout folders with their .zwo files. This is a one-time build artifact checked into `public/`. To create it, run: `cd ../workouts && zip -r ../site/public/high-torque-workouts.zip "High Torque - Phase 1 Adaptation" "High Torque - Phase 2 Build" "High Torque - Phase 3 Protocol" "High Torque - Library" && cd ../site`
 
-## Vercel deployment
+## Static assets — note on symlinks
+
+Instead of copying .zwo files, `public/workouts/` contains **symlinks** to the workout folders in `../workouts/`. Vite follows symlinks during dev and build. This avoids file duplication and keeps the workout files in one place.
+
+```bash
+# To recreate:
+mkdir -p public/workouts
+ln -s "$(pwd)/../workouts/High Torque - Phase 1 Adaptation" "public/workouts/High Torque - Phase 1 Adaptation"
+# ... (repeat for each folder)
+```
+
+## Vercel deployment (deferred — do after local dev works)
 
 - Add `vercel.json` to `site/`:
 ```json
@@ -398,22 +434,31 @@ Store all completion state in a single key (`"ht-completed"`) as a JSON object `
 }
 ```
 
-## Implementation order
+## Implementation order (completed)
 
-1. Scaffold: `npm create vite@latest . -- --template react-ts` inside `site/`
-2. Install Pico: `npm install @picocss/pico`
-3. Copy workout files to `public/workouts/` and create the zip
-4. Write `src/data/workouts.ts` with all the data from this plan
-5. Write `src/hooks/useLocalStorage.ts`
-6. Write `src/components/WorkoutProfile.tsx`
-7. Write `src/components/WorkoutCard.tsx`
-8. Write `src/components/PhaseSection.tsx`
-9. Write `src/components/App.tsx`
-10. Write `src/index.css` (Pico import)
-11. Write `src/App.css` (minimal overrides)
-12. Update `src/main.tsx` to render App
-13. Test: `npm run dev`, verify all phases render, checkboxes persist, downloads work, profiles look correct
-14. Add `vercel.json`
+1. ✅ Scaffold with `npm create vite@5 . -- --template react-ts` (Node 18 requires v5, not latest)
+2. ✅ Install Pico: `npm install @picocss/pico`
+3. ✅ Symlink workout folders to `public/workouts/` and create zip
+4. ✅ Write `src/data/workouts.ts`
+5. ✅ Write `src/hooks/useLocalStorage.ts`
+6. ✅ Write `src/components/WorkoutProfile.tsx`
+7. ✅ Write `src/components/WorkoutCard.tsx`
+8. ✅ Write `src/components/PhaseSection.tsx`
+9. ✅ Write `src/components/ResearchPanel.tsx`
+10. ✅ Write `src/components/App.tsx`
+11. ✅ Write `src/index.css` (Pico import)
+12. ✅ Write `src/App.css` (layout overrides)
+13. ✅ Update `src/main.tsx`
+
+## Running locally
+
+```bash
+cd site
+npm run dev
+# → http://localhost:5173 with hot-reloading
+```
+
+Vite starts a dev server with hot module replacement — any file change in `src/` updates the browser instantly without a full reload.
 
 ## Things NOT to do
 
