@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workout_file>
-    <author>High Torque Training</author>
-    <name>Phase 3 – Day 2: HIIT (110% FTP, 65 rpm)</name>
-    <description>Phase 3 Day 2. The HIIT session from Hebisz &amp; Hebisz (2024). Four 4-minute intervals at 110% FTP and 65 rpm, with 8 minutes easy recovery between each. VO2max-level effort with high torque. Seated throughout.</description>
+    <author>Tom Jelen</author>
+    <name>W7 Day 2 – VO2max HIIT</name>
+    <activitySaveName>High Torque Protocol - Phase 3: W7 Day 2 – 4×4min HIIT 60-70 RPM</activitySaveName>
+    <description>Phase 3 Day 2. The HIIT session from Hebisz &amp; Hebisz (2024). Four 4-minute intervals at 110% FTP and 60-70 rpm, with 8 minutes easy recovery between each. VO2max-level effort with high torque. Seated throughout.</description>
     <sportType>bike</sportType>
     <tags/>
     <workout>
         <Warmup Duration="900" PowerLow="0.40" PowerHigh="0.75" cadence="90">
             <textevent timeoffset="10" message="Phase 3, Day 2. VO2max intervals. The hardest session in this programme."/>
-            <textevent timeoffset="150" message="110% FTP at 65rpm. This is above threshold — you will be breathing hard. AND your legs will be working harder than a normal VO2max interval because of the low cadence."/>
+            <textevent timeoffset="150" message="110% FTP at 60-70rpm. This is above threshold — you will be breathing hard. AND your legs will be working harder than a normal VO2max interval because of the low cadence."/>
             <textevent timeoffset="300" message="The study used 90-100% of maximal aerobic power (Pmax). For most trained cyclists, Pmax sits at roughly 110-120% of FTP. 110% FTP is the conservative end of that range."/>
             <textevent timeoffset="480" message="Four intervals. 4 minutes each. 8-minute recovery between them. The recovery is genuinely necessary at this intensity."/>
             <textevent timeoffset="600" message="SEATED: Every interval, every second. At 110% FTP the temptation to stand is even stronger than in Phase 2. Resist completely."/>
@@ -27,12 +28,12 @@
             <textevent timeoffset="0" message="Opener 2."/>
         </SteadyState>
         <SteadyState Duration="120" Power="0.55" cadence="90">
-            <textevent timeoffset="0" message="Last recovery before the main set. Find your gear. 65rpm at 110% FTP needs a harder gear than normal VO2max work."/>
+            <textevent timeoffset="0" message="Last recovery before the main set. Find your gear. 60-70rpm at 110% FTP needs a harder gear than normal VO2max work."/>
             <textevent timeoffset="60" message="30 seconds. First interval. STAY SEATED throughout. 110% FTP."/>
-            <textevent timeoffset="90" message="High-torque intervals begin now. The study used 60-70 RPM — Zwift shows 65 as the target, but anywhere in that range is correct."/>
+            <textevent timeoffset="90" message="High-torque intervals begin now. The study used 60-70 RPM — aim for anywhere in that range."/>
         </SteadyState>
 
-        <IntervalsT Repeat="4" OnDuration="240" OffDuration="480" OnPower="1.10" OffPower="0.50" cadence="65" cadenceResting="85">
+        <IntervalsT Repeat="4" OnDuration="240" OffDuration="480" OnPower="1.10" OffPower="0.50" cadenceLow="60" cadenceHigh="70" cadenceResting="85">
             <textevent timeoffset="0" message="STAY SEATED. 60-70 RPM — aim for 65. 110% FTP. GO."/>
             <textevent timeoffset="20" message="This is supposed to be hard. Legs AND lungs working simultaneously."/>
             <textevent timeoffset="60" message="1 minute in. The leg fatigue at this power and cadence is the whole point. This is what drove the 8.7% VO2max improvement in the study."/>
@@ -43,7 +44,7 @@
             <textevent timeoffset="242" message="Recovery. 8 full minutes. Use every second."/>
             <textevent timeoffset="300" message="In the study, the HIIT sessions were done the day AFTER the sprint session. Today is Day 2 — you should have rested yesterday."/>
             <textevent timeoffset="420" message="Knee check in recovery. Any discomfort that feels joint-related (not muscle burn)?"/>
-            <textevent timeoffset="450" message="Next interval coming. Same: seated, 65rpm, 110% FTP."/>
+            <textevent timeoffset="450" message="Next interval coming. Same: seated, 60-70rpm, 110% FTP."/>
         </IntervalsT>
 
         <Cooldown Duration="900" PowerLow="0.75" PowerHigh="0.40" cadence="90">

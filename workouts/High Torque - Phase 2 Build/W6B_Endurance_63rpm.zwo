@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workout_file>
-    <author>High Torque Training</author>
-    <name>W6B – Endurance Low Cadence (65% FTP, 63 rpm)</name>
-    <description>Week 6, Session B. Three 15-minute Zone 2 blocks at 63 rpm. Highest endurance volume of the build phase. Easy intensity, lower cadence. Seated throughout.</description>
+    <author>Tom Jelen</author>
+    <name>W6B – High Torque Endurance</name>
+    <activitySaveName>High Torque Build - Phase 2: W6B – 3×15min Endurance 62-65 RPM</activitySaveName>
+    <description>Week 6, Session B. Three 15-minute Zone 2 blocks at 62-65 rpm. Highest endurance volume of the build phase. Easy intensity, lower cadence. Seated throughout.</description>
     <sportType>bike</sportType>
     <tags/>
     <workout>
         <Warmup Duration="900" PowerLow="0.40" PowerHigh="0.68" cadence="90">
-            <textevent timeoffset="10" message="Final endurance session of Phase 2. Three blocks today instead of two. Zone 2, 63rpm."/>
+            <textevent timeoffset="10" message="Final endurance session of Phase 2. Three blocks today instead of two. Zone 2, 62-65rpm."/>
             <textevent timeoffset="240" message="45 minutes total of low-cadence endurance work today. This is the highest endurance volume so far."/>
             <textevent timeoffset="420" message="SEATED RULE: All three blocks, start to finish, seated. Zone 2 is easy enough that standing is never justified."/>
             <textevent timeoffset="600" message="Research context: the study's low-intensity endurance sessions were done at the first ventilatory threshold (VT1) — the point where breathing first becomes slightly harder. Zone 2 is roughly equivalent for most trained cyclists."/>
-            <textevent timeoffset="780" message="First block in 2 minutes. 63rpm. Zone 2. Settle in."/>
+            <textevent timeoffset="780" message="First block in 2 minutes. 62-65rpm. Zone 2. Settle in."/>
         </Warmup>
 
-        <SteadyState Duration="900" Power="0.65" cadence="63">
-            <textevent timeoffset="0" message="STAY SEATED. 63rpm. Zone 2."/>
+        <SteadyState Duration="900" Power="0.65" cadenceLow="62" cadenceHigh="65">
+            <textevent timeoffset="0" message="STAY SEATED. 62-65rpm. Zone 2."/>
             <textevent timeoffset="120" message="Six weeks of consistent low-cadence work. Your tendons, patella, and quad muscles have been adapting systematically."/>
             <textevent timeoffset="300" message="The slow cadence should feel almost normal now compared to Week 1. That adaptation is real."/>
             <textevent timeoffset="540" message="6 minutes in. Still comfortable. Knees fine. Good."/>
@@ -29,8 +30,8 @@
             <textevent timeoffset="240" message="Second block in 60 seconds."/>
         </SteadyState>
 
-        <SteadyState Duration="900" Power="0.65" cadence="63">
-            <textevent timeoffset="0" message="STAY SEATED. Block 2. 63rpm. Zone 2."/>
+        <SteadyState Duration="900" Power="0.65" cadenceLow="62" cadenceHigh="65">
+            <textevent timeoffset="0" message="STAY SEATED. Block 2. 62-65rpm. Zone 2."/>
             <textevent timeoffset="180" message="One thing the study did NOT measure: knee health or injury rates. The absence of data here is a gap. Monitor your own knees carefully — you are the data point the research is missing."/>
             <textevent timeoffset="360" message="If you have had any patellofemoral pain (pain around or behind the kneecap) in your cycling history, low-cadence training carries elevated risk for you."/>
             <textevent timeoffset="600" message="10 minutes into the session. Two blocks done after this one."/>
@@ -44,8 +45,8 @@
             <textevent timeoffset="240" message="Third and final block in 60 seconds."/>
         </SteadyState>
 
-        <SteadyState Duration="900" Power="0.65" cadence="63">
-            <textevent timeoffset="0" message="STAY SEATED. Final block. 63rpm. Zone 2."/>
+        <SteadyState Duration="900" Power="0.65" cadenceLow="62" cadenceHigh="65">
+            <textevent timeoffset="0" message="STAY SEATED. Final block. 62-65rpm. Zone 2."/>
             <textevent timeoffset="120" message="Phase 2 endurance work complete after this. You have built a solid foundation."/>
             <textevent timeoffset="360" message="The overall study group (both cadence groups combined) improved VO2max by 6.8% and maximal power by 5.6% over 8 weeks. Both groups improved. Low cadence just improved more."/>
             <textevent timeoffset="600" message="10 minutes total low-cadence endurance today after this interval. That is meaningful training stimulus at Zone 2."/>

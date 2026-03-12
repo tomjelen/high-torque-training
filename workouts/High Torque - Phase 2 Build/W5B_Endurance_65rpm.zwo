@@ -1,23 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workout_file>
-    <author>High Torque Training</author>
-    <name>W5B – Endurance Low Cadence (65% FTP, 65 rpm)</name>
-    <description>Week 5, Session B. Two 20-minute Zone 2 blocks at 65 rpm. Same structure as W4B but 3rpm lower cadence. Easy intensity. Seated throughout.</description>
+    <author>Tom Jelen</author>
+    <name>W5B – High Torque Endurance</name>
+    <activitySaveName>High Torque Build - Phase 2: W5B – 2×20min Endurance 63-67 RPM</activitySaveName>
+    <description>Week 5, Session B. Two 20-minute Zone 2 blocks at 63-67 rpm. Same structure as W4B but 3rpm lower cadence. Easy intensity. Seated throughout.</description>
     <sportType>bike</sportType>
     <tags/>
     <workout>
         <Warmup Duration="900" PowerLow="0.40" PowerHigh="0.68" cadence="90">
-            <textevent timeoffset="10" message="Endurance session. Zone 2. 65rpm. Two 20-minute blocks. Easy."/>
+            <textevent timeoffset="10" message="Endurance session. Zone 2. 63-67rpm. Two 20-minute blocks. Easy."/>
             <textevent timeoffset="180" message="This session exists to add total low-cadence volume without adding intensity stress. The legs are already working harder from the HIIT session."/>
             <textevent timeoffset="360" message="SEATED REMINDER: Both blocks seated throughout. At this power level there is absolutely no need to stand."/>
             <textevent timeoffset="540" message="Fun fact: elite climbers often train extensively at low cadence during winter base phases. The seated grinding of a steep climb is mechanically similar to what we are doing here."/>
-            <textevent timeoffset="720" message="First block in 3 minutes. 65rpm. Zone 2. Comfortable from start to finish."/>
+            <textevent timeoffset="720" message="First block in 3 minutes. 63-67rpm. Zone 2. Comfortable from start to finish."/>
             <textevent timeoffset="840" message="The goal is aerobic adaptation with torque stimulus — not fatigue. If you are tired from the HIIT session earlier in the week, keep power at the low end of Zone 2."/>
         </Warmup>
 
-        <SteadyState Duration="1200" Power="0.65" cadence="65">
-            <textevent timeoffset="0" message="STAY SEATED. 65rpm. Zone 2. 20 minutes."/>
-            <textevent timeoffset="120" message="65rpm should feel familiar now. You have been here for three weeks. The difference from 68rpm is small but noticeable."/>
+        <SteadyState Duration="1200" Power="0.65" cadenceLow="63" cadenceHigh="67">
+            <textevent timeoffset="0" message="STAY SEATED. 63-67rpm. Zone 2. 20 minutes."/>
+            <textevent timeoffset="120" message="63-67rpm should feel familiar now. You have been here for three weeks. The difference from 68rpm is small but noticeable."/>
             <textevent timeoffset="360" message="The low-cadence training group in the study also improved VT1 (first ventilatory threshold) — the power at which breathing first becomes noticeably harder. Zone 2 work contributes to this."/>
             <textevent timeoffset="600" message="10 minutes. Halfway. Legs? Knees? Both should feel fine at this intensity."/>
             <textevent timeoffset="840" message="14 minutes. Maintain cadence. Let your mind wander — this is meant to be sustainable."/>
@@ -31,12 +32,12 @@
             <textevent timeoffset="240" message="Second block in 60 seconds. Same again."/>
         </SteadyState>
 
-        <SteadyState Duration="1200" Power="0.65" cadence="65">
-            <textevent timeoffset="0" message="STAY SEATED. Final 20 minutes. 65rpm. Zone 2."/>
+        <SteadyState Duration="1200" Power="0.65" cadenceLow="63" cadenceHigh="67">
+            <textevent timeoffset="0" message="STAY SEATED. Final 20 minutes. 63-67rpm. Zone 2."/>
             <textevent timeoffset="180" message="Cumulative low-cadence time across both sessions this week is significant. The body responds to total stimulus, not just the hard efforts."/>
             <textevent timeoffset="480" message="8 minutes in. Still comfortable? It should feel like this — controlled, sustainable, slightly heavy in the legs."/>
             <textevent timeoffset="720" message="12 minutes. Halfway through the second block. Breathing still easy?"/>
-            <textevent timeoffset="960" message="16 minutes. Almost there. Hold 65rpm."/>
+            <textevent timeoffset="960" message="16 minutes. Almost there. Hold 63-67rpm."/>
             <textevent timeoffset="1140" message="Last minute. Finish well."/>
         </SteadyState>
 

@@ -1,24 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workout_file>
-    <author>High Torque Training</author>
-    <name>W6A – HIIT Low Cadence (90% FTP, 59 rpm)</name>
-    <description>Week 6, Session A. Final build session before the full study protocol. Four 4-minute intervals at 90% FTP and 59 rpm. Hardest HIIT session of Phase 2. Seated throughout.</description>
+    <author>Tom Jelen</author>
+    <name>W6A – High Torque HIIT</name>
+    <activitySaveName>High Torque Build - Phase 2: W6A – 4×4min HIIT 58-60 RPM</activitySaveName>
+    <description>Week 6, Session A. Final build session before the full study protocol. Four 4-minute intervals at 90% FTP and 58-60 rpm. Hardest HIIT session of Phase 2. Seated throughout.</description>
     <sportType>bike</sportType>
     <tags/>
     <workout>
         <Warmup Duration="900" PowerLow="0.40" PowerHigh="0.75" cadence="90">
-            <textevent timeoffset="10" message="Final build session. 90% FTP, 59rpm. Four intervals. This is the hardest HIIT session of Phase 2."/>
+            <textevent timeoffset="10" message="Final build session. 90% FTP, 58-60rpm. Four intervals. This is the hardest HIIT session of Phase 2."/>
             <textevent timeoffset="150" message="After this week, Phase 3 introduces sprint intervals and VO2max-level efforts at 110% FTP. Today is the last step up before that."/>
             <textevent timeoffset="300" message="If this session feels manageable — legs worked, lungs challenged, knees fine — you are ready for Phase 3."/>
-            <textevent timeoffset="480" message="SEATED RULE: Non-negotiable. The entire interval seated. 90% FTP at 59rpm is hard — the temptation to stand will be real. Resist it."/>
+            <textevent timeoffset="480" message="SEATED RULE: Non-negotiable. The entire interval seated. 90% FTP at 58-60rpm is hard — the temptation to stand will be real. Resist it."/>
             <textevent timeoffset="600" message="Standing shifts force distribution and reduces the per-muscle-fiber load that makes this training work. The discomfort of staying seated IS the stimulus."/>
             <textevent timeoffset="750" message="Knee check: both okay? If there is any carry-over discomfort from earlier this week, consider dropping to 88% and 60rpm instead."/>
-            <textevent timeoffset="840" message="Four intervals coming. Find your gear. 59rpm at 90% FTP."/>
+            <textevent timeoffset="840" message="Four intervals coming. Find your gear. 58-60rpm at 90% FTP."/>
         </Warmup>
 
-        <IntervalsT Repeat="4" OnDuration="240" OffDuration="480" OnPower="0.90" OffPower="0.50" cadence="59" cadenceResting="85">
-            <textevent timeoffset="0" message="STAY SEATED. 59rpm. 90% FTP. This is threshold-adjacent with high torque."/>
-            <textevent timeoffset="15" message="Find the gear. 59rpm. You will feel it in your quads within 30 seconds."/>
+        <IntervalsT Repeat="4" OnDuration="240" OffDuration="480" OnPower="0.90" OffPower="0.50" cadenceLow="58" cadenceHigh="60" cadenceResting="85">
+            <textevent timeoffset="0" message="STAY SEATED. 58-60rpm. 90% FTP. This is threshold-adjacent with high torque."/>
+            <textevent timeoffset="15" message="Find the gear. 58-60rpm. You will feel it in your quads within 30 seconds."/>
             <textevent timeoffset="60" message="90% FTP is hard enough that breathing becomes noticeable. 59rpm means the legs are working harder than the breathing suggests."/>
             <textevent timeoffset="120" message="2 minutes in. Halfway. Hold the cadence. Do not chase easier gears."/>
             <textevent timeoffset="180" message="Last minute. This is the hardest part — staying seated and on cadence when everything wants to give."/>

@@ -1,25 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workout_file>
-    <author>High Torque Training</author>
-    <name>W3 – Low Cadence Endurance (62 rpm)</name>
-    <description>Week 3 adaptation session. Three 10-minute Zone 2 blocks at 62 rpm. Final adaptation week before intensity is introduced in Phase 2. Seated throughout.</description>
+    <author>Tom Jelen</author>
+    <name>W3 – High Torque Endurance</name>
+    <activitySaveName>High Torque Adaptation - Phase 1: W3 – 3×10min 60-65 RPM</activitySaveName>
+    <description>Week 3 adaptation session. Three 10-minute Zone 2 blocks at 60-65 rpm. Final adaptation week before intensity is introduced in Phase 2. Seated throughout.</description>
     <sportType>bike</sportType>
     <tags/>
     <workout>
         <Warmup Duration="900" PowerLow="0.40" PowerHigh="0.68" cadence="90">
-            <textevent timeoffset="10" message="Final adaptation week. 62rpm today — lowest cadence you have done so far."/>
+            <textevent timeoffset="10" message="Final adaptation week. 60-65rpm today — lowest cadence you have done so far."/>
             <textevent timeoffset="120" message="Three 10-minute blocks at Zone 2. More total volume than previous weeks, slightly lower cadence."/>
             <textevent timeoffset="270" message="After this session, Phase 2 begins: same low cadence, but now with proper intensity up to threshold."/>
             <textevent timeoffset="420" message="Your tendons and connective tissue should be noticeably more adapted than in Week 1. Three weeks of consistent low-cadence work is meaningful preparation."/>
             <textevent timeoffset="570" message="INJURY CHECK before you start: Are both knees feeling good today? Any lingering ache from previous sessions should resolve before moving to Phase 2."/>
             <textevent timeoffset="720" message="If your knees are not right, repeat Week 2 instead of this session. No shame in it."/>
-            <textevent timeoffset="840" message="Interval in 1 minute. 62rpm. Harder gear. Stay seated."/>
+            <textevent timeoffset="840" message="Interval in 1 minute. 60-65rpm. Harder gear. Stay seated."/>
         </Warmup>
 
-        <SteadyState Duration="600" Power="0.65" cadence="62">
-            <textevent timeoffset="0" message="STAY SEATED. 62rpm. Zone 2."/>
-            <textevent timeoffset="30" message="Shift harder if needed. 62rpm is noticeably slower than 68 — take a moment to find the right gear."/>
-            <textevent timeoffset="120" message="At 62rpm the pedal stroke slows enough that you can feel the dead spots — the points at the top and bottom of the stroke where force drops. This is useful feedback."/>
+        <SteadyState Duration="600" Power="0.65" cadenceLow="60" cadenceHigh="65">
+            <textevent timeoffset="0" message="STAY SEATED. 60-65rpm. Zone 2."/>
+            <textevent timeoffset="30" message="Shift harder if needed. 60-65rpm is noticeably slower than 68 — take a moment to find the right gear."/>
+            <textevent timeoffset="120" message="At 60-65rpm the pedal stroke slows enough that you can feel the dead spots — the points at the top and bottom of the stroke where force drops. This is useful feedback."/>
             <textevent timeoffset="240" message="Focus on a smooth, circular stroke. Try to push through the dead spots with your hamstrings and calves."/>
             <textevent timeoffset="360" message="Halfway. Legs working hard? Good. Lungs comfortable? Also good. That balance is exactly right."/>
             <textevent timeoffset="480" message="Low cadence also improves pedaling efficiency over time — you learn to use the full 360 degrees of the stroke rather than just hammering the downstroke."/>
@@ -29,11 +30,11 @@
         <SteadyState Duration="300" Power="0.50" cadence="85">
             <textevent timeoffset="0" message="Recovery. Spin up to 85+rpm. Let the legs flush out."/>
             <textevent timeoffset="120" message="The researchers note: no study yet shows a clear benefit from low-cadence work at MODERATE intensity. The benefit seems to require HIGH intensity. Phase 2 is where this gets interesting."/>
-            <textevent timeoffset="240" message="Second block in 60 seconds. Same: 62rpm, Zone 2, seated."/>
+            <textevent timeoffset="240" message="Second block in 60 seconds. Same: 60-65rpm, Zone 2, seated."/>
         </SteadyState>
 
-        <SteadyState Duration="600" Power="0.65" cadence="62">
-            <textevent timeoffset="0" message="STAY SEATED. 62rpm. Zone 2."/>
+        <SteadyState Duration="600" Power="0.65" cadenceLow="60" cadenceHigh="65">
+            <textevent timeoffset="0" message="STAY SEATED. 60-65rpm. Zone 2."/>
             <textevent timeoffset="60" message="Think of this block as the last 'easy' low-cadence session. Next week the intensity climbs to 85% FTP."/>
             <textevent timeoffset="180" message="The study's HIIT sessions used 4-minute intervals at 90-100% of maximum aerobic power at 60-70rpm. That is significantly harder than this."/>
             <textevent timeoffset="300" message="Halfway. Knees still tracking well?"/>
@@ -44,13 +45,13 @@
         <SteadyState Duration="300" Power="0.50" cadence="85">
             <textevent timeoffset="0" message="Recovery. Third and final block next."/>
             <textevent timeoffset="120" message="The 2024 PLOS One study also found the low-cadence group improved their second ventilatory threshold (VT2) — the point where you can no longer speak in full sentences. The normal-cadence group did not."/>
-            <textevent timeoffset="240" message="Final block in 60 seconds. Finish strong. Seated. 62rpm."/>
+            <textevent timeoffset="240" message="Final block in 60 seconds. Finish strong. Seated. 60-65rpm."/>
         </SteadyState>
 
-        <SteadyState Duration="600" Power="0.65" cadence="62">
-            <textevent timeoffset="0" message="STAY SEATED. Final block. 62rpm. Zone 2."/>
+        <SteadyState Duration="600" Power="0.65" cadenceLow="60" cadenceHigh="65">
+            <textevent timeoffset="0" message="STAY SEATED. Final block. 60-65rpm. Zone 2."/>
             <textevent timeoffset="60" message="Three weeks of adaptation complete after this. You have earned Phase 2."/>
-            <textevent timeoffset="180" message="Keep hips level. Resist rocking. The torque at 62rpm puts real rotational stress through the hips if your position is off."/>
+            <textevent timeoffset="180" message="Keep hips level. Resist rocking. The torque at low cadence puts real rotational stress through the hips if your position is off."/>
             <textevent timeoffset="300" message="Halfway. Solid work. Almost there."/>
             <textevent timeoffset="420" message="Phase 2 introduces 85% FTP intervals at low cadence. The combination of intensity and torque is what drove the study's results."/>
             <textevent timeoffset="540" message="Last 60 seconds. Stay seated to the end."/>

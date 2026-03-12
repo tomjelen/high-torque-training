@@ -1,31 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workout_file>
-    <author>High Torque Training</author>
-    <name>Torque Endurance (75% FTP, 60 rpm)</name>
+    <author>Tom Jelen</author>
+    <name>Torque Endurance</name>
+    <activitySaveName>High Torque Library: Endurance – 4×15min 75% FTP 58-62 RPM</activitySaveName>
     <description>Higher volume, lower intensity torque session. Four 15-minute blocks at 75% FTP and 60 rpm. Good for base season weeks or as a second low-cadence session in a week. 60 minutes of actual low-cadence work. Seated throughout.</description>
     <sportType>bike</sportType>
     <tags/>
     <workout>
         <Warmup Duration="900" PowerLow="0.40" PowerHigh="0.72" cadence="90">
-            <textevent timeoffset="10" message="Torque endurance session. Four 15-minute blocks at 75% FTP and 60rpm. Volume over intensity today."/>
+            <textevent timeoffset="10" message="Torque endurance session. Four 15-minute blocks at 75% FTP and 58-62rpm. Volume over intensity today."/>
             <textevent timeoffset="180" message="75% FTP sits at the upper end of Zone 2 / lower Zone 3 — easy enough to recover from quickly, hard enough to create a meaningful training signal."/>
             <textevent timeoffset="360" message="60 minutes of total low-cadence work across four blocks. This is a significant endurance dose at low cadence."/>
             <textevent timeoffset="540" message="SEATED: All four blocks, from start to finish. No exceptions."/>
             <textevent timeoffset="720" message="Best used as a base season session, or as the easier low-cadence session in a week where Sweet Spot Torque is the primary effort."/>
-            <textevent timeoffset="840" message="First block in 1 minute. 60rpm. 75% FTP."/>
+            <textevent timeoffset="840" message="First block in 1 minute. 58-62rpm. 75% FTP."/>
         </Warmup>
 
-        <IntervalsT Repeat="4" OnDuration="900" OffDuration="300" OnPower="0.75" OffPower="0.50" cadence="60" cadenceResting="85">
-            <textevent timeoffset="0" message="STAY SEATED. 60rpm. 75% FTP. 15 minutes."/>
+        <IntervalsT Repeat="4" OnDuration="900" OffDuration="300" OnPower="0.75" OffPower="0.50" cadenceLow="58" cadenceHigh="62" cadenceResting="85">
+            <textevent timeoffset="0" message="STAY SEATED. 58-62rpm. 75% FTP. 15 minutes."/>
             <textevent timeoffset="60" message="This intensity is sustainable. The challenge is cadence and duration, not power."/>
             <textevent timeoffset="300" message="5 minutes in. How are the legs? This should feel moderately heavy — not taxing cardiovascularly."/>
             <textevent timeoffset="480" message="8 minutes. More than halfway through this block."/>
-            <textevent timeoffset="600" message="Low-cadence muscle endurance: the ability to sustain force production over time. This is what 15-minute blocks at 60rpm develop."/>
+            <textevent timeoffset="600" message="Low-cadence muscle endurance: the ability to sustain force production over time. This is what 15-minute blocks at 58-62rpm develop."/>
             <textevent timeoffset="750" message="12.5 minutes. 2.5 to go."/>
             <textevent timeoffset="870" message="30 seconds. Finish seated."/>
             <textevent timeoffset="902" message="5-minute recovery. Spin up. Shake out."/>
             <textevent timeoffset="960" message="Knee check. Any discomfort? At 75% FTP it should be minimal — this is a lower-risk cadence session."/>
-            <textevent timeoffset="1100" message="Next block coming. Same: 60rpm, 75% FTP. Find your gear."/>
+            <textevent timeoffset="1100" message="Next block coming. Same: 58-62rpm, 75% FTP. Find your gear."/>
         </IntervalsT>
 
         <Cooldown Duration="900" PowerLow="0.72" PowerHigh="0.40" cadence="90">

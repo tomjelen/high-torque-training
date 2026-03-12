@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workout_file>
-    <author>High Torque Training</author>
-    <name>TorqueMax (110% FTP, 55 rpm) Advanced</name>
+    <author>Tom Jelen</author>
+    <name>TorqueMax Advanced</name>
+    <activitySaveName>High Torque Library: TorqueMax – 6×2min 110% FTP 53-57 RPM</activitySaveName>
     <description>Advanced session. Do not attempt until you have completed the 8-week block AND have been doing consistent low-cadence work for several months. Six 2-minute intervals at 110% FTP and 55 rpm, 4-minute recovery. Highest force combination in the programme. Elevated injury risk. Seated throughout.</description>
     <sportType>bike</sportType>
     <tags/>
@@ -10,11 +11,11 @@
             <textevent timeoffset="10" message="TorqueMax session. This is the advanced progression from the sweet spot torque work."/>
             <textevent timeoffset="120" message="Prerequisites: you have completed the 8-week block. You have been doing regular low-cadence sessions for several months. Your knees have been consistently fine."/>
             <textevent timeoffset="270" message="If any of those prerequisites are not met, do the Sweet Spot Torque session instead. This is not a shortcut — it is a step on from established work."/>
-            <textevent timeoffset="420" message="110% FTP at 55rpm. The highest above-threshold power in this programme, at the lowest cadence. Patellofemoral load is at its maximum."/>
+            <textevent timeoffset="420" message="110% FTP at 53-57rpm. The highest above-threshold power in this programme, at the lowest cadence. Patellofemoral load is at its maximum."/>
             <textevent timeoffset="540" message="Coach guidance flags this format as carrying elevated injury risk — it requires a foundation of torque work to do safely. (Source: EVOQ.BIKE)"/>
-            <textevent timeoffset="660" message="SEATED: More critical here than anywhere else. At 110% FTP and 55rpm, standing would shift the load in ways that increase injury risk further. Stay down. Always."/>
+            <textevent timeoffset="660" message="SEATED: More critical here than anywhere else. At 110% FTP and 53-57rpm, standing would shift the load in ways that increase injury risk further. Stay down. Always."/>
             <textevent timeoffset="750" message="Six intervals. 2 minutes each. 4 minutes recovery. Short but intense. Openers first."/>
-            <textevent timeoffset="840" message="Find your gear. Hard gear. 55rpm at 110% FTP."/>
+            <textevent timeoffset="840" message="Find your gear. Hard gear. 53-57rpm at 110% FTP."/>
         </Warmup>
 
         <SteadyState Duration="30" Power="1.10" cadence="90">
@@ -22,18 +23,18 @@
         </SteadyState>
         <SteadyState Duration="120" Power="0.55" cadence="90">
             <textevent timeoffset="0" message="Easy spin. Opener 2 coming."/>
-            <textevent timeoffset="90" message="Gear ready. 55rpm. SEATED."/>
+            <textevent timeoffset="90" message="Gear ready. 53-57rpm. SEATED."/>
         </SteadyState>
         <SteadyState Duration="30" Power="1.10" cadence="90">
             <textevent timeoffset="0" message="Opener 2."/>
         </SteadyState>
         <SteadyState Duration="120" Power="0.55" cadence="90">
-            <textevent timeoffset="60" message="First interval in 60 seconds. STAY SEATED. 55rpm. 110% FTP. 2 minutes."/>
+            <textevent timeoffset="60" message="First interval in 60 seconds. STAY SEATED. 53-57rpm. 110% FTP. 2 minutes."/>
         </SteadyState>
 
-        <IntervalsT Repeat="6" OnDuration="120" OffDuration="240" OnPower="1.10" OffPower="0.50" cadence="55" cadenceResting="85">
-            <textevent timeoffset="0" message="STAY SEATED. 55rpm. 110% FTP. GO."/>
-            <textevent timeoffset="20" message="Hard gear. Force yourself down to 55rpm."/>
+        <IntervalsT Repeat="6" OnDuration="120" OffDuration="240" OnPower="1.10" OffPower="0.50" cadenceLow="53" cadenceHigh="57" cadenceResting="85">
+            <textevent timeoffset="0" message="STAY SEATED. 53-57rpm. 110% FTP. GO."/>
+            <textevent timeoffset="20" message="Hard gear. Force yourself down to 53-57rpm."/>
             <textevent timeoffset="60" message="1 minute in. Halfway. Legs and lungs both working hard."/>
             <textevent timeoffset="100" message="20 seconds. Do not stand. Do not spin up."/>
             <textevent timeoffset="115" message="5 seconds."/>
