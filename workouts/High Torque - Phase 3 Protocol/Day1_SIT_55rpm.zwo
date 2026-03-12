@@ -7,7 +7,7 @@
     <sportType>bike</sportType>
     <tags/>
     <workout>
-        <Warmup Duration="1200" PowerLow="0.40" PowerHigh="0.75" cadence="90">
+        <Warmup Duration="1200" PowerLow="0.40" PowerHigh="0.75">
             <textevent timeoffset="10" message="Phase 3, Day 1. Sprint intervals. This is the full study protocol."/>
             <textevent timeoffset="120" message="The researchers used 8 x 30-second all-out sprints split into two sets of four, with 25 minutes active rest between sets. That is exactly what you are doing today."/>
             <textevent timeoffset="270" message="Cadence target: 50-60rpm. This is the lowest cadence in the programme. At sprint intensity, maintaining 50-60rpm requires a very hard gear."/>
@@ -19,7 +19,7 @@
             <textevent timeoffset="1140" message="First sprint in 1 minute. Find your gear. Hard gear. 50-60rpm. Maximal effort."/>
         </Warmup>
 
-        <IntervalsT Repeat="4" OnDuration="30" OffDuration="90" OnPower="1.50" OffPower="0.50" cadenceLow="50" cadenceHigh="60" cadenceResting="80">
+        <IntervalsT Repeat="4" OnDuration="30" OffDuration="90" OnPower="1.50" OffPower="0.50" cadenceLow="50" cadenceHigh="60">
             <textevent timeoffset="0" message="STAY SEATED. GO. Maximal effort. 50-60rpm."/>
             <textevent timeoffset="15" message="Halfway. Keep driving. Seated."/>
             <textevent timeoffset="28" message="2 seconds. Do not stand."/>
@@ -28,7 +28,7 @@
             <textevent timeoffset="100" message="Find your gear for the next sprint. Get ready."/>
         </IntervalsT>
 
-        <SteadyState Duration="1500" Power="0.55" cadence="85">
+        <SteadyState Duration="1500" Power="0.55">
             <textevent timeoffset="10" message="Set 1 complete. 25 minutes active rest now. This is in the study protocol — do not skip it or shorten it."/>
             <textevent timeoffset="120" message="55% FTP, easy spinning. Your legs are flushing out lactate. This is part of the session."/>
             <textevent timeoffset="300" message="The sprint interval (SIT) component of the study was designed alongside high-intensity intervals (HIIT) and long easy rides in a polarized structure. Today is the SIT day."/>
@@ -39,7 +39,7 @@
             <textevent timeoffset="1470" message="30 seconds. Get ready. Seated. Maximal effort coming."/>
         </SteadyState>
 
-        <IntervalsT Repeat="4" OnDuration="30" OffDuration="90" OnPower="1.50" OffPower="0.50" cadenceLow="50" cadenceHigh="60" cadenceResting="80">
+        <IntervalsT Repeat="4" OnDuration="30" OffDuration="90" OnPower="1.50" OffPower="0.50" cadenceLow="50" cadenceHigh="60">
             <textevent timeoffset="0" message="STAY SEATED. GO. Set 2. Maximal."/>
             <textevent timeoffset="15" message="Halfway. Drive it. Seated."/>
             <textevent timeoffset="28" message="2 seconds."/>
@@ -48,13 +48,13 @@
             <textevent timeoffset="100" message="Last sprint coming. Everything you have left."/>
         </IntervalsT>
 
-        <Cooldown Duration="900" PowerLow="0.75" PowerHigh="0.40" cadence="90">
+        <Cooldown Duration="900" PowerLow="0.75" PowerHigh="0.40">
             <textevent timeoffset="10" message="Day 1 done. That was the full study protocol for the sprint session."/>
             <textevent timeoffset="150" message="Legs should feel genuinely emptied. That is appropriate after 8 maximal sprints."/>
             <textevent timeoffset="300" message="Knee check post-session: how do they feel now compared to during the sprints? Note anything unusual."/>
             <textevent timeoffset="480" message="Day 2 is tomorrow or the day after: 4 x 4min at 110% FTP, 60-70rpm. Do not rush into it."/>
             <textevent timeoffset="660" message="The combination of SIT and HIIT in the same 4-day block is what the study tested. You are doing exactly what the low-cadence group did."/>
-            <textevent timeoffset="840" message="Log this. Rest well."/>
+            <textevent timeoffset="840" message="The study's sprint protocol was specifically designed with long recovery between sets. The 25-minute rest allows near-complete phosphocreatine resynthesis — the energy system that powers short maximal efforts."/>
         </Cooldown>
     </workout>
 </workout_file>

@@ -7,7 +7,7 @@
     <sportType>bike</sportType>
     <tags/>
     <workout>
-        <Warmup Duration="900" PowerLow="0.40" PowerHigh="0.68" cadence="90">
+        <Warmup Duration="900" PowerLow="0.40" PowerHigh="0.68">
             <textevent timeoffset="10" message="Final adaptation week. 60-65rpm today — lowest cadence you have done so far."/>
             <textevent timeoffset="120" message="Three 10-minute blocks at Zone 2. More total volume than previous weeks, slightly lower cadence."/>
             <textevent timeoffset="270" message="After this session, Phase 2 begins: same low cadence, but now with proper intensity up to threshold."/>
@@ -27,7 +27,7 @@
             <textevent timeoffset="540" message="60 seconds left. Stay seated."/>
         </SteadyState>
 
-        <SteadyState Duration="300" Power="0.50" cadence="85">
+        <SteadyState Duration="300" Power="0.50">
             <textevent timeoffset="0" message="Recovery. Spin up to 85+rpm. Let the legs flush out."/>
             <textevent timeoffset="120" message="The researchers note: no study yet shows a clear benefit from low-cadence work at MODERATE intensity. The benefit seems to require HIGH intensity. Phase 2 is where this gets interesting."/>
             <textevent timeoffset="240" message="Second block in 60 seconds. Same: 60-65rpm, Zone 2, seated."/>
@@ -42,7 +42,7 @@
             <textevent timeoffset="540" message="60 seconds. Last interval coming after recovery."/>
         </SteadyState>
 
-        <SteadyState Duration="300" Power="0.50" cadence="85">
+        <SteadyState Duration="300" Power="0.50">
             <textevent timeoffset="0" message="Recovery. Third and final block next."/>
             <textevent timeoffset="120" message="The 2024 PLOS One study also found the low-cadence group improved their second ventilatory threshold (VT2) — the point where you can no longer speak in full sentences. The normal-cadence group did not."/>
             <textevent timeoffset="240" message="Final block in 60 seconds. Finish strong. Seated. 60-65rpm."/>
@@ -58,12 +58,12 @@
             <textevent timeoffset="570" message="30 seconds. Done after this."/>
         </SteadyState>
 
-        <Cooldown Duration="600" PowerLow="0.68" PowerHigh="0.40" cadence="90">
+        <Cooldown Duration="600" PowerLow="0.68" PowerHigh="0.40">
             <textevent timeoffset="10" message="Adaptation phase complete. Spin easy."/>
             <textevent timeoffset="120" message="Three weeks done. If your knees have been fine throughout, you are ready for Phase 2."/>
             <textevent timeoffset="270" message="If your knees have had any discomfort: do not rush. Either repeat Week 3 or take an extra easy week before Phase 2."/>
             <textevent timeoffset="420" message="Phase 2 has two low-cadence sessions per week: one HIIT (hard) and one endurance (moderate). Do not do them on consecutive days."/>
-            <textevent timeoffset="540" message="Log this session. Good work."/>
+            <textevent timeoffset="540" message="Three adaptation sessions done. Research on tendon remodelling suggests connective tissue needs 3-4 weeks of progressive loading before tolerating high-intensity work safely."/>
         </Cooldown>
     </workout>
 </workout_file>

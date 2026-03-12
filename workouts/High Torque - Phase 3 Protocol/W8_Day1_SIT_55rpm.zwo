@@ -7,7 +7,7 @@
     <sportType>bike</sportType>
     <tags/>
     <workout>
-        <Warmup Duration="1200" PowerLow="0.40" PowerHigh="0.75" cadence="90">
+        <Warmup Duration="1200" PowerLow="0.40" PowerHigh="0.75">
             <textevent timeoffset="10" message="Week 8. Volume progression: 12 sprint reps today instead of 8. Three sets of four."/>
             <textevent timeoffset="120" message="The study progressed from 8 reps (weeks 1-4) to 12 reps (weeks 5-8). This session matches the higher-volume phase."/>
             <textevent timeoffset="270" message="Same rules: 50-60rpm, maximal effort, 90-second recovery between reps, 25-minute active rest between sets."/>
@@ -19,7 +19,7 @@
             <textevent timeoffset="1140" message="First sprint in 1 minute. Find your gear. Hard gear. 50-60rpm. Maximal effort."/>
         </Warmup>
 
-        <IntervalsT Repeat="4" OnDuration="30" OffDuration="90" OnPower="1.50" OffPower="0.50" cadenceLow="50" cadenceHigh="60" cadenceResting="80">
+        <IntervalsT Repeat="4" OnDuration="30" OffDuration="90" OnPower="1.50" OffPower="0.50" cadenceLow="50" cadenceHigh="60">
             <textevent timeoffset="0" message="STAY SEATED. GO. Set 1. Maximal effort. 50-60rpm."/>
             <textevent timeoffset="15" message="Halfway. Keep driving. Seated."/>
             <textevent timeoffset="28" message="2 seconds. Do not stand."/>
@@ -28,7 +28,7 @@
             <textevent timeoffset="100" message="Find your gear for the next sprint."/>
         </IntervalsT>
 
-        <SteadyState Duration="1500" Power="0.55" cadence="85">
+        <SteadyState Duration="1500" Power="0.55">
             <textevent timeoffset="10" message="Set 1 complete. 25 minutes active rest. Do not skip or shorten."/>
             <textevent timeoffset="120" message="55% FTP, easy spinning. Flush out the lactate."/>
             <textevent timeoffset="600" message="10 minutes into rest. Knees okay after the first set?"/>
@@ -37,7 +37,7 @@
             <textevent timeoffset="1470" message="30 seconds. Get ready. Seated. Maximal."/>
         </SteadyState>
 
-        <IntervalsT Repeat="4" OnDuration="30" OffDuration="90" OnPower="1.50" OffPower="0.50" cadenceLow="50" cadenceHigh="60" cadenceResting="80">
+        <IntervalsT Repeat="4" OnDuration="30" OffDuration="90" OnPower="1.50" OffPower="0.50" cadenceLow="50" cadenceHigh="60">
             <textevent timeoffset="0" message="STAY SEATED. GO. Set 2. Maximal."/>
             <textevent timeoffset="15" message="Halfway. Drive it. Seated."/>
             <textevent timeoffset="28" message="2 seconds."/>
@@ -46,7 +46,7 @@
             <textevent timeoffset="100" message="Next sprint coming. Stay focused."/>
         </IntervalsT>
 
-        <SteadyState Duration="1500" Power="0.55" cadence="85">
+        <SteadyState Duration="1500" Power="0.55">
             <textevent timeoffset="10" message="Set 2 complete. 25 minutes active rest before the final set."/>
             <textevent timeoffset="120" message="This is the extra set compared to Week 7. Your body is now doing what the study's weeks 5-8 demanded."/>
             <textevent timeoffset="600" message="10 minutes. Knee check. The cumulative load from 8 sprints is already significant."/>
@@ -55,7 +55,7 @@
             <textevent timeoffset="1470" message="30 seconds. Everything you have left. Seated. Maximal."/>
         </SteadyState>
 
-        <IntervalsT Repeat="4" OnDuration="30" OffDuration="90" OnPower="1.50" OffPower="0.50" cadenceLow="50" cadenceHigh="60" cadenceResting="80">
+        <IntervalsT Repeat="4" OnDuration="30" OffDuration="90" OnPower="1.50" OffPower="0.50" cadenceLow="50" cadenceHigh="60">
             <textevent timeoffset="0" message="STAY SEATED. GO. Final set. Maximal effort."/>
             <textevent timeoffset="15" message="Halfway. Do not let up. Seated."/>
             <textevent timeoffset="28" message="2 seconds."/>
@@ -64,12 +64,12 @@
             <textevent timeoffset="100" message="Last sprint coming. Leave nothing."/>
         </IntervalsT>
 
-        <Cooldown Duration="900" PowerLow="0.75" PowerHigh="0.40" cadence="90">
+        <Cooldown Duration="900" PowerLow="0.75" PowerHigh="0.40">
             <textevent timeoffset="10" message="12 sprints done. Full study volume achieved."/>
             <textevent timeoffset="150" message="That third set is the progression that the study used in weeks 5-8. You have now matched their protocol."/>
             <textevent timeoffset="300" message="Knee check post-session. Note anything — even mild. The cumulative load from 12 sprints at 50-60rpm is the highest in this programme."/>
             <textevent timeoffset="480" message="Day 2 is next: 6 x 4min at 110% FTP, 60-70rpm. Also higher volume than Week 7. Rest properly before it."/>
-            <textevent timeoffset="840" message="Log this. Rest well."/>
+            <textevent timeoffset="840" message="Twelve maximal sprints at low cadence represents a large neuromuscular stimulus. Full recovery — not just between sets, but in the days after — is when the adaptation actually occurs."/>
         </Cooldown>
     </workout>
 </workout_file>

@@ -7,7 +7,7 @@
     <sportType>bike</sportType>
     <tags/>
     <workout>
-        <Warmup Duration="900" PowerLow="0.40" PowerHigh="0.75" cadence="90">
+        <Warmup Duration="900" PowerLow="0.40" PowerHigh="0.75">
             <textevent timeoffset="10" message="Week 8, Day 2. Volume progression: 6 intervals today instead of 4."/>
             <textevent timeoffset="150" message="The study increased HIIT volume from 4 reps (weeks 1-4) to 6 reps (weeks 5-8). This session matches the higher-volume phase."/>
             <textevent timeoffset="300" message="110% FTP at 60-70rpm. Same intensity as Week 7, but two extra intervals. The additional volume is where the study found its strongest results."/>
@@ -17,23 +17,23 @@
             <textevent timeoffset="840" message="Openers coming, then the main set."/>
         </Warmup>
 
-        <SteadyState Duration="30" Power="1.10" cadence="90">
+        <SteadyState Duration="30" Power="1.10">
             <textevent timeoffset="0" message="Opener 1 — normal cadence."/>
         </SteadyState>
-        <SteadyState Duration="120" Power="0.55" cadence="90">
+        <SteadyState Duration="120" Power="0.55">
             <textevent timeoffset="0" message="Easy spin. Second opener coming."/>
             <textevent timeoffset="90" message="How do the legs feel? Ready? Good."/>
         </SteadyState>
-        <SteadyState Duration="30" Power="1.10" cadence="90">
+        <SteadyState Duration="30" Power="1.10">
             <textevent timeoffset="0" message="Opener 2."/>
         </SteadyState>
-        <SteadyState Duration="120" Power="0.55" cadence="90">
+        <SteadyState Duration="120" Power="0.55">
             <textevent timeoffset="0" message="Last recovery before the main set. Find your gear. 60-70rpm at 110% FTP."/>
             <textevent timeoffset="60" message="30 seconds. First interval. STAY SEATED throughout. 110% FTP."/>
             <textevent timeoffset="90" message="High-torque intervals begin now. The study used 60-70 RPM — Zwift shows 65 as the target, but anywhere in that range is correct."/>
         </SteadyState>
 
-        <IntervalsT Repeat="6" OnDuration="240" OffDuration="480" OnPower="1.10" OffPower="0.50" cadenceLow="60" cadenceHigh="70" cadenceResting="85">
+        <IntervalsT Repeat="6" OnDuration="240" OffDuration="480" OnPower="1.10" OffPower="0.50" cadenceLow="60" cadenceHigh="70">
             <textevent timeoffset="0" message="STAY SEATED. 60-70 RPM — aim for 65. 110% FTP. GO."/>
             <textevent timeoffset="20" message="Legs AND lungs working simultaneously. This is supposed to be hard."/>
             <textevent timeoffset="60" message="1 minute in. The high muscular force at this power and cadence recruits both slow and fast-twitch fibers."/>
@@ -47,12 +47,12 @@
             <textevent timeoffset="450" message="Next interval coming. Same: seated, 60-70rpm, 110% FTP."/>
         </IntervalsT>
 
-        <Cooldown Duration="900" PowerLow="0.75" PowerHigh="0.40" cadence="90">
+        <Cooldown Duration="900" PowerLow="0.75" PowerHigh="0.40">
             <textevent timeoffset="10" message="Week 8 Day 2 complete. Six VO2max intervals at low cadence — full study volume."/>
             <textevent timeoffset="150" message="You have now done the complete Hebisz &amp; Hebisz (2024) protocol at its highest volume. Well done."/>
             <textevent timeoffset="360" message="Day 3 is a long easy ride at normal cadence. Day 4 is active recovery."/>
             <textevent timeoffset="540" message="After this week, the 8-week block is complete. Move to the library sessions: 2 low-cadence sessions per week for continued gains."/>
-            <textevent timeoffset="720" message="Log this session. Note knee feedback. The block is done."/>
+            <textevent timeoffset="720" message="Eight weeks of progressive low-cadence training complete. The study measured a 8.7% VO2max improvement in the low-cadence group — nearly double the 4.6% in the normal-cadence group. Same hours, same structure, only the cadence differed."/>
         </Cooldown>
     </workout>
 </workout_file>

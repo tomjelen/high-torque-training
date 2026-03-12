@@ -7,7 +7,7 @@
     <sportType>bike</sportType>
     <tags/>
     <workout>
-        <Warmup Duration="900" PowerLow="0.40" PowerHigh="0.68" cadence="90">
+        <Warmup Duration="900" PowerLow="0.40" PowerHigh="0.68">
             <textevent timeoffset="10" message="Final endurance session of Phase 2. Three blocks today instead of two. Zone 2, 62-65rpm."/>
             <textevent timeoffset="240" message="45 minutes total of low-cadence endurance work today. This is the highest endurance volume so far."/>
             <textevent timeoffset="420" message="SEATED RULE: All three blocks, start to finish, seated. Zone 2 is easy enough that standing is never justified."/>
@@ -24,7 +24,7 @@
             <textevent timeoffset="870" message="30 seconds."/>
         </SteadyState>
 
-        <SteadyState Duration="300" Power="0.50" cadence="85">
+        <SteadyState Duration="300" Power="0.50">
             <textevent timeoffset="0" message="5-minute recovery. Spin up."/>
             <textevent timeoffset="120" message="The 2024 PLOS One study was published in November 2024. It is one of the most specific and well-designed studies on low-cadence training to date — but it is one study with 24 participants. More research is needed."/>
             <textevent timeoffset="240" message="Second block in 60 seconds."/>
@@ -39,7 +39,7 @@
             <textevent timeoffset="870" message="30 seconds."/>
         </SteadyState>
 
-        <SteadyState Duration="300" Power="0.50" cadence="85">
+        <SteadyState Duration="300" Power="0.50">
             <textevent timeoffset="0" message="Final recovery. Last block coming."/>
             <textevent timeoffset="120" message="After this session, Phase 2 is complete. Phase 3 is the full study protocol — sprint intervals and VO2max efforts at low cadence."/>
             <textevent timeoffset="240" message="Third and final block in 60 seconds."/>
@@ -54,11 +54,11 @@
             <textevent timeoffset="870" message="30 seconds. Last effort. Stay seated."/>
         </SteadyState>
 
-        <Cooldown Duration="600" PowerLow="0.68" PowerHigh="0.40" cadence="90">
+        <Cooldown Duration="600" PowerLow="0.68" PowerHigh="0.40">
             <textevent timeoffset="10" message="Phase 2 complete. Six weeks of progressive low-cadence work in the bank."/>
             <textevent timeoffset="180" message="Before starting Phase 3: honestly assess your knees. Fine throughout? Proceed. Any residual discomfort? Rest an extra week."/>
             <textevent timeoffset="360" message="Phase 3 is two sessions per microcycle: Day 1 sprints, Day 2 VO2max intervals. Both are significantly harder than anything in Phase 2."/>
-            <textevent timeoffset="480" message="Log this session and your Phase 2 summary."/>
+            <textevent timeoffset="480" message="EF Pro Cycling coach Peter Schep uses progressive torque work with his riders. The principle is the same at every level: start conservative, earn the right to progress, and never skip the adaptation work."/>
         </Cooldown>
     </workout>
 </workout_file>

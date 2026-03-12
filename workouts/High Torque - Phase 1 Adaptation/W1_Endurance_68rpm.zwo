@@ -7,14 +7,14 @@
     <sportType>bike</sportType>
     <tags/>
     <workout>
-        <Warmup Duration="900" PowerLow="0.40" PowerHigh="0.68" cadence="90">
+        <Warmup Duration="900" PowerLow="0.40" PowerHigh="0.68">
             <textevent timeoffset="10" message="Warmup at normal cadence. Enjoy the 90rpm while it lasts."/>
             <textevent timeoffset="120" message="WHY LOW CADENCE? At the same power, pedaling slower forces each leg contraction to produce far more force per stroke."/>
             <textevent timeoffset="240" message="A 2024 study (PLOS One) found that adding low-cadence intervals boosted VO2max by 8.7% vs 4.6% for the normal-cadence group."/>
             <textevent timeoffset="360" message="Same training hours. Same sessions. Only the cadence differed. The low-cadence group improved nearly twice as much."/>
-            <textevent timeoffset="480" message="Today is Week 1 — adaptation only. Zone 2 power, 68rpm. No heroics."/>
+            <textevent timeoffset="480" message="Today is Week 1 — adaptation only. Zone 2 power, 65-70rpm. No heroics."/>
             <textevent timeoffset="600" message="KNEE AWARENESS: Low cadence increases the load through your kneecap with every stroke. Note how your knees feel today."/>
-            <textevent timeoffset="750" message="First interval in 2 minutes. Shift into a harder gear than usual. Target: 68rpm."/>
+            <textevent timeoffset="750" message="First interval in 2 minutes. Shift into a harder gear than usual. Target: 65-70rpm."/>
             <textevent timeoffset="840" message="STAY SEATED throughout. Standing offloads the force to your bodyweight and kills the training stimulus."/>
         </Warmup>
 
@@ -28,10 +28,10 @@
             <textevent timeoffset="570" message="30 seconds left. You will recover at normal cadence next."/>
         </SteadyState>
 
-        <SteadyState Duration="300" Power="0.50" cadence="85">
+        <SteadyState Duration="300" Power="0.50">
             <textevent timeoffset="0" message="Recovery. Spin up to normal cadence. Shake out the legs."/>
             <textevent timeoffset="60" message="The 2024 study participants were trained female cyclists aged 17-20 doing 10+ hours per week. Results may vary for recreational athletes — but the mechanism is sound."/>
-            <textevent timeoffset="180" message="Second interval coming in 2 minutes. Same deal: seated, 68rpm, Zone 2."/>
+            <textevent timeoffset="180" message="Second interval coming in 2 minutes. Same deal: seated, 65-70rpm, Zone 2."/>
             <textevent timeoffset="255" message="Find your gear now. Do not wait until the interval starts."/>
         </SteadyState>
 
@@ -44,9 +44,9 @@
             <textevent timeoffset="570" message="30 seconds. You are done after this. Good first session."/>
         </SteadyState>
 
-        <Cooldown Duration="600" PowerLow="0.68" PowerHigh="0.40" cadence="90">
+        <Cooldown Duration="600" PowerLow="0.68" PowerHigh="0.40">
             <textevent timeoffset="10" message="Cooldown. Back to normal cadence. How did the knees feel?"/>
-            <textevent timeoffset="120" message="Note anything in the calendar: knee feedback, whether 68rpm felt achievable, how the legs responded."/>
+            <textevent timeoffset="120" message="Neal Henderson (coach to Rohan Dennis, Taylor Phinney): 'Generally I do about one of these sessions a week, at most two.' The musculoskeletal load is real — respect the recovery."/>
             <textevent timeoffset="300" message="Next session (W2) adds 5 more minutes per interval and drops to 65rpm. Small steps."/>
             <textevent timeoffset="480" message="Well done. One session in the bank."/>
         </Cooldown>

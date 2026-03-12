@@ -7,7 +7,7 @@
     <sportType>bike</sportType>
     <tags/>
     <workout>
-        <Warmup Duration="900" PowerLow="0.40" PowerHigh="0.75" cadence="90">
+        <Warmup Duration="900" PowerLow="0.40" PowerHigh="0.75">
             <textevent timeoffset="10" message="Phase 3, Day 2. VO2max intervals. The hardest session in this programme."/>
             <textevent timeoffset="150" message="110% FTP at 60-70rpm. This is above threshold — you will be breathing hard. AND your legs will be working harder than a normal VO2max interval because of the low cadence."/>
             <textevent timeoffset="300" message="The study used 90-100% of maximal aerobic power (Pmax). For most trained cyclists, Pmax sits at roughly 110-120% of FTP. 110% FTP is the conservative end of that range."/>
@@ -17,23 +17,23 @@
             <textevent timeoffset="840" message="Openers coming: two short efforts at normal cadence to prime the system. Then the main intervals."/>
         </Warmup>
 
-        <SteadyState Duration="30" Power="1.10" cadence="90">
+        <SteadyState Duration="30" Power="1.10">
             <textevent timeoffset="0" message="Opener 1 — normal cadence. Wake the system up."/>
         </SteadyState>
-        <SteadyState Duration="120" Power="0.55" cadence="90">
+        <SteadyState Duration="120" Power="0.55">
             <textevent timeoffset="0" message="Easy spin. Second opener coming."/>
             <textevent timeoffset="90" message="How do the legs feel? Ready? Good."/>
         </SteadyState>
-        <SteadyState Duration="30" Power="1.10" cadence="90">
+        <SteadyState Duration="30" Power="1.10">
             <textevent timeoffset="0" message="Opener 2."/>
         </SteadyState>
-        <SteadyState Duration="120" Power="0.55" cadence="90">
+        <SteadyState Duration="120" Power="0.55">
             <textevent timeoffset="0" message="Last recovery before the main set. Find your gear. 60-70rpm at 110% FTP needs a harder gear than normal VO2max work."/>
             <textevent timeoffset="60" message="30 seconds. First interval. STAY SEATED throughout. 110% FTP."/>
             <textevent timeoffset="90" message="High-torque intervals begin now. The study used 60-70 RPM — aim for anywhere in that range."/>
         </SteadyState>
 
-        <IntervalsT Repeat="4" OnDuration="240" OffDuration="480" OnPower="1.10" OffPower="0.50" cadenceLow="60" cadenceHigh="70" cadenceResting="85">
+        <IntervalsT Repeat="4" OnDuration="240" OffDuration="480" OnPower="1.10" OffPower="0.50" cadenceLow="60" cadenceHigh="70">
             <textevent timeoffset="0" message="STAY SEATED. 60-70 RPM — aim for 65. 110% FTP. GO."/>
             <textevent timeoffset="20" message="This is supposed to be hard. Legs AND lungs working simultaneously."/>
             <textevent timeoffset="60" message="1 minute in. The leg fatigue at this power and cadence is the whole point. This is what drove the 8.7% VO2max improvement in the study."/>
@@ -47,12 +47,12 @@
             <textevent timeoffset="450" message="Next interval coming. Same: seated, 60-70rpm, 110% FTP."/>
         </IntervalsT>
 
-        <Cooldown Duration="900" PowerLow="0.75" PowerHigh="0.40" cadence="90">
+        <Cooldown Duration="900" PowerLow="0.75" PowerHigh="0.40">
             <textevent timeoffset="10" message="Phase 3 Day 2 complete. That was the full study protocol HIIT session."/>
             <textevent timeoffset="150" message="You have now done exactly what the low-cadence group in the 2024 PLOS One study did. The combination of high torque and high power is the key mechanism."/>
             <textevent timeoffset="360" message="Day 3 is a long easy ride at normal cadence. Day 4 is active recovery. Then the cycle repeats for Week 8."/>
             <textevent timeoffset="540" message="Knee check: how do they feel now, post-effort? Anything that lingers should be noted and not ignored."/>
-            <textevent timeoffset="720" message="Log this session. Be honest about how it felt. The notes will matter when reviewing whether to extend this block or move to maintenance."/>
+            <textevent timeoffset="720" message="The study found that moving from VT1 intensity up to VO2max nearly doubles the percentage of maximum dynamic force on the pedals. Combining that force with low cadence is what makes this protocol unique."/>
         </Cooldown>
     </workout>
 </workout_file>

@@ -7,7 +7,7 @@
     <sportType>bike</sportType>
     <tags/>
     <workout>
-        <Warmup Duration="900" PowerLow="0.40" PowerHigh="0.68" cadence="90">
+        <Warmup Duration="900" PowerLow="0.40" PowerHigh="0.68">
             <textevent timeoffset="10" message="This is the endurance companion to this week's HIIT session. Easier intensity, but more total time at low cadence."/>
             <textevent timeoffset="180" message="Two 20-minute blocks at 65-70rpm and Zone 2. Think of this as base-building with a torque twist."/>
             <textevent timeoffset="360" message="The study used a polarized model: hard sessions genuinely hard, easy sessions genuinely easy. This is the easy session. Keep it there."/>
@@ -28,7 +28,7 @@
             <textevent timeoffset="1170" message="30 seconds. Short recovery coming."/>
         </SteadyState>
 
-        <SteadyState Duration="300" Power="0.50" cadence="85">
+        <SteadyState Duration="300" Power="0.50">
             <textevent timeoffset="0" message="Recovery. 5 minutes. Spin up to normal cadence."/>
             <textevent timeoffset="90" message="The study's low-cadence group trained at 50-70rpm across all high-intensity sessions. The finding was so consistent that both VO2max and maximal power improved significantly more."/>
             <textevent timeoffset="240" message="Second block in 60 seconds. Same: 65-70rpm, Zone 2, seated."/>
@@ -44,11 +44,11 @@
             <textevent timeoffset="1170" message="30 seconds. Finish seated."/>
         </SteadyState>
 
-        <Cooldown Duration="600" PowerLow="0.68" PowerHigh="0.40" cadence="90">
+        <Cooldown Duration="600" PowerLow="0.68" PowerHigh="0.40">
             <textevent timeoffset="10" message="Done. Two sessions this week with low cadence. Spin easy."/>
             <textevent timeoffset="180" message="Week 5 progresses: HIIT goes to 88% FTP at 60rpm. Four intervals instead of three."/>
             <textevent timeoffset="360" message="How do your knees feel after this week? That is the key question before stepping up."/>
-            <textevent timeoffset="480" message="Log the session."/>
+            <textevent timeoffset="480" message="The study's polarized model kept easy days genuinely easy. Do not add intensity to endurance sessions — the hard work belongs in the HIIT slot."/>
         </Cooldown>
     </workout>
 </workout_file>

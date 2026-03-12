@@ -7,7 +7,7 @@
     <sportType>bike</sportType>
     <tags/>
     <workout>
-        <Warmup Duration="900" PowerLow="0.40" PowerHigh="0.75" cadence="90">
+        <Warmup Duration="900" PowerLow="0.40" PowerHigh="0.75">
             <textevent timeoffset="10" message="Final build session. 90% FTP, 58-60rpm. Four intervals. This is the hardest HIIT session of Phase 2."/>
             <textevent timeoffset="150" message="After this week, Phase 3 introduces sprint intervals and VO2max-level efforts at 110% FTP. Today is the last step up before that."/>
             <textevent timeoffset="300" message="If this session feels manageable — legs worked, lungs challenged, knees fine — you are ready for Phase 3."/>
@@ -17,10 +17,10 @@
             <textevent timeoffset="840" message="Four intervals coming. Find your gear. 58-60rpm at 90% FTP."/>
         </Warmup>
 
-        <IntervalsT Repeat="4" OnDuration="240" OffDuration="480" OnPower="0.90" OffPower="0.50" cadenceLow="58" cadenceHigh="60" cadenceResting="85">
+        <IntervalsT Repeat="4" OnDuration="240" OffDuration="480" OnPower="0.90" OffPower="0.50" cadenceLow="58" cadenceHigh="60">
             <textevent timeoffset="0" message="STAY SEATED. 58-60rpm. 90% FTP. This is threshold-adjacent with high torque."/>
             <textevent timeoffset="15" message="Find the gear. 58-60rpm. You will feel it in your quads within 30 seconds."/>
-            <textevent timeoffset="60" message="90% FTP is hard enough that breathing becomes noticeable. 59rpm means the legs are working harder than the breathing suggests."/>
+            <textevent timeoffset="60" message="90% FTP is hard enough that breathing becomes noticeable. 58-60rpm means the legs are working harder than the breathing suggests."/>
             <textevent timeoffset="120" message="2 minutes in. Halfway. Hold the cadence. Do not chase easier gears."/>
             <textevent timeoffset="180" message="Last minute. This is the hardest part — staying seated and on cadence when everything wants to give."/>
             <textevent timeoffset="210" message="30 seconds. Hold it."/>
@@ -31,12 +31,12 @@
             <textevent timeoffset="450" message="Next interval coming. Same again. Find your gear. Stay seated."/>
         </IntervalsT>
 
-        <Cooldown Duration="900" PowerLow="0.75" PowerHigh="0.40" cadence="90">
+        <Cooldown Duration="900" PowerLow="0.75" PowerHigh="0.40">
             <textevent timeoffset="10" message="Phase 2 HIIT complete. That was the hardest session so far."/>
-            <textevent timeoffset="150" message="Phase 3 introduces Day 1: sprint intervals — 8 x 30 seconds maximal effort at 55rpm with 25-minute rest between two sets."/>
-            <textevent timeoffset="360" message="And Day 2: VO2max intervals — 4 x 4 minutes at 110% FTP and 65rpm. Significantly harder than today."/>
+            <textevent timeoffset="150" message="Phase 3 introduces Day 1: sprint intervals — 8 x 30 seconds maximal effort at 50-60rpm with 25-minute rest between two sets."/>
+            <textevent timeoffset="360" message="And Day 2: VO2max intervals — 4 x 4 minutes at 110% FTP and 60-70rpm. Significantly harder than today."/>
             <textevent timeoffset="540" message="Only proceed to Phase 3 if your knees have been consistently fine. There is no prize for rushing."/>
-            <textevent timeoffset="720" message="Log this session. Honest notes on how it felt."/>
+            <textevent timeoffset="720" message="The Hebisz &amp; Hebisz study found the low-cadence group also improved their first ventilatory threshold (VT1) — the point where breathing first becomes noticeably harder. Both intensity and endurance markers shifted."/>
         </Cooldown>
     </workout>
 </workout_file>
