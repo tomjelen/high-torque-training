@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workout_file>
+    <author>Tom Jelen</author>
+    <name>HT Endurance Long 63rpm</name>
+    <activitySaveName>High Torque Tier 1: Endurance Long - 3x15min 60-65 RPM</activitySaveName>
+    <description>Three 15-minute Zone 2 blocks at 60-65 rpm with 5-minute recovery between. The longest endurance session in Tier 1. 45 minutes of total low-cadence work. Seated throughout.</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.40" PowerHigh="0.65">
+            <textevent timeoffset="10" message="Endurance long session. Three 15-minute blocks at Zone 2 and 60-65rpm."/>
+            <textevent timeoffset="120" message="45 minutes of total low-cadence endurance work today. This is the highest volume Tier 1 session."/>
+            <textevent timeoffset="300" message="SEATED RULE: All three blocks, start to finish, seated. Zone 2 is easy enough that standing is never justified."/>
+            <textevent timeoffset="480" message="Research context: the study's low-intensity endurance sessions were done at the first ventilatory threshold (VT1). Zone 2 is roughly equivalent for most trained cyclists."/>
+        </Warmup>
+
+        <IntervalsT Repeat="3" OnDuration="900" OffDuration="300" OnPower="0.65" OffPower="0.50" Cadence="62">
+            <textevent timeoffset="0" message="STAY SEATED. 60-65rpm. Zone 2. 15 minutes."/>
+            <textevent timeoffset="120" message="The slow cadence should feel natural now after the adaptation block. That adaptation is real."/>
+            <textevent timeoffset="300" message="5 minutes in. Still comfortable. Knees fine. Good."/>
+            <textevent timeoffset="540" message="9 minutes. More than halfway through this block."/>
+            <textevent timeoffset="750" message="2.5 minutes left. Easy finish."/>
+            <textevent timeoffset="870" message="30 seconds."/>
+            <textevent timeoffset="902" message="5-minute recovery. Spin up to normal cadence."/>
+            <textevent timeoffset="960" message="Knee check. Fine? Good. The endurance sessions carry lower risk than the intensity work."/>
+            <textevent timeoffset="1100" message="Next block coming. Same: 60-65rpm, Zone 2, seated. Find your gear."/>
+        </IntervalsT>
+
+        <Cooldown Duration="600" PowerLow="0.50" PowerHigh="0.40">
+            <textevent timeoffset="10" message="Done. Three 15-minute torque endurance blocks."/>
+            <textevent timeoffset="180" message="One thing the study did NOT measure: knee health or injury rates. The absence of data here is a gap. Monitor your own knees carefully — you are the data point the research is missing."/>
+            <textevent timeoffset="360" message="The overall study group (both cadence groups combined) improved VO2max by 6.8% and maximal power by 5.6% over 8 weeks. Both groups improved. Low cadence just improved more."/>
+            <textevent timeoffset="480" message="If you have had any patellofemoral pain in your cycling history, low-cadence training carries elevated risk. Be extra careful."/>
+        </Cooldown>
+    </workout>
+</workout_file>

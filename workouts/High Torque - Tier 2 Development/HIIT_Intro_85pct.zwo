@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workout_file>
     <author>Tom Jelen</author>
-    <name>W4A – High Torque HIIT</name>
-    <activitySaveName>High Torque Build - Phase 2: W4A – 3×4min HIIT 60-65 RPM</activitySaveName>
-    <description>Week 4, Session A. First session combining low cadence with real intensity. Three 4-minute intervals at 85% FTP and 60-65 rpm, with 8-minute recovery between each. Seated throughout.</description>
+    <name>HT HIIT Intro 85%</name>
+    <activitySaveName>High Torque Tier 2: HIIT Intro - 3x4min 85% FTP 60-65 RPM</activitySaveName>
+    <description>First session combining low cadence with real intensity. Three 4-minute intervals at 85% FTP and 60-65 rpm, with 8-minute recovery between each. Seated throughout.</description>
     <sportType>bike</sportType>
     <tags/>
     <workout>
         <Warmup Duration="900" PowerLow="0.40" PowerHigh="0.72">
-            <textevent timeoffset="10" message="Phase 2 begins. Today you combine low cadence with actual intensity for the first time."/>
+            <textevent timeoffset="10" message="First HIIT session at low cadence. Today you combine low cadence with actual intensity."/>
             <textevent timeoffset="120" message="Three intervals: 4 minutes each, 85% FTP, 60-65rpm. 8-minute recovery between each. This 8-minute rest is deliberately long — you should feel recovered before every effort."/>
             <textevent timeoffset="270" message="WHY 8-MINUTE RECOVERY? The study protocol used long recoveries specifically to allow quality on each interval. Do not rush them."/>
             <textevent timeoffset="420" message="At 85% FTP and 60-65rpm, your legs will feel this much more than a normal 85% FTP interval. The torque load is significantly higher."/>
@@ -17,7 +17,7 @@
             <textevent timeoffset="840" message="Interval in 1 minute. Find your gear now. 60-65rpm at 85% FTP needs a harder gear than you think."/>
         </Warmup>
 
-        <IntervalsT Repeat="3" OnDuration="240" OffDuration="480" OnPower="0.85" OffPower="0.50" cadenceLow="60" cadenceHigh="65">
+        <IntervalsT Repeat="3" OnDuration="240" OffDuration="480" OnPower="0.85" OffPower="0.50" Cadence="62">
             <textevent timeoffset="0" message="STAY SEATED. 60-65rpm. This will feel hard in your legs immediately."/>
             <textevent timeoffset="20" message="Cadence still high? Shift to a harder gear now."/>
             <textevent timeoffset="60" message="This combination — high force, aerobic intensity — recruits fast-twitch fibers that Zone 2 work never touches."/>
@@ -26,15 +26,15 @@
             <textevent timeoffset="220" message="20 seconds. Stay seated to the end."/>
             <textevent timeoffset="242" message="Recovery. Spin up. 8 minutes — use them fully."/>
             <textevent timeoffset="280" message="The study's low-cadence group improved VO2max by 8.7%. The normal-cadence group: 4.6%. Same hours, same structure, only the cadence differed."/>
-            <textevent timeoffset="420" message="Knees feeling okay? Take note. This is the most important thing to monitor during Phase 2."/>
+            <textevent timeoffset="420" message="Knees feeling okay? Take note. This is the most important thing to monitor during intensity sessions."/>
             <textevent timeoffset="440" message="Next interval coming up. Find your gear. Stay seated."/>
         </IntervalsT>
 
-        <Cooldown Duration="900" PowerLow="0.72" PowerHigh="0.40">
-            <textevent timeoffset="10" message="First HIIT low-cadence session done. How did that compare to the Phase 1 endurance work?"/>
+        <Cooldown Duration="900" PowerLow="0.50" PowerHigh="0.40">
+            <textevent timeoffset="10" message="First HIIT low-cadence session done. How did that feel compared to the endurance work?"/>
             <textevent timeoffset="150" message="The leg fatigue from this is different from a normal 85% FTP session. That is the torque component working."/>
-            <textevent timeoffset="300" message="Next session this week: W4B — endurance low-cadence. Zone 2, 65-70rpm. Much easier, but still seated."/>
-            <textevent timeoffset="480" message="Do not do W4B tomorrow. At least one day between the two low-cadence sessions."/>
+            <textevent timeoffset="300" message="Do not schedule another low-cadence session tomorrow. At least one day between the two low-cadence sessions."/>
+            <textevent timeoffset="480" message="Once you are comfortable with this session, the Tier 2 workouts increase power to 88-90% FTP."/>
             <textevent timeoffset="720" message="Neal Henderson has never programmed back-to-back big gear sessions in his athletes' plans. The musculoskeletal load needs time to dissipate — always separate low-cadence days."/>
         </Cooldown>
     </workout>

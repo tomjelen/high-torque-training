@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workout_file>
     <author>Tom Jelen</author>
-    <name>Pyramid Torque</name>
-    <activitySaveName>High Torque Library: Pyramid – 2-4-6-4-2min 88% FTP 60 RPM</activitySaveName>
-    <description>Pyramid session at sweet spot intensity and 60 rpm. Intervals build from 2 to 6 minutes then back down: 2-4-6-4-2. Gives variety in interval length, with the long middle block as the centrepiece. 88% FTP throughout. Good weekly staple once the adaptation block is done. Seated throughout.</description>
+    <name>HT Pyramid 88%</name>
+    <activitySaveName>High Torque Tier 2: Pyramid - 2-4-6-4-2min 88% FTP 60 RPM</activitySaveName>
+    <description>Pyramid session at sweet spot intensity and 60 rpm. Intervals build from 2 to 6 minutes then back down: 2-4-6-4-2. Gives variety in interval length, with the long middle block as the centrepiece. 88% FTP throughout. Seated throughout.</description>
     <sportType>bike</sportType>
     <tags/>
     <workout>
@@ -17,7 +17,7 @@
         </Warmup>
 
         <!-- 2 min -->
-        <SteadyState Duration="120" Power="0.88" cadenceLow="57" cadenceHigh="63">
+        <SteadyState Duration="120" Power="0.88" Cadence="60">
             <textevent timeoffset="0" message="STAY SEATED. 60rpm. 88% FTP. Short one — 2 minutes."/>
             <textevent timeoffset="60" message="Halfway. Settle into the cadence. Next interval is double the length."/>
             <textevent timeoffset="110" message="10 seconds. Good."/>
@@ -29,7 +29,7 @@
         </SteadyState>
 
         <!-- 4 min -->
-        <SteadyState Duration="240" Power="0.88" cadenceLow="57" cadenceHigh="63">
+        <SteadyState Duration="240" Power="0.88" Cadence="60">
             <textevent timeoffset="0" message="STAY SEATED. 60rpm. 88% FTP. 4 minutes."/>
             <textevent timeoffset="60" message="1 minute in. The legs should be starting to feel this now."/>
             <textevent timeoffset="120" message="Halfway. At 60rpm and 88% FTP you are producing roughly double the force per stroke compared to normal cadence at the same power."/>
@@ -42,7 +42,7 @@
         </SteadyState>
 
         <!-- 6 min -->
-        <SteadyState Duration="360" Power="0.88" cadenceLow="57" cadenceHigh="63">
+        <SteadyState Duration="360" Power="0.88" Cadence="60">
             <textevent timeoffset="0" message="STAY SEATED. 60rpm. 88% FTP. 6 minutes — the hardest block."/>
             <textevent timeoffset="60" message="1 minute in. Settle."/>
             <textevent timeoffset="120" message="2 minutes. Legs working hard. Breathing elevated. This is correct."/>
@@ -59,7 +59,7 @@
         </SteadyState>
 
         <!-- 4 min -->
-        <SteadyState Duration="240" Power="0.88" cadenceLow="57" cadenceHigh="63">
+        <SteadyState Duration="240" Power="0.88" Cadence="60">
             <textevent timeoffset="0" message="STAY SEATED. 60rpm. 88% FTP. Back down to 4 minutes."/>
             <textevent timeoffset="60" message="Legs are more fatigued than the first 4-minute block. That is fine — the power and cadence targets stay the same."/>
             <textevent timeoffset="150" message="2.5 minutes. Nearly done."/>
@@ -72,16 +72,16 @@
         </SteadyState>
 
         <!-- 2 min -->
-        <SteadyState Duration="120" Power="0.88" cadenceLow="57" cadenceHigh="63">
+        <SteadyState Duration="120" Power="0.88" Cadence="60">
             <textevent timeoffset="0" message="STAY SEATED. Final interval. 60rpm. 88% FTP."/>
             <textevent timeoffset="60" message="1 minute left. Everything you have."/>
             <textevent timeoffset="110" message="10 seconds."/>
         </SteadyState>
 
-        <Cooldown Duration="900" PowerLow="0.75" PowerHigh="0.40">
+        <Cooldown Duration="900" PowerLow="0.88" PowerHigh="0.40">
             <textevent timeoffset="10" message="Done. 2-4-6-4-2 complete. Spin easy."/>
             <textevent timeoffset="180" message="18 minutes of total sweet spot work at 60rpm. That is a solid session."/>
-            <textevent timeoffset="420" message="The pyramid format is a good weekly rotation with the straight 3x12 sweet spot session. Same total stimulus, different feel."/>
+            <textevent timeoffset="420" message="The pyramid format is a good rotation with the straight interval sessions. Same total stimulus, different feel."/>
             <textevent timeoffset="720" message="Variety in interval length prevents neural staleness. The pyramid format achieves the same total work as straight intervals but keeps the brain engaged — useful when grinding at low cadence for 18 minutes."/>
         </Cooldown>
     </workout>

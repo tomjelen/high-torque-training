@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workout_file>
     <author>Tom Jelen</author>
-    <name>Over-Under Torque</name>
-    <activitySaveName>High Torque Library: Over-Under – 3 blocks 95/78% FTP 60 RPM</activitySaveName>
+    <name>HT Over-Under Torque</name>
+    <activitySaveName>High Torque Tier 3: Over-Under - 3 blocks 95/78% FTP 60 RPM</activitySaveName>
     <description>Over-under session at 60 rpm. Three blocks of 4 x (2 min at 95% FTP / 1 min at 78% FTP). Alternating just above and just below threshold while holding low cadence. Trains the ability to push through lactate accumulation without backing off cadence. 5-minute recovery between blocks. Seated throughout.</description>
     <sportType>bike</sportType>
     <tags/>
@@ -17,7 +17,7 @@
         </Warmup>
 
         <!-- Block 1: 4 x (2min over / 1min under) -->
-        <IntervalsT Repeat="4" OnDuration="120" OffDuration="60" OnPower="0.95" OffPower="0.78" cadenceLow="57" cadenceHigh="63" cadenceResting="60">
+        <IntervalsT Repeat="4" OnDuration="120" OffDuration="60" OnPower="0.95" OffPower="0.78" Cadence="60">
             <textevent timeoffset="0" message="STAY SEATED. OVER. 95% FTP. 60rpm. 2 minutes."/>
             <textevent timeoffset="60" message="1 minute. Hold power. Hold cadence. Do not stand."/>
             <textevent timeoffset="110" message="10 seconds. Under phase next."/>
@@ -33,7 +33,7 @@
         </SteadyState>
 
         <!-- Block 2 -->
-        <IntervalsT Repeat="4" OnDuration="120" OffDuration="60" OnPower="0.95" OffPower="0.78" cadenceLow="57" cadenceHigh="63" cadenceResting="60">
+        <IntervalsT Repeat="4" OnDuration="120" OffDuration="60" OnPower="0.95" OffPower="0.78" Cadence="60">
             <textevent timeoffset="0" message="STAY SEATED. OVER. 95% FTP. 60rpm."/>
             <textevent timeoffset="60" message="Halfway through the over phase. Legs will feel more loaded than Block 1. That is expected."/>
             <textevent timeoffset="110" message="10 seconds."/>
@@ -49,7 +49,7 @@
         </SteadyState>
 
         <!-- Block 3 -->
-        <IntervalsT Repeat="4" OnDuration="120" OffDuration="60" OnPower="0.95" OffPower="0.78" cadenceLow="57" cadenceHigh="63" cadenceResting="60">
+        <IntervalsT Repeat="4" OnDuration="120" OffDuration="60" OnPower="0.95" OffPower="0.78" Cadence="60">
             <textevent timeoffset="0" message="STAY SEATED. Final block. OVER. 95% FTP. 60rpm."/>
             <textevent timeoffset="60" message="Halfway. Legs should be genuinely fatigued now. Hold the cadence — this is exactly the condition the muscles need to adapt to."/>
             <textevent timeoffset="110" message="10 seconds."/>
@@ -57,11 +57,11 @@
             <textevent timeoffset="160" message="Last over phase. Everything you have left."/>
         </IntervalsT>
 
-        <Cooldown Duration="900" PowerLow="0.75" PowerHigh="0.40">
+        <Cooldown Duration="900" PowerLow="0.78" PowerHigh="0.40">
             <textevent timeoffset="10" message="Over-under session complete. That is a hard session."/>
             <textevent timeoffset="180" message="Three blocks, 12 minutes each of over-under work at 60rpm. Legs will know about this tomorrow."/>
-            <textevent timeoffset="420" message="This session pairs well with the Sweet Spot Torque or Pyramid as a harder alternative for weeks when you want more intensity."/>
-            <textevent timeoffset="660" message="Over-unders at low cadence stress the patellofemoral joint more than steady-state work due to repeated intensity spikes. If your knees feel fine after this session, they are handling the programme well."/>
+            <textevent timeoffset="420" message="This session pairs well with the Sweet Spot Torque or Pyramid as an alternative for weeks when you want more intensity variation."/>
+            <textevent timeoffset="660" message="Over-unders at low cadence stress the patellofemoral joint more than steady-state work due to repeated intensity spikes. If your knees feel fine after this session, they are handling the training well."/>
         </Cooldown>
     </workout>
 </workout_file>

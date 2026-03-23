@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workout_file>
+    <author>Tom Jelen</author>
+    <name>HT Rüegg VO2max Sprint</name>
+    <activitySaveName>High Torque Tier 3: Rüegg - 3x(5min VO2max + sprint) 50-60 RPM</activitySaveName>
+    <description>Adapted from the Rüegg et al. (2023) sprint-to-VO2max protocol. Three sets of: 5 min at 110% FTP (50-60 rpm) followed by a 1-min sprint at 150% FTP, then 10-min recovery. Combines sustained VO2max effort with maximal sprint bursts. The most complex session in Tier 3. Seated for the VO2max blocks; sprint cadence is unconstrained. Elevated injury risk.</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="1200" PowerLow="0.40" PowerHigh="0.75">
+            <textevent timeoffset="10" message="Rüegg protocol adaptation. Three sets of VO2max work followed by a maximal sprint burst. This is the most complex session in Tier 3."/>
+            <textevent timeoffset="150" message="Each set: 5 minutes at 110% FTP and 50-60rpm, then a 1-minute sprint at 150% FTP. 10-minute recovery between sets."/>
+            <textevent timeoffset="330" message="The Rüegg et al. (2023) study combined heavy-resistance cycling with sprint training. We adapt the principle: sustained high-torque VO2max work immediately followed by maximal effort."/>
+            <textevent timeoffset="510" message="SEATED for the 5-minute VO2max blocks. The sprint can be seated or standing — cadence is unconstrained during the sprint."/>
+            <textevent timeoffset="690" message="KNEE WARNING: This session combines sustained high-torque load with explosive sprint effort. Elevated injury risk. Only attempt if Tier 2 sessions have been consistently comfortable."/>
+            <textevent timeoffset="900" message="The 10-minute recovery between sets is essential. The combination of VO2max and sprint work requires full recovery for quality."/>
+            <textevent timeoffset="1080" message="First set in 2 minutes. Find your gear for 50-60rpm at 110% FTP. Hard gear."/>
+            <textevent timeoffset="1140" message="STAY SEATED for the 5-minute block. Sprint cadence is your choice."/>
+        </Warmup>
+
+        <!-- Set 1 -->
+        <SteadyState Duration="300" Power="1.10" Cadence="55">
+            <textevent timeoffset="0" message="STAY SEATED. 50-60rpm. 110% FTP. 5 minutes."/>
+            <textevent timeoffset="30" message="This is hard from the start. 50-60rpm at VO2max power creates enormous torque per stroke."/>
+            <textevent timeoffset="90" message="The Rüegg study found that heavy-resistance cycling improved both maximal strength and endurance capacity simultaneously — a rare dual adaptation."/>
+            <textevent timeoffset="150" message="2.5 minutes. Halfway. Hold cadence. Legs and lungs both working hard."/>
+            <textevent timeoffset="210" message="3.5 minutes. Sprint burst coming after this block. Mentally prepare — it is maximal."/>
+            <textevent timeoffset="270" message="30 seconds. The sprint starts immediately after. Get ready."/>
+        </SteadyState>
+
+        <SteadyState Duration="60" Power="1.50">
+            <textevent timeoffset="0" message="SPRINT. Maximal effort. 1 minute. Any cadence — seated or standing."/>
+            <textevent timeoffset="30" message="Halfway. Keep driving."/>
+            <textevent timeoffset="50" message="10 seconds."/>
+        </SteadyState>
+
+        <SteadyState Duration="600" Power="0.50">
+            <textevent timeoffset="0" message="Recovery. 10 minutes. You need them."/>
+            <textevent timeoffset="120" message="That combination — sustained VO2max torque into a maximal sprint — taxes every energy system simultaneously."/>
+            <textevent timeoffset="300" message="Knee check. The explosive sprint after sustained low-cadence work is the highest-risk moment in this session. How do they feel?"/>
+            <textevent timeoffset="480" message="Set 2 in 2 minutes. Same structure: 5 min at 110% FTP, 50-60rpm, then 1-min sprint."/>
+            <textevent timeoffset="540" message="Find your gear. 50-60rpm. STAY SEATED for the VO2max block."/>
+        </SteadyState>
+
+        <!-- Set 2 -->
+        <SteadyState Duration="300" Power="1.10" Cadence="55">
+            <textevent timeoffset="0" message="STAY SEATED. Set 2. 50-60rpm. 110% FTP. 5 minutes."/>
+            <textevent timeoffset="60" message="Set 2 feels harder from the start. Fatigue from set 1 is cumulative. That is by design."/>
+            <textevent timeoffset="150" message="Halfway. The study's participants were trained athletes — this protocol is demanding even for them."/>
+            <textevent timeoffset="240" message="1 minute left. Sprint coming."/>
+            <textevent timeoffset="270" message="30 seconds. Get ready to sprint."/>
+        </SteadyState>
+
+        <SteadyState Duration="60" Power="1.50">
+            <textevent timeoffset="0" message="SPRINT. Maximal. 1 minute. Any cadence."/>
+            <textevent timeoffset="30" message="Halfway."/>
+            <textevent timeoffset="50" message="10 seconds."/>
+        </SteadyState>
+
+        <SteadyState Duration="600" Power="0.50">
+            <textevent timeoffset="0" message="Recovery. 10 minutes. Last set coming."/>
+            <textevent timeoffset="120" message="Two sets done. If your knees feel anything joint-related, skip set 3. Two sets is still a meaningful session."/>
+            <textevent timeoffset="300" message="The Rüegg protocol targets neuromuscular power alongside aerobic capacity. The sprint after sustained torque work is what makes it unique."/>
+            <textevent timeoffset="480" message="Final set in 2 minutes. Everything you have left."/>
+            <textevent timeoffset="540" message="Find your gear. 50-60rpm. STAY SEATED for the VO2max block."/>
+        </SteadyState>
+
+        <!-- Set 3 -->
+        <SteadyState Duration="300" Power="1.10" Cadence="55">
+            <textevent timeoffset="0" message="STAY SEATED. Final set. 50-60rpm. 110% FTP. 5 minutes."/>
+            <textevent timeoffset="60" message="This is the hardest set. Fatigue is real. Hold the cadence."/>
+            <textevent timeoffset="150" message="Halfway. Almost done. One more sprint after this."/>
+            <textevent timeoffset="240" message="1 minute. Last sprint of the session coming."/>
+            <textevent timeoffset="270" message="30 seconds. Prepare for the final sprint."/>
+        </SteadyState>
+
+        <SteadyState Duration="60" Power="1.50">
+            <textevent timeoffset="0" message="FINAL SPRINT. Everything. 1 minute. Any cadence."/>
+            <textevent timeoffset="30" message="Halfway. Leave nothing."/>
+            <textevent timeoffset="50" message="10 seconds."/>
+        </SteadyState>
+
+        <SteadyState Duration="600" Power="0.50">
+            <textevent timeoffset="0" message="Final recovery. 10 minutes. Easy spinning."/>
+            <textevent timeoffset="120" message="Three sets of VO2max-to-sprint complete. That is the full Rüegg-adapted protocol."/>
+            <textevent timeoffset="300" message="Knee check. The combination of sustained torque and explosive sprints is the highest overall joint stress. How do they feel?"/>
+            <textevent timeoffset="480" message="15 minutes of VO2max torque work plus 3 maximal sprints. Substantial neuromuscular and aerobic stimulus."/>
+        </SteadyState>
+
+        <Cooldown Duration="720" PowerLow="0.50" PowerHigh="0.40">
+            <textevent timeoffset="10" message="Rüegg protocol complete. Spin easy."/>
+            <textevent timeoffset="180" message="Post-session knee check is especially important here. Note anything unusual."/>
+            <textevent timeoffset="360" message="Allow at least 48 hours before the next hard session. This is not a session to stack with other intense work."/>
+            <textevent timeoffset="540" message="The Rüegg et al. study found that combining heavy-resistance cycling with sprint training improved both maximal strength and endurance — a rare dual adaptation."/>
+        </Cooldown>
+    </workout>
+</workout_file>

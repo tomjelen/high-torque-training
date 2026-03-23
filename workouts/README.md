@@ -4,13 +4,14 @@
 
 ```
 workouts/
-  High Torque - Phase 1 Adaptation/    ← 3 workouts
-  High Torque - Phase 2 Build/         ← 6 workouts
-  High Torque - Phase 3 Protocol/      ← 2 workouts
-  High Torque - Library/               ← 6 workouts
+  High Torque - Adaptation/             ← 3 workouts (weeks 1-3)
+  High Torque - Tier 1 Foundation/      ← 4 workouts
+  High Torque - Tier 2 Development/     ← 5 workouts
+  High Torque - Tier 3 Challenging/     ← 4 workouts
+  High Torque - Tier 4 Advanced/        ← 4 workouts
 ```
 
-Each subfolder becomes a named folder inside Zwift's custom workout menu.
+Start with the 3-week Adaptation block, then pick from the tiered library. Each subfolder becomes a named folder inside Zwift's custom workout menu.
 
 ## How to install
 
@@ -19,7 +20,7 @@ Each subfolder becomes a named folder inside Zwift's custom workout menu.
    - **macOS:** `~/Documents/Zwift/Workouts/[your_user_id]/`
    - **iOS/Android:** not supported for custom workouts — use a PC/Mac to load them
 
-2. Copy the four `High Torque - ...` folders (including their `.zwo` files) directly into your user workout directory.
+2. Copy the five `High Torque - ...` folders (including their `.zwo` files) directly into your user workout directory.
 
 3. Restart Zwift. The folders will appear under **Custom Workouts** in the workout selection screen.
 

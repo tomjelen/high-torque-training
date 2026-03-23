@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workout_file>
     <author>Tom Jelen</author>
-    <name>W8 Day 2 – VO2max HIIT</name>
-    <activitySaveName>High Torque Protocol - Phase 3: W8 Day 2 – 6×4min HIIT 60-70 RPM</activitySaveName>
-    <description>Week 8 progression of the Hebisz &amp; Hebisz (2024) HIIT protocol. Volume increases from 4 to 6 intervals: six 4-minute efforts at 110% FTP and 60-70 rpm, with 8 minutes easy recovery between each. Seated throughout.</description>
+    <name>HT VO2max HIIT 6-rep</name>
+    <activitySaveName>High Torque Tier 4: VO2max - 6x4min 110% FTP 60-70 RPM</activitySaveName>
+    <description>Extended volume progression of the Hebisz &amp; Hebisz (2024) HIIT protocol. Six 4-minute intervals at 110% FTP and 60-70 rpm, with 8 minutes easy recovery between each. 24 minutes of total VO2max work at low cadence. Seated throughout.</description>
     <sportType>bike</sportType>
     <tags/>
     <workout>
         <Warmup Duration="900" PowerLow="0.40" PowerHigh="0.75">
-            <textevent timeoffset="10" message="Week 8, Day 2. Volume progression: 6 intervals today instead of 4."/>
-            <textevent timeoffset="150" message="The study increased HIIT volume from 4 reps (weeks 1-4) to 6 reps (weeks 5-8). This session matches the higher-volume phase."/>
-            <textevent timeoffset="300" message="110% FTP at 60-70rpm. Same intensity as Week 7, but two extra intervals. The additional volume is where the study found its strongest results."/>
+            <textevent timeoffset="10" message="Extended VO2max session. Six intervals — 50% more volume than the 4-rep version."/>
+            <textevent timeoffset="150" message="The study increased HIIT volume from 4 reps to 6 reps in weeks 5-8. This session matches the higher-volume phase."/>
+            <textevent timeoffset="300" message="110% FTP at 60-70rpm. Same intensity as the 4-rep version, but two extra intervals. The additional volume is where the study found its strongest results."/>
             <textevent timeoffset="480" message="Six intervals. 4 minutes each. 8-minute recovery between them. 24 minutes of total VO2max work at low cadence."/>
             <textevent timeoffset="600" message="SEATED: Every interval, every second. By interval 5 and 6, fatigue will make standing very tempting. That is when it matters most to stay down."/>
-            <textevent timeoffset="720" message="KNEE PRIORITY: Six intervals is 50% more joint stress than four. If Week 7 caused any knee discomfort, do the 4-interval version instead."/>
+            <textevent timeoffset="720" message="KNEE PRIORITY: Six intervals is 50% more joint stress than four. If the 4-rep version caused any knee discomfort, do that version instead."/>
             <textevent timeoffset="840" message="Openers coming, then the main set."/>
         </Warmup>
 
@@ -30,10 +30,10 @@
         <SteadyState Duration="120" Power="0.55">
             <textevent timeoffset="0" message="Last recovery before the main set. Find your gear. 60-70rpm at 110% FTP."/>
             <textevent timeoffset="60" message="30 seconds. First interval. STAY SEATED throughout. 110% FTP."/>
-            <textevent timeoffset="90" message="High-torque intervals begin now. The study used 60-70 RPM — Zwift shows 65 as the target, but anywhere in that range is correct."/>
+            <textevent timeoffset="90" message="High-torque intervals begin now. The study used 60-70 RPM — aim for anywhere in that range."/>
         </SteadyState>
 
-        <IntervalsT Repeat="6" OnDuration="240" OffDuration="480" OnPower="1.10" OffPower="0.50" cadenceLow="60" cadenceHigh="70">
+        <IntervalsT Repeat="6" OnDuration="240" OffDuration="480" OnPower="1.10" OffPower="0.50" Cadence="65">
             <textevent timeoffset="0" message="STAY SEATED. 60-70 RPM — aim for 65. 110% FTP. GO."/>
             <textevent timeoffset="20" message="Legs AND lungs working simultaneously. This is supposed to be hard."/>
             <textevent timeoffset="60" message="1 minute in. The high muscular force at this power and cadence recruits both slow and fast-twitch fibers."/>
@@ -47,12 +47,12 @@
             <textevent timeoffset="450" message="Next interval coming. Same: seated, 60-70rpm, 110% FTP."/>
         </IntervalsT>
 
-        <Cooldown Duration="900" PowerLow="0.75" PowerHigh="0.40">
-            <textevent timeoffset="10" message="Week 8 Day 2 complete. Six VO2max intervals at low cadence — full study volume."/>
-            <textevent timeoffset="150" message="You have now done the complete Hebisz &amp; Hebisz (2024) protocol at its highest volume. Well done."/>
-            <textevent timeoffset="360" message="Day 3 is a long easy ride at normal cadence. Day 4 is active recovery."/>
-            <textevent timeoffset="540" message="After this week, the 8-week block is complete. Move to the library sessions: 2 low-cadence sessions per week for continued gains."/>
-            <textevent timeoffset="720" message="Eight weeks of progressive low-cadence training complete. The study measured a 8.7% VO2max improvement in the low-cadence group — nearly double the 4.6% in the normal-cadence group. Same hours, same structure, only the cadence differed."/>
+        <Cooldown Duration="900" PowerLow="0.50" PowerHigh="0.40">
+            <textevent timeoffset="10" message="Six VO2max intervals at low cadence done. Full study volume achieved."/>
+            <textevent timeoffset="150" message="You have now done the Hebisz &amp; Hebisz (2024) protocol at its highest volume. Well done."/>
+            <textevent timeoffset="360" message="Allow at least one easy day before any more hard sessions. 24 minutes of VO2max torque work requires genuine recovery."/>
+            <textevent timeoffset="540" message="Knee check: how do they feel post-effort? Anything that lingers should be noted."/>
+            <textevent timeoffset="720" message="The study measured a 8.7% VO2max improvement in the low-cadence group — nearly double the 4.6% in the normal-cadence group. Same hours, same structure, only the cadence differed."/>
         </Cooldown>
     </workout>
 </workout_file>

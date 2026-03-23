@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workout_file>
     <author>Tom Jelen</author>
-    <name>W4B – High Torque Endurance</name>
-    <activitySaveName>High Torque Build - Phase 2: W4B – 2×20min Endurance 65-70 RPM</activitySaveName>
-    <description>Week 4, Session B. Two 20-minute Zone 2 blocks at 65-70 rpm. The lower-intensity complement to the week's HIIT session. Seated throughout.</description>
+    <name>HT Endurance Short 68rpm</name>
+    <activitySaveName>High Torque Tier 1: Endurance Short - 2x20min 65-70 RPM</activitySaveName>
+    <description>Two 20-minute Zone 2 blocks at 65-70 rpm. The lower-intensity complement to harder sessions in the week. Builds total low-cadence volume without adding intensity stress. Seated throughout.</description>
     <sportType>bike</sportType>
     <tags/>
     <workout>
-        <Warmup Duration="900" PowerLow="0.40" PowerHigh="0.68">
-            <textevent timeoffset="10" message="This is the endurance companion to this week's HIIT session. Easier intensity, but more total time at low cadence."/>
+        <Warmup Duration="900" PowerLow="0.40" PowerHigh="0.65">
+            <textevent timeoffset="10" message="Endurance session. Zone 2. 65-70rpm. Two 20-minute blocks. Easy and controlled."/>
             <textevent timeoffset="180" message="Two 20-minute blocks at 65-70rpm and Zone 2. Think of this as base-building with a torque twist."/>
             <textevent timeoffset="360" message="The study used a polarized model: hard sessions genuinely hard, easy sessions genuinely easy. This is the easy session. Keep it there."/>
             <textevent timeoffset="540" message="SEATED REMINDER: Both blocks are seated throughout. At Zone 2, there is no reason to stand. This is low intensity — the only challenge is the cadence."/>
@@ -16,9 +16,9 @@
             <textevent timeoffset="840" message="First block in 1 minute. 65-70rpm. Zone 2. Comfortable and controlled."/>
         </Warmup>
 
-        <SteadyState Duration="1200" Power="0.65" cadenceLow="65" cadenceHigh="70">
+        <SteadyState Duration="1200" Power="0.65" Cadence="67">
             <textevent timeoffset="0" message="STAY SEATED. 65-70rpm. Settle in — this is 20 minutes."/>
-            <textevent timeoffset="60" message="65-70rpm should feel manageable from the Phase 1 work. If anything, the Zone 2 power makes it more sustainable than last week."/>
+            <textevent timeoffset="60" message="65-70rpm should feel manageable after the adaptation block. Zone 2 power makes it sustainable."/>
             <textevent timeoffset="180" message="This is genuinely easy effort. Use it to reinforce the cadence habit: pedaling slowly is a skill that takes time to feel natural."/>
             <textevent timeoffset="360" message="6 minutes in. Breathing easy? Good. Legs feel the resistance? Also good."/>
             <textevent timeoffset="540" message="Research note: low-cadence benefits may be especially pronounced for cyclists who naturally pedal at 90+ rpm. High-cadence riders often have an untrained muscular weakness that this exposes."/>
@@ -34,9 +34,9 @@
             <textevent timeoffset="240" message="Second block in 60 seconds. Same: 65-70rpm, Zone 2, seated."/>
         </SteadyState>
 
-        <SteadyState Duration="1200" Power="0.65" cadenceLow="65" cadenceHigh="70">
+        <SteadyState Duration="1200" Power="0.65" Cadence="67">
             <textevent timeoffset="0" message="STAY SEATED. 65-70rpm. Zone 2. Final 20-minute block."/>
-            <textevent timeoffset="120" message="You have now done two low-cadence sessions this week. The body is getting the signal consistently."/>
+            <textevent timeoffset="120" message="The body adapts to consistent stimulus. Regular low-cadence work sends a clear signal."/>
             <textevent timeoffset="360" message="6 minutes in. Still comfortable? The goal is to finish feeling like you could do another 10 minutes."/>
             <textevent timeoffset="600" message="Halfway. The cumulative effect of endurance and HIIT low-cadence sessions in the same week is the point. You are building both muscular endurance and aerobic capacity at low cadence."/>
             <textevent timeoffset="840" message="14 minutes. Keep the cadence honest. 65-70rpm, not 75."/>
@@ -44,10 +44,10 @@
             <textevent timeoffset="1170" message="30 seconds. Finish seated."/>
         </SteadyState>
 
-        <Cooldown Duration="600" PowerLow="0.68" PowerHigh="0.40">
-            <textevent timeoffset="10" message="Done. Two sessions this week with low cadence. Spin easy."/>
-            <textevent timeoffset="180" message="Week 5 progresses: HIIT goes to 88% FTP at 60rpm. Four intervals instead of three."/>
-            <textevent timeoffset="360" message="How do your knees feel after this week? That is the key question before stepping up."/>
+        <Cooldown Duration="600" PowerLow="0.65" PowerHigh="0.40">
+            <textevent timeoffset="10" message="Done. Two endurance blocks at low cadence. Spin easy."/>
+            <textevent timeoffset="180" message="Neal Henderson has never programmed back-to-back big gear sessions in his athletes' plans. The musculoskeletal load needs time to dissipate — always separate low-cadence days."/>
+            <textevent timeoffset="360" message="How do your knees feel? That is always the key question after low-cadence work."/>
             <textevent timeoffset="480" message="The study's polarized model kept easy days genuinely easy. Do not add intensity to endurance sessions — the hard work belongs in the HIIT slot."/>
         </Cooldown>
     </workout>
