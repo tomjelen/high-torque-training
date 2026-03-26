@@ -32,37 +32,34 @@ All boxes must be checked before starting ongoing training:
 
 ## Ongoing Training — The High Torque Collection
 
-**Target: 2 sessions per week** — one harder, one easier. Separated by at least one normal-cadence day.
+**1–2 sessions per week.** One is the norm, two is the ceiling. Separated by at least one normal-cadence day.
 
-- 1 per week is fine some weeks. 0 is fine occasionally. Never more than 2.
+- 1 per week is the standard. 0 is fine occasionally. Never more than 2.
+- When doing 2, make one harder and one easier.
 - There is no end date. Pick sessions from the High Torque Collection below and rotate.
 
 ### The High Torque Collection
 
-Sessions are grouped into 4 tiers by intensity and knee stress. Start with Tiers 1–2 and work up over weeks and months.
+Sessions are grouped into 4 tiers by intensity and knee stress. Start with Tiers 1–2 and work up over weeks and months. The tier structure is this document's organization — the sources support progressive overload but don't use this exact grouping.
 
-#### Tier 1 — Foundation
+#### Tier 1 — Entry
 
-Low intensity. Your "easy" torque session in any week. Always appropriate.
+Your first ongoing sessions. Lower intensity to bridge from adaptation into real torque work.
 
 | Workout | What | Cadence | Duration | Source |
 |---------|------|---------|----------|--------|
-| Torque Endurance | 4×15 min @ 75% FTP | 58–62 rpm | ~110 min | EVOQ |
-| Endurance (short) | 2×20 min Zone 2 | 65–70 rpm | ~70 min | EVOQ |
-| Endurance (lower cadence) | 2×20 min Zone 2 | 62–65 rpm | ~70 min | EVOQ |
-| Endurance (long) | 3×15 min Zone 2 | 60–65 rpm | ~80 min | EVOQ |
+| Torque Entry | 4×4 min @ 80–85% FTP | 50–60 rpm | ~60 min | Henderson |
+| Torque Staple (short) | 3×5 min @ ~90% FTP | 50–60 rpm | ~55 min | EVOQ (scaled) |
 
 #### Tier 2 — Development
 
-Sweet spot / tempo. The bread-and-butter sessions.
+The bread-and-butter sessions. EVOQ's staple format and a shorter VO2max intro.
 
 | Workout | What | Cadence | Duration | Source |
 |---------|------|---------|----------|--------|
-| HIIT Intro | 3×4 min @ 85% FTP | 60–65 rpm | ~66 min | Hebisz 2024 (scaled) |
-| Pyramid | 2-4-6-4-2 min @ 88% FTP | 58–62 rpm | ~60 min | EVOQ |
-| Sweet Spot Torque | 3×12 min @ 88% FTP | 58–62 rpm | ~84 min | EVOQ |
-| HIIT Sweet Spot | 4×4 min @ 88% FTP | 58–62 rpm | ~78 min | Hebisz 2024 (scaled) |
-| HIIT Tempo | 4×4 min @ 90% FTP | 58–62 rpm | ~78 min | Hebisz 2024 (scaled) |
+| Torque Staple | 5×5 min @ ~90% FTP | 50–60 rpm | ~75 min | EVOQ |
+| Torque Staple (long) | 5×8 min @ ~90% FTP | 50–60 rpm | ~90 min | EVOQ (scaled — they explicitly mention extending to 8 min) |
+| HIIT Intro | 3×3 min @ ~110% FTP | 60–70 rpm | ~55 min | Hebisz 2024 (scaled — fewer reps, shorter intervals) |
 
 #### Tier 3 — Challenging
 
@@ -70,9 +67,8 @@ Threshold and VO2max. Higher knee stress. Only after several weeks of comfortabl
 
 | Workout | What | Cadence | Duration | Source |
 |---------|------|---------|----------|--------|
-| Threshold Block | 2×20 min @ 93% FTP | 58–62 rpm | ~75 min | EVOQ |
-| Over-Under | 3×(4×2/1 min) @ 95/78% FTP | 58–62 rpm | ~76 min | EVOQ |
-| HIIT VO2max (4 reps) | 4×4 min @ 110% FTP | 60–70 rpm | ~83 min | Hebisz 2024 |
+| Threshold Torque | 5×5 min @ ~95% FTP | 50–60 rpm | ~68 min | Henderson |
+| HIIT VO2max (4 reps) | 4×4 min @ ~110% FTP | 60–70 rpm | ~83 min | Hebisz 2024 |
 | Rüegg VO2max + Sprint | 3×(5 min @ ~110% FTP + 1 min max sprint) | 50–60 rpm (sprint at normal cadence) | ~80 min | EF Pro / Schep |
 
 #### Tier 4 — Advanced
@@ -81,9 +77,9 @@ Sprint and supra-threshold. Highest knee stress. Monthly at most initially. Rele
 
 | Workout | What | Cadence | Duration | Source |
 |---------|------|---------|----------|--------|
-| TorqueMax | 6×2 min @ 110% FTP | 50–60 rpm | ~71 min | Hebisz 2024 (adapted) |
+| TorqueMax | 6×2–3 min @ 105–110% FTP | 50–60 rpm | ~71 min | EVOQ |
 | SIT (2 sets) | 2×(4×30 sec max) | 50–60 rpm | ~76 min | Hebisz 2024 |
-| HIIT VO2max (6 reps) | 6×4 min @ 110% FTP | 60–70 rpm | ~107 min | Hebisz 2024 |
+| HIIT VO2max (6 reps) | 6×4 min @ ~110% FTP | 60–70 rpm | ~107 min | Hebisz 2024 |
 | SIT (3 sets) | 3×(4×30 sec max) | 50–60 rpm | ~109 min | Hebisz 2024 |
 
 ### When to progress

@@ -47,6 +47,21 @@ The low-cadence group also improved their second ventilatory threshold (VT2), wh
 
 **Important caveat:** The study tested a program where **all** high-intensity work was done at low cadence for 8 weeks. It did not test the use case of adding 1–2 low-cadence sessions to an otherwise normal-cadence training week. The ongoing training approach in this document is based on coaching practice, not on this study directly.
 
+#### Exact Hebisz study protocol
+
+The study used a 4-day microcycle, repeated across 8 weeks with volume progression at the midpoint:
+
+| Day | Session | Weeks 1–4 | Weeks 5–8 |
+|-----|---------|-----------|-----------|
+| 1 | SIT (Sprint Interval Training) | 8×30s maximal at **50–60 RPM** (2 sets of 4), 90s recovery between reps, 25 min between sets. ~80 min total. | 12×30s maximal at **50–60 RPM** (3 sets of 4), same recovery. ~110 min total. |
+| 2 | HIIT (High-Intensity Intervals) | 4×4 min at 90–100% Pmax at **60–70 RPM**, 8 min recovery. ~85 min total. | 6×4 min, same intensity and cadence. ~110 min total. |
+| 3 | LIT (Low-Intensity Endurance) | 150 min at ~VT1 power | 180 min at ~VT1 power |
+| 4 | Active Recovery | Easy spin | Easy spin |
+
+**Note the different cadence ranges:** SIT uses **50–60 RPM**, HIIT uses **60–70 RPM**. These are not interchangeable.
+
+**FTP translation:** The study prescribes HIIT at 90–100% of maximal aerobic power (Pmax). For most trained cyclists, Pmax ≈ 110–120% of FTP, so 90–100% Pmax ≈ 100–120% FTP. The workouts use ~110% FTP as a practical mid-range target.
+
 ### How solid is this evidence?
 
 **Honest answer: interesting, but not conclusive.** Here's why:
@@ -72,13 +87,23 @@ The low-cadence group also improved their second ventilatory threshold (VT2), wh
 
 The study shows the mechanism works. The coaching sources below show how practitioners integrate it into ongoing training. This combination — study mechanism + coaching practice — is the basis for this document.
 
-**Neal Henderson** (Apex Coaching, coached Rohan Dennis, Taylor Phinney): *"Generally I do about one of these sessions a week, at most two."* He has never programmed back-to-back big gear sessions and stresses the musculoskeletal load as the main limiter. [Fast Talk Labs podcast]
+**Neal Henderson** (Apex Coaching, coached Rohan Dennis, Taylor Phinney): *"Generally I do about one of these sessions a week, at most two."* He has never programmed back-to-back big gear sessions and stresses the musculoskeletal load as the main limiter. His athlete Petr Vakoc: *"Once to twice a week... three times per two weeks."* Henderson's progression for new athletes: start with tempo (3–5 min at 75–85% FTP, 50–60 RPM), then threshold (5×5 min at ~95% FTP, 50–60 RPM), then VO2max (30–90s at ~5-min power). [Fast Talk Labs podcast]
 
-**EVOQ.BIKE:** Start with 1 session per week, work up to 2 per week during base season. They position low-cadence work as an ongoing training tool, not a block to complete. [EVOQ.BIKE]
+**EVOQ.BIKE:** Start with 1 session per week, work up to 2 per week during base season. During race season: 1–2× per month for maintenance. They position low-cadence work as an ongoing training tool, not a block to complete. [EVOQ.BIKE]
 
 **Peter Schep / EF Pro Cycling:** Progressive approach — start at 60 RPM, 80–85% FTP for 15 minutes, then advance to threshold efforts, and only then to VO2max torque work (e.g. 3×5 min at 106–120% FTP, 50–60 RPM — the Noemi Rüegg workout). Recreational riders should proceed cautiously. The VO2max torque workout is a post-adaptation session, not a starting point. [EF Pro Cycling]
 
 **Honest statement:** No controlled trial has tested 1–2 low-cadence sessions per week mixed with normal-cadence training against a control group. The ongoing training recommendations in this document are coaching consensus, not experimentally validated. We are using the study to understand *why* low-cadence training may work, and coaching practice to guide *how* to integrate it.
+
+### Intensity floor: Zone 2 torque work is not effective
+
+Both the research and coaching sources converge on this: low-cadence work must be at **tempo intensity or above** to be effective as a torque training stimulus.
+
+- **EVOQ.BIKE** explicitly states: *"If you go below tempo into zone 2, you probably won't be producing enough torque to make a meaningful difference."* They recommend tempo or threshold power as the minimum. [EVOQ.BIKE]
+- **Hebisz & Hebisz (2024):** The null-result study (Muñoz et al., 2014) used moderate-intensity low-cadence work and found no benefit over freely chosen cadence. The positive results in Hebisz came specifically from combining low cadence with **high** intensity (90–100% Pmax for HIIT, maximal for SIT).
+- **Henderson:** His entry-level torque work starts at 75–85% FTP (low tempo to sweet spot), not Zone 2. [Fast Talk Labs]
+
+**Practical implication:** All torque workouts in the calendar must be at tempo (~76% FTP) or above. Zone 2 low-cadence sessions are just normal riding at a slightly uncomfortable cadence — they do not provide the torque stimulus that makes this training worthwhile. The adaptation phase (weeks 1–3) is the only exception: it uses Zone 2 power intentionally, to introduce the mechanical stress to joints and tendons before adding intensity. It is not meant to drive performance gains.
 
 ---
 
@@ -145,6 +170,50 @@ All of these must be true before starting ongoing training:
 
 ---
 
+## Source prescription reference
+
+This section documents what each source actually prescribes. All workouts in the calendar must trace back to these. See `training-calendar-v2.md` for the implemented workout library.
+
+### EVOQ.BIKE
+
+Two prescribed workouts, both at **50–60 rpm**:
+
+1. **Staple torque session:** 5×5 min at ~90% FTP, 50–60 rpm. *"You can extend the duration of these intervals up to 8 minutes to work on muscular endurance."* Can also decrease cadence or increase to threshold intensity as progressions.
+2. **TorqueMax:** 6–8×2–3 min at 105–110% FTP, 50–60 rpm. Explicitly warns: *"There is an increased risk of injury with these intervals, so you should start with the lower intensity torque intervals mentioned earlier."*
+
+**Intensity floor:** *"Typically, low cadence training is best performed at either tempo or threshold power. If you go below tempo into zone 2, you probably won't be producing enough torque to make a meaningful difference."*
+
+**Frequency:** Start with 1/week, work up to 2/week. During race season: 1–2×/month for maintenance.
+
+**Periodization:** *"The bulk of torque workouts are best performed during base season when you are also lifting in the gym."*
+
+### Neal Henderson (Fast Talk Labs)
+
+**Frequency:** *"Generally I do about one of these sessions a week, at most two."* Never back-to-back days. Athlete Petr Vakoc: *"Once to twice a week... three times per two weeks."*
+
+**Progression for new athletes** (all at 50–60 rpm):
+1. Entry: 3–5 min efforts at 75–85% FTP (*"the first thing I would do"*)
+2. Threshold: 5×5 min at ~95% FTP, half-time recovery
+3. VO2max: 30–90s at ~5-min power, equal to double-time recovery
+
+Henderson uses a reverse periodization (short/intense → longer/sustained), stressing musculoskeletal load as the main limiter.
+
+### EF Pro Cycling (Peter Schep / Noemi Rüegg)
+
+**The Rüegg workout:** 3×5 min at 106–120% FTP (VO2max pace), 50–60 rpm. 10 min easy recovery between sets. Optional: shift to a lighter gear at the end of each 5-min effort and do a 1-min max sprint to *"better your ability to transfer torque into power."*
+
+**Progression:** Start at 60 rpm, 80–85% FTP for 15 min → threshold efforts → VO2max torque work. The Rüegg workout is a post-adaptation session, not a starting point.
+
+**Warm-up:** 30 min easy. Cool-down: 30 min easy.
+
+### Hebisz & Hebisz (2024)
+
+See "Exact Hebisz study protocol" in the evidence section above for the full 4-day microcycle and progression.
+
+Key cadence ranges: **SIT: 50–60 rpm. HIIT: 60–70 rpm.** These differ and should not be conflated.
+
+---
+
 ## Ongoing training
 
 This is the core of the program. Once adaptation is complete, you integrate high-torque sessions into your weekly training permanently. There is no end date. The goal is that your regular training week yields slightly stronger legs because 1–2 of your sessions include high-torque work.
@@ -155,76 +224,41 @@ You are not following a periodized block. You are adding a permanent training to
 
 ### Frequency
 
-**Target: 2 sessions per week.** One harder, one easier.
+**1–2 sessions per week.** One is the norm, two is the ceiling.
 
-- **Minimum:** 1 per week is fine. Some weeks you'll only fit one in. Some weeks you'll fit none. That's okay — this is a long-term practice, not a protocol with a deadline.
-- **Maximum: never more than 2 per week.** Every coaching source converges on this ceiling (Henderson, EVOQ, EF Pro Cycling). The joint stress is the limiter, not the aerobic demand.
+- **1 per week is the standard.** Some weeks you'll fit none. That's okay — this is a long-term practice, not a protocol with a deadline.
+- **Maximum: never more than 2 per week.** Every coaching source converges on this ceiling (Henderson, EVOQ, EF Pro Cycling). The joint stress is the limiter, not the aerobic demand. When doing 2, make one harder and one easier.
 - **Never on back-to-back days.** At least one normal-cadence day between torque sessions.
 - **Race weeks:** If you have a target Zwift race with hard sprints that week, consider dropping to 1 torque session and make it an easier one. Don't stack a Tier 4 sprint session and a race in the same week.
+- **Race season maintenance:** 1–2 low-cadence sessions per month is sufficient to preserve the adaptation. [EVOQ.BIKE]
 
 [Henderson: *"Generally I do about one of these sessions a week, at most two."* Fast Talk Labs. EVOQ.BIKE: *"Start with 1/week, work up to 2/week."* EF Pro Cycling: Peter Schep recommends a progressive approach.]
 
+### How to fit this into your existing ~10 hrs/week
+
+- Replace 1–2 of your current interval sessions with a torque session from the calendar. Do not add torque sessions on top of your existing volume.
+- Keep your long endurance ride at normal cadence.
+- All other sessions (endurance, recovery, non-torque intervals): normal cadence.
+
 ### The workout library
 
-All workouts are organized into four tiers by intensity and knee stress. Start at the bottom, work your way up over weeks and months. Within each tier, pick whichever session fits your day and your energy.
+The specific workouts, durations, and tier assignments are in `training-calendar-v2.md`. The calendar is the source of truth for what to ride; this document explains why it works.
 
 **All sessions are seated throughout. All require a minimum 15-minute normal-cadence warm-up.**
 
-#### Tier 1 — Foundation
+The library is organized into four tiers by intensity and knee stress. The tier structure is this document's organization — the sources support progressive overload but don't use this exact grouping:
 
-Low intensity, low knee stress. Your "easy" torque sessions. Use these in your first weeks of ongoing training, and continue using them as the lighter session in any week.
-
-| Workout | Intensity | Cadence | Duration | Source |
-|---------|-----------|---------|----------|--------|
-| Torque Endurance | 4×15 min @ 75% FTP | 58–62 rpm | ~110 min | EVOQ |
-| Endurance (short) | 2×20 min Zone 2 | 65–70 rpm | ~70 min | EVOQ |
-| Endurance (lower cadence) | 2×20 min Zone 2 | 62–65 rpm | ~70 min | EVOQ |
-| Endurance (long) | 3×15 min Zone 2 | 60–65 rpm | ~80 min | EVOQ |
-
-#### Tier 2 — Development
-
-Sweet spot and tempo intensity. The bread-and-butter sessions. Once Tier 1 feels routine, these become your default.
-
-| Workout | Intensity | Cadence | Duration | Source |
-|---------|-----------|---------|----------|--------|
-| HIIT Intro | 3×4 min @ 85% FTP | 60–65 rpm | ~66 min | Hebisz 2024 (scaled) |
-| Pyramid | 2-4-6-4-2 min @ 88% FTP | 58–62 rpm | ~60 min | EVOQ |
-| Sweet Spot Torque | 3×12 min @ 88% FTP | 58–62 rpm | ~84 min | EVOQ |
-| HIIT Sweet Spot | 4×4 min @ 88% FTP | 58–62 rpm | ~78 min | Hebisz 2024 (scaled) |
-| HIIT Tempo | 4×4 min @ 90% FTP | 58–62 rpm | ~78 min | Hebisz 2024 (scaled) |
-
-#### Tier 3 — Challenging
-
-Threshold and VO2max intensity. Higher knee stress. Only move here after several weeks of comfortable Tier 2 sessions.
-
-| Workout | Intensity | Cadence | Duration | Source |
-|---------|-----------|---------|----------|--------|
-| Threshold Block | 2×20 min @ 93% FTP | 58–62 rpm | ~75 min | EVOQ |
-| Over-Under | 3×(4×2/1 min) @ 95/78% FTP | 58–62 rpm | ~76 min | EVOQ |
-| HIIT VO2max (4 reps) | 4×4 min @ 110% FTP | 60–70 rpm | ~83 min | Hebisz 2024 |
-| Rüegg VO2max + Sprint | 3×(5 min @ ~110% FTP + 1 min max sprint) | 50–60 rpm (sprint at normal cadence) | ~80 min | EF Pro / Schep |
-
-> The HIIT VO2max session is modeled on the Hebisz & Hebisz (2024) study protocol. The Rüegg workout is from EF Pro Cycling (coach Peter Schep, rider Noemi Rüegg): 3×5 min at VO2max intensity in a big gear at 50–60 rpm, followed immediately by a 1-minute maximal sprint in a lighter gear at normal cadence to "enhance torque-to-power transfer." 10 min easy recovery between sets. [Source 9]
-
-#### Tier 4 — Advanced
-
-Sprint and supra-threshold work at low cadence. Highest knee stress. Monthly at most initially. These sessions are directly relevant to Zwift race sprints.
-
-| Workout | Intensity | Cadence | Duration | Source |
-|---------|-----------|---------|----------|--------|
-| TorqueMax | 6×2 min @ 110% FTP | 50–60 rpm | ~71 min | Hebisz 2024 (adapted) |
-| SIT (2 sets) | 2×(4×30 sec max) | 50–60 rpm | ~76 min | Hebisz 2024 |
-| HIIT VO2max (6 reps) | 6×4 min @ 110% FTP | 60–70 rpm | ~107 min | Hebisz 2024 |
-| SIT (3 sets) | 3×(4×30 sec max) | 50–60 rpm | ~109 min | Hebisz 2024 |
-
-> **FTP translation note:** The Hebisz study prescribes HIIT at 90–100% of maximal aerobic power (Pmax). For most trained cyclists, Pmax sits at roughly 110–120% of FTP, so 90–100% Pmax ≈ 100–120% FTP. The workouts use 110% FTP as a practical mid-range target.
+- **Tier 1 — Entry:** Henderson's tempo torque work and a short EVOQ staple. First weeks of ongoing training.
+- **Tier 2 — Development:** EVOQ's staple format (5×5 and 5×8) and a scaled Hebisz HIIT intro. The bread-and-butter sessions.
+- **Tier 3 — Challenging:** Henderson's threshold work, Hebisz HIIT at study intensity, and the Rüegg VO2max workout. Higher knee stress.
+- **Tier 4 — Advanced:** EVOQ TorqueMax, Hebisz SIT and full HIIT volume. Highest knee stress, monthly at most initially.
 
 ### Progression guidelines
 
-There is no fixed schedule for moving between tiers. Progression is based on how your body responds, not on a calendar.
+There is no fixed schedule for moving between tiers. Progression is based on how your body responds, not on a calendar. Both Henderson and EVOQ support a progressive approach — starting with lower-intensity torque work and advancing to threshold and VO2max over weeks and months.
 
 **Starting out (first ~4 weeks of ongoing training):**
-- Mix Tier 1 and Tier 2 sessions. Example week: one Tier 1 endurance session + one Tier 2 sweet spot session.
+- Mix Tier 1 and Tier 2 sessions. Example week: one Tier 1 entry session + one Tier 2 staple session.
 - Try each Tier 2 workout at least once to find what suits you.
 
 **Advancing to Tier 3:**
@@ -236,7 +270,7 @@ There is no fixed schedule for moving between tiers. Progression is based on how
 - After at least 8 weeks of consistent ongoing training (~11 weeks total including adaptation).
 - Start with TorqueMax or the 2-set SIT. Monthly at most initially.
 - Tier 4 sessions always count as your "hard" session that week. Pair with a Tier 1 or easy Tier 2 session.
-- The SIT sessions (30-second all-out sprints at 55 rpm) are the highest knee-load sessions in the library. They are also the most directly transferable to Zwift race sprints.
+- The SIT sessions (30-second all-out sprints at 50–60 rpm) are the highest knee-load sessions in the library. They are also the most directly transferable to Zwift race sprints.
 
 **FTP retesting:**
 - Retest every 6–8 weeks. As FTP increases, all percentage-based workouts automatically scale up in absolute power, maintaining the training stimulus.
@@ -247,7 +281,7 @@ The SIT sessions (Tier 4) develop low-cadence sprint force — the ability to pr
 
 Practical notes:
 - Don't do a SIT session in the same week as a target Zwift race. The neuromuscular fatigue competes with race freshness.
-- The TorqueMax session (6×2 min at 110% FTP) develops a similar quality with lower sprint-specific stress. It can be used closer to race weeks.
+- The TorqueMax session (EVOQ: 6×2–3 min at 105–110% FTP) develops a similar quality with lower sprint-specific stress. It can be used closer to race weeks.
 - Low-cadence sprint force complements, but does not replace, high-cadence sprint work. Both matter for racing.
 
 ### Warning signs — when to back off
@@ -268,23 +302,23 @@ These are illustrative, not prescriptive. Fit the sessions into your existing sc
 
 | Day | Session |
 |-----|---------|
-| Tue | Torque Endurance (Tier 1) |
-| Thu | W4A HIIT — 3×4 min @ 85% (Tier 2) |
+| Tue | Torque Entry (Tier 1) |
+| Thu | Torque Staple (Tier 2) |
 | Other days | Normal training |
 
 **Established (weeks 10+ overall):**
 
 | Day | Session |
 |-----|---------|
-| Tue | Sweet Spot Torque (Tier 2) |
-| Thu | Threshold Block (Tier 3) |
+| Tue | Torque Staple (Tier 2) |
+| Thu | HIIT VO2max 4 reps (Tier 3) |
 | Other days | Normal training |
 
 **Sprint-focused week (after months of consistent work):**
 
 | Day | Session |
 |-----|---------|
-| Tue | Torque Endurance (Tier 1) — light session |
+| Tue | Torque Staple (short) (Tier 1) — light session |
 | Fri | SIT 2-set (Tier 4) — sprint session |
 | Other days | Normal training, no target race this week |
 
@@ -297,7 +331,7 @@ This section tracks how solid each claim is and what would change it.
 | Claim | Current confidence | What would change it |
 |-------|-------------------|----------------------|
 | +8.7% vs +4.6% VO2max finding | Low-medium — one small study | Replication in larger, mixed-gender, recreational cyclist cohorts |
-| Benefit requires *high* intensity at low cadence | Medium — consistent with biomechanical theory, supported by null results at moderate intensity | A well-controlled study showing moderate-intensity low-cadence also works |
+| Benefit requires *high* intensity at low cadence | Medium-high — biomechanical theory + null results at moderate intensity (Muñoz 2014) + EVOQ explicitly states Zone 2 is ineffective | A well-controlled study showing moderate-intensity low-cadence also works |
 | 1–2 sessions/week mixed into normal training is effective | Medium — coaching consensus (Henderson, EVOQ, EF Pro), no controlled trial | A study directly testing mixed integration vs. control |
 | Knee injury risk at low cadence | High — well-established biomechanics | Would need evidence of a safe low-cadence technique that reduces patellofemoral load |
 | Seated requirement | High — biomechanically obvious | No plausible mechanism to change this |

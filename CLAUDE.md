@@ -11,6 +11,16 @@ Zwift workout files (.zwo), a research document, and a training calendar for low
 - All intensity and volume must be **scaled for a non-professional rider doing ~10 hours/week**. Study protocols designed for elite athletes should be adapted down, with the adaptation noted and justified.
 - If evidence is weak, limited, or based on a single study, say so explicitly. Do not present tentative findings as established fact.
 
+## Workout attribution — critical rules
+
+These rules exist because a previous refactor introduced invented workouts with false source attributions. This must not happen again.
+
+- **Never invent a workout and attribute it to a source.** Every cadence, intensity, and duration must come from the claimed source. If a value can't be traced, the workout doesn't belong in the library.
+- **When scaling a workout**, mark it explicitly (e.g. "EVOQ (scaled — fewer reps)") and explain what was changed and why. The scaling must stay within the spirit of the source — don't change intensity class (e.g. sweet spot → Zone 2) when scaling.
+- **When restructuring or refactoring**, verify that cadence and intensity values still match their claimed sources. Values get corrupted during rewrites — a progression-specific value (e.g. a week-6 cadence target) can accidentally become a universal default.
+- **The research document's "Source prescription reference" section** lists what each source actually prescribes. Check workouts against it before adding or modifying.
+- **The calendar is the source of truth** for which workouts are in the library and their parameters. The research document explains *why*; the calendar says *what*.
+
 ## Transparency and traceability
 
 This is the most important principle in the project: **every session, every rule, every recommendation must be traceable to a reason and a source.**
