@@ -8,12 +8,13 @@
     <tags/>
     <workout>
         <Warmup Duration="900" PowerLow="0.40" PowerHigh="0.75">
-            <textevent timeoffset="10" message="VO2max intervals. The hardest interval format in the library."/>
+            <textevent timeoffset="10" message="High Torque Collection — VO2max HIIT 4-rep. Tier 3: Challenging."/>
+            <textevent timeoffset="20" message="VO2max intervals. The hardest interval format in the High Torque Collection."/>
             <textevent timeoffset="150" message="110% FTP at 60-70rpm. This is above threshold — you will be breathing hard. AND your legs will be working harder than a normal VO2max interval because of the low cadence."/>
             <textevent timeoffset="300" message="The study used 90-100% of maximal aerobic power (Pmax). For most trained cyclists, Pmax sits at roughly 110-120% of FTP. 110% FTP is the conservative end of that range."/>
             <textevent timeoffset="480" message="Four intervals. 4 minutes each. 8-minute recovery between them. The recovery is genuinely necessary at this intensity."/>
             <textevent timeoffset="600" message="SEATED: Every interval, every second. At 110% FTP the temptation to stand is even stronger than at sweet spot. Resist completely."/>
-            <textevent timeoffset="720" message="KNEE PRIORITY: This is the highest sustained power in the library. Any knee discomfort that appears mid-interval means you stop the interval immediately — not at the end."/>
+            <textevent timeoffset="720" message="KNEE PRIORITY: This is the highest sustained power in the High Torque Collection. Any knee discomfort that appears mid-interval means you stop the interval immediately — not at the end."/>
             <textevent timeoffset="840" message="Openers coming: two short efforts at normal cadence to prime the system. Then the main intervals."/>
         </Warmup>
 

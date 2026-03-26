@@ -8,7 +8,8 @@
     <tags/>
     <workout>
         <Warmup Duration="900" PowerLow="0.40" PowerHigh="0.75">
-            <textevent timeoffset="10" message="Sweet spot torque session. 88% FTP, 60rpm. Three 12-minute intervals."/>
+            <textevent timeoffset="10" message="High Torque Collection — Sweet Spot Torque. Tier 2: Development."/>
+            <textevent timeoffset="20" message="Sweet spot torque session. 88% FTP, 60rpm. Three 12-minute intervals."/>
             <textevent timeoffset="180" message="Sweet spot (88-93% FTP) gives a high training stimulus with less recovery cost than full threshold. Adding 60rpm makes this a powerful development session."/>
             <textevent timeoffset="360" message="This format — long intervals at ~90% FTP and 50-60rpm — is considered a core low-cadence session by cycling coaches. It predates the 2024 study but aligns with its findings."/>
             <textevent timeoffset="540" message="SEATED: All three blocks, from start to finish. 88% FTP at 60rpm is hard. The urge to stand will come. Stay down."/>

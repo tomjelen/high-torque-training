@@ -7,8 +7,9 @@
     <sportType>bike</sportType>
     <tags/>
     <workout>
-        <Warmup Duration="900" PowerLow="0.40" PowerHigh="0.72">
-            <textevent timeoffset="10" message="HIIT session at sweet spot intensity. 88% FTP, 60rpm, four intervals."/>
+        <Warmup Duration="900" PowerLow="0.40" PowerHigh="0.88">
+            <textevent timeoffset="10" message="High Torque Collection — HIIT Sweet Spot 88%. Tier 2: Development."/>
+            <textevent timeoffset="20" message="HIIT session at sweet spot intensity. 88% FTP, 60rpm, four intervals."/>
             <textevent timeoffset="150" message="Small progressions matter. Higher power and an extra interval compared to the intro session compounds over weeks."/>
             <textevent timeoffset="300" message="At 60rpm and 88% FTP, you are approaching the force levels used in the actual study. The researchers used 90-100% of maximal aerobic power at 60-70rpm."/>
             <textevent timeoffset="450" message="SEATED: The rule does not change. Every interval is seated, start to finish. It is not a suggestion — standing changes the mechanics entirely."/>

@@ -3,12 +3,13 @@
     <author>Tom Jelen</author>
     <name>HT HIIT Tempo 90%</name>
     <activitySaveName>High Torque Tier 2: HIIT Tempo - 4x4min 90% FTP 60 RPM</activitySaveName>
-    <description>Four 4-minute intervals at 90% FTP and 58-62 rpm with 8-minute recovery. The hardest Tier 2 HIIT session: threshold-adjacent power with high torque. Seated throughout.</description>
+    <description>Four 4-minute intervals at 90% FTP and 60 rpm with 8-minute recovery. The hardest Tier 2 HIIT session: threshold-adjacent power with high torque. Seated throughout.</description>
     <sportType>bike</sportType>
     <tags/>
     <workout>
-        <Warmup Duration="900" PowerLow="0.40" PowerHigh="0.75">
-            <textevent timeoffset="10" message="HIIT session. 90% FTP, 60rpm. Four intervals. This is the hardest Tier 2 session."/>
+        <Warmup Duration="900" PowerLow="0.40" PowerHigh="0.90">
+            <textevent timeoffset="10" message="High Torque Collection — HIIT Tempo 90%. Tier 2: Development."/>
+            <textevent timeoffset="20" message="HIIT session. 90% FTP, 60rpm. Four intervals. This is the hardest Tier 2 session."/>
             <textevent timeoffset="150" message="If this session feels manageable — legs worked, lungs challenged, knees fine — you are ready for Tier 3."/>
             <textevent timeoffset="300" message="90% FTP at 60rpm produces significantly more force per stroke than normal-cadence threshold work. The training stimulus is correspondingly higher."/>
             <textevent timeoffset="480" message="SEATED RULE: Non-negotiable. The entire interval seated. 90% FTP at 60rpm is hard — the temptation to stand will be real. Resist it."/>

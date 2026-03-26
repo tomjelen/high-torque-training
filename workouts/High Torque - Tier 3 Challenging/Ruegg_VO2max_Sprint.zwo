@@ -8,7 +8,8 @@
     <tags/>
     <workout>
         <Warmup Duration="1200" PowerLow="0.40" PowerHigh="0.75">
-            <textevent timeoffset="10" message="Rüegg protocol adaptation. Three sets of VO2max work followed by a maximal sprint burst. This is the most complex session in Tier 3."/>
+            <textevent timeoffset="10" message="High Torque Collection — Rüegg VO2max Sprint. Tier 3: Challenging."/>
+            <textevent timeoffset="20" message="Rüegg protocol adaptation. Three sets of VO2max work followed by a maximal sprint burst. This is the most complex session in Tier 3."/>
             <textevent timeoffset="150" message="Each set: 5 minutes at 110% FTP and 50-60rpm, then a 1-minute sprint at 150% FTP. 10-minute recovery between sets."/>
             <textevent timeoffset="330" message="The Rüegg et al. (2023) study combined heavy-resistance cycling with sprint training. We adapt the principle: sustained high-torque VO2max work immediately followed by maximal effort."/>
             <textevent timeoffset="510" message="SEATED for the 5-minute VO2max blocks. The sprint can be seated or standing — cadence is unconstrained during the sprint."/>

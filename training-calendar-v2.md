@@ -30,14 +30,14 @@ All boxes must be checked before starting ongoing training:
 
 ---
 
-## Ongoing Training
+## Ongoing Training — The High Torque Collection
 
 **Target: 2 sessions per week** — one harder, one easier. Separated by at least one normal-cadence day.
 
 - 1 per week is fine some weeks. 0 is fine occasionally. Never more than 2.
-- There is no end date. Pick sessions from the library below and rotate.
+- There is no end date. Pick sessions from the High Torque Collection below and rotate.
 
-### Session library
+### The High Torque Collection
 
 Sessions are grouped into 4 tiers by intensity and knee stress. Start with Tiers 1–2 and work up over weeks and months.
 

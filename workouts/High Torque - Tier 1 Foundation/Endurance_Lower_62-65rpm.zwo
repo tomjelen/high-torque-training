@@ -8,7 +8,8 @@
     <tags/>
     <workout>
         <Warmup Duration="900" PowerLow="0.40" PowerHigh="0.65">
-            <textevent timeoffset="10" message="Endurance session. Zone 2. 62-65rpm. Two 20-minute blocks. Easy."/>
+            <textevent timeoffset="10" message="High Torque Collection — Endurance Lower 62-65rpm. Tier 1: Foundation."/>
+            <textevent timeoffset="20" message="Endurance session. Zone 2. 62-65rpm. Two 20-minute blocks. Easy."/>
             <textevent timeoffset="180" message="This session adds total low-cadence volume without adding intensity stress. The legs may already be working harder from a HIIT session earlier in the week."/>
             <textevent timeoffset="360" message="SEATED REMINDER: Both blocks seated throughout. At this power level there is absolutely no need to stand."/>
             <textevent timeoffset="540" message="Fun fact: elite climbers often train extensively at low cadence during winter base phases. The seated grinding of a steep climb is mechanically similar to what we are doing here."/>

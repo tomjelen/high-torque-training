@@ -8,7 +8,8 @@
     <tags/>
     <workout>
         <Warmup Duration="900" PowerLow="0.40" PowerHigh="0.75">
-            <textevent timeoffset="10" message="Over-under session. Three blocks of alternating 2 min hard / 1 min easier, all at 60rpm."/>
+            <textevent timeoffset="10" message="High Torque Collection — Over-Under Torque. Tier 3: Challenging."/>
+            <textevent timeoffset="20" message="Over-under session. Three blocks of alternating 2 min hard / 1 min easier, all at 60rpm."/>
             <textevent timeoffset="150" message="Over = 95% FTP. Under = 78% FTP. You never fully recover within a block — that is the design. The under portion clears some lactate but not all. The over portion builds it back up."/>
             <textevent timeoffset="330" message="The result: your body learns to process lactate while still producing force at low cadence. A different adaptation from straight intervals."/>
             <textevent timeoffset="510" message="SEATED throughout. 60rpm during both the over and under phases. The cadence stays constant — only the power changes."/>

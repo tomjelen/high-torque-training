@@ -8,7 +8,8 @@
     <tags/>
     <workout>
         <Warmup Duration="600" PowerLow="0.40" PowerHigh="0.65">
-            <textevent timeoffset="10" message="Endurance long session. Three 15-minute blocks at Zone 2 and 60-65rpm."/>
+            <textevent timeoffset="10" message="High Torque Collection — Endurance Long 60-65rpm. Tier 1: Foundation."/>
+            <textevent timeoffset="20" message="Endurance long session. Three 15-minute blocks at Zone 2 and 60-65rpm."/>
             <textevent timeoffset="120" message="45 minutes of total low-cadence endurance work today. This is the highest volume Tier 1 session."/>
             <textevent timeoffset="300" message="SEATED RULE: All three blocks, start to finish, seated. Zone 2 is easy enough that standing is never justified."/>
             <textevent timeoffset="480" message="Research context: the study's low-intensity endurance sessions were done at the first ventilatory threshold (VT1). Zone 2 is roughly equivalent for most trained cyclists."/>

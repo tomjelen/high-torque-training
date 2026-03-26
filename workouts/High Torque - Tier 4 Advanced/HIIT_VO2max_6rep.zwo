@@ -8,7 +8,8 @@
     <tags/>
     <workout>
         <Warmup Duration="900" PowerLow="0.40" PowerHigh="0.75">
-            <textevent timeoffset="10" message="Extended VO2max session. Six intervals — 50% more volume than the 4-rep version."/>
+            <textevent timeoffset="10" message="High Torque Collection — VO2max HIIT 6-rep. Tier 4: Advanced."/>
+            <textevent timeoffset="20" message="Extended VO2max session. Six intervals — 50% more volume than the 4-rep version."/>
             <textevent timeoffset="150" message="The study increased HIIT volume from 4 reps to 6 reps in weeks 5-8. This session matches the higher-volume phase."/>
             <textevent timeoffset="300" message="110% FTP at 60-70rpm. Same intensity as the 4-rep version, but two extra intervals. The additional volume is where the study found its strongest results."/>
             <textevent timeoffset="480" message="Six intervals. 4 minutes each. 8-minute recovery between them. 24 minutes of total VO2max work at low cadence."/>

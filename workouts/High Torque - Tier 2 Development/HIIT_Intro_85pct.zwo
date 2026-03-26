@@ -7,8 +7,9 @@
     <sportType>bike</sportType>
     <tags/>
     <workout>
-        <Warmup Duration="900" PowerLow="0.40" PowerHigh="0.72">
-            <textevent timeoffset="10" message="First HIIT session at low cadence. Today you combine low cadence with actual intensity."/>
+        <Warmup Duration="900" PowerLow="0.40" PowerHigh="0.85">
+            <textevent timeoffset="10" message="High Torque Collection — HIIT Intro 85%. Tier 2: Development."/>
+            <textevent timeoffset="20" message="First HIIT session at low cadence. Today you combine low cadence with actual intensity."/>
             <textevent timeoffset="120" message="Three intervals: 4 minutes each, 85% FTP, 60-65rpm. 8-minute recovery between each. This 8-minute rest is deliberately long — you should feel recovered before every effort."/>
             <textevent timeoffset="270" message="WHY 8-MINUTE RECOVERY? The study protocol used long recoveries specifically to allow quality on each interval. Do not rush them."/>
             <textevent timeoffset="420" message="At 85% FTP and 60-65rpm, your legs will feel this much more than a normal 85% FTP interval. The torque load is significantly higher."/>

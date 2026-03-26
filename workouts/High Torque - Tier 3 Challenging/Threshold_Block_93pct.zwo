@@ -3,13 +3,14 @@
     <author>Tom Jelen</author>
     <name>HT Threshold Block 93%</name>
     <activitySaveName>High Torque Tier 3: Threshold - 2x20min 93% FTP 60 RPM</activitySaveName>
-    <description>Two 20-minute threshold blocks at 93% FTP and 60 rpm, with 5 minutes recovery between. The sustained duration at threshold combined with low cadence makes this one of the hardest sessions in the library. Use sparingly — once every 2-3 weeks. Seated throughout.</description>
+    <description>Two 20-minute threshold blocks at 93% FTP and 60 rpm, with 5 minutes recovery between. The sustained duration at threshold combined with low cadence makes this one of the hardest sessions in the High Torque Collection. Use sparingly — once every 2-3 weeks. Seated throughout.</description>
     <sportType>bike</sportType>
     <tags/>
     <workout>
         <Warmup Duration="900" PowerLow="0.40" PowerHigh="0.75">
-            <textevent timeoffset="10" message="Threshold block session. Two 20-minute efforts at 93% FTP and 60rpm."/>
-            <textevent timeoffset="150" message="This is one of the most demanding sessions in the library in terms of sustained effort. 20 minutes at threshold is hard. 20 minutes at threshold with 60rpm is significantly harder."/>
+            <textevent timeoffset="10" message="High Torque Collection — Threshold Block 93%. Tier 3: Challenging."/>
+            <textevent timeoffset="20" message="Threshold block session. Two 20-minute efforts at 93% FTP and 60rpm."/>
+            <textevent timeoffset="150" message="This is one of the most demanding sessions in the High Torque Collection in terms of sustained effort. 20 minutes at threshold is hard. 20 minutes at threshold with 60rpm is significantly harder."/>
             <textevent timeoffset="330" message="Use this session once every 2-3 weeks at most. It requires genuine recovery — do not do this on legs that are still tired from other hard sessions."/>
             <textevent timeoffset="510" message="SEATED: Non-negotiable. At 93% FTP and 60rpm, staying seated for 20 minutes requires real discipline. This is the hardest application of that rule."/>
             <textevent timeoffset="690" message="KNEE PRIORITY: 20 minutes of sustained load at 60rpm is the longest continuous joint stress in this session. If your knees feel anything other than normal within the first 5 minutes, reduce cadence to 65 or stop the interval."/>
@@ -51,7 +52,7 @@
         </SteadyState>
 
         <Cooldown Duration="900" PowerLow="0.93" PowerHigh="0.40">
-            <textevent timeoffset="10" message="Done. Both blocks complete. That is one of the hardest sessions in the library."/>
+            <textevent timeoffset="10" message="Done. Both blocks complete. That is one of the hardest sessions in the High Torque Collection."/>
             <textevent timeoffset="180" message="40 minutes of threshold work at 60rpm. Recovery after this takes longer than the other sessions — plan an easy day tomorrow."/>
             <textevent timeoffset="420" message="Use this session once every 2-3 weeks, not as a weekly staple. Sweet Spot Torque or the Pyramid are better weekly drivers."/>
             <textevent timeoffset="660" message="Post-session knee check is important after sustained threshold load. Note anything unusual."/>

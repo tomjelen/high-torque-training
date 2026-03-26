@@ -8,7 +8,8 @@
     <tags/>
     <workout>
         <Warmup Duration="900" PowerLow="0.40" PowerHigh="0.65">
-            <textevent timeoffset="10" message="Endurance session. Zone 2. 65-70rpm. Two 20-minute blocks. Easy and controlled."/>
+            <textevent timeoffset="10" message="High Torque Collection — Endurance Short 65-70rpm. Tier 1: Foundation."/>
+            <textevent timeoffset="20" message="Endurance session. Zone 2. 65-70rpm. Two 20-minute blocks. Easy and controlled."/>
             <textevent timeoffset="180" message="Two 20-minute blocks at 65-70rpm and Zone 2. Think of this as base-building with a torque twist."/>
             <textevent timeoffset="360" message="The study used a polarized model: hard sessions genuinely hard, easy sessions genuinely easy. This is the easy session. Keep it there."/>
             <textevent timeoffset="540" message="SEATED REMINDER: Both blocks are seated throughout. At Zone 2, there is no reason to stand. This is low intensity — the only challenge is the cadence."/>

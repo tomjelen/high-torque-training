@@ -8,7 +8,8 @@
     <tags/>
     <workout>
         <Warmup Duration="900" PowerLow="0.40" PowerHigh="0.75">
-            <textevent timeoffset="10" message="Pyramid session. Intervals build up then come back down: 2-4-6-4-2 minutes. All at 88% FTP, 60rpm."/>
+            <textevent timeoffset="10" message="High Torque Collection — Pyramid 88%. Tier 2: Development."/>
+            <textevent timeoffset="20" message="Pyramid session. Intervals build up then come back down: 2-4-6-4-2 minutes. All at 88% FTP, 60rpm."/>
             <textevent timeoffset="180" message="The pyramid format lets your body ease into the low-cadence effort before the hardest block (6 min) and then wind down from it. More varied than repeating the same interval length."/>
             <textevent timeoffset="360" message="88% FTP is sweet spot — high enough to drive real adaptation, low enough that you can sustain quality across all five intervals."/>
             <textevent timeoffset="540" message="SEATED throughout. Every interval, every second. 60rpm at 88% FTP is hard enough that the temptation to stand comes around the 3-4 minute mark. That is when it matters most to stay down."/>
@@ -17,7 +18,7 @@
         </Warmup>
 
         <!-- 2 min -->
-        <SteadyState Duration="120" Power="0.88" Cadence="60">
+        <SteadyState Duration="120" Power="0.75" Cadence="60">
             <textevent timeoffset="0" message="STAY SEATED. 60rpm. 88% FTP. Short one — 2 minutes."/>
             <textevent timeoffset="60" message="Halfway. Settle into the cadence. Next interval is double the length."/>
             <textevent timeoffset="110" message="10 seconds. Good."/>

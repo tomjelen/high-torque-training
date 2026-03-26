@@ -8,7 +8,8 @@
     <tags/>
     <workout>
         <Warmup Duration="900" PowerLow="0.40" PowerHigh="0.75">
-            <textevent timeoffset="10" message="Torque endurance session. Four 15-minute blocks at 75% FTP and 60rpm. Volume over intensity today."/>
+            <textevent timeoffset="10" message="High Torque Collection — Torque Endurance 75%. Tier 1: Foundation."/>
+            <textevent timeoffset="20" message="Torque endurance session. Four 15-minute blocks at 75% FTP and 60rpm. Volume over intensity today."/>
             <textevent timeoffset="180" message="75% FTP sits at the upper end of Zone 2 / lower Zone 3 — easy enough to recover from quickly, hard enough to create a meaningful training signal."/>
             <textevent timeoffset="360" message="60 minutes of total low-cadence work across four blocks. This is a significant endurance dose at low cadence."/>
             <textevent timeoffset="540" message="SEATED: All four blocks, from start to finish. No exceptions."/>
