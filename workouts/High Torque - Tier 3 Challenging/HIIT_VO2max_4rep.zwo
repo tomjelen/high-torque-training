@@ -2,15 +2,15 @@
 <workout_file>
     <author>Tom Jelen</author>
     <name>HT VO2max HIIT 4-rep</name>
-    <activitySaveName>High Torque Tier 3: VO2max - 4x4min 110% FTP 60-70 RPM</activitySaveName>
+    <activitySaveName>High Torque Tier 3: VO2max - 4x4min ~110% FTP 60-70 RPM</activitySaveName>
     <description>The HIIT session from Hebisz &amp; Hebisz (2024). Four 4-minute intervals at 110% FTP and 60-70 rpm, with 8 minutes easy recovery between each. VO2max-level effort with high torque. Seated throughout.</description>
     <sportType>bike</sportType>
     <tags/>
     <workout>
         <Warmup Duration="900" PowerLow="0.40" PowerHigh="0.75">
-            <textevent timeoffset="10" message="High Torque Collection — VO2max HIIT 4-rep. Tier 3: Challenging."/>
-            <textevent timeoffset="20" message="VO2max intervals. The hardest interval format in the High Torque Collection."/>
-            <textevent timeoffset="150" message="110% FTP at 60-70rpm. This is above threshold — you will be breathing hard. AND your legs will be working harder than a normal VO2max interval because of the low cadence."/>
+            <textevent timeoffset="10" message="Source: Hebisz &amp; Hebisz (2024) HIIT protocol, weeks 1-4. 4x4 min at 90-100% Pmax (~110% FTP), 60-70 RPM, 8 min recovery."/>
+            <textevent timeoffset="120" message="This is the actual study protocol. The low-cadence group doing this session improved VO2max by 8.7% vs 4.6% for the normal-cadence group."/>
+            <textevent timeoffset="180" message="Important: the study uses 60-70 RPM for HIIT — not 50-60. SIT sprints use 50-60. These cadence ranges are different and deliberate."/>
             <textevent timeoffset="300" message="The study used 90-100% of maximal aerobic power (Pmax). For most trained cyclists, Pmax sits at roughly 110-120% of FTP. 110% FTP is the conservative end of that range."/>
             <textevent timeoffset="480" message="Four intervals. 4 minutes each. 8-minute recovery between them. The recovery is genuinely necessary at this intensity."/>
             <textevent timeoffset="600" message="SEATED: Every interval, every second. At 110% FTP the temptation to stand is even stronger than at sweet spot. Resist completely."/>

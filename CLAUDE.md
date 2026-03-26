@@ -37,7 +37,7 @@ This is the most important principle in the project: **every session, every rule
 - All low-cadence intervals are seated — this is non-negotiable and must be stated in text events
 - Knee safety warnings must appear in every low-cadence workout
 - Workout durations in ZWO files must match the calendar. The calendar is the source of truth for duration.
-- `<author>` tag: "High Torque Training"
+- `<author>` tag: "Tom Jelen"
 
 ## Naming
 

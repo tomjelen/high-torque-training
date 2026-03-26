@@ -8,9 +8,9 @@
     <tags/>
     <workout>
         <Warmup Duration="1200" PowerLow="0.40" PowerHigh="0.75">
-            <textevent timeoffset="10" message="High Torque Collection — SIT 2 Sets. Tier 4: Advanced."/>
-            <textevent timeoffset="20" message="Sprint intervals. This is the study protocol for sprint interval training (SIT)."/>
-            <textevent timeoffset="120" message="The researchers used 8 x 30-second all-out sprints split into two sets of four, with 25 minutes active rest between sets. That is exactly what you are doing today."/>
+            <textevent timeoffset="10" message="Source: Hebisz &amp; Hebisz (2024) SIT protocol, weeks 1-4. 8x30s maximal at 50-60 RPM in 2 sets of 4, 90s recovery, 25 min between sets."/>
+            <textevent timeoffset="120" message="This is the exact study protocol for sprint interval training (SIT). Note: SIT uses 50-60 RPM — lower than the HIIT sessions which use 60-70."/>
+            <textevent timeoffset="240" message="The researchers used 8 x 30-second all-out sprints split into two sets of four, with 25 minutes active rest between sets. That is exactly what you are doing today."/>
             <textevent timeoffset="270" message="Cadence target: 50-60rpm. This is the lowest cadence in the High Torque Collection. At sprint intensity, maintaining 50-60rpm requires a very hard gear."/>
             <textevent timeoffset="420" message="The sprints are maximal — as hard as you can go. The 150% FTP power target is a guide; treat it as a floor, not a ceiling."/>
             <textevent timeoffset="570" message="SEATED: Every sprint, every second, seated. At this effort level the urge to stand is strong. Do not. The torque stimulus depends on you staying down."/>

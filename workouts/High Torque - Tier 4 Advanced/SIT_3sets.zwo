@@ -8,8 +8,8 @@
     <tags/>
     <workout>
         <Warmup Duration="1200" PowerLow="0.40" PowerHigh="0.75">
-            <textevent timeoffset="10" message="High Torque Collection — SIT 3 Sets. Tier 4: Advanced."/>
-            <textevent timeoffset="20" message="Sprint intervals — extended volume. 12 sprint reps today: three sets of four."/>
+            <textevent timeoffset="10" message="Source: Hebisz &amp; Hebisz (2024) SIT protocol, weeks 5-8. 12x30s maximal at 50-60 RPM in 3 sets of 4. Volume progression from 8 to 12 reps."/>
+            <textevent timeoffset="120" message="Sprint intervals — extended volume. 12 sprint reps today: three sets of four."/>
             <textevent timeoffset="120" message="The study progressed from 8 reps to 12 reps. This session matches the higher-volume phase."/>
             <textevent timeoffset="270" message="Same rules: 50-60rpm, maximal effort, 90-second recovery between reps, 25-minute active rest between sets."/>
             <textevent timeoffset="420" message="The extra set is significant. Twelve 30-second sprints at 50-60rpm is a large neuromuscular and joint load. Only attempt if the 2-set version has been consistently comfortable."/>

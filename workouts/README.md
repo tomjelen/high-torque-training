@@ -5,9 +5,9 @@
 ```
 workouts/
   High Torque - Adaptation/             ← 3 workouts (weeks 1-3)
-  High Torque - Tier 1 Foundation/      ← 4 workouts
-  High Torque - Tier 2 Development/     ← 5 workouts
-  High Torque - Tier 3 Challenging/     ← 4 workouts
+  High Torque - Tier 1 Entry/           ← 2 workouts
+  High Torque - Tier 2 Development/     ← 3 workouts
+  High Torque - Tier 3 Challenging/     ← 3 workouts
   High Torque - Tier 4 Advanced/        ← 4 workouts
 ```
 

@@ -2,21 +2,20 @@
 <workout_file>
     <author>Tom Jelen</author>
     <name>HT TorqueMax 110%</name>
-    <activitySaveName>High Torque Tier 4: TorqueMax - 6x2min 110% FTP 55 RPM</activitySaveName>
-    <description>Advanced session. Six 2-minute intervals at 110% FTP and 55 rpm, 4-minute recovery. Highest force combination in the High Torque Collection. Elevated injury risk — only attempt after consistent comfortable experience with Tier 3 sessions. Seated throughout.</description>
+    <activitySaveName>High Torque Tier 4: TorqueMax - 6x2.5min 105-110% FTP 50-60 RPM</activitySaveName>
+    <description>EVOQ.BIKE's TorqueMax session. Six 2.5-minute intervals at 105-110% FTP and 50-60 rpm, 4-minute recovery. EVOQ explicitly warns: 'There is an increased risk of injury with these intervals, so you should start with the lower intensity torque intervals first.' Seated throughout.</description>
     <sportType>bike</sportType>
     <tags/>
     <workout>
         <Warmup Duration="900" PowerLow="0.40" PowerHigh="0.75">
-            <textevent timeoffset="10" message="High Torque Collection — TorqueMax 110%. Tier 4: Advanced."/>
-            <textevent timeoffset="20" message="TorqueMax session. This is the advanced progression from the sweet spot torque work."/>
-            <textevent timeoffset="120" message="Prerequisites: you have been doing regular low-cadence sessions for several months. Tier 3 sessions have been consistently comfortable. Your knees have been fine throughout."/>
-            <textevent timeoffset="270" message="If any of those prerequisites are not met, do a Tier 2 or Tier 3 session instead. This is not a shortcut — it is a step on from established work."/>
-            <textevent timeoffset="420" message="110% FTP at 55rpm. The highest above-threshold power in the High Torque Collection, at the lowest cadence. Patellofemoral load is at its maximum."/>
-            <textevent timeoffset="540" message="Coach guidance flags this format as carrying elevated injury risk — it requires a foundation of torque work to do safely. (Source: EVOQ.BIKE)"/>
-            <textevent timeoffset="660" message="SEATED: More critical here than anywhere else. At 110% FTP and 55rpm, standing would shift the load in ways that increase injury risk further. Stay down. Always."/>
-            <textevent timeoffset="750" message="Six intervals. 2 minutes each. 4 minutes recovery. Short but intense. Openers first."/>
-            <textevent timeoffset="840" message="Find your gear. Hard gear. 55rpm at 110% FTP."/>
+            <textevent timeoffset="10" message="Source: EVOQ.BIKE TorqueMax. '2-3 minutes at 105-110% of FTP and around 50-60 rpm. Start with six repetitions and work up to eight.'"/>
+            <textevent timeoffset="120" message="EVOQ explicitly warns: 'There is an increased risk of injury with these intervals, so you should start with the lower intensity torque intervals first.'"/>
+            <textevent timeoffset="270" message="Prerequisites: several months of regular torque sessions. Tier 3 consistently comfortable. Knees fine throughout. If not, do a Tier 2 or 3 session instead."/>
+            <textevent timeoffset="420" message="105-110% FTP at 50-60 RPM. The highest above-threshold power at the lowest cadence in the collection. Patellofemoral load is at its maximum."/>
+            <textevent timeoffset="540" message="Henderson: musculoskeletal load is the main limiter in torque work, not cardiovascular. This session tests that limit."/>
+            <textevent timeoffset="660" message="SEATED: More critical here than anywhere else. At this power and cadence, standing shifts the load in ways that increase injury risk further. Stay down. Always."/>
+            <textevent timeoffset="750" message="Six intervals. 2.5 minutes each. 4 minutes recovery. Openers first."/>
+            <textevent timeoffset="840" message="Find your gear. Hard gear. 50-60 RPM at 105-110% FTP."/>
         </Warmup>
 
         <SteadyState Duration="30" Power="1.10">
@@ -30,24 +29,24 @@
             <textevent timeoffset="0" message="Opener 2."/>
         </SteadyState>
         <SteadyState Duration="120" Power="0.55">
-            <textevent timeoffset="60" message="First interval in 60 seconds. STAY SEATED. 55rpm. 110% FTP. 2 minutes."/>
+            <textevent timeoffset="60" message="First interval in 60 seconds. STAY SEATED. 50-60 RPM. 105-110% FTP. 2.5 minutes."/>
         </SteadyState>
 
-        <IntervalsT Repeat="6" OnDuration="120" OffDuration="240" OnPower="1.10" OffPower="0.50" Cadence="55">
-            <textevent timeoffset="0" message="STAY SEATED. 55rpm. 110% FTP. GO."/>
-            <textevent timeoffset="20" message="Hard gear. Force yourself down to 55rpm."/>
-            <textevent timeoffset="60" message="1 minute in. Halfway. Legs and lungs both working hard."/>
-            <textevent timeoffset="100" message="20 seconds. Do not stand. Do not spin up."/>
-            <textevent timeoffset="115" message="5 seconds."/>
-            <textevent timeoffset="122" message="Recovery. 4 minutes."/>
-            <textevent timeoffset="180" message="Knee check. Anything beyond muscle burn?"/>
-            <textevent timeoffset="210" message="Next interval coming. Find your gear. Seated."/>
+        <IntervalsT Repeat="6" OnDuration="150" OffDuration="240" OnPower="1.10" OffPower="0.50" Cadence="55">
+            <textevent timeoffset="0" message="STAY SEATED. 50-60 RPM. 105-110% FTP. GO."/>
+            <textevent timeoffset="20" message="Hard gear. Hold 50-60 RPM."/>
+            <textevent timeoffset="75" message="Halfway. Legs and lungs both working hard."/>
+            <textevent timeoffset="120" message="30 seconds left. Do not stand. Do not spin up."/>
+            <textevent timeoffset="145" message="5 seconds."/>
+            <textevent timeoffset="152" message="Recovery. 4 minutes."/>
+            <textevent timeoffset="210" message="Knee check. Anything beyond muscle burn?"/>
+            <textevent timeoffset="270" message="Next interval coming. Find your gear. Seated."/>
         </IntervalsT>
 
         <Cooldown Duration="900" PowerLow="0.50" PowerHigh="0.40">
             <textevent timeoffset="10" message="TorqueMax complete. Six intervals done."/>
-            <textevent timeoffset="150" message="This session represents the top end of what the low-cadence protocol calls for. Beyond this, the injury risk outweighs the incremental benefit for most cyclists."/>
-            <textevent timeoffset="360" message="Post-session knee check is especially important here. Patellofemoral compressive force at 55rpm and 110% FTP is the highest in the High Torque Collection. Any discomfort that persists beyond 24 hours warrants a break from low-cadence work."/>
+            <textevent timeoffset="150" message="This session represents the top end of what EVOQ prescribes for torque training. Beyond this, the injury risk outweighs the incremental benefit for most cyclists."/>
+            <textevent timeoffset="360" message="Post-session knee check is especially important here. 105-110% FTP at 50-60 RPM produces the highest patellofemoral load in the collection. Any discomfort persisting beyond 24 hours warrants a break from torque work."/>
             <textevent timeoffset="600" message="The 2024 study found significant improvements in VO2max and maximal power with the low-cadence protocol. The science supports this training. Your knees are the limiting factor to respect."/>
             <textevent timeoffset="780" message="Neal Henderson on high-torque training: the musculoskeletal demand is the limiting factor, not the cardiovascular system. Respect the joints and you can train this way for years."/>
         </Cooldown>

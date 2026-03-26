@@ -1,0 +1,32 @@
+<workout_file>
+    <author>Tom Jelen</author>
+    <name>HT Torque Staple Long</name>
+    <activitySaveName>High Torque Tier 2: Staple Long - 5x8min ~90% FTP 50-60 RPM</activitySaveName>
+    <description>Extended version of EVOQ.BIKE's staple torque session. Five 8-minute intervals at ~90% FTP and 50-60 rpm, with 5-minute recovery between each. EVOQ explicitly mentions extending intervals to 8 minutes to work on muscular endurance. 40 minutes of total torque work. Seated throughout.</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="900" PowerLow="0.40" PowerHigh="0.75">
+            <textevent timeoffset="30" message="Source: EVOQ.BIKE (scaled — extended intervals). EVOQ's staple is 5x5 min at ~90% FTP. They note: 'You can extend the duration of these intervals up to 8 minutes to work on muscular endurance.'"/>
+            <textevent timeoffset="120" message="This is the longest torque session in Tier 2. 40 minutes of total work at 50-60 RPM — a significant muscular endurance stimulus."/>
+            <textevent timeoffset="240" message="EVOQ: 'The bulk of torque workouts are best performed during base season when you are also lifting in the gym.'"/>
+            <textevent timeoffset="420" message="Hebisz (2024): the low-cadence group improved their second ventilatory threshold (VT2), which the normal-cadence group did not."/>
+            <textevent timeoffset="600" message="All intervals are SEATED. Target cadence: 50-60 RPM."/>
+            <textevent timeoffset="780" message="If your knees ache at any point, stop the interval. 8-minute blocks mean more sustained joint load — pay attention."/>
+        </Warmup>
+
+        <IntervalsT Repeat="5" OnDuration="480" OffDuration="300" OnPower="0.90" OffPower="0.50" Cadence="55">
+            <textevent timeoffset="10" message="Interval starts. ~90% FTP, 50-60 RPM. Stay seated. 8 minutes — settle into a rhythm."/>
+            <textevent timeoffset="180" message="3 minutes in. At low cadence, the muscular demand is constant and high. Your legs should feel it more than your lungs."/>
+            <textevent timeoffset="360" message="Past halfway. This is where muscular endurance matters — holding power and cadence when the legs want to speed up."/>
+            <textevent timeoffset="450" message="30 seconds left. Hold the cadence."/>
+            <textevent timeoffset="490" message="Recovery. Spin easy."/>
+        </IntervalsT>
+
+        <Cooldown Duration="600" PowerLow="0.50" PowerHigh="0.40">
+            <textevent timeoffset="30" message="Cool down. Easy spin at normal cadence."/>
+            <textevent timeoffset="120" message="Patellofemoral compressive force increases with knee flexion: ~1x bodyweight at 15 degrees, ~3x at 45 degrees, ~6x at 75 degrees. Low cadence maximises force through each cycle."/>
+            <textevent timeoffset="300" message="Never do torque sessions on back-to-back days. The joints need recovery time. 1-2 sessions per week, always separated by a normal-cadence day."/>
+        </Cooldown>
+    </workout>
+</workout_file>
