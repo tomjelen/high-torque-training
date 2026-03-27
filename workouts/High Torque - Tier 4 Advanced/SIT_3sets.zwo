@@ -17,6 +17,7 @@
             <textevent timeoffset="720" message="KNEE WARNING: This is the highest total sprint volume in the High Torque Collection. Monitor carefully."/>
             <textevent timeoffset="900" message="Sprints are short — 30 seconds. Recoveries are long — 90 seconds. The 25-minute rest between sets is not optional."/>
             <textevent timeoffset="1050" message="Three sets. Pace yourself mentally. The third set is the one that matters most."/>
+            <textevent timeoffset="1080" message="MODE NOTE: These sprints are maximal — ERG mode caps effort at the target wattage. Use slope/resistance mode so you can actually go all-out. Gear selection is intentional here."/>
             <textevent timeoffset="1140" message="First sprint in 1 minute. Find your gear. Hard gear. 50-60rpm. Maximal effort."/>
         </Warmup>
 

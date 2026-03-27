@@ -11,7 +11,7 @@
             <textevent timeoffset="120" message="This is your entry into ongoing torque training. The intensity is tempo — it should feel like work in the legs, not the lungs."/>
             <textevent timeoffset="240" message="Henderson coaches Rohan Dennis and Taylor Phinney. He stresses that musculoskeletal load is the main limiter in torque work — not cardiovascular fitness."/>
             <textevent timeoffset="420" message="All intervals are SEATED. Standing lets you use body weight on the pedals, bypassing the forced muscular contraction that makes this training work."/>
-            <textevent timeoffset="600" message="Target cadence: 50-60 RPM. Find a gear that lets you hold this range at 80-85% FTP without grinding."/>
+            <textevent timeoffset="600" message="Target cadence: 50-60 RPM. In ERG mode, just drop to this cadence — the trainer adjusts resistance to match 80-85% FTP automatically."/>
             <textevent timeoffset="780" message="If your knees ache at any point during an interval, stop the interval. Don't push through knee discomfort."/>
         </Warmup>
 

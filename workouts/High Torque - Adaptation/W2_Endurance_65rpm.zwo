@@ -20,14 +20,14 @@
             <textevent timeoffset="600"
                 message="INJURY WATCH: Do not dismiss dull knee aches as normal soreness. Low cadence increases patellofemoral joint load significantly." />
             <textevent timeoffset="750"
-                message="Interval in 2 minutes. Harder gear than last week. Target: 65rpm. Stay seated." />
+                message="Interval in 2 minutes. Target: 65rpm. In ERG mode, just drop your cadence — the trainer adjusts resistance automatically. Stay seated." />
             <textevent timeoffset="840"
                 message="If your knees felt off after last session, consider staying at 65-70rpm today. Adaptation &gt; progression." />
         </Warmup>
 
         <SteadyState Duration="900" Power="0.65" Cadence="65">
             <textevent timeoffset="0" message="STAY SEATED. Settle into 65rpm. Zone 2 power." />
-            <textevent timeoffset="30" message="Cadence still above 65? Shift to a harder gear." />
+            <textevent timeoffset="30" message="Cadence still above 65? Just slow your pedaling — in ERG mode, resistance increases automatically as you drop to 65rpm." />
             <textevent timeoffset="120"
                 message="At 65rpm and Zone 2 power, you are producing roughly 50% more force per stroke than you would at 90rpm for the same wattage." />
             <textevent timeoffset="240"
@@ -39,7 +39,7 @@
             <textevent timeoffset="600"
                 message="The study showed the low cadence group improved maximal aerobic power by 8.1% vs 3.0%. More force = more adaptation." />
             <textevent timeoffset="720"
-                message="3 minutes left. Do not let cadence drift upward as fatigue sets in. If it does, shift harder." />
+                message="3 minutes left. Do not let cadence drift upward as fatigue sets in. If it does, consciously slow your pedaling." />
             <textevent timeoffset="870" message="30 seconds. Stay seated to the end." />
         </SteadyState>
 
@@ -48,7 +48,7 @@
             <textevent timeoffset="90"
                 message="Low cadence training is thought to be especially useful for cyclists who naturally pedal at high cadence (90+rpm) — it exposes a muscular weakness those riders never otherwise address." />
             <textevent timeoffset="210"
-                message="Second block in 90 seconds. Same deal: 65rpm, Zone 2, seated. Find your gear now." />
+                message="Second block in 90 seconds. Same deal: 65rpm, Zone 2, seated. ERG handles resistance — focus on the cadence target." />
         </SteadyState>
 
         <SteadyState Duration="900" Power="0.65" Cadence="65">

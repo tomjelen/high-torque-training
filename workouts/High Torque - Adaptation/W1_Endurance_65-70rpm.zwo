@@ -22,7 +22,7 @@
             <textevent timeoffset="600"
                 message="KNEE AWARENESS: Low cadence increases the load through your kneecap with every stroke. Note how your knees feel today." />
             <textevent timeoffset="750"
-                message="First interval in 2 minutes. Shift into a harder gear than usual. Target: 65-70rpm." />
+                message="First interval in 2 minutes. Target: 65-70rpm. In ERG mode, just drop your cadence — the trainer adjusts resistance automatically." />
             <textevent timeoffset="840"
                 message="STAY SEATED throughout. Standing offloads the force to your bodyweight and kills the training stimulus." />
         </Warmup>
@@ -31,7 +31,7 @@
             <textevent timeoffset="0"
                 message="STAY SEATED. Settle into 65-70rpm. It will feel uncomfortably slow — that is correct." />
             <textevent timeoffset="30"
-                message="Shift to a harder gear if your cadence is still high. You want resistance, not spin." />
+                message="If your cadence is still above 65rpm, slow your pedaling. In ERG mode, resistance increases automatically as your cadence drops." />
             <textevent timeoffset="90"
                 message="This heavier sensation in your legs is the point. You are recruiting muscle fibers that normal cadence misses." />
             <textevent timeoffset="180"
@@ -52,7 +52,7 @@
             <textevent timeoffset="180"
                 message="Second interval coming in 2 minutes. Same deal: seated, 65-70rpm, Zone 2." />
             <textevent timeoffset="255"
-                message="Find your gear now. Do not wait until the interval starts." />
+                message="Second interval coming. In ERG mode, just drop to 65-70rpm when it starts — resistance adjusts automatically." />
         </SteadyState>
 
         <SteadyState Duration="600" Power="0.65" Cadence="67">

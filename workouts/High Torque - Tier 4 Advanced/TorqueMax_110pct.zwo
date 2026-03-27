@@ -15,7 +15,7 @@
             <textevent timeoffset="540" message="Henderson: musculoskeletal load is the main limiter in torque work, not cardiovascular. This session tests that limit."/>
             <textevent timeoffset="660" message="SEATED: More critical here than anywhere else. At this power and cadence, standing shifts the load in ways that increase injury risk further. Stay down. Always."/>
             <textevent timeoffset="750" message="Six intervals. 2.5 minutes each. 4 minutes recovery. Openers first."/>
-            <textevent timeoffset="840" message="Find your gear. Hard gear. 50-60 RPM at 105-110% FTP."/>
+            <textevent timeoffset="840" message="In ERG mode, drop to 50-60 RPM — the trainer adjusts resistance to match 105-110% FTP automatically."/>
         </Warmup>
 
         <SteadyState Duration="30" Power="1.10">
@@ -23,7 +23,7 @@
         </SteadyState>
         <SteadyState Duration="120" Power="0.55">
             <textevent timeoffset="0" message="Easy spin. Opener 2 coming."/>
-            <textevent timeoffset="90" message="Gear ready. 55rpm. SEATED."/>
+            <textevent timeoffset="90" message="Settle to 55rpm. SEATED."/>
         </SteadyState>
         <SteadyState Duration="30" Power="1.10">
             <textevent timeoffset="0" message="Opener 2."/>
@@ -34,13 +34,13 @@
 
         <IntervalsT Repeat="6" OnDuration="150" OffDuration="240" OnPower="1.10" OffPower="0.50" Cadence="55">
             <textevent timeoffset="0" message="STAY SEATED. 50-60 RPM. 105-110% FTP. GO."/>
-            <textevent timeoffset="20" message="Hard gear. Hold 50-60 RPM."/>
+            <textevent timeoffset="20" message="Hold 50-60 RPM."/>
             <textevent timeoffset="75" message="Halfway. Legs and lungs both working hard."/>
             <textevent timeoffset="120" message="30 seconds left. Do not stand. Do not spin up."/>
             <textevent timeoffset="145" message="5 seconds."/>
             <textevent timeoffset="152" message="Recovery. 4 minutes."/>
             <textevent timeoffset="210" message="Knee check. Anything beyond muscle burn?"/>
-            <textevent timeoffset="270" message="Next interval coming. Find your gear. Seated."/>
+            <textevent timeoffset="270" message="Next interval coming. Settle to 50-60rpm. Seated."/>
         </IntervalsT>
 
         <Cooldown Duration="900" PowerLow="0.50" PowerHigh="0.40">

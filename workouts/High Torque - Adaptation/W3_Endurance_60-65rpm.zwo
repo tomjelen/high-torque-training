@@ -14,12 +14,12 @@
             <textevent timeoffset="420" message="Your tendons and connective tissue should be noticeably more adapted than at the start. Three sessions of consistent low-cadence work is meaningful preparation."/>
             <textevent timeoffset="570" message="INJURY CHECK before you start: Are both knees feeling good today? Any lingering ache from previous sessions should resolve before moving to harder work."/>
             <textevent timeoffset="720" message="If your knees are not right, repeat the previous session instead. No shame in it."/>
-            <textevent timeoffset="840" message="Interval in 1 minute. 60-65rpm. Harder gear. Stay seated."/>
+            <textevent timeoffset="840" message="Interval in 1 minute. Drop to 60-65rpm. In ERG mode, the trainer increases resistance automatically — no need to shift. Stay seated."/>
         </Warmup>
 
         <SteadyState Duration="600" Power="0.65" Cadence="62">
             <textevent timeoffset="0" message="STAY SEATED. 60-65rpm. Zone 2."/>
-            <textevent timeoffset="30" message="Shift harder if needed. 60-65rpm is noticeably slower than 68 — take a moment to find the right gear."/>
+            <textevent timeoffset="30" message="Just let your cadence drop to 60-65rpm. ERG mode ramps up resistance to match — the trainer does the work of finding the right load."/>
             <textevent timeoffset="120" message="At 60-65rpm the pedal stroke slows enough that you can feel the dead spots — the points at the top and bottom of the stroke where force drops. This is useful feedback."/>
             <textevent timeoffset="240" message="Focus on a smooth, circular stroke. Try to push through the dead spots with your hamstrings and calves."/>
             <textevent timeoffset="360" message="Halfway. Legs working hard? Good. Lungs comfortable? Also good. That balance is exactly right."/>

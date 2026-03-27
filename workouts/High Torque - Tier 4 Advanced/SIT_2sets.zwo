@@ -17,6 +17,7 @@
             <textevent timeoffset="720" message="KNEE WARNING: Sprinting at 50-60rpm is the highest patellofemoral load in the High Torque Collection. If your knees are not 100% going into today, do not do this session."/>
             <textevent timeoffset="900" message="Sprints are short — 30 seconds. Recoveries are long — 90 seconds. Use the recovery fully. You should feel ready for each sprint."/>
             <textevent timeoffset="1050" message="The 25-minute rest between sets is not optional. It is part of the study design and allows full replenishment before the second set."/>
+            <textevent timeoffset="1080" message="MODE NOTE: These sprints are maximal — ERG mode caps effort at the target wattage. Use slope/resistance mode so you can actually go all-out. Gear selection is intentional here."/>
             <textevent timeoffset="1140" message="First sprint in 1 minute. Find your gear. Hard gear. 50-60rpm. Maximal effort."/>
         </Warmup>
 

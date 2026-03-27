@@ -29,7 +29,7 @@
             <textevent timeoffset="0" message="Opener 2."/>
         </SteadyState>
         <SteadyState Duration="120" Power="0.55">
-            <textevent timeoffset="0" message="Last recovery before the main set. Find your gear. 60-70rpm at 110% FTP needs a harder gear than normal VO2max work."/>
+            <textevent timeoffset="0" message="Last recovery before the main set. In ERG mode, just drop to 60-70rpm when the interval starts — the trainer holds 110% FTP regardless of gear."/>
             <textevent timeoffset="60" message="30 seconds. First interval. STAY SEATED throughout. 110% FTP."/>
             <textevent timeoffset="90" message="High-torque intervals begin now. The study used 60-70 RPM — aim for anywhere in that range."/>
         </SteadyState>
