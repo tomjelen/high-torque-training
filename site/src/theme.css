@@ -1,0 +1,5 @@
+:root {
+  --pico-primary: #FF6B00;
+  --pico-primary-hover: #e05f00;
+  --pico-primary-focus: rgba(255, 107, 0, 0.25);
+}
