@@ -16,7 +16,7 @@ Start with the 3-week Adaptation block, then pick from the tiered library. Each 
 ## How to install
 
 1. Find your Zwift workout directory:
-   - **Windows:** `Documents\Zwift\Workouts\[your_user_id]\`
+   - **Windows:** `%localAppData%\Zwift\Workouts\[your_user_id]\`
    - **macOS:** `~/Documents/Zwift/Workouts/[your_user_id]/`
    - **iOS/Android:** not supported for custom workouts — use a PC/Mac to load them
 
