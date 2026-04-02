@@ -1,3 +1,5 @@
+import DownloadBar from './components/DownloadBar'
+
 function App() {
   return (
     <>
@@ -5,6 +7,7 @@ function App() {
         <h1>High Torque Training</h1>
       </header>
       <main className="container">
+        <DownloadBar />
       </main>
     </>
   )

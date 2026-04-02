@@ -4,6 +4,6 @@
 - [ ] Task 2: Adaptation Sessions Overview + Logger
 - [ ] Task 3: Post-Adaptation Tiers Overview
 - [ ] Task 4: Session Logger
-- [ ] Task 5-a: Workout Downloads - All workouts
+- [x] Task 5-a: Workout Downloads - All workouts
 - [ ] Task 5-b: Workout Downloads - Individual workouts
 - [ ] Task 6: Science & Rationale Page
