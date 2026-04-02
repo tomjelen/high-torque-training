@@ -98,13 +98,9 @@ Running log for completed ongoing sessions (different UX from adaptation checkbo
 
 ---
 
-## Task 5: Workout Downloads
+## Task 5-a: Workout Downloads - Download all
 
-Individual .zwo download buttons + compile-time zip bundle.
-
-**Files:** extend `WorkoutCard` with download link, create `src/components/DownloadBar.tsx`, create `build-zip.ts`
-
-**Individual:** `<a href="/workouts/{file}" download>` on every WorkoutCard (already has file path from data).
+Download all workouts button + compile-time zip bundle.
 
 **Bundle:**
 - `build-zip.ts`: Node script using `archiver` to zip all 15 .zwo files from `../workouts/`
@@ -114,9 +110,21 @@ Individual .zwo download buttons + compile-time zip bundle.
 **DownloadBar:**
 - "Download All Workouts (.zip)" button
 - Collapsible Zwift install instructions (path info from `workouts/README.md`)
-- Placed above Adaptation panel
 
-**Verify:** Each of 15 cards has working download. `npm run build` generates zip with all files. Install instructions match README.
+**Verify:** There should be a button to download all workouts. `npm run build` generates zip with all files. Install instructions match README.
+
+---
+
+## Task 5-b: Workout Downloads - Individual
+
+Individual .zwo download buttons
+
+**Files:** extend `WorkoutCard` with download link, create `src/components/DownloadBar.tsx`, create `build-zip.ts`
+
+**Individual:** `<a href="/workouts/{file}" download>` on every WorkoutCard (already has file path from data).
+
+
+**Verify:** Each of 15 cards has working download.
 
 ---
 
