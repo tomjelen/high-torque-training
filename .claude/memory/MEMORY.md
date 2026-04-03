@@ -1,5 +1,9 @@
 # High Torque Training — Project Memory
 
+## Project
+
+- [Task tracking workflow](project_task_tracking.md) — PLAN.md is source of truth; regenerate TODO.md from it, don't maintain by hand; no GitHub Issues (portability)
+
 ## User & Feedback
 
 - [User identity](user_identity.md) — Tom Jelen, ZWO author name

@@ -25,7 +25,7 @@ Vite + React + TS + Pico CSS (classless, dark theme). Node v18.9.1 → use `crea
 
 ---
 
-## Task 2: Adaptation Sessions Overview + Logger
+## Task 2: Adaptation Sessions Overview
 
 Show W1/W2/W3 as a sequential progression with unlock-style UX.
 
@@ -33,19 +33,31 @@ Show W1/W2/W3 as a sequential progression with unlock-style UX.
 
 **Data:** Define `SOURCES` (9 entries from research doc) and `ADAPTATION_WORKOUTS` (3 entries from calendar) in `data.ts`.
 
+**UX:**
+- Wrapped in `<details>` — open by default
+- `<summary>`: "Adaptation Phase — Weeks 1–3"
+- Knee safety warning as a callout/alert at the top of the panel
+- Three cards in progression: W1 → W2 → W3
+- Each card: name, params (reps, duration, intensity, cadence, recovery, total), source via `<Cite>`, download link
+
+**Verify:** All three cards render with correct params matching calendar. Knee warning visible.
+
+---
+
+## Task 2b: Adaptation Logger
+
+Add completion tracking to the adaptation panel.
+
 **localStorage:** Single key `ht-v1` with shape:
 ```ts
 { adaptation: Record<"w1"|"w2"|"w3", string>, log: LogEntry[], adaptationCollapsed?: boolean }
 ```
 
-**UX:**
-- Wrapped in `<details>` — open by default if incomplete, collapsed when all 3 done
-- `<summary>`: "Adaptation Phase — Weeks 1–3" + progress (e.g. "1/3")
-- Knee safety warning as a callout/alert at the top of the panel
-- Three cards in progression: W1 → W2 → W3
+**UX additions to AdaptationPanel:**
+- Progress counter in `<summary>` (e.g. "1/3")
 - W2 muted (opacity 0.4) until W1 marked done. W3 muted until W2 done.
-- Each card: name, params (reps, duration, intensity, cadence, recovery, total), source via `<Cite>`, download link, "Mark Complete" button
-- Completing stores ISO date in localStorage. Completed cards show date + undo option.
+- Each card gets a "Mark Complete" button — completing stores ISO date in localStorage
+- Completed cards show date + undo option
 - When all 3 done: show readiness checklist (informational, not enforced) from calendar's "Readiness gates" section. Panel auto-collapses.
 
 **Verify:** Mark W1 → W2 activates. Mark all 3 → readiness summary, panel collapses. Reload → state persists.
