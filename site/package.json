@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "prebuild": "rsync -a --delete --delete-excluded --include='*/' --include='*.zwo' --exclude='*' ../workouts/ public/workouts && cd public/workouts && zip -r high-torque-workouts.zip .",
+    "prebuild": "node scripts/create-workout-artifacts.js",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
