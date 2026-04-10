@@ -5,3 +5,9 @@ A playground where I experiment and learn about high torque (or low cadence) tra
 ---
 
 Go visit [high-torque.jelen.dk](https://high-torque.jelen.dk/) to see stuff.
+
+## Development
+
+### Deployment
+
+Deployed as a static side on GitHub pages. See [.github/workflows/deploy.yml](.github/workflows/deploy.yml).
