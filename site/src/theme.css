@@ -3,3 +3,78 @@
   --pico-primary-hover: #e05f00;
   --pico-primary-focus: rgba(255, 107, 0, 0.25);
 }
+
+/* Adaptation phase grid */
+.adaptation-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Workout card */
+.workout-card {
+  position: relative;
+}
+
+.step-badge {
+  display: inline-block;
+  background: var(--pico-primary);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.15em 0.6em;
+  border-radius: 1em;
+  margin-bottom: 0.5rem;
+}
+
+.workout-card h3 {
+  margin: 0.25rem 0 0.75rem;
+}
+
+.workout-card dl {
+  margin: 0 0 1rem;
+}
+
+.param-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.15rem 0;
+  border-bottom: 1px solid var(--pico-muted-border-color);
+}
+
+.param-row:last-child {
+  border-bottom: none;
+}
+
+.param-row dt {
+  color: var(--pico-muted-color);
+  font-size: 0.85rem;
+}
+
+.param-row dd {
+  font-weight: 500;
+  margin: 0;
+}
+
+.workout-card footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+/* Inline citation */
+.cite {
+  font-size: 0.8em;
+  opacity: 0.8;
+  text-decoration: none;
+  margin-left: 0.25em;
+}
+
+.cite:hover {
+  opacity: 1;
+  text-decoration: underline;
+}

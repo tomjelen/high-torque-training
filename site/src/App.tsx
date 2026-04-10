@@ -1,3 +1,4 @@
+import AdaptationPanel from './components/AdaptationPanel'
 import DownloadBar from './components/DownloadBar'
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
         <h1>High Torque Training</h1>
       </header>
       <main className="container">
+        <AdaptationPanel />
         <DownloadBar />
       </main>
     </>

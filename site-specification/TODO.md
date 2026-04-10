@@ -1,7 +1,7 @@
 # Site Tasks
 
 - [x] Task 1: Scaffold — Vite + React + TS + Pico CSS, dark theme, orange accent
-- [ ] Task 2: Adaptation Sessions Overview
+- [x] Task 2: Adaptation Sessions Overview
 - [ ] Task 2b: Adaptation Logger
 - [ ] Task 3: Post-Adaptation Tiers Overview
 - [ ] Task 4: Session Logger
