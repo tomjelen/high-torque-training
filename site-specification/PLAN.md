@@ -171,8 +171,8 @@ Three workouts are adapted from their source prescriptions. The site currently s
 
 **What needs annotation:**
 
-1. **Torque Staple (short)** — Source: EVOQ. EVOQ prescribes 5×5 min @ ~90% FTP. This workout reduces to 3×5 min (fewer reps) as a lower-volume entry point into EVOQ's staple format.
-2. **Torque Staple (long)** — Source: EVOQ. EVOQ prescribes 5×5 min but explicitly says *"You can extend the duration of these intervals up to 8 minutes."* This workout uses that prescribed extension (5×8 min). This is an EVOQ-described progression, not an independent modification — the annotation should reflect that.
+1. **Torque Staple 3×5** — Source: EVOQ. EVOQ prescribes 5×5 min @ ~90% FTP. This workout reduces to 3×5 min (fewer reps) as a lower-volume entry point into EVOQ's staple format.
+2. **Torque Staple 5×8** — Source: EVOQ. Not scaled — EVOQ explicitly prescribes extending intervals up to 8 minutes as a progression. No annotation needed.
 3. **HIIT Intro** — Source: Hebisz 2024. The study protocol uses 4×4 min @ 60–70 rpm (weeks 1–4 volume). This workout reduces to 3×3 min (fewer reps AND shorter intervals) as a lower-stress introduction to high-intensity torque work.
 
 **Design decision:** Put an asterisk at the source, and update the tooltip with the scaling information.

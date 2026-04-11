@@ -23,7 +23,7 @@ export default function WorkoutCard({ workout, step }: WorkoutCardProps) {
       </dl>
       <footer>
         <small>
-          Source: <Cite sourceKey={workout.source} />
+          Source: <Cite sourceKey={workout.source} note={workout.sourceNote} />
         </small>
         <a
           href={`/workouts/${workout.file}`}

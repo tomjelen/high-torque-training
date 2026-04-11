@@ -49,7 +49,7 @@ Your first ongoing sessions. Lower intensity to bridge from adaptation into real
 | Workout | What | Cadence | Duration | Source |
 |---------|------|---------|----------|--------|
 | Torque Entry | 4×4 min @ 80–85% FTP | 50–60 rpm | ~60 min | Henderson |
-| Torque Staple (short) | 3×5 min @ ~90% FTP | 50–60 rpm | ~55 min | EVOQ (scaled) |
+| Torque Staple 3×5 | 3×5 min @ ~90% FTP | 50–60 rpm | ~55 min | EVOQ (scaled — fewer reps: 3×5 instead of 5×5) |
 
 #### Tier 2 — Development
 
@@ -57,8 +57,8 @@ The bread-and-butter sessions. EVOQ's staple format and a shorter VO2max intro.
 
 | Workout | What | Cadence | Duration | Source |
 |---------|------|---------|----------|--------|
-| Torque Staple | 5×5 min @ ~90% FTP | 50–60 rpm | ~75 min | EVOQ |
-| Torque Staple (long) | 5×8 min @ ~90% FTP | 50–60 rpm | ~90 min | EVOQ (scaled — they explicitly mention extending to 8 min) |
+| Torque Staple 5×5 | 5×5 min @ ~90% FTP | 50–60 rpm | ~75 min | EVOQ |
+| Torque Staple 5×8 | 5×8 min @ ~90% FTP | 50–60 rpm | ~90 min | EVOQ |
 | HIIT Intro | 3×3 min @ ~110% FTP | 60–70 rpm | ~55 min | Hebisz 2024 (scaled — fewer reps, shorter intervals) |
 
 #### Tier 3 — Challenging

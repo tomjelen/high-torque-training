@@ -129,13 +129,14 @@ export const TIERS: Tier[] = [
       },
       {
         id: 't1-staple-short',
-        name: 'Torque Staple (short)',
+        name: 'Torque Staple 3×5',
         params: [
           { label: 'Intervals', value: '3×5 min @ ~90% FTP' },
           { label: 'Cadence', value: '50–60 rpm' },
           { label: 'Total time', value: '~55 min' },
         ],
         source: 'evoq',
+        sourceNote: 'Scaled — fewer reps (3×5 instead of EVOQ\'s 5×5) as a lower-volume entry point.',
         file: 'High Torque - Tier 1 Entry/Torque_Staple_Short_90pct.zwo',
       },
     ],
@@ -149,7 +150,7 @@ export const TIERS: Tier[] = [
     workouts: [
       {
         id: 't2-staple',
-        name: 'Torque Staple',
+        name: 'Torque Staple 5×5',
         params: [
           { label: 'Intervals', value: '5×5 min @ ~90% FTP' },
           { label: 'Cadence', value: '50–60 rpm' },
@@ -160,7 +161,7 @@ export const TIERS: Tier[] = [
       },
       {
         id: 't2-staple-long',
-        name: 'Torque Staple (long)',
+        name: 'Torque Staple 5×8',
         params: [
           { label: 'Intervals', value: '5×8 min @ ~90% FTP' },
           { label: 'Cadence', value: '50–60 rpm' },
@@ -178,6 +179,7 @@ export const TIERS: Tier[] = [
           { label: 'Total time', value: '~55 min' },
         ],
         source: 'hebisz2024',
+        sourceNote: 'Scaled — fewer reps and shorter intervals (3×3 instead of the study\'s 4×4) as a lower-stress introduction.',
         file: 'High Torque - Tier 2 Development/HIIT_Intro_110pct.zwo',
       },
     ],

@@ -16,6 +16,7 @@ export interface Workout {
   description?: string
   params: WorkoutParam[]
   source: string
+  sourceNote?: string
   file: string
 }
 
