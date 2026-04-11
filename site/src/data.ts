@@ -1,4 +1,4 @@
-import type { Source, Workout } from './types'
+import type { Source, Tier, Workout } from './types'
 
 export const SOURCES: Record<string, Source> = {
   hebisz2024: {
@@ -105,5 +105,176 @@ export const ADAPTATION_WORKOUTS: Workout[] = [
     ],
     source: 'evoq',
     file: 'High Torque - Adaptation/W3_Endurance_60-65rpm.zwo',
+  },
+]
+
+export const TIERS: Tier[] = [
+  {
+    number: 1,
+    name: 'Entry',
+    description:
+      'Your first ongoing sessions. Lower intensity to bridge from adaptation into real torque work.',
+    color: '#86efac',
+    workouts: [
+      {
+        id: 't1-entry',
+        name: 'Torque Entry',
+        params: [
+          { label: 'Intervals', value: '4×4 min @ 80–85% FTP' },
+          { label: 'Cadence', value: '50–60 rpm' },
+          { label: 'Total time', value: '~60 min' },
+        ],
+        source: 'henderson',
+        file: 'High Torque - Tier 1 Entry/Torque_Entry_80pct.zwo',
+      },
+      {
+        id: 't1-staple-short',
+        name: 'Torque Staple (short)',
+        params: [
+          { label: 'Intervals', value: '3×5 min @ ~90% FTP' },
+          { label: 'Cadence', value: '50–60 rpm' },
+          { label: 'Total time', value: '~55 min' },
+        ],
+        source: 'evoq',
+        file: 'High Torque - Tier 1 Entry/Torque_Staple_Short_90pct.zwo',
+      },
+    ],
+  },
+  {
+    number: 2,
+    name: 'Development',
+    description:
+      "The bread-and-butter sessions. EVOQ's staple format and a shorter VO2max intro.",
+    color: '#fbbf24',
+    workouts: [
+      {
+        id: 't2-staple',
+        name: 'Torque Staple',
+        params: [
+          { label: 'Intervals', value: '5×5 min @ ~90% FTP' },
+          { label: 'Cadence', value: '50–60 rpm' },
+          { label: 'Total time', value: '~75 min' },
+        ],
+        source: 'evoq',
+        file: 'High Torque - Tier 2 Development/Torque_Staple_90pct.zwo',
+      },
+      {
+        id: 't2-staple-long',
+        name: 'Torque Staple (long)',
+        params: [
+          { label: 'Intervals', value: '5×8 min @ ~90% FTP' },
+          { label: 'Cadence', value: '50–60 rpm' },
+          { label: 'Total time', value: '~90 min' },
+        ],
+        source: 'evoq',
+        file: 'High Torque - Tier 2 Development/Torque_Staple_Long_90pct.zwo',
+      },
+      {
+        id: 't2-hiit-intro',
+        name: 'HIIT Intro',
+        params: [
+          { label: 'Intervals', value: '3×3 min @ ~110% FTP' },
+          { label: 'Cadence', value: '60–70 rpm' },
+          { label: 'Total time', value: '~55 min' },
+        ],
+        source: 'hebisz2024',
+        file: 'High Torque - Tier 2 Development/HIIT_Intro_110pct.zwo',
+      },
+    ],
+  },
+  {
+    number: 3,
+    name: 'Challenging',
+    description:
+      'Threshold and VO2max. Higher knee stress. Only after several weeks of comfortable Tier 2 work.',
+    color: '#fb923c',
+    workouts: [
+      {
+        id: 't3-threshold',
+        name: 'Threshold Torque',
+        params: [
+          { label: 'Intervals', value: '5×5 min @ ~95% FTP' },
+          { label: 'Cadence', value: '50–60 rpm' },
+          { label: 'Total time', value: '~68 min' },
+        ],
+        source: 'henderson',
+        file: 'High Torque - Tier 3 Challenging/Threshold_Torque_95pct.zwo',
+      },
+      {
+        id: 't3-hiit-vo2-4',
+        name: 'HIIT VO2max (4 reps)',
+        params: [
+          { label: 'Intervals', value: '4×4 min @ ~110% FTP' },
+          { label: 'Cadence', value: '60–70 rpm' },
+          { label: 'Total time', value: '~83 min' },
+        ],
+        source: 'hebisz2024',
+        file: 'High Torque - Tier 3 Challenging/HIIT_VO2max_4rep.zwo',
+      },
+      {
+        id: 't3-ruegg',
+        name: 'Rüegg VO2max + Sprint',
+        params: [
+          { label: 'Intervals', value: '3×(5 min @ ~110% FTP + 1 min max sprint)' },
+          { label: 'Cadence', value: '50–60 rpm (sprint at normal cadence)' },
+          { label: 'Total time', value: '~80 min' },
+        ],
+        source: 'ef',
+        file: 'High Torque - Tier 3 Challenging/Ruegg_VO2max_Sprint.zwo',
+      },
+    ],
+  },
+  {
+    number: 4,
+    name: 'Advanced',
+    description:
+      'Sprint and supra-threshold. Highest knee stress. Monthly at most initially.',
+    color: '#f87171',
+    workouts: [
+      {
+        id: 't4-torquemax',
+        name: 'TorqueMax',
+        params: [
+          { label: 'Intervals', value: '6×2–3 min @ 105–110% FTP' },
+          { label: 'Cadence', value: '50–60 rpm' },
+          { label: 'Total time', value: '~71 min' },
+        ],
+        source: 'evoq',
+        file: 'High Torque - Tier 4 Advanced/TorqueMax_110pct.zwo',
+      },
+      {
+        id: 't4-sit-2',
+        name: 'SIT (2 sets)',
+        params: [
+          { label: 'Intervals', value: '2×(4×30 sec max)' },
+          { label: 'Cadence', value: '50–60 rpm' },
+          { label: 'Total time', value: '~76 min' },
+        ],
+        source: 'hebisz2024',
+        file: 'High Torque - Tier 4 Advanced/SIT_2sets.zwo',
+      },
+      {
+        id: 't4-hiit-vo2-6',
+        name: 'HIIT VO2max (6 reps)',
+        params: [
+          { label: 'Intervals', value: '6×4 min @ ~110% FTP' },
+          { label: 'Cadence', value: '60–70 rpm' },
+          { label: 'Total time', value: '~107 min' },
+        ],
+        source: 'hebisz2024',
+        file: 'High Torque - Tier 4 Advanced/HIIT_VO2max_6rep.zwo',
+      },
+      {
+        id: 't4-sit-3',
+        name: 'SIT (3 sets)',
+        params: [
+          { label: 'Intervals', value: '3×(4×30 sec max)' },
+          { label: 'Cadence', value: '50–60 rpm' },
+          { label: 'Total time', value: '~109 min' },
+        ],
+        source: 'hebisz2024',
+        file: 'High Torque - Tier 4 Advanced/SIT_3sets.zwo',
+      },
+    ],
   },
 ]

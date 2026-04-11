@@ -18,3 +18,11 @@ export interface Workout {
   source: string
   file: string
 }
+
+export interface Tier {
+  number: number
+  name: string
+  description: string
+  color: string
+  workouts: Workout[]
+}

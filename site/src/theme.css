@@ -66,6 +66,35 @@
   flex-wrap: wrap;
 }
 
+/* Tier sections */
+.tier-section {
+  border-left: 4px solid;
+  padding-left: 1rem;
+  margin-bottom: 2rem;
+}
+
+.tier-badge {
+  display: inline-block;
+  color: #1a1a1a;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.15em 0.6em;
+  border-radius: 0.25em;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+}
+
+.tier-description {
+  color: var(--pico-muted-color);
+  margin-top: 0;
+}
+
+.tier-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
 /* Inline citation */
 .cite {
   font-size: 0.8em;

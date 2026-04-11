@@ -1,4 +1,5 @@
 import AdaptationPanel from './components/AdaptationPanel'
+import TiersPanel from './components/TiersPanel'
 import DownloadBar from './components/DownloadBar'
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
       </header>
       <main className="container">
         <AdaptationPanel />
+        <TiersPanel />
         <DownloadBar />
       </main>
     </>
