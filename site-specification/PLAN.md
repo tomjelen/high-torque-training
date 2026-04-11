@@ -165,6 +165,22 @@ Second tab with research content.
 
 ---
 
+## Task 7: Scaled Workout Annotations
+
+Three workouts are adapted from their source prescriptions. The site currently shows the bare source name without indicating what was changed. Per the project's attribution rules, scaled workouts must be marked explicitly.
+
+**What needs annotation:**
+
+1. **Torque Staple (short)** — Source: EVOQ. EVOQ prescribes 5×5 min @ ~90% FTP. This workout reduces to 3×5 min (fewer reps) as a lower-volume entry point into EVOQ's staple format.
+2. **Torque Staple (long)** — Source: EVOQ. EVOQ prescribes 5×5 min but explicitly says *"You can extend the duration of these intervals up to 8 minutes."* This workout uses that prescribed extension (5×8 min). This is an EVOQ-described progression, not an independent modification — the annotation should reflect that.
+3. **HIIT Intro** — Source: Hebisz 2024. The study protocol uses 4×4 min @ 60–70 rpm (weeks 1–4 volume). This workout reduces to 3×3 min (fewer reps AND shorter intervals) as a lower-stress introduction to high-intensity torque work.
+
+**Design decision:** Put an asterisk at the source, and update the tooltip with the scaling information.
+
+**Verify:** Each scaled workout clearly communicates what was changed from the source and why. The source attribution remains accurate.
+
+---
+
 ## File Structure (Final)
 
 ```

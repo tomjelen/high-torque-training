@@ -228,7 +228,7 @@ export const TIERS: Tier[] = [
     number: 4,
     name: 'Advanced',
     description:
-      'Sprint and supra-threshold. Highest knee stress. Monthly at most initially.',
+      'Sprint and supra-threshold. Highest knee stress. Monthly at most initially. Relevant to Zwift sprint racing.',
     color: '#f87171',
     workouts: [
       {

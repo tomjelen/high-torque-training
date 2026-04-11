@@ -8,3 +8,4 @@
 - [x] Task 5-a: Workout Downloads - All workouts
 - [x] Task 5-b: Workout Downloads - Individual workouts
 - [ ] Task 6: Science & Rationale Page
+- [ ] Task 7: Scaled Workout Annotations

@@ -149,8 +149,6 @@ The cadence, session structure, and progressive volume here is adapted from stan
 | 2 | 1× low-cadence endurance | 2× 15 min Zone 2 at **65 RPM**, 5 min easy between. |
 | 3 | 1× low-cadence endurance | 3× 10 min Zone 2 at **60–65 RPM**, 5 min easy between. |
 
-ZWO files: `workouts/High Torque - Phase 1 Adaptation/`
-
 ### Ready to move on?
 
 All of these must be true before starting ongoing training:
