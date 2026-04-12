@@ -27,3 +27,8 @@ export interface Tier {
   color: string
   workouts: Workout[]
 }
+
+export interface ScienceSection {
+  id: string
+  heading: string
+}

@@ -95,6 +95,86 @@
   gap: 1rem;
 }
 
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.tab-button {
+  background: transparent;
+  border: 1px solid var(--pico-muted-border-color);
+  color: var(--pico-muted-color);
+  padding: 0.4rem 1rem;
+  border-radius: 0.4rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  width: auto;
+  margin: 0;
+}
+
+.tab-button:hover {
+  color: var(--pico-color);
+  border-color: var(--pico-primary);
+}
+
+.tab-button.active {
+  background: var(--pico-primary);
+  border-color: var(--pico-primary);
+  color: #1a1a1a;
+}
+
+/* Science page */
+.science-page > details {
+  margin-bottom: 1rem;
+}
+
+.science-page > details > summary {
+  font-size: 1.4rem;
+  font-weight: 700;
+  padding: 0.5rem 0;
+}
+
+.science-page hgroup > p {
+  font-size: 0.95rem;
+  color: var(--pico-muted-color);
+}
+
+.science-page h4 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--pico-primary);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.science-page table {
+  font-size: 0.9rem;
+}
+
+.sources-list {
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--pico-muted-border-color);
+}
+
+.sources-list ol {
+  font-size: 0.85rem;
+}
+
+.sources-list li {
+  margin-bottom: 0.75rem;
+  line-height: 1.5;
+}
+
+.sources-list a {
+  word-break: break-all;
+}
+
 /* Inline citation */
 .cite {
   font-size: 0.8em;

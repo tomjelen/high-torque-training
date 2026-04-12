@@ -1,4 +1,14 @@
-import type { Source, Tier, Workout } from './types'
+import type { ScienceSection, Source, Tier, Workout } from './types'
+
+export const SCIENCE_SECTIONS: ScienceSection[] = [
+  { id: 'what', heading: 'What is torque training?' },
+  { id: 'why', heading: 'Why does it work?' },
+  { id: 'knee', heading: 'Knee safety' },
+  { id: 'adaptation', heading: 'The adaptation phase' },
+  { id: 'ongoing', heading: 'Ongoing training framework' },
+  { id: 'evidence', heading: 'How solid is this evidence?' },
+]
+
 
 export const SOURCES: Record<string, Source> = {
   hebisz2024: {
