@@ -4,11 +4,31 @@ import type { Workout } from '../types'
 interface WorkoutCardProps {
   workout: Workout
   step?: number
+  disabled?: boolean
+  completedAt?: string
+  onComplete?: () => void
+  onUndo?: () => void
 }
 
-export default function WorkoutCard({ workout, step }: WorkoutCardProps) {
+function formatDate(iso: string) {
+  const d = new Date(iso)
+  return d.toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' })
+}
+
+export default function WorkoutCard({
+  workout,
+  step,
+  disabled,
+  completedAt,
+  onComplete,
+  onUndo,
+}: WorkoutCardProps) {
+  const trackable = onComplete !== undefined || onUndo !== undefined
   return (
-    <article className="workout-card">
+    <article
+      className={`workout-card${disabled ? ' is-disabled' : ''}${completedAt ? ' is-completed' : ''}`}
+      aria-disabled={disabled || undefined}
+    >
       {step !== undefined && (
         <span className="step-badge">Week {step}</span>
       )}
@@ -34,6 +54,28 @@ export default function WorkoutCard({ workout, step }: WorkoutCardProps) {
           Download .zwo
         </a>
       </footer>
+      {trackable && (
+        <div className="workout-track">
+          {completedAt ? (
+            <>
+              <span className="completed-label">✓ Completed {formatDate(completedAt)}</span>
+              {onUndo && (
+                <button type="button" className="undo-button" onClick={onUndo}>
+                  Undo
+                </button>
+              )}
+            </>
+          ) : (
+            <button
+              type="button"
+              onClick={onComplete}
+              disabled={disabled}
+            >
+              Mark Complete
+            </button>
+          )}
+        </div>
+      )}
     </article>
   )
 }

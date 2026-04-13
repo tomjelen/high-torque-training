@@ -32,3 +32,16 @@ export interface ScienceSection {
   id: string
   heading: string
 }
+
+export type AdaptationId = 'w1' | 'w2' | 'w3'
+
+export interface LogEntry {
+  workoutId: string
+  date: string
+}
+
+export interface AppState {
+  adaptation: Partial<Record<AdaptationId, string>>
+  log: LogEntry[]
+  adaptationCollapsed?: boolean
+}

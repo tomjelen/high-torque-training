@@ -15,6 +15,67 @@
 /* Workout card */
 .workout-card {
   position: relative;
+  transition: opacity 0.15s ease;
+}
+
+.workout-card.is-disabled {
+  opacity: 0.4;
+}
+
+.workout-card.is-completed {
+  border-color: var(--pico-primary);
+}
+
+.workout-track {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--pico-muted-border-color);
+}
+
+.workout-track button {
+  margin: 0;
+  width: auto;
+  padding: 0.35rem 0.9rem;
+  font-size: 0.85rem;
+}
+
+.workout-track .undo-button {
+  background: transparent;
+  color: var(--pico-muted-color);
+  border: 1px solid var(--pico-muted-border-color);
+}
+
+.completed-label {
+  color: var(--pico-primary);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.progress-count {
+  display: inline-block;
+  margin-left: 0.5rem;
+  padding: 0.1em 0.6em;
+  border-radius: 1em;
+  background: var(--pico-muted-border-color);
+  color: var(--pico-color);
+  font-size: 0.75rem;
+  font-weight: 600;
+  vertical-align: middle;
+}
+
+.readiness-checklist {
+  margin-top: 1.5rem;
+  padding: 1rem 1.25rem;
+  border-left: 4px solid var(--pico-primary);
+  background: var(--pico-card-background-color, transparent);
+}
+
+.readiness-checklist h3 {
+  margin-top: 0;
 }
 
 .step-badge {
