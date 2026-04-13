@@ -1,29 +1,26 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef } from 'react'
 import WorkoutCard from './WorkoutCard'
 import { ADAPTATION_WORKOUTS } from '../data'
-import { loadState, saveState } from '../storage'
 import type { AdaptationId, AppState } from '../types'
 
 const ORDER: AdaptationId[] = ['w1', 'w2', 'w3']
 
-export default function AdaptationPanel() {
-  const [state, setState] = useState<AppState>(() => loadState())
-  const prevCompletedCount = useRef(Object.keys(state.adaptation).length)
+interface Props {
+  state: AppState
+  setState: React.Dispatch<React.SetStateAction<AppState>>
+}
 
-  useEffect(() => {
-    saveState(state)
-  }, [state])
-
+export default function AdaptationPanel({ state, setState }: Props) {
   const completedCount = ORDER.filter((id) => state.adaptation[id]).length
   const allDone = completedCount === ORDER.length
+  const prevCompletedCount = useRef(completedCount)
 
-  // Auto-collapse on the transition to all-done (not on every render once done)
   useEffect(() => {
     if (completedCount === ORDER.length && prevCompletedCount.current < ORDER.length) {
       setState((s) => ({ ...s, adaptationCollapsed: true }))
     }
     prevCompletedCount.current = completedCount
-  }, [completedCount])
+  }, [completedCount, setState])
 
   function markComplete(id: AdaptationId) {
     setState((prev) => ({

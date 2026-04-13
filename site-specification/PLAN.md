@@ -88,11 +88,11 @@ Tier colors: T1 `#86efac`, T2 `#fbbf24`, T3 `#fb923c`, T4 `#f87171`
 
 ---
 
-## Task 4: Session Logger
+## Task 4: Session Tracker
 
 Running log for completed ongoing sessions (different UX from adaptation checkboxes).
 
-**Files:** `src/components/SessionLog.tsx`, extend `App.tsx` state
+**Files:** `src/components/SessionTracker.tsx`, extend `App.tsx` state
 
 **localStorage:** Entries in `ht-v1.log` array:
 ```ts
@@ -203,7 +203,7 @@ site/
       AdaptationPanel.tsx
       WorkoutCard.tsx
       TiersPanel.tsx
-      SessionLog.tsx
+      SessionTracker.tsx
       DownloadBar.tsx
       SciencePage.tsx
       SourcesList.tsx

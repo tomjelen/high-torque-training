@@ -36,8 +36,10 @@ export interface ScienceSection {
 export type AdaptationId = 'w1' | 'w2' | 'w3'
 
 export interface LogEntry {
+  id: string
   workoutId: string
   date: string
+  notes?: string
 }
 
 export interface AppState {

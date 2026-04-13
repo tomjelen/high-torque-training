@@ -3,6 +3,9 @@ import AdaptationPanel from './components/AdaptationPanel'
 import TiersPanel from './components/TiersPanel'
 import DownloadBar from './components/DownloadBar'
 import SciencePage from './components/SciencePage'
+import SessionTracker from './components/SessionTracker'
+import { loadState, saveState } from './storage'
+import type { AppState } from './types'
 
 type Tab = 'training' | 'science'
 
@@ -12,6 +15,11 @@ function tabFromHash(): Tab {
 
 function App() {
   const [tab, setTab] = useState<Tab>(tabFromHash)
+  const [state, setState] = useState<AppState>(() => loadState())
+
+  useEffect(() => {
+    saveState(state)
+  }, [state])
 
   useEffect(() => {
     const onHash = () => setTab(tabFromHash())
@@ -52,8 +60,9 @@ function App() {
       <main className="container">
         {tab === 'training' ? (
           <>
-            <AdaptationPanel />
+            <AdaptationPanel state={state} setState={setState} />
             <TiersPanel />
+            <SessionTracker state={state} setState={setState} />
             <DownloadBar />
           </>
         ) : (
