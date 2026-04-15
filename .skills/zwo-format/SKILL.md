@@ -41,7 +41,7 @@ Rules for the Zwift `.zwo` XML format. These come from testing against Zwift and
 
 ## Power targets
 
-All power values are fractions of FTP: `0.88` = 88% FTP.
+All power values can have fractions of FTP: `0.88` = 88% FTP.
 
 ### Power continuity (critical — this is the most common mistake)
 
@@ -49,7 +49,7 @@ All power values are fractions of FTP: `0.88` = 88% FTP.
 
 - **Warmup** ramps UP: `PowerLow` (start, low) < `PowerHigh` (end, high). `PowerHigh` should match the power of the next block for a smooth transition.
   - Example: if followed by `IntervalsT OnPower="0.80"`, then `PowerHigh="0.80"`.
-- **Cooldown** ramps DOWN: `PowerLow` (start, high) > `PowerHigh` (end, low). `PowerLow` should match the power of the previous block.
+- **Cooldown** ramps DOWN: `PowerLow` (start, high) > `PowerHigh` (end, low). `PowerLow` should match the power of the previous block. Yes, its counter-intuitive, PowerLow means start, which means the HIGHER power value.
   - If preceded by `IntervalsT`, the block ends on `OffPower`, so `PowerLow` = `OffPower`.
 
 **Verify after every edit:**
