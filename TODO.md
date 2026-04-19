@@ -9,6 +9,8 @@
 - [ ] Site - rationale page: In the section "Ongoing training framework", I think it would be good to point out that this is designed for people like me, that will keep it going, instead of trying to peak. Then maybe shortly outline what the plan would be, if you have a race season (only once a month, yada yada), and then link to articles/papers that goes into details. Later, if interest is here, I can expand the site to cater to this group also. That should be easier, as there is plenty of data/recommendation for this.
 - [ ] Call-out for people to correct false information or improvements. It should show that I care about factual correct information, and that I appreciate sharing the learnings. With luck, I will be able to add comments to the rationale, where some important person has given me an oppinion/suggestion, with a referece back to this person. I think that would help build credibility.
 - [ ] A date for when this was last updated. That way people can see if I have considered some new research. Maybe that means two dates. One for a minor site update, another for when research was updated.
+- [ ] zwo-skill to public repo. Share with the world!
+- [ ] Maybe there should be a longer "who am i" part, that the introduction can link to. Also with a link to my activities in Strava to gauge if you look somewhat like me.
 
 ## Skills to explore
 
