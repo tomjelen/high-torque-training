@@ -1,0 +1,663 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>High Torque — Final Wireframes</title>
+<meta name="viewport" content="width=1400" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Kalam:wght@400;700&family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0e1218; --bg-2: #161b23; --panel: #1a212b;
+    --ink: #d8dde5; --ink-dim: #8891a0; --ink-faint: #5b6473;
+    --line: #2b3340; --line-soft: #222a35;
+    --accent: #e8833a; --blue: #3fa6e0;
+    --t1: #5cb88a; --t2: #d7b14b; --t3: #e8833a; --t4: #c8533f;
+    --hard: #c8533f; --easy: #5cb88a;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin:0; background:#07090d; color:var(--ink); font-family:'Inter',sans-serif; }
+  body { padding:0 0 120px; }
+
+  .topbar {
+    position:sticky; top:0; z-index:50;
+    background:#0b0e13cc; backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+    padding:14px 28px;
+    display:flex; align-items:baseline; gap:24px;
+    font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--ink-dim);
+  }
+  .topbar h1 { margin:0; font-family:'Kalam',cursive; font-weight:700; color:var(--ink); font-size:18px; letter-spacing:.3px; }
+  .tabs { margin-left:auto; display:flex; gap:4px; flex-wrap:wrap; }
+  .tabs button {
+    background:transparent; border:1px solid var(--line);
+    color:var(--ink-dim); padding:6px 12px; font:inherit;
+    font-family:'JetBrains Mono',monospace; font-size:11px;
+    cursor:pointer; border-radius:2px; letter-spacing:.3px;
+  }
+  .tabs button:hover { color:var(--ink); border-color:var(--ink-faint); }
+  .tabs button.active { color:#0b0e13; background:var(--ink); border-color:var(--ink); }
+
+  .canvas { display:none; padding:32px 28px 0; }
+  .canvas.active { display:block; }
+
+  .board {
+    max-width:1440px; margin:0 auto;
+    background:var(--bg); border:1px solid var(--line);
+    border-radius:6px; position:relative; overflow:hidden;
+  }
+  .board-label {
+    position:absolute; top:-11px; left:18px;
+    background:#07090d; padding:0 10px;
+    font-family:'Kalam',cursive; font-size:14px; color:var(--ink-dim);
+  }
+  .board-label b { color:var(--ink); }
+  .intro-note {
+    max-width:1440px; margin:0 auto 24px;
+    font-family:'Architects Daughter',cursive;
+    font-size:15px; color:var(--ink-dim);
+    line-height:1.6; padding:0 6px;
+  }
+  .intro-note b { color:var(--ink); }
+  .intro-note .hl { color:var(--accent); }
+
+  .site { padding:28px 40px 40px; }
+
+  .site-header {
+    display:flex; align-items:baseline; justify-content:space-between;
+    padding-bottom:14px;
+    border-bottom:1px dashed var(--line);
+    margin-bottom:22px;
+  }
+  .brand { font-family:'Kalam',cursive; font-weight:700; font-size:22px; color:var(--ink); }
+  .nav-link { font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--ink-dim); text-decoration:none; border-bottom:1px dashed var(--ink-faint); padding-bottom:1px; }
+
+  .panel {
+    border:1px solid var(--line); border-radius:4px;
+    margin-bottom:18px; background:var(--bg-2);
+  }
+  .panel-head {
+    display:flex; align-items:center; justify-content:space-between;
+    padding:14px 18px;
+    border-bottom:1px dashed var(--line-soft);
+    gap:16px;
+  }
+  .panel.collapsed .panel-head { border-bottom:none; }
+  .panel-head .title {
+    font-family:'Kalam',cursive; font-weight:700;
+    font-size:20px; color:var(--ink);
+  }
+  .panel-head .teaser {
+    font-family:'Architects Daughter',cursive;
+    font-size:13px; color:var(--ink-dim); margin-left:14px;
+  }
+  .panel-head .teaser em { color:var(--accent); font-style:normal; }
+  .panel-head .chev { font-family:'JetBrains Mono',monospace; color:var(--ink-faint); font-size:14px; }
+  .panel-body { padding:16px 18px 20px; }
+
+  .warn {
+    border:1px dashed var(--hard);
+    background:rgba(200,83,63,.08);
+    padding:10px 14px;
+    font-family:'Architects Daughter',cursive;
+    font-size:13px; line-height:1.55; color:#e9b8b0;
+    margin-bottom:14px;
+  }
+  .warn b { color:#f1c7bf; }
+  .warn.soft { border-color:var(--line); background:transparent; color:var(--ink-dim); padding:8px 0; }
+
+  .cards-row { display:flex; gap:14px; align-items:stretch; }
+  .cards-row > .ad-card { flex:1 1 0; min-width:0; }
+  .card {
+    border:1px solid var(--line); border-radius:4px;
+    padding:14px; background:var(--panel);
+    position:relative; min-height:190px;
+    display:flex; flex-direction:column;
+  }
+  .card .title-row { display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:10px; }
+  .card h3 {
+    margin:0; font-family:'Kalam',cursive; font-weight:700;
+    font-size:16px; color:var(--ink); line-height:1.15;
+  }
+  .stats { display:grid; grid-template-columns:1fr auto; gap:4px 10px; font-family:'JetBrains Mono',monospace; font-size:11px; }
+  .stats dt { color:var(--ink-dim); }
+  .stats dd { margin:0; color:var(--ink); text-align:right; }
+  .card .foot { margin-top:auto; padding-top:10px; border-top:1px dashed var(--line-soft); display:flex; align-items:center; justify-content:space-between; gap:8px; }
+  .card .src { font-family:'JetBrains Mono',monospace; font-size:10px; color:var(--ink-faint); }
+  .card .src em { color:var(--accent); font-style:normal; }
+
+  .tier {
+    font-family:'JetBrains Mono',monospace;
+    font-size:10px; font-weight:700;
+    padding:2px 6px; border-radius:2px;
+    letter-spacing:.5px; color:#07090d;
+  }
+  .tier.t1 { background:var(--t1); }
+  .tier.t2 { background:var(--t2); }
+  .tier.t3 { background:var(--t3); }
+  .tier.t4 { background:var(--t4); color:#fff; }
+  .tier-dot { width:8px; height:8px; border-radius:50%; display:inline-block; }
+
+  .btn {
+    font-family:'JetBrains Mono',monospace; font-size:11px;
+    border:1px solid var(--line); background:transparent;
+    color:var(--ink); padding:6px 10px; border-radius:3px; cursor:pointer;
+    letter-spacing:.3px;
+  }
+  .btn.primary { background:var(--accent); color:#0b0e13; border-color:var(--accent); font-weight:700; }
+  .btn.ghost { border-color:var(--ink-faint); color:var(--ink-dim); }
+  .btn.outline-accent { color:var(--accent); border-color:var(--accent); }
+  .btn.block { width:100%; }
+  .mini {
+    font-family:'JetBrains Mono',monospace; font-size:10px;
+    color:var(--ink-dim); border:1px solid var(--line); border-radius:2px;
+    padding:3px 6px; cursor:pointer; background:transparent;
+  }
+  .mini:hover { color:var(--accent); border-color:var(--accent); }
+
+  .site-footer {
+    margin-top:26px; padding-top:14px;
+    border-top:1px dashed var(--line);
+    display:flex; justify-content:space-between; align-items:start;
+    font-family:'JetBrains Mono',monospace; font-size:11px;
+    color:var(--ink-dim); gap:20px;
+  }
+  .site-footer .author { font-family:'Kalam',cursive; font-size:15px; color:var(--ink); }
+  .site-footer .channels { display:flex; gap:12px; margin-top:4px; }
+  .site-footer .callout { max-width:560px; font-family:'Architects Daughter',cursive; font-size:13px; color:var(--ink-dim); line-height:1.5; }
+  .site-footer .callout em { color:var(--accent); font-style:normal; }
+  .site-footer .updated { font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--ink-faint); text-align:right; }
+
+  .legend {
+    display:flex; gap:14px; flex-wrap:wrap;
+    font-family:'JetBrains Mono',monospace; font-size:10px; color:var(--ink-dim);
+    padding:8px 10px; border:1px dashed var(--line); border-radius:3px; margin-bottom:14px;
+    background:#0b0e13;
+  }
+  .legend b { color:var(--ink); }
+
+  .ad-card { min-height:260px; }
+  .ad-card.locked { opacity:.45; }
+  .ad-card .pill {
+    font-family:'JetBrains Mono',monospace; font-size:10px;
+    background:var(--accent); color:#0b0e13; padding:2px 6px; border-radius:2px; font-weight:700;
+  }
+
+  .coll-layout { display:grid; grid-template-columns:1fr 300px; gap:18px; }
+  .coll-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+  .coll-grid .card { position:relative; }
+  .coll-grid .card > .tier { position:absolute; top:12px; right:12px; z-index:1; }
+  .coll-grid .card .title-row h3 { padding-right:36px; }
+
+  .tracker {
+    border:1px solid var(--line); border-radius:4px;
+    padding:14px; background:var(--panel);
+    display:flex; flex-direction:column; gap:14px;
+    position:sticky; top:70px; align-self:start;
+  }
+  .tracker-head { display:flex; align-items:center; justify-content:space-between; }
+  .tracker-head h4 { margin:0; font-family:'Kalam',cursive; font-size:16px; color:var(--ink); }
+  .tracker-head .help {
+    font-family:'JetBrains Mono',monospace; font-size:10px;
+    border:1px solid var(--ink-faint); color:var(--ink-dim);
+    width:16px; height:16px; border-radius:50%; text-align:center; line-height:14px; cursor:help;
+  }
+  .counter { text-align:center; padding:10px 0; border:1px dashed var(--line); border-radius:3px; background:#0b0e13; }
+  .counter .n { font-family:'Kalam',cursive; font-size:34px; font-weight:700; color:var(--ink); line-height:1; }
+  .counter .label { font-family:'JetBrains Mono',monospace; font-size:10px; color:var(--ink-dim); margin-top:4px; letter-spacing:.3px; }
+  .counter.ok .n { color:var(--t1); }
+  .counter.warn-col .n { color:var(--hard); }
+
+  .strip-cal {
+    display:grid; grid-template-columns:repeat(30,1fr); gap:2px;
+    border:1px dashed var(--line); padding:8px; border-radius:3px; background:#0b0e13;
+  }
+  .strip-cal .cell {
+    height:14px; border:1px solid var(--line-soft); border-radius:1px;
+  }
+  .strip-cal .cell.hard { background:var(--hard); border-color:var(--hard); }
+  .strip-cal .cell.easy { background:var(--easy); border-color:var(--easy); }
+
+  .log-list { display:flex; flex-direction:column; gap:6px; }
+  .log-entry {
+    display:grid; grid-template-columns:10px 1fr auto; gap:8px; align-items:center;
+    font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--ink-dim);
+    padding:4px 0; border-bottom:1px dashed var(--line-soft);
+  }
+  .log-entry .gap { color:var(--ink-faint); font-size:10px; }
+
+  .teaser-line {
+    font-family:'Architects Daughter',cursive;
+    font-size:13px; color:var(--ink-dim);
+    display:flex; justify-content:space-between;
+    padding:8px 18px;
+  }
+  .teaser-line em { color:var(--ink); font-style:normal; }
+
+  .dl-hero {
+    display:flex; align-items:center; justify-content:space-between; gap:18px;
+    border:1px solid var(--line); border-radius:4px; padding:14px 16px; background:#0b0e13;
+  }
+  .dl-hero .copy { font-family:'Architects Daughter',cursive; font-size:13px; color:var(--ink-dim); max-width:520px; line-height:1.5; }
+  .dl-hero .copy b { color:var(--ink); }
+
+  .prose { font-family:'Inter',sans-serif; font-size:14px; color:var(--ink); line-height:1.7; max-width:720px; }
+  .prose h2 { font-family:'Kalam',cursive; margin:22px 0 6px; font-size:22px; }
+  .prose p { color:var(--ink-dim); }
+  .prose .placeholder {
+    border:1px dashed var(--line); padding:12px; color:var(--ink-faint);
+    font-family:'JetBrains Mono',monospace; font-size:11px; margin:8px 0; background:#0b0e13;
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <h1>High Torque — final wireframes</h1>
+  <span>desktop-first · ≥1280px · 3 screens</span>
+  <div class="tabs" id="tabs">
+    <button data-tab="expanded" class="active">① Home · all expanded</button>
+    <button data-tab="collapsed">② Home · returning user (collapsed)</button>
+    <button data-tab="science">③ /science</button>
+  </div>
+</div>
+
+<!-- ==================================================== 1 Expanded ==================================================== -->
+<section class="canvas active" data-tab="expanded">
+  <div class="intro-note">
+    <b>① Home — first-visit / all panels expanded.</b> Canonical layout: header, Intro, Download &amp; install, Adaptation (with W1/W2/W3 cards), Collection (with Session Tracker sidebar), footer. Tier badges top-right on collection cards, 30-cell linear tracker strip.
+  </div>
+
+  <div class="board">
+    <div class="board-label"><b>Home</b> · all panels expanded · 1440 viewport</div>
+    <div class="site">
+
+      <div class="site-header">
+        <div class="brand">High Torque Training</div>
+        <a class="nav-link" href="#">Science &amp; Rationale →</a>
+      </div>
+
+      <!-- Intro -->
+      <div class="panel">
+        <div class="panel-head"><div class="title">Intro — what &amp; why</div><span class="chev">▾</span></div>
+        <div class="panel-body">
+          <p style="font-family:'Architects Daughter',cursive;font-size:14px;line-height:1.6;color:var(--ink-dim);margin:0 0 12px;">
+            High-torque training is <b style="color:var(--ink)">low cadence at high power</b>. In an 8-week study, cyclists doing intervals at 50–70 RPM gained <b style="color:var(--t1)">+8.7% VO2max</b> / <b style="color:var(--t1)">+8.1% MAP</b>, vs +4.6% / +3.0% at freely chosen cadence &gt;80 RPM.
+          </p>
+          <p style="font-family:'Architects Daughter',cursive;font-size:13px;color:var(--ink-faint);margin:0 0 10px;">
+            → <a href="#" style="color:var(--blue)">Study (Hebisz &amp; Hebisz, PLOS ONE 2024)</a> · <a href="#" style="color:var(--blue)">Podcast that inspired this</a>
+          </p>
+          <p style="font-family:'Architects Daughter',cursive;font-size:13px;color:var(--ink-dim);margin:0;border-top:1px dashed var(--line-soft);padding-top:10px;">
+            <b style="color:var(--ink)">How this site is structured:</b> start with the adaptation phase below, then use the collection weekly. 1–2 sessions/week, never back-to-back.
+          </p>
+        </div>
+      </div>
+
+      <!-- Download -->
+      <div class="panel">
+        <div class="panel-head"><div class="title">Download &amp; install</div><span class="chev">▾</span></div>
+        <div class="panel-body">
+          <div class="dl-hero">
+            <div class="copy">
+              Download all workouts as a zip, drop them into Zwift's workout folder, <b>done once</b> — then collapse this panel and forget it.
+            </div>
+            <div style="display:flex;gap:8px;align-items:center;">
+              <button class="btn primary">⤓ Download All (.zip)</button>
+              <a href="#" class="nav-link">Zwift install →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Adaptation -->
+      <div class="panel">
+        <div class="panel-head">
+          <div><span class="title">Adaptation Phase</span><span class="teaser">Weeks 1–3 · <em>1 / 3 complete</em></span></div>
+          <div style="display:flex;gap:6px;align-items:center;font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--ink-faint);margin-left:auto;padding-right:12px;">state:
+            <span style="padding:2px 6px;border:1px solid var(--ink-faint);border-radius:2px;color:var(--ink-dim);">fresh</span>
+            <span style="padding:2px 6px;border:1px solid var(--accent);border-radius:2px;color:var(--accent);background:rgba(232,131,58,.1);">1/3 done ★</span>
+            <span style="padding:2px 6px;border:1px solid var(--ink-faint);border-radius:2px;color:var(--ink-dim);">3/3 done</span>
+          </div>
+          <span class="chev">▾</span>
+        </div>
+        <div class="panel-body">
+          <div class="warn">
+            <b>⚠ Knee safety — read before starting.</b> All intervals <b>seated</b>. Warm up 15 min before first low-cadence rep. <b>Stop if you feel pain</b> — do not push through; redo the week instead. Skip entirely if you have a history of patellofemoral/patellar-tendon issues or are coming off rest/injury.
+          </div>
+          <div style="display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:14px;">
+
+            <div class="card" style="min-height:260px;border-color:var(--t1);background:linear-gradient(180deg, rgba(92,184,138,.08), var(--panel));">
+              <div class="title-row"><h3>W1 — 65–70 rpm</h3><span style="font-family:'JetBrains Mono',monospace;font-size:10px;background:var(--t1);color:#07090d;padding:2px 6px;border-radius:2px;font-weight:700;">✓ DONE</span></div>
+              <dl class="stats">
+                <dt>Sets × duration</dt><dd>2 × 10 min</dd>
+                <dt>Intensity</dt><dd>Zone 2 (~65% FTP)</dd>
+                <dt>Cadence</dt><dd>65–70 rpm</dd>
+                <dt>Recovery</dt><dd>5 min easy spin</dd>
+                <dt>Total time</dt><dd>~50 min</dd>
+              </dl>
+              <div style="font-family:'Architects Daughter',cursive;font-size:12px;color:var(--t1);padding-top:8px;border-top:1px dashed var(--line-soft);margin-top:8px;">✓ Completed Apr 8 · knees felt fine</div>
+              <div class="foot">
+                <span class="src">Source: <em>[EVOQ.BIKE]</em></span>
+                <div style="display:flex;gap:6px;"><button class="mini">⤓ .zwo</button><button class="mini" style="color:var(--t1);border-color:var(--t1);">↺ redo</button></div>
+              </div>
+            </div>
+
+            <div class="card" style="min-height:260px;">
+              <div class="title-row"><h3>W2 — 65 rpm</h3><span style="font-family:'JetBrains Mono',monospace;font-size:10px;background:var(--accent);color:#07090d;padding:2px 6px;border-radius:2px;font-weight:700;">ACTIVE</span></div>
+              <dl class="stats">
+                <dt>Sets × duration</dt><dd>2 × 15 min</dd>
+                <dt>Intensity</dt><dd>Zone 2 (~65% FTP)</dd>
+                <dt>Cadence</dt><dd>65 rpm</dd>
+                <dt>Recovery</dt><dd>5 min easy</dd>
+                <dt>Total time</dt><dd>~60 min</dd>
+              </dl>
+              <div class="foot">
+                <span class="src">Source: <em>[Hebisz 2024]</em></span>
+                <div style="display:flex;gap:6px;"><button class="mini">⤓ .zwo</button><button class="mini" style="color:var(--accent);border-color:var(--accent);background:rgba(232,131,58,.1);">✓ complete</button></div>
+              </div>
+            </div>
+
+            <div class="card" style="min-height:260px;opacity:.45;">
+              <div class="title-row"><h3>W3 — 60–65 rpm</h3><span style="font-family:'JetBrains Mono',monospace;font-size:10px;background:var(--line);color:var(--ink-dim);padding:2px 6px;border-radius:2px;font-weight:700;">LOCKED</span></div>
+              <dl class="stats">
+                <dt>Sets × duration</dt><dd>3 × 10 min</dd>
+                <dt>Intensity</dt><dd>Zone 2 (~65% FTP)</dd>
+                <dt>Cadence</dt><dd>60–65 rpm</dd>
+                <dt>Recovery</dt><dd>5 min easy</dd>
+                <dt>Total time</dt><dd>~65 min</dd>
+              </dl>
+              <div class="foot">
+                <span class="src">Source: <em>[Hebisz 2024]</em></span>
+                <div style="display:flex;gap:6px;"><button class="mini">⤓ .zwo</button><button class="mini" disabled style="opacity:.5;cursor:not-allowed;">✓ complete</button></div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Collection -->
+      <div class="panel">
+        <div class="panel-head"><div class="title">The High Torque Collection</div><span class="chev">▾</span></div>
+        <div class="panel-body">
+
+          <div style="border:1px solid var(--line-soft);border-radius:3px;margin-bottom:14px;background:#0b0e13;">
+            <div class="teaser-line">
+              <span>▸ <b>Usage guidelines &amp; tiers</b> — <em>1–2 sessions/week, never back-to-back, progress cadence before volume.</em></span>
+              <span style="color:var(--ink-faint);">click to expand</span>
+            </div>
+            <div class="warn soft" style="padding:8px 18px;border-top:1px dashed var(--line-soft);">
+              <b>Seated only.</b> Stop if anything pulls in a knee — low-cadence work stays knee-risky, not just during adaptation.
+            </div>
+          </div>
+
+          <div class="legend">
+            <span><span class="tier t1">T1</span> entry / easy</span>
+            <span><span class="tier t2">T2</span> development / easy</span>
+            <span><span class="tier t3">T3</span> challenging / <b>hard</b></span>
+            <span><span class="tier t4">T4</span> advanced / <b>hard</b></span>
+            <span style="margin-left:auto;color:var(--ink-faint);">sort: tier → title</span>
+          </div>
+
+          <div class="coll-layout">
+            <div class="coll-grid" id="exp-grid"></div>
+
+            <aside class="tracker">
+              <div class="tracker-head"><h4>Session Tracker</h4><span class="help" title="Browser-local only">?</span></div>
+              <div class="counter ok"><div class="n">4.5</div><div class="label">days since last HARD session</div></div>
+              <div>
+                <div style="font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--ink-dim);margin-bottom:6px;letter-spacing:.3px;">LAST 30 DAYS</div>
+                <div class="strip-cal" id="exp-cal"></div>
+                <div style="display:flex;gap:10px;margin-top:6px;font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--ink-faint);">
+                  <span><span class="tier-dot" style="background:var(--hard);"></span> hard (T3–T4)</span>
+                  <span><span class="tier-dot" style="background:var(--easy);"></span> easy (T1–T2)</span>
+                  <span style="margin-left:auto;">today →</span>
+                </div>
+              </div>
+              <div>
+                <div style="font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--ink-dim);margin-bottom:4px;">RECENT ENTRIES</div>
+                <div class="log-list">
+                  <div class="log-entry"><span class="tier-dot" style="background:var(--easy);"></span><span>Apr 15 · Torque Entry</span><span class="gap">+2d</span></div>
+                  <div class="log-entry"><span class="tier-dot" style="background:var(--hard);"></span><span>Apr 13 · Threshold Torque</span><span class="gap">+3d</span></div>
+                  <div class="log-entry"><span class="tier-dot" style="background:var(--easy);"></span><span>Apr 10 · Staple 3×5</span><span class="gap">+2.5d</span></div>
+                  <div class="log-entry"><span class="tier-dot" style="background:var(--hard);"></span><span>Apr 7 · HIIT VO2 (4)</span><span class="gap">+3d</span></div>
+                </div>
+              </div>
+              <a href="#" style="font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--ink-faint);text-align:center;text-decoration:none;border-top:1px dashed var(--line-soft);padding-top:10px;">view full log →</a>
+            </aside>
+          </div>
+        </div>
+      </div>
+
+      <div class="site-footer">
+        <div>
+          <div class="author">Tom Jelen</div>
+          <div class="channels"><a href="#" style="color:var(--ink-dim);">✉ high-torque@jelen.dk</a><a href="#" style="color:var(--ink-dim);">◎ Strava</a></div>
+        </div>
+        <div class="callout"><em>Spotted bad info, a study I've missed, or have an idea for the site?</em> Email me — I want to know.</div>
+        <div class="updated">Last updated<br/>2026-04-19</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================================================== 2 Collapsed ==================================================== -->
+<section class="canvas" data-tab="collapsed">
+  <div class="intro-note">
+    <b>② Home — returning / library-phase user.</b> Intro, Download, and Adaptation collapsed. Collapsed headers still carry information (Download shows .zip button, Adaptation shows progress, Usage shows the key rule). Collection is now top-of-fold. Tracker shows the §4.5.3 "too soon" state with a red counter.
+  </div>
+
+  <div class="board">
+    <div class="board-label"><b>Home</b> · 3 panels collapsed · returning user</div>
+    <div class="site">
+
+      <div class="site-header">
+        <div class="brand">High Torque Training</div>
+        <a class="nav-link" href="#">Science &amp; Rationale →</a>
+      </div>
+
+      <div class="panel collapsed">
+        <div class="panel-head">
+          <div><span class="title" style="font-size:16px;">▸ Intro</span><span class="teaser">What &amp; why · Hebisz 2024 numbers</span></div>
+          <span class="chev">▸</span>
+        </div>
+      </div>
+
+      <div class="panel collapsed">
+        <div class="panel-head">
+          <div><span class="title" style="font-size:16px;">▸ Download &amp; install</span><span class="teaser">Re-download all workouts (.zip) · <em>Zwift install →</em></span></div>
+          <div style="display:flex;gap:8px;align-items:center;"><button class="btn primary">⤓ .zip</button><span class="chev">▸</span></div>
+        </div>
+      </div>
+
+      <div class="panel collapsed">
+        <div class="panel-head">
+          <div><span class="title" style="font-size:16px;">▸ Adaptation Phase</span><span class="teaser"><em>3 / 3 complete</em> · expand to review or redo</span></div>
+          <div style="display:flex;gap:8px;align-items:center;"><span class="tier t1">✓ DONE</span><span class="chev">▸</span></div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head">
+          <div class="title">The High Torque Collection</div>
+          <div style="display:flex;gap:10px;align-items:center;">
+            <span style="font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--ink-faint);">12 sessions · sort: tier → title</span>
+            <span class="chev">▾</span>
+          </div>
+        </div>
+        <div class="panel-body">
+
+          <div style="border:1px solid var(--line-soft);border-radius:3px;margin-bottom:12px;background:#0b0e13;">
+            <div class="teaser-line">
+              <span>▸ <b>Usage guidelines &amp; tiers</b> — <em>1–2/week · never back-to-back · seated · progress cadence before volume.</em></span>
+              <span style="color:var(--ink-faint);">expand</span>
+            </div>
+          </div>
+
+          <div class="legend">
+            <span><span class="tier t1">T1</span> entry / easy</span>
+            <span><span class="tier t2">T2</span> development / easy</span>
+            <span><span class="tier t3">T3</span> challenging / <b>hard</b></span>
+            <span><span class="tier t4">T4</span> advanced / <b>hard</b></span>
+            <span style="margin-left:auto;color:var(--ink-faint);">sort: tier → title</span>
+          </div>
+
+          <div class="coll-layout">
+            <div class="coll-grid" id="col-grid"></div>
+
+            <aside class="tracker">
+              <div class="tracker-head"><h4>Session Tracker</h4><span class="help">?</span></div>
+              <div class="counter warn-col">
+                <div class="n">1.5</div>
+                <div class="label">days since last HARD · <span style="color:var(--hard);">too soon for T3/T4</span></div>
+              </div>
+              <div>
+                <div style="font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--ink-dim);margin-bottom:6px;letter-spacing:.3px;">LAST 30 DAYS</div>
+                <div class="strip-cal" id="col-cal"></div>
+                <div style="display:flex;gap:10px;margin-top:6px;font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--ink-faint);">
+                  <span><span class="tier-dot" style="background:var(--hard);"></span> hard</span>
+                  <span><span class="tier-dot" style="background:var(--easy);"></span> easy</span>
+                  <span style="margin-left:auto;">today →</span>
+                </div>
+              </div>
+              <div>
+                <div style="font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--ink-dim);margin-bottom:4px;">LATEST</div>
+                <div class="log-list">
+                  <div class="log-entry"><span class="tier-dot" style="background:var(--hard);"></span><span>Apr 18 · HIIT VO2 (4)</span><span class="gap">+1.5d</span></div>
+                  <div class="log-entry"><span class="tier-dot" style="background:var(--easy);"></span><span>Apr 16 · Staple 5×5</span><span class="gap">+2d</span></div>
+                  <div class="log-entry"><span class="tier-dot" style="background:var(--hard);"></span><span>Apr 14 · Threshold</span><span class="gap">+2d</span></div>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </div>
+
+      <div class="site-footer">
+        <div>
+          <div class="author">Tom Jelen</div>
+          <div class="channels"><a href="#" style="color:var(--ink-dim);">✉ high-torque@jelen.dk</a><a href="#" style="color:var(--ink-dim);">◎ Strava</a></div>
+        </div>
+        <div class="callout"><em>Spotted bad info, a study I've missed, or have an idea for the site?</em> Email me — I want to know.</div>
+        <div class="updated">Last updated<br/>2026-04-19</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================================================== 3 /science ==================================================== -->
+<section class="canvas" data-tab="science">
+  <div class="intro-note">
+    <b>③ /science shell.</b> Body prose unchanged — shown here as placeholders. Header mirrors home ("Workouts →" link). Separate per-page Last updated.
+  </div>
+
+  <div class="board">
+    <div class="board-label"><b>/science</b> · shell only · body prose unchanged</div>
+    <div class="site">
+
+      <div class="site-header">
+        <div class="brand">High Torque Training</div>
+        <a class="nav-link" href="#" style="color:var(--accent);border-color:var(--accent);">Workouts →</a>
+      </div>
+
+      <div style="margin-bottom:18px;">
+        <h1 style="font-family:'Kalam',cursive;font-size:34px;margin:6px 0 4px;color:var(--ink);">Science &amp; Rationale</h1>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink-faint);">/science · deep reference document</div>
+      </div>
+
+      <div class="prose">
+        <h2>Why low cadence?</h2>
+        <div class="placeholder">[ existing prose — drop-in unchanged ]<br/>Section intro explaining the physiological case for high-torque intervals. ~4 paragraphs, one figure.</div>
+
+        <h2>The Hebisz &amp; Hebisz (2024) study</h2>
+        <div class="placeholder">[ existing prose — drop-in unchanged ]<br/>Methodology, sample size, primary &amp; secondary outcomes. ~5 paragraphs. Links out to PLOS ONE.</div>
+
+        <h2>What the sources say</h2>
+        <div class="placeholder">[ existing prose — drop-in unchanged ]<br/>Citation list: EVOQ.BIKE / Henderson / Rønnestad / Rüegg / Hebisz. One paragraph each.</div>
+
+        <h2>Knee-safety caveats</h2>
+        <div class="placeholder">[ existing prose — drop-in unchanged ]<br/>What we know, what we don't. Patellofemoral/patellar-tendon cautions. Warm-up recommendations.</div>
+
+        <h2>Known gaps in the evidence</h2>
+        <div class="placeholder">[ existing prose — drop-in unchanged ]<br/>Transparency section: where the science is thin, where Tom has extrapolated.</div>
+      </div>
+
+      <div class="site-footer">
+        <div>
+          <div class="author">Tom Jelen</div>
+          <div class="channels"><a href="#" style="color:var(--ink-dim);">✉ high-torque@jelen.dk</a><a href="#" style="color:var(--ink-dim);">◎ Strava</a></div>
+        </div>
+        <div class="callout"><em>Spotted bad info, a study I've missed, or have an idea for the site?</em> Email me — I want to know.</div>
+        <div class="updated">Last updated (this page)<br/>2026-03-28</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const tabs = document.querySelectorAll('#tabs button');
+  const canvases = document.querySelectorAll('.canvas');
+  function activate(tab) {
+    tabs.forEach(t => t.classList.toggle('active', t.dataset.tab === tab));
+    canvases.forEach(c => c.classList.toggle('active', c.dataset.tab === tab));
+    try { localStorage.setItem('htt-final-tab', tab); } catch(e){}
+    window.scrollTo(0,0);
+  }
+  tabs.forEach(t => t.addEventListener('click', () => activate(t.dataset.tab)));
+  try {
+    const saved = localStorage.getItem('htt-final-tab');
+    if (saved && document.querySelector(`[data-tab="${saved}"]`)) activate(saved);
+  } catch(e){}
+
+  const SESSIONS = [
+    {t:'t1', n:'Torque Entry',        i:'4×4 @ 80–85%',      c:'50–60 rpm', tot:'~60 min', tss:58,  src:'[Henderson]'},
+    {t:'t1', n:'Torque Staple 3×5',   i:'3×5 @ 90%',          c:'50–60 rpm', tot:'~55 min', tss:62,  src:'[EVOQ.BIKE]'},
+    {t:'t2', n:'Torque Staple 5×5',   i:'5×5 @ 90%',          c:'50–60 rpm', tot:'~75 min', tss:85,  src:'[EVOQ.BIKE]'},
+    {t:'t2', n:'Torque Staple 5×8',   i:'5×8 @ 90%',          c:'50–60 rpm', tot:'~90 min', tss:104, src:'[EVOQ.BIKE]'},
+    {t:'t2', n:'HIIT Intro',          i:'3×3 @ 110%',         c:'60–70 rpm', tot:'~55 min', tss:71,  src:'[Hebisz]*'},
+    {t:'t3', n:'Threshold Torque',    i:'5×5 @ 95%',          c:'50–60 rpm', tot:'~68 min', tss:82,  src:'[EVOQ.BIKE]'},
+    {t:'t3', n:'HIIT VO2max (4)',     i:'4×4 @ 110%',         c:'60–70 rpm', tot:'~83 min', tss:97,  src:'[Hebisz]'},
+    {t:'t3', n:'Rüegg VO2 + Sprint',  i:'3×(5m+1m sprint)',   c:'50–60 rpm', tot:'~72 min', tss:94,  src:'[Rüegg 2023]'},
+    {t:'t4', n:'TorqueMax',           i:'2×(2×3 min)',        c:'50–60 rpm', tot:'~85 min', tss:108, src:'[EVOQ.BIKE]'},
+    {t:'t4', n:'SIT (2 sets)',        i:'2×(4×30s max)',      c:'50–60 rpm', tot:'~52 min', tss:64,  src:'[Rønnestad]'},
+    {t:'t4', n:'HIIT VO2 (6 reps)',   i:'6×4 @ 110%',         c:'60–70 rpm', tot:'~107 min',tss:124, src:'[Hebisz]'},
+    {t:'t4', n:'SIT (3 sets)',        i:'3×(4×30s)',          c:'50–60 rpm', tot:'~66 min', tss:82,  src:'[Rønnestad]'},
+  ];
+  function cardHtml(s) {
+    return `<div class="card">
+      <span class="tier ${s.t}">${s.t.toUpperCase()}</span>
+      <div class="title-row"><h3>${s.n}</h3></div>
+      <dl class="stats">
+        <dt>Intervals</dt><dd>${s.i}</dd>
+        <dt>Cadence</dt><dd>${s.c}</dd>
+        <dt>Total time</dt><dd>${s.tot}</dd>
+        <dt>Est. TSS</dt><dd>${s.tss}</dd>
+      </dl>
+      <div class="foot">
+        <span class="src">Source: <em>${s.src}</em></span>
+        <div style="display:flex;gap:6px;"><button class="mini">⤓ .zwo</button><button class="mini">✓ today</button></div>
+      </div>
+    </div>`;
+  }
+  ['exp-grid','col-grid'].forEach(id => {
+    const host = document.getElementById(id);
+    if (host) host.innerHTML = SESSIONS.map(cardHtml).join('');
+  });
+
+  const PATTERN = ['','','H','','E','','','','H','','','E','','','H','','','E','','','','H','','E','','','H','','','E'];
+  while(PATTERN.length<30) PATTERN.push('');
+  ['exp-cal','col-cal'].forEach(id => {
+    const host = document.getElementById(id);
+    if (!host) return;
+    host.innerHTML = '';
+    for (let i=0;i<30;i++) {
+      const d = document.createElement('div');
+      d.className = 'cell' + (PATTERN[i]==='H'?' hard':PATTERN[i]==='E'?' easy':'');
+      host.appendChild(d);
+    }
+  });
+</script>
+
+</body>
+</html>
