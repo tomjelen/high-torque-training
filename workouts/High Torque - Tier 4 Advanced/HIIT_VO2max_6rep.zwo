@@ -9,12 +9,15 @@
     <workout>
         <Warmup Duration="900" PowerLow="0.40" PowerHigh="0.75">
             <textevent timeoffset="10" message="Source: Hebisz &amp; Hebisz (2024) HIIT protocol, weeks 5-8. 6x4 min at 90-100% Pmax (~110% FTP), 60-70 RPM, 8 min recovery." />
-            <textevent timeoffset="120" message="Volume progression from 4 to 6 reps. The study increased HIIT volume at the midpoint — this is the higher-volume phase where the strongest results emerged." />
-            <textevent timeoffset="150" message="The study increased HIIT volume from 4 reps to 6 reps in weeks 5-8. This session matches the higher-volume phase." />
-            <textevent timeoffset="300" message="110% FTP at 60-70rpm. Same intensity as the 4-rep version, but two extra intervals. The additional volume is where the study found its strongest results." />
+            <textevent timeoffset="120" message="Volume progression from 4 to 6 reps. The study increased HIIT volume at the midpoint —" />
+            <textevent timeoffset="130" message="this is the higher-volume phase where the strongest results emerged." />
+            <textevent timeoffset="300" message="110% FTP at 60-70rpm. Same intensity as the 4-rep version, but two extra intervals." />
+            <textevent timeoffset="310" message="The additional volume is where the study found its strongest results." />
             <textevent timeoffset="480" message="Six intervals. 4 minutes each. 8-minute recovery between them. 24 minutes of total VO2max work at low cadence." />
-            <textevent timeoffset="600" message="SEATED: Every interval, every second. By interval 5 and 6, fatigue will make standing very tempting. That is when it matters most to stay down." />
-            <textevent timeoffset="720" message="KNEE PRIORITY: Six intervals is 50% more joint stress than four. If the 4-rep version caused any knee discomfort, do that version instead." />
+            <textevent timeoffset="600" message="SEATED: Every interval, every second. By intervals 5 and 6, fatigue will make standing very tempting." />
+            <textevent timeoffset="610" message="That is when it matters most to stay down." />
+            <textevent timeoffset="720" message="KNEE PRIORITY: Six intervals is 50% more joint stress than four." />
+            <textevent timeoffset="730" message="If the 4-rep version caused any knee discomfort, do that version instead." />
             <textevent timeoffset="840" message="Openers coming, then the main set." />
         </Warmup>
 
@@ -29,12 +32,13 @@
             <textevent timeoffset="0" message="Opener 2." />
         </SteadyState>
         <SteadyState Duration="120" Power="0.55">
-            <textevent timeoffset="0" message="Last recovery before the main set. In ERG mode, just drop to 60-70rpm when the interval starts — the trainer holds 110% FTP automatically." />
+            <textevent timeoffset="0" message="Last recovery before the main set. In ERG mode, just drop to 60-70rpm when the interval starts —" />
+            <textevent timeoffset="10" message="the trainer holds 110% FTP automatically." />
             <textevent timeoffset="60" message="30 seconds. First interval. STAY SEATED throughout. 110% FTP." />
             <textevent timeoffset="90" message="High-torque intervals begin now. The study used 60-70 RPM — aim for anywhere in that range." />
         </SteadyState>
 
-        <IntervalsT Repeat="6" OnDuration="240" OffDuration="480" OnPower="1.10" OffPower="0.50" Cadence="65">
+        <SteadyState Duration="240" Power="1.10" Cadence="65">
             <textevent timeoffset="0" message="STAY SEATED. 60-70 RPM — aim for 65. 110% FTP. GO." />
             <textevent timeoffset="20" message="Legs AND lungs working simultaneously. This is supposed to be hard." />
             <textevent timeoffset="60" message="1 minute in. The high muscular force at this power and cadence recruits both slow and fast-twitch fibers." />
@@ -42,18 +46,107 @@
             <textevent timeoffset="180" message="Last minute. Stay seated. Hold form." />
             <textevent timeoffset="210" message="30 seconds. Everything now. Do not stand." />
             <textevent timeoffset="235" message="10 seconds." />
-            <textevent timeoffset="242" message="Recovery. 8 full minutes. Use every second. You need them more with 6 reps." />
-            <textevent timeoffset="300" message="The study's low-cadence group improved VO2max by 8.7% over 8 weeks. This higher-volume phase is where the adaptation accelerated." />
-            <textevent timeoffset="420" message="Knee check in recovery. Any discomfort that feels joint-related?" />
-            <textevent timeoffset="450" message="Next interval coming. Same: seated, 60-70rpm, 110% FTP." />
-        </IntervalsT>
+        </SteadyState>
+
+        <SteadyState Duration="480" Power="0.50">
+            <textevent timeoffset="2" message="Recovery. 8 full minutes. Use every second. You need them more with 6 reps." />
+            <textevent timeoffset="60" message="The study's low-cadence group improved VO2max by 8.7% over 8 weeks." />
+            <textevent timeoffset="70" message="This higher-volume phase is where the adaptation accelerated." />
+            <textevent timeoffset="180" message="Knee check in recovery. Any discomfort that feels joint-related?" />
+            <textevent timeoffset="210" message="Next interval. Same: seated, 60-70rpm, 110% FTP." />
+        </SteadyState>
+
+        <SteadyState Duration="240" Power="1.10" Cadence="65">
+            <textevent timeoffset="0" message="STAY SEATED. 60-70 RPM. 110% FTP. GO." />
+            <textevent timeoffset="20" message="Interval 2. Legs AND lungs." />
+            <textevent timeoffset="60" message="1 minute in. Hold cadence." />
+            <textevent timeoffset="120" message="Halfway. 2 minutes to go. Do not spin up." />
+            <textevent timeoffset="180" message="Last minute. Stay seated. Hold form." />
+            <textevent timeoffset="210" message="30 seconds. Do not stand." />
+            <textevent timeoffset="235" message="10 seconds." />
+        </SteadyState>
+
+        <SteadyState Duration="480" Power="0.50">
+            <textevent timeoffset="2" message="Recovery. 8 minutes." />
+            <textevent timeoffset="60" message="Two down, four to go." />
+            <textevent timeoffset="180" message="Knee check." />
+            <textevent timeoffset="210" message="Interval 3. Seated. 60-70rpm. 110% FTP." />
+        </SteadyState>
+
+        <SteadyState Duration="240" Power="1.10" Cadence="65">
+            <textevent timeoffset="0" message="STAY SEATED. 60-70 RPM. 110% FTP. GO." />
+            <textevent timeoffset="20" message="Interval 3. Halfway through the session." />
+            <textevent timeoffset="60" message="1 minute in. You've done this twice already. Same again." />
+            <textevent timeoffset="120" message="Halfway. 2 minutes. Hold cadence." />
+            <textevent timeoffset="180" message="Last minute. Stay seated." />
+            <textevent timeoffset="210" message="30 seconds. Do not stand." />
+            <textevent timeoffset="235" message="10 seconds." />
+        </SteadyState>
+
+        <SteadyState Duration="480" Power="0.50">
+            <textevent timeoffset="2" message="Recovery. Three done, three to go." />
+            <textevent timeoffset="60" message="The study used 60-70 RPM specifically for HIIT — the higher cadence combined with VO2max power is the key mechanism." />
+            <textevent timeoffset="180" message="Knee check." />
+            <textevent timeoffset="210" message="Interval 4. Seated. 60-70rpm. 110% FTP." />
+        </SteadyState>
+
+        <SteadyState Duration="240" Power="1.10" Cadence="65">
+            <textevent timeoffset="0" message="STAY SEATED. 60-70 RPM. 110% FTP. GO." />
+            <textevent timeoffset="20" message="Interval 4. Four of six." />
+            <textevent timeoffset="60" message="1 minute in. The fatigue is accumulating — that is the point." />
+            <textevent timeoffset="120" message="Halfway. 2 minutes. Hold cadence." />
+            <textevent timeoffset="180" message="Last minute. Stay seated." />
+            <textevent timeoffset="210" message="30 seconds. Do not stand." />
+            <textevent timeoffset="235" message="10 seconds." />
+        </SteadyState>
+
+        <SteadyState Duration="480" Power="0.50">
+            <textevent timeoffset="2" message="Recovery. Two more to go." />
+            <textevent timeoffset="60" message="Four intervals done. This is where the study's volume progression adds its load." />
+            <textevent timeoffset="180" message="Knee check. Final two intervals." />
+            <textevent timeoffset="210" message="Interval 5. Seated. 60-70rpm. 110% FTP." />
+        </SteadyState>
+
+        <SteadyState Duration="240" Power="1.10" Cadence="65">
+            <textevent timeoffset="0" message="STAY SEATED. 60-70 RPM. 110% FTP. GO." />
+            <textevent timeoffset="20" message="Interval 5. Penultimate. Do not stand." />
+            <textevent timeoffset="60" message="1 minute in. One more after this." />
+            <textevent timeoffset="120" message="Halfway. 2 minutes. Hold cadence." />
+            <textevent timeoffset="180" message="Last minute. Stay seated." />
+            <textevent timeoffset="210" message="30 seconds. Do not stand." />
+            <textevent timeoffset="235" message="10 seconds." />
+        </SteadyState>
+
+        <SteadyState Duration="480" Power="0.50">
+            <textevent timeoffset="2" message="Recovery. Final interval next." />
+            <textevent timeoffset="60" message="Five down, one to go. Knee check." />
+            <textevent timeoffset="210" message="Last interval. Everything you have left. Seated. 60-70rpm. 110% FTP." />
+        </SteadyState>
+
+        <SteadyState Duration="240" Power="1.10" Cadence="65">
+            <textevent timeoffset="0" message="STAY SEATED. 60-70 RPM. 110% FTP. GO. Final interval." />
+            <textevent timeoffset="20" message="Last one. Do not stand. Do not spin up." />
+            <textevent timeoffset="60" message="1 minute in. Almost done." />
+            <textevent timeoffset="120" message="Halfway. 2 minutes. Everything now." />
+            <textevent timeoffset="180" message="Last minute. Stay seated to the end." />
+            <textevent timeoffset="210" message="30 seconds. Finish it." />
+            <textevent timeoffset="235" message="10 seconds." />
+        </SteadyState>
+
+        <SteadyState Duration="480" Power="0.50">
+            <textevent timeoffset="2" message="Recovery. Six VO2max intervals done." />
+            <textevent timeoffset="60" message="Spin easy. Let the heart rate drop." />
+            <textevent timeoffset="180" message="Knee check. How do they feel?" />
+        </SteadyState>
 
         <Cooldown Duration="900" PowerLow="0.50" PowerHigh="0.40">
             <textevent timeoffset="10" message="Six VO2max intervals at low cadence done. Full study volume achieved." />
             <textevent timeoffset="150" message="You have now done the Hebisz &amp; Hebisz (2024) protocol at its highest volume. Well done." />
-            <textevent timeoffset="360" message="Allow at least one easy day before any more hard sessions. 24 minutes of VO2max torque work requires genuine recovery." />
+            <textevent timeoffset="360" message="Allow at least one easy day before any more hard sessions." />
+            <textevent timeoffset="370" message="24 minutes of VO2max torque work requires genuine recovery." />
             <textevent timeoffset="540" message="Knee check: how do they feel post-effort? Anything that lingers should be noted." />
-            <textevent timeoffset="720" message="The study measured a 8.7% VO2max improvement in the low-cadence group — nearly double the 4.6% in the normal-cadence group. Same hours, same structure, only the cadence differed." />
+            <textevent timeoffset="720" message="The study measured an 8.7% VO2max improvement in the low-cadence group —" />
+            <textevent timeoffset="730" message="nearly double the 4.6% in the normal-cadence group. Same hours, same structure, only the cadence differed." />
         </Cooldown>
     </workout>
 </workout_file>
