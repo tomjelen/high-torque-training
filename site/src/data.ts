@@ -79,7 +79,7 @@ export const SOURCES: Record<string, Source> = {
 export const ADAPTATION_WORKOUTS: Workout[] = [
   {
     id: 'w1',
-    name: 'W1 — Zone 2 at 65–70 rpm',
+    name: 'Week 1 — 2×10 @ 65–70 rpm',
     params: [
       { label: 'Sets × duration', value: '2 × 10 min' },
       { label: 'Intensity', value: 'Zone 2 (~65% FTP)' },
@@ -88,11 +88,11 @@ export const ADAPTATION_WORKOUTS: Workout[] = [
       { label: 'Total time', value: '~50 min' },
     ],
     source: 'evoq',
-    file: 'High Torque - Adaptation/W1_Endurance_65-70rpm.zwo',
+    file: 'High Torque - Adaptation/Week1_2x10_65-70rpm.zwo',
   },
   {
     id: 'w2',
-    name: 'W2 — Zone 2 at 65 rpm',
+    name: 'Week 2 — 2×15 @ 65 rpm',
     params: [
       { label: 'Sets × duration', value: '2 × 15 min' },
       { label: 'Intensity', value: 'Zone 2 (~65% FTP)' },
@@ -101,11 +101,11 @@ export const ADAPTATION_WORKOUTS: Workout[] = [
       { label: 'Total time', value: '~60 min' },
     ],
     source: 'evoq',
-    file: 'High Torque - Adaptation/W2_Endurance_65rpm.zwo',
+    file: 'High Torque - Adaptation/Week2_2x15_65rpm.zwo',
   },
   {
     id: 'w3',
-    name: 'W3 — Zone 2 at 60–65 rpm',
+    name: 'Week 3 — 3×10 @ 60–65 rpm',
     params: [
       { label: 'Sets × duration', value: '3 × 10 min' },
       { label: 'Intensity', value: 'Zone 2 (~65% FTP)' },
@@ -114,7 +114,7 @@ export const ADAPTATION_WORKOUTS: Workout[] = [
       { label: 'Total time', value: '~65 min' },
     ],
     source: 'evoq',
-    file: 'High Torque - Adaptation/W3_Endurance_60-65rpm.zwo',
+    file: 'High Torque - Adaptation/Week3_3x10_60-65rpm.zwo',
   },
 ]
 
@@ -128,18 +128,18 @@ export const TIERS: Tier[] = [
     workouts: [
       {
         id: 't1-entry',
-        name: 'Torque Entry',
+        name: 'Entry 4×4',
         params: [
           { label: 'Intervals', value: '4×4 min @ 80–85% FTP' },
           { label: 'Cadence', value: '50–60 rpm' },
           { label: 'Total time', value: '~60 min' },
         ],
         source: 'henderson',
-        file: 'High Torque - Tier 1 Entry/Torque_Entry_80pct.zwo',
+        file: 'High Torque - Tier 1 Entry/Entry_4x4_80pct.zwo',
       },
       {
         id: 't1-staple-short',
-        name: 'Torque Staple 3×5',
+        name: 'Staple 3×5',
         params: [
           { label: 'Intervals', value: '3×5 min @ ~90% FTP' },
           { label: 'Cadence', value: '50–60 rpm' },
@@ -147,7 +147,7 @@ export const TIERS: Tier[] = [
         ],
         source: 'evoq',
         sourceNote: 'Scaled — fewer reps (3×5 instead of EVOQ\'s 5×5) as a lower-volume entry point.',
-        file: 'High Torque - Tier 1 Entry/Torque_Staple_Short_90pct.zwo',
+        file: 'High Torque - Tier 1 Entry/Staple_3x5_90pct.zwo',
       },
     ],
   },
@@ -160,25 +160,25 @@ export const TIERS: Tier[] = [
     workouts: [
       {
         id: 't2-staple',
-        name: 'Torque Staple 5×5',
+        name: 'Staple 5×5',
         params: [
           { label: 'Intervals', value: '5×5 min @ ~90% FTP' },
           { label: 'Cadence', value: '50–60 rpm' },
           { label: 'Total time', value: '~75 min' },
         ],
         source: 'evoq',
-        file: 'High Torque - Tier 2 Development/Torque_Staple_90pct.zwo',
+        file: 'High Torque - Tier 2 Development/Staple_5x5_90pct.zwo',
       },
       {
         id: 't2-staple-long',
-        name: 'Torque Staple 5×8',
+        name: 'Staple 5×8',
         params: [
           { label: 'Intervals', value: '5×8 min @ ~90% FTP' },
           { label: 'Cadence', value: '50–60 rpm' },
           { label: 'Total time', value: '~90 min' },
         ],
         source: 'evoq',
-        file: 'High Torque - Tier 2 Development/Torque_Staple_Long_90pct.zwo',
+        file: 'High Torque - Tier 2 Development/Staple_5x8_90pct.zwo',
       },
       {
         id: 't2-hiit-intro',
@@ -203,14 +203,14 @@ export const TIERS: Tier[] = [
     workouts: [
       {
         id: 't3-threshold',
-        name: 'Threshold Torque',
+        name: 'Threshold 5×5',
         params: [
           { label: 'Intervals', value: '5×5 min @ ~95% FTP' },
           { label: 'Cadence', value: '50–60 rpm' },
           { label: 'Total time', value: '~68 min' },
         ],
         source: 'henderson',
-        file: 'High Torque - Tier 3 Challenging/Threshold_Torque_95pct.zwo',
+        file: 'High Torque - Tier 3 Challenging/Threshold_5x5_95pct.zwo',
       },
       {
         id: 't3-hiit-vo2-4',

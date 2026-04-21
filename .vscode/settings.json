@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "*.zwo": "xml"
+    },
+    "xml.format.maxLineWidth": 0
+}

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workout_file>
+    <author>Tom Jelen</author>
+    <name>Week 3 — 3x10 @ 60–65 rpm</name>
+    <activitySaveName>High Torque Adaptation: Week 3 — 3×10 @ 60–65 rpm</activitySaveName>
+    <description>Week 3 adaptation session. Three 10-minute Zone 2 blocks at 60-65 rpm. Final adaptation session before the post-adaptation sessions. Seated throughout.</description>
+    <sportType>bike</sportType>
+    <tags />
+    <workout>
+        <Warmup Duration="900" PowerLow="0.40" PowerHigh="0.65">
+            <textevent timeoffset="10" message="Final adaptation session. 60-65rpm today — lowest cadence you have done so far." />
+            <textevent timeoffset="120" message="Three 10-minute blocks at Zone 2. More total volume than previous sessions, slightly lower cadence." />
+            <textevent timeoffset="270" message="After this session, the post-adaptation sessions open up: intensity climbs from sweet spot all the way to VO2max." />
+            <textevent timeoffset="420" message="Your tendons and connective tissue should be noticeably more adapted than at the start. Three sessions of consistent low-cadence work is meaningful preparation." />
+            <textevent timeoffset="570" message="INJURY CHECK before you start: Are both knees feeling good today? Any lingering ache from previous sessions should resolve before moving to harder work." />
+            <textevent timeoffset="720" message="If your knees are not right, repeat the previous session instead. No shame in it." />
+            <textevent timeoffset="840" message="Interval in 1 minute. Drop to 60-65rpm. In ERG mode, the trainer increases resistance automatically — no need to shift. Stay seated." />
+        </Warmup>
+
+        <SteadyState Duration="600" Power="0.65" Cadence="62">
+            <textevent timeoffset="0" message="STAY SEATED. 60-65rpm. Zone 2." />
+            <textevent timeoffset="30" message="Just let your cadence drop to 60-65rpm. ERG mode ramps up resistance to match — the trainer does the work of finding the right load." />
+            <textevent timeoffset="120" message="At 60-65rpm the pedal stroke slows enough that you can feel the dead spots — the points at the top and bottom of the stroke where force drops. This is useful feedback." />
+            <textevent timeoffset="240" message="Focus on a smooth, circular stroke. Try to push through the dead spots with your hamstrings and calves." />
+            <textevent timeoffset="360" message="Halfway. Legs working hard? Good. Lungs comfortable? Also good. That balance is exactly right." />
+            <textevent timeoffset="480" message="Low cadence also improves pedaling efficiency over time — you learn to use the full 360 degrees of the stroke rather than just hammering the downstroke." />
+            <textevent timeoffset="540" message="60 seconds left. Stay seated." />
+        </SteadyState>
+
+        <SteadyState Duration="300" Power="0.50">
+            <textevent timeoffset="0" message="Recovery. Spin up to 85+rpm. Let the legs flush out." />
+            <textevent timeoffset="120" message="The researchers note: no study yet shows a clear benefit from low-cadence work at MODERATE intensity. The benefit seems to require HIGH intensity. The post-adaptation sessions are where it gets interesting." />
+            <textevent timeoffset="240" message="Second block in 60 seconds. Same: 60-65rpm, Zone 2, seated." />
+        </SteadyState>
+
+        <SteadyState Duration="600" Power="0.65" Cadence="62">
+            <textevent timeoffset="0" message="STAY SEATED. 60-65rpm. Zone 2." />
+            <textevent timeoffset="60" message="Think of this block as the last pure endurance low-cadence session. The post-adaptation sessions climb to 85% FTP and beyond." />
+            <textevent timeoffset="180" message="The study's HIIT sessions used 4-minute intervals at 90-100% of maximum aerobic power at 60-70rpm. That is significantly harder than this." />
+            <textevent timeoffset="300" message="Halfway. Knees still tracking well?" />
+            <textevent timeoffset="420" message="Your body is now several sessions into adapting to this stimulus. The structural groundwork is done." />
+            <textevent timeoffset="540" message="60 seconds. Last interval coming after recovery." />
+        </SteadyState>
+
+        <SteadyState Duration="300" Power="0.50">
+            <textevent timeoffset="0" message="Recovery. Third and final block next." />
+            <textevent timeoffset="120" message="The 2024 PLOS One study also found the low-cadence group improved their second ventilatory threshold (VT2) — the point where you can no longer speak in full sentences. The normal-cadence group did not." />
+            <textevent timeoffset="240" message="Final block in 60 seconds. Finish strong. Seated. 60-65rpm." />
+        </SteadyState>
+
+        <SteadyState Duration="600" Power="0.65" Cadence="62">
+            <textevent timeoffset="0" message="STAY SEATED. Final block. 60-65rpm. Zone 2." />
+            <textevent timeoffset="60" message="Three adaptation sessions complete after this." />
+            <textevent timeoffset="180" message="Keep hips level. Resist rocking. The torque at low cadence puts real rotational stress through the hips if your position is off." />
+            <textevent timeoffset="300" message="Halfway. Solid work. Almost there." />
+            <textevent timeoffset="420" message="The post-adaptation sessions introduce 85% FTP intervals at low cadence. The combination of intensity and torque is what drove the study's results." />
+            <textevent timeoffset="540" message="Last 60 seconds. Stay seated to the end." />
+            <textevent timeoffset="570" message="30 seconds. Done after this." />
+        </SteadyState>
+
+        <Cooldown Duration="600" PowerLow="0.65" PowerHigh="0.40">
+            <textevent timeoffset="10" message="Adaptation complete. Spin easy." />
+            <textevent timeoffset="120" message="Three sessions done. If your knees have been fine throughout, you are ready for the post-adaptation sessions." />
+            <textevent timeoffset="270" message="If your knees have had any discomfort: do not rush. Repeat this session or take an extra easy week before progressing." />
+            <textevent timeoffset="420" message="Start with Tier 1 workouts. Do not schedule two low-cadence sessions on consecutive days." />
+            <textevent timeoffset="540" message="Research on tendon remodelling suggests connective tissue needs 3-4 weeks of progressive loading before tolerating high-intensity work safely." />
+        </Cooldown>
+    </workout>
+</workout_file>

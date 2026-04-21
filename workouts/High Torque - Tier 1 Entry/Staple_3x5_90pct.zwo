@@ -1,0 +1,32 @@
+<workout_file>
+    <author>Tom Jelen</author>
+    <name>Staple 3x5</name>
+    <activitySaveName>High Torque Tier 1: Staple 3x5 — 3×5 min ~90% FTP 50–60 rpm</activitySaveName>
+    <description>Shorter version of EVOQ.BIKE's staple torque session. Three 5-minute intervals at ~90% FTP and 50-60 rpm, with 5-minute recovery between each. A good first step into the EVOQ format before moving to the full 5x5. Seated throughout.</description>
+    <sportType>bike</sportType>
+    <tags />
+    <workout>
+        <Warmup Duration="900" PowerLow="0.40" PowerHigh="0.75">
+            <textevent timeoffset="30" message="Source: EVOQ.BIKE (scaled — 3 reps instead of 5). Their staple torque session is 5x5min at ~90% FTP, 50-60 RPM. This is the shorter intro version." />
+            <textevent timeoffset="120" message="EVOQ positions torque training as an ongoing tool, not a one-off block. The goal: permanently stronger legs from 1-2 sessions per week." />
+            <textevent timeoffset="240" message="Key finding from EVOQ: 'If you go below tempo into zone 2, you probably won't be producing enough torque to make a meaningful difference.'" />
+            <textevent timeoffset="420" message="That's why this session is at ~90% FTP — right in the sweet spot zone. Enough intensity to drive the torque stimulus." />
+            <textevent timeoffset="600" message="All intervals are SEATED. Target cadence: 50-60 RPM." />
+            <textevent timeoffset="780" message="If your knees ache at any point, stop the interval. Don't push through knee discomfort." />
+        </Warmup>
+
+        <IntervalsT Repeat="3" OnDuration="300" OffDuration="300" OnPower="0.90" OffPower="0.50" Cadence="55">
+            <textevent timeoffset="10" message="Interval starts. ~90% FTP, 50-60 RPM. Stay seated." />
+            <textevent timeoffset="120" message="The Hebisz (2024) study found that combining low cadence with high intensity likely drives greater muscle fiber recruitment — both slow-twitch and fast-twitch." />
+            <textevent timeoffset="240" message="60 seconds left. Hold the cadence." />
+            <textevent timeoffset="310" message="Recovery. Spin easy at normal cadence." />
+            <textevent timeoffset="450" message="EVOQ also recommend doing torque work on the same day as gym sessions — it 'activates all the neuromuscular pathways.'" />
+        </IntervalsT>
+
+        <Cooldown Duration="600" PowerLow="0.50" PowerHigh="0.40">
+            <textevent timeoffset="30" message="Cool down. Easy spin." />
+            <textevent timeoffset="120" message="Once this session feels routine, move to the full 5x5 Torque Staple in Tier 2." />
+            <textevent timeoffset="300" message="Petr Vakoc (coached by Henderson) does torque work 'once to twice a week... three times per two weeks.' That's a good target." />
+        </Cooldown>
+    </workout>
+</workout_file>

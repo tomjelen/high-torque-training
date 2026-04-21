@@ -1,62 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workout_file>
     <author>Tom Jelen</author>
-    <name>HT SIT 2 Sets</name>
+    <name>SIT 2 Sets</name>
     <activitySaveName>High Torque Tier 4: SIT - 2x(4x30s) Sprint 50-60 RPM</activitySaveName>
     <description>Direct adaptation of the Hebisz &amp; Hebisz (2024) study SIT protocol. Two sets of 4 x 30-second maximal sprints at 50-60 rpm, with 90 seconds recovery between sprints and 25 minutes active rest between the two sets. Seated throughout.</description>
     <sportType>bike</sportType>
-    <tags/>
+    <tags />
     <workout>
         <Warmup Duration="1200" PowerLow="0.40" PowerHigh="0.75">
-            <textevent timeoffset="10" message="Source: Hebisz &amp; Hebisz (2024) SIT protocol, weeks 1-4. 8x30s maximal at 50-60 RPM in 2 sets of 4, 90s recovery, 25 min between sets."/>
-            <textevent timeoffset="120" message="This is the exact study protocol for sprint interval training (SIT). Note: SIT uses 50-60 RPM — lower than the HIIT sessions which use 60-70."/>
-            <textevent timeoffset="240" message="The researchers used 8 x 30-second all-out sprints split into two sets of four, with 25 minutes active rest between sets. That is exactly what you are doing today."/>
-            <textevent timeoffset="270" message="Cadence target: 50-60rpm. This is the lowest cadence in the High Torque Collection. At sprint intensity, maintaining 50-60rpm requires a very hard gear."/>
-            <textevent timeoffset="420" message="The sprints are maximal — as hard as you can go. The 150% FTP power target is a guide; treat it as a floor, not a ceiling."/>
-            <textevent timeoffset="570" message="SEATED: Every sprint, every second, seated. At this effort level the urge to stand is strong. Do not. The torque stimulus depends on you staying down."/>
-            <textevent timeoffset="720" message="KNEE WARNING: Sprinting at 50-60rpm is the highest patellofemoral load in the High Torque Collection. If your knees are not 100% going into today, do not do this session."/>
-            <textevent timeoffset="900" message="Sprints are short — 30 seconds. Recoveries are long — 90 seconds. Use the recovery fully. You should feel ready for each sprint."/>
-            <textevent timeoffset="1050" message="The 25-minute rest between sets is not optional. It is part of the study design and allows full replenishment before the second set."/>
-            <textevent timeoffset="1080" message="MODE NOTE: These sprints are maximal — ERG mode caps effort at the target wattage. Use slope/resistance mode so you can actually go all-out. Gear selection is intentional here."/>
-            <textevent timeoffset="1140" message="First sprint in 1 minute. Find your gear. Hard gear. 50-60rpm. Maximal effort."/>
+            <textevent timeoffset="10" message="Source: Hebisz &amp; Hebisz (2024) SIT protocol, weeks 1-4. 8x30s maximal at 50-60 RPM in 2 sets of 4, 90s recovery, 25 min between sets." />
+            <textevent timeoffset="120" message="This is the exact study protocol for sprint interval training (SIT). Note: SIT uses 50-60 RPM — lower than the HIIT sessions which use 60-70." />
+            <textevent timeoffset="240" message="The researchers used 8 x 30-second all-out sprints split into two sets of four, with 25 minutes active rest between sets. That is exactly what you are doing today." />
+            <textevent timeoffset="270" message="Cadence target: 50-60rpm. This is the lowest cadence in the High Torque Collection. At sprint intensity, maintaining 50-60rpm requires a very hard gear." />
+            <textevent timeoffset="420" message="The sprints are maximal — as hard as you can go. The 150% FTP power target is a guide; treat it as a floor, not a ceiling." />
+            <textevent timeoffset="570" message="SEATED: Every sprint, every second, seated. At this effort level the urge to stand is strong. Do not. The torque stimulus depends on you staying down." />
+            <textevent timeoffset="720" message="KNEE WARNING: Sprinting at 50-60rpm is the highest patellofemoral load in the High Torque Collection. If your knees are not 100% going into today, do not do this session." />
+            <textevent timeoffset="900" message="Sprints are short — 30 seconds. Recoveries are long — 90 seconds. Use the recovery fully. You should feel ready for each sprint." />
+            <textevent timeoffset="1050" message="The 25-minute rest between sets is not optional. It is part of the study design and allows full replenishment before the second set." />
+            <textevent timeoffset="1080" message="MODE NOTE: These sprints are maximal — ERG mode caps effort at the target wattage. Use slope/resistance mode so you can actually go all-out. Gear selection is intentional here." />
+            <textevent timeoffset="1140" message="First sprint in 1 minute. Find your gear. Hard gear. 50-60rpm. Maximal effort." />
         </Warmup>
 
         <IntervalsT Repeat="4" OnDuration="30" OffDuration="90" OnPower="1.50" OffPower="0.50" Cadence="55">
-            <textevent timeoffset="0" message="STAY SEATED. GO. Maximal effort. 50-60rpm."/>
-            <textevent timeoffset="15" message="Halfway. Keep driving. Seated."/>
-            <textevent timeoffset="28" message="2 seconds. Do not stand."/>
-            <textevent timeoffset="32" message="Recover. Spin easy. 90 seconds."/>
-            <textevent timeoffset="60" message="Stay loose. Let the legs recover. Next sprint coming."/>
-            <textevent timeoffset="100" message="Find your gear for the next sprint. Get ready."/>
+            <textevent timeoffset="0" message="STAY SEATED. GO. Maximal effort. 50-60rpm." />
+            <textevent timeoffset="15" message="Halfway. Keep driving. Seated." />
+            <textevent timeoffset="28" message="2 seconds. Do not stand." />
+            <textevent timeoffset="32" message="Recover. Spin easy. 90 seconds." />
+            <textevent timeoffset="60" message="Stay loose. Let the legs recover. Next sprint coming." />
+            <textevent timeoffset="100" message="Find your gear for the next sprint. Get ready." />
         </IntervalsT>
 
         <SteadyState Duration="1500" Power="0.55">
-            <textevent timeoffset="10" message="Set 1 complete. 25 minutes active rest now. This is in the study protocol — do not skip it or shorten it."/>
-            <textevent timeoffset="120" message="55% FTP, easy spinning. Your legs are flushing out lactate. This is part of the session."/>
-            <textevent timeoffset="300" message="The sprint interval (SIT) component of the study was designed alongside high-intensity intervals (HIIT) in a polarized structure. This is the SIT session."/>
-            <textevent timeoffset="600" message="10 minutes into the rest. Halfway. How did the first set feel? Knees okay?"/>
-            <textevent timeoffset="900" message="15 minutes into rest. Legs recovering. You should feel noticeably fresher by the time set 2 starts."/>
-            <textevent timeoffset="1200" message="5 minutes to set 2. Stay relaxed. Not long now."/>
-            <textevent timeoffset="1380" message="2 minutes to set 2. Find your gear. Same hard gear as before. 50-60rpm."/>
-            <textevent timeoffset="1470" message="30 seconds. Get ready. Seated. Maximal effort coming."/>
+            <textevent timeoffset="10" message="Set 1 complete. 25 minutes active rest now. This is in the study protocol — do not skip it or shorten it." />
+            <textevent timeoffset="120" message="55% FTP, easy spinning. Your legs are flushing out lactate. This is part of the session." />
+            <textevent timeoffset="300" message="The sprint interval (SIT) component of the study was designed alongside high-intensity intervals (HIIT) in a polarized structure. This is the SIT session." />
+            <textevent timeoffset="600" message="10 minutes into the rest. Halfway. How did the first set feel? Knees okay?" />
+            <textevent timeoffset="900" message="15 minutes into rest. Legs recovering. You should feel noticeably fresher by the time set 2 starts." />
+            <textevent timeoffset="1200" message="5 minutes to set 2. Stay relaxed. Not long now." />
+            <textevent timeoffset="1380" message="2 minutes to set 2. Find your gear. Same hard gear as before. 50-60rpm." />
+            <textevent timeoffset="1470" message="30 seconds. Get ready. Seated. Maximal effort coming." />
         </SteadyState>
 
         <IntervalsT Repeat="4" OnDuration="30" OffDuration="90" OnPower="1.50" OffPower="0.50" Cadence="55">
-            <textevent timeoffset="0" message="STAY SEATED. GO. Set 2. Maximal."/>
-            <textevent timeoffset="15" message="Halfway. Drive it. Seated."/>
-            <textevent timeoffset="28" message="2 seconds."/>
-            <textevent timeoffset="32" message="Recover. Easy spin. 90 seconds."/>
-            <textevent timeoffset="60" message="Good. Stay focused."/>
-            <textevent timeoffset="100" message="Next sprint coming. Everything you have left."/>
+            <textevent timeoffset="0" message="STAY SEATED. GO. Set 2. Maximal." />
+            <textevent timeoffset="15" message="Halfway. Drive it. Seated." />
+            <textevent timeoffset="28" message="2 seconds." />
+            <textevent timeoffset="32" message="Recover. Easy spin. 90 seconds." />
+            <textevent timeoffset="60" message="Good. Stay focused." />
+            <textevent timeoffset="100" message="Next sprint coming. Everything you have left." />
         </IntervalsT>
 
         <Cooldown Duration="900" PowerLow="0.50" PowerHigh="0.40">
-            <textevent timeoffset="10" message="SIT session done. That was the study protocol for the sprint session."/>
-            <textevent timeoffset="150" message="Legs should feel genuinely emptied. That is appropriate after 8 maximal sprints."/>
-            <textevent timeoffset="300" message="Knee check post-session: how do they feel now compared to during the sprints? Note anything unusual."/>
-            <textevent timeoffset="480" message="Allow at least one rest day before the next hard session. Do not rush recovery."/>
-            <textevent timeoffset="660" message="The combination of SIT and HIIT in the same week is what the study tested. You are doing exactly what the low-cadence group did."/>
-            <textevent timeoffset="840" message="The study's sprint protocol was specifically designed with long recovery between sets. The 25-minute rest allows near-complete phosphocreatine resynthesis — the energy system that powers short maximal efforts."/>
+            <textevent timeoffset="10" message="SIT session done. That was the study protocol for the sprint session." />
+            <textevent timeoffset="150" message="Legs should feel genuinely emptied. That is appropriate after 8 maximal sprints." />
+            <textevent timeoffset="300" message="Knee check post-session: how do they feel now compared to during the sprints? Note anything unusual." />
+            <textevent timeoffset="480" message="Allow at least one rest day before the next hard session. Do not rush recovery." />
+            <textevent timeoffset="660" message="The combination of SIT and HIIT in the same week is what the study tested. You are doing exactly what the low-cadence group did." />
+            <textevent timeoffset="840" message="The study's sprint protocol was specifically designed with long recovery between sets. The 25-minute rest allows near-complete phosphocreatine resynthesis — the energy system that powers short maximal efforts." />
         </Cooldown>
     </workout>
 </workout_file>

@@ -300,15 +300,15 @@ These are illustrative, not prescriptive. Fit the sessions into your existing sc
 
 | Day | Session |
 |-----|---------|
-| Tue | Torque Entry (Tier 1) |
-| Thu | Torque Staple 5×5 (Tier 2) |
+| Tue | Entry 4×4 (Tier 1) |
+| Thu | Staple 5×5 (Tier 2) |
 | Other days | Normal training |
 
 **Established (weeks 10+ overall):**
 
 | Day | Session |
 |-----|---------|
-| Tue | Torque Staple 5×5 (Tier 2) |
+| Tue | Staple 5×5 (Tier 2) |
 | Thu | HIIT VO2max 4 reps (Tier 3) |
 | Other days | Normal training |
 
@@ -316,7 +316,7 @@ These are illustrative, not prescriptive. Fit the sessions into your existing sc
 
 | Day | Session |
 |-----|---------|
-| Tue | Torque Staple 3×5 (Tier 1) — light session |
+| Tue | Staple 3×5 (Tier 1) — light session |
 | Fri | SIT 2-set (Tier 4) — sprint session |
 | Other days | Normal training, no target race this week |
 

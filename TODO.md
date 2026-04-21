@@ -13,6 +13,7 @@
 - [ ] Maybe there should be a longer "who am i" part, that the introduction can link to. Also with a link to my activities in Strava to gauge if you look somewhat like me.
 - [ ] Add llm-meta inside .zwo files
 - [ ] The adaption phase comes from mixed sources, how come? Didnt the Hebisz describe this phase in completion?
+- [ ] For consistency, make sure we use rpm instead of RPM throughout.
 
 ## Skills to explore
 

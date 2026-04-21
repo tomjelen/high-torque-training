@@ -1,0 +1,32 @@
+<workout_file>
+    <author>Tom Jelen</author>
+    <name>Entry 4x4</name>
+    <activitySaveName>High Torque Tier 1: Entry 4x4 — 4×4 min 80–85% FTP 50–60 rpm</activitySaveName>
+    <description>Entry-level torque session based on Neal Henderson's recommendation for athletes starting low-cadence work. Four 4-minute intervals at 80-85% FTP and 50-60 rpm, with 4-minute recovery between each. Tempo intensity — enough torque to drive adaptation, without the joint stress of threshold or VO2max work. Seated throughout.</description>
+    <sportType>bike</sportType>
+    <tags />
+    <workout>
+        <Warmup Duration="900" PowerLow="0.40" PowerHigh="0.80">
+            <textevent timeoffset="30" message="Source: Neal Henderson (Apex Coaching). For athletes starting torque work, Henderson recommends 3-5 min efforts at 75-85% of threshold, 50-60 RPM." />
+            <textevent timeoffset="120" message="This is your entry into ongoing torque training. The intensity is tempo — it should feel like work in the legs, not the lungs." />
+            <textevent timeoffset="240" message="Henderson coaches Rohan Dennis and Taylor Phinney. He stresses that musculoskeletal load is the main limiter in torque work — not cardiovascular fitness." />
+            <textevent timeoffset="420" message="All intervals are SEATED. Standing lets you use body weight on the pedals, bypassing the forced muscular contraction that makes this training work." />
+            <textevent timeoffset="600" message="Target cadence: 50-60 RPM. In ERG mode, just drop to this cadence — the trainer adjusts resistance to match 80-85% FTP automatically." />
+            <textevent timeoffset="780" message="If your knees ache at any point during an interval, stop the interval. Don't push through knee discomfort." />
+        </Warmup>
+
+        <IntervalsT Repeat="4" OnDuration="240" OffDuration="240" OnPower="0.80" OffPower="0.50" Cadence="55">
+            <textevent timeoffset="10" message="Interval starts. 80-85% FTP, 50-60 RPM. Stay seated, smooth pedal strokes." />
+            <textevent timeoffset="120" message="Halfway. At this cadence, each pedal stroke produces significantly more force than at 90 RPM. That's the stimulus." />
+            <textevent timeoffset="210" message="30 seconds left in this interval." />
+            <textevent timeoffset="250" message="Recovery. Spin easy at whatever cadence feels natural." />
+            <textevent timeoffset="400" message="Henderson: 'the first thing I would do is a little bit of tempo, three to five minute efforts at 75 to 85% of threshold power at 50 to 60 RPM.'" />
+        </IntervalsT>
+
+        <Cooldown Duration="600" PowerLow="0.50" PowerHigh="0.40">
+            <textevent timeoffset="30" message="Cool down. Spin easy at normal cadence." />
+            <textevent timeoffset="120" message="Note how your knees feel. Any ache or tightness? If yes, skip the next torque session and monitor." />
+            <textevent timeoffset="300" message="Henderson and EVOQ both recommend 1-2 torque sessions per week max. Never on back-to-back days. The joints need recovery time." />
+        </Cooldown>
+    </workout>
+</workout_file>
