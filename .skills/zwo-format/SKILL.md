@@ -28,7 +28,7 @@ Rules for the Zwift `.zwo` XML format. These come from testing against Zwift and
             <textevent timeoffset="0" message="Text shown during steady state."/>
         </SteadyState>
 
-        <IntervalsT Repeat="4" OnDuration="240" OffDuration="240" OnPower="0.90" OffPower="0.50" Cadence="55">
+        <IntervalsT Repeat="4" OnDuration="240" OffDuration="240" OnPower="0.90" OffPower="0.50" Cadence="55" CadenceResting="85">
             <textevent timeoffset="10" message="Text shown during each interval cycle."/>
         </IntervalsT>
 
@@ -62,6 +62,17 @@ All power values can have fractions of FTP: `0.88` = 88% FTP.
 - **`Cadence="X"`** (capital C) is the only working cadence attribute. Shows target on HUD, warns at +/-5 RPM.
 - **`cadenceHigh`** and **`cadenceLow`** have no effect. Do not use them.
 - When the source gives a range, use the midpoint as the attribute value and display the actual range in text events.
+
+### `IntervalsT` cadence — requires both attributes
+
+`IntervalsT` has two cadence attributes that map to the two phases:
+
+- **`Cadence`** — applied during `OnDuration` (the work interval).
+- **`CadenceResting`** — applied during `OffDuration` (the recovery interval).
+
+**Always specify both.** If only `Cadence` is set (no `CadenceResting`), Zwift exhibits a bug: it applies `Cadence+5` during `OnDuration` and `Cadence-5` during `OffDuration`. This is not documented anywhere — it was found through testing.
+
+If you need one of the phases to have free/unspecified cadence, you cannot do that with `IntervalsT`. Use repeated `<SteadyState>` blocks instead.
 
 ## Naming
 

@@ -14,6 +14,9 @@
 - [ ] Add llm-meta inside .zwo files
 - [ ] The adaption phase comes from mixed sources, how come? Didnt the Hebisz describe this phase in completion?
 - [ ] For consistency, make sure we use rpm instead of RPM throughout.
+- [ ] Investigate if duration is an actual attribute of textevent.
+- [ ] Update skill so that it handles long messages in textevents better, either duration or split into multiple messages.
+- [ ] Put a version timestamp inside the .zwo files. I think maybe we add a comment with this, and other information that LLMs can read.
 
 ## Skills to explore
 
