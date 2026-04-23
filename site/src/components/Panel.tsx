@@ -3,12 +3,13 @@ import type { ReactNode, SyntheticEvent } from 'react'
 interface PanelProps {
   title: ReactNode
   teaser?: ReactNode
+  headerAction?: ReactNode
   collapsed: boolean
   onToggle: (collapsed: boolean) => void
   children: ReactNode
 }
 
-export default function Panel({ title, teaser, collapsed, onToggle, children }: PanelProps) {
+export default function Panel({ title, teaser, headerAction, collapsed, onToggle, children }: PanelProps) {
   function handleToggle(e: SyntheticEvent<HTMLDetailsElement>) {
     onToggle(!e.currentTarget.open)
   }
@@ -26,9 +27,14 @@ export default function Panel({ title, teaser, collapsed, onToggle, children }: 
             <span className="text-sm text-slate-500 truncate">{teaser}</span>
           )}
         </div>
-        <span className="text-slate-500 text-sm flex-shrink-0 group-open:rotate-180 transition-transform">
-          ▾
-        </span>
+        <div className="flex items-center gap-3 flex-shrink-0">
+          {headerAction && (
+            <span onClick={(e) => e.stopPropagation()}>
+              {headerAction}
+            </span>
+          )}
+          <span className="text-slate-500 text-sm group-open:rotate-180 transition-transform inline-block">▾</span>
+        </div>
       </summary>
       <div className="px-5 pb-5 pt-1 border-t border-slate-800">
         {children}

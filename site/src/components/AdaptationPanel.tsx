@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react'
-import WorkoutCard from './WorkoutCard'
+import Panel from './Panel'
+import AdaptationCard from './AdaptationCard'
 import { ADAPTATION_WORKOUTS } from '../data'
 import type { AdaptationId, AppState } from '../types'
 
@@ -36,44 +37,57 @@ export default function AdaptationPanel({ state, setState }: Props) {
     })
   }
 
-  function onToggle(e: React.SyntheticEvent<HTMLDetailsElement>) {
-    const open = e.currentTarget.open
-    setState((s) => ({ ...s, panels: { ...s.panels, adaptation: { collapsed: !open } } }))
+  function onToggle(collapsed: boolean) {
+    setState((s) => ({ ...s, panels: { ...s.panels, adaptation: { collapsed } } }))
   }
 
-  function isEnabled(idx: number) {
-    if (idx === 0) return true
-    const prevId = ORDER[idx - 1]
-    return Boolean(state.adaptation[prevId])
-  }
+  const progressLabel = `${completedCount}/${ORDER.length}`
+  const teaser =
+    completedCount === ORDER.length
+      ? `${progressLabel} complete · expand to review or redo`
+      : `${progressLabel} complete`
 
   return (
-    <details open={!state.panels.adaptation.collapsed} onToggle={onToggle}>
-      <summary>
-        Adaptation Phase — Weeks 1–3{' '}
-        <span className="progress-count">
-          {completedCount}/{ORDER.length}
+    <Panel
+      title={
+        <span>
+          Adaptation Phase{' '}
+          <span className="text-sm font-normal text-slate-400 font-mono ml-1">
+            Weeks 1–3 · {progressLabel}
+          </span>
         </span>
-      </summary>
-
-      <div role="alert">
-        <strong>Knee safety — read before starting:</strong> All intervals must be done <strong>seated</strong>.
-        Warm up at normal cadence for at least 15 minutes before your first low-cadence interval.
-        Stop immediately if you feel knee pain — do not push through. Don't go below 50 RPM unless you have months of established low-cadence work behind you.
-        Never do low-cadence sessions on back-to-back days.
-        If you have a history of patellofemoral pain, patellar tendinopathy, or any knee overuse injury, skip this training entirely.
-        Also skip if you are coming off a rest period or injury, or if you already naturally grind at low cadences.
+      }
+      teaser={teaser}
+      collapsed={state.panels.adaptation.collapsed}
+      onToggle={onToggle}
+    >
+      <div
+        role="alert"
+        className="border border-red-900/60 bg-red-950/30 text-red-200 rounded px-4 py-3 text-sm mb-4"
+      >
+        <strong className="text-red-100">⚠ Knee safety — read before starting.</strong>{' '}
+        All intervals must be done <strong>seated</strong>. Warm up at normal cadence for at least
+        15 minutes before your first low-cadence interval.{' '}
+        <strong>Stop immediately if you feel knee pain</strong> — do not push through; redo the
+        week instead. Don't go below 50 RPM unless you have months of established low-cadence work
+        behind you. Never do low-cadence sessions on back-to-back days. If you have a history of
+        patellofemoral pain, patellar tendinopathy, or any knee overuse injury, skip this training
+        entirely. Also skip if you are coming off a rest period or injury, or if you already
+        naturally grind at low cadences.
       </div>
 
-      <div className="adaptation-grid">
+      <div className="grid grid-cols-3 gap-4">
         {ADAPTATION_WORKOUTS.map((workout, i) => {
           const id = ORDER[i]
+          const prevCompleted = i === 0 ? true : Boolean(state.adaptation[ORDER[i - 1]])
+          const thisCompleted = Boolean(state.adaptation[id])
+          const cardState = thisCompleted ? 'complete' : prevCompleted ? 'active' : 'locked'
           return (
-            <WorkoutCard
+            <AdaptationCard
               key={workout.id}
               workout={workout}
               step={i + 1}
-              disabled={!isEnabled(i)}
+              cardState={cardState}
               completedAt={state.adaptation[id]}
               onComplete={() => markComplete(id)}
               onUndo={() => undo(id)}
@@ -83,24 +97,24 @@ export default function AdaptationPanel({ state, setState }: Props) {
       </div>
 
       {completedCount === ORDER.length && (
-        <div className="readiness-checklist">
-          <h3>Before starting ongoing training</h3>
-          <p>
+        <div className="mt-4 border-l-4 border-orange-600 pl-4 py-1">
+          <h3 className="text-sm font-semibold text-slate-200 mt-0 mb-2">Before starting ongoing training</h3>
+          <p className="text-slate-400 text-sm mb-2">
             All three sessions are done. Check in with yourself on each point below before moving on.
             These are reminders, not gates — the site won't enforce them.
           </p>
-          <ul>
+          <ul className="text-slate-400 text-sm space-y-1 pl-4 mb-2">
             <li>No knee pain during or after any session</li>
             <li>No lingering knee discomfort 24+ hours after any session</li>
             <li>Cadence targets felt achievable (not struggling to stay above target)</li>
             <li>RPE for the intervals was no higher than ~6/10</li>
           </ul>
-          <p>
+          <p className="text-slate-400 text-sm m-0">
             If anything is off, repeat the week that gave you trouble. If knee pain is the issue,
             take a full week off low-cadence work and restart from W1.
           </p>
         </div>
       )}
-    </details>
+    </Panel>
   )
 }

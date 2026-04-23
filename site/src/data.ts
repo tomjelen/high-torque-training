@@ -1,4 +1,5 @@
 import type { ScienceSection, Source, Tier, Workout } from './types'
+import { TSS } from './generated/tss'
 
 export const SCIENCE_SECTIONS: ScienceSection[] = [
   { id: 'what', heading: 'What is torque training?' },
@@ -290,3 +291,11 @@ export const TIERS: Tier[] = [
     ],
   },
 ]
+
+export const COLLECTION_WORKOUTS: Workout[] = TIERS.flatMap((tier) =>
+  tier.workouts.map((w) => ({
+    ...w,
+    tier: tier.number as 1 | 2 | 3 | 4,
+    tss: TSS[w.file],
+  }))
+)

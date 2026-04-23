@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import IntroPanel from './components/IntroPanel'
+import DownloadInstallPanel from './components/DownloadInstallPanel'
 import AdaptationPanel from './components/AdaptationPanel'
-import TiersPanel from './components/TiersPanel'
-import DownloadBar from './components/DownloadBar'
+import CollectionPanel from './components/CollectionPanel'
 import SciencePage from './components/SciencePage'
-import SessionTracker from './components/SessionTracker'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import { loadState, saveState } from './storage'
@@ -16,10 +16,10 @@ const SCIENCE_LAST_UPDATED = '2026-04-19'
 function HomePage({ state, setState }: { state: AppState; setState: React.Dispatch<React.SetStateAction<AppState>> }) {
   return (
     <main className="mx-auto max-w-[1440px] px-8 pb-4">
+      <IntroPanel state={state} setState={setState} />
+      <DownloadInstallPanel state={state} setState={setState} />
       <AdaptationPanel state={state} setState={setState} />
-      <TiersPanel />
-      <SessionTracker state={state} setState={setState} />
-      <DownloadBar />
+      <CollectionPanel state={state} setState={setState} />
       <Footer lastUpdated={HOME_LAST_UPDATED} />
     </main>
   )
