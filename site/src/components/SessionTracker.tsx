@@ -31,7 +31,7 @@ function todayIso() {
 }
 
 function formatRelative(dateStr: string): string {
-  // dateStr is YYYY-MM-DD, parse as local date
+  // Parse as local date (not UTC) to avoid timezone shifts on the date boundary
   const [y, m, d] = dateStr.split('-').map(Number)
   if (!y || !m || !d) return dateStr
   const then = new Date(y, m - 1, d)
@@ -79,7 +79,7 @@ export default function SessionTracker({ state, setState }: Props) {
 
   function handleDelete(id: string) {
     const entry = state.log.find((e) => e.id === id)
-    const label = entry ? workoutIndex.get(entry.workoutId)?.workout.name ?? 'this entry' : 'this entry'
+    const label = (entry && workoutIndex.get(entry.workoutId)?.workout.name) ?? 'this entry'
     if (!window.confirm(`Delete entry for ${label}?`)) return
     setState((prev) => ({ ...prev, log: prev.log.filter((e) => e.id !== id) }))
   }

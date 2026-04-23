@@ -12,7 +12,6 @@ interface Props {
 
 export default function AdaptationPanel({ state, setState }: Props) {
   const completedCount = ORDER.filter((id) => state.adaptation[id]).length
-  const allDone = completedCount === ORDER.length
   const prevCompletedCount = useRef(completedCount)
 
   useEffect(() => {
@@ -83,7 +82,7 @@ export default function AdaptationPanel({ state, setState }: Props) {
         })}
       </div>
 
-      {allDone && (
+      {completedCount === ORDER.length && (
         <div className="readiness-checklist">
           <h3>Before starting ongoing training</h3>
           <p>

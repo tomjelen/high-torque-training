@@ -94,12 +94,11 @@ function computeTss(powerSamples) {
 
   const WINDOW = 30
   const rolled = []
+  let sum = 0
   for (let i = 0; i < n; i++) {
-    const start = Math.max(0, i - WINDOW + 1)
-    let sum = 0
-    const count = i - start + 1
-    for (let j = start; j <= i; j++) sum += powerSamples[j]
-    rolled.push(sum / count)
+    sum += powerSamples[i]
+    if (i >= WINDOW) sum -= powerSamples[i - WINDOW]
+    rolled.push(sum / Math.min(i + 1, WINDOW))
   }
 
   const mean4th = rolled.reduce((s, v) => s + v ** 4, 0) / n

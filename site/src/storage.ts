@@ -1,4 +1,4 @@
-import type { AppState } from './types'
+import type { AppState, PanelState } from './types'
 
 const KEY = 'ht-state'
 
@@ -13,20 +13,24 @@ const DEFAULT: AppState = {
   log: [],
 }
 
+function loadPanel(p: unknown, name: keyof AppState['panels']): PanelState {
+  return { collapsed: (p as AppState | null)?.panels?.[name]?.collapsed ?? false }
+}
+
 export function loadState(): AppState {
   try {
     const raw = localStorage.getItem(KEY)
     if (!raw) return DEFAULT
-    const p = JSON.parse(raw)
+    const p = JSON.parse(raw) as unknown
     return {
-      adaptation: p?.adaptation ?? {},
+      adaptation: (p as AppState | null)?.adaptation ?? {},
       panels: {
-        intro: { collapsed: p?.panels?.intro?.collapsed ?? false },
-        download: { collapsed: p?.panels?.download?.collapsed ?? false },
-        adaptation: { collapsed: p?.panels?.adaptation?.collapsed ?? false },
-        collection: { collapsed: p?.panels?.collection?.collapsed ?? false },
+        intro: loadPanel(p, 'intro'),
+        download: loadPanel(p, 'download'),
+        adaptation: loadPanel(p, 'adaptation'),
+        collection: loadPanel(p, 'collection'),
       },
-      log: p?.log ?? [],
+      log: (p as AppState | null)?.log ?? [],
     }
   } catch {
     return DEFAULT
