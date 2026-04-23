@@ -5,10 +5,10 @@ import SourcesList from './SourcesList'
 export default function SciencePage() {
   return (
     <article className="science-page">
-      <hgroup>
-        <h2>Science &amp; Rationale</h2>
-        <p>Why these workouts work, what the evidence actually says, and where to push back.</p>
-      </hgroup>
+      <div className="mb-6">
+        <h1 className="text-3xl font-bold text-slate-100 mt-6 mb-1">Science &amp; Rationale</h1>
+        <p className="text-slate-400 text-sm m-0">Why these workouts work, what the evidence actually says, and where to push back.</p>
+      </div>
 
       {SCIENCE_SECTIONS.map((s) => (
         <details key={s.id} id={s.id} open>
