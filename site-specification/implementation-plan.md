@@ -34,14 +34,13 @@ workout visualisation, log import/export.
   `src/generated/tss.ts`. Keeps values traceable to the `.zwo` source
   and matches the attribution-integrity rule. Unknown block types throw
   the build — no silent TSS = 0.
-- **State**: migrate `ht-v1` → `ht-v2` on load. Don't wipe `ht-v1` (user
-  has real adaptation completions and session log).
+- **State**: Do not migrate, return defaults if read state is garbled.
 
-### New `AppState` shape (`ht-v2`)
+### New `AppState`
 
 ```ts
 {
-  schemaVersion: 2,
+  schemaVersion: "2026-04-21",
   adaptation: { w1?: string, w2?: string, w3?: string },  // ISO timestamps (unchanged)
   panels: {
     intro:      { collapsed: boolean },
@@ -53,14 +52,6 @@ workout visualisation, log import/export.
   //  ^ timestamp replaces date — tracker needs half-day rounding from actual times.
 }
 ```
-
-Migration rules:
-1. `ht-v2` present → return as-is.
-2. `ht-v1` present → copy `adaptation.*` verbatim (already ISO). Promote
-   `log[].date: "YYYY-MM-DD"` → `timestamp` via `new Date(y, m-1, d).toISOString()`
-   (local midnight; tracker will round). Old `adaptationCollapsed` →
-   `panels.adaptation.collapsed`; other panels default `false`.
-3. Garbled JSON → return defaults, **do not** overwrite the raw key.
 
 ## Sequencing (7 phased commits, site functional throughout)
 
