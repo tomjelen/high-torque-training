@@ -40,7 +40,6 @@ workout visualisation, log import/export.
 
 ```ts
 {
-  schemaVersion: "2026-04-21",
   adaptation: { w1?: string, w2?: string, w3?: string },  // ISO timestamps (unchanged)
   panels: {
     intro:      { collapsed: boolean },
@@ -49,14 +48,15 @@ workout visualisation, log import/export.
     collection: { collapsed: boolean },
   },
   log: [{ id: string, workoutId: string, timestamp: string, notes?: string }]
-  //  ^ timestamp replaces date — tracker needs half-day rounding from actual times.
 }
 ```
+
+Storage: single key `ht-state`. No migration, no versioning — garbled JSON returns defaults.
 
 ## Sequencing (7 phased commits, site functional throughout)
 
 1. **Infrastructure, no visible change.** Add Tailwind, React Router,
-   storage migration, TSS generation wired into `prebuild`. pico still
+   new `AppState` shape in storage, TSS generation wired into `prebuild`. pico still
    imported, existing UI unchanged. Also run the `@tailwindcss/vite` +
    `--ssr` compatibility smoke test described under "Risks and edge
    cases" — catching an incompatibility here is much cheaper than
@@ -147,7 +147,7 @@ workout visualisation, log import/export.
 **Rewrite**
 - `src/App.tsx` — router + shell, no more hash tab logic.
 - `src/main.tsx` — remove pico + theme imports; `hydrateRoot`.
-- `src/storage.ts` — v1→v2 migration.
+- `src/storage.ts` — new `AppState` shape, single key `ht-state`.
 - `src/types.ts` — new `AppState`; `timestamp` on `LogEntry`; optional
   `tier` and `tss` on `Workout`.
 - `src/components/AdaptationPanel.tsx` — Tailwind; warning block, readiness
@@ -241,8 +241,7 @@ workout visualisation, log import/export.
   cards' "Did this today" per §4.6.
 - **Empty log state.** Counter reads "No hard sessions yet"; strip is
   empty cells; log list shows a placeholder. First-visit-safe.
-- **Garbled localStorage.** `JSON.parse` throw → defaults; preserve the
-  raw key for user recovery.
+- **Garbled localStorage.** `JSON.parse` throw → defaults.
 - **"View full log" scope creep.** Keep to a dated list; at most a
   "delete last entry" undo. Import/export is deferred per spec §5.4.
 - **Unknown .zwo block.** TSS script must throw, not default to 0.
@@ -274,13 +273,9 @@ workout visualisation, log import/export.
 - React DevTools: no hydration-mismatch warnings on load of either route.
 
 **Storage**
-- Seed `ht-v1` with dated log + adaptation timestamps → reload → `ht-v2`
-  key present, timestamps at local midnight, panels default expanded,
-  `ht-v1` untouched.
-- Wipe all keys → first paint shows empty tracker, all panels open,
+- Wipe `ht-state` → first paint shows empty tracker, all panels open,
   no errors.
-- Corrupt `ht-v2` (invalid JSON) → app works with defaults, raw key
-  retained.
+- Corrupt `ht-state` (invalid JSON) → app works with defaults.
 
 **Interaction**
 - Keyboard only: tab reaches each panel summary; Space toggles; focus

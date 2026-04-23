@@ -18,6 +18,8 @@ export interface Workout {
   source: string
   sourceNote?: string
   file: string
+  tier?: 1 | 2 | 3 | 4
+  tss?: number
 }
 
 export interface Tier {
@@ -38,12 +40,21 @@ export type AdaptationId = 'w1' | 'w2' | 'w3'
 export interface LogEntry {
   id: string
   workoutId: string
-  date: string
+  timestamp: string
   notes?: string
+}
+
+export interface PanelState {
+  collapsed: boolean
 }
 
 export interface AppState {
   adaptation: Partial<Record<AdaptationId, string>>
+  panels: {
+    intro: PanelState
+    download: PanelState
+    adaptation: PanelState
+    collection: PanelState
+  }
   log: LogEntry[]
-  adaptationCollapsed?: boolean
 }

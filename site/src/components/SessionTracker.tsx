@@ -57,7 +57,7 @@ export default function SessionTracker({ state, setState }: Props) {
   const sortedEntries = useMemo(
     () =>
       [...state.log].sort((a, b) => {
-        if (a.date !== b.date) return a.date < b.date ? 1 : -1
+        if (a.timestamp !== b.timestamp) return a.timestamp < b.timestamp ? 1 : -1
         return a.id < b.id ? 1 : -1
       }),
     [state.log],
@@ -69,7 +69,7 @@ export default function SessionTracker({ state, setState }: Props) {
     const entry: LogEntry = {
       id: newId(),
       workoutId,
-      date,
+      timestamp: new Date(date).toISOString(),
       ...(notes.trim() ? { notes: notes.trim() } : {}),
     }
     setState((prev) => ({ ...prev, log: [...prev.log, entry] }))
@@ -136,7 +136,7 @@ export default function SessionTracker({ state, setState }: Props) {
             return (
               <li key={entry.id} className="tracker-entry">
                 <div className="tracker-entry-head">
-                  <span className="tracker-entry-date">{formatRelative(entry.date)}</span>
+                  <span className="tracker-entry-date">{formatRelative(entry.timestamp.slice(0, 10))}</span>
                   {info && (
                     <span
                       className="tier-badge"

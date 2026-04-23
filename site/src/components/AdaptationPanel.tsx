@@ -17,7 +17,7 @@ export default function AdaptationPanel({ state, setState }: Props) {
 
   useEffect(() => {
     if (completedCount === ORDER.length && prevCompletedCount.current < ORDER.length) {
-      setState((s) => ({ ...s, adaptationCollapsed: true }))
+      setState((s) => ({ ...s, panels: { ...s.panels, adaptation: { collapsed: true } } }))
     }
     prevCompletedCount.current = completedCount
   }, [completedCount, setState])
@@ -39,8 +39,7 @@ export default function AdaptationPanel({ state, setState }: Props) {
 
   function onToggle(e: React.SyntheticEvent<HTMLDetailsElement>) {
     const open = e.currentTarget.open
-    if (open === !state.adaptationCollapsed) return
-    setState((s) => ({ ...s, adaptationCollapsed: !open }))
+    setState((s) => ({ ...s, panels: { ...s.panels, adaptation: { collapsed: !open } } }))
   }
 
   function isEnabled(idx: number) {
@@ -50,7 +49,7 @@ export default function AdaptationPanel({ state, setState }: Props) {
   }
 
   return (
-    <details open={!state.adaptationCollapsed} onToggle={onToggle}>
+    <details open={!state.panels.adaptation.collapsed} onToggle={onToggle}>
       <summary>
         Adaptation Phase — Weeks 1–3{' '}
         <span className="progress-count">
