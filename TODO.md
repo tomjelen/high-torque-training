@@ -11,7 +11,9 @@
 
 ## Site
 
-- [/] Some sort of introduction. What is high-torque training, and who is it for (research doc has both). And a link to the video that gave me the inspiration.
+- [/] Some sort of introduction. What is high-torque training, and who is it for (research doc has both).
+  - Missing who it is for
+  - Link to the video that gave me the inspiration. (Currently wrong)
 - [ ] Insert link to website in workout files. Something like "Go to high-torque.jelen.dk ..." whenever the site is done.
 - [/] Site: Something about the UX. For now get content/features on the site, then make it user-friendly after. Ordering of panels, what is shown by default, etc..
 - [/] Site: Typical header/footer information. Like my email/Strava/Zwift. Make it look like a real site.
@@ -22,10 +24,13 @@
 - [ ] Maybe there should be a longer "who am i" part, that the introduction can link to. Also with a link to my activities in Strava to gauge if you look somewhat like me.
 - [ ] Find a way to check firefox/chromium compatability. FF first, but I realize most people use Chrome.
 - [ ] Use the implementation plan to write some tests
+- [ ] No reason for collapsible installation instructions
+- [ ] Verify knee safety warning
+- [ ] Session tracker. Delete and edit date.
 
 ## Workout files
 
-- [ ] Put a version timestamp inside the .zwo files. I think maybe we add a comment with this, and other information that LLMs can read.
+- [ ] Put a version timestamp inside the .zwo files. I think maybe we add a comment with this, and other information that LLMs can read, and make it so the website re-expands Download/Install with a `updated` badge.
 - [ ] Investigate if duration is an actual attribute of textevent.
 - [ ] Add link to site in llm-meta inside .zwo files
 

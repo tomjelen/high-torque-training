@@ -21,12 +21,10 @@ export default function CollectionPanel({ state, setState }: Props) {
   }
 
   function handleDidThis(workoutId: string) {
-    const now = new Date()
-    const ymd = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`
     const entry: LogEntry = {
       id: `log-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
       workoutId,
-      timestamp: new Date(ymd).toISOString(),
+      timestamp: new Date().toISOString(),
     }
     setState((prev) => ({ ...prev, log: [...prev.log, entry] }))
   }
@@ -57,7 +55,7 @@ export default function CollectionPanel({ state, setState }: Props) {
         </div>
 
         <aside>
-          <SessionTracker state={state} setState={setState} />
+          <SessionTracker state={state} />
         </aside>
       </div>
     </Panel>

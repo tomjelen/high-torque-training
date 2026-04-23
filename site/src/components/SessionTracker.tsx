@@ -1,168 +1,87 @@
-import { useMemo, useState } from 'react'
-import { TIERS } from '../data'
-import type { AppState, LogEntry, Tier, Workout } from '../types'
+import { useMemo } from 'react'
+import { COLLECTION_WORKOUTS } from '../data'
+import TrackerCounter from './TrackerCounter'
+import TrackerStrip from './TrackerStrip'
+import TrackerLog from './TrackerLog'
+import PrivacyPopover from './PrivacyPopover'
+import type { AnnotatedEntry } from './TrackerLog'
+import type { AppState } from '../types'
 
 interface Props {
   state: AppState
-  setState: React.Dispatch<React.SetStateAction<AppState>>
 }
 
-interface WorkoutIndex {
-  workout: Workout
-  tier: Tier
+// Module-level: COLLECTION_WORKOUTS is a static constant, no need to recompute per mount
+const WORKOUT_META = new Map<string, { tier: number; name: string }>(
+  COLLECTION_WORKOUTS.map((w) => [w.id, { tier: w.tier ?? 0, name: w.name }]),
+)
+
+function isHardWorkout(workoutId: string): boolean {
+  return (WORKOUT_META.get(workoutId)?.tier ?? 0) >= 3
 }
 
-function buildWorkoutIndex(): Map<string, WorkoutIndex> {
-  const map = new Map<string, WorkoutIndex>()
-  for (const tier of TIERS) {
-    for (const workout of tier.workouts) {
-      map.set(workout.id, { workout, tier })
-    }
-  }
-  return map
+function roundHalfDay(days: number): number {
+  return Math.round(days * 2) / 2
 }
 
-function todayIso() {
-  const now = new Date()
-  const y = now.getFullYear()
-  const m = String(now.getMonth() + 1).padStart(2, '0')
-  const d = String(now.getDate()).padStart(2, '0')
-  return `${y}-${m}-${d}`
+function formatDateLabel(isoTimestamp: string): string {
+  const [y, m, d] = isoTimestamp.slice(0, 10).split('-').map(Number)
+  return new Date(y, m - 1, d).toLocaleDateString(undefined, { month: 'short', day: 'numeric' })
 }
 
-function formatRelative(dateStr: string): string {
-  // Parse as local date (not UTC) to avoid timezone shifts on the date boundary
-  const [y, m, d] = dateStr.split('-').map(Number)
-  if (!y || !m || !d) return dateStr
-  const then = new Date(y, m - 1, d)
-  const now = new Date()
-  const today = new Date(now.getFullYear(), now.getMonth(), now.getDate())
-  const diffDays = Math.round((today.getTime() - then.getTime()) / (1000 * 60 * 60 * 24))
-  if (diffDays === 0) return 'Today'
-  if (diffDays === 1) return 'Yesterday'
-  if (diffDays > 1 && diffDays < 7) return `${diffDays} days ago`
-  return then.toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' })
-}
-
-function newId() {
-  return `log-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`
-}
-
-export default function SessionTracker({ state, setState }: Props) {
-  const workoutIndex = useMemo(buildWorkoutIndex, [])
-  const [workoutId, setWorkoutId] = useState<string>(() => TIERS[0]?.workouts[0]?.id ?? '')
-  const [date, setDate] = useState<string>(todayIso)
-  const [notes, setNotes] = useState<string>('')
-
-  const sortedEntries = useMemo(
-    () =>
-      [...state.log].sort((a, b) => {
-        if (a.timestamp !== b.timestamp) return a.timestamp < b.timestamp ? 1 : -1
-        return a.id < b.id ? 1 : -1
-      }),
+export default function SessionTracker({ state }: Props) {
+  const sortedLog = useMemo(
+    () => [...state.log].sort((a, b) => b.timestamp.localeCompare(a.timestamp)),
     [state.log],
   )
 
-  function handleTrack(e: React.FormEvent) {
-    e.preventDefault()
-    if (!workoutId || !date) return
-    const entry: LogEntry = {
-      id: newId(),
-      workoutId,
-      timestamp: new Date(date).toISOString(),
-      ...(notes.trim() ? { notes: notes.trim() } : {}),
-    }
-    setState((prev) => ({ ...prev, log: [...prev.log, entry] }))
-    setNotes('')
-    setDate(todayIso())
-  }
+  const daysSinceLastHard = useMemo(() => {
+    const lastHard = sortedLog.find((e) => isHardWorkout(e.workoutId))
+    if (!lastHard) return null
+    const diffMs = Date.now() - new Date(lastHard.timestamp).getTime()
+    return roundHalfDay(diffMs / (1000 * 60 * 60 * 24))
+  }, [sortedLog])
 
-  function handleDelete(id: string) {
-    const entry = state.log.find((e) => e.id === id)
-    const label = (entry && workoutIndex.get(entry.workoutId)?.workout.name) ?? 'this entry'
-    if (!window.confirm(`Delete entry for ${label}?`)) return
-    setState((prev) => ({ ...prev, log: prev.log.filter((e) => e.id !== id) }))
-  }
+  const dayMap = useMemo(() => {
+    const map = new Map<string, 'hard' | 'easy'>()
+    for (const entry of sortedLog) {
+      const day = entry.timestamp.slice(0, 10)
+      const hard = isHardWorkout(entry.workoutId)
+      if (!map.has(day) || hard) map.set(day, hard ? 'hard' : 'easy')
+    }
+    return map
+  }, [sortedLog])
+
+  const annotatedEntries = useMemo((): AnnotatedEntry[] => {
+    return sortedLog.map((entry, i) => {
+      const prev = sortedLog[i + 1]
+      const gap = prev
+        ? roundHalfDay(
+            (new Date(entry.timestamp).getTime() - new Date(prev.timestamp).getTime()) /
+              (1000 * 60 * 60 * 24),
+          )
+        : null
+      return {
+        id: entry.id,
+        name: WORKOUT_META.get(entry.workoutId)?.name ?? entry.workoutId,
+        isHard: isHardWorkout(entry.workoutId),
+        dateLabel: formatDateLabel(entry.timestamp),
+        gap,
+      }
+    })
+  }, [sortedLog])
 
   return (
-    <section className="session-tracker">
-      <h2>Session Tracker</h2>
-      <p>Track your ongoing torque sessions. Entries persist in this browser.</p>
-
-      <form className="tracker-form" onSubmit={handleTrack}>
-        <div className="tracker-form-row">
-          <label>
-            Workout
-            <select value={workoutId} onChange={(e) => setWorkoutId(e.target.value)}>
-              {TIERS.map((tier) => (
-                <optgroup key={tier.number} label={`T${tier.number} — ${tier.name}`}>
-                  {tier.workouts.map((w) => (
-                    <option key={w.id} value={w.id}>
-                      {w.name}
-                    </option>
-                  ))}
-                </optgroup>
-              ))}
-            </select>
-          </label>
-          <label>
-            Date
-            <input
-              type="date"
-              value={date}
-              max={todayIso()}
-              onChange={(e) => setDate(e.target.value)}
-            />
-          </label>
-        </div>
-        <label>
-          Notes <span className="tracker-optional">(optional)</span>
-          <textarea
-            rows={2}
-            value={notes}
-            onChange={(e) => setNotes(e.target.value)}
-            placeholder="RPE, how your knees felt, what to change next time…"
-          />
-        </label>
-        <button type="submit">Track Session</button>
-      </form>
-
-      {sortedEntries.length === 0 ? (
-        <p className="tracker-empty">No sessions tracked yet.</p>
-      ) : (
-        <ul className="tracker-entries">
-          {sortedEntries.map((entry) => {
-            const info = workoutIndex.get(entry.workoutId)
-            return (
-              <li key={entry.id} className="tracker-entry">
-                <div className="tracker-entry-head">
-                  <span className="tracker-entry-date">{formatRelative(entry.timestamp.slice(0, 10))}</span>
-                  {info && (
-                    <span
-                      className="tier-badge"
-                      style={{ backgroundColor: info.tier.color }}
-                    >
-                      T{info.tier.number}
-                    </span>
-                  )}
-                  <span className="tracker-entry-name">
-                    {info?.workout.name ?? `Unknown workout (${entry.workoutId})`}
-                  </span>
-                  <button
-                    type="button"
-                    className="tracker-delete"
-                    onClick={() => handleDelete(entry.id)}
-                    aria-label="Delete entry"
-                  >
-                    ×
-                  </button>
-                </div>
-                {entry.notes && <p className="tracker-entry-notes">{entry.notes}</p>}
-              </li>
-            )
-          })}
-        </ul>
-      )}
-    </section>
+    <div className="bg-slate-900/50 border border-slate-800 rounded-lg p-4">
+      <div className="flex items-center justify-between mb-3">
+        <h2 className="text-xs font-semibold text-slate-400 uppercase tracking-wider m-0">
+          Session Tracker
+        </h2>
+        <PrivacyPopover />
+      </div>
+      <TrackerCounter daysSince={daysSinceLastHard} />
+      <TrackerStrip dayMap={dayMap} />
+      <TrackerLog entries={annotatedEntries} />
+    </div>
   )
 }
