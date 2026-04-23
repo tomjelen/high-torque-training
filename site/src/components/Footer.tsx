@@ -1,5 +1,5 @@
-// Strava profile URL — update when profile is made public
-const STRAVA_URL = 'https://www.strava.com/athletes/'
+const MY_STRAVA_PROFILE = 'https://www.strava.com/athletes/8943272'
+const MY_EMAIL = 'high-torque@jelen.dk'
 
 interface FooterProps {
   lastUpdated: string
@@ -13,13 +13,13 @@ export default function Footer({ lastUpdated }: FooterProps) {
           <div className="font-semibold text-slate-200 mb-1">Tom Jelen</div>
           <div className="flex gap-4">
             <a
-              href="mailto:high-torque@jelen.dk"
+              href={`mailto:${MY_EMAIL}`}
               className="text-slate-400 hover:text-slate-200 no-underline"
             >
-              ✉ high-torque@jelen.dk
+              ✉ {MY_EMAIL}
             </a>
             <a
-              href={STRAVA_URL}
+              href={MY_STRAVA_PROFILE}
               target="_blank"
               rel="noopener noreferrer"
               className="text-slate-400 hover:text-slate-200 no-underline"

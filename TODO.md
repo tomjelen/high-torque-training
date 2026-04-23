@@ -21,6 +21,7 @@
 - [/] A date for when this was last updated. That way people can see if I have considered some new research. Maybe that means two dates. One for a minor site update, another for when research was updated.
 - [ ] Maybe there should be a longer "who am i" part, that the introduction can link to. Also with a link to my activities in Strava to gauge if you look somewhat like me.
 - [ ] Find a way to check firefox/chromium compatability. FF first, but I realize most people use Chrome.
+- [ ] Use the implementation plan to write some tests
 
 ## Workout files
 
