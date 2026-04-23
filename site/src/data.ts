@@ -66,6 +66,13 @@ export const SOURCES: Record<string, Source> = {
       'Neal Henderson on Fast Talk Labs — Put It in the Big Gear — We Explore Low-Cadence, High-Torque Training.',
     url: 'https://www.fasttalklabs.com/fast-talk/neal-henderson-put-it-in-the-big-gear-we-explore-low-cadence-high-torque-training/',
   },
+  roadman: {
+    key: 'roadman',
+    shortName: 'Roadman Podcast',
+    fullCitation:
+      'The Roadman Podcast — New Study FINALLY Confirms What Cycling Coaches Have Been Saying For Years (YouTube, 2024).',
+    url: 'https://www.youtube.com/watch?v=tcar3G2v73I',
+  },
   ef: {
     key: 'ef',
     shortName: 'EF Pro',

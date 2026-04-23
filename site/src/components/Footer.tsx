@@ -16,7 +16,16 @@ export default function Footer({ lastUpdated }: FooterProps) {
               href={`mailto:${MY_EMAIL}`}
               className="text-slate-400 hover:text-slate-200 no-underline"
             >
-              ✉ {MY_EMAIL}
+              <svg
+                role="img"
+                viewBox="0 0 24 24"
+                aria-label="Email"
+                className="inline-block w-3.5 h-3.5 mr-1 align-text-bottom fill-current"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+              </svg>
+              {MY_EMAIL}
             </a>
             <a
               href={MY_STRAVA_PROFILE}
@@ -24,7 +33,16 @@ export default function Footer({ lastUpdated }: FooterProps) {
               rel="noopener noreferrer"
               className="text-slate-400 hover:text-slate-200 no-underline"
             >
-              ◎ Strava
+              <svg
+                role="img"
+                viewBox="0 0 24 24"
+                aria-label="Strava"
+                className="inline-block w-3.5 h-3.5 mr-1 align-text-bottom fill-current"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M15.387 17.944l-2.089-4.116h-3.065L15.387 24l5.15-10.172h-3.066m-7.008-5.599l2.836 5.598h4.172L10.463 0l-7 13.828h4.169" />
+              </svg>
+              Strava
             </a>
           </div>
         </div>
