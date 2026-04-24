@@ -3,9 +3,10 @@ const MY_EMAIL = 'high-torque@jelen.dk'
 
 interface FooterProps {
   lastUpdated: string
+  lastUpdatedTooltip: string
 }
 
-export default function Footer({ lastUpdated }: FooterProps) {
+export default function Footer({ lastUpdated, lastUpdatedTooltip }: FooterProps) {
   return (
     <footer className="border-t border-slate-800 mt-10 pt-5 pb-8 px-8 mx-auto max-w-[1440px]">
       <div className="flex items-start justify-between gap-6 text-sm text-slate-400">
@@ -52,7 +53,10 @@ export default function Footer({ lastUpdated }: FooterProps) {
           If your input shapes the rationale, I'll credit you there.
         </p>
 
-        <div className="text-slate-500 text-xs text-right whitespace-nowrap">
+        <div
+          className="text-slate-500 text-xs text-right whitespace-nowrap cursor-help"
+          title={lastUpdatedTooltip}
+        >
           Last updated<br />
           {lastUpdated}
         </div>

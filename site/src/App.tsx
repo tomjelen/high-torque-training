@@ -20,7 +20,10 @@ function HomePage({ state, setState }: { state: AppState; setState: React.Dispat
       <DownloadInstallPanel state={state} setState={setState} />
       <AdaptationPanel state={state} setState={setState} />
       <CollectionPanel state={state} setState={setState} />
-      <Footer lastUpdated={HOME_LAST_UPDATED} />
+      <Footer
+        lastUpdated={HOME_LAST_UPDATED}
+        lastUpdatedTooltip="Date of the most recent change to the workout library."
+      />
     </main>
   )
 }
@@ -29,7 +32,10 @@ function ScienceRoute() {
   return (
     <main className="mx-auto max-w-[1440px] px-8 pb-4">
       <SciencePage />
-      <Footer lastUpdated={SCIENCE_LAST_UPDATED} />
+      <Footer
+        lastUpdated={SCIENCE_LAST_UPDATED}
+        lastUpdatedTooltip="Date of the most recent substantive update to the research and rationale. Typo fixes and wording tweaks don't bump this date."
+      />
     </main>
   )
 }

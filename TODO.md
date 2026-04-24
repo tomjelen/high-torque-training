@@ -18,9 +18,9 @@
 - [X] Site: Typical header/footer information. Like my email/Strava/Zwift. Make it look like a real site.
 - [ ] There is something about the tier 1 workouts. Almost identical, even though they are from different sources.
 - [/] Site - rationale page: In the section "Ongoing training framework", I think it would be good to point out that this is designed for people like me, that will keep it going, instead of trying to peak. Then maybe shortly outline what the plan would be, if you have a race season (only once a month, yada yada), and then link to articles/papers that goes into details. Later, if interest is here, I can expand the site to cater to this group also. That should be easier, as there is plenty of data/recommendation for this.
-- [/] Call-out for people to correct false information or improvements. It should show that I care about factual correct information, and that I appreciate sharing the learnings. With luck, I will be able to add comments to the rationale, where some important person has given me an oppinion/suggestion, with a referece back to this person. I think that would help build credibility.
-- [/] A date for when this was last updated. That way people can see if I have considered some new research. Maybe that means two dates. One for a minor site update, another for when research was updated.
-- [ ] Maybe there should be a longer "who am i" part, that the introduction can link to. Also with a link to my activities in Strava to gauge if you look somewhat like me.
+- [X] Call-out for people to correct false information or improvements. It should show that I care about factual correct information, and that I appreciate sharing the learnings. With luck, I will be able to add comments to the rationale, where some important person has given me an oppinion/suggestion, with a referece back to this person. I think that would help build credibility.
+- [X] A date for when this was last updated. That way people can see if I have considered some new research. Maybe that means two dates. One for a minor site update, another for when research was updated.
+- [X] Maybe there should be a longer "who am i" part, that the introduction can link to. Also with a link to my activities in Strava to gauge if you look somewhat like me.
 - [ ] Find a way to check firefox/chromium compatability. FF first, but I realize most people use Chrome.
 - [ ] Use the implementation plan to write some tests
 - [ ] No reason for collapsible installation instructions
@@ -28,7 +28,7 @@
 - [ ] Session tracker. Delete and edit date.
 - [ ] "Before starting ongoing training" is show on completion of last adaption workout, but then the entire panel is collapsed. Lets just always show it
 - [ ] Check table/mobile
-- [ ] Last phase of redesign
+- [ ] Last phase of redesign document
 
 ## Workout files
 
@@ -44,5 +44,5 @@
 ## Skills to explore
 
 - [X] Use playwright-cli
-- [ ] Try with a Playwright-cli skill. Because Claude keeps retarding when using it
-- [ ] simplify
+- [X] Try with a Playwright-cli skill. Because Claude keeps retarding when using it
+- [X] simplify
