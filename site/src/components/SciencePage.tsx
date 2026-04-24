@@ -34,7 +34,7 @@ function renderBody(id: string) {
       return (
         <>
           <p>
-            Most cyclists pedal at 80–100 RPM. Dropping to 50–70 RPM at the same power output forces each leg muscle
+            Most cyclists pedal at 80–100 rpm. Dropping to 50–70 rpm at the same power output forces each leg muscle
             contraction to produce much more force per stroke — that's what "high torque" means. The hypothesis is that
             this extra muscular demand triggers adaptations that normal cadence training doesn't, particularly increased
             VO2max and maximal aerobic power.
@@ -49,7 +49,7 @@ function renderBody(id: string) {
           <p>
             Two groups of well-trained female cyclists followed an identical 8-week polarized training program
             (~8 hours/week, 4-day microcycles). The only difference: one group did all high-intensity intervals at{' '}
-            <strong>freely chosen cadence (&gt;80 RPM)</strong>, the other at <strong>low cadence (50–70 RPM)</strong>.
+            <strong>freely chosen cadence (&gt;80 rpm)</strong>, the other at <strong>low cadence (50–70 rpm)</strong>.
             <Cite sourceKey="hebisz2024" />
           </p>
           <p>Both programs included:</p>
@@ -69,12 +69,12 @@ function renderBody(id: string) {
             </thead>
             <tbody>
               <tr>
-                <td>Low cadence (50–70 RPM)</td>
+                <td>Low cadence (50–70 rpm)</td>
                 <td><strong>+8.7%</strong></td>
                 <td><strong>+8.1%</strong></td>
               </tr>
               <tr>
-                <td>Freely chosen cadence (&gt;80 RPM)</td>
+                <td>Freely chosen cadence (&gt;80 rpm)</td>
                 <td>+4.6%</td>
                 <td>+3.0%</td>
               </tr>
@@ -108,8 +108,8 @@ function renderBody(id: string) {
             <strong>Neal Henderson</strong> (Apex Coaching, coached Rohan Dennis, Taylor Phinney):{' '}
             <em>"Generally I do about one of these sessions a week, at most two."</em> He has never programmed
             back-to-back big gear sessions and stresses the musculoskeletal load as the main limiter. Henderson's
-            progression for new athletes: start with tempo (3–5 min at 75–85% FTP, 50–60 RPM), then threshold
-            (5×5 min at ~95% FTP, 50–60 RPM), then VO2max (30–90s at ~5-min power).
+            progression for new athletes: start with tempo (3–5 min at 75–85% FTP, 50–60 rpm), then threshold
+            (5×5 min at ~95% FTP, 50–60 rpm), then VO2max (30–90s at ~5-min power).
             <Cite sourceKey="henderson" />
           </p>
           <p>
@@ -118,9 +118,9 @@ function renderBody(id: string) {
             a block to complete.<Cite sourceKey="evoq" />
           </p>
           <p>
-            <strong>Peter Schep / EF Pro Cycling:</strong> Progressive approach — start at 60 RPM, 80–85% FTP for
+            <strong>Peter Schep / EF Pro Cycling:</strong> Progressive approach — start at 60 rpm, 80–85% FTP for
             15 minutes, then advance to threshold efforts, and only then to VO2max torque work (e.g. 3×5 min at
-            106–120% FTP, 50–60 RPM — the Noemi Rüegg workout). Recreational riders should proceed cautiously. The
+            106–120% FTP, 50–60 rpm — the Noemi Rüegg workout). Recreational riders should proceed cautiously. The
             VO2max torque workout is a post-adaptation session, not a starting point.<Cite sourceKey="ef" />
           </p>
           <p>
@@ -170,7 +170,7 @@ function renderBody(id: string) {
           </p>
           <p>
             Clinically: <em>"Pushing hard gears at low revolutions puts a high load through the patella, whereas lower
-            gears at high cadence (85–90 RPM) will put less load through the patellofemoral joint with each stroke."</em>
+            gears at high cadence (85–90 rpm) will put less load through the patellofemoral joint with each stroke."</em>
             <Cite sourceKey="physiopedia" />
           </p>
           <p>
@@ -201,7 +201,7 @@ function renderBody(id: string) {
               continues.
             </li>
             <li>
-              <strong>Don't go below 50 RPM</strong> unless you have months of established low-cadence work behind you.
+              <strong>Don't go below 50 rpm</strong> unless you have months of established low-cadence work behind you.
             </li>
             <li>
               <strong>Never do low-cadence sessions on back-to-back days.</strong> The joint needs recovery time.
@@ -248,17 +248,17 @@ function renderBody(id: string) {
               <tr>
                 <td>1</td>
                 <td>1× low-cadence endurance</td>
-                <td>Warm up 15 min normal cadence. Then 2× 10 min Zone 2 (~65% FTP) at <strong>65–70 RPM</strong>, 5 min easy spin between. Cool down 10 min.</td>
+                <td>Warm up 15 min normal cadence. Then 2× 10 min Zone 2 (~65% FTP) at <strong>65–70 rpm</strong>, 5 min easy spin between. Cool down 10 min.</td>
               </tr>
               <tr>
                 <td>2</td>
                 <td>1× low-cadence endurance</td>
-                <td>2× 15 min Zone 2 at <strong>65 RPM</strong>, 5 min easy between.</td>
+                <td>2× 15 min Zone 2 at <strong>65 rpm</strong>, 5 min easy between.</td>
               </tr>
               <tr>
                 <td>3</td>
                 <td>1× low-cadence endurance</td>
-                <td>3× 10 min Zone 2 at <strong>60–65 RPM</strong>, 5 min easy between.</td>
+                <td>3× 10 min Zone 2 at <strong>60–65 rpm</strong>, 5 min easy between.</td>
               </tr>
             </tbody>
           </table>
@@ -280,7 +280,7 @@ function renderBody(id: string) {
               you restart, go back to Week 1. If it recurs, see a physiotherapist before continuing.
             </li>
             <li>
-              <strong>Can't maintain target cadence</strong> (grinding 5+ RPM below target): The gear is too hard.
+              <strong>Can't maintain target cadence</strong> (grinding 5+ rpm below target): The gear is too hard.
               Reduce power target, not cadence.
             </li>
             <li>
@@ -398,7 +398,7 @@ function renderBody(id: string) {
                 <td>Stop torque work for at least a week. Resume with a Tier 1 session. If it recurs, see a physiotherapist.</td>
               </tr>
               <tr>
-                <td>Can't hold target cadence (grinding 5+ RPM below)</td>
+                <td>Can't hold target cadence (grinding 5+ rpm below)</td>
                 <td>The workout is too hard. Drop intensity or move to a lower tier.</td>
               </tr>
               <tr>

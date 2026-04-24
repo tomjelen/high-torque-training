@@ -7,13 +7,13 @@
     <tags />
     <workout>
         <Warmup Duration="900" PowerLow="0.40" PowerHigh="0.75">
-            <textevent timeoffset="30" message="Source: Neal Henderson (Fast Talk Labs). Henderson prescribes 5x5 min at ~95% FTP, 50-60 RPM with half-time recovery" />
+            <textevent timeoffset="30" message="Source: Neal Henderson (Fast Talk Labs). Henderson prescribes 5x5 min at ~95% FTP, 50-60 rpm with half-time recovery" />
             <textevent timeoffset="40" message="as the threshold step in his torque progression." />
             <textevent timeoffset="120" message="Henderson's progression: tempo (80-85% FTP) first, then threshold (this session), then VO2max." />
             <textevent timeoffset="130" message="Each step builds on the last." />
-            <textevent timeoffset="240" message="~95% FTP at 50-60 RPM produces very high force per pedal stroke. This is a demanding session —" />
+            <textevent timeoffset="240" message="~95% FTP at 50-60 rpm produces very high force per pedal stroke. This is a demanding session —" />
             <textevent timeoffset="250" message="only attempt it after several weeks of comfortable Tier 2 work." />
-            <textevent timeoffset="420" message="All intervals are SEATED. Target cadence: 50-60 RPM." />
+            <textevent timeoffset="420" message="All intervals are SEATED. Target cadence: 50-60 rpm." />
             <textevent timeoffset="600" message="Recovery between intervals is about half the work time — 3.5 minutes." />
             <textevent timeoffset="610" message="Henderson: 'half time recovery' for threshold torque efforts." />
             <textevent timeoffset="780" message="If your knees ache at any point, stop the interval." />
@@ -21,7 +21,7 @@
         </Warmup>
 
         <SteadyState Duration="300" Power="0.95" Cadence="55">
-            <textevent timeoffset="10" message="Interval 1. ~95% FTP, 50-60 RPM. Stay seated. 5 minutes." />
+            <textevent timeoffset="10" message="Interval 1. ~95% FTP, 50-60 rpm. Stay seated. 5 minutes." />
             <textevent timeoffset="150" message="Halfway. Threshold power at low cadence —" />
             <textevent timeoffset="160" message="you should feel this primarily in the legs, with moderate breathing effort." />
             <textevent timeoffset="270" message="30 seconds left. Hold cadence and power." />
@@ -34,7 +34,7 @@
         </SteadyState>
 
         <SteadyState Duration="300" Power="0.95" Cadence="55">
-            <textevent timeoffset="10" message="Interval 2. ~95% FTP, 50-60 RPM. Stay seated." />
+            <textevent timeoffset="10" message="Interval 2. ~95% FTP, 50-60 rpm. Stay seated." />
             <textevent timeoffset="150" message="Halfway. Threshold torque — the highest sustained intensity in a progressive torque program." />
             <textevent timeoffset="270" message="30 seconds left." />
         </SteadyState>
@@ -45,8 +45,8 @@
         </SteadyState>
 
         <SteadyState Duration="300" Power="0.95" Cadence="55">
-            <textevent timeoffset="10" message="Interval 3. ~95% FTP, 50-60 RPM. Stay seated." />
-            <textevent timeoffset="150" message="Halfway. Keep the form — seated, smooth strokes, 50-60 RPM." />
+            <textevent timeoffset="10" message="Interval 3. ~95% FTP, 50-60 rpm. Stay seated." />
+            <textevent timeoffset="150" message="Halfway. Keep the form — seated, smooth strokes, 50-60 rpm." />
             <textevent timeoffset="270" message="30 seconds left." />
         </SteadyState>
 
@@ -56,7 +56,7 @@
         </SteadyState>
 
         <SteadyState Duration="300" Power="0.95" Cadence="55">
-            <textevent timeoffset="10" message="Interval 4. ~95% FTP, 50-60 RPM. Stay seated." />
+            <textevent timeoffset="10" message="Interval 4. ~95% FTP, 50-60 rpm. Stay seated." />
             <textevent timeoffset="150" message="Halfway. Penultimate interval. One more after this." />
             <textevent timeoffset="270" message="30 seconds left." />
         </SteadyState>
@@ -67,7 +67,7 @@
         </SteadyState>
 
         <SteadyState Duration="300" Power="0.95" Cadence="55">
-            <textevent timeoffset="10" message="Final interval. ~95% FTP, 50-60 RPM. Stay seated." />
+            <textevent timeoffset="10" message="Final interval. ~95% FTP, 50-60 rpm. Stay seated." />
             <textevent timeoffset="150" message="Halfway. Last effort." />
             <textevent timeoffset="270" message="30 seconds. Finish it." />
         </SteadyState>

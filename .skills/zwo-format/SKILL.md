@@ -59,7 +59,7 @@ All power values can have fractions of FTP: `0.88` = 88% FTP.
 
 ## Cadence attributes
 
-- **`Cadence="X"`** (capital C) is the only working cadence attribute. Shows target on HUD, warns at +/-5 RPM.
+- **`Cadence="X"`** (capital C) is the only working cadence attribute. Shows target on HUD, warns at +/-5 rpm.
 - **`cadenceHigh`** and **`cadenceLow`** have no effect. Do not use them.
 - When the source gives a range, use the midpoint as the attribute value and display the actual range in text events.
 

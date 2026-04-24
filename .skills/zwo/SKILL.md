@@ -16,7 +16,7 @@ Always `<author>Tom Jelen</author>`.
 ## Naming
 
 - `<name>` — prefix with `HT`. Example: `HT Torque Entry 80%`.
-- `<activitySaveName>` — format: `High Torque Tier N: Name - XxYmin Z% FTP R RPM`. Use **source prescription ranges**, not ZWO-fixed values.
+- `<activitySaveName>` — format: `High Torque Tier N: Name - XxYmin Z% FTP R rpm`. Use **source prescription ranges**, not ZWO-fixed values.
 
 ## Display text: always show source prescriptions
 
@@ -28,8 +28,8 @@ ZWO attributes require fixed values, but the rider should see what the source ac
 | ~90% FTP | `OnPower="0.90"` | "~90% FTP" |
 | ~95% FTP | `OnPower="0.95"` | "~95% FTP" |
 | 105-110% FTP | `OnPower="1.10"` | "105-110% FTP" |
-| 50-60 rpm | `Cadence="55"` | "50-60 RPM" |
-| 60-70 rpm | `Cadence="65"` | "60-70 RPM" |
+| 50-60 rpm | `Cadence="55"` | "50-60 rpm" |
+| 60-70 rpm | `Cadence="65"` | "60-70 rpm" |
 
 Never show "80% FTP" when the source says "80-85% FTP". The ZWO format forced us to pick a value — the rider should see the real prescription.
 

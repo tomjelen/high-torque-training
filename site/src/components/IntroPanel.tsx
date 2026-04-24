@@ -23,10 +23,10 @@ export default function IntroPanel({ state, setState }: Props) {
       <p className="text-slate-300 mb-0">
         High-torque training is{' '}
         <strong className="text-slate-100">low cadence at high power</strong>. In an 8-week study,
-        cyclists doing their high-intensity intervals at 50–70 RPM gained{' '}
+        cyclists doing their high-intensity intervals at 50–70 rpm gained{' '}
         <strong className="text-green-400">+8.7% VO2max</strong> and{' '}
         <strong className="text-green-400">+8.1% max aerobic power</strong>, compared with +4.6% and
-        +3.0% for the same intervals at freely chosen cadence above 80 RPM.
+        +3.0% for the same intervals at freely chosen cadence above 80 rpm.
       </p>
       <p className="text-slate-500 text-sm mt-3 mb-0">
         I've tried structured training plans. I just don't follow them — a beautiful route always

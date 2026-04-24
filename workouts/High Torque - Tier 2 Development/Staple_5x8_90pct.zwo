@@ -9,19 +9,19 @@
         <Warmup Duration="900" PowerLow="0.40" PowerHigh="0.75">
             <textevent timeoffset="30" message="Source: EVOQ.BIKE (scaled — extended intervals). EVOQ's staple is 5x5 min at ~90% FTP." />
             <textevent timeoffset="40" message="They note: 'You can extend the duration of these intervals up to 8 minutes to work on muscular endurance.'" />
-            <textevent timeoffset="120" message="This is the longest torque session in Tier 2. 40 minutes of total work at 50-60 RPM —" />
+            <textevent timeoffset="120" message="This is the longest torque session in Tier 2. 40 minutes of total work at 50-60 rpm —" />
             <textevent timeoffset="130" message="a significant muscular endurance stimulus." />
             <textevent timeoffset="240" message="EVOQ: 'The bulk of torque workouts are best performed during base season" />
             <textevent timeoffset="250" message="when you are also lifting in the gym.'" />
             <textevent timeoffset="420" message="Hebisz (2024): the low-cadence group improved their second ventilatory threshold (VT2)," />
             <textevent timeoffset="430" message="which the normal-cadence group did not." />
-            <textevent timeoffset="600" message="All intervals are SEATED. Target cadence: 50-60 RPM." />
+            <textevent timeoffset="600" message="All intervals are SEATED. Target cadence: 50-60 rpm." />
             <textevent timeoffset="780" message="If your knees ache at any point, stop the interval." />
             <textevent timeoffset="790" message="8-minute blocks mean more sustained joint load — pay attention." />
         </Warmup>
 
         <SteadyState Duration="480" Power="0.90" Cadence="55">
-            <textevent timeoffset="10" message="Interval 1. ~90% FTP, 50-60 RPM. Stay seated. 8 minutes — settle into a rhythm." />
+            <textevent timeoffset="10" message="Interval 1. ~90% FTP, 50-60 rpm. Stay seated. 8 minutes — settle into a rhythm." />
             <textevent timeoffset="180" message="3 minutes in. At low cadence, the muscular demand is constant and high." />
             <textevent timeoffset="190" message="Your legs should feel it more than your lungs." />
             <textevent timeoffset="360" message="Past halfway. This is where muscular endurance matters —" />
@@ -35,7 +35,7 @@
         </SteadyState>
 
         <SteadyState Duration="480" Power="0.90" Cadence="55">
-            <textevent timeoffset="10" message="Interval 2. ~90% FTP, 50-60 RPM. Stay seated." />
+            <textevent timeoffset="10" message="Interval 2. ~90% FTP, 50-60 rpm. Stay seated." />
             <textevent timeoffset="180" message="3 minutes in. Keep the cadence low and the pedal stroke smooth." />
             <textevent timeoffset="360" message="Past halfway." />
             <textevent timeoffset="450" message="30 seconds left." />
@@ -47,7 +47,7 @@
         </SteadyState>
 
         <SteadyState Duration="480" Power="0.90" Cadence="55">
-            <textevent timeoffset="10" message="Interval 3. ~90% FTP, 50-60 RPM. Stay seated." />
+            <textevent timeoffset="10" message="Interval 3. ~90% FTP, 50-60 rpm. Stay seated." />
             <textevent timeoffset="180" message="3 minutes. Mid-session. The legs should be used to this effort level by now." />
             <textevent timeoffset="360" message="Past halfway." />
             <textevent timeoffset="450" message="30 seconds left." />
@@ -59,7 +59,7 @@
         </SteadyState>
 
         <SteadyState Duration="480" Power="0.90" Cadence="55">
-            <textevent timeoffset="10" message="Interval 4. ~90% FTP, 50-60 RPM. Stay seated." />
+            <textevent timeoffset="10" message="Interval 4. ~90% FTP, 50-60 rpm. Stay seated." />
             <textevent timeoffset="180" message="3 minutes in. Penultimate interval. Hold the effort." />
             <textevent timeoffset="360" message="Past halfway. One more after this." />
             <textevent timeoffset="450" message="30 seconds left." />
@@ -71,7 +71,7 @@
         </SteadyState>
 
         <SteadyState Duration="480" Power="0.90" Cadence="55">
-            <textevent timeoffset="10" message="Final interval. ~90% FTP, 50-60 RPM. Stay seated." />
+            <textevent timeoffset="10" message="Final interval. ~90% FTP, 50-60 rpm. Stay seated." />
             <textevent timeoffset="180" message="3 minutes. Last long push." />
             <textevent timeoffset="360" message="Past halfway. Almost done." />
             <textevent timeoffset="450" message="30 seconds. Finish it." />

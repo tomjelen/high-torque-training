@@ -2,16 +2,16 @@
 <workout_file>
     <author>Tom Jelen</author>
     <name>SIT 2 Sets</name>
-    <activitySaveName>High Torque Tier 4: SIT - 2x(4x30s) Sprint 50-60 RPM</activitySaveName>
+    <activitySaveName>High Torque Tier 4: SIT - 2x(4x30s) Sprint 50-60 rpm</activitySaveName>
     <description>Direct adaptation of the Hebisz &amp; Hebisz (2024) study SIT protocol. Two sets of 4 x 30-second maximal sprints at 50-60 rpm, with 90 seconds recovery between sprints and 25 minutes active rest between the two sets. Seated throughout.</description>
     <sportType>bike</sportType>
     <tags />
     <workout>
         <Warmup Duration="1200" PowerLow="0.40" PowerHigh="0.75">
             <textevent timeoffset="10" message="Source: Hebisz &amp; Hebisz (2024) SIT protocol, weeks 1-4." />
-            <textevent timeoffset="20" message="8x30s maximal at 50-60 RPM in 2 sets of 4, 90s recovery, 25 min between sets." />
+            <textevent timeoffset="20" message="8x30s maximal at 50-60 rpm in 2 sets of 4, 90s recovery, 25 min between sets." />
             <textevent timeoffset="120" message="This is the exact study protocol for sprint interval training (SIT)." />
-            <textevent timeoffset="130" message="Note: SIT uses 50-60 RPM — lower than the HIIT sessions which use 60-70." />
+            <textevent timeoffset="130" message="Note: SIT uses 50-60 rpm — lower than the HIIT sessions which use 60-70." />
             <textevent timeoffset="240" message="The researchers used 8 x 30-second all-out sprints split into two sets of four, with 25 minutes active rest between sets." />
             <textevent timeoffset="250" message="That is exactly what you are doing today." />
             <textevent timeoffset="270" message="Cadence target: 50-60rpm. This is the lowest cadence in the High Torque Collection." />

@@ -2,7 +2,7 @@
 <workout_file>
     <author>Tom Jelen</author>
     <name>TorqueMax 110%</name>
-    <activitySaveName>High Torque Tier 4: TorqueMax - 6x2.5min 105-110% FTP 50-60 RPM</activitySaveName>
+    <activitySaveName>High Torque Tier 4: TorqueMax - 6x2.5min 105-110% FTP 50-60 rpm</activitySaveName>
     <description>EVOQ.BIKE's TorqueMax session. Six 2.5-minute intervals at 105-110% FTP and 50-60 rpm, 4-minute recovery. EVOQ explicitly warns: 'There is an increased risk of injury with these intervals, so you should start with the lower intensity torque intervals first.' Seated throughout.</description>
     <sportType>bike</sportType>
     <tags />
@@ -13,14 +13,14 @@
             <textevent timeoffset="130" message="so you should start with the lower intensity torque intervals first.'" />
             <textevent timeoffset="270" message="Prerequisites: several months of regular torque sessions. Tier 3 consistently comfortable. Knees fine throughout." />
             <textevent timeoffset="280" message="If not, do a Tier 2 or 3 session instead." />
-            <textevent timeoffset="420" message="105-110% FTP at 50-60 RPM. The highest above-threshold power at the lowest cadence in the collection." />
+            <textevent timeoffset="420" message="105-110% FTP at 50-60 rpm. The highest above-threshold power at the lowest cadence in the collection." />
             <textevent timeoffset="430" message="Patellofemoral load is at its maximum." />
             <textevent timeoffset="540" message="Henderson: musculoskeletal load is the main limiter in torque work, not cardiovascular." />
             <textevent timeoffset="550" message="This session tests that limit." />
             <textevent timeoffset="660" message="SEATED: More critical here than anywhere else. At this power and cadence, standing shifts the load in ways that increase injury risk further." />
             <textevent timeoffset="670" message="Stay down. Always." />
             <textevent timeoffset="750" message="Six intervals. 2.5 minutes each. 4 minutes recovery. Openers first." />
-            <textevent timeoffset="840" message="In ERG mode, drop to 50-60 RPM — the trainer adjusts resistance to match 105-110% FTP automatically." />
+            <textevent timeoffset="840" message="In ERG mode, drop to 50-60 rpm — the trainer adjusts resistance to match 105-110% FTP automatically." />
         </Warmup>
 
         <SteadyState Duration="30" Power="1.10">
@@ -34,12 +34,12 @@
             <textevent timeoffset="0" message="Opener 2." />
         </SteadyState>
         <SteadyState Duration="120" Power="0.55">
-            <textevent timeoffset="60" message="First interval in 60 seconds. STAY SEATED. 50-60 RPM. 105-110% FTP. 2.5 minutes." />
+            <textevent timeoffset="60" message="First interval in 60 seconds. STAY SEATED. 50-60 rpm. 105-110% FTP. 2.5 minutes." />
         </SteadyState>
 
         <SteadyState Duration="150" Power="1.10" Cadence="55">
-            <textevent timeoffset="0" message="STAY SEATED. 50-60 RPM. 105-110% FTP. GO." />
-            <textevent timeoffset="20" message="Hold 50-60 RPM." />
+            <textevent timeoffset="0" message="STAY SEATED. 50-60 rpm. 105-110% FTP. GO." />
+            <textevent timeoffset="20" message="Hold 50-60 rpm." />
             <textevent timeoffset="75" message="Halfway. First of six." />
             <textevent timeoffset="120" message="30 seconds. Do not stand. Do not spin up." />
             <textevent timeoffset="145" message="5 seconds." />
@@ -52,8 +52,8 @@
         </SteadyState>
 
         <SteadyState Duration="150" Power="1.10" Cadence="55">
-            <textevent timeoffset="0" message="STAY SEATED. 50-60 RPM. 105-110% FTP. GO." />
-            <textevent timeoffset="20" message="Hold 50-60 RPM." />
+            <textevent timeoffset="0" message="STAY SEATED. 50-60 rpm. 105-110% FTP. GO." />
+            <textevent timeoffset="20" message="Hold 50-60 rpm." />
             <textevent timeoffset="75" message="Halfway." />
             <textevent timeoffset="120" message="30 seconds. Do not stand. Do not spin up." />
             <textevent timeoffset="145" message="5 seconds." />
@@ -66,8 +66,8 @@
         </SteadyState>
 
         <SteadyState Duration="150" Power="1.10" Cadence="55">
-            <textevent timeoffset="0" message="STAY SEATED. 50-60 RPM. 105-110% FTP. GO." />
-            <textevent timeoffset="20" message="Hold 50-60 RPM." />
+            <textevent timeoffset="0" message="STAY SEATED. 50-60 rpm. 105-110% FTP. GO." />
+            <textevent timeoffset="20" message="Hold 50-60 rpm." />
             <textevent timeoffset="75" message="Halfway. Three of six done after this." />
             <textevent timeoffset="120" message="30 seconds. Do not stand." />
             <textevent timeoffset="145" message="5 seconds." />
@@ -80,8 +80,8 @@
         </SteadyState>
 
         <SteadyState Duration="150" Power="1.10" Cadence="55">
-            <textevent timeoffset="0" message="STAY SEATED. 50-60 RPM. 105-110% FTP. GO." />
-            <textevent timeoffset="20" message="Hold 50-60 RPM." />
+            <textevent timeoffset="0" message="STAY SEATED. 50-60 rpm. 105-110% FTP. GO." />
+            <textevent timeoffset="20" message="Hold 50-60 rpm." />
             <textevent timeoffset="75" message="Halfway. Four of six done after this." />
             <textevent timeoffset="120" message="30 seconds. Do not stand." />
             <textevent timeoffset="145" message="5 seconds." />
@@ -94,8 +94,8 @@
         </SteadyState>
 
         <SteadyState Duration="150" Power="1.10" Cadence="55">
-            <textevent timeoffset="0" message="STAY SEATED. 50-60 RPM. 105-110% FTP. GO." />
-            <textevent timeoffset="20" message="Hold 50-60 RPM." />
+            <textevent timeoffset="0" message="STAY SEATED. 50-60 rpm. 105-110% FTP. GO." />
+            <textevent timeoffset="20" message="Hold 50-60 rpm." />
             <textevent timeoffset="75" message="Halfway. Penultimate interval." />
             <textevent timeoffset="120" message="30 seconds. Do not stand." />
             <textevent timeoffset="145" message="5 seconds." />
@@ -108,8 +108,8 @@
         </SteadyState>
 
         <SteadyState Duration="150" Power="1.10" Cadence="55">
-            <textevent timeoffset="0" message="STAY SEATED. 50-60 RPM. 105-110% FTP. GO. Final interval." />
-            <textevent timeoffset="20" message="Hold 50-60 RPM. Last effort." />
+            <textevent timeoffset="0" message="STAY SEATED. 50-60 rpm. 105-110% FTP. GO. Final interval." />
+            <textevent timeoffset="20" message="Hold 50-60 rpm. Last effort." />
             <textevent timeoffset="75" message="Halfway. Almost done." />
             <textevent timeoffset="120" message="30 seconds. Do not stand. Finish it." />
             <textevent timeoffset="145" message="5 seconds." />
@@ -124,7 +124,7 @@
             <textevent timeoffset="10" message="TorqueMax complete. Six intervals done." />
             <textevent timeoffset="150" message="This session represents the top end of what EVOQ prescribes for torque training." />
             <textevent timeoffset="160" message="Beyond this, the injury risk outweighs the incremental benefit for most cyclists." />
-            <textevent timeoffset="360" message="Post-session knee check is especially important here. 105-110% FTP at 50-60 RPM produces the highest patellofemoral load in the collection." />
+            <textevent timeoffset="360" message="Post-session knee check is especially important here. 105-110% FTP at 50-60 rpm produces the highest patellofemoral load in the collection." />
             <textevent timeoffset="370" message="Any discomfort persisting beyond 24 hours warrants a break from torque work." />
             <textevent timeoffset="600" message="The 2024 study found significant improvements in VO2max and maximal power with the low-cadence protocol." />
             <textevent timeoffset="610" message="The science supports this training. Your knees are the limiting factor to respect." />

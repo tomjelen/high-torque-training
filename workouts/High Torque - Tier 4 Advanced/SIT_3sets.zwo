@@ -2,14 +2,14 @@
 <workout_file>
     <author>Tom Jelen</author>
     <name>SIT 3 Sets</name>
-    <activitySaveName>High Torque Tier 4: SIT - 3x(4x30s) Sprint 50-60 RPM</activitySaveName>
+    <activitySaveName>High Torque Tier 4: SIT - 3x(4x30s) Sprint 50-60 rpm</activitySaveName>
     <description>Volume progression of the Hebisz &amp; Hebisz (2024) SIT protocol. Three sets of 4 x 30-second maximal sprints at 50-60 rpm, with 90 seconds recovery between sprints and 25 minutes active rest between sets. 12 total sprints. Seated throughout.</description>
     <sportType>bike</sportType>
     <tags />
     <workout>
         <Warmup Duration="1200" PowerLow="0.40" PowerHigh="0.75">
             <textevent timeoffset="10" message="Source: Hebisz &amp; Hebisz (2024) SIT protocol, weeks 5-8." />
-            <textevent timeoffset="20" message="12x30s maximal at 50-60 RPM in 3 sets of 4. Volume progression from 8 to 12 reps." />
+            <textevent timeoffset="20" message="12x30s maximal at 50-60 rpm in 3 sets of 4. Volume progression from 8 to 12 reps." />
             <textevent timeoffset="120" message="Sprint intervals — extended volume. 12 sprint reps today: three sets of four." />
             <textevent timeoffset="130" message="The study progressed from 8 reps to 12 reps. This session matches the higher-volume phase." />
             <textevent timeoffset="270" message="Same rules: 50-60rpm, maximal effort, 90-second recovery between reps," />

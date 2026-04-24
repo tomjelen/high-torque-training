@@ -2,7 +2,7 @@
 
 ## General / everywhere
 
-- [ ] For consistency, make sure we use rpm instead of RPM throughout.
+- [X] For consistency, make sure we use rpm instead of RPM throughout.
 
 ## Research
 

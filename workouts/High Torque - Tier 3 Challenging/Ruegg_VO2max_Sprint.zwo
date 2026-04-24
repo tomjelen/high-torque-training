@@ -2,16 +2,16 @@
 <workout_file>
     <author>Tom Jelen</author>
     <name>Rüegg VO2max Sprint</name>
-    <activitySaveName>High Torque Tier 3: Rüegg - 3x(5min VO2max + sprint) 50-60 RPM</activitySaveName>
+    <activitySaveName>High Torque Tier 3: Rüegg - 3x(5min VO2max + sprint) 50-60 rpm</activitySaveName>
     <description>From EF Pro Cycling, coach Peter Schep, featuring rider Noemi Rüegg. Three sets of: 5 min at 106-120% FTP (50-60 rpm) followed by a 1-min max sprint in a lighter gear to 'better your ability to transfer torque into power.' 10-min recovery between sets. Seated for the VO2max blocks; sprint cadence is unconstrained. Elevated injury risk.</description>
     <sportType>bike</sportType>
     <tags />
     <workout>
         <Warmup Duration="1200" PowerLow="0.40" PowerHigh="0.75">
             <textevent timeoffset="10" message="Source: EF Pro Cycling — coach Peter Schep, rider Noemi Rüegg. A pro team torque workout, not a research study." />
-            <textevent timeoffset="120" message="Each set: 5 minutes at 106-120% FTP and 50-60 RPM, then shift to a lighter gear for a 1-minute max sprint. 10-minute recovery between sets." />
+            <textevent timeoffset="120" message="Each set: 5 minutes at 106-120% FTP and 50-60 rpm, then shift to a lighter gear for a 1-minute max sprint. 10-minute recovery between sets." />
             <textevent timeoffset="240" message="Schep: the sprint at the end is to 'better your ability to transfer torque into power.' The combination trains both force production and explosiveness." />
-            <textevent timeoffset="360" message="Schep's progression for recreational riders: start at 60 RPM, 80-85% FTP for 15 min. Then threshold. Only then VO2max torque work like this." />
+            <textevent timeoffset="360" message="Schep's progression for recreational riders: start at 60 rpm, 80-85% FTP for 15 min. Then threshold. Only then VO2max torque work like this." />
             <textevent timeoffset="510" message="MODE NOTE: The sprints reach 150% FTP — ERG mode will not deliver a natural sprint feel at that intensity. Ride this workout in slope/resistance mode and manage gear yourself." />
             <textevent timeoffset="570" message="SEATED for the 5-minute VO2max blocks. The sprint can be seated or standing — cadence is unconstrained during the sprint." />
             <textevent timeoffset="690" message="KNEE WARNING: This session combines sustained high-torque load with explosive sprint effort. Elevated injury risk. Only attempt if Tier 2 sessions have been consistently comfortable." />

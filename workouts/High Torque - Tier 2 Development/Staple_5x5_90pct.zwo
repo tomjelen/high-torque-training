@@ -15,15 +15,15 @@
             <textevent timeoffset="250" message="vs +4.6% in the normal-cadence group over 8 weeks." />
             <textevent timeoffset="420" message="The study was small (24 participants, young competitive women) —" />
             <textevent timeoffset="430" message="but the effect size is large and the mechanism makes sense." />
-            <textevent timeoffset="600" message="All intervals are SEATED. Target cadence: 50-60 RPM." />
+            <textevent timeoffset="600" message="All intervals are SEATED. Target cadence: 50-60 rpm." />
             <textevent timeoffset="610" message="Standing removes the training stimulus." />
             <textevent timeoffset="780" message="If your knees ache at any point, stop the interval." />
             <textevent timeoffset="790" message="Knee discomfort is the signal to back off — not leg fatigue." />
         </Warmup>
 
         <SteadyState Duration="300" Power="0.90" Cadence="55">
-            <textevent timeoffset="10" message="Interval 1. ~90% FTP, 50-60 RPM. Stay seated, smooth strokes." />
-            <textevent timeoffset="150" message="At 55 RPM vs 90 RPM, each pedal stroke produces roughly 60% more force." />
+            <textevent timeoffset="10" message="Interval 1. ~90% FTP, 50-60 rpm. Stay seated, smooth strokes." />
+            <textevent timeoffset="150" message="At 55 rpm vs 90 rpm, each pedal stroke produces roughly 60% more force." />
             <textevent timeoffset="160" message="That extra muscular demand is what drives the adaptation." />
             <textevent timeoffset="270" message="30 seconds left." />
         </SteadyState>
@@ -35,8 +35,8 @@
         </SteadyState>
 
         <SteadyState Duration="300" Power="0.90" Cadence="55">
-            <textevent timeoffset="10" message="Interval 2. ~90% FTP, 50-60 RPM. Stay seated." />
-            <textevent timeoffset="150" message="Halfway. Keep the legs turning over smoothly at 50-60 RPM." />
+            <textevent timeoffset="10" message="Interval 2. ~90% FTP, 50-60 rpm. Stay seated." />
+            <textevent timeoffset="150" message="Halfway. Keep the legs turning over smoothly at 50-60 rpm." />
             <textevent timeoffset="270" message="30 seconds left." />
         </SteadyState>
 
@@ -46,8 +46,8 @@
         </SteadyState>
 
         <SteadyState Duration="300" Power="0.90" Cadence="55">
-            <textevent timeoffset="10" message="Interval 3. ~90% FTP, 50-60 RPM. Stay seated." />
-            <textevent timeoffset="150" message="Halfway. The muscular demand at this cadence is significantly higher than at 90 RPM." />
+            <textevent timeoffset="10" message="Interval 3. ~90% FTP, 50-60 rpm. Stay seated." />
+            <textevent timeoffset="150" message="Halfway. The muscular demand at this cadence is significantly higher than at 90 rpm." />
             <textevent timeoffset="270" message="30 seconds left." />
         </SteadyState>
 
@@ -57,7 +57,7 @@
         </SteadyState>
 
         <SteadyState Duration="300" Power="0.90" Cadence="55">
-            <textevent timeoffset="10" message="Interval 4. ~90% FTP, 50-60 RPM. Stay seated." />
+            <textevent timeoffset="10" message="Interval 4. ~90% FTP, 50-60 rpm. Stay seated." />
             <textevent timeoffset="150" message="Halfway. Penultimate interval. Keep the cadence low." />
             <textevent timeoffset="270" message="30 seconds left." />
         </SteadyState>
@@ -68,7 +68,7 @@
         </SteadyState>
 
         <SteadyState Duration="300" Power="0.90" Cadence="55">
-            <textevent timeoffset="10" message="Final interval. ~90% FTP, 50-60 RPM. Stay seated." />
+            <textevent timeoffset="10" message="Final interval. ~90% FTP, 50-60 rpm. Stay seated." />
             <textevent timeoffset="150" message="Halfway. Last effort." />
             <textevent timeoffset="270" message="30 seconds. Finish it." />
         </SteadyState>

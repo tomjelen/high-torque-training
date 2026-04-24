@@ -14,7 +14,7 @@ This document is a guide for **permanently integrating high-torque training into
 
 ## The core idea
 
-Most cyclists pedal at 80–100 RPM. Dropping to 50–70 RPM at the same power output forces each leg muscle contraction to produce much more force per stroke — that's what "high torque" means. The hypothesis is that this extra muscular demand triggers adaptations that normal cadence training doesn't, particularly increased VO2max and maximal aerobic power.
+Most cyclists pedal at 80–100 rpm. Dropping to 50–70 rpm at the same power output forces each leg muscle contraction to produce much more force per stroke — that's what "high torque" means. The hypothesis is that this extra muscular demand triggers adaptations that normal cadence training doesn't, particularly increased VO2max and maximal aerobic power.
 
 ---
 
@@ -22,11 +22,11 @@ Most cyclists pedal at 80–100 RPM. Dropping to 50–70 RPM at the same power o
 
 ### The key study (Hebisz & Hebisz, 2024)
 
-> Hebisz R & Hebisz P. *"Greater improvement in aerobic capacity after a polarized training program including cycling interval training at low cadence (50–70 RPM) than freely chosen cadence (above 80 RPM)."*
+> Hebisz R & Hebisz P. *"Greater improvement in aerobic capacity after a polarized training program including cycling interval training at low cadence (50–70 rpm) than freely chosen cadence (above 80 rpm)."*
 > PLOS One, November 2024.
 > https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0311833
 
-**What they did:** Two groups of well-trained female cyclists followed an identical 8-week polarized training program (~8 hours/week, 4-day microcycles). The only difference: one group did all high-intensity intervals at **freely chosen cadence (>80 RPM)**, the other at **low cadence (50–70 RPM)**.
+**What they did:** Two groups of well-trained female cyclists followed an identical 8-week polarized training program (~8 hours/week, 4-day microcycles). The only difference: one group did all high-intensity intervals at **freely chosen cadence (>80 rpm)**, the other at **low cadence (50–70 rpm)**.
 
 Both programs included:
 - Sprint Interval Training (SIT): 8–12 × 30-second all-out efforts
@@ -38,8 +38,8 @@ Both programs included:
 
 | Group | VO2max improvement | Max aerobic power improvement |
 |-------|-------------------|-------------------------------|
-| Low cadence (50–70 RPM) | **+8.7%** | **+8.1%** |
-| Freely chosen cadence (>80 RPM) | +4.6% | +3.0% |
+| Low cadence (50–70 rpm) | **+8.7%** | **+8.1%** |
+| Freely chosen cadence (>80 rpm) | +4.6% | +3.0% |
 
 The low-cadence group also improved their second ventilatory threshold (VT2), which the free-cadence group did not.
 
@@ -53,12 +53,12 @@ The study used a 4-day microcycle, repeated across 8 weeks with volume progressi
 
 | Day | Session | Weeks 1–4 | Weeks 5–8 |
 |-----|---------|-----------|-----------|
-| 1 | SIT (Sprint Interval Training) | 8×30s maximal at **50–60 RPM** (2 sets of 4), 90s recovery between reps, 25 min between sets. ~80 min total. | 12×30s maximal at **50–60 RPM** (3 sets of 4), same recovery. ~110 min total. |
-| 2 | HIIT (High-Intensity Intervals) | 4×4 min at 90–100% Pmax at **60–70 RPM**, 8 min recovery. ~85 min total. | 6×4 min, same intensity and cadence. ~110 min total. |
+| 1 | SIT (Sprint Interval Training) | 8×30s maximal at **50–60 rpm** (2 sets of 4), 90s recovery between reps, 25 min between sets. ~80 min total. | 12×30s maximal at **50–60 rpm** (3 sets of 4), same recovery. ~110 min total. |
+| 2 | HIIT (High-Intensity Intervals) | 4×4 min at 90–100% Pmax at **60–70 rpm**, 8 min recovery. ~85 min total. | 6×4 min, same intensity and cadence. ~110 min total. |
 | 3 | LIT (Low-Intensity Endurance) | 150 min at ~VT1 power | 180 min at ~VT1 power |
 | 4 | Active Recovery | Easy spin | Easy spin |
 
-**Note the different cadence ranges:** SIT uses **50–60 RPM**, HIIT uses **60–70 RPM**. These are not interchangeable.
+**Note the different cadence ranges:** SIT uses **50–60 rpm**, HIIT uses **60–70 rpm**. These are not interchangeable.
 
 **FTP translation:** The study prescribes HIIT at 90–100% of maximal aerobic power (Pmax). For most trained cyclists, Pmax ≈ 110–120% of FTP, so 90–100% Pmax ≈ 100–120% FTP. The workouts use ~110% FTP as a practical mid-range target.
 
@@ -87,11 +87,11 @@ The study used a 4-day microcycle, repeated across 8 weeks with volume progressi
 
 The study shows the mechanism works. The coaching sources below show how practitioners integrate it into ongoing training. This combination — study mechanism + coaching practice — is the basis for this document.
 
-**Neal Henderson** (Apex Coaching, coached Rohan Dennis, Taylor Phinney): *"Generally I do about one of these sessions a week, at most two."* He has never programmed back-to-back big gear sessions and stresses the musculoskeletal load as the main limiter. His athlete Petr Vakoc: *"Once to twice a week... three times per two weeks."* Henderson's progression for new athletes: start with tempo (3–5 min at 75–85% FTP, 50–60 RPM), then threshold (5×5 min at ~95% FTP, 50–60 RPM), then VO2max (30–90s at ~5-min power). [Fast Talk Labs podcast]
+**Neal Henderson** (Apex Coaching, coached Rohan Dennis, Taylor Phinney): *"Generally I do about one of these sessions a week, at most two."* He has never programmed back-to-back big gear sessions and stresses the musculoskeletal load as the main limiter. His athlete Petr Vakoc: *"Once to twice a week... three times per two weeks."* Henderson's progression for new athletes: start with tempo (3–5 min at 75–85% FTP, 50–60 rpm), then threshold (5×5 min at ~95% FTP, 50–60 rpm), then VO2max (30–90s at ~5-min power). [Fast Talk Labs podcast]
 
 **EVOQ.BIKE:** Start with 1 session per week, work up to 2 per week during base season. During race season: 1–2× per month for maintenance. They position low-cadence work as an ongoing training tool, not a block to complete. [EVOQ.BIKE]
 
-**Peter Schep / EF Pro Cycling:** Progressive approach — start at 60 RPM, 80–85% FTP for 15 minutes, then advance to threshold efforts, and only then to VO2max torque work (e.g. 3×5 min at 106–120% FTP, 50–60 RPM — the Noemi Rüegg workout). Recreational riders should proceed cautiously. The VO2max torque workout is a post-adaptation session, not a starting point. [EF Pro Cycling]
+**Peter Schep / EF Pro Cycling:** Progressive approach — start at 60 rpm, 80–85% FTP for 15 minutes, then advance to threshold efforts, and only then to VO2max torque work (e.g. 3×5 min at 106–120% FTP, 50–60 rpm — the Noemi Rüegg workout). Recreational riders should proceed cautiously. The VO2max torque workout is a post-adaptation session, not a starting point. [EF Pro Cycling]
 
 **Honest statement:** No controlled trial has tested 1–2 low-cadence sessions per week mixed with normal-cadence training against a control group. The ongoing training recommendations in this document are coaching consensus, not experimentally validated. We are using the study to understand *why* low-cadence training may work, and coaching practice to guide *how* to integrate it.
 
@@ -113,7 +113,7 @@ This is the main practical concern. Low cadence cycling significantly increases 
 
 Biomechanical research shows that patellofemoral compressive force increases with knee flexion angle: at 15° flexion it is approximately 1× bodyweight, at 45° it rises to 3× bodyweight, and at 75° it reaches 6× bodyweight. Cycling seats you in a position of sustained knee flexion, and grinding at low cadence maximises force through each cycle.
 
-Clinically: *"Pushing hard gears at low revolutions puts a high load through the patella, whereas lower gears at high cadence (85–90 RPM) will put less load through the patellofemoral joint with each stroke."* [Physio-pedia: Cyclist's Knee, citing general cycling biomechanics literature; see also PMC5717478 — systematic review of extrinsic factors on knee biomechanics during cycling]
+Clinically: *"Pushing hard gears at low revolutions puts a high load through the patella, whereas lower gears at high cadence (85–90 rpm) will put less load through the patellofemoral joint with each stroke."* [Physio-pedia: Cyclist's Knee, citing general cycling biomechanics literature; see also PMC5717478 — systematic review of extrinsic factors on knee biomechanics during cycling]
 
 **All low-cadence interval work must be done seated.** Standing eliminates the training stimulus — you can use body weight to press the pedal down, bypassing the forced muscular contraction that makes this training work.
 
@@ -128,7 +128,7 @@ These apply to every low-cadence session, always:
 
 1. **Always warm up at normal cadence first** (minimum 15 minutes). Don't start a low-cadence interval cold.
 2. **If your knees ache during a set, stop the set.** Don't push through. End the session if it continues.
-3. **Don't go below 50 RPM** unless you have months of established low-cadence work behind you.
+3. **Don't go below 50 rpm** unless you have months of established low-cadence work behind you.
 4. **Never do low-cadence sessions on back-to-back days.** The joint needs recovery time.
 5. **All intervals are seated.** Standing removes the training stimulus and changes the load pattern.
 6. If you have had patellofemoral pain, patellar tendinopathy, or any knee overuse injury: skip low-cadence training entirely. [EVOQ.BIKE; Physio-pedia: Cyclist's Knee]
@@ -145,9 +145,9 @@ The cadence, session structure, and progressive volume here is adapted from stan
 
 | Week | Session | Details |
 |------|---------|---------|
-| 1 | 1× low-cadence endurance | Warm up 15 min normal cadence. Then 2× 10 min Zone 2 (~65% FTP) at **65–70 RPM**, 5 min easy spin between. Cool down 10 min. |
-| 2 | 1× low-cadence endurance | 2× 15 min Zone 2 at **65 RPM**, 5 min easy between. |
-| 3 | 1× low-cadence endurance | 3× 10 min Zone 2 at **60–65 RPM**, 5 min easy between. |
+| 1 | 1× low-cadence endurance | Warm up 15 min normal cadence. Then 2× 10 min Zone 2 (~65% FTP) at **65–70 rpm**, 5 min easy spin between. Cool down 10 min. |
+| 2 | 1× low-cadence endurance | 2× 15 min Zone 2 at **65 rpm**, 5 min easy between. |
+| 3 | 1× low-cadence endurance | 3× 10 min Zone 2 at **60–65 rpm**, 5 min easy between. |
 
 ### Ready to move on?
 
@@ -162,7 +162,7 @@ All of these must be true before starting ongoing training:
 ### When to stop or go back
 
 - **Any knee pain during or after a session:** Stop low-cadence work for at least a week. When you restart, go back to Week 1. If it recurs, see a physiotherapist before continuing.
-- **Can't maintain target cadence** (grinding 5+ RPM below target): The gear is too hard. Reduce power target, not cadence.
+- **Can't maintain target cadence** (grinding 5+ rpm below target): The gear is too hard. Reduce power target, not cadence.
 - **Any sharp pain anywhere:** Stop immediately. This is not normal muscular discomfort.
 - **Feeling overly fatigued from the sessions:** This is Zone 2 power — it should not be draining. If it is, your overall training load may be too high. Reduce other sessions that week.
 
@@ -275,7 +275,7 @@ There is no fixed schedule for moving between tiers. Progression is based on how
 
 ### Sprint work and Zwift racing
 
-The SIT sessions (Tier 4) develop low-cadence sprint force — the ability to produce very high power at low RPM. This is directly relevant to Zwift race sprints, particularly in situations where you need to accelerate from a slow pace in a heavy gear.
+The SIT sessions (Tier 4) develop low-cadence sprint force — the ability to produce very high power at low rpm. This is directly relevant to Zwift race sprints, particularly in situations where you need to accelerate from a slow pace in a heavy gear.
 
 Practical notes:
 - Don't do a SIT session in the same week as a target Zwift race. The neuromuscular fatigue competes with race freshness.
@@ -287,7 +287,7 @@ Practical notes:
 | Sign | What to do |
 |------|------------|
 | Knee pain during or after a session | Stop torque work for at least a week. Resume with a Tier 1 session. If it recurs, see a physiotherapist. |
-| Can't hold target cadence (grinding 5+ RPM below) | The workout is too hard. Drop intensity or move to a lower tier. |
+| Can't hold target cadence (grinding 5+ rpm below) | The workout is too hard. Drop intensity or move to a lower tier. |
 | Normal training is suffering (can't hit numbers, feel flat) | You are overdoing torque work. Drop to 1 session/week for 2–3 weeks. |
 | Post-session ache lasting 48+ hours | Too much load. Drop a tier. |
 | Knee feels "tight" or "clicky" without pain | Precautionary: skip the next torque session, monitor. If it persists, get it checked. |
@@ -343,7 +343,7 @@ This section tracks how solid each claim is and what would change it.
 
 ## Sources
 
-1. **Primary study:** Hebisz R & Hebisz P (2024). *Greater improvement in aerobic capacity after a polarized training program including cycling interval training at low cadence (50–70 RPM) than freely chosen cadence (above 80 RPM)*. PLOS One. https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0311833
+1. **Primary study:** Hebisz R & Hebisz P (2024). *Greater improvement in aerobic capacity after a polarized training program including cycling interval training at low cadence (50–70 rpm) than freely chosen cadence (above 80 rpm)*. PLOS One. https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0311833
 
 2. **Null result at moderate intensity:** Muñoz I et al. (2014). *Low cadence interval training at moderate intensity does not improve cycling performance in highly trained veteran cyclists*. PMC3907705. https://pmc.ncbi.nlm.nih.gov/articles/PMC3907705/
 

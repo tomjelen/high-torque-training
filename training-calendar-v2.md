@@ -92,7 +92,7 @@ Sprint and supra-threshold. Highest knee stress. Monthly at most initially. Rele
 
 **Signs you are NOT ready to move up:**
 - Knee pain or discomfort during or after sessions
-- Can't hold the target cadence (grinding 5+ RPM below)
+- Can't hold the target cadence (grinding 5+ rpm below)
 - RPE consistently above 8/10 on current-tier sessions
 - Your normal (non-torque) training is suffering — can't hit numbers, feel flat
 

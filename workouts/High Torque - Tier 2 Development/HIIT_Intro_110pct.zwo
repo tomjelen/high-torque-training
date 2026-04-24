@@ -1,19 +1,19 @@
 <workout_file>
     <author>Tom Jelen</author>
     <name>HIIT Intro 110%</name>
-    <activitySaveName>High Torque Tier 2: HIIT Intro - 3x3min ~110% FTP 60-70 RPM</activitySaveName>
+    <activitySaveName>High Torque Tier 2: HIIT Intro - 3x3min ~110% FTP 60-70 rpm</activitySaveName>
     <description>Introduction to VO2max-intensity torque work, scaled from the Hebisz &amp; Hebisz (2024) study protocol. Three 3-minute intervals at ~110% FTP and 60-70 rpm, with 7-minute recovery between each. Fewer reps and shorter intervals than the full study protocol. Seated throughout.</description>
     <sportType>bike</sportType>
     <tags />
     <workout>
         <Warmup Duration="900" PowerLow="0.40" PowerHigh="0.75">
-            <textevent timeoffset="30" message="Source: Hebisz &amp; Hebisz (2024), scaled. The study used 4x4 min at 90-100% of maximal aerobic power (~110% FTP), 60-70 RPM." />
+            <textevent timeoffset="30" message="Source: Hebisz &amp; Hebisz (2024), scaled. The study used 4x4 min at 90-100% of maximal aerobic power (~110% FTP), 60-70 rpm." />
             <textevent timeoffset="40" message="This is a shorter intro: 3x3 min." />
-            <textevent timeoffset="120" message="Important: the study uses 60-70 RPM for HIIT, not 50-60." />
+            <textevent timeoffset="120" message="Important: the study uses 60-70 rpm for HIIT, not 50-60." />
             <textevent timeoffset="130" message="The higher cadence range is deliberate — different from SIT sprints which use 50-60." />
             <textevent timeoffset="240" message="The study found +8.7% VO2max in the low-cadence group vs +4.6% in the normal-cadence group." />
             <textevent timeoffset="250" message="The largest gains came from combining low cadence with high intensity." />
-            <textevent timeoffset="420" message="All intervals are SEATED. Target cadence: 60-70 RPM." />
+            <textevent timeoffset="420" message="All intervals are SEATED. Target cadence: 60-70 rpm." />
             <textevent timeoffset="430" message="This is VO2max power — it will be hard. But it's only 3 minutes per interval." />
             <textevent timeoffset="600" message="If your knees ache at any point, stop the interval immediately." />
             <textevent timeoffset="610" message="VO2max power at low cadence is the highest-stress combination." />
@@ -21,7 +21,7 @@
         </Warmup>
 
         <SteadyState Duration="180" Power="1.10" Cadence="65">
-            <textevent timeoffset="10" message="GO. ~110% FTP, 60-70 RPM. Stay seated. 3 minutes." />
+            <textevent timeoffset="10" message="GO. ~110% FTP, 60-70 rpm. Stay seated. 3 minutes." />
             <textevent timeoffset="90" message="Halfway. At this intensity and cadence, you're recruiting both slow-twitch and fast-twitch muscle fibers." />
             <textevent timeoffset="100" message="That's the mechanism." />
             <textevent timeoffset="150" message="30 seconds left. Hold the cadence — don't let it creep up." />
@@ -34,7 +34,7 @@
         </SteadyState>
 
         <SteadyState Duration="180" Power="1.10" Cadence="65">
-            <textevent timeoffset="10" message="Interval 2. ~110% FTP, 60-70 RPM. Stay seated." />
+            <textevent timeoffset="10" message="Interval 2. ~110% FTP, 60-70 rpm. Stay seated." />
             <textevent timeoffset="90" message="Halfway. This is supposed to be hard — VO2max intensity is the right stimulus." />
             <textevent timeoffset="150" message="30 seconds left. Hold the cadence." />
         </SteadyState>
@@ -45,7 +45,7 @@
         </SteadyState>
 
         <SteadyState Duration="180" Power="1.10" Cadence="65">
-            <textevent timeoffset="10" message="Final interval. ~110% FTP, 60-70 RPM. Stay seated." />
+            <textevent timeoffset="10" message="Final interval. ~110% FTP, 60-70 rpm. Stay seated." />
             <textevent timeoffset="90" message="Halfway. Last effort. Stay down — don't stand." />
             <textevent timeoffset="150" message="30 seconds left. Finish it." />
         </SteadyState>

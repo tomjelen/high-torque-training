@@ -2,13 +2,13 @@
 <workout_file>
     <author>Tom Jelen</author>
     <name>VO2max HIIT 6-rep</name>
-    <activitySaveName>High Torque Tier 4: VO2max - 6x4min ~110% FTP 60-70 RPM</activitySaveName>
+    <activitySaveName>High Torque Tier 4: VO2max - 6x4min ~110% FTP 60-70 rpm</activitySaveName>
     <description>Extended volume progression of the Hebisz &amp; Hebisz (2024) HIIT protocol. Six 4-minute intervals at 110% FTP and 60-70 rpm, with 8 minutes easy recovery between each. 24 minutes of total VO2max work at low cadence. Seated throughout.</description>
     <sportType>bike</sportType>
     <tags />
     <workout>
         <Warmup Duration="900" PowerLow="0.40" PowerHigh="0.75">
-            <textevent timeoffset="10" message="Source: Hebisz &amp; Hebisz (2024) HIIT protocol, weeks 5-8. 6x4 min at 90-100% Pmax (~110% FTP), 60-70 RPM, 8 min recovery." />
+            <textevent timeoffset="10" message="Source: Hebisz &amp; Hebisz (2024) HIIT protocol, weeks 5-8. 6x4 min at 90-100% Pmax (~110% FTP), 60-70 rpm, 8 min recovery." />
             <textevent timeoffset="120" message="Volume progression from 4 to 6 reps. The study increased HIIT volume at the midpoint —" />
             <textevent timeoffset="130" message="this is the higher-volume phase where the strongest results emerged." />
             <textevent timeoffset="300" message="110% FTP at 60-70rpm. Same intensity as the 4-rep version, but two extra intervals." />
@@ -35,11 +35,11 @@
             <textevent timeoffset="0" message="Last recovery before the main set. In ERG mode, just drop to 60-70rpm when the interval starts —" />
             <textevent timeoffset="10" message="the trainer holds 110% FTP automatically." />
             <textevent timeoffset="60" message="30 seconds. First interval. STAY SEATED throughout. 110% FTP." />
-            <textevent timeoffset="90" message="High-torque intervals begin now. The study used 60-70 RPM — aim for anywhere in that range." />
+            <textevent timeoffset="90" message="High-torque intervals begin now. The study used 60-70 rpm — aim for anywhere in that range." />
         </SteadyState>
 
         <SteadyState Duration="240" Power="1.10" Cadence="65">
-            <textevent timeoffset="0" message="STAY SEATED. 60-70 RPM — aim for 65. 110% FTP. GO." />
+            <textevent timeoffset="0" message="STAY SEATED. 60-70 rpm — aim for 65. 110% FTP. GO." />
             <textevent timeoffset="20" message="Legs AND lungs working simultaneously. This is supposed to be hard." />
             <textevent timeoffset="60" message="1 minute in. The high muscular force at this power and cadence recruits both slow and fast-twitch fibers." />
             <textevent timeoffset="120" message="Halfway. 2 minutes to go. Hold the cadence. Do not spin up." />
@@ -57,7 +57,7 @@
         </SteadyState>
 
         <SteadyState Duration="240" Power="1.10" Cadence="65">
-            <textevent timeoffset="0" message="STAY SEATED. 60-70 RPM. 110% FTP. GO." />
+            <textevent timeoffset="0" message="STAY SEATED. 60-70 rpm. 110% FTP. GO." />
             <textevent timeoffset="20" message="Interval 2. Legs AND lungs." />
             <textevent timeoffset="60" message="1 minute in. Hold cadence." />
             <textevent timeoffset="120" message="Halfway. 2 minutes to go. Do not spin up." />
@@ -74,7 +74,7 @@
         </SteadyState>
 
         <SteadyState Duration="240" Power="1.10" Cadence="65">
-            <textevent timeoffset="0" message="STAY SEATED. 60-70 RPM. 110% FTP. GO." />
+            <textevent timeoffset="0" message="STAY SEATED. 60-70 rpm. 110% FTP. GO." />
             <textevent timeoffset="20" message="Interval 3. Halfway through the session." />
             <textevent timeoffset="60" message="1 minute in. You've done this twice already. Same again." />
             <textevent timeoffset="120" message="Halfway. 2 minutes. Hold cadence." />
@@ -85,13 +85,13 @@
 
         <SteadyState Duration="480" Power="0.50">
             <textevent timeoffset="2" message="Recovery. Three done, three to go." />
-            <textevent timeoffset="60" message="The study used 60-70 RPM specifically for HIIT — the higher cadence combined with VO2max power is the key mechanism." />
+            <textevent timeoffset="60" message="The study used 60-70 rpm specifically for HIIT — the higher cadence combined with VO2max power is the key mechanism." />
             <textevent timeoffset="180" message="Knee check." />
             <textevent timeoffset="210" message="Interval 4. Seated. 60-70rpm. 110% FTP." />
         </SteadyState>
 
         <SteadyState Duration="240" Power="1.10" Cadence="65">
-            <textevent timeoffset="0" message="STAY SEATED. 60-70 RPM. 110% FTP. GO." />
+            <textevent timeoffset="0" message="STAY SEATED. 60-70 rpm. 110% FTP. GO." />
             <textevent timeoffset="20" message="Interval 4. Four of six." />
             <textevent timeoffset="60" message="1 minute in. The fatigue is accumulating — that is the point." />
             <textevent timeoffset="120" message="Halfway. 2 minutes. Hold cadence." />
@@ -108,7 +108,7 @@
         </SteadyState>
 
         <SteadyState Duration="240" Power="1.10" Cadence="65">
-            <textevent timeoffset="0" message="STAY SEATED. 60-70 RPM. 110% FTP. GO." />
+            <textevent timeoffset="0" message="STAY SEATED. 60-70 rpm. 110% FTP. GO." />
             <textevent timeoffset="20" message="Interval 5. Penultimate. Do not stand." />
             <textevent timeoffset="60" message="1 minute in. One more after this." />
             <textevent timeoffset="120" message="Halfway. 2 minutes. Hold cadence." />
@@ -124,7 +124,7 @@
         </SteadyState>
 
         <SteadyState Duration="240" Power="1.10" Cadence="65">
-            <textevent timeoffset="0" message="STAY SEATED. 60-70 RPM. 110% FTP. GO. Final interval." />
+            <textevent timeoffset="0" message="STAY SEATED. 60-70 rpm. 110% FTP. GO. Final interval." />
             <textevent timeoffset="20" message="Last one. Do not stand. Do not spin up." />
             <textevent timeoffset="60" message="1 minute in. Almost done." />
             <textevent timeoffset="120" message="Halfway. 2 minutes. Everything now." />

@@ -16,7 +16,7 @@ export const SOURCES: Record<string, Source> = {
     key: 'hebisz2024',
     shortName: 'Hebisz 2024',
     fullCitation:
-      'Hebisz R & Hebisz P (2024). Greater improvement in aerobic capacity after a polarized training program including cycling interval training at low cadence (50–70 RPM) than freely chosen cadence (above 80 RPM). PLOS One.',
+      'Hebisz R & Hebisz P (2024). Greater improvement in aerobic capacity after a polarized training program including cycling interval training at low cadence (50–70 rpm) than freely chosen cadence (above 80 rpm). PLOS One.',
     url: 'https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0311833',
   },
   munoz2014: {

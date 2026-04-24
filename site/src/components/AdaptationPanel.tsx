@@ -69,7 +69,7 @@ export default function AdaptationPanel({ state, setState }: Props) {
         All intervals must be done <strong>seated</strong>. Warm up at normal cadence for at least
         15 minutes before your first low-cadence interval.{' '}
         <strong>Stop immediately if you feel knee pain</strong> — do not push through; redo the
-        week instead. Don't go below 50 RPM unless you have months of established low-cadence work
+        week instead. Don't go below 50 rpm unless you have months of established low-cadence work
         behind you. Never do low-cadence sessions on back-to-back days. If you have a history of
         patellofemoral pain, patellar tendinopathy, or any knee overuse injury, skip this training
         entirely. Also skip if you are coming off a rest period or injury, or if you already

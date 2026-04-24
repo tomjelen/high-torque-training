@@ -77,7 +77,7 @@ export default function UsageGuidelines() {
           <h4 className="text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2 mt-0">Signs you are NOT ready to move up</h4>
           <ul className="m-0 pl-4 space-y-1">
             <li>Knee pain or discomfort during or after sessions</li>
-            <li>Can't hold the target cadence (grinding 5+ RPM below)</li>
+            <li>Can't hold the target cadence (grinding 5+ rpm below)</li>
             <li>RPE consistently above 8/10 on current-tier sessions</li>
             <li>Your normal (non-torque) training is suffering — can't hit numbers, feel flat</li>
           </ul>
