@@ -15,7 +15,7 @@ export default function IntroPanel({ state, setState }: Props) {
 
   return (
     <Panel
-      title="Intro — what & why"
+      title="Intro — what, why & who"
       teaser="Hebisz 2024: +8.7% VO2max at low cadence vs +4.6% at freely chosen cadence"
       collapsed={state.panels.intro.collapsed}
       onToggle={onToggle}
@@ -29,7 +29,22 @@ export default function IntroPanel({ state, setState }: Props) {
         +3.0% for the same intervals at freely chosen cadence above 80 RPM.
       </p>
       <p className="text-slate-500 text-sm mt-3 mb-0">
-        Built for a recreational cyclist who rides for fun, not plans — but who can commit to one
+        I've tried structured training plans. I just don't follow them — a beautiful route always
+        beats a TSS target. Then last summer in Andorra, some pros passed me on a climb grinding so
+        slowly it looked wrong. Months later I watched{' '}
+        <a
+          href={SOURCES.roadman.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-blue-400 hover:text-blue-300"
+        >
+          a podcast
+        </a>
+        , understood what they were doing, and something clicked. One structured hour a week. That,
+        I could commit to.
+      </p>
+      <p className="text-slate-500 text-sm mt-3 mb-0">
+        For a recreational cyclist who rides for fun, not plans — but who can commit to one
         structured hour a week. It happens to be the most efficient hour you can spend on the bike.{' '}
         <a
           href="https://www.strava.com/athletes/8943272"
