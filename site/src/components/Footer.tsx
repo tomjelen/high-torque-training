@@ -48,8 +48,8 @@ export default function Footer({ lastUpdated }: FooterProps) {
         </div>
 
         <p className="text-slate-400 text-sm m-0 flex-1 max-w-md">
-          <em>Spotted bad info, a study I've missed, or have an idea for the site?</em>{' '}
-          Email me — I want to know.
+          Spotted bad info, a study I've missed, or an idea? Email me — I want to know.
+          If your input shapes the rationale, I'll credit you there.
         </p>
 
         <div className="text-slate-500 text-xs text-right whitespace-nowrap">
