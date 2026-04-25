@@ -8,6 +8,7 @@
 
 - [X] Double check the Henderson references. I did not see the tier 1 workout in the transcript. Maybe im wrong though.
 - [ ] The adaption phase comes from mixed sources, how come? Didnt the Hebisz describe this phase in completion?
+- [X] There is something about the tier 1 workouts. Almost identical, even though they are from different sources.
 
 ## Site
 
@@ -16,7 +17,6 @@
   - [X] Link to the video that gave me the inspiration. (Currently wrong)
 - [X] Site: Something about the UX. For now get content/features on the site, then make it user-friendly after. Ordering of panels, what is shown by default, etc..
 - [X] Site: Typical header/footer information. Like my email/Strava/Zwift. Make it look like a real site.
-- [ ] There is something about the tier 1 workouts. Almost identical, even though they are from different sources.
 - [/] Site - rationale page: In the section "Ongoing training framework", I think it would be good to point out that this is designed for people like me, that will keep it going, instead of trying to peak. Then maybe shortly outline what the plan would be, if you have a race season (only once a month, yada yada), and then link to articles/papers that goes into details. Later, if interest is here, I can expand the site to cater to this group also. That should be easier, as there is plenty of data/recommendation for this.
 - [X] Call-out for people to correct false information or improvements. It should show that I care about factual correct information, and that I appreciate sharing the learnings. With luck, I will be able to add comments to the rationale, where some important person has given me an oppinion/suggestion, with a referece back to this person. I think that would help build credibility.
 - [X] A date for when this was last updated. That way people can see if I have considered some new research. Maybe that means two dates. One for a minor site update, another for when research was updated.
@@ -29,6 +29,7 @@
 - [ ] "Before starting ongoing training" is show on completion of last adaption workout, but then the entire panel is collapsed. Lets just always show it
 - [ ] Check table/mobile
 - [ ] Last phase of redesign document
+- [ ] Add a favicon
 
 ## Workout files
 
