@@ -11,6 +11,7 @@ const DEFAULT: AppState = {
     collection: { collapsed: false },
   },
   log: [],
+  adaptationCheckInConfirmed: false,
 }
 
 function loadPanel(p: unknown, name: keyof AppState['panels']): PanelState {
@@ -31,6 +32,7 @@ export function loadState(): AppState {
         collection: loadPanel(p, 'collection'),
       },
       log: (p as AppState | null)?.log ?? [],
+      adaptationCheckInConfirmed: (p as AppState | null)?.adaptationCheckInConfirmed ?? false,
     }
   } catch {
     return DEFAULT

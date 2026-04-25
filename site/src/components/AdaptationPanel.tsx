@@ -1,4 +1,3 @@
-import { useEffect, useRef } from 'react'
 import Panel from './Panel'
 import AdaptationCard from './AdaptationCard'
 import { ADAPTATION_WORKOUTS } from '../data'
@@ -13,14 +12,6 @@ interface Props {
 
 export default function AdaptationPanel({ state, setState }: Props) {
   const completedCount = ORDER.filter((id) => state.adaptation[id]).length
-  const prevCompletedCount = useRef(completedCount)
-
-  useEffect(() => {
-    if (completedCount === ORDER.length && prevCompletedCount.current < ORDER.length) {
-      setState((s) => ({ ...s, panels: { ...s.panels, adaptation: { collapsed: true } } }))
-    }
-    prevCompletedCount.current = completedCount
-  }, [completedCount, setState])
 
   function markComplete(id: AdaptationId) {
     setState((prev) => ({
@@ -33,8 +24,16 @@ export default function AdaptationPanel({ state, setState }: Props) {
     setState((prev) => {
       const next = { ...prev.adaptation }
       delete next[id]
-      return { ...prev, adaptation: next }
+      return { ...prev, adaptation: next, adaptationCheckInConfirmed: false }
     })
+  }
+
+  function confirmCheckIn() {
+    setState((s) => ({
+      ...s,
+      adaptationCheckInConfirmed: true,
+      panels: { ...s.panels, adaptation: { collapsed: true } },
+    }))
   }
 
   function onToggle(collapsed: boolean) {
@@ -96,7 +95,7 @@ export default function AdaptationPanel({ state, setState }: Props) {
         })}
       </div>
 
-      {completedCount === ORDER.length && (
+      {completedCount === ORDER.length && !state.adaptationCheckInConfirmed && (
         <div className="mt-4 border-l-4 border-orange-600 pl-4 py-1">
           <h3 className="text-sm font-semibold text-slate-200 mt-0 mb-2">Before starting ongoing training</h3>
           <p className="text-slate-400 text-sm mb-2">
@@ -109,10 +108,17 @@ export default function AdaptationPanel({ state, setState }: Props) {
             <li>Cadence targets felt achievable (not struggling to stay above target)</li>
             <li>RPE for the intervals was no higher than ~6/10</li>
           </ul>
-          <p className="text-slate-400 text-sm m-0">
+          <p className="text-slate-400 text-sm mb-3">
             If anything is off, repeat the week that gave you trouble. If knee pain is the issue,
             take a full week off low-cadence work and restart from W1.
           </p>
+          <button
+            type="button"
+            onClick={confirmCheckIn}
+            className="bg-orange-600 hover:bg-orange-500 text-white text-sm font-semibold rounded px-3 py-1.5 transition-colors"
+          >
+            Got it
+          </button>
         </div>
       )}
     </Panel>

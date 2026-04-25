@@ -26,10 +26,11 @@
 - [ ] No reason for collapsible installation instructions
 - [ ] Verify knee safety warning
 - [ ] Session tracker. Delete and edit date.
-- [ ] "Before starting ongoing training" is show on completion of last adaption workout, but then the entire panel is collapsed. Lets just always show it
+- [X] "Before starting ongoing training" is show on completion of last adaption workout, but then the entire panel is collapsed. Lets just always show it
+- [ ] Many buttons dont have hands
 - [ ] Check table/mobile
 - [ ] Last phase of redesign document
-- [ ] Add a favicon
+- [X] Add a favicon
 
 ## Workout files
 

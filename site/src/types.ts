@@ -57,4 +57,5 @@ export interface AppState {
     collection: PanelState
   }
   log: LogEntry[]
+  adaptationCheckInConfirmed: boolean
 }
