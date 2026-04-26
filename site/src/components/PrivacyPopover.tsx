@@ -20,7 +20,7 @@ export default function PrivacyPopover() {
       <button
         type="button"
         onClick={() => setOpen((o) => !o)}
-        className="w-5 h-5 rounded-full border border-slate-600 text-slate-500 hover:text-slate-300 hover:border-slate-400 text-xs font-mono leading-none flex items-center justify-center"
+        className="w-5 h-5 rounded-full border border-slate-600 text-slate-500 hover:text-slate-300 hover:border-slate-400 text-xs font-mono leading-none flex items-center justify-center cursor-pointer"
         aria-label="Privacy info"
       >
         ?
@@ -39,7 +39,7 @@ export default function PrivacyPopover() {
           <button
             type="button"
             onClick={() => setOpen(false)}
-            className="text-xs text-slate-500 hover:text-slate-300"
+            className="text-xs text-slate-500 hover:text-slate-300 cursor-pointer"
           >
             Close
           </button>

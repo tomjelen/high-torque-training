@@ -115,7 +115,7 @@ export default function AdaptationPanel({ state, setState }: Props) {
           <button
             type="button"
             onClick={confirmCheckIn}
-            className="bg-orange-600 hover:bg-orange-500 text-white text-sm font-semibold rounded px-3 py-1.5 transition-colors"
+            className="bg-orange-600 hover:bg-orange-500 text-white text-sm font-semibold rounded px-3 py-1.5 transition-colors cursor-pointer"
           >
             Got it
           </button>

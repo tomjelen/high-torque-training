@@ -54,7 +54,7 @@ export default function TrackerLog({ entries }: Props) {
             <button
               type="button"
               onClick={() => setShowAll((v) => !v)}
-              className="mt-3 text-xs text-slate-500 hover:text-slate-300"
+              className="mt-3 text-xs text-slate-500 hover:text-slate-300 cursor-pointer"
             >
               {showAll ? '↑ show fewer' : `view full log → (${entries.length})`}
             </button>

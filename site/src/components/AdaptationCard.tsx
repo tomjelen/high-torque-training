@@ -77,7 +77,7 @@ export default function AdaptationCard({ workout, step, cardState, completedAt, 
             <button
               type="button"
               onClick={onUndo}
-              className="text-xs text-slate-500 hover:text-slate-300 border border-slate-700 hover:border-slate-500 px-2 py-0.5 rounded font-mono"
+              className="text-xs text-slate-500 hover:text-slate-300 border border-slate-700 hover:border-slate-500 px-2 py-0.5 rounded font-mono cursor-pointer"
             >
               Undo
             </button>
@@ -87,7 +87,7 @@ export default function AdaptationCard({ workout, step, cardState, completedAt, 
             type="button"
             onClick={onComplete}
             disabled={isLocked}
-            className="w-full text-sm font-semibold bg-orange-600 hover:bg-orange-500 disabled:bg-slate-700 disabled:text-slate-500 text-white disabled:cursor-not-allowed rounded py-1.5 transition-colors"
+            className="w-full text-sm font-semibold bg-orange-600 hover:bg-orange-500 disabled:bg-slate-700 disabled:text-slate-500 text-white cursor-pointer disabled:cursor-not-allowed rounded py-1.5 transition-colors"
           >
             Mark Complete
           </button>

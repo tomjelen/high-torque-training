@@ -40,7 +40,7 @@ export default function CollectionCard({ workout, onDidThis }: Props) {
           <button
             type="button"
             onClick={onDidThis}
-            className="text-xs font-mono text-slate-400 hover:text-slate-200 border border-slate-700 hover:border-slate-500 px-2 py-0.5 rounded"
+            className="text-xs font-mono text-slate-400 hover:text-slate-200 border border-slate-700 hover:border-slate-500 px-2 py-0.5 rounded cursor-pointer"
           >
             ✓ today
           </button>
