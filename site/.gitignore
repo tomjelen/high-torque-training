@@ -17,6 +17,10 @@ public/workouts/
 # playwright-cli scratch workspace (sessions, snapshots, ad-hoc screenshots)
 .playwright-cli/
 
+# Playwright test output
+test-results/
+playwright-report/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

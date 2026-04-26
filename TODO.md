@@ -25,6 +25,7 @@
 - [ ] Use the implementation plan to write some tests
 - [ ] No reason for collapsible installation instructions
 - [ ] Verify knee safety warning
+- [ ] Feels like we have two styles of warnings. Work it out.
 - [ ] Session tracker. Delete and edit date.
 - [X] "Before starting ongoing training" is show on completion of last adaption workout, but then the entire panel is collapsed. Lets just always show it
 - [ ] Many buttons dont have hands
