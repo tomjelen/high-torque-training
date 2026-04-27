@@ -12,6 +12,7 @@ dist
 dist-ssr
 *.local
 public/workouts/
+public/content/
 .vite/
 
 # playwright-cli scratch workspace (sessions, snapshots, ad-hoc screenshots)

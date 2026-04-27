@@ -70,8 +70,8 @@ These rules exist because a previous refactor introduced invented workouts with 
 
 - **Never invent a workout and attribute it to a source.** Every cadence, intensity, and duration must trace to the claimed source.
 - **When scaling**, mark it explicitly: e.g. "EVOQ (scaled - fewer reps)". Explain what changed and why. Scaling must stay within the spirit of the source — don't change intensity class (e.g. sweet spot to Zone 2).
-- The calendar (`training-calendar-v2.md`) is the source of truth for which workouts exist and their parameters.
-- The research document (`high-torque-training-research-v2.md`) explains *why*. Check the "Source prescription reference" section before creating or modifying any workout.
+- The calendar (`research/training-calendar.md`) is the source of truth for which workouts exist and their parameters.
+- The research document (`research/high-torque-training-research.md`) explains *why*. Check the "Source prescription reference" section before creating or modifying any workout.
 
 ## Validation checklist
 

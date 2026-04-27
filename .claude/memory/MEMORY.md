@@ -4,6 +4,7 @@
 
 - [Task tracking workflow](project_task_tracking.md) — PLAN.md is source of truth; regenerate TODO.md from it, don't maintain by hand; no GitHub Issues (portability)
 - [Knee-safety prominence](project_knee_safety_prominence.md) — Tom had W2 knee pain and had to redo; warnings must be loud enough that less-vigilant readers also catch them
+- [llms.txt and agent accessibility](project_llms_and_agents.md) — research/ folder, served markdown, consistency script, llms.txt TODO about researcher citation
 
 ## User & Feedback
 

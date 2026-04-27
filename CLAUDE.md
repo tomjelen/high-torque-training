@@ -43,3 +43,13 @@ This is the most important principle in the project: **every session, every rule
 
 - Low cadence = high torque. The project uses "High Torque" as the brand name. Do not use "Low Torque."
 - Workout folder names: "High Torque - Phase N ..." or "High Torque - Library"
+
+## Consistency check
+
+After any session that modifies files under `research/` or `site/src/`, run the consistency check to verify the website and source documents still tell the same story:
+
+```
+ANTHROPIC_API_KEY=... node site/scripts/check-consistency.mjs
+```
+
+Requires a running dev or preview server (`npm run dev` in `site/`) and an `ANTHROPIC_API_KEY`. The script takes full-page screenshots of both site pages, compares them against the markdown source documents using Claude Sonnet vision (5 samples in parallel), and exits non-zero if any sample finds a contradiction.

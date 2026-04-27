@@ -170,7 +170,7 @@ All of these must be true before starting ongoing training:
 
 ## Source prescription reference
 
-This section documents what each source actually prescribes. All workouts in the calendar must trace back to these. See `training-calendar-v2.md` for the implemented workout library.
+This section documents what each source actually prescribes. All workouts in the calendar must trace back to these. See `training-calendar.md` for the implemented workout library.
 
 ### EVOQ.BIKE
 
@@ -240,7 +240,7 @@ You are not following a periodized block. You are adding a permanent training to
 
 ### The workout library
 
-The specific workouts, durations, and tier assignments are in `training-calendar-v2.md`. The calendar is the source of truth for what to ride; this document explains why it works.
+The specific workouts, durations, and tier assignments are in `training-calendar.md`. The calendar is the source of truth for what to ride; this document explains why it works.
 
 **All sessions are seated throughout. All require a minimum 15-minute normal-cadence warm-up.**
 

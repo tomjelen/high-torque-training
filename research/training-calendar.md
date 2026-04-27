@@ -2,7 +2,7 @@
 
 Two parts: a fixed adaptation phase (follow exactly), then ongoing training (flexible, indefinite).
 
-See `high-torque-training-research-v2.md` for the reasoning behind every decision here.
+See `high-torque-training-research.md` for the reasoning behind every decision here.
 
 ---
 
@@ -12,9 +12,9 @@ See `high-torque-training-research-v2.md` for the reasoning behind every decisio
 
 | # | Workout | Duration | Done | Date | Notes |
 |---|---------|----------|------|------|-------|
-| 1 | W1 — 2×10 min Zone 2, **65–70 rpm** | ~50 min | [ ] | | |
-| 2 | W2 — 2×15 min Zone 2, **65 rpm** | ~60 min | [ ] | | |
-| 3 | W3 — 3×10 min Zone 2, **60–65 rpm** | ~65 min | [ ] | | |
+| 1 | [W1](/workouts/High%20Torque%20-%20Adaptation/Week1_2x10_65-70rpm.zwo) — 2×10 min Zone 2, **65–70 rpm** | ~50 min | [ ] | | |
+| 2 | [W2](/workouts/High%20Torque%20-%20Adaptation/Week2_2x15_65rpm.zwo) — 2×15 min Zone 2, **65 rpm** | ~60 min | [ ] | | |
+| 3 | [W3](/workouts/High%20Torque%20-%20Adaptation/Week3_3x10_60-65rpm.zwo) — 3×10 min Zone 2, **60–65 rpm** | ~65 min | [ ] | | |
 
 ### Ready to move on?
 
@@ -48,8 +48,8 @@ Your first ongoing sessions. Lower intensity to bridge from adaptation into real
 
 | Workout | What | Cadence | Duration | Source |
 |---------|------|---------|----------|--------|
-| Entry 4×4 | 4×4 min @ 80–85% FTP | 50–60 rpm | ~60 min | Henderson |
-| Staple 3×5 | 3×5 min @ ~90% FTP | 50–60 rpm | ~55 min | EVOQ (scaled — fewer reps: 3×5 instead of 5×5) |
+| [Entry 4×4](/workouts/High%20Torque%20-%20Tier%201%20Entry/Entry_4x4_80pct.zwo) | 4×4 min @ 80–85% FTP | 50–60 rpm | ~60 min | Henderson |
+| [Staple 3×5](/workouts/High%20Torque%20-%20Tier%201%20Entry/Staple_3x5_90pct.zwo) | 3×5 min @ ~90% FTP | 50–60 rpm | ~55 min | EVOQ (scaled — fewer reps: 3×5 instead of 5×5) |
 
 #### Tier 2 — Development
 
@@ -57,9 +57,9 @@ The bread-and-butter sessions. EVOQ's staple format and a shorter VO2max intro.
 
 | Workout | What | Cadence | Duration | Source |
 |---------|------|---------|----------|--------|
-| Staple 5×5 | 5×5 min @ ~90% FTP | 50–60 rpm | ~75 min | EVOQ |
-| Staple 5×8 | 5×8 min @ ~90% FTP | 50–60 rpm | ~90 min | EVOQ |
-| HIIT Intro | 3×3 min @ ~110% FTP | 60–70 rpm | ~55 min | Hebisz 2024 (scaled — fewer reps, shorter intervals) |
+| [Staple 5×5](/workouts/High%20Torque%20-%20Tier%202%20Development/Staple_5x5_90pct.zwo) | 5×5 min @ ~90% FTP | 50–60 rpm | ~75 min | EVOQ |
+| [Staple 5×8](/workouts/High%20Torque%20-%20Tier%202%20Development/Staple_5x8_90pct.zwo) | 5×8 min @ ~90% FTP | 50–60 rpm | ~90 min | EVOQ |
+| [HIIT Intro](/workouts/High%20Torque%20-%20Tier%202%20Development/HIIT_Intro_110pct.zwo) | 3×3 min @ ~110% FTP | 60–70 rpm | ~55 min | Hebisz 2024 (scaled — fewer reps, shorter intervals) |
 
 #### Tier 3 — Challenging
 
@@ -67,9 +67,9 @@ Threshold and VO2max. Higher knee stress. Only after several weeks of comfortabl
 
 | Workout | What | Cadence | Duration | Source |
 |---------|------|---------|----------|--------|
-| Threshold 5×5 | 5×5 min @ ~95% FTP | 50–60 rpm | ~68 min | Henderson |
-| HIIT VO2max (4 reps) | 4×4 min @ ~110% FTP | 60–70 rpm | ~83 min | Hebisz 2024 |
-| Rüegg VO2max + Sprint | 3×(5 min @ ~110% FTP + 1 min max sprint) | 50–60 rpm (sprint at normal cadence) | ~80 min | EF Pro / Schep |
+| [Threshold 5×5](/workouts/High%20Torque%20-%20Tier%203%20Challenging/Threshold_5x5_95pct.zwo) | 5×5 min @ ~95% FTP | 50–60 rpm | ~68 min | Henderson |
+| [HIIT VO2max (4 reps)](/workouts/High%20Torque%20-%20Tier%203%20Challenging/HIIT_VO2max_4rep.zwo) | 4×4 min @ ~110% FTP | 60–70 rpm | ~83 min | Hebisz 2024 |
+| [Rüegg VO2max + Sprint](/workouts/High%20Torque%20-%20Tier%203%20Challenging/Ruegg_VO2max_Sprint.zwo) | 3×(5 min @ ~110% FTP + 1 min max sprint) | 50–60 rpm (sprint at normal cadence) | ~80 min | EF Pro / Schep |
 
 #### Tier 4 — Advanced
 
@@ -77,10 +77,10 @@ Sprint and supra-threshold. Highest knee stress. Monthly at most initially. Rele
 
 | Workout | What | Cadence | Duration | Source |
 |---------|------|---------|----------|--------|
-| TorqueMax | 6×2–3 min @ 105–110% FTP | 50–60 rpm | ~71 min | EVOQ |
-| SIT (2 sets) | 2×(4×30 sec max) | 50–60 rpm | ~76 min | Hebisz 2024 |
-| HIIT VO2max (6 reps) | 6×4 min @ ~110% FTP | 60–70 rpm | ~107 min | Hebisz 2024 |
-| SIT (3 sets) | 3×(4×30 sec max) | 50–60 rpm | ~109 min | Hebisz 2024 |
+| [TorqueMax](/workouts/High%20Torque%20-%20Tier%204%20Advanced/TorqueMax_110pct.zwo) | 6×2–3 min @ 105–110% FTP | 50–60 rpm | ~71 min | EVOQ |
+| [SIT (2 sets)](/workouts/High%20Torque%20-%20Tier%204%20Advanced/SIT_2sets.zwo) | 2×(4×30 sec max) | 50–60 rpm | ~76 min | Hebisz 2024 |
+| [HIIT VO2max (6 reps)](/workouts/High%20Torque%20-%20Tier%204%20Advanced/HIIT_VO2max_6rep.zwo) | 6×4 min @ ~110% FTP | 60–70 rpm | ~107 min | Hebisz 2024 |
+| [SIT (3 sets)](/workouts/High%20Torque%20-%20Tier%204%20Advanced/SIT_3sets.zwo) | 3×(4×30 sec max) | 50–60 rpm | ~109 min | Hebisz 2024 |
 
 ### When to progress
 

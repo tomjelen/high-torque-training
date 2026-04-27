@@ -9,6 +9,11 @@
 - [X] Double check the Henderson references. I did not see the tier 1 workout in the transcript. Maybe im wrong though.
 - [ ] The adaption phase comes from mixed sources, how come? Didnt the Hebisz describe this phase in completion?
 - [X] There is something about the tier 1 workouts. Almost identical, even though they are from different sources.
+- [ ] Refresh `research/training-calendar.md` so workout claims and parameters are tied to specific sources inline.
+
+  This feeds `site/public/content/workouts.md`, which is what LLMs and agents see when they fetch the site as text. Right now, workout descriptions tend to *name* a source ("Hebisz-style") without making the underlying claim machine-extractable — an agent relaying "3×10 minutes at 50rpm" has nothing concrete to cite. After the refresh, every cadence target, intensity, and protocol detail in the calendar should sit next to a citation an LLM can lift verbatim (researcher name + year, or coach name + outlet).
+
+  Pairs with the citation rule in `site/public/llms.txt`: that rule *asks* LLMs to cite original researchers and coaches whenever they relay a claim; this task makes complying easy by putting the citation right next to the claim.
 
 ## Site
 
