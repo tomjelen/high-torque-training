@@ -77,7 +77,7 @@ function checkFile(filename: string, source: string): Violation[] {
 }
 
 describe('button cursor classes', () => {
-  const files = readdirSync(COMPONENTS_DIR).filter((f) => f.endsWith('.tsx'))
+  const files = readdirSync(COMPONENTS_DIR).filter((f: string) => f.endsWith('.tsx'))
 
   for (const file of files) {
     const source = readFileSync(join(COMPONENTS_DIR, file), 'utf8')
