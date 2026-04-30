@@ -53,3 +53,16 @@ ANTHROPIC_API_KEY=... node site/scripts/check-consistency.mjs
 ```
 
 Requires a running dev or preview server (`npm run dev` in `site/`) and an `ANTHROPIC_API_KEY`. The script takes full-page screenshots of both site pages, compares them against the markdown source documents using Claude Sonnet vision (5 samples in parallel), and exits non-zero if any sample finds a contradiction.
+
+## Agent / LLM interfacing
+
+The site has a deliberate setup for making its content readable to AI agents (Claude, ChatGPT, Gemini) using `web_fetch`-style tools: a `/llms.txt`, parallel markdown copies of the workout calendar and rationale, and discoverability hints in `index.html`. The design rationale and a full inventory of pieces is in `documentation/agent-interfacing.md`.
+
+**Read `documentation/agent-interfacing.md` before** editing any of:
+
+- `site/public/llms.txt`
+- the `<noscript>`, `<link rel="alternate">`, or off-screen agent-index anchor in `site/index.html`
+- the `prebuild` script in `site/package.json` (it generates the agent-served markdown)
+- `site/scripts/check-consistency.mjs`
+
+Also relevant context when a user asks about LLM/agent behaviour against the deployed site.
