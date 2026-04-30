@@ -11,7 +11,7 @@ import { loadState, saveState } from './storage'
 import type { AppState } from './types'
 
 const HOME_LAST_UPDATED = '2026-04-23'
-const SCIENCE_LAST_UPDATED = '2026-04-19'
+const SCIENCE_LAST_UPDATED = '2026-04-30'
 
 function HomePage({ state, setState }: { state: AppState; setState: React.Dispatch<React.SetStateAction<AppState>> }) {
   return (

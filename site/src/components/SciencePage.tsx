@@ -35,9 +35,21 @@ function renderBody(id: string) {
         <>
           <p>
             Most cyclists pedal at 80–100 rpm. Dropping to 50–70 rpm at the same power output forces each leg muscle
-            contraction to produce much more force per stroke — that's what "high torque" means. The hypothesis is that
-            this extra muscular demand triggers adaptations that normal cadence training doesn't, particularly increased
-            VO2max and maximal aerobic power.
+            contraction to produce much more force per stroke — that's what "high torque" means.
+          </p>
+          <p>
+            The same prime movers (quads, glutes, hamstrings) are active at all cadences, but at lower cadence each
+            stroke preferentially recruits high-threshold (Type II) motor units that stay quieter at higher cadences
+            [Ahlquist 1992; Sarre &amp; Lepers 2006]. The hypothesis: combining this recruitment shift with
+            high-intensity intervals drives stronger aerobic adaptations — particularly VO2max and maximal aerobic
+            power — than the same intervals at freely chosen cadence.
+          </p>
+          <p>
+            The same mechanism that makes the stimulus effective also makes it demanding on connective tissue. More
+            force per stroke means more load on knees, patellar and quadriceps tendons, and the muscles that stabilize
+            the joint. Tendons and connective tissue adapt slower than the cardiovascular system, which is why this
+            protocol begins with a 3-week adaptation phase at low cadence and easy power before any high-intensity
+            work is layered on top.
           </p>
         </>
       )

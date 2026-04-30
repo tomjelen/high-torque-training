@@ -42,25 +42,28 @@ export default function IntroPanel({ state, setState }: Props) {
       </p>
 
       <p className="text-slate-300 mt-3 mb-0">
-        The site is made for me, a recreational cyclist<sup className="text-slate-500">5</sup>{' '}
-        who can commit to one structured hour a week. After{' '}
+        <strong className="text-slate-100">Who this is for.</strong> A cyclist doing 10–15
+        hours/week of mixed Zwift and outdoor training — fit, consistent, used to structured
+        intervals. Likes races on Zwift, but does not have an outdoor race season. Not a
+        beginner, but not a full-time athlete either.
+      </p>
+      <p className="text-slate-300 mt-3 mb-0">
+        Inspired by this {' '}
         <a
           href={SOURCES.roadman.url}
           target="_blank"
           rel="noopener noreferrer"
           className="text-blue-400 hover:text-blue-300"
         >
-          a podcast
+          Roadman Podcast
         </a>
-        , it felt like an easy commitment — and it explained what I'd seen the summer before:
-        pros grinding past me on a climbs in Andorra, so slowly it looked wrong.
+        .
       </p>
 
       <div className="border-t border-slate-800 mt-4 pt-3 text-sm text-slate-500">
         <p className="mb-0">
           <strong className="text-slate-300">How this site is structured:</strong> start with the
-          adaptation phase below, then use the collection weekly. 1–2 sessions per week, never
-          back-to-back.
+          adaptation phase below, then use the collection weekly. 1–2 sessions per week.
         </p>
         <details className="mt-3 group">
           <summary className="cursor-pointer list-none hover:text-slate-300 select-none">
@@ -109,20 +112,6 @@ export default function IntroPanel({ state, setState }: Props) {
               rpm intervals after three months of standardized base training. The 3-week
               adaptation phase here follows coaching practice (Wakefield/UAE, Walsh/Roadman,
               Housler/EVOQ), which is universal among coaches who prescribe torque intervals.
-            </p>
-            <p className="m-0">
-              <sup className="text-slate-500 mr-1">5</sup>
-              I ride 10–15 hours a week for fun, not plans — I've tried structured training plans. I just don't follow them — a beautiful route always beats a TSS target. So "one hour a week" is my realistic floor, not
-              what the research actually prescribes. One, I'll actually
-              do.{' '}
-              <a
-                href="https://www.strava.com/athletes/8943272"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-400 hover:text-blue-300"
-              >
-                Peek at my Strava to see what kind of cyclist I am.
-              </a>
             </p>
             <p className="m-0 pt-1">
               <Link to="/science" className="text-blue-400 hover:text-blue-300">

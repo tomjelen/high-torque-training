@@ -1,12 +1,12 @@
 # High Torque (Low Cadence) Training for Cyclists
 **Permanent integration guide**
-Last reviewed: March 2026
+Last reviewed: April 2026
 
 ---
 
 ## Who this is for
 
-A cyclist doing 10–15 hours/week of mixed Zwift and outdoor training — fit, consistent, used to structured intervals. Races on Zwift, including sprint finishes, but does not have an outdoor race season. Not a beginner, but not a full-time athlete either.
+A cyclist doing 10–15 hours/week of mixed Zwift and outdoor training — fit, consistent, used to structured intervals. Likes races on Zwift, but does not have an outdoor race season. Not a beginner, but not a full-time athlete either.
 
 This document is a guide for **permanently integrating high-torque training into your weekly routine** — not a one-off training block. The goal is simple: include 1–2 low-cadence sessions per week alongside your normal training, indefinitely, to build and maintain stronger legs.
 
@@ -14,7 +14,11 @@ This document is a guide for **permanently integrating high-torque training into
 
 ## The core idea
 
-Most cyclists pedal at 80–100 rpm. Dropping to 50–70 rpm at the same power output forces each leg muscle contraction to produce much more force per stroke — that's what "high torque" means. The hypothesis is that this extra muscular demand triggers adaptations that normal cadence training doesn't, particularly increased VO2max and maximal aerobic power.
+Most cyclists pedal at 80–100 rpm. Dropping to 50–70 rpm at the same power output forces each leg muscle contraction to produce much more force per stroke — that's what "high torque" means.
+
+The same prime movers (quads, glutes, hamstrings) are active at all cadences, but at lower cadence each stroke preferentially recruits high-threshold (Type II) motor units that stay quieter at higher cadences [Ahlquist 1992; Sarre & Lepers 2006]. The hypothesis: combining this recruitment shift with high-intensity intervals drives stronger aerobic adaptations — particularly VO2max and maximal aerobic power — than the same intervals at freely chosen cadence.
+
+The same mechanism that makes the stimulus effective also makes it demanding on connective tissue. More force per stroke means more load on knees, patellar and quadriceps tendons, and the muscles that stabilize the joint. Tendons and connective tissue adapt slower than the cardiovascular system, which is why this protocol begins with a 3-week adaptation phase at low cadence and easy power before any high-intensity work is layered on top.
 
 ---
 
@@ -360,3 +364,7 @@ This section tracks how solid each claim is and what would change it.
 8. **Ongoing frequency guidance (coach):** Neal Henderson on Fast Talk Labs — *Put It in the Big Gear — We Explore Low-Cadence, High-Torque Training*. https://www.fasttalklabs.com/fast-talk/neal-henderson-put-it-in-the-big-gear-we-explore-low-cadence-high-torque-training/
 
 9. **Pro team protocol:** EF Pro Cycling — *Pro Workouts: Torque Efforts with Noemi Rüegg*. https://www.efprocycling.com/tips-recipes/noemi-rueegg-torque-workouts/
+
+10. **Motor unit recruitment at low cadence (Type I/II glycogen depletion):** Ahlquist LE et al. (1992). *The effect of pedaling frequency on glycogen depletion rates in type I and type II quadriceps muscle fibers during submaximal cycling exercise*. European Journal of Applied Physiology and Occupational Physiology, 65(4):360–364.
+
+11. **EMG and neuromuscular activity across cadences (same prime movers, different recruitment magnitude):** Sarre G & Lepers R (2006). Cycling cadence and EMG/muscle-activity research; cited in Hebisz & Hebisz 2024 and the broader cadence literature review by Mater, Clos & Lepers (2021).
