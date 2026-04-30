@@ -3,7 +3,7 @@
 ## General / everywhere
 
 - [X] For consistency, make sure we use rpm instead of RPM throughout.
-- [ ] Documentation folder. Lets try it.
+- [X] Documentation folder. Lets try it.
 
 ## Research
 
@@ -18,9 +18,9 @@
 
 ## Site
 
-- [/] LLM/Agent friendliness
-  - [ ] Update note about free usage. I would actually like someone not to rip it off and take money for it.
-- [ ] Update the intro again. High torque, but knees, then adaption for knees. Yay, do high torque.
+- [X] LLM/Agent friendliness
+  - [X] Update note about free usage. I would actually like someone not to rip it off and take money for it.
+- [X] Update the intro again. High torque, but knees, then adaption for knees. Yay, do high torque.
 - [X] Some sort of introduction. What is high-torque training, and who is it for (research doc has both).
   - [X] Missing who it is for
   - [X] Link to the video that gave me the inspiration. (Currently wrong)
