@@ -3,6 +3,7 @@
 ## General / everywhere
 
 - [X] For consistency, make sure we use rpm instead of RPM throughout.
+- [ ] Documentation folder. Lets try it.
 
 ## Research
 
@@ -17,6 +18,9 @@
 
 ## Site
 
+- [/] LLM/Agent friendliness
+  - [ ] Update note about free usage. I would actually like someone not to rip it off and take money for it.
+- [ ] Update the intro again. High torque, but knees, then adaption for knees. Yay, do high torque.
 - [X] Some sort of introduction. What is high-torque training, and who is it for (research doc has both).
   - [X] Missing who it is for
   - [X] Link to the video that gave me the inspiration. (Currently wrong)
@@ -27,7 +31,7 @@
 - [X] A date for when this was last updated. That way people can see if I have considered some new research. Maybe that means two dates. One for a minor site update, another for when research was updated.
 - [X] Maybe there should be a longer "who am i" part, that the introduction can link to. Also with a link to my activities in Strava to gauge if you look somewhat like me.
 - [ ] Find a way to check firefox/chromium compatability. FF first, but I realize most people use Chrome.
-- [ ] Use the implementation plan to write some tests
+- [ ] Use the implementation plan to write some tests or documentation
 - [ ] No reason for collapsible installation instructions
 - [ ] Verify knee safety warning
 - [ ] Feels like we have two styles of warnings. Work it out.
@@ -37,12 +41,15 @@
 - [ ] Check table/mobile
 - [ ] Last phase of redesign document
 - [X] Add a favicon
+- [ ] Bi-directional state management
 
 ## Workout files
 
 - [ ] Put a version timestamp inside the .zwo files. I think maybe we add a comment with this, and other information that LLMs can read, and make it so the website re-expands Download/Install with a `updated` badge.
 - [ ] Investigate if duration is an actual attribute of textevent.
 - [ ] Add link to site in llm-meta inside .zwo files
+- [ ] Move text-events that requires reading comprehension to the off-blocks in intervals.
+- [ ] Bug: The save-name for stable 3x5 was very convoluted
 
 ## zwo-skill
 

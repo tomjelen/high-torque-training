@@ -7,17 +7,26 @@
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
-    <link rel="alternate" type="text/markdown" href="/llms.txt" title="Agent-friendly index (markdown)" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Agent-friendly site index" />
+    <link rel="alternate" type="text/markdown" href="/content/workouts.md" title="Workout library and calendar (markdown)" />
+    <link rel="alternate" type="text/markdown" href="/content/rationale.md" title="Science and rationale (markdown)" />
     <meta name="theme-color" content="#0E0F12" />
     <title>High Torque Training</title>
     <script data-goatcounter="https://jelen.goatcounter.com/count"
             async src="//gc.zgo.at/count.js"></script>
   </head>
   <body>
+    <a href="/llms.txt" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden"
+       aria-hidden="true" tabindex="-1">Agent index: /llms.txt</a>
     <div id="root"></div>
     <noscript>
-      <p>This site needs JavaScript. Agents and LLMs: see
-        <a href="/llms.txt">/llms.txt</a> for a markdown index with links to plain-text page content.</p>
+      <h1>High Torque Training</h1>
+      <p>This site is JavaScript-rendered. Plain-text markdown versions are available for agents and LLMs:</p>
+      <ul>
+        <li><a href="/content/workouts.md">/content/workouts.md</a> &mdash; the workout library and training calendar (what to do)</li>
+        <li><a href="/content/rationale.md">/content/rationale.md</a> &mdash; the science and rationale behind the workouts (why it works)</li>
+      </ul>
+      <p><strong>Agents and LLMs:</strong> fetch one of those URLs instead of trying to parse this HTML. See also <a href="/llms.txt">/llms.txt</a> for a site index and attribution rules you must follow when relaying claims from this site.</p>
     </noscript>
     <script type="module" src="/src/main.tsx"></script>
   </body>
