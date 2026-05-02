@@ -25,7 +25,7 @@ export default function DownloadInstallPanel({ state, setState }: Props) {
 
   return (
     <Panel
-      title="Download & install"
+      title="Install Zwift workouts"
       teaser="Download all workouts (.zip) — install once, then collapse me"
       headerAction={zipButton}
       collapsed={state.panels.download.collapsed}
@@ -47,24 +47,22 @@ export default function DownloadInstallPanel({ state, setState }: Props) {
         </div>
       </div>
 
-      <details className="text-sm">
-        <summary className="text-slate-400 cursor-pointer list-none hover:text-slate-200 select-none">
-          Zwift install instructions ▸
-        </summary>
-        <div className="mt-3 text-slate-400 space-y-2 pl-3 border-l border-slate-800">
+      <div className="text-sm">
+        <p className="text-slate-500 text-xs font-semibold uppercase tracking-wider m-0 mb-3">Zwift install instructions</p>
+        <div className="text-slate-400 space-y-2 pl-3 border-l border-slate-800">
           <p className="m-0">The zip contains five folders — copy them directly into your Zwift workout directory:</p>
-          <ul className="m-0 pl-4 space-y-1">
+          <ul className="m-1 pl-4 space-y-1">
             <li><strong className="text-slate-300">Windows:</strong> <code className="text-orange-400 text-xs">%localAppData%\Zwift\Workouts\[your_user_id]\</code></li>
             <li><strong className="text-slate-300">macOS:</strong> <code className="text-orange-400 text-xs">~/Documents/Zwift/Workouts/[your_user_id]/</code></li>
             <li><strong className="text-slate-300">iOS/Android:</strong> not supported for custom workouts — use a PC/Mac</li>
           </ul>
-          <p className="m-0">Restart Zwift. The folders appear under <strong className="text-slate-300">Custom Workouts</strong> in the workout selection screen.</p>
-          <p className="m-0">
+          <p className="m-1">Restart Zwift. The folders appear under <strong className="text-slate-300">Custom Workouts</strong> in the workout selection screen.</p>
+          <p className="m-1">
             All power targets are expressed as a fraction of your FTP (e.g.{' '}
             <code className="text-orange-400 text-xs">0.88</code> = 88% FTP). Keep your FTP up to date in Zwift for accurate targets.
           </p>
         </div>
-      </details>
+      </div>
     </Panel>
   )
 }

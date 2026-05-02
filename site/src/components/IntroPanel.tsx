@@ -62,7 +62,7 @@ export default function IntroPanel({ state, setState }: Props) {
 
       <div className="border-t border-slate-800 mt-4 pt-3 text-sm text-slate-500">
         <p className="mb-0">
-          <strong className="text-slate-300">How this site is structured:</strong> start with the
+          <strong className="text-slate-300">How this site is structured:</strong> Start with the
           adaptation phase below, then use the collection weekly. 1–2 sessions per week.
         </p>
         <details className="mt-3 group">

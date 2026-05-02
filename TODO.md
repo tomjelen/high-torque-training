@@ -13,7 +13,7 @@
 
 ## Site
 
-- [ ] No reason for collapsible installation instructions
+- [x] No reason for collapsible installation instructions
 - [ ] Verify knee safety warning
 - [ ] Session tracker. Delete and edit date.
 - [ ] Last phase of redesign document
