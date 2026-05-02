@@ -10,6 +10,7 @@ import type { AppState } from '../types'
 interface Props {
   state: AppState
   onDeleteEntry: (id: string) => void
+  onSetEntryDate: (id: string, isoDate: string) => void
 }
 
 // Module-level: COLLECTION_WORKOUTS is a static constant, no need to recompute per mount
@@ -30,7 +31,7 @@ function formatDateLabel(isoTimestamp: string): string {
   return new Date(y, m - 1, d).toLocaleDateString(undefined, { month: 'short', day: 'numeric' })
 }
 
-export default function SessionTracker({ state, onDeleteEntry }: Props) {
+export default function SessionTracker({ state, onDeleteEntry, onSetEntryDate }: Props) {
   const sortedLog = useMemo(
     () => [...state.log].sort((a, b) => b.timestamp.localeCompare(a.timestamp)),
     [state.log],
@@ -67,6 +68,7 @@ export default function SessionTracker({ state, onDeleteEntry }: Props) {
         name: WORKOUT_META.get(entry.workoutId)?.name ?? entry.workoutId,
         isHard: isHardWorkout(entry.workoutId),
         dateLabel: formatDateLabel(entry.timestamp),
+        isoDate: entry.timestamp.slice(0, 10),
         gap,
       }
     })
@@ -82,7 +84,7 @@ export default function SessionTracker({ state, onDeleteEntry }: Props) {
       </div>
       <TrackerCounter daysSince={daysSinceLastHard} />
       <TrackerStrip dayMap={dayMap} />
-      <TrackerLog entries={annotatedEntries} onDeleteEntry={onDeleteEntry} />
+      <TrackerLog entries={annotatedEntries} onDeleteEntry={onDeleteEntry} onSetEntryDate={onSetEntryDate} />
     </div>
   )
 }

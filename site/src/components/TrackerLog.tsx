@@ -6,6 +6,7 @@ export interface AnnotatedEntry {
   name: string
   isHard: boolean
   dateLabel: string
+  isoDate: string // YYYY-MM-DD
   gap: number | null
 }
 
@@ -14,9 +15,10 @@ const INITIAL_SHOW = 5
 interface Props {
   entries: AnnotatedEntry[]
   onDeleteEntry: (id: string) => void
+  onSetEntryDate: (id: string, isoDate: string) => void
 }
 
-export default function TrackerLog({ entries, onDeleteEntry }: Props) {
+export default function TrackerLog({ entries, onDeleteEntry, onSetEntryDate }: Props) {
   const [showAll, setShowAll] = useState(false)
 
   const visible = showAll ? entries : entries.slice(0, INITIAL_SHOW)
@@ -33,7 +35,12 @@ export default function TrackerLog({ entries, onDeleteEntry }: Props) {
         <>
           <ul className="space-y-2 m-0 p-0 list-none">
             {visible.map((entry) => (
-              <TrackerLogEntry key={entry.id} entry={entry} onDelete={onDeleteEntry} />
+              <TrackerLogEntry
+                key={entry.id}
+                entry={entry}
+                onDelete={onDeleteEntry}
+                onSetDate={onSetEntryDate}
+              />
             ))}
           </ul>
           {hasMore && (
