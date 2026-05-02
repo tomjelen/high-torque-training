@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import TrackerLogEntry from './TrackerLogEntry'
 
 export interface AnnotatedEntry {
   id: string
@@ -9,11 +10,6 @@ export interface AnnotatedEntry {
 }
 
 const INITIAL_SHOW = 5
-
-function formatGap(days: number): string {
-  const val = days % 1 === 0 ? `${days}d` : `${days.toFixed(1)}d`
-  return `+${val}`
-}
 
 interface Props {
   entries: AnnotatedEntry[]
@@ -35,19 +31,8 @@ export default function TrackerLog({ entries }: Props) {
       ) : (
         <>
           <ul className="space-y-2 m-0 p-0 list-none">
-            {visible.map(({ id, name, isHard, dateLabel, gap }) => (
-              <li key={id} className="flex items-baseline gap-2 text-xs">
-                <span
-                  className={`flex-shrink-0 w-2 h-2 rounded-full mt-0.5 ${
-                    isHard ? 'bg-orange-500' : 'bg-green-500'
-                  }`}
-                />
-                <span className="text-slate-500 flex-shrink-0 w-12">{dateLabel}</span>
-                <span className="text-slate-300 truncate flex-1 min-w-0">{name}</span>
-                {gap !== null && (
-                  <span className="text-slate-600 flex-shrink-0 font-mono">{formatGap(gap)}</span>
-                )}
-              </li>
+            {visible.map((entry) => (
+              <TrackerLogEntry key={entry.id} entry={entry} />
             ))}
           </ul>
           {hasMore && (
