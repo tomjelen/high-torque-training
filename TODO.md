@@ -15,10 +15,10 @@
 
 - [x] No reason for collapsible installation instructions
 - [x] Verify knee safety warning
-- [ ] User guideline & tiers looks bad design-wise
+- [x] User guideline & tiers looks bad design-wise
 - [ ] Session tracker. Delete and edit date.
 - [ ] Last phase of redesign document
-- [ ] Feels like we have two styles of warnings. Work it out.
+- [x] Feels like we have two styles of warnings. Work it out.
 - [ ] Check table/mobile
 - [ ] Bi-directional state management
 - [ ] Find a way to check firefox/chromium compatability. FF first, but I realize most people use Chrome.

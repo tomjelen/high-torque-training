@@ -38,11 +38,6 @@ export default function CollectionPanel({ state, setState }: Props) {
     >
       <UsageGuidelines />
 
-      <p className="text-xs text-slate-500 border border-slate-800 rounded px-3 py-2 mb-4 m-0">
-        <strong className="text-slate-400">Seated only.</strong>{' '}
-        Stop if anything pulls in a knee — low-cadence work stays knee-risky, not just during adaptation.
-      </p>
-
       <div className="grid grid-cols-[1fr_300px] gap-4">
         <div className="grid grid-cols-3 gap-3 content-start">
           {SORTED_WORKOUTS.map((workout) => (
