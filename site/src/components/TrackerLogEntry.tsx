@@ -6,6 +6,14 @@ function formatGap(days: number): string {
   return `+${val}`
 }
 
+function todayLocalIso(): string {
+  const d = new Date()
+  const y = d.getFullYear()
+  const m = String(d.getMonth() + 1).padStart(2, '0')
+  const day = String(d.getDate()).padStart(2, '0')
+  return `${y}-${m}-${day}`
+}
+
 interface Props {
   entry: AnnotatedEntry
   onDelete: (id: string) => void
@@ -47,6 +55,7 @@ export default function TrackerLogEntry({ entry, onDelete, onSetDate }: Props) {
             id={`date-${id}`}
             type="date"
             value={draftDate}
+            max={todayLocalIso()}
             onChange={(e) => setDraftDate(e.target.value)}
             className="w-32 bg-slate-800 border border-slate-700 rounded px-1 py-0.5 text-xs text-slate-200 font-mono"
           />

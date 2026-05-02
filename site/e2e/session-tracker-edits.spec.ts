@@ -89,6 +89,21 @@ test.describe('Session tracker — delete and edit date', () => {
     await expect(log.getByText('May 1')).toBeVisible()
   })
 
+  test('edit date: future dates are blocked via the input max attribute', async ({ page }) => {
+    await seedLog(page, [
+      { id: 'a', workoutId: 't1-entry', timestamp: isoAtNoon('2026-05-01') },
+    ])
+    const log = page.getByRole('region', { name: 'Session tracker log' })
+
+    await log.getByRole('button', { name: /Edit date/ }).click()
+
+    const todayIso = await page.evaluate(() => {
+      const d = new Date()
+      return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`
+    })
+    await expect(log.getByLabel('New date')).toHaveAttribute('max', todayIso)
+  })
+
   test('edit date: save is disabled when the date input is empty', async ({ page }) => {
     await seedLog(page, [
       { id: 'a', workoutId: 't1-entry', timestamp: isoAtNoon('2026-05-01') },
