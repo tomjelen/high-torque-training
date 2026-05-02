@@ -14,7 +14,8 @@
 ## Site
 
 - [x] No reason for collapsible installation instructions
-- [ ] Verify knee safety warning
+- [x] Verify knee safety warning
+- [ ] User guideline & tiers looks bad design-wise
 - [ ] Session tracker. Delete and edit date.
 - [ ] Last phase of redesign document
 - [ ] Feels like we have two styles of warnings. Work it out.

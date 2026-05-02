@@ -64,15 +64,24 @@ export default function AdaptationPanel({ state, setState }: Props) {
         role="alert"
         className="border border-red-900/60 bg-red-950/30 text-red-200 rounded px-4 py-3 text-sm mb-4"
       >
-        <strong className="text-red-100">⚠ Knee safety — read before starting.</strong>{' '}
-        All intervals must be done <strong>seated</strong>. Warm up at normal cadence for at least
-        15 minutes before your first low-cadence interval.{' '}
-        <strong>Stop immediately if you feel knee pain</strong> — do not push through; redo the
-        week instead. Don't go below 50 rpm unless you have months of established low-cadence work
-        behind you. Never do low-cadence sessions on back-to-back days. If you have a history of
-        patellofemoral pain, patellar tendinopathy, or any knee overuse injury, skip this training
-        entirely. Also skip if you are coming off a rest period or injury, or if you already
-        naturally grind at low cadences.
+        <strong className="text-red-100">⚠ Knee protection rules — applies to every session, always.</strong>
+        <ol className="mt-2 mb-0 pl-5 space-y-1 list-decimal">
+          <li>
+            <strong className="text-red-100">Always warm up at normal cadence first</strong> (minimum 15 minutes). Don't start a low-cadence interval cold.
+          </li>
+          <li>
+            <strong className="text-red-100">If your knees ache during a set, stop the set.</strong> Don't push through. End the session if it continues.
+          </li>
+          <li>
+            <strong className="text-red-100">Don't go below 50 rpm</strong> unless you have months of established low-cadence work behind you.
+          </li>
+          <li>
+            <strong className="text-red-100">Never do low-cadence sessions on back-to-back days.</strong> The joint needs recovery time.
+          </li>
+          <li>
+            <strong className="text-red-100">All intervals are seated.</strong> Standing removes the training stimulus and changes the load pattern.
+          </li>
+        </ol>
       </div>
 
       <div className="grid grid-cols-3 gap-4">

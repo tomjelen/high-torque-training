@@ -10,7 +10,7 @@ import Footer from './components/Footer'
 import { loadState, saveState } from './storage'
 import type { AppState } from './types'
 
-const HOME_LAST_UPDATED = '2026-04-23'
+const HOME_LAST_UPDATED = '2026-05-02'
 const SCIENCE_LAST_UPDATED = '2026-04-30'
 
 function HomePage({ state, setState }: { state: AppState; setState: React.Dispatch<React.SetStateAction<AppState>> }) {

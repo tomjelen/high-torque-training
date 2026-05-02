@@ -47,6 +47,22 @@ export default function IntroPanel({ state, setState }: Props) {
         intervals. Likes races on Zwift, but does not have an outdoor race season. Not a
         beginner, but not a full-time athlete either.
       </p>
+      <p className="text-slate-300 mt-3 mb-2">
+        <strong className="text-slate-100">Who this is not for.</strong>
+        <sup className="text-slate-500">5</sup> Skip low-cadence training entirely if any of
+        the following applies:
+      </p>
+      <ul className="text-slate-300 list-disc pl-6 mb-0 space-y-1">
+        <li>
+          Any history of knee overuse injury, patellar tendinopathy, or patellofemoral pain
+          syndrome (PFPS).
+        </li>
+        <li>You are coming off a rest period or injury.</li>
+        <li>
+          You already naturally grind at low cadences — the stimulus is reduced and the knee
+          stress is higher.
+        </li>
+      </ul>
       <p className="text-slate-300 mt-3 mb-0">
         Inspired by this {' '}
         <a
@@ -112,6 +128,20 @@ export default function IntroPanel({ state, setState }: Props) {
               rpm intervals after three months of standardized base training. The 3-week
               adaptation phase here follows coaching practice (Wakefield/UAE, Walsh/Roadman,
               Housler/EVOQ), which is universal among coaches who prescribe torque intervals.
+            </p>
+            <p className="m-0">
+              <sup className="text-slate-500 mr-1">5</sup>
+              The contraindications follow coach guidance from{' '}
+              <a
+                href={SOURCES.evoq.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-400 hover:text-blue-300"
+              >
+                EVOQ.BIKE
+              </a>
+              . The knee-history item is the strongest one and is consistent across
+              physiotherapy and coaching sources alike.
             </p>
             <p className="m-0 pt-1">
               <Link to="/science" className="text-blue-400 hover:text-blue-300">
