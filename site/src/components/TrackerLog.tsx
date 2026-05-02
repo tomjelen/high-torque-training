@@ -13,16 +13,17 @@ const INITIAL_SHOW = 5
 
 interface Props {
   entries: AnnotatedEntry[]
+  onDeleteEntry: (id: string) => void
 }
 
-export default function TrackerLog({ entries }: Props) {
+export default function TrackerLog({ entries, onDeleteEntry }: Props) {
   const [showAll, setShowAll] = useState(false)
 
   const visible = showAll ? entries : entries.slice(0, INITIAL_SHOW)
   const hasMore = entries.length > INITIAL_SHOW
 
   return (
-    <div>
+    <section aria-label="Session tracker log">
       <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2 m-0">
         Recent entries
       </p>
@@ -32,7 +33,7 @@ export default function TrackerLog({ entries }: Props) {
         <>
           <ul className="space-y-2 m-0 p-0 list-none">
             {visible.map((entry) => (
-              <TrackerLogEntry key={entry.id} entry={entry} />
+              <TrackerLogEntry key={entry.id} entry={entry} onDelete={onDeleteEntry} />
             ))}
           </ul>
           {hasMore && (
@@ -46,6 +47,6 @@ export default function TrackerLog({ entries }: Props) {
           )}
         </>
       )}
-    </div>
+    </section>
   )
 }

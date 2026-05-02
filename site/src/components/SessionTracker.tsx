@@ -9,6 +9,7 @@ import type { AppState } from '../types'
 
 interface Props {
   state: AppState
+  onDeleteEntry: (id: string) => void
 }
 
 // Module-level: COLLECTION_WORKOUTS is a static constant, no need to recompute per mount
@@ -29,7 +30,7 @@ function formatDateLabel(isoTimestamp: string): string {
   return new Date(y, m - 1, d).toLocaleDateString(undefined, { month: 'short', day: 'numeric' })
 }
 
-export default function SessionTracker({ state }: Props) {
+export default function SessionTracker({ state, onDeleteEntry }: Props) {
   const sortedLog = useMemo(
     () => [...state.log].sort((a, b) => b.timestamp.localeCompare(a.timestamp)),
     [state.log],
@@ -81,7 +82,7 @@ export default function SessionTracker({ state }: Props) {
       </div>
       <TrackerCounter daysSince={daysSinceLastHard} />
       <TrackerStrip dayMap={dayMap} />
-      <TrackerLog entries={annotatedEntries} />
+      <TrackerLog entries={annotatedEntries} onDeleteEntry={onDeleteEntry} />
     </div>
   )
 }

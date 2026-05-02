@@ -29,6 +29,10 @@ export default function CollectionPanel({ state, setState }: Props) {
     setState((prev) => ({ ...prev, log: [...prev.log, entry] }))
   }
 
+  function handleDeleteEntry(id: string) {
+    setState((prev) => ({ ...prev, log: prev.log.filter((e) => e.id !== id) }))
+  }
+
   return (
     <Panel
       title="The High Torque Collection"
@@ -50,7 +54,7 @@ export default function CollectionPanel({ state, setState }: Props) {
         </div>
 
         <aside>
-          <SessionTracker state={state} />
+          <SessionTracker state={state} onDeleteEntry={handleDeleteEntry} />
         </aside>
       </div>
     </Panel>
