@@ -248,11 +248,55 @@ for route of routes:
 
 **Documentation** (also part of this work, after the rename has landed):
 
-- `documentation/agent-interfacing.md` §6 changes from "deferred" to
-  "implemented" with a description of the resulting per-page hints.
-  §"How to verify agents can still read the site" gains an item:
-  `curl` both prerendered URLs and confirm the content is in the
-  response body.
+- `documentation/prerendering.md` — new. Modelled on
+  `documentation/agent-interfacing.md`'s structure. Audience: a future
+  Claude (or human) considering a refactor of the prerender pipeline.
+  The goal of the doc is to make clear *what outcomes are
+  load-bearing* (so a refactor preserves them) vs *what's collateral
+  technical detail* (so a refactor isn't constrained by them
+  unnecessarily). Concretely, it should cover:
+  - **Essential outcomes** (must be preserved by any refactor):
+    - `curl` of `/` and `/rationale` returns real HTML containing the
+      page's actual content (not an empty SPA shell).
+    - No user-visible flash of default state on first paint when the
+      user has persisted state.
+    - Each route carries its own `<title>`, `<noscript>`, and
+      off-screen agent anchor pointing at the right markdown
+      counterpart.
+    - Build fails loudly if the prerender silently produces an empty
+      `<div id="root">`.
+  - **Components** (what each piece does + why it exists), in the
+    style of agent-interfacing.md's component list:
+    `src/entry-server.tsx`, `scripts/prerender.mjs`, the two-phase
+    hydration in `AppShell` (with `useIsomorphicLayoutEffect`), the
+    build-time marker assertion, the per-route HTML rewrites, the
+    dual-output (`/rationale.html` + `/rationale/index.html`)
+    decision.
+  - **Collateral choices** (replaceable in a refactor): the specific
+    tooling (custom `vite build --ssr`), the exact 60-line script
+    shape, the choice of marker strings, the use of string-replace vs
+    a templating engine, and Tailwind being plugged into the SSR
+    build path. Naming a thing as collateral makes it explicit that a
+    future refactor moving to e.g. a Vite SSG plugin or Astro is fine
+    *as long as the essential outcomes hold*.
+  - **Rejected alternatives** with reasons that still apply (Astro's
+    island model fitting badly with this site's interactive shape;
+    react-snap unmaintained; an inline pre-hydration script being
+    redundant once `useIsomorphicLayoutEffect` is in place).
+  - **Quick reference** — file paths (mirroring agent-interfacing.md's
+    table near the bottom).
+  - **How to verify** — the curl + DevTools-console + no-flash checks
+    from §9 of this spec.
+  - **Lifespan note** — when this whole doc could shrink: e.g. if the
+    site grows to 5+ routes and a framework migration becomes worth
+    it, or if all stateful UI moves to React Server Components and the
+    flash problem disappears at the platform level.
+- `documentation/agent-interfacing.md` — §6 changes from "deferred" to
+  "implemented" with a brief description of the resulting per-page
+  hints, plus a forward-link to the new `prerendering.md` for the
+  details. The §"How to verify agents can still read the site" gains
+  an item: `curl` both prerendered URLs and confirm the content is in
+  the response body.
 - `site/CLAUDE.md` — already updated during the rename for the
   constant name change; nothing further here.
 - `site/public/llms.txt` — already updated during the rename for the
