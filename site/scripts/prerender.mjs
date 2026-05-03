@@ -1,13 +1,6 @@
-// site/scripts/prerender.mjs
+// Per-route static HTML emitter (postbuild).
+// See documentation/prerendering.md for the load-bearing outcomes.
 //
-// Reads dist/index.html as a template, calls render(url) from the SSR
-// bundle for each route, injects route-specific <title>, <noscript>,
-// and off-screen anchor, then writes static HTML for each route.
-//
-// See documentation/prerendering.md for the load-bearing outcomes
-// this script must preserve, and site-specification/2026-05-03-prerender-design.md
-// for the full rationale.
-
 // Assumes cwd is `site/` (true for `npm run postbuild`). Reads dist/
 // cwd-relative; imports the SSR bundle relative to this file's URL.
 import { readFileSync, writeFileSync, mkdirSync } from 'fs'

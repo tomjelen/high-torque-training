@@ -41,7 +41,7 @@ function RationaleRoute() {
   )
 }
 
-function AppShell() {
+function App() {
   const [state, setState] = useState<AppState>(PRERENDER_STATE)
 
   useIsomorphicLayoutEffect(() => {
@@ -49,6 +49,10 @@ function AppShell() {
   }, [])
 
   useEffect(() => {
+    // Skip the save during the brief window between mount and the layout
+    // effect's setState — without this guard, PRERENDER_STATE would
+    // momentarily overwrite the user's persisted state in localStorage.
+    if (state === PRERENDER_STATE) return
     saveState(state)
   }, [state])
 
@@ -61,10 +65,6 @@ function AppShell() {
       </Routes>
     </div>
   )
-}
-
-function App() {
-  return <AppShell />
 }
 
 export default App

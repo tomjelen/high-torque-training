@@ -31,25 +31,25 @@ export const PRERENDER_STATE: AppState = {
   },
 }
 
-function loadPanel(p: unknown, name: keyof AppState['panels']): PanelState {
-  return { collapsed: (p as AppState | null)?.panels?.[name]?.collapsed ?? false }
+function loadPanel(parsed: AppState | null, name: keyof AppState['panels']): PanelState {
+  return { collapsed: parsed?.panels?.[name]?.collapsed ?? false }
 }
 
 export function loadState(): AppState {
   try {
     const raw = localStorage.getItem(KEY)
     if (!raw) return DEFAULT_STATE
-    const p = JSON.parse(raw) as unknown
+    const parsed = JSON.parse(raw) as AppState | null
     return {
-      adaptation: (p as AppState | null)?.adaptation ?? {},
+      adaptation: parsed?.adaptation ?? {},
       panels: {
-        intro: loadPanel(p, 'intro'),
-        download: loadPanel(p, 'download'),
-        adaptation: loadPanel(p, 'adaptation'),
-        collection: loadPanel(p, 'collection'),
+        intro: loadPanel(parsed, 'intro'),
+        download: loadPanel(parsed, 'download'),
+        adaptation: loadPanel(parsed, 'adaptation'),
+        collection: loadPanel(parsed, 'collection'),
       },
-      log: (p as AppState | null)?.log ?? [],
-      adaptationCheckInConfirmed: (p as AppState | null)?.adaptationCheckInConfirmed ?? false,
+      log: parsed?.log ?? [],
+      adaptationCheckInConfirmed: parsed?.adaptationCheckInConfirmed ?? false,
     }
   } catch {
     return DEFAULT_STATE

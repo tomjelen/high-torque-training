@@ -1,11 +1,7 @@
-// site/src/lib/useIsomorphicLayoutEffect.ts
-//
-// useLayoutEffect on the client (synchronous, pre-paint), useEffect on
-// the server (no-op). Used to swap from default state to localStorage
-// state before the browser paints, eliminating the user-visible flash
-// on first hydrate.
-//
-// See documentation/prerendering.md for why this matters.
+// Avoids the SSR warning that useLayoutEffect emits on the server. The
+// pre-paint timing of useLayoutEffect is what swaps PRERENDER_STATE for
+// loaded state before first paint, eliminating the hydration flash.
+// See documentation/prerendering.md.
 
 import { useEffect, useLayoutEffect } from 'react'
 
