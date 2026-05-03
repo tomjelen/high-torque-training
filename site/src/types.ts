@@ -30,7 +30,7 @@ export interface Tier {
   workouts: Workout[]
 }
 
-export interface ScienceSection {
+export interface RationaleSection {
   id: string
   heading: string
 }

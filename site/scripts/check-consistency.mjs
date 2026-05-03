@@ -36,16 +36,16 @@ async function takeScreenshots() {
   await page.waitForLoadState('networkidle')
   const homeShot = await page.screenshot({ fullPage: true })
 
-  console.log(`  → ${BASE_URL}/science`)
-  await page.goto(`${BASE_URL}/science`)
+  console.log(`  → ${BASE_URL}/rationale`)
+  await page.goto(`${BASE_URL}/rationale`)
   await page.waitForLoadState('networkidle')
-  const scienceShot = await page.screenshot({ fullPage: true })
+  const rationaleShot = await page.screenshot({ fullPage: true })
 
   await browser.close()
-  return { homeShot, scienceShot }
+  return { homeShot, rationaleShot }
 }
 
-async function callClaude(homeB64, scienceB64, rationaleText, calendarText, sampleIndex) {
+async function callClaude(homeB64, rationaleB64, rationaleText, calendarText, sampleIndex) {
   const response = await fetch('https://api.anthropic.com/v1/messages', {
     method: 'POST',
     headers: {
@@ -63,7 +63,7 @@ async function callClaude(homeB64, scienceB64, rationaleText, calendarText, samp
           content: [
             {
               type: 'text',
-              text: 'You are auditing a fitness training website for consistency with its source documents.\n\nThe next two images are full-page screenshots of the website — the workout library (home page) and the science/rationale page. After the images are the two source markdown documents the site is based on.\n\nYour task: check whether the website and the source documents tell a consistent story. Look specifically for:\n- Workout parameters: cadence targets, power percentages, interval durations, rep counts\n- Research claims: study names, percentage improvements, protocol descriptions\n- Tier or progression information\n- Any claim on the site that contradicts or is absent from the source documents, or vice versa\n\nStart your response with exactly one of:\n  INCONSISTENCY FOUND: (then list what differs)\n  CONSISTENT: no issues found.\n\nBe precise. Cite specific numbers or claims if you find a mismatch.',
+              text: 'You are auditing a fitness training website for consistency with its source documents.\n\nThe next two images are full-page screenshots of the website — the workout library (home page) and the rationale page. After the images are the two source markdown documents the site is based on.\n\nYour task: check whether the website and the source documents tell a consistent story. Look specifically for:\n- Workout parameters: cadence targets, power percentages, interval durations, rep counts\n- Research claims: study names, percentage improvements, protocol descriptions\n- Tier or progression information\n- Any claim on the site that contradicts or is absent from the source documents, or vice versa\n\nStart your response with exactly one of:\n  INCONSISTENCY FOUND: (then list what differs)\n  CONSISTENT: no issues found.\n\nBe precise. Cite specific numbers or claims if you find a mismatch.',
             },
             {
               type: 'image',
@@ -71,7 +71,7 @@ async function callClaude(homeB64, scienceB64, rationaleText, calendarText, samp
             },
             {
               type: 'image',
-              source: { type: 'base64', media_type: 'image/png', data: scienceB64 },
+              source: { type: 'base64', media_type: 'image/png', data: rationaleB64 },
             },
             {
               type: 'text',
@@ -96,10 +96,10 @@ async function callClaude(homeB64, scienceB64, rationaleText, calendarText, samp
 
 async function main() {
   console.log('Taking screenshots...')
-  const { homeShot, scienceShot } = await takeScreenshots()
+  const { homeShot, rationaleShot } = await takeScreenshots()
 
   const homeB64 = homeShot.toString('base64')
-  const scienceB64 = scienceShot.toString('base64')
+  const rationaleB64 = rationaleShot.toString('base64')
   const rationaleText = readFileSync(join(RESEARCH_DIR, 'high-torque-training-research.md'), 'utf-8')
   const calendarText = readFileSync(join(RESEARCH_DIR, 'training-calendar.md'), 'utf-8')
 
@@ -107,7 +107,7 @@ async function main() {
 
   const results = await Promise.all(
     Array.from({ length: NUM_SAMPLES }, (_, i) =>
-      callClaude(homeB64, scienceB64, rationaleText, calendarText, i + 1)
+      callClaude(homeB64, rationaleB64, rationaleText, calendarText, i + 1)
         .then(text => ({ sample: i + 1, ok: true, text }))
         .catch(err => ({ sample: i + 1, ok: false, text: `ERROR: ${err.message}` }))
     )

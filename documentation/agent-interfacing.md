@@ -65,11 +65,26 @@ For each piece: **what** it is and **why** it's there. Listed roughly in order o
 
 **Why.** Some HTML extractors used by `web_fetch`-style tools strip `<noscript>` content before passing the HTML to the model. A regular `<a>` survives those extractors. This is a hedge — costs almost nothing, helps in edge cases where `<noscript>` doesn't reach the agent.
 
-### 6. Per-route prerendering — *deferred, not yet built*
+### 6. Per-route prerendering
 
-**What it would be.** A build-time step that emits route-specific HTML (e.g., `dist/index.html` for the workouts page, `dist/science/index.html` for the rationale page). Each could then carry its own targeted noscript and `<link rel="alternate">`.
+**What.** A build-time step (`site/scripts/prerender.mjs`, invoked from
+`postbuild`) that emits route-specific HTML — `dist/index.html` for the
+home (workouts) page, and both `dist/rationale.html` and
+`dist/rationale/index.html` for the rationale page. Each carries its
+own `<title>`, `<noscript>` block, and off-screen agent anchor pointing
+at its primary markdown counterpart.
 
-**Why we don't have it yet.** We have not implemented pre-rendering of the pages yet. It will come soon.
+**Why.** Without prerendering, `curl https://.../rationale` returns an
+empty `<div id="root">`. Crawlers, link previews, reader-mode
+browsers, and agents that don't run JS get nothing. The prerender
+makes each route's content available in the initial HTML response, and
+makes the per-page agent hints (above) addressable per route instead
+of being averaged across one shared template.
+
+**Details.** See `documentation/prerendering.md` for the load-bearing
+outcomes (what any future refactor must preserve), the components,
+and the rationale for collateral choices that can change without
+breaking anything.
 
 ### 7. Attribution rules in llms.txt
 
@@ -79,7 +94,7 @@ For each piece: **what** it is and **why** it's there. Listed roughly in order o
 
 ### 8. `site/scripts/check-consistency.mjs` — drift detector
 
-**What.** A Playwright + Claude Sonnet vision script. Takes full-page screenshots of `/` and `/science`, compares each against the corresponding markdown source via 5 parallel vision calls, and exits non-zero on any contradiction. Documented in root `CLAUDE.md` → "Consistency check"; usage requires `ANTHROPIC_API_KEY` and a running dev/preview server.
+**What.** A Playwright + Claude Sonnet vision script. Takes full-page screenshots of `/` and `/rationale`, compares each against the corresponding markdown source via 5 parallel vision calls, and exits non-zero on any contradiction. Documented in root `CLAUDE.md` → "Consistency check"; usage requires `ANTHROPIC_API_KEY` and a running dev/preview server.
 
 **Why.** Risk being prevented: someone edits a React component but forgets the markdown source, or vice versa. The page and the canonical document drift. The check catches that before it ships.
 
@@ -99,6 +114,8 @@ site/public/content/rationale.md        generated from research/high-torque-trai
 site/package.json (prebuild script)     copies research/*.md → public/content/
 site/index.html                         <head> link tags + <body> noscript + off-screen anchor
 site/scripts/check-consistency.mjs      drift detector (used per CLAUDE.md)
+site/scripts/prerender.mjs              per-route static HTML emitter (postbuild)
+site/src/entry-server.tsx               SSR entry: renderToString(<App/>)
 research/training-calendar.md           canonical source — workout library + calendar
 research/high-torque-training-research.md  canonical source — science + rationale
 ```
@@ -107,18 +124,32 @@ research/high-torque-training-research.md  canonical source — science + ration
 
 A simple test to run whenever any of the components above changes — adding, removing, or modifying — or after a deploy if you want to sanity-check the live site:
 
-1. **Agent reliability test.** From a fresh chat in claude.ai (and ideally also ChatGPT and Gemini), ask:
+1. **Static HTML smoke check.** After any change to the prerender
+   pipeline, build the site and `curl` both routes against the local
+   preview server:
+
+   ```bash
+   cd site && npm run build && npx vite preview &
+   sleep 2
+   curl -s http://localhost:4173/ | grep -q Adaptation && echo "✓ home prerendered"
+   curl -s http://localhost:4173/rationale | grep -q Hebisz && echo "✓ rationale prerendered"
+   ```
+
+   Both lines should print. If either is silent, the prerender produced
+   an empty shell — investigate before deploying.
+
+2. **Agent reliability test.** From a fresh chat in claude.ai (and ideally also ChatGPT and Gemini), ask:
    - "Can you tell me what is on https://high-torque.jelen.dk?"
-   - "What does the science page say?"
+   - "What does the rationale page say?"
    - "What workouts are in the library?"
 
    Repeat each prompt 3–5 times in fresh conversations. Confirm the agent (a) reaches the markdown content and (b) preserves source attribution when summarising claims.
 
-2. **Test against the deployed site, not locally.** Agents fetch the public URL — local dev/preview doesn't exercise the same path. Push to a branch and use a preview deploy if you want to test before merging.
+3. **Test against the deployed site, not locally.** Agents fetch the public URL — local dev/preview doesn't exercise the same path. Push to a branch and use a preview deploy if you want to test before merging.
 
-3. **When trying out a new convention** (e.g., `/.well-known/llms.json`, structured data, an HTTP-header-based system): add it *alongside* the existing approach, verify with the test, then evaluate whether older layers are still needed.
+4. **When trying out a new convention** (e.g., `/.well-known/llms.json`, structured data, an HTTP-header-based system): add it *alongside* the existing approach, verify with the test, then evaluate whether older layers are still needed.
 
-4. **Bias toward fewer layers.** Every layer is maintenance and surface area. The setup exists because it was empirically necessary — not because more layers are inherently better.
+5. **Bias toward fewer layers.** Every layer is maintenance and surface area. The setup exists because it was empirically necessary — not because more layers are inherently better.
 
 ## A note on this document's lifespan
 

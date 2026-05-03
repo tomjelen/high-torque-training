@@ -1,17 +1,17 @@
-import { SCIENCE_SECTIONS } from '../data'
+import { RATIONALE_SECTIONS } from '../data'
 import Cite from './Cite'
 import SourcesList from './SourcesList'
 
-export default function SciencePage() {
+export default function RationalePage() {
   return (
     <article>
       <div className="mb-6">
-        <h1 className="text-3xl font-bold text-slate-100 mt-6 mb-1">Science &amp; Rationale</h1>
+        <h1 className="text-3xl font-bold text-slate-100 mt-6 mb-1">Rationale</h1>
         <p className="text-slate-400 text-sm m-0">Why these workouts work, what the evidence actually says, and where to push back.</p>
       </div>
 
-      <div className="science-content">
-        {SCIENCE_SECTIONS.map((s) => (
+      <div className="rationale-content">
+        {RATIONALE_SECTIONS.map((s) => (
           <details key={s.id} id={s.id} open className="border-b border-slate-800 mb-1">
             <summary className="text-xl font-bold text-slate-100 py-3 cursor-pointer list-none select-none hover:text-slate-300">
               {s.heading}
