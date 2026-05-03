@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "prebuild": "rsync -a --delete --delete-excluded --include='*/' --include='*.zwo' --exclude='*' ../workouts/ public/workouts && cd public/workouts && zip -r high-torque-workouts.zip . && cd ../.. && mkdir -p public/content && cp ../research/high-torque-training-research.md public/content/rationale.md && cp ../research/training-calendar.md public/content/workouts.md && node scripts/generate-tss.mjs",
-    "build": "tsc -b && vite build",
+    "build": "tsc -b && vite build && vite build --ssr src/entry-server.tsx --outDir dist-ssr",
+    "postbuild": "node scripts/prerender.mjs",
     "lint": "eslint .",
     "preview": "vite preview",
     "test": "vitest run",

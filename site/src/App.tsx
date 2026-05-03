@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 import IntroPanel from './components/IntroPanel'
 import DownloadInstallPanel from './components/DownloadInstallPanel'
 import AdaptationPanel from './components/AdaptationPanel'
@@ -59,11 +59,7 @@ function AppShell() {
 }
 
 function App() {
-  return (
-    <BrowserRouter>
-      <AppShell />
-    </BrowserRouter>
-  )
+  return <AppShell />
 }
 
 export default App
