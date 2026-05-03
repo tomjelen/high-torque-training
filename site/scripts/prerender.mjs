@@ -8,6 +8,8 @@
 // this script must preserve, and site-specification/2026-05-03-prerender-design.md
 // for the full rationale.
 
+// Assumes cwd is `site/` (true for `npm run postbuild`). Reads dist/
+// cwd-relative; imports the SSR bundle relative to this file's URL.
 import { readFileSync, writeFileSync, mkdirSync } from 'fs'
 import { join, dirname } from 'path'
 
@@ -16,8 +18,38 @@ const SSR_BUNDLE = '../dist-ssr/entry-server.js'
 
 const { render } = await import(SSR_BUNDLE)
 
+const NOSCRIPT_REGEX = /<noscript>[\s\S]*?<\/noscript>/
+const ANCHOR_REGEX = /<a href="\/llms\.txt"[^>]*>[^<]*<\/a>/
+const TITLE_REGEX = /<title>[^<]*<\/title>/
+const ROOT_PLACEHOLDER = '<div id="root"></div>'
+
 const template = readFileSync(join(DIST, 'index.html'), 'utf-8')
 
+// Validate that the template still matches all the patterns the per-route
+// substitutions depend on. If any of these stops matching (e.g. someone
+// reformats index.html), prerendering would silently produce stale output;
+// failing here makes the regression loud.
+for (const [name, pattern] of [
+  ['title', TITLE_REGEX],
+  ['noscript', NOSCRIPT_REGEX],
+  ['anchor', ANCHOR_REGEX],
+  ['root placeholder', ROOT_PLACEHOLDER],
+]) {
+  const matches = typeof pattern === 'string' ? template.includes(pattern) : pattern.test(template)
+  if (!matches) {
+    console.error(
+      `prerender: index.html no longer matches the ${name} pattern. ` +
+      `The per-route substitution would silently no-op. Aborting build.`
+    )
+    process.exit(1)
+  }
+}
+
+// Marker strings MUST NOT appear anywhere in the static index.html
+// template (or in any other route's marker neighbourhood) — the post-
+// substitution `html.includes(marker)` check is meaningful only because
+// these words come from the rendered React tree. If you change a marker,
+// grep index.html first.
 const ROUTES = [
   {
     path: '/',
@@ -61,17 +93,16 @@ function buildAnchor(route) {
   return `<a href="${route.primaryMd}" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden" aria-hidden="true" tabindex="-1">Agent: primary content for this page is at ${route.primaryMd}</a>`
 }
 
-const NOSCRIPT_REGEX = /<noscript>[\s\S]*?<\/noscript>/
-const ANCHOR_REGEX = /<a href="\/llms\.txt"[^>]*>[^<]*<\/a>/
-const TITLE_REGEX = /<title>[^<]*<\/title>/
-const ROOT_PLACEHOLDER = '<div id="root"></div>'
-
 for (const route of ROUTES) {
   const body = render(route.path)
 
   const html = template
     .replace(TITLE_REGEX, `<title>${route.title}</title>`)
     .replace(NOSCRIPT_REGEX, buildNoscript(route))
+    // ANCHOR_REGEX must run AFTER the noscript replace; the new noscript
+    // contains its own <a href="/llms.txt"> link, and we rely on document
+    // order (the off-screen anchor appears earlier in index.html) to
+    // ensure the correct match wins.
     .replace(ANCHOR_REGEX, buildAnchor(route))
     .replace(ROOT_PLACEHOLDER, `<div id="root">${body}</div>`)
 
