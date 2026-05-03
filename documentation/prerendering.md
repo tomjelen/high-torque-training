@@ -85,33 +85,64 @@ Compiled by `vite build --ssr` into `dist-ssr/entry-server.js`.
 CSR trees can never diverge. Using `<StaticRouter>` here (instead of
 `<BrowserRouter>`) is what makes per-URL rendering possible.
 
-### 3. Two-phase hydration in `AppShell`
+### 3. Two-phase hydration in `AppShell` (SSR-collapsed + layout effect)
 
-**What.** `AppShell` initialises with `DEFAULT_STATE` (so the first
-hydrate render matches the SSR output exactly), then a
-`useIsomorphicLayoutEffect` synchronously calls `loadState()` and
-`setState(...)` before the browser paints.
+**What.** Two pieces working together:
 
-**Why.** This is what guarantees outcome 2 (no flash). The two-phase
-pattern matters specifically because:
+- **SSR / first hydrate render uses `PRERENDER_STATE`** — a constant
+  in `storage.ts` that's structurally `DEFAULT_STATE` but with every
+  panel `collapsed: true`. So the prerendered HTML and the client's
+  first render both have all `<details>` rendered *without* the
+  `open` attribute.
+- **`useIsomorphicLayoutEffect` then calls `loadState()` and
+  `setState(...)`** synchronously before paint of subsequent React
+  renders. For returning users, this brings in their persisted state.
+  For first-time visitors, `loadState()` returns `DEFAULT_STATE`
+  (panels expanded), and the layout effect applies it.
 
-- Initialising with `loadState()` directly would cause hydration
-  mismatch warnings (SSR rendered defaults; client wants user state).
-- Loading state in a regular `useEffect` would run *after* paint,
-  which is the flash.
-- `useLayoutEffect` runs synchronously before paint, but warns under
-  SSR — hence the isomorphic wrapper.
+**Why.** This is what guarantees outcome 2 (no flash). The mechanism
+specifically addresses the SSR painting problem:
+
+- The browser paints SSR HTML *before* the JS bundle loads. If the
+  SSR HTML had panels open (per `DEFAULT_STATE`) and the user has
+  collapsed panels in `localStorage`, the user would see panels
+  open-then-closed when JS finally hydrates — a jarring
+  content-disappears flash.
+- Rendering panels collapsed by default in SSR means the worst-case
+  flash flips direction: first-time visitors see panels closed, then
+  they open as the layout effect runs. That "reveal" direction is
+  psychologically benign — content appears, doesn't disappear.
+- `useLayoutEffect` (via the isomorphic wrapper) runs before *the
+  next* paint after React commits, so the reveal happens in one
+  paint cycle once JS is ready.
+
+Returning users with all panels collapsed see zero flash. Returning
+users with mixed state see only the panels they had open reveal.
+First-time visitors see all panels reveal. The trade-off was
+deliberate (see the rejected alternative below).
 
 A subtle implementation detail that's load-bearing for performance:
 `loadState()` returns the *same `DEFAULT_STATE` reference* (not a
 structural copy) when `localStorage` is empty. React's `setState`
-bails out on reference equality, so the no-saved-state path skips a
-second render and an extra `saveState` call. Correctness is
-unaffected if someone changes `return DEFAULT_STATE` to
-`return {...DEFAULT_STATE}` — but the bailout disappears.
+on the same reference bails out, so the no-saved-state path skips an
+unnecessary re-render. Correctness is unaffected if someone changes
+`return DEFAULT_STATE` to `return {...DEFAULT_STATE}` — but the
+bailout disappears.
 
-Any refactor that swaps SSR frameworks must reproduce this two-phase
-pattern (or its equivalent).
+Any refactor that swaps SSR frameworks must reproduce this pattern
+(or its equivalent — a way to render in a "safe" state on the server
+that won't flash for the common returning-user case, then load the
+real state pre-paint on the client).
+
+**What does still flash:** the tracker entries and adaptation card
+completion states populate via the layout effect after hydration.
+For returning users with logged sessions or completed adaptation
+weeks, those bits of personal content "appear" rather than being
+present in the prerender. This is acceptable: it's a reveal of
+user-specific data, which feels like progressive enhancement, not a
+chrome glitch. Eliminating it would require either server-side
+state (impossible on static hosting) or a much larger refactor of
+how state mounts.
 
 ### 4. Two-layer build-time safety net in `prerender.mjs`
 
@@ -211,13 +242,30 @@ change them freely as long as the essential outcomes still hold.
 - **vike or similar Vite SSG plugin.** Inherits framework cost
   without giving anything compelling for two routes.
 - **react-snap.** Unmaintained and Vite-unfriendly.
-- **Inline pre-hydration script** that reads `localStorage` and
-  stashes it on `window.__HT_STATE__` before React loads. Considered
-  during design. Redundant once `useIsomorphicLayoutEffect` is in
-  place — the layout effect runs before paint and can read
-  `localStorage` directly. The inline script would have added
-  complexity (template insertion point, window-attribute coupling)
-  for no behavioural improvement.
+- **Inline pre-hydration script that mutates `<details>` `open`
+  attributes** (the dark-mode-style pattern). Considered during
+  design and again during implementation after the first attempt at
+  no-flash hydration was found to still flash. Rejected because
+  unlike dark mode — where the inline script sets a class on
+  `<html>` (which React doesn't render) — the `open` attribute on
+  `<details>` is *managed by React's vDOM*. To make the pattern work
+  with React-managed attributes you'd need both a DOM mutation in
+  the script AND a state-stashing on `window` so React's `useState`
+  initialiser sees the persisted state. That doubles the moving
+  parts (~40 lines, two coordinated locations) and creates a brittle
+  coupling between the HTML script and the React state shape. The
+  `Panel.tsx` component compounds this: the collapsed-state teaser
+  is conditional on React state, not on the DOM `open` attribute, so
+  even with a perfect DOM mutation the teaser would still pop in
+  late. Start-collapsed-in-SSR delivers most of the benefit at much
+  lower complexity.
+
+- **Inline pre-hydration script that stashes localStorage on
+  `window.__HT_STATE__`**, with `useState` initialiser reading from
+  it. An older design variant. Doesn't actually fix the flash on
+  its own — the JS bundle still has to load before React can use
+  any state, so SSR HTML still paints first. Only useful as a
+  helper for the script-mutates-DOM approach above.
 
 ## Quick reference
 
@@ -227,7 +275,7 @@ site/src/entry-server.tsx                   SSR entry — renderToString(<App/>)
 site/src/lib/useIsomorphicLayoutEffect.ts   no-flash hydration helper
 site/src/App.tsx                            AppShell two-phase state load
 site/src/main.tsx                           hydrateRoot + BrowserRouter
-site/src/storage.ts                         DEFAULT_STATE singleton return enables setState bailout
+site/src/storage.ts                         DEFAULT_STATE + PRERENDER_STATE; singleton-ref return enables setState bailout
 site/package.json                           build runs vite build --ssr; postbuild runs prerender
 ```
 

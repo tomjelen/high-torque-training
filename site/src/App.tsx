@@ -7,7 +7,7 @@ import CollectionPanel from './components/CollectionPanel'
 import RationalePage from './components/RationalePage'
 import Header from './components/Header'
 import Footer from './components/Footer'
-import { loadState, saveState, DEFAULT_STATE } from './storage'
+import { loadState, saveState, PRERENDER_STATE } from './storage'
 import useIsomorphicLayoutEffect from './lib/useIsomorphicLayoutEffect'
 import type { AppState } from './types'
 
@@ -42,7 +42,7 @@ function RationaleRoute() {
 }
 
 function AppShell() {
-  const [state, setState] = useState<AppState>(DEFAULT_STATE)
+  const [state, setState] = useState<AppState>(PRERENDER_STATE)
 
   useIsomorphicLayoutEffect(() => {
     setState(loadState())
