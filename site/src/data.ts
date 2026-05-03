@@ -1,7 +1,7 @@
-import type { ScienceSection, Source, Tier, Workout } from './types'
+import type { RationaleSection, Source, Tier, Workout } from './types'
 import { TSS } from './generated/tss'
 
-export const SCIENCE_SECTIONS: ScienceSection[] = [
+export const RATIONALE_SECTIONS: RationaleSection[] = [
   { id: 'what', heading: 'What is torque training?' },
   { id: 'why', heading: 'Why does it work?' },
   { id: 'knee', heading: 'Knee safety' },

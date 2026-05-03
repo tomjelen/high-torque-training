@@ -1,4 +1,4 @@
-import { SCIENCE_SECTIONS } from '../data'
+import { RATIONALE_SECTIONS } from '../data'
 import Cite from './Cite'
 import SourcesList from './SourcesList'
 
@@ -10,8 +10,8 @@ export default function RationalePage() {
         <p className="text-slate-400 text-sm m-0">Why these workouts work, what the evidence actually says, and where to push back.</p>
       </div>
 
-      <div className="science-content">
-        {SCIENCE_SECTIONS.map((s) => (
+      <div className="rationale-content">
+        {RATIONALE_SECTIONS.map((s) => (
           <details key={s.id} id={s.id} open className="border-b border-slate-800 mb-1">
             <summary className="text-xl font-bold text-slate-100 py-3 cursor-pointer list-none select-none hover:text-slate-300">
               {s.heading}
