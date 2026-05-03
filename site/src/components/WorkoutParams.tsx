@@ -18,7 +18,7 @@ export default function WorkoutParams({ params, tss }: Props) {
       {tss !== undefined && (
         <>
           <dt className="text-slate-500">Est. TSS</dt>
-          <dd className="text-slate-200 font-mono font-bold text-right m-0">{tss}</dd>
+          <dd className="text-slate-200 font-mono text-right m-0">{tss}</dd>
         </>
       )}
     </dl>
