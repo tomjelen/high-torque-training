@@ -3,6 +3,7 @@ import UsageGuidelines from './UsageGuidelines'
 import CollectionCard from './CollectionCard'
 import SessionTracker from './SessionTracker'
 import { COLLECTION_WORKOUTS } from '../data'
+import { todayLocalIso } from '../utils/tracker'
 import type { AppState, LogEntry, Workout } from '../types'
 
 interface Props {
@@ -24,7 +25,7 @@ export default function CollectionPanel({ state, setState }: Props) {
     const entry: LogEntry = {
       id: `log-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
       workoutId,
-      timestamp: new Date().toISOString(),
+      timestamp: todayLocalIso(),
     }
     setState((prev) => ({ ...prev, log: [...prev.log, entry] }))
   }
@@ -37,7 +38,7 @@ export default function CollectionPanel({ state, setState }: Props) {
     setState((prev) => ({
       ...prev,
       log: prev.log.map((e) =>
-        e.id === id ? { ...e, timestamp: `${isoDate}T12:00:00.000Z` } : e,
+        e.id === id ? { ...e, timestamp: isoDate } : e,
       ),
     }))
   }

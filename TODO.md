@@ -13,16 +13,12 @@
 
 ## Site
 
-- [x] No reason for collapsible installation instructions
-- [x] Verify knee safety warning
-- [x] User guideline & tiers looks bad design-wise
-- [x] Session tracker. Delete and edit date.
 - [ ] Last phase of redesign document
-- [x] Feels like we have two styles of warnings. Work it out.
-- [ ] Check table/mobile
 - [ ] Bi-directional state management
 - [ ] Find a way to check firefox/chromium compatability. FF first, but I realize most people use Chrome.
 - [ ] Use the implementation plan to write some tests or documentation
+- [ ] Workout Zwift-like visualizations
+- [ ] Tablet/mobile design
 
 ## Workout files
 

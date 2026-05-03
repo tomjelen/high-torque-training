@@ -1,18 +1,18 @@
 import { useState } from 'react'
 import type { AnnotatedEntry } from './TrackerLog'
+import { todayLocalIso } from '../utils/tracker'
 
 function formatGap(days: number): string {
-  const val = days % 1 === 0 ? `${days}d` : `${days.toFixed(1)}d`
-  return `+${val}`
+  if (days === 0) return 'today'
+  return `+${days}d`
 }
 
-function todayLocalIso(): string {
-  const d = new Date()
-  const y = d.getFullYear()
-  const m = String(d.getMonth() + 1).padStart(2, '0')
-  const day = String(d.getDate()).padStart(2, '0')
-  return `${y}-${m}-${day}`
+function formatGapTitle(days: number, isFirst: boolean): string {
+  const d = `${days} day${days === 1 ? '' : 's'}`
+  if (isFirst) return days === 0 ? 'Today!' : `${d} since this session`
+  return `${d} between this and the following session`
 }
+
 
 interface Props {
   entry: AnnotatedEntry
@@ -23,7 +23,7 @@ interface Props {
 type Mode = 'idle' | 'confirming-delete' | 'editing-date'
 
 export default function TrackerLogEntry({ entry, onDelete, onSetDate }: Props) {
-  const { id, name, isHard, dateLabel, isoDate, gap } = entry
+  const { id, name, isHard, dateLabel, isoDate, gap, isFirst } = entry
   const [mode, setMode] = useState<Mode>('idle')
   const [draftDate, setDraftDate] = useState(isoDate)
 
@@ -90,8 +90,13 @@ export default function TrackerLogEntry({ entry, onDelete, onSetDate }: Props) {
           </button>
           <span className="text-slate-300 truncate flex-1 min-w-0">{name}</span>
 
-          {mode === 'idle' && gap !== null && (
-            <span className="text-slate-600 flex-shrink-0 font-mono">{formatGap(gap)}</span>
+          {mode === 'idle' && (
+            <span
+              title={formatGapTitle(gap, isFirst)}
+              className="text-slate-600 flex-shrink-0 font-mono cursor-default"
+            >
+              {formatGap(gap)}
+            </span>
           )}
 
           {mode === 'idle' && (

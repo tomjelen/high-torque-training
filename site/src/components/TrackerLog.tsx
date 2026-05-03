@@ -7,7 +7,8 @@ export interface AnnotatedEntry {
   isHard: boolean
   dateLabel: string
   isoDate: string // YYYY-MM-DD
-  gap: number | null
+  gap: number
+  isFirst: boolean
 }
 
 const INITIAL_SHOW = 5

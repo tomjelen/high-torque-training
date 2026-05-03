@@ -1,5 +1,6 @@
 import { useMemo } from 'react'
 import { COLLECTION_WORKOUTS } from '../data'
+import { calcGap, todayLocalIso } from '../utils/tracker'
 import TrackerCounter from './TrackerCounter'
 import TrackerStrip from './TrackerStrip'
 import TrackerLog from './TrackerLog'
@@ -22,10 +23,6 @@ function isHardWorkout(workoutId: string): boolean {
   return (WORKOUT_META.get(workoutId)?.tier ?? 0) >= 3
 }
 
-function roundHalfDay(days: number): number {
-  return Math.round(days * 2) / 2
-}
-
 function formatDateLabel(isoTimestamp: string): string {
   const [y, m, d] = isoTimestamp.slice(0, 10).split('-').map(Number)
   return new Date(y, m - 1, d).toLocaleDateString(undefined, { month: 'short', day: 'numeric' })
@@ -37,12 +34,13 @@ export default function SessionTracker({ state, onDeleteEntry, onSetEntryDate }:
     [state.log],
   )
 
+  const todayIso = todayLocalIso()
+
   const daysSinceLastHard = useMemo(() => {
     const lastHard = sortedLog.find((e) => isHardWorkout(e.workoutId))
     if (!lastHard) return null
-    const diffMs = Date.now() - new Date(lastHard.timestamp).getTime()
-    return roundHalfDay(diffMs / (1000 * 60 * 60 * 24))
-  }, [sortedLog])
+    return calcGap(lastHard.timestamp, null, todayIso)
+  }, [sortedLog, todayIso])
 
   const dayMap = useMemo(() => {
     const map = new Map<string, 'hard' | 'easy'>()
@@ -56,13 +54,8 @@ export default function SessionTracker({ state, onDeleteEntry, onSetEntryDate }:
 
   const annotatedEntries = useMemo((): AnnotatedEntry[] => {
     return sortedLog.map((entry, i) => {
-      const prev = sortedLog[i + 1]
-      const gap = prev
-        ? roundHalfDay(
-            (new Date(entry.timestamp).getTime() - new Date(prev.timestamp).getTime()) /
-              (1000 * 60 * 60 * 24),
-          )
-        : null
+      const nextEntry = i === 0 ? null : sortedLog[i - 1]
+      const gap = calcGap(entry.timestamp, nextEntry?.timestamp ?? null, todayIso)
       return {
         id: entry.id,
         name: WORKOUT_META.get(entry.workoutId)?.name ?? entry.workoutId,
@@ -70,9 +63,10 @@ export default function SessionTracker({ state, onDeleteEntry, onSetEntryDate }:
         dateLabel: formatDateLabel(entry.timestamp),
         isoDate: entry.timestamp.slice(0, 10),
         gap,
+        isFirst: i === 0,
       }
     })
-  }, [sortedLog])
+  }, [sortedLog, todayIso])
 
   return (
     <div className="bg-slate-900/50 border border-slate-800 rounded-lg p-4">
