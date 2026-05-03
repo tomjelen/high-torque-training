@@ -13,12 +13,14 @@
 
 ## Site
 
-- [ ] Last phase of redesign document
-- [ ] Bi-directional state management
-- [ ] Find a way to check firefox/chromium compatability. FF first, but I realize most people use Chrome.
-- [ ] Use the implementation plan to write some tests or documentation
+- [-] Last phase of redesign document
+- [ ] The "How to use this collection" sub panel always collapses on reload. Should be visible initially and saved to state.
+- [ ] Should we have "hide" buttons on all panels?
 - [ ] Workout Zwift-like visualizations
 - [ ] Tablet/mobile design
+- [ ] Check in Chrome
+- [x] Use the implementation plan to write some tests or documentation
+- [ ] Bi-directional state management
 
 ## Workout files
 
