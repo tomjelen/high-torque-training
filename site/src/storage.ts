@@ -2,7 +2,7 @@ import type { AppState, PanelState } from './types'
 
 const KEY = 'ht-state'
 
-const DEFAULT: AppState = {
+export const DEFAULT_STATE: AppState = {
   adaptation: {},
   panels: {
     intro: { collapsed: false },
@@ -21,7 +21,7 @@ function loadPanel(p: unknown, name: keyof AppState['panels']): PanelState {
 export function loadState(): AppState {
   try {
     const raw = localStorage.getItem(KEY)
-    if (!raw) return DEFAULT
+    if (!raw) return DEFAULT_STATE
     const p = JSON.parse(raw) as unknown
     return {
       adaptation: (p as AppState | null)?.adaptation ?? {},
@@ -35,7 +35,7 @@ export function loadState(): AppState {
       adaptationCheckInConfirmed: (p as AppState | null)?.adaptationCheckInConfirmed ?? false,
     }
   } catch {
-    return DEFAULT
+    return DEFAULT_STATE
   }
 }
 
