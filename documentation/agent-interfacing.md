@@ -67,7 +67,7 @@ For each piece: **what** it is and **why** it's there. Listed roughly in order o
 
 ### 6. Per-route prerendering — *deferred, not yet built*
 
-**What it would be.** A build-time step that emits route-specific HTML (e.g., `dist/index.html` for the workouts page, `dist/science/index.html` for the rationale page). Each could then carry its own targeted noscript and `<link rel="alternate">`.
+**What it would be.** A build-time step that emits route-specific HTML (e.g., `dist/index.html` for the workouts page, `dist/rationale/index.html` for the rationale page). Each could then carry its own targeted noscript and `<link rel="alternate">`.
 
 **Why we don't have it yet.** We have not implemented pre-rendering of the pages yet. It will come soon.
 
@@ -79,7 +79,7 @@ For each piece: **what** it is and **why** it's there. Listed roughly in order o
 
 ### 8. `site/scripts/check-consistency.mjs` — drift detector
 
-**What.** A Playwright + Claude Sonnet vision script. Takes full-page screenshots of `/` and `/science`, compares each against the corresponding markdown source via 5 parallel vision calls, and exits non-zero on any contradiction. Documented in root `CLAUDE.md` → "Consistency check"; usage requires `ANTHROPIC_API_KEY` and a running dev/preview server.
+**What.** A Playwright + Claude Sonnet vision script. Takes full-page screenshots of `/` and `/rationale`, compares each against the corresponding markdown source via 5 parallel vision calls, and exits non-zero on any contradiction. Documented in root `CLAUDE.md` → "Consistency check"; usage requires `ANTHROPIC_API_KEY` and a running dev/preview server.
 
 **Why.** Risk being prevented: someone edits a React component but forgets the markdown source, or vice versa. The page and the canonical document drift. The check catches that before it ships.
 
@@ -109,7 +109,7 @@ A simple test to run whenever any of the components above changes — adding, re
 
 1. **Agent reliability test.** From a fresh chat in claude.ai (and ideally also ChatGPT and Gemini), ask:
    - "Can you tell me what is on https://high-torque.jelen.dk?"
-   - "What does the science page say?"
+   - "What does the rationale page say?"
    - "What workouts are in the library?"
 
    Repeat each prompt 3–5 times in fresh conversations. Confirm the agent (a) reaches the markdown content and (b) preserves source attribution when summarising claims.

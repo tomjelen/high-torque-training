@@ -2,7 +2,7 @@ import { Link, useLocation } from 'react-router-dom'
 
 export default function Header() {
   const { pathname } = useLocation()
-  const onScience = pathname === '/science'
+  const onRationale = pathname === '/rationale'
 
   return (
     <header className="sticky top-0 z-10 border-b border-slate-800 bg-slate-950/90 backdrop-blur-sm">
@@ -11,10 +11,10 @@ export default function Header() {
           High Torque Training
         </Link>
         <Link
-          to={onScience ? '/' : '/science'}
+          to={onRationale ? '/' : '/rationale'}
           className="text-sm text-slate-400 no-underline hover:text-slate-200"
         >
-          {onScience ? 'Workouts →' : 'Science & Rationale →'}
+          {onRationale ? 'Workouts →' : 'Rationale →'}
         </Link>
       </div>
     </header>

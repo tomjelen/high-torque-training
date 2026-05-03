@@ -21,12 +21,12 @@ Desktop only for now. Do not add responsive layouts, mobile breakpoints, or touc
 Each page has its own "Last updated" date shown in the footer, defined in `src/App.tsx`:
 
 - `HOME_LAST_UPDATED` — home/workouts page
-- `SCIENCE_LAST_UPDATED` — science/rationale page
+- `RATIONALE_LAST_UPDATED` — rationale page
 
 These dates signal **information freshness**, but the two pages calibrate this differently because they promise different things to the reader:
 
 - **`HOME_LAST_UPDATED` (workouts page)** — a library. Bump on any content edit: a new workout, a tweaked duration, a renamed file, a corrected description. The date answers "when was the library last changed?"
-- **`SCIENCE_LAST_UPDATED` (rationale page)** — an evidence review. Bump only when the substance changes: new or revised research, updated coaching input, corrected claims, changed confidence levels. Do **not** bump for typo fixes or wording tweaks that don't change the substance. The date answers "when was the science last reviewed?"
+- **`RATIONALE_LAST_UPDATED` (rationale page)** — an evidence review. Bump only when the substance changes: new or revised research, updated coaching input, corrected claims, changed confidence levels. Do **not** bump for typo fixes or wording tweaks that don't change the substance. The date answers "when was the rationale last reviewed?"
 
 Never bump either date for site chrome — footer/header copy, styling, layout, component refactors — since those don't affect what either page promises.
 

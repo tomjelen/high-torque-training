@@ -144,8 +144,8 @@ export default function IntroPanel({ state, setState }: Props) {
               physiotherapy and coaching sources alike.
             </p>
             <p className="m-0 pt-1">
-              <Link to="/science" className="text-blue-400 hover:text-blue-300">
-                → Read the full rationale and sources on the Science page
+              <Link to="/rationale" className="text-blue-400 hover:text-blue-300">
+                → Read the full rationale and sources
               </Link>
             </p>
           </div>

@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-/* Base styles for SciencePage raw HTML content */
+/* Base styles for RationalePage HTML content */
 .science-content p { @apply text-sm text-slate-300 mb-3 leading-relaxed; }
 .science-content strong { @apply text-slate-200; }
 .science-content em { @apply italic; }
