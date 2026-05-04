@@ -13,12 +13,14 @@
 
 ## Site
 
-- [-] Last phase of redesign document
+- [x] Last phase of redesign document
+- [x] Add search engine indexing artifacts
 - [ ] The "How to use this collection" sub panel always collapses on reload. Should be visible initially and saved to state.
 - [ ] Should we have "hide" buttons on all panels?
 - [ ] Workout Zwift-like visualizations
 - [ ] Tablet/mobile design
-- [ ] Check in Chrome
+- [ ] "Best viewed on a desktop"?
+- [x] Check in Chrome
 - [x] Use the implementation plan to write some tests or documentation
 - [ ] Bi-directional state management
 
@@ -34,3 +36,9 @@
 
 - [ ] Update skill so that it handles long messages in textevents better, either duration or split into multiple messages.
 - [ ] zwo-skill to public repo. Share with the world!
+
+## Future / parking lot
+
+- [ ] Garmin/Wahoo/etc workouts
+- [ ] Another iteration on the research/rationale. Is it all sound?
+- [ ] Can I get API access to Zwift for the workouts?

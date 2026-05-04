@@ -8,12 +8,25 @@ import { join, dirname } from 'path'
 
 const DIST = 'dist'
 const SSR_BUNDLE = '../dist-ssr/entry-server.js'
+const DOMAIN = 'https://high-torque.jelen.dk'
+
+// Read last-updated dates from the authoritative source rather than maintaining
+// a separate copy. If the constants are ever renamed, the build will fail loudly.
+const appSrc = readFileSync('src/App.tsx', 'utf-8')
+function extractDate(name) {
+  const m = appSrc.match(new RegExp(`const ${name} = '(\\d{4}-\\d{2}-\\d{2})'`))
+  if (!m) { console.error(`prerender: could not find ${name} in src/App.tsx`); process.exit(1) }
+  return m[1]
+}
+const HOME_LAST_UPDATED = extractDate('HOME_LAST_UPDATED')
+const RATIONALE_LAST_UPDATED = extractDate('RATIONALE_LAST_UPDATED')
 
 const { render } = await import(SSR_BUNDLE)
 
 const NOSCRIPT_REGEX = /<noscript>[\s\S]*?<\/noscript>/
 const ANCHOR_REGEX = /<a href="\/llms\.txt"[^>]*>[^<]*<\/a>/
 const TITLE_REGEX = /<title>[^<]*<\/title>/
+const META_DESCRIPTION_REGEX = /<meta name="description" content="[^"]*" \/>/
 const ROOT_PLACEHOLDER = '<div id="root"></div>'
 
 const template = readFileSync(join(DIST, 'index.html'), 'utf-8')
@@ -24,6 +37,7 @@ const template = readFileSync(join(DIST, 'index.html'), 'utf-8')
 // failing here makes the regression loud.
 for (const [name, pattern] of [
   ['title', TITLE_REGEX],
+  ['meta description', META_DESCRIPTION_REGEX],
   ['noscript', NOSCRIPT_REGEX],
   ['anchor', ANCHOR_REGEX],
   ['root placeholder', ROOT_PLACEHOLDER],
@@ -49,6 +63,8 @@ const ROUTES = [
     outputs: ['dist/index.html'],
     marker: 'Adaptation',
     title: 'High Torque Training',
+    description: 'Research-backed Zwift workout library for low-cadence, high-torque cycling training. Downloadable .zwo files with a 12-week training calendar.',
+    lastmod: HOME_LAST_UPDATED,
     primaryMd: '/content/workouts.md',
     primaryDescription: 'the workout library and training calendar (what to do)',
     secondaryMd: '/content/rationale.md',
@@ -61,6 +77,8 @@ const ROUTES = [
     outputs: ['dist/rationale.html', 'dist/rationale/index.html'],
     marker: 'Hebisz',
     title: 'Rationale — High Torque Training',
+    description: 'Why grind a big gear? The science behind high-torque cycling training: muscle fiber recruitment, study findings, and how the workout protocols connect to the research.',
+    lastmod: RATIONALE_LAST_UPDATED,
     primaryMd: '/content/rationale.md',
     primaryDescription: 'the rationale behind the workouts (why it works)',
     secondaryMd: '/content/workouts.md',
@@ -91,6 +109,7 @@ for (const route of ROUTES) {
 
   const html = template
     .replace(TITLE_REGEX, `<title>${route.title}</title>`)
+    .replace(META_DESCRIPTION_REGEX, `<meta name="description" content="${route.description}" />`)
     .replace(NOSCRIPT_REGEX, buildNoscript(route))
     // ANCHOR_REGEX must run AFTER the noscript replace; the new noscript
     // contains its own <a href="/llms.txt"> link, and we rely on document
@@ -113,3 +132,14 @@ for (const route of ROUTES) {
     console.log(`prerender: wrote ${out} (${html.length} bytes, marker "${route.marker}" present)`)
   }
 }
+
+const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${ROUTES.map(r => `  <url>
+    <loc>${DOMAIN}${r.path === '/' ? '/' : r.path}</loc>
+    <lastmod>${r.lastmod}</lastmod>
+  </url>`).join('\n')}
+</urlset>
+`
+writeFileSync(join(DIST, 'sitemap.xml'), sitemap)
+console.log(`prerender: wrote dist/sitemap.xml (lastmod: home=${HOME_LAST_UPDATED}, rationale=${RATIONALE_LAST_UPDATED})`)
