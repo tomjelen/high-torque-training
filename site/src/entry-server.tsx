@@ -17,7 +17,7 @@ const ROUTE_META: Record<string, PageMeta> = {
   },
   '/rationale': {
     title: 'Rationale — High Torque Training',
-    description: 'Why grind a big gear? The science behind high-torque cycling training: muscle fiber recruitment, study findings, and how the workout protocols connect to the research.',
+    description: 'Why grind a big gear? The research and coaching evidence behind low-cadence, high-torque cycling training — and how it shapes the workouts.',
     lastmod: RATIONALE_LAST_UPDATED,
   },
 }
