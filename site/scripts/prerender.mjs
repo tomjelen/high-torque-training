@@ -47,7 +47,7 @@ const ROUTES = [
     primaryDescription: 'the workout library and training calendar (what to do)',
     secondaryMd: '/content/rationale.md',
     secondaryDescription: 'the rationale behind the workouts (why it works)',
-    noscriptIntro: 'This site is JavaScript-rendered. The home page is the workout library and calendar.',
+    noscriptIntro: 'The home page is the workout library and training calendar.',
   },
   {
     path: '/rationale',
@@ -57,7 +57,7 @@ const ROUTES = [
     primaryDescription: 'the rationale behind the workouts (why it works)',
     secondaryMd: '/content/workouts.md',
     secondaryDescription: 'the workout library and training calendar (what to do)',
-    noscriptIntro: 'This site is JavaScript-rendered. This page explains the rationale behind the workouts.',
+    noscriptIntro: 'This page explains the rationale behind the workouts.',
   },
 ]
 
