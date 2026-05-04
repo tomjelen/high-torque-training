@@ -62,28 +62,49 @@ in order of how load-bearing each is.
 **What.** A small Node ESM script invoked from `postbuild`. Reads
 `dist/index.html` as a template, imports `render(url)` from the SSR
 bundle, and for each configured route: calls `render`, injects
-route-specific `<title>` / `<noscript>` / off-screen anchor into the
-template via string replacement, asserts the output contains a known
-marker string, and writes the result to one or more output paths.
+route-specific `<title>` / `<meta name="description">` / `<noscript>` /
+off-screen agent anchor into the template by replacing HTML-comment
+placeholders (`<!--app-title-->`, `<!--app-description-->`,
+`<!--app-noscript-->`, `<!--app-agent-anchor-->`), asserts the output
+contains a known marker string, and writes the result to one or more
+output paths.
 
 Before processing any route, the script also validates up-front that
-the template still matches every substitution pattern — so a future
-edit to `index.html` that breaks one of the regexes fails the build
-loudly instead of silently producing stale output.
+the template still contains every placeholder — so a future edit to
+`index.html` that drops or renames one fails the build loudly instead
+of silently producing stale output.
 
 **Why.** This is the load-bearing component. It's the place that
-guarantees outcomes 1, 3, 4, and 5 simultaneously. The route table
-inside the script is the single source of truth for per-page metadata.
+guarantees outcomes 1, 3, 4, and 5 simultaneously. Per-page metadata
+is split: build-only fields (output paths, marker, agent/noscript
+copy) live in this script's `ROUTES` table; React-side fields (title,
+description, lastmod) come back from `render()` so the same values
+also drive client-side behaviour (see component 2).
 
 ### 2. `site/src/entry-server.tsx`
 
 **What.** A small entry file that exports
-`render(url) = renderToString(<StaticRouter location={url}><App/></StaticRouter>)`.
-Compiled by `vite build --ssr` into `dist-ssr/entry-server.js`.
+`render(url)` returning `{ html, title, description, lastmod }`,
+where `html` is `renderToString(<StaticRouter location={url}><App/></StaticRouter>)`
+and the metadata fields come from a `ROUTE_META` map keyed by URL.
+The `lastmod` values are imported from `App.tsx` (`HOME_LAST_UPDATED`,
+`RATIONALE_LAST_UPDATED`), so renaming either constant is a TypeScript
+error rather than a silent failure. Compiled by `vite build --ssr`
+into `dist-ssr/entry-server.js`.
 
 **Why.** Imports the same `<App />` the client does, so the SSR and
 CSR trees can never diverge. Using `<StaticRouter>` here (instead of
 `<BrowserRouter>`) is what makes per-URL rendering possible.
+
+Returning page metadata alongside the HTML keeps the title and
+description tied to the React app rather than to a parallel table in
+the build script. The same titles are also set client-side via
+`useEffect(() => { document.title = ... })` in each route component,
+so SPA navigation between `/` and `/rationale` (via the Header
+`<Link>`) updates the tab title — the prerendered title alone wouldn't
+cover that case. The two title strings (entry-server's `ROUTE_META`
+and the route components' `useEffect`) are duplicated by hand; if you
+add a third route, dedupe via a shared module.
 
 ### 3. Two-phase hydration in `AppShell` (SSR-collapsed + layout effect)
 
@@ -148,49 +169,55 @@ how state mounts.
 
 **What.**
 - **Pre-loop:** validates that `index.html` still contains each of the
-  four substitution patterns (`<title>...`, `<noscript>...`, the
-  off-screen `<a href="/llms.txt">` anchor, and the
-  `<div id="root"></div>` placeholder). `process.exit(1)` if any
-  pattern stops matching.
+  five expected placeholders (`<title><!--app-title--></title>`,
+  `<!--app-description-->`, `<!--app-noscript-->`,
+  `<!--app-agent-anchor-->`, and `<div id="root"></div>`).
+  `process.exit(1)` if any is missing.
 - **Per route:** after substitution, checks the output contains a
   known marker string (`Adaptation` for home, `Hebisz` for rationale).
   `process.exit(1)` if missing.
 
-Markers are deliberately content the page must always contain.
+Markers are deliberately content the page must always contain, *and*
+must not appear anywhere in the static `index.html` template — the
+post-substitution `html.includes(marker)` check is meaningful only
+because these words come from the rendered React tree.
 
 **Why.** The most insidious failure modes are silent:
 - "Build succeeds but the output is an empty SPA shell" — caught by
   the marker assertion.
-- "Template was reformatted, regex doesn't match anymore, substitution
+- "Template was reformatted, a placeholder got dropped, substitution
   silently no-ops" — caught by the up-front validation.
 
 If markers ever become wrong (e.g. a content rewrite removes the word
 "Adaptation"), pick a new marker — the *mechanism* is what matters,
-not the exact strings. Same for the patterns: the *mechanism* of
-"validate before substituting" is what matters; the exact regexes
-adapt to whatever shape `index.html` takes.
+not the exact strings. Same for the placeholders: the *mechanism* of
+"validate before substituting" is what matters; the exact comment
+names adapt to whatever shape `index.html` takes.
 
 ### 5. Per-route HTML rewriting
 
 **What.** The prerender script does targeted string replacements on
-the shared `dist/index.html` template:
+the shared `dist/index.html` template, swapping each placeholder for
+route-specific content:
 
-- `<title>...</title>` → route-specific title.
-- `<noscript>...</noscript>` → route-specific noscript with primary
-  markdown link first.
-- The off-screen `<a href="/llms.txt" ...>` anchor → a route-specific
-  anchor pointing at the page's primary markdown counterpart.
+- `<title><!--app-title--></title>` → `<title>{route title}</title>`.
+- `<!--app-description-->` → `<meta name="description" content="...">`.
+- `<!--app-noscript-->` → route-specific `<noscript>` block with the
+  page's primary markdown link first, secondary second.
+- `<!--app-agent-anchor-->` → off-screen `<a>` pointing at the page's
+  primary markdown counterpart (home → `/content/workouts.md`,
+  rationale → `/content/rationale.md`).
 - `<div id="root"></div>` → `<div id="root">{rendered HTML}</div>`.
 
-Order is load-bearing: the new noscript block contains its own
-`<a href="/llms.txt">` link, so the anchor replacement must run
-*after* the noscript replacement (and rely on document order to make
-sure the right match wins). The script comments this inline.
+Each placeholder is a unique string that doesn't appear anywhere else
+in the template, so replacement order doesn't matter — unlike the
+prior regex-based scheme, which relied on document order to
+disambiguate two `<a href="/llms.txt">` anchors.
 
 **Why.** Per-page agent hints (outcome 3) and content (outcome 1).
-String replacement is sufficient because the template is small, the
-regions are unambiguous, and the cost of a real templating engine
-isn't justified for two routes.
+Placeholder-based string replacement is sufficient because the
+template is small, the regions are unambiguous, and the cost of a real
+templating engine isn't justified for two routes.
 
 ### 6. Dual-output for `/rationale`
 
@@ -224,9 +251,10 @@ change them freely as long as the essential outcomes still hold.
   HTML, not Tailwind-processed CSS.
 - **`react-dom/server.renderToString`.** Could be `renderToPipeableStream`
   or any equivalent. We don't need streaming for two static routes.
-- **String-replace vs. a templating engine.** The four substitutions
-  are unambiguous; using `mustache`/`handlebars` would be over-
-  engineering. If the substitutions ever grow more complex, switch.
+- **String-replace vs. a templating engine.** The substitutions are
+  unambiguous (unique placeholder comments); using
+  `mustache`/`handlebars` would be over-engineering. If the
+  substitutions ever grow more complex, switch.
 - **`typeof window !== 'undefined'` in `useIsomorphicLayoutEffect`.**
   Functionally equivalent to `typeof document !== 'undefined'`.
   Matches what `react-redux` and `framer-motion` use.
@@ -271,7 +299,7 @@ change them freely as long as the essential outcomes still hold.
 
 ```
 site/scripts/prerender.mjs                  per-route static HTML emitter (postbuild)
-site/src/entry-server.tsx                   SSR entry — renderToString(<App/>)
+site/src/entry-server.tsx                   SSR entry — render(url) returns {html, title, description, lastmod}
 site/src/lib/useIsomorphicLayoutEffect.ts   no-flash hydration helper
 site/src/App.tsx                            AppShell two-phase state load
 site/src/main.tsx                           hydrateRoot + BrowserRouter
@@ -305,14 +333,16 @@ hydration mechanism, or `AppShell`'s state load:
    should be free of hydration-mismatch warnings.
 
 4. **Marker assertion (silent SSR regression).** Edit
-   `entry-server.tsx` to return `''`, run `npm run build` — the build
-   must fail with a clear error mentioning the missing "Adaptation"
-   marker. Revert.
+   `entry-server.tsx` to return an empty `html` field (e.g. replace
+   the `renderToString(...)` call with `''`), run `npm run build` —
+   the build must fail with a clear error mentioning the missing
+   "Adaptation" marker. Revert.
 
-5. **Pattern validation (silent template regression).** Temporarily
-   edit `site/index.html` to rename or remove the `<noscript>` block,
-   run `npm run build` — the build must fail with a clear error
-   mentioning the `noscript` pattern. Revert.
+5. **Placeholder validation (silent template regression).** Temporarily
+   edit `site/index.html` to rename or remove one of the placeholder
+   comments (e.g. `<!--app-noscript-->`), run `npm run build` — the
+   build must fail with a clear error naming the missing placeholder.
+   Revert.
 
 ## Lifespan note
 

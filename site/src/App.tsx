@@ -11,10 +11,11 @@ import { loadState, saveState, PRERENDER_STATE } from './storage'
 import useIsomorphicLayoutEffect from './lib/useIsomorphicLayoutEffect'
 import type { AppState } from './types'
 
-const HOME_LAST_UPDATED = '2026-05-02'
-const RATIONALE_LAST_UPDATED = '2026-04-30'
+export const HOME_LAST_UPDATED = '2026-05-02'
+export const RATIONALE_LAST_UPDATED = '2026-04-30'
 
 function HomePage({ state, setState }: { state: AppState; setState: React.Dispatch<React.SetStateAction<AppState>> }) {
+  useEffect(() => { document.title = 'High Torque Training' }, [])
   return (
     <main className="mx-auto max-w-[1440px] px-8 pb-4">
       <IntroPanel state={state} setState={setState} />
@@ -30,6 +31,7 @@ function HomePage({ state, setState }: { state: AppState; setState: React.Dispat
 }
 
 function RationaleRoute() {
+  useEffect(() => { document.title = 'Rationale — High Torque Training' }, [])
   return (
     <main className="mx-auto max-w-[1440px] px-8 pb-4">
       <RationalePage />
