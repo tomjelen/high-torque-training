@@ -1,8 +1,18 @@
+import type { SyntheticEvent } from 'react'
 import Cite from './Cite'
 
-export default function UsageGuidelines() {
+interface Props {
+  collapsed: boolean
+  onToggle: (collapsed: boolean) => void
+}
+
+export default function UsageGuidelines({ collapsed, onToggle }: Props) {
+  function handleToggle(e: SyntheticEvent<HTMLDetailsElement>) {
+    onToggle(!e.currentTarget.open)
+  }
+
   return (
-    <details className="border border-slate-800 rounded bg-slate-950 mb-4 group">
+    <details open={!collapsed} onToggle={handleToggle} className="border border-slate-800 rounded bg-slate-950 mb-4 group">
       <summary className="flex items-center justify-between gap-4 px-4 py-3 cursor-pointer list-none select-none hover:bg-slate-800/30 text-sm">
         <span className="text-slate-300">
           <strong className="text-slate-200">How to use this collection</strong>
@@ -215,10 +225,7 @@ export default function UsageGuidelines() {
         <div className="flex justify-end pt-1">
           <button
             type="button"
-            onClick={(e) => {
-              const details = e.currentTarget.closest('details')
-              if (details) details.open = false
-            }}
+            onClick={() => onToggle(true)}
             className="text-xs text-slate-500 hover:text-slate-300 cursor-pointer"
           >
             Hide ▴

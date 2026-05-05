@@ -55,6 +55,7 @@ export interface AppState {
     download: PanelState
     adaptation: PanelState
     collection: PanelState
+    usageGuidelines: PanelState
   }
   log: LogEntry[]
   adaptationCheckInConfirmed: boolean

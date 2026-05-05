@@ -32,7 +32,11 @@ export default function AdaptationPanel({ state, setState }: Props) {
     setState((s) => ({
       ...s,
       adaptationCheckInConfirmed: true,
-      panels: { ...s.panels, adaptation: { collapsed: true } },
+      panels: {
+        ...s.panels,
+        adaptation: { collapsed: true },
+        usageGuidelines: { collapsed: false },
+      },
     }))
   }
 

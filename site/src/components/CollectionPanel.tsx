@@ -43,6 +43,10 @@ export default function CollectionPanel({ state, setState }: Props) {
     }))
   }
 
+  function onToggleUsageGuidelines(collapsed: boolean) {
+    setState((s) => ({ ...s, panels: { ...s.panels, usageGuidelines: { collapsed } } }))
+  }
+
   return (
     <Panel
       title="The High Torque Collection"
@@ -50,7 +54,10 @@ export default function CollectionPanel({ state, setState }: Props) {
       collapsed={state.panels.collection.collapsed}
       onToggle={onToggle}
     >
-      <UsageGuidelines />
+      <UsageGuidelines
+        collapsed={state.panels.usageGuidelines.collapsed}
+        onToggle={onToggleUsageGuidelines}
+      />
 
       <div className="grid grid-cols-[1fr_300px] gap-4">
         <div className="grid grid-cols-3 gap-3 content-start">

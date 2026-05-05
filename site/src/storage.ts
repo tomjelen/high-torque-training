@@ -9,6 +9,7 @@ export const DEFAULT_STATE: AppState = {
     download: { collapsed: false },
     adaptation: { collapsed: false },
     collection: { collapsed: false },
+    usageGuidelines: { collapsed: false },
   },
   log: [],
   adaptationCheckInConfirmed: false,
@@ -28,6 +29,7 @@ export const PRERENDER_STATE: AppState = {
     download: { collapsed: true },
     adaptation: { collapsed: true },
     collection: { collapsed: true },
+    usageGuidelines: { collapsed: true },
   },
 }
 
@@ -47,6 +49,7 @@ export function loadState(): AppState {
         download: loadPanel(parsed, 'download'),
         adaptation: loadPanel(parsed, 'adaptation'),
         collection: loadPanel(parsed, 'collection'),
+        usageGuidelines: loadPanel(parsed, 'usageGuidelines'),
       },
       log: parsed?.log ?? [],
       adaptationCheckInConfirmed: parsed?.adaptationCheckInConfirmed ?? false,
