@@ -13,3 +13,4 @@
 - [Workout attribution integrity](feedback_attribution.md) — Never invent workouts; every value must trace to a named source
 - [One question at a time](feedback_one_question.md) — Don't batch 6 questions; ask the most important one first
 - [rpm lowercase convention](feedback_rpm_lowercase.md) — Cadence unit is always written "rpm", never "RPM"
+- ["High torque" over "low cadence" in user-facing copy](feedback_high_torque_over_low_cadence.md) — Tagline/title/marketing copy: prefer "high torque"; "low cadence" is fine for mechanical descriptions only

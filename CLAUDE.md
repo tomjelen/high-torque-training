@@ -41,7 +41,8 @@ This is the most important principle in the project: **every session, every rule
 
 ## Naming
 
-- Low cadence = high torque. The project uses "High Torque" as the brand name. Do not use "Low Torque."
+- The project's brand name is "High Torque" / "High Torque Training."
+- **Prefer "high torque" over "low cadence" in user-facing copy** (taglines, page titles, meta descriptions, marketing text). "High torque" captures both the low cadence *and* the meaningful intensity that defines this training; plain "low cadence" also covers easy spinning, which is not what this is about. "Low cadence" is fine when describing the mechanical aspect specifically (e.g., "seated, low-cadence intervals" in a workout description) — but the *training modality* is "high-torque training," not "low-cadence training."
 - Workout folder names: "High Torque - Phase N ..." or "High Torque - Library"
 
 ## Consistency check
