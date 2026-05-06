@@ -9,6 +9,12 @@ interface PageMeta {
   lastmod: string
 }
 
+// SEO note: the descriptions below deliberately include "low-cadence" alongside
+// "high torque". Per CLAUDE.md → Naming, "high torque" is the preferred term in
+// user-facing copy because it's more accurate (it captures the *intensity*, not
+// just the rpm). But cyclists frequently search for "low cadence training" —
+// meta descriptions feed search engines, not readers, so we keep both terms
+// here to match either query.
 const ROUTE_META: Record<string, PageMeta> = {
   '/': {
     title: 'High Torque Training — Free Training Plan for Zwift',

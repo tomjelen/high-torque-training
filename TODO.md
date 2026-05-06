@@ -23,6 +23,7 @@
 - [x] Check in Chrome
 - [x] Use the implementation plan to write some tests or documentation
 - [ ] Bi-directional state management
+- [ ] SEO: Add a short /about page — your Abzu/ML background + A/B Zwift racer credibility + why you built this. Three paragraphs is enough. This is what closes the E-E-A-T gap for Google.
 
 ## Workout files
 
