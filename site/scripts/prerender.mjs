@@ -16,6 +16,7 @@ const ROOT_PLACEHOLDER = '<div id="root"></div>'
 const PLACEHOLDERS = [
   '<title><!--app-title--></title>',
   '<!--app-description-->',
+  '<!--app-canonical-->',
   '<!--app-noscript-->',
   '<!--app-agent-anchor-->',
   ROOT_PLACEHOLDER,
@@ -82,9 +83,12 @@ const sitemapEntries = []
 for (const route of ROUTES) {
   const { html: body, title, description, lastmod } = render(route.path)
 
+  const canonical = `${DOMAIN}${route.path === '/' ? '/' : route.path}`
+
   const html = template
     .replace('<title><!--app-title--></title>', `<title>${title}</title>`)
     .replace('<!--app-description-->', `<meta name="description" content="${description}" />`)
+    .replace('<!--app-canonical-->', `<link rel="canonical" href="${canonical}" />`)
     .replace('<!--app-noscript-->', buildNoscript(route, title))
     .replace('<!--app-agent-anchor-->', buildAnchor(route))
     .replace(ROOT_PLACEHOLDER, `<div id="root">${body}</div>`)
