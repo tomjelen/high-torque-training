@@ -15,7 +15,7 @@ export default function IntroPanel({ state, setState }: Props) {
 
   return (
     <Panel
-      title="Intro — what, why & who"
+      heading="Intro — what, why & who"
       teaser="+8.7% VO2max at low cadence — one small trial, but the cleanest test we have"
       collapsed={state.panels.intro.collapsed}
       onToggle={onToggle}

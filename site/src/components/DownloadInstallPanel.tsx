@@ -25,7 +25,7 @@ export default function DownloadInstallPanel({ state, setState }: Props) {
 
   return (
     <Panel
-      title="Install Zwift workouts"
+      heading="Install Zwift workouts"
       teaser="Download all workouts (.zip) — install once, then collapse me"
       headerAction={zipButton}
       collapsed={state.panels.download.collapsed}

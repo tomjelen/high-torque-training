@@ -11,12 +11,12 @@ interface PageMeta {
 
 const ROUTE_META: Record<string, PageMeta> = {
   '/': {
-    title: 'High Torque Training',
-    description: 'Research-backed Zwift workout library for low-cadence, high-torque cycling training. Downloadable .zwo files with a 12-week training calendar.',
+    title: 'High Torque Training — Free Training Plan for Zwift',
+    description: 'Free Zwift training plan for high torque, low-cadence cycling — research-backed workouts with a 12-week calendar.',
     lastmod: HOME_LAST_UPDATED,
   },
   '/rationale': {
-    title: 'Rationale — High Torque Training',
+    title: 'High Torque Training — The Science and Rationale',
     description: 'Why grind a big gear? The research and coaching evidence behind low-cadence, high-torque cycling training — and how it shapes the workouts.',
     lastmod: RATIONALE_LAST_UPDATED,
   },

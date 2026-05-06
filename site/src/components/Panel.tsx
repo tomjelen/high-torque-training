@@ -1,7 +1,7 @@
 import type { ReactNode, SyntheticEvent } from 'react'
 
 interface PanelProps {
-  title: ReactNode
+  heading: ReactNode
   teaser?: ReactNode
   headerAction?: ReactNode
   collapsed: boolean
@@ -9,7 +9,7 @@ interface PanelProps {
   children: ReactNode
 }
 
-export default function Panel({ title, teaser, headerAction, collapsed, onToggle, children }: PanelProps) {
+export default function Panel({ heading, teaser, headerAction, collapsed, onToggle, children }: PanelProps) {
   function handleToggle(e: SyntheticEvent<HTMLDetailsElement>) {
     onToggle(!e.currentTarget.open)
   }
@@ -22,7 +22,7 @@ export default function Panel({ title, teaser, headerAction, collapsed, onToggle
     >
       <summary className="flex items-center justify-between gap-4 px-5 py-4 cursor-pointer list-none select-none hover:bg-slate-800/50">
         <div className="flex items-baseline gap-3 min-w-0">
-          <span className="font-semibold text-slate-100">{title}</span>
+          <h2 className="font-semibold text-slate-100 m-0 text-base">{heading}</h2>
           {teaser && collapsed && (
             <span className="text-sm text-slate-500 truncate">{teaser}</span>
           )}

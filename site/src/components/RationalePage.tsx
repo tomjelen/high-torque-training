@@ -6,15 +6,15 @@ export default function RationalePage() {
   return (
     <article>
       <div className="mb-6">
-        <h1 className="text-3xl font-bold text-slate-100 mt-6 mb-1">Rationale</h1>
+        <h1 className="text-3xl font-bold text-slate-100 mt-6 mb-1">The Science and Rationale</h1>
         <p className="text-slate-400 text-sm m-0">Why these workouts work, what the evidence actually says, and where to push back.</p>
       </div>
 
       <div className="rationale-content">
         {RATIONALE_SECTIONS.map((s) => (
           <details key={s.id} id={s.id} open className="border-b border-slate-800 mb-1">
-            <summary className="text-xl font-bold text-slate-100 py-3 cursor-pointer list-none select-none hover:text-slate-300">
-              {s.heading}
+            <summary className="group/sec py-3 cursor-pointer list-none select-none">
+              <h2 className="text-xl font-bold text-slate-100 m-0 inline group-hover/sec:text-slate-300">{s.heading}</h2>
             </summary>
             <div className="pb-4">
               {renderBody(s.id)}

@@ -15,9 +15,10 @@ export const HOME_LAST_UPDATED = '2026-05-02'
 export const RATIONALE_LAST_UPDATED = '2026-04-30'
 
 function HomePage({ state, setState }: { state: AppState; setState: React.Dispatch<React.SetStateAction<AppState>> }) {
-  useEffect(() => { document.title = 'High Torque Training' }, [])
+  useEffect(() => { document.title = 'High Torque Training — Free Training Plan for Zwift' }, [])
   return (
     <main className="mx-auto max-w-[1440px] px-8 pb-4">
+      <h1 className="text-3xl font-bold text-slate-100 mt-6 mb-6">Free training plan for Zwift</h1>
       <IntroPanel state={state} setState={setState} />
       <DownloadInstallPanel state={state} setState={setState} />
       <AdaptationPanel state={state} setState={setState} />
@@ -31,7 +32,7 @@ function HomePage({ state, setState }: { state: AppState; setState: React.Dispat
 }
 
 function RationaleRoute() {
-  useEffect(() => { document.title = 'Rationale — High Torque Training' }, [])
+  useEffect(() => { document.title = 'High Torque Training — The Science and Rationale' }, [])
   return (
     <main className="mx-auto max-w-[1440px] px-8 pb-4">
       <RationalePage />

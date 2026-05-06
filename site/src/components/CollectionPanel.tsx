@@ -49,7 +49,7 @@ export default function CollectionPanel({ state, setState }: Props) {
 
   return (
     <Panel
-      title="The High Torque Collection"
+      heading="The High Torque Collection"
       teaser={`${SORTED_WORKOUTS.length} sessions · sort: tier → title`}
       collapsed={state.panels.collection.collapsed}
       onToggle={onToggle}

@@ -52,7 +52,7 @@ export default function AdaptationPanel({ state, setState }: Props) {
 
   return (
     <Panel
-      title={
+      heading={
         <span>
           Adaptation Phase{' '}
           <span className="text-sm font-normal text-slate-400 font-mono ml-1">

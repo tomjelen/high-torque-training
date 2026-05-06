@@ -15,10 +15,10 @@
 
 - [x] Last phase of redesign document
 - [x] Add search engine indexing artifacts
-- [ ] The "How to use this collection" sub panel always collapses on reload. Should be visible initially and saved to state.
+- [x] The "How to use this collection" sub panel always collapses on reload. Should be visible initially and saved to state.
+- [ ] Tablet/mobile design
 - [ ] Should we have "hide" buttons on all panels?
 - [ ] Workout Zwift-like visualizations
-- [ ] Tablet/mobile design
 - [ ] "Best viewed on a desktop"?
 - [x] Check in Chrome
 - [x] Use the implementation plan to write some tests or documentation
