@@ -104,7 +104,7 @@ export default function TrackerLogEntry({ entry, onDelete, onSetDate }: Props) {
               type="button"
               aria-label="Delete entry"
               onClick={() => setMode('confirming-delete')}
-              className="flex-shrink-0 text-slate-600 hover:text-red-400 opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity cursor-pointer"
+              className="flex-shrink-0 text-slate-600 hover:text-red-400 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 sm:group-focus-within:opacity-100 transition-opacity cursor-pointer"
             >
               ✕
             </button>

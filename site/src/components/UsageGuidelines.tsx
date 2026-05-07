@@ -173,7 +173,7 @@ export default function UsageGuidelines({ collapsed, onToggle }: Props) {
           <h4 className="text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2 mt-0">Sample weeks</h4>
           <p className="m-0 mb-3 text-slate-500">Illustrative, not prescriptive. Fit the sessions into your existing schedule.</p>
 
-          <div className="grid grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <p className="m-0 mb-2">
                 <strong className="text-slate-300">Early ongoing</strong>{' '}

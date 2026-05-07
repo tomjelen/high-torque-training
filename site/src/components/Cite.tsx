@@ -14,7 +14,7 @@ export default function Cite({ sourceKey, note }: CiteProps) {
       href={source.url}
       target="_blank"
       rel="noopener noreferrer"
-      className="text-[0.8em] opacity-70 hover:opacity-100 no-underline hover:underline ml-1 text-inherit"
+      className="text-[0.8em] opacity-80 hover:opacity-100 no-underline hover:underline ml-1 text-inherit"
       title={tooltip}
     >
       [{source.shortName}]{note && '*'}

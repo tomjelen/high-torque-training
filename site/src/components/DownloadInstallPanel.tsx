@@ -31,12 +31,12 @@ export default function DownloadInstallPanel({ state, setState }: Props) {
       collapsed={state.panels.download.collapsed}
       onToggle={onToggle}
     >
-      <div className="flex items-center justify-between gap-6 border border-slate-800 rounded bg-slate-950 px-5 py-4 mb-4">
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between sm:gap-6 border border-slate-800 rounded bg-slate-950 px-5 py-4 mb-4">
         <p className="text-slate-400 text-sm m-0">
           Download all workouts as a zip, drop them into Zwift's workout folder,{' '}
           <strong className="text-slate-300">done once</strong> — then collapse this panel and forget it.
         </p>
-        <div className="flex items-center gap-3 flex-shrink-0">
+        <div className="flex items-center gap-3 sm:flex-shrink-0">
           <a
             href={ZIP_HREF}
             download

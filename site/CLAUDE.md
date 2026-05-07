@@ -14,7 +14,9 @@ export FNM_PATH="/home/jelen/.local/share/fnm" && export PATH="$FNM_PATH:$PATH" 
 
 ## UX scope
 
-Desktop only for now. Do not add responsive layouts, mobile breakpoints, or touch-specific interactions unless explicitly asked.
+Supports mobile, iPad (portrait + landscape), and desktop via Tailwind responsive prefixes (`sm:` 640, `md:` 768, `lg:` 1024). Desktop remains the primary target for layout decisions; new components should still look right at 1440 first, then adapt down.
+
+Mobile users can read everything but **cannot install workouts** (Zwift custom workouts require a desktop or tablet running Zwift). The install panel defaults to collapsed for mobile first-time visitors. Don't surface install-only CTAs in the mobile chrome.
 
 ## Last updated dates
 

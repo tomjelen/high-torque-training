@@ -8,11 +8,11 @@ interface FooterProps {
 
 export default function Footer({ lastUpdated, lastUpdatedTooltip }: FooterProps) {
   return (
-    <footer className="border-t border-slate-800 mt-10 pt-5 pb-8 px-8 mx-auto max-w-[1440px]">
-      <div className="flex items-start justify-between gap-6 text-sm text-slate-400">
+    <footer className="border-t border-slate-800 mt-10 pt-5 pb-8 px-4 sm:px-6 lg:px-8 mx-auto max-w-[1440px]">
+      <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between sm:gap-6 text-sm text-slate-400">
         <div>
           <div className="font-semibold text-slate-200 mb-1">Tom Jelen</div>
-          <div className="flex gap-4">
+          <div className="flex justify-between gap-4 sm:justify-start">
             <a
               href={`mailto:${MY_EMAIL}`}
               className="text-slate-400 hover:text-slate-200 no-underline"
@@ -48,7 +48,7 @@ export default function Footer({ lastUpdated, lastUpdatedTooltip }: FooterProps)
           </div>
         </div>
 
-        <p className="text-slate-400 text-sm m-0 flex-1 max-w-md">
+        <p className="text-slate-400 text-sm m-0 sm:flex-1 sm:max-w-md">
           Spotted bad info, a study I've missed, or an idea? Email me — I want to know.
           If your input shapes the rationale, I'll credit you there.
         </p>

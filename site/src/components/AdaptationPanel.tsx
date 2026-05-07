@@ -88,7 +88,7 @@ export default function AdaptationPanel({ state, setState }: Props) {
         </ol>
       </div>
 
-      <div className="grid grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {ADAPTATION_WORKOUTS.map((workout, i) => {
           const id = ORDER[i]
           const prevCompleted = i === 0 ? true : Boolean(state.adaptation[ORDER[i - 1]])

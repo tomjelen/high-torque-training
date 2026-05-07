@@ -32,7 +32,7 @@ export default function CollectionCard({ workout, onDidThis }: Props) {
           <a
             href={`/workouts/${workout.file}`}
             download
-            className="text-xs text-slate-500 hover:text-slate-300 no-underline"
+            className="text-sm sm:text-xs text-slate-500 hover:text-slate-300 no-underline px-2 py-1 sm:p-0"
             title="Download .zwo"
           >
             ⤓
@@ -40,7 +40,7 @@ export default function CollectionCard({ workout, onDidThis }: Props) {
           <button
             type="button"
             onClick={onDidThis}
-            className="text-xs font-mono text-slate-400 hover:text-slate-200 border border-slate-700 hover:border-slate-500 px-2 py-0.5 rounded cursor-pointer"
+            className="text-xs font-mono text-slate-400 hover:text-slate-200 border border-slate-700 hover:border-slate-500 px-3 py-1.5 sm:px-2 sm:py-0.5 rounded cursor-pointer"
           >
             ✓ today
           </button>

@@ -16,7 +16,7 @@
 - [x] Last phase of redesign document
 - [x] Add search engine indexing artifacts
 - [x] The "How to use this collection" sub panel always collapses on reload. Should be visible initially and saved to state.
-- [ ] Tablet/mobile design
+- [x] Tablet/mobile design
 - [ ] Should we have "hide" buttons on all panels?
 - [ ] Workout Zwift-like visualizations
 - [ ] "Best viewed on a desktop"?
@@ -24,6 +24,7 @@
 - [x] Use the implementation plan to write some tests or documentation
 - [ ] Bi-directional state management
 - [ ] SEO: Add a short /about page — your Abzu/ML background + A/B Zwift racer credibility + why you built this. Three paragraphs is enough. This is what closes the E-E-A-T gap for Google.
+- [ ] Tip when session tracker is empty
 
 ## Workout files
 

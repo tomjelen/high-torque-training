@@ -37,10 +37,19 @@ function loadPanel(parsed: AppState | null, name: keyof AppState['panels']): Pan
   return { collapsed: parsed?.panels?.[name]?.collapsed ?? false }
 }
 
-export function loadState(): AppState {
+export function loadState(isMobile = false): AppState {
   try {
     const raw = localStorage.getItem(KEY)
-    if (!raw) return DEFAULT_STATE
+    if (!raw) {
+      if (!isMobile) return DEFAULT_STATE
+      // Mobile first-time visitor: collapse the install panel by default —
+      // they can't install workouts on a phone, so the open panel is just
+      // wasted vertical scroll before the rest of the content.
+      return {
+        ...DEFAULT_STATE,
+        panels: { ...DEFAULT_STATE.panels, download: { collapsed: true } },
+      }
+    }
     const parsed = JSON.parse(raw) as AppState | null
     return {
       adaptation: parsed?.adaptation ?? {},

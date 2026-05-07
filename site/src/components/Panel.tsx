@@ -24,7 +24,7 @@ export default function Panel({ heading, teaser, headerAction, collapsed, onTogg
         <div className="flex items-baseline gap-3 min-w-0">
           <h2 className="font-semibold text-slate-100 m-0 text-base">{heading}</h2>
           {teaser && collapsed && (
-            <span className="text-sm text-slate-500 truncate">{teaser}</span>
+            <span className="hidden sm:inline text-sm text-slate-500 truncate">{teaser}</span>
           )}
         </div>
         <div className="flex items-center gap-3 flex-shrink-0">

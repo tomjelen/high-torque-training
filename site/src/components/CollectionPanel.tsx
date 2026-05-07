@@ -59,8 +59,8 @@ export default function CollectionPanel({ state, setState }: Props) {
         onToggle={onToggleUsageGuidelines}
       />
 
-      <div className="grid grid-cols-[1fr_300px] gap-4">
-        <div className="grid grid-cols-3 gap-3 content-start">
+      <div className="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-4">
+        <div className="order-2 lg:order-1 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 content-start">
           {SORTED_WORKOUTS.map((workout) => (
             <CollectionCard
               key={workout.id}
@@ -70,7 +70,7 @@ export default function CollectionPanel({ state, setState }: Props) {
           ))}
         </div>
 
-        <aside>
+        <aside className="order-1 lg:order-2">
           <SessionTracker
             state={state}
             onDeleteEntry={handleDeleteEntry}
