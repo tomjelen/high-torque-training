@@ -1,17 +1,6 @@
 import { useState } from 'react'
 import type { AnnotatedEntry } from './TrackerLog'
-import { todayLocalIso } from '../utils/tracker'
-
-function formatGap(days: number): string {
-  if (days === 0) return 'today'
-  return `+${days}d`
-}
-
-function formatGapTitle(days: number, isFirst: boolean): string {
-  const d = `${days} day${days === 1 ? '' : 's'}`
-  if (isFirst) return days === 0 ? 'Today!' : `${d} since this session`
-  return `${d} between this and the following session`
-}
+import { todayLocalIso, formatGap, formatGapTitle } from '../utils/tracker'
 
 
 interface Props {
@@ -95,7 +84,7 @@ export default function TrackerLogEntry({ entry, onDelete, onSetDate }: Props) {
               title={formatGapTitle(gap, isFirst)}
               className="text-slate-600 flex-shrink-0 font-mono cursor-default"
             >
-              {formatGap(gap)}
+              {formatGap(gap, isFirst)}
             </span>
           )}
 

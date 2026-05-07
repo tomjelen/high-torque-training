@@ -19,7 +19,6 @@
 - [x] Tablet/mobile design
 - [ ] Should we have "hide" buttons on all panels?
 - [ ] Workout Zwift-like visualizations
-- [ ] "Best viewed on a desktop"?
 - [x] Check in Chrome
 - [x] Use the implementation plan to write some tests or documentation
 - [ ] Bi-directional state management

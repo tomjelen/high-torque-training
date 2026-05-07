@@ -1,5 +1,5 @@
 import { describe, test, expect } from 'vitest'
-import { calcGap } from './tracker'
+import { calcGap, formatGap, formatGapTitle } from './tracker'
 
 describe('calcGap', () => {
   // Most recent entry (nextIsoDate = null) — gap is days from entry to today
@@ -30,5 +30,41 @@ describe('calcGap', () => {
   })
   test('DST spring-forward boundary does not add or lose a day', () => {
     expect(calcGap('2026-03-28', null, '2026-03-29')).toBe(1)
+  })
+})
+
+describe('formatGap', () => {
+  test('newest entry on today renders as "today"', () => {
+    expect(formatGap(0, true)).toBe('today')
+  })
+  test('newest entry N days ago renders as "+Nd"', () => {
+    expect(formatGap(3, true)).toBe('+3d')
+  })
+  test('older entry on the same day as the next session renders as "0d"', () => {
+    expect(formatGap(0, false)).toBe('0d')
+  })
+  test('older entry N days before the next session renders as "+Nd"', () => {
+    expect(formatGap(7, false)).toBe('+7d')
+  })
+})
+
+describe('formatGapTitle', () => {
+  test('newest entry on today → "Today!"', () => {
+    expect(formatGapTitle(0, true)).toBe('Today!')
+  })
+  test('newest entry 1 day ago is singular', () => {
+    expect(formatGapTitle(1, true)).toBe('1 day since this session')
+  })
+  test('newest entry several days ago is plural', () => {
+    expect(formatGapTitle(5, true)).toBe('5 days since this session')
+  })
+  test('older entry on the same day as the next session → "Same day"', () => {
+    expect(formatGapTitle(0, false)).toBe('Same day. Don\'t do HT sessions back-to-back!')
+  })
+  test('older entry 1 day before the next session is singular', () => {
+    expect(formatGapTitle(1, false)).toBe('1 day between this and the following session')
+  })
+  test('older entry several days before the next session is plural', () => {
+    expect(formatGapTitle(7, false)).toBe('7 days between this and the following session')
   })
 })
