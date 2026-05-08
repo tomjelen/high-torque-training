@@ -9,6 +9,7 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 import { loadState, saveState, PRERENDER_STATE } from './storage'
 import useIsomorphicLayoutEffect from './lib/useIsomorphicLayoutEffect'
+import useGoatCounterPageviews from './lib/useGoatCounterPageviews'
 import type { AppState } from './types'
 
 export const HOME_LAST_UPDATED = '2026-05-02'
@@ -46,6 +47,7 @@ function RationaleRoute() {
 
 function App() {
   const [state, setState] = useState<AppState>(PRERENDER_STATE)
+  useGoatCounterPageviews()
 
   useIsomorphicLayoutEffect(() => {
     const isMobile =

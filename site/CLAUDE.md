@@ -6,11 +6,7 @@ Specs, plans and a todo list for this site can be found in ../site-specification
 
 ## Node version
 
-This project uses `fnm` with `--use-on-cd` to manage Node versions. The required version is in `.nvmrc`. In non-interactive shells (like tool calls), activate it with:
-
-```bash
-export FNM_PATH="/home/jelen/.local/share/fnm" && export PATH="$FNM_PATH:$PATH" && eval "$(fnm env --use-on-cd --shell bash)"
-```
+The required Node version is in `.nvmrc`. Tom uses `fnm` to manage Node versions.
 
 ## UX scope
 
