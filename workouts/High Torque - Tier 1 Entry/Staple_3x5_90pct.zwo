@@ -7,45 +7,42 @@
     <tags />
     <workout>
         <Warmup Duration="900" PowerLow="0.40" PowerHigh="0.75">
-            <textevent timeoffset="30" message="Source: EVOQ.BIKE (scaled — 3 reps instead of 5)." />
-            <textevent timeoffset="40" message="Their staple torque session is 5x5min at ~90% FTP, 50-60 rpm. This is the shorter intro version." />
-            <textevent timeoffset="120" message="EVOQ positions torque training as an ongoing tool, not a one-off block." />
-            <textevent timeoffset="130" message="The goal: permanently stronger legs from 1-2 sessions per week." />
-            <textevent timeoffset="240" message="Key finding from EVOQ: 'If you go below tempo into zone 2," />
-            <textevent timeoffset="250" message="you probably won't be producing enough torque to make a meaningful difference.'" />
-            <textevent timeoffset="420" message="That's why this session is at ~90% FTP — right in the sweet spot zone." />
-            <textevent timeoffset="430" message="Enough intensity to drive the torque stimulus." />
+            <textevent timeoffset="30" duration="30" message="Source: EVOQ.BIKE (scaled — 3 reps instead of 5). Their staple torque session is 5x5min at ~90% FTP, 50-60 rpm. This is the shorter intro version." />
+            <textevent timeoffset="90" duration="20" message="All the research behind this program: high-torque.jelen.dk" />
+            <textevent timeoffset="120" duration="25" message="EVOQ positions torque training as an ongoing tool, not a one-off block. The goal: permanently stronger legs from 1-2 sessions per week." />
+            <textevent timeoffset="240" duration="30" message="Key finding from EVOQ: 'If you go below tempo into zone 2, you probably won't be producing enough torque to make a meaningful difference.'" />
+            <textevent timeoffset="420" duration="20" message="That's why this session is at ~90% FTP — right in the sweet spot zone. Enough intensity to drive the torque stimulus." />
             <textevent timeoffset="600" message="All intervals are SEATED. Target cadence: 50-60 rpm." />
-            <textevent timeoffset="780" message="If your knees ache at any point, stop the interval. Don't push through knee discomfort." />
+            <textevent timeoffset="780" duration="20" message="If your knees ache at any point, stop the interval. Don't push through knee discomfort." />
         </Warmup>
 
         <SteadyState Duration="300" Power="0.90" Cadence="55">
             <textevent timeoffset="10" message="Interval 1. ~90% FTP, 50-60 rpm. Stay seated." />
-            <textevent timeoffset="120" message="The Hebisz (2024) study: combining low cadence with high intensity drives greater muscle fiber recruitment —" />
-            <textevent timeoffset="130" message="both slow-twitch and fast-twitch fibers." />
+            <textevent timeoffset="150" message="Halfway. Hold the cadence low." />
             <textevent timeoffset="240" message="60 seconds left. Hold the cadence." />
         </SteadyState>
 
         <SteadyState Duration="300" Power="0.50">
             <textevent timeoffset="10" message="Recovery. Spin easy at normal cadence." />
-            <textevent timeoffset="150" message="EVOQ also recommend doing torque work on the same day as gym sessions." />
-            <textevent timeoffset="160" message="It 'activates all the neuromuscular pathways.'" />
+            <textevent timeoffset="60" duration="25" message="Hebisz (2024): combining low cadence with high intensity drives greater recruitment of both slow-twitch and fast-twitch muscle fibers." />
+            <textevent timeoffset="150" duration="20" message="EVOQ also recommend doing torque work on the same day as gym sessions. It 'activates all the neuromuscular pathways.'" />
         </SteadyState>
 
         <SteadyState Duration="300" Power="0.90" Cadence="55">
             <textevent timeoffset="10" message="Interval 2. ~90% FTP, 50-60 rpm. Stay seated." />
-            <textevent timeoffset="120" message="At 55 rpm, each pedal stroke produces roughly 60% more force than at 90 rpm. That's the training signal." />
+            <textevent timeoffset="150" message="Halfway. Legs working harder than your lungs — that's the right balance." />
             <textevent timeoffset="240" message="60 seconds left. Hold the cadence." />
         </SteadyState>
 
         <SteadyState Duration="300" Power="0.50">
             <textevent timeoffset="10" message="Recovery. Two down, one to go." />
+            <textevent timeoffset="60" duration="20" message="At 55 rpm, each pedal stroke produces roughly 60% more force than at 90 rpm. That's the training signal." />
             <textevent timeoffset="150" message="Knees still fine? Final interval next." />
         </SteadyState>
 
         <SteadyState Duration="300" Power="0.90" Cadence="55">
             <textevent timeoffset="10" message="Final interval. ~90% FTP, 50-60 rpm. Stay seated." />
-            <textevent timeoffset="120" message="Last effort. The adaptation comes from repeated high-force contractions — this is the final one today." />
+            <textevent timeoffset="150" message="Halfway. Last effort. Hold the cadence." />
             <textevent timeoffset="240" message="60 seconds left. Finish it." />
         </SteadyState>
 
@@ -56,9 +53,8 @@
 
         <Cooldown Duration="600" PowerLow="0.50" PowerHigh="0.40">
             <textevent timeoffset="30" message="Cool down. Easy spin." />
-            <textevent timeoffset="120" message="Once this session feels routine, move to the full 5x5 Torque Staple in Tier 2." />
-            <textevent timeoffset="300" message="Petr Vakoc (coached by Henderson) does torque work 'once to twice a week... three times per two weeks.'" />
-            <textevent timeoffset="310" message="That's a good target." />
+            <textevent timeoffset="120" duration="20" message="Once this session feels routine, move to the full 5x5 Torque Staple in Tier 2." />
+            <textevent timeoffset="300" duration="20" message="Petr Vakoc (coached by Henderson) does torque work 'once to twice a week... three times per two weeks.' That's a good target." />
         </Cooldown>
     </workout>
 </workout_file>

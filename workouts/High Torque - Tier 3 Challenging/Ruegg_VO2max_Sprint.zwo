@@ -8,25 +8,25 @@
     <tags />
     <workout>
         <Warmup Duration="1200" PowerLow="0.40" PowerHigh="0.75">
-            <textevent timeoffset="10" message="Source: EF Pro Cycling — coach Peter Schep, rider Noemi Rüegg. A pro team torque workout, not a research study." />
-            <textevent timeoffset="120" message="Each set: 5 minutes at 106-120% FTP and 50-60 rpm, then shift to a lighter gear for a 1-minute max sprint. 10-minute recovery between sets." />
-            <textevent timeoffset="240" message="Schep: the sprint at the end is to 'better your ability to transfer torque into power.' The combination trains both force production and explosiveness." />
-            <textevent timeoffset="360" message="Schep's progression for recreational riders: start at 60 rpm, 80-85% FTP for 15 min. Then threshold. Only then VO2max torque work like this." />
-            <textevent timeoffset="510" message="MODE NOTE: The sprints reach 150% FTP — ERG mode will not deliver a natural sprint feel at that intensity. Ride this workout in slope/resistance mode and manage gear yourself." />
-            <textevent timeoffset="570" message="SEATED for the 5-minute VO2max blocks. The sprint can be seated or standing — cadence is unconstrained during the sprint." />
-            <textevent timeoffset="690" message="KNEE WARNING: This session combines sustained high-torque load with explosive sprint effort. Elevated injury risk. Only attempt if Tier 2 sessions have been consistently comfortable." />
-            <textevent timeoffset="900" message="The 10-minute recovery between sets is essential. The combination of VO2max and sprint work requires full recovery for quality." />
-            <textevent timeoffset="1080" message="First set in 2 minutes. Find your gear for 50-60rpm at 110% FTP. Hard gear." />
+            <textevent timeoffset="10" duration="25" message="Source: EF Pro Cycling — coach Peter Schep, rider Noemi Rüegg. A pro team torque workout, not a research study." />
+            <textevent timeoffset="75" duration="20" message="All the research behind this program: high-torque.jelen.dk" />
+            <textevent timeoffset="120" duration="30" message="Each set: 5 minutes at 106-120% FTP and 50-60 rpm, then shift to a lighter gear for a 1-minute max sprint. 10-minute recovery between sets." />
+            <textevent timeoffset="240" duration="25" message="Schep: the sprint at the end is to 'better your ability to transfer torque into power.' The combination trains both force production and explosiveness." />
+            <textevent timeoffset="360" duration="25" message="Schep's progression for recreational riders: start at 60 rpm, 80-85% FTP for 15 min. Then threshold. Only then VO2max torque work like this." />
+            <textevent timeoffset="510" duration="30" message="MODE NOTE: The sprints reach 150% FTP — ERG mode will not deliver a natural sprint feel at that intensity. Ride this workout in slope/resistance mode and manage gear yourself." />
+            <textevent timeoffset="570" duration="25" message="SEATED for the 5-minute VO2max blocks. The sprint can be seated or standing — cadence is unconstrained during the sprint." />
+            <textevent timeoffset="690" duration="30" message="KNEE WARNING: This session combines sustained high-torque load with explosive sprint effort. Elevated injury risk. Only attempt if Tier 2 sessions have been consistently comfortable." />
+            <textevent timeoffset="900" duration="25" message="The 10-minute recovery between sets is essential. The combination of VO2max and sprint work requires full recovery for quality." />
+            <textevent timeoffset="1080" duration="20" message="First set in 2 minutes. Find your gear for 50-60rpm at 110% FTP. Hard gear." />
             <textevent timeoffset="1140" message="STAY SEATED for the 5-minute block. Sprint cadence is your choice." />
         </Warmup>
 
         <!-- Set 1 -->
         <SteadyState Duration="300" Power="1.10" Cadence="55">
             <textevent timeoffset="0" message="STAY SEATED. 50-60rpm. 110% FTP. 5 minutes." />
-            <textevent timeoffset="30" message="This is hard from the start. 50-60rpm at VO2max power creates enormous torque per stroke." />
-            <textevent timeoffset="90" message="EF Pro Cycling uses this format to develop both force production and the ability to translate torque into sprint power." />
+            <textevent timeoffset="30" duration="20" message="This is hard from the start. 50-60rpm at VO2max power creates enormous torque per stroke." />
             <textevent timeoffset="150" message="2.5 minutes. Halfway. Hold cadence. Legs and lungs both working hard." />
-            <textevent timeoffset="210" message="3.5 minutes. Sprint burst coming after this block. Mentally prepare — it is maximal." />
+            <textevent timeoffset="210" duration="20" message="3.5 minutes. Sprint burst coming after this block. Mentally prepare — it is maximal." />
             <textevent timeoffset="270" message="30 seconds. The sprint starts immediately after. Get ready." />
         </SteadyState>
 
@@ -38,17 +38,18 @@
 
         <SteadyState Duration="600" Power="0.50">
             <textevent timeoffset="0" message="Recovery. 10 minutes. You need them." />
-            <textevent timeoffset="120" message="That combination — sustained VO2max torque into a maximal sprint — taxes every energy system simultaneously." />
-            <textevent timeoffset="300" message="Knee check. The explosive sprint after sustained low-cadence work is the highest-risk moment in this session. How do they feel?" />
-            <textevent timeoffset="480" message="Set 2 in 2 minutes. Same structure: 5 min at 110% FTP, 50-60rpm, then 1-min sprint." />
+            <textevent timeoffset="60" duration="25" message="EF Pro Cycling uses this format to develop both force production and the ability to translate torque into sprint power." />
+            <textevent timeoffset="120" duration="25" message="That combination — sustained VO2max torque into a maximal sprint — taxes every energy system simultaneously." />
+            <textevent timeoffset="300" duration="30" message="Knee check. The explosive sprint after sustained low-cadence work is the highest-risk moment in this session. How do they feel?" />
+            <textevent timeoffset="480" duration="20" message="Set 2 in 2 minutes. Same structure: 5 min at 110% FTP, 50-60rpm, then 1-min sprint." />
             <textevent timeoffset="540" message="Find your gear. 50-60rpm. STAY SEATED for the VO2max block." />
         </SteadyState>
 
         <!-- Set 2 -->
         <SteadyState Duration="300" Power="1.10" Cadence="55">
             <textevent timeoffset="0" message="STAY SEATED. Set 2. 50-60rpm. 110% FTP. 5 minutes." />
-            <textevent timeoffset="60" message="Set 2 feels harder from the start. Fatigue from set 1 is cumulative. That is by design." />
-            <textevent timeoffset="150" message="Halfway. The study's participants were trained athletes — this protocol is demanding even for them." />
+            <textevent timeoffset="60" duration="20" message="Set 2 feels harder from the start. Fatigue from set 1 is cumulative. That is by design." />
+            <textevent timeoffset="150" message="Halfway. This is a demanding protocol — pro athletes train this way. Hold form." />
             <textevent timeoffset="240" message="1 minute left. Sprint coming." />
             <textevent timeoffset="270" message="30 seconds. Get ready to sprint." />
         </SteadyState>
@@ -61,8 +62,8 @@
 
         <SteadyState Duration="600" Power="0.50">
             <textevent timeoffset="0" message="Recovery. 10 minutes. Last set coming." />
-            <textevent timeoffset="120" message="Two sets done. If your knees feel anything joint-related, skip set 3. Two sets is still a meaningful session." />
-            <textevent timeoffset="300" message="This workout targets neuromuscular power alongside aerobic capacity. The sprint after sustained torque work is what makes it unique among the collection." />
+            <textevent timeoffset="120" duration="25" message="Two sets done. If your knees feel anything joint-related, skip set 3. Two sets is still a meaningful session." />
+            <textevent timeoffset="300" duration="25" message="This workout targets neuromuscular power alongside aerobic capacity. The sprint after sustained torque work is what makes it unique among the collection." />
             <textevent timeoffset="480" message="Final set in 2 minutes. Everything you have left." />
             <textevent timeoffset="540" message="Find your gear. 50-60rpm. STAY SEATED for the VO2max block." />
         </SteadyState>
@@ -85,15 +86,15 @@
         <SteadyState Duration="600" Power="0.50">
             <textevent timeoffset="0" message="Final recovery. 10 minutes. Easy spinning." />
             <textevent timeoffset="120" message="Three sets of VO2max-to-sprint complete. That is the full Rüegg-adapted protocol." />
-            <textevent timeoffset="300" message="Knee check. The combination of sustained torque and explosive sprints is the highest overall joint stress. How do they feel?" />
-            <textevent timeoffset="480" message="15 minutes of VO2max torque work plus 3 maximal sprints. Substantial neuromuscular and aerobic stimulus." />
+            <textevent timeoffset="300" duration="25" message="Knee check. The combination of sustained torque and explosive sprints is the highest overall joint stress. How do they feel?" />
+            <textevent timeoffset="480" duration="20" message="15 minutes of VO2max torque work plus 3 maximal sprints. Substantial neuromuscular and aerobic stimulus." />
         </SteadyState>
 
         <Cooldown Duration="720" PowerLow="0.50" PowerHigh="0.40">
             <textevent timeoffset="10" message="Rüegg protocol complete. Spin easy." />
-            <textevent timeoffset="180" message="Post-session knee check is especially important here. Note anything unusual." />
-            <textevent timeoffset="360" message="Allow at least 48 hours before the next hard session. This is not a session to stack with other intense work." />
-            <textevent timeoffset="540" message="Schep (EF Pro Cycling) recommends 30 min warmup and 30 min cooldown for this session. We use shorter warmup/cooldown for Zwift, but take the recovery seriously." />
+            <textevent timeoffset="180" duration="20" message="Post-session knee check is especially important here. Note anything unusual." />
+            <textevent timeoffset="360" duration="20" message="Allow at least 48 hours before the next hard session. This is not a session to stack with other intense work." />
+            <textevent timeoffset="540" duration="30" message="Schep (EF Pro Cycling) recommends 30 min warmup and 30 min cooldown for this session. We use shorter warmup/cooldown for Zwift, but take the recovery seriously." />
         </Cooldown>
     </workout>
 </workout_file>

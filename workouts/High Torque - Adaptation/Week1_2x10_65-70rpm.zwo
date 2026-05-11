@@ -9,45 +9,47 @@
     <workout>
         <Warmup Duration="900" PowerLow="0.40" PowerHigh="0.65">
             <textevent timeoffset="10" message="Warmup at normal cadence. Enjoy the easy spinning." />
-            <textevent timeoffset="120" message="WHY LOW CADENCE? At the same power, pedaling slower forces each leg contraction to produce far more force per stroke." />
-            <textevent timeoffset="240" message="A 2024 study (PLOS One) found that adding low-cadence intervals boosted VO2max by 8.7% vs 4.6% for the normal-cadence group." />
-            <textevent timeoffset="360" message="Same training hours. Same sessions. Only the cadence differed. The low-cadence group improved nearly twice as much." />
+            <textevent timeoffset="30" duration="30" message="Source: Adaptation block — 3 weeks at Zone 2 and low cadence. Builds tendon and connective tissue tolerance before the high-intensity sessions. Henderson and EVOQ both emphasise musculoskeletal readiness before adding intensity." />
+            <textevent timeoffset="75" duration="20" message="Full research and protocol rationale at high-torque.jelen.dk" />
+            <textevent timeoffset="120" duration="20" message="WHY LOW CADENCE? At the same power, pedaling slower forces each leg contraction to produce far more force per stroke." />
+            <textevent timeoffset="240" duration="25" message="A 2024 study (PLOS One) found that adding low-cadence intervals boosted VO2max by 8.7% vs 4.6% for the normal-cadence group." />
+            <textevent timeoffset="360" duration="20" message="Same training hours. Same sessions. Only the cadence differed. The low-cadence group improved nearly twice as much." />
             <textevent timeoffset="480" message="Today is the first adaptation session — Zone 2 power, 65-70rpm. No heroics." />
-            <textevent timeoffset="600" message="KNEE AWARENESS: Low cadence increases the load through your kneecap with every stroke. Note how your knees feel today." />
-            <textevent timeoffset="750" message="First interval in 2 minutes. Target: 65-70rpm. In ERG mode, just drop your cadence — the trainer adjusts resistance automatically." />
-            <textevent timeoffset="840" message="STAY SEATED throughout. Standing offloads the force to your bodyweight and kills the training stimulus." />
+            <textevent timeoffset="600" duration="25" message="KNEE AWARENESS: Low cadence increases the load through your kneecap with every stroke. Note how your knees feel today." />
+            <textevent timeoffset="750" duration="25" message="First interval in 2 minutes. Target: 65-70rpm. In ERG mode, just drop your cadence — the trainer adjusts resistance automatically." />
+            <textevent timeoffset="840" duration="20" message="STAY SEATED throughout. Standing offloads the force to your bodyweight and kills the training stimulus." />
         </Warmup>
 
         <SteadyState Duration="600" Power="0.65" Cadence="67">
-            <textevent timeoffset="0" message="STAY SEATED. Settle into 65-70rpm. It will feel uncomfortably slow — that is correct." />
-            <textevent timeoffset="30" message="If your cadence is still above 65rpm, slow your pedaling. In ERG mode, resistance increases automatically as your cadence drops." />
-            <textevent timeoffset="90" message="This heavier sensation in your legs is the point. You are recruiting muscle fibers that normal cadence misses." />
-            <textevent timeoffset="180" message="Zone 2 power only. This is not a hard effort — the torque comes from cadence, not intensity." />
-            <textevent timeoffset="300" message="Halfway. Knees feel okay? Good. Any sharp or tracking pain = stop immediately and spin easy." />
-            <textevent timeoffset="420" message="Low cadence is essentially strength training on the bike. Similar muscle fiber recruitment to gym leg work." />
+            <textevent timeoffset="0" duration="20" message="STAY SEATED. Settle into 65-70rpm. It will feel uncomfortably slow — that is correct." />
+            <textevent timeoffset="30" duration="25" message="If your cadence is still above 65rpm, slow your pedaling. In ERG mode, resistance increases automatically as your cadence drops." />
+            <textevent timeoffset="90" duration="20" message="This heavier sensation in your legs is the point. You are recruiting muscle fibers that normal cadence misses." />
+            <textevent timeoffset="180" duration="20" message="Zone 2 power only. This is not a hard effort — the torque comes from cadence, not intensity." />
+            <textevent timeoffset="300" duration="20" message="Halfway. Knees feel okay? Good. Any sharp or tracking pain = stop immediately and spin easy." />
+            <textevent timeoffset="420" duration="20" message="Low cadence is essentially strength training on the bike. Similar muscle fiber recruitment to gym leg work." />
             <textevent timeoffset="570" message="30 seconds left. You will recover at normal cadence next." />
         </SteadyState>
 
         <SteadyState Duration="300" Power="0.50">
             <textevent timeoffset="0" message="Recovery. Spin up to normal cadence. Shake out the legs." />
-            <textevent timeoffset="60" message="The 2024 study participants were trained female cyclists aged 17-20 doing 10+ hours per week. Results may vary for recreational athletes — but the mechanism is sound." />
-            <textevent timeoffset="180" message="Second interval coming in 2 minutes. Same deal: seated, 65-70rpm, Zone 2." />
-            <textevent timeoffset="255" message="Second interval coming. In ERG mode, just drop to 65-70rpm when it starts — resistance adjusts automatically." />
+            <textevent timeoffset="60" duration="30" message="The 2024 study participants were trained female cyclists aged 17-20 doing 10+ hours per week. Results may vary for recreational athletes — but the mechanism is sound." />
+            <textevent timeoffset="180" message="Second interval in 2 minutes. Same: seated, 65-70rpm, Zone 2." />
+            <textevent timeoffset="255" duration="20" message="In ERG mode, just drop to 65-70rpm when it starts — resistance adjusts automatically." />
         </SteadyState>
 
         <SteadyState Duration="600" Power="0.65" Cadence="67">
             <textevent timeoffset="0" message="STAY SEATED. 65-70rpm. Zone 2." />
-            <textevent timeoffset="60" message="Your tendons and connective tissue adapt more slowly than your muscles. These first 3 weeks exist to protect them." />
-            <textevent timeoffset="180" message="Signs to watch: dull ache under or around the kneecap is a warning. Sharp pain = stop now." />
-            <textevent timeoffset="300" message="Halfway. Think about keeping your hips stable — resist the urge to rock side to side as the torque increases." />
-            <textevent timeoffset="420" message="Low cadence at Zone 2 is a good indicator: if this feels easy in the lungs but hard in the legs, the session is working." />
+            <textevent timeoffset="60" duration="25" message="Your tendons and connective tissue adapt more slowly than your muscles. These first 3 weeks exist to protect them." />
+            <textevent timeoffset="180" duration="20" message="Signs to watch: dull ache under or around the kneecap is a warning. Sharp pain = stop now." />
+            <textevent timeoffset="300" duration="25" message="Halfway. Think about keeping your hips stable — resist the urge to rock side to side as the torque increases." />
+            <textevent timeoffset="420" duration="25" message="Low cadence at Zone 2: if this feels easy in the lungs but hard in the legs, the session is working." />
             <textevent timeoffset="570" message="30 seconds. You are done after this. Good first session." />
         </SteadyState>
 
         <Cooldown Duration="600" PowerLow="0.65" PowerHigh="0.40">
             <textevent timeoffset="10" message="Cooldown. Back to normal cadence. How did the knees feel?" />
-            <textevent timeoffset="120" message="Neal Henderson (coach to Rohan Dennis, Taylor Phinney): 'Generally I do about one of these sessions a week, at most two.' The musculoskeletal load is real — respect the recovery." />
-            <textevent timeoffset="300" message="The adaptation block is three sessions. Each one adds a little more duration and drops the cadence slightly." />
+            <textevent timeoffset="120" duration="30" message="Neal Henderson (coach to Rohan Dennis, Taylor Phinney): 'Generally I do about one of these sessions a week, at most two.' The musculoskeletal load is real — respect the recovery." />
+            <textevent timeoffset="300" duration="20" message="The adaptation block is three sessions. Each one adds a little more duration and drops the cadence slightly." />
             <textevent timeoffset="480" message="Well done. One session in the bank." />
         </Cooldown>
     </workout>

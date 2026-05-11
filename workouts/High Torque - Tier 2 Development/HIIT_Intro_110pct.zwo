@@ -7,30 +7,25 @@
     <tags />
     <workout>
         <Warmup Duration="900" PowerLow="0.40" PowerHigh="0.75">
-            <textevent timeoffset="30" message="Source: Hebisz &amp; Hebisz (2024), scaled. The study used 4x4 min at 90-100% of maximal aerobic power (~110% FTP), 60-70 rpm." />
-            <textevent timeoffset="40" message="This is a shorter intro: 3x3 min." />
-            <textevent timeoffset="120" message="Important: the study uses 60-70 rpm for HIIT, not 50-60." />
-            <textevent timeoffset="130" message="The higher cadence range is deliberate — different from SIT sprints which use 50-60." />
-            <textevent timeoffset="240" message="The study found +8.7% VO2max in the low-cadence group vs +4.6% in the normal-cadence group." />
-            <textevent timeoffset="250" message="The largest gains came from combining low cadence with high intensity." />
-            <textevent timeoffset="420" message="All intervals are SEATED. Target cadence: 60-70 rpm." />
-            <textevent timeoffset="430" message="This is VO2max power — it will be hard. But it's only 3 minutes per interval." />
-            <textevent timeoffset="600" message="If your knees ache at any point, stop the interval immediately." />
-            <textevent timeoffset="610" message="VO2max power at low cadence is the highest-stress combination." />
+            <textevent timeoffset="30" duration="30" message="Source: Hebisz &amp; Hebisz (2024), scaled. The study used 4x4 min at 90-100% of maximal aerobic power (~110% FTP), 60-70 rpm. This is a shorter intro: 3x3 min." />
+            <textevent timeoffset="90" duration="20" message="Full research and protocol rationale at high-torque.jelen.dk" />
+            <textevent timeoffset="120" duration="25" message="Important: the study uses 60-70 rpm for HIIT — not 50-60. The higher cadence range is deliberate, different from SIT sprints which use 50-60." />
+            <textevent timeoffset="240" duration="25" message="The study found +8.7% VO2max in the low-cadence group vs +4.6% in the normal-cadence group. The largest gains came from combining low cadence with high intensity." />
+            <textevent timeoffset="420" duration="25" message="All intervals are SEATED. Target cadence: 60-70 rpm. This is VO2max power — it will be hard. But it's only 3 minutes per interval." />
+            <textevent timeoffset="600" duration="25" message="If your knees ache at any point, stop the interval immediately. VO2max power at low cadence is the highest-stress combination." />
             <textevent timeoffset="780" message="3 intervals coming up. 7 minutes recovery between each — use it fully." />
         </Warmup>
 
         <SteadyState Duration="180" Power="1.10" Cadence="65">
             <textevent timeoffset="10" message="GO. ~110% FTP, 60-70 rpm. Stay seated. 3 minutes." />
-            <textevent timeoffset="90" message="Halfway. At this intensity and cadence, you're recruiting both slow-twitch and fast-twitch muscle fibers." />
-            <textevent timeoffset="100" message="That's the mechanism." />
-            <textevent timeoffset="150" message="30 seconds left. Hold the cadence — don't let it creep up." />
+            <textevent timeoffset="90" message="Halfway. Hold the cadence — don't let it creep up." />
+            <textevent timeoffset="150" message="30 seconds left. Stay seated." />
         </SteadyState>
 
         <SteadyState Duration="420" Power="0.50">
             <textevent timeoffset="10" message="Recovery. Spin easy for 7 minutes. Let heart rate come down." />
-            <textevent timeoffset="180" message="The study used 8-minute recovery for 4-minute intervals." />
-            <textevent timeoffset="190" message="This scaled version uses 7 minutes for 3-minute intervals." />
+            <textevent timeoffset="60" duration="25" message="Combining low cadence with high intensity recruits both slow-twitch and fast-twitch muscle fibers simultaneously. That double demand is the mechanism." />
+            <textevent timeoffset="180" duration="25" message="The study used 8-minute recovery for 4-minute intervals. This scaled version uses 7 minutes for 3-minute intervals." />
         </SteadyState>
 
         <SteadyState Duration="180" Power="1.10" Cadence="65">
@@ -57,10 +52,8 @@
 
         <Cooldown Duration="600" PowerLow="0.50" PowerHigh="0.40">
             <textevent timeoffset="30" message="Cool down. Easy spin." />
-            <textevent timeoffset="120" message="When this feels manageable, move to the full 4x4 min HIIT VO2max session in Tier 3 —" />
-            <textevent timeoffset="130" message="the actual study protocol." />
-            <textevent timeoffset="300" message="Henderson: musculoskeletal load is the main limiter, not cardiovascular." />
-            <textevent timeoffset="310" message="Allow at least one normal-cadence day before your next torque session." />
+            <textevent timeoffset="120" duration="25" message="When this feels manageable, move to the full 4x4 min HIIT VO2max session in Tier 3 — the actual study protocol." />
+            <textevent timeoffset="300" duration="25" message="Henderson: musculoskeletal load is the main limiter, not cardiovascular. Allow at least one normal-cadence day before your next torque session." />
         </Cooldown>
     </workout>
 </workout_file>

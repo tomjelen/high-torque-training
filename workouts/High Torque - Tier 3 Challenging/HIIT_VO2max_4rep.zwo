@@ -8,16 +8,15 @@
     <tags />
     <workout>
         <Warmup Duration="900" PowerLow="0.40" PowerHigh="0.75">
-            <textevent timeoffset="10" message="Source: Hebisz &amp; Hebisz (2024) HIIT protocol, weeks 1-4. 4x4 min at 90-100% Pmax (~110% FTP), 60-70 rpm, 8 min recovery." />
-            <textevent timeoffset="120" message="This is the actual study protocol. The low-cadence group doing this session improved VO2max by 8.7% vs 4.6% for the normal-cadence group." />
-            <textevent timeoffset="180" message="Important: the study uses 60-70 rpm for HIIT — not 50-60. SIT sprints use 50-60. These cadence ranges are different and deliberate." />
-            <textevent timeoffset="300" message="The study used 90-100% of maximal aerobic power (Pmax). For most trained cyclists, Pmax sits at roughly 110-120% of FTP." />
-            <textevent timeoffset="310" message="110% FTP is the conservative end of that range." />
-            <textevent timeoffset="480" message="Four intervals. 4 minutes each. 8-minute recovery between them. The recovery is genuinely necessary at this intensity." />
-            <textevent timeoffset="600" message="SEATED: Every interval, every second. At 110% FTP the temptation to stand is even stronger than at sweet spot. Resist completely." />
-            <textevent timeoffset="720" message="KNEE PRIORITY: This is the highest sustained power in the High Torque Collection." />
-            <textevent timeoffset="730" message="Any knee discomfort that appears mid-interval means you stop the interval immediately — not at the end." />
-            <textevent timeoffset="840" message="Openers coming: two short efforts at normal cadence to prime the system. Then the main intervals." />
+            <textevent timeoffset="10" duration="30" message="Source: Hebisz &amp; Hebisz (2024) HIIT protocol, weeks 1-4. 4x4 min at 90-100% Pmax (~110% FTP), 60-70 rpm, 8 min recovery." />
+            <textevent timeoffset="75" duration="20" message="Session logger and full workout calendar at high-torque.jelen.dk" />
+            <textevent timeoffset="120" duration="25" message="This is the actual study protocol. The low-cadence group doing this session improved VO2max by 8.7% vs 4.6% for the normal-cadence group." />
+            <textevent timeoffset="180" duration="25" message="Important: the study uses 60-70 rpm for HIIT — not 50-60. SIT sprints use 50-60. These cadence ranges are different and deliberate." />
+            <textevent timeoffset="300" duration="30" message="The study used 90-100% of maximal aerobic power (Pmax). For most trained cyclists, Pmax sits at roughly 110-120% of FTP. 110% FTP is the conservative end of that range." />
+            <textevent timeoffset="480" duration="25" message="Four intervals. 4 minutes each. 8-minute recovery between them. The recovery is genuinely necessary at this intensity." />
+            <textevent timeoffset="600" duration="25" message="SEATED: Every interval, every second. At 110% FTP the temptation to stand is even stronger than at sweet spot. Resist completely." />
+            <textevent timeoffset="720" duration="25" message="KNEE PRIORITY: This is the highest sustained power in the High Torque Collection. Any knee discomfort that appears mid-interval means you stop the interval immediately — not at the end." />
+            <textevent timeoffset="840" duration="20" message="Openers coming: two short efforts at normal cadence to prime the system. Then the main intervals." />
         </Warmup>
 
         <SteadyState Duration="30" Power="1.10">
@@ -31,27 +30,24 @@
             <textevent timeoffset="0" message="Opener 2." />
         </SteadyState>
         <SteadyState Duration="120" Power="0.55">
-            <textevent timeoffset="0" message="Last recovery before the main set. In ERG mode, just drop to 60-70rpm when the interval starts —" />
-            <textevent timeoffset="10" message="the trainer holds 110% FTP regardless of gear." />
+            <textevent timeoffset="0" duration="25" message="Last recovery before the main set. In ERG mode, just drop to 60-70rpm when the interval starts — the trainer holds 110% FTP regardless of gear." />
             <textevent timeoffset="60" message="30 seconds. First interval. STAY SEATED throughout. 110% FTP." />
-            <textevent timeoffset="90" message="High-torque intervals begin now. The study used 60-70 rpm — aim for anywhere in that range." />
+            <textevent timeoffset="90" duration="20" message="High-torque intervals begin now. The study used 60-70 rpm — aim for anywhere in that range." />
         </SteadyState>
 
         <SteadyState Duration="240" Power="1.10" Cadence="65">
             <textevent timeoffset="0" message="STAY SEATED. 60-70 rpm — aim for 65. 110% FTP. GO." />
             <textevent timeoffset="20" message="This is supposed to be hard. Legs AND lungs working simultaneously." />
-            <textevent timeoffset="60" message="1 minute in. The leg fatigue at this power and cadence is the whole point." />
-            <textevent timeoffset="70" message="This is what drove the 8.7% VO2max improvement in the study." />
-            <textevent timeoffset="120" message="Halfway. 2 minutes to go. Hold the cadence. Do not spin up." />
-            <textevent timeoffset="180" message="Last minute. This is where it earns its keep. Stay seated. Hold form." />
-            <textevent timeoffset="210" message="30 seconds. Everything now. Do not stand." />
-            <textevent timeoffset="235" message="10 seconds." />
+            <textevent timeoffset="60" message="1 minute in. Hold the cadence. Don't let it creep up." />
+            <textevent timeoffset="120" message="Halfway. 2 minutes to go. Do not spin up." />
+            <textevent timeoffset="180" message="Last minute. Stay seated. Hold form." />
+            <textevent timeoffset="210" message="30 seconds. Do not stand." />
+            <textevent timeoffset="230" message="10 seconds." />
         </SteadyState>
 
         <SteadyState Duration="480" Power="0.50">
             <textevent timeoffset="2" message="Recovery. 8 full minutes. Use every second." />
-            <textevent timeoffset="60" message="The study found that moving from VT1 intensity up to VO2max nearly doubles the percentage of maximum dynamic force on the pedals." />
-            <textevent timeoffset="70" message="Combining that force with low cadence is what makes this protocol unique." />
+            <textevent timeoffset="60" duration="30" message="The study found that moving from VT1 intensity up to VO2max nearly doubles the percentage of maximum dynamic force on the pedals. Combining that force with low cadence is what makes this protocol unique." />
             <textevent timeoffset="180" message="Knee check. Any discomfort that feels joint-related (not muscle burn)?" />
             <textevent timeoffset="210" message="Next interval. Same: seated, 60-70rpm, 110% FTP." />
         </SteadyState>
@@ -63,12 +59,12 @@
             <textevent timeoffset="120" message="Halfway. 2 minutes to go. Do not spin up." />
             <textevent timeoffset="180" message="Last minute. Stay seated. Hold form." />
             <textevent timeoffset="210" message="30 seconds. Do not stand." />
-            <textevent timeoffset="235" message="10 seconds." />
+            <textevent timeoffset="230" message="10 seconds." />
         </SteadyState>
 
         <SteadyState Duration="480" Power="0.50">
             <textevent timeoffset="2" message="Recovery. 8 minutes." />
-            <textevent timeoffset="60" message="The Hebisz study's low-cadence group did exactly this. Your effort is replicating the protocol that produced the results." />
+            <textevent timeoffset="60" duration="25" message="The Hebisz study's low-cadence group did exactly this. Your effort is replicating the protocol that produced the results." />
             <textevent timeoffset="180" message="Knee check." />
             <textevent timeoffset="210" message="Interval 3 coming. Seated. 60-70rpm. 110% FTP." />
         </SteadyState>
@@ -80,7 +76,7 @@
             <textevent timeoffset="120" message="Halfway. 2 minutes. Hold cadence." />
             <textevent timeoffset="180" message="Last minute. Stay seated." />
             <textevent timeoffset="210" message="30 seconds. Do not stand." />
-            <textevent timeoffset="235" message="10 seconds." />
+            <textevent timeoffset="230" message="10 seconds." />
         </SteadyState>
 
         <SteadyState Duration="480" Power="0.50">
@@ -93,11 +89,11 @@
         <SteadyState Duration="240" Power="1.10" Cadence="65">
             <textevent timeoffset="0" message="STAY SEATED. 60-70 rpm. 110% FTP. GO. Final interval." />
             <textevent timeoffset="20" message="Last one. Everything now." />
-            <textevent timeoffset="60" message="1 minute in. Three more to go." />
+            <textevent timeoffset="60" message="1 minute in. Three more minutes to go." />
             <textevent timeoffset="120" message="Halfway. 2 minutes. Do not spin up. Do not stand." />
             <textevent timeoffset="180" message="Last minute. You're almost there." />
             <textevent timeoffset="210" message="30 seconds. Finish it." />
-            <textevent timeoffset="235" message="10 seconds." />
+            <textevent timeoffset="230" message="10 seconds." />
         </SteadyState>
 
         <SteadyState Duration="480" Power="0.50">
@@ -108,13 +104,10 @@
 
         <Cooldown Duration="900" PowerLow="0.50" PowerHigh="0.40">
             <textevent timeoffset="10" message="Four VO2max intervals done. That was the study protocol HIIT session." />
-            <textevent timeoffset="150" message="You have now done exactly what the low-cadence group in the 2024 PLOS One study did." />
-            <textevent timeoffset="160" message="The combination of high torque and high power is the key mechanism." />
-            <textevent timeoffset="360" message="Knee check: how do they feel now, post-effort? Anything that lingers should be noted and not ignored." />
-            <textevent timeoffset="540" message="Allow at least one rest day before the next low-cadence session." />
-            <textevent timeoffset="550" message="The musculoskeletal load from VO2max torque work is substantial." />
-            <textevent timeoffset="720" message="The study found the low-cadence group improved VO2max by 8.7% over 8 weeks —" />
-            <textevent timeoffset="730" message="nearly double the 4.6% in the normal-cadence group." />
+            <textevent timeoffset="150" duration="25" message="You have now done exactly what the low-cadence group in the 2024 PLOS One study did. The combination of high torque and high power is the key mechanism." />
+            <textevent timeoffset="360" duration="25" message="Knee check: how do they feel now, post-effort? Anything that lingers should be noted and not ignored." />
+            <textevent timeoffset="540" duration="25" message="Allow at least one rest day before the next low-cadence session. The musculoskeletal load from VO2max torque work is substantial." />
+            <textevent timeoffset="720" duration="25" message="The study found the low-cadence group improved VO2max by 8.7% over 8 weeks — nearly double the 4.6% in the normal-cadence group." />
         </Cooldown>
     </workout>
 </workout_file>

@@ -55,12 +55,13 @@ Then a second event at ~60-90s with a site tidbit (pick one, rotate across worko
 4. "Session logger and full workout calendar at high-torque.jelen.dk"
 5. "All the research behind this program: high-torque.jelen.dk"
 
-These are longer messages — set `duration="20"` on them.
+These are longer messages — set a `duration` on them (20s is a reasonable default).
 
 ### Message length and duration
-- Normal-length messages (≤~12 words) can use the default display time.
-- Longer messages (>~12 words) must set `duration="20"` (or more) so the rider has time to read them.
-- Do not split a long message into two back-to-back events — use `duration` instead.
+- Short messages (a few words, a simple cue) don't need a `duration`.
+- Longer messages need a `duration` so the rider has time to read them. Use judgment: a 15-word sentence is fine at 20s; a two-sentence explanation might need 25–30s.
+- If splitting a long message into two shorter back-to-back events reads more naturally, that's fine — but set `duration` on each so they don't vanish instantly.
+- The goal is readability, not a strict word count. Ask: can a rider on the bike read this comfortably at the speed they're going?
 
 ### Message complexity during intervals
 - **During work phases** (high-intensity on-intervals in `IntervalsT`, or high-power blocks in hand-rolled intervals, or `SteadyState` at high intensity): keep messages short and simple — one cue only. Examples: "Stay seated. 50-60 rpm.", "Hold the power. Breathe."

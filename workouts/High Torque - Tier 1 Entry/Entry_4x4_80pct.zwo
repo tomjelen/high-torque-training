@@ -7,37 +7,30 @@
     <tags />
     <workout>
         <Warmup Duration="900" PowerLow="0.40" PowerHigh="0.80">
-            <textevent timeoffset="30" message="Source: Neal Henderson (Apex Coaching)." />
-            <textevent timeoffset="40" message="For athletes starting torque work, Henderson recommends 3-5 min efforts at 75-85% of threshold, 50-60 rpm." />
-            <textevent timeoffset="120" message="This is your entry into ongoing torque training." />
-            <textevent timeoffset="130" message="The intensity is tempo — it should feel like work in the legs, not the lungs." />
-            <textevent timeoffset="240" message="Henderson coaches Rohan Dennis and Taylor Phinney." />
-            <textevent timeoffset="250" message="He stresses that musculoskeletal load is the main limiter in torque work — not cardiovascular fitness." />
-            <textevent timeoffset="420" message="All intervals are SEATED." />
-            <textevent timeoffset="430" message="Standing lets you use body weight on the pedals, bypassing the forced muscular contraction that makes this training work." />
-            <textevent timeoffset="600" message="Target cadence: 50-60 rpm." />
-            <textevent timeoffset="610" message="In ERG mode, just drop to this cadence — the trainer adjusts resistance to match 80-85% FTP automatically." />
-            <textevent timeoffset="780" message="If your knees ache at any point during an interval, stop the interval." />
-            <textevent timeoffset="790" message="Don't push through knee discomfort." />
+            <textevent timeoffset="30" duration="30" message="Source: Neal Henderson (Apex Coaching). For athletes starting torque work, Henderson recommends 3-5 min efforts at 75-85% of threshold, 50-60 rpm." />
+            <textevent timeoffset="90" duration="20" message="Session logger and full workout calendar at high-torque.jelen.dk" />
+            <textevent timeoffset="120" duration="25" message="This is your entry into ongoing torque training. The intensity is tempo — it should feel like work in the legs, not the lungs." />
+            <textevent timeoffset="240" duration="25" message="Henderson coaches Rohan Dennis and Taylor Phinney. He stresses that musculoskeletal load is the main limiter in torque work — not cardiovascular fitness." />
+            <textevent timeoffset="420" duration="25" message="All intervals are SEATED. Standing lets you use body weight on the pedals, bypassing the forced muscular contraction that makes this training work." />
+            <textevent timeoffset="600" duration="25" message="Target cadence: 50-60 rpm. In ERG mode, just drop to this cadence — the trainer adjusts resistance to match 80-85% FTP automatically." />
+            <textevent timeoffset="780" duration="20" message="If your knees ache at any point during an interval, stop the interval. Don't push through knee discomfort." />
         </Warmup>
 
         <SteadyState Duration="240" Power="0.80" Cadence="55">
             <textevent timeoffset="10" message="Interval 1. 80-85% FTP, 50-60 rpm. STAY SEATED." />
             <textevent timeoffset="120" message="Halfway." />
-            <textevent timeoffset="130" message="At this cadence, each pedal stroke produces significantly more force than at 90 rpm. That's the stimulus." />
             <textevent timeoffset="210" message="30 seconds left in this interval." />
         </SteadyState>
 
         <SteadyState Duration="240" Power="0.50">
             <textevent timeoffset="10" message="Recovery. Spin easy at whatever cadence feels natural." />
-            <textevent timeoffset="160" message="Henderson: 'the first thing I would do is a little bit of tempo," />
-            <textevent timeoffset="170" message="three to five minute efforts at 75 to 85% of threshold power at 50 to 60 rpm.'" />
+            <textevent timeoffset="60" duration="20" message="At this cadence, each pedal stroke produces roughly 60% more force than at 90 rpm. That's the training signal." />
+            <textevent timeoffset="160" duration="30" message="Henderson: 'the first thing I would do is a little bit of tempo — three to five minute efforts at 75 to 85% of threshold power at 50 to 60 rpm.'" />
         </SteadyState>
 
         <SteadyState Duration="240" Power="0.80" Cadence="55">
             <textevent timeoffset="10" message="Interval 2. 80-85% FTP, 50-60 rpm. STAY SEATED." />
             <textevent timeoffset="120" message="Halfway. Smooth pedal strokes." />
-            <textevent timeoffset="130" message="Feel the torque loading your quads and glutes — that's the muscular stimulus." />
             <textevent timeoffset="210" message="30 seconds left in this interval." />
         </SteadyState>
 
@@ -49,28 +42,24 @@
         <SteadyState Duration="240" Power="0.80" Cadence="55">
             <textevent timeoffset="10" message="Interval 3. 80-85% FTP, 50-60 rpm. STAY SEATED." />
             <textevent timeoffset="120" message="Halfway. This is where the adaptation happens." />
-            <textevent timeoffset="130" message="Repeated high-torque contractions at sub-maximal intensity." />
             <textevent timeoffset="210" message="30 seconds left in this interval." />
         </SteadyState>
 
         <SteadyState Duration="240" Power="0.50">
             <textevent timeoffset="10" message="Recovery. Three down, one to go." />
-            <textevent timeoffset="160" message="If your knees are aching, skip the final interval." />
-            <textevent timeoffset="170" message="Protecting the joints is always the right call on torque work." />
+            <textevent timeoffset="160" duration="20" message="If your knees are aching, skip the final interval. Protecting the joints is always the right call on torque work." />
         </SteadyState>
 
         <SteadyState Duration="240" Power="0.80" Cadence="55">
             <textevent timeoffset="10" message="Final interval. 80-85% FTP, 50-60 rpm. STAY SEATED." />
-            <textevent timeoffset="120" message="Halfway. Last effort. Keep the cadence low and the pedal stroke smooth." />
-            <textevent timeoffset="210" message="30 seconds left. Finish it." />
+            <textevent timeoffset="120" duration="20" message="Halfway. Last effort. Keep the cadence low and the pedal stroke smooth." />
+            <textevent timeoffset="210" message="30 seconds. Finish it." />
         </SteadyState>
 
         <Cooldown Duration="600" PowerLow="0.50" PowerHigh="0.40">
             <textevent timeoffset="30" message="Cool down. Spin easy at normal cadence." />
-            <textevent timeoffset="120" message="Note how your knees feel. Any ache or tightness?" />
-            <textevent timeoffset="130" message="If yes, skip the next torque session and monitor." />
-            <textevent timeoffset="300" message="Henderson and EVOQ both recommend 1-2 torque sessions per week max." />
-            <textevent timeoffset="310" message="Never on back-to-back days. The joints need recovery time." />
+            <textevent timeoffset="120" duration="20" message="Note how your knees feel. Any ache or tightness? If yes, skip the next torque session and monitor." />
+            <textevent timeoffset="300" duration="25" message="Henderson and EVOQ both recommend 1-2 torque sessions per week max. Never on back-to-back days. The joints need recovery time." />
         </Cooldown>
     </workout>
 </workout_file>

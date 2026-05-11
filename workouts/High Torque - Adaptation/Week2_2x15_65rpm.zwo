@@ -9,38 +9,40 @@
     <workout>
         <Warmup Duration="900" PowerLow="0.40" PowerHigh="0.65">
             <textevent timeoffset="10" message="Warmup at normal cadence. Enjoy the easy spinning." />
+            <textevent timeoffset="30" duration="30" message="Source: Adaptation block — 3 weeks at Zone 2 and low cadence. Builds tendon and connective tissue tolerance before the high-intensity sessions. Henderson and EVOQ both emphasise musculoskeletal readiness before adding intensity." />
+            <textevent timeoffset="75" duration="20" message="Log this session at high-torque.jelen.dk — track your progression over the weeks" />
             <textevent timeoffset="120" message="Week 2. Cadence drops to 65rpm today, intervals grow to 15 minutes. Still Zone 2 only." />
-            <textevent timeoffset="240" message="WHY SEATED? Standing lets you use your body weight on the downstroke. The point of this training is forcing your muscles to generate all the force themselves." />
-            <textevent timeoffset="420" message="The scientific term is 'high torque training'. Torque = force x crank arm length. Lower cadence at the same power = more torque per stroke." />
-            <textevent timeoffset="600" message="INJURY WATCH: Do not dismiss dull knee aches as normal soreness. Low cadence increases patellofemoral joint load significantly." />
-            <textevent timeoffset="750" message="Interval in 2 minutes. Target: 65rpm. In ERG mode, just drop your cadence — the trainer adjusts resistance automatically. Stay seated." />
-            <textevent timeoffset="840" message="If your knees felt off after last session, consider staying at 65-70rpm today. Adaptation &gt; progression." />
+            <textevent timeoffset="240" duration="25" message="WHY SEATED? Standing lets you use your body weight on the downstroke. The point of this training is forcing your muscles to generate all the force themselves." />
+            <textevent timeoffset="420" duration="25" message="The scientific term is 'high torque training'. Torque = force x crank arm length. Lower cadence at the same power = more torque per stroke." />
+            <textevent timeoffset="600" duration="25" message="INJURY WATCH: Do not dismiss dull knee aches as normal soreness. Low cadence increases patellofemoral joint load significantly." />
+            <textevent timeoffset="750" duration="25" message="Interval in 2 minutes. Target: 65rpm. In ERG mode, just drop your cadence — the trainer adjusts resistance automatically. Stay seated." />
+            <textevent timeoffset="840" duration="25" message="If your knees felt off after last session, consider staying at 65-70rpm today. Adaptation &gt; progression." />
         </Warmup>
 
         <SteadyState Duration="900" Power="0.65" Cadence="65">
             <textevent timeoffset="0" message="STAY SEATED. Settle into 65rpm. Zone 2 power." />
-            <textevent timeoffset="30" message="Cadence still above 65? Just slow your pedaling — in ERG mode, resistance increases automatically as you drop to 65rpm." />
-            <textevent timeoffset="120" message="At 65rpm and Zone 2 power, you are producing roughly 50% more force per stroke than you would at 90rpm for the same wattage." />
-            <textevent timeoffset="240" message="This heavier, almost grinding sensation is normal. Your quads are doing real work. Glutes and hamstrings too." />
+            <textevent timeoffset="30" duration="25" message="Cadence still above 65? Just slow your pedaling — in ERG mode, resistance increases automatically as you drop to 65rpm." />
+            <textevent timeoffset="120" duration="25" message="At 65rpm and Zone 2 power, you are producing roughly 50% more force per stroke than you would at 90rpm for the same wattage." />
+            <textevent timeoffset="240" duration="20" message="This heavier, almost grinding sensation is normal. Your quads are doing real work. Glutes and hamstrings too." />
             <textevent timeoffset="360" message="6 minutes in. Knees tracking well? Good. Hips staying level? Keep them stable." />
-            <textevent timeoffset="480" message="Halfway. Zone 2 should mean you can still hold a conversation. If you are gasping, reduce power slightly." />
-            <textevent timeoffset="600" message="The study showed the low cadence group improved maximal aerobic power by 8.1% vs 3.0%. More force = more adaptation." />
-            <textevent timeoffset="720" message="3 minutes left. Do not let cadence drift upward as fatigue sets in. If it does, consciously slow your pedaling." />
+            <textevent timeoffset="480" duration="20" message="Halfway. Zone 2 should mean you can still hold a conversation. If you are gasping, reduce power slightly." />
+            <textevent timeoffset="600" duration="25" message="The study showed the low cadence group improved maximal aerobic power by 8.1% vs 3.0%. More force = more adaptation." />
+            <textevent timeoffset="720" duration="20" message="3 minutes left. Do not let cadence drift upward as fatigue sets in. If it does, consciously slow your pedaling." />
             <textevent timeoffset="870" message="30 seconds. Stay seated to the end." />
         </SteadyState>
 
         <SteadyState Duration="300" Power="0.50">
             <textevent timeoffset="0" message="Recovery. Spin up. Normal cadence. Shake it out." />
-            <textevent timeoffset="90" message="Low cadence training is thought to be especially useful for cyclists who naturally pedal at high cadence (90+rpm) — it exposes a muscular weakness those riders never otherwise address." />
-            <textevent timeoffset="210" message="Second block in 90 seconds. Same deal: 65rpm, Zone 2, seated. ERG handles resistance — focus on the cadence target." />
+            <textevent timeoffset="90" duration="25" message="Low cadence training is thought to be especially useful for cyclists who naturally pedal at high cadence (90+rpm) — it exposes a muscular weakness those riders never otherwise address." />
+            <textevent timeoffset="210" duration="25" message="Second block in 90 seconds. Same deal: 65rpm, Zone 2, seated. ERG handles resistance — focus on the cadence target." />
         </SteadyState>
 
         <SteadyState Duration="900" Power="0.65" Cadence="65">
             <textevent timeoffset="0" message="STAY SEATED. 65rpm. Zone 2." />
-            <textevent timeoffset="60" message="If your legs feel more fatigued than your lungs, that is exactly the point. This is muscular training disguised as aerobic training." />
-            <textevent timeoffset="180" message="Think of these sessions as laying groundwork. The post-adaptation sessions add intensity on top of this cadence. Your tendons need to be ready." />
-            <textevent timeoffset="360" message="Halfway through the second block. How are the knees? Any pain that feels joint-related (not muscle burn) means stop." />
-            <textevent timeoffset="480" message="Muscle burn in the quads is fine. Dull ache around the patella (kneecap) is a warning. Sharp, tracking pain = stop now." />
+            <textevent timeoffset="60" duration="25" message="If your legs feel more fatigued than your lungs, that is exactly the point. This is muscular training disguised as aerobic training." />
+            <textevent timeoffset="180" duration="25" message="Think of these sessions as laying groundwork. The post-adaptation sessions add intensity on top of this cadence. Your tendons need to be ready." />
+            <textevent timeoffset="360" duration="20" message="Halfway through the second block. How are the knees? Any pain that feels joint-related (not muscle burn) means stop." />
+            <textevent timeoffset="480" duration="20" message="Muscle burn in the quads is fine. Dull ache around the patella (kneecap) is a warning. Sharp, tracking pain = stop now." />
             <textevent timeoffset="660" message="4 minutes left. Maintain cadence. Resist the urge to speed up." />
             <textevent timeoffset="780" message="2 minutes. Good discipline if you have held 65rpm throughout." />
             <textevent timeoffset="870" message="30 seconds. Last push." />
@@ -48,9 +50,9 @@
 
         <Cooldown Duration="600" PowerLow="0.65" PowerHigh="0.40">
             <textevent timeoffset="10" message="Cooldown. Spin easy. Back to normal cadence." />
-            <textevent timeoffset="150" message="Two sessions down. How did this compare to the first? Pay attention to how your knees respond in the 24 hours after — delayed onset discomfort is more telling than what you feel right now." />
-            <textevent timeoffset="360" message="One more adaptation session to go: 3x10min at 60-65rpm. More volume, slightly lower cadence. Still Zone 2." />
-            <textevent timeoffset="480" message="After the adaptation block, intensity enters the picture. Make sure your knees are ready before moving on." />
+            <textevent timeoffset="150" duration="25" message="Two sessions down. Pay attention to how your knees respond in the 24 hours after — delayed onset discomfort is more telling than what you feel right now." />
+            <textevent timeoffset="360" duration="20" message="One more adaptation session to go: 3x10min at 60-65rpm. More volume, slightly lower cadence. Still Zone 2." />
+            <textevent timeoffset="480" duration="20" message="After the adaptation block, intensity enters the picture. Make sure your knees are ready before moving on." />
         </Cooldown>
     </workout>
 </workout_file>
