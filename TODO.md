@@ -1,7 +1,5 @@
 # TODOs
 
-## General / everywhere
-
 ## Research
 
 - [ ] The adaption phase comes from mixed sources, how come? Didnt the Hebisz describe this phase in completion?
@@ -13,33 +11,32 @@
 
 ## Site
 
-- [x] Last phase of redesign document
-- [x] Add search engine indexing artifacts
-- [x] The "How to use this collection" sub panel always collapses on reload. Should be visible initially and saved to state.
-- [x] Tablet/mobile design
-- [ ] Should we have "hide" buttons on all panels?
+- [x] Should we have "hide" buttons on all panels?
 - [ ] Workout Zwift-like visualizations
-- [x] Check in Chrome
-- [x] Use the implementation plan to write some tests or documentation
-- [ ] Bi-directional state management
 - [ ] SEO: Add a short /about page — your Abzu/ML background + A/B Zwift racer credibility + why you built this. Three paragraphs is enough. This is what closes the E-E-A-T gap for Google.
 - [ ] Tip when session tracker is empty
+- [ ] Web claude has problems downloading the .zwo files. Something about binary
 
 ## Workout files
 
 - [ ] Put a version timestamp inside the .zwo files. I think maybe we add a comment with this, and other information that LLMs can read, and make it so the website re-expands Download/Install with a `updated` badge.
-- [ ] Investigate if duration is an actual attribute of textevent.
+- [x] Investigate if duration is an actual attribute of textevent.
+- [x] Update text-events to use duration
 - [ ] Add link to site in llm-meta inside .zwo files
-- [ ] Move text-events that requires reading comprehension to the off-blocks in intervals.
+- [x] Move text-events that requires reading comprehension to the off-blocks in intervals.
 - [ ] Bug: The save-name for stable 3x5 was very convoluted
+- [x] Link to site in welcome message
+- [ ] SIT workouts: Max effort should not be 1.5 FTP. You die to the spiral of death. <SteadyState Duration="30" Power="1.50" Cadence="55">
 
 ## zwo-skill
 
-- [ ] Update skill so that it handles long messages in textevents better, either duration or split into multiple messages.
+- [x] Update skill so that it handles long messages in textevents better, either duration or split into multiple messages.
 - [ ] zwo-skill to public repo. Share with the world!
 
 ## Future / parking lot
 
+- [ ] MyWhoosh? Its free, I guess many people will be using that instead of Zwift in the future
 - [ ] Garmin/Wahoo/etc workouts
 - [ ] Another iteration on the research/rationale. Is it all sound?
 - [ ] Can I get API access to Zwift for the workouts?
+- [ ] Bi-directional state management

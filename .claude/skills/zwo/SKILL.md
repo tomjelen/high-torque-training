@@ -1,13 +1,13 @@
 ---
 name: zwo
-description: High Torque Training project conventions for .zwo workout files. Covers source attribution, display text rules, text event content, and the validation checklist. Works alongside the zwo-format skill.
+description: Use when creating or editing .zwo files in the High Torque Training project — applies to source attribution, display text, text event content and timing, message complexity during intervals, and the post-edit validation checklist.
 paths: "**/*.zwo"
 allowed-tools: Read, Edit, Write, Grep, Glob
 ---
 
 # High Torque Training — ZWO Conventions
 
-Project-specific rules for `.zwo` files in the High Torque Training library. For ZWO format basics (XML structure, power ramp semantics, cadence attributes), see `.skills/zwo-format/SKILL.md`.
+Project-specific rules for `.zwo` files in the High Torque Training library. For ZWO format basics (XML structure, power ramp semantics, cadence attributes), see the **zwo-format** skill.
 
 ## Author
 
@@ -44,9 +44,27 @@ Warmups before blocks at 85%+ FTP intentionally end lower — you don't ramp int
 ## Text event requirements
 
 ### Source attribution in warmup
-Every workout must have a text event early in the warmup (~30-60s) stating:
+Every workout must have a text event early in the warmup (~30s) stating:
 - The source (e.g. "Source: EVOQ.BIKE staple torque session" or "Source: Hebisz & Hebisz (2024), weeks 1-4")
 - Brief context on why this prescription exists
+
+Then a second event at ~60-90s with a site tidbit (pick one, rotate across workouts):
+1. "Full research and protocol rationale at high-torque.jelen.dk"
+2. "Log this session at high-torque.jelen.dk — track your progression over the weeks"
+3. "Want to go deeper on the science? high-torque.jelen.dk/rationale"
+4. "Session logger and full workout calendar at high-torque.jelen.dk"
+5. "All the research behind this program: high-torque.jelen.dk"
+
+These are longer messages — set `duration="20"` on them.
+
+### Message length and duration
+- Normal-length messages (≤~12 words) can use the default display time.
+- Longer messages (>~12 words) must set `duration="20"` (or more) so the rider has time to read them.
+- Do not split a long message into two back-to-back events — use `duration` instead.
+
+### Message complexity during intervals
+- **During work phases** (high-intensity on-intervals in `IntervalsT`, or high-power blocks in hand-rolled intervals, or `SteadyState` at high intensity): keep messages short and simple — one cue only. Examples: "Stay seated. 50-60 rpm.", "Hold the power. Breathe."
+- **During recovery/rest phases**: the right place for study findings, citations, coach quotes, and rationale. The rider has headspace to read.
 
 ### Knee safety warning
 Every low-cadence workout must include at least one knee warning. Example: "If your knees ache at any point during an interval, stop the interval. Don't push through knee discomfort."
@@ -59,6 +77,8 @@ Text events should include:
 - Why the interval is structured this way
 - Study findings and data (with citations)
 - Meaningful quotes from coaches (Henderson, EVOQ, Schep)
+
+Place these in recovery or rest blocks, not during high-intensity work phases.
 
 ### What NOT to include
 - No references to the training calendar or logging — riders may use these workouts without the calendar.

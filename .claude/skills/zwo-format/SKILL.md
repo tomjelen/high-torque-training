@@ -1,6 +1,6 @@
 ---
 name: zwo-format
-description: Zwift workout file (.zwo) XML format rules. Covers power ramp semantics, cadence attributes, naming limits, and structural conventions. Universal to any Zwift workout project.
+description: Use when creating, editing, or reviewing .zwo Zwift workout files — especially for power ramp direction (Warmup/Cooldown), IntervalsT cadence attributes, textevent timing and duration, or workout naming limits.
 paths: "**/*.zwo"
 allowed-tools: Read, Edit, Write, Grep, Glob
 ---
@@ -21,7 +21,7 @@ Rules for the Zwift `.zwo` XML format. These come from testing against Zwift and
     <tags/>
     <workout>
         <Warmup Duration="900" PowerLow="0.40" PowerHigh="0.75">
-            <textevent timeoffset="30" message="Text shown during warmup."/>
+            <textevent timeoffset="30" duration="10" message="Text shown during warmup."/>
         </Warmup>
 
         <SteadyState Duration="300" Power="0.88" Cadence="55">
@@ -82,8 +82,20 @@ If you need one of the phases to have free/unspecified cadence, you cannot do th
 ## Text events
 
 - `<textevent timeoffset="X" message="..."/>` — `timeoffset` is seconds from the start of the containing block.
+- **`duration`** attribute (seconds) — controls how long the message is displayed. If omitted, Zwift uses a default display time.
 - **Countdown timing** — "X seconds left" messages must have `timeoffset = Duration - X`. Example: 240s block, "30 seconds left" = `timeoffset="210"`.
 - Text events in `IntervalsT` repeat with each interval cycle. Offsets are relative to the start of each cycle (on + off combined).
+
+## Common Mistakes
+
+| Mistake | Fix |
+|---------|-----|
+| Cooldown `PowerLow < PowerHigh` | `PowerLow` = start (high), `PowerHigh` = end (low) — opposite of what the names suggest |
+| Adjacent blocks with mismatched power | `PowerHigh` of Warmup must equal `OnPower`/`Power` of next block; `PowerLow` of Cooldown must equal `OffPower` of preceding IntervalsT |
+| `IntervalsT` with only `Cadence` set | Always set both `Cadence` and `CadenceResting`; Zwift bugs to ±5 rpm offset if only one is set |
+| Using `cadenceHigh`/`cadenceLow` | These have no effect — use `Cadence` only |
+| `<name>` over ~35 chars | Causes UI artifacts in Zwift |
+| Countdown offset wrong | `timeoffset = Duration - X` (not X) |
 
 ## Reference
 
