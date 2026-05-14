@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   High Torque Training — Zwift workout
-  Last updated: 2026-05-11
+  Last updated: 2026-05-14
 
   Site:      https://high-torque.jelen.dk/
   Calendar:  https://high-torque.jelen.dk/content/workouts.md
@@ -11,7 +11,7 @@
 <workout_file>
     <author>Tom Jelen</author>
     <name>TorqueMax 110%</name>
-    <activitySaveName>High Torque Tier 4: TorqueMax - 6x2.5min 105-110% FTP 50-60 rpm</activitySaveName>
+    <activitySaveName>High Torque: TorqueMax - 6x2.5min 105-110% FTP @ 50-60 rpm</activitySaveName>
     <description>EVOQ.BIKE's TorqueMax session. Six 2.5-minute intervals at 105-110% FTP and 50-60 rpm, 4-minute recovery. EVOQ explicitly warns: 'There is an increased risk of injury with these intervals, so you should start with the lower intensity torque intervals first.' Seated throughout.</description>
     <sportType>bike</sportType>
     <tags />

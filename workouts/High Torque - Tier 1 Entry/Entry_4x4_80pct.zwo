@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   High Torque Training — Zwift workout
-  Last updated: 2026-05-11
+  Last updated: 2026-05-14
 
   Site:      https://high-torque.jelen.dk/
   Calendar:  https://high-torque.jelen.dk/content/workouts.md
@@ -11,7 +11,7 @@
 <workout_file>
     <author>Tom Jelen</author>
     <name>Entry 4x4</name>
-    <activitySaveName>High Torque Tier 1: Entry 4x4 — 4×4 min 80–85% FTP 50–60 rpm</activitySaveName>
+    <activitySaveName>High Torque: Entry 4×4 min 80–85% FTP @ 50–60 rpm</activitySaveName>
     <description>Entry-level torque session based on Neal Henderson's recommendation for athletes starting low-cadence work. Four 4-minute intervals at 80-85% FTP and 50-60 rpm, with 4-minute recovery between each. Tempo intensity — enough torque to drive adaptation, without the joint stress of threshold or VO2max work. Seated throughout.</description>
     <sportType>bike</sportType>
     <tags />

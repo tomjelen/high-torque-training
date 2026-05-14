@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   High Torque Training — Zwift workout
-  Last updated: 2026-05-11
+  Last updated: 2026-05-14
 
   Site:      https://high-torque.jelen.dk/
   Calendar:  https://high-torque.jelen.dk/content/workouts.md
@@ -11,7 +11,7 @@
 <workout_file>
     <author>Tom Jelen</author>
     <name>SIT 2 Sets</name>
-    <activitySaveName>High Torque Tier 4: SIT - 2x(4x30s) Sprint 50-60 rpm</activitySaveName>
+    <activitySaveName>High Torque: SIT - 2x(4x30s) Sprint @ 50-60 rpm</activitySaveName>
     <description>Direct adaptation of the Hebisz &amp; Hebisz (2024) study SIT protocol. Two sets of 4 x 30-second maximal sprints at 50-60 rpm, with 90 seconds recovery between sprints and 25 minutes active rest between the two sets. Seated throughout.</description>
     <sportType>bike</sportType>
     <tags />

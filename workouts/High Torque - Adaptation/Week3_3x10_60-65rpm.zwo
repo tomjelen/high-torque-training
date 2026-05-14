@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   High Torque Training — Zwift workout
-  Last updated: 2026-05-11
+  Last updated: 2026-05-14
 
   Site:      https://high-torque.jelen.dk/
   Calendar:  https://high-torque.jelen.dk/content/workouts.md
@@ -11,7 +11,7 @@
 <workout_file>
     <author>Tom Jelen</author>
     <name>Week 3 — 3x10 @ 60–65 rpm</name>
-    <activitySaveName>High Torque Adaptation: Week 3 — 3×10 @ 60–65 rpm</activitySaveName>
+    <activitySaveName>High Torque: Adaptation - Week 3 - 3×10 @ 60–65 rpm</activitySaveName>
     <description>Week 3 adaptation session. Three 10-minute Zone 2 blocks at 60-65 rpm. Final adaptation session before the post-adaptation sessions. Seated throughout.</description>
     <sportType>bike</sportType>
     <tags />

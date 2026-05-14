@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   High Torque Training — Zwift workout
-  Last updated: 2026-05-11
+  Last updated: 2026-05-14
 
   Site:      https://high-torque.jelen.dk/
   Calendar:  https://high-torque.jelen.dk/content/workouts.md
@@ -11,7 +11,7 @@
 <workout_file>
     <author>Tom Jelen</author>
     <name>Threshold 5x5</name>
-    <activitySaveName>High Torque Tier 3: Threshold 5x5 — 5×5 min ~95% FTP 50–60 rpm</activitySaveName>
+    <activitySaveName>High Torque: Threshold 5×5 min ~95% FTP @ 50–60 rpm</activitySaveName>
     <description>Threshold torque session based on Neal Henderson's prescription. Five 5-minute intervals at ~95% FTP and 50-60 rpm, with approximately half-time recovery (3.5 min). Henderson uses this as the threshold step in his torque progression. Seated throughout.</description>
     <sportType>bike</sportType>
     <tags />

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   High Torque Training — Zwift workout
-  Last updated: 2026-05-11
+  Last updated: 2026-05-14
 
   Site:      https://high-torque.jelen.dk/
   Calendar:  https://high-torque.jelen.dk/content/workouts.md
@@ -11,7 +11,7 @@
 <workout_file>
     <author>Tom Jelen</author>
     <name>Week 1 — 2x10 @ 65–70 rpm</name>
-    <activitySaveName>High Torque Adaptation: Week 1 — 2×10 @ 65–70 rpm</activitySaveName>
+    <activitySaveName>High Torque: Adaptation - Week 1 - 2×10 @ 65–70 rpm</activitySaveName>
     <description>Week 1 adaptation session. Two 10-minute Zone 2 blocks at 65-70 rpm. Goal is purely mechanical adaptation — getting tendons and connective tissue used to high force per stroke before any intensity is added. Seated throughout.</description>
     <sportType>bike</sportType>
     <tags />

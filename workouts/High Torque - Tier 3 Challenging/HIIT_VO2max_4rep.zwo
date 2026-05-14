@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   High Torque Training — Zwift workout
-  Last updated: 2026-05-11
+  Last updated: 2026-05-14
 
   Site:      https://high-torque.jelen.dk/
   Calendar:  https://high-torque.jelen.dk/content/workouts.md
@@ -11,7 +11,7 @@
 <workout_file>
     <author>Tom Jelen</author>
     <name>VO2max HIIT 4-rep</name>
-    <activitySaveName>High Torque Tier 3: VO2max - 4x4min ~110% FTP 60-70 rpm</activitySaveName>
+    <activitySaveName>High Torque: VO2max - 4x4min ~110% FTP @ 60-70 rpm</activitySaveName>
     <description>The HIIT session from Hebisz &amp; Hebisz (2024). Four 4-minute intervals at 110% FTP and 60-70 rpm, with 8 minutes easy recovery between each. VO2max-level effort with high torque. Seated throughout.</description>
     <sportType>bike</sportType>
     <tags />

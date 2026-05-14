@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   High Torque Training — Zwift workout
-  Last updated: 2026-05-11
+  Last updated: 2026-05-14
 
   Site:      https://high-torque.jelen.dk/
   Calendar:  https://high-torque.jelen.dk/content/workouts.md
@@ -11,7 +11,7 @@
 <workout_file>
     <author>Tom Jelen</author>
     <name>Staple 3x5</name>
-    <activitySaveName>High Torque Tier 1: Staple 3x5 — 3×5 min ~90% FTP 50–60 rpm</activitySaveName>
+    <activitySaveName>High Torque: Staple 3x5 min ~90% FTP @ 50–60 rpm</activitySaveName>
     <description>Shorter version of EVOQ.BIKE's staple torque session. Three 5-minute intervals at ~90% FTP and 50-60 rpm, with 5-minute recovery between each. A good first step into the EVOQ format before moving to the full 5x5. Seated throughout.</description>
     <sportType>bike</sportType>
     <tags />

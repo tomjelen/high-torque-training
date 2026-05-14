@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   High Torque Training — Zwift workout
-  Last updated: 2026-05-11
+  Last updated: 2026-05-14
 
   Site:      https://high-torque.jelen.dk/
   Calendar:  https://high-torque.jelen.dk/content/workouts.md
@@ -11,7 +11,7 @@
 <workout_file>
     <author>Tom Jelen</author>
     <name>Week 2 — 2x15 @ 65 rpm</name>
-    <activitySaveName>High Torque Adaptation: Week 2 — 2×15 @ 65 rpm</activitySaveName>
+    <activitySaveName>High Torque: Adaptation - Week 2 - 2×15 @ 65 rpm</activitySaveName>
     <description>Week 2 adaptation session. Two 15-minute Zone 2 blocks at 65 rpm — slightly lower cadence and longer duration than week 1. Still adaptation only: no intensity above Zone 2. Seated throughout.</description>
     <sportType>bike</sportType>
     <tags />
