@@ -38,6 +38,7 @@ This is the most important principle in the project: **every session, every rule
 - Knee safety warnings must appear in every low-cadence workout
 - Workout durations in ZWO files must match the calendar. The calendar is the source of truth for duration.
 - `<author>` tag: "Tom Jelen"
+- Each `.zwo` file carries a machine-readable XML header comment between `<?xml ?>` and `<workout_file>`, with a hand-maintained `Last updated: YYYY-MM-DD` line and breadcrumb links to the site, calendar, rationale, and `/llms.txt`. **Bump the date on any content edit to that workout** (same semantics as `HOME_LAST_UPDATED` in `site/CLAUDE.md`). The site-level `ZWO_WORKOUTS_LAST_UPDATED` constant is derived as `max()` of these dates by `site/scripts/extract-workouts-last-updated.mjs` and injected at build time via Vite's `define`.
 
 ## Naming
 
