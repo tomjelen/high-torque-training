@@ -1,4 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+  High Torque Training — Zwift workout
+  Last updated: 2026-05-11
+
+  Site:      https://high-torque.jelen.dk/
+  Calendar:  https://high-torque.jelen.dk/content/workouts.md
+  Rationale: https://high-torque.jelen.dk/content/rationale.md
+  LLMs:      https://high-torque.jelen.dk/llms.txt
+-->
 <workout_file>
     <author>Tom Jelen</author>
     <name>Week 2 — 2x15 @ 65 rpm</name>
