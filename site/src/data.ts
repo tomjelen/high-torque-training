@@ -1,5 +1,6 @@
 import type { RationaleSection, Source, Tier, Workout } from './types'
-import { TSS } from './generated/tss'
+
+const TSS = __ZWO_WORKOUTS_TSS__
 
 export const RATIONALE_SECTIONS: RationaleSection[] = [
   { id: 'what', heading: 'What is torque training?' },
