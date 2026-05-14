@@ -13,6 +13,30 @@ Project-specific rules for `.zwo` files in the High Torque Training library. For
 
 Always `<author>Tom Jelen</author>`.
 
+## Machine-readable header comment (required)
+
+Every `.zwo` file in `workouts/` must carry an XML comment between the `<?xml ?>` declaration and the `<workout_file>` root element:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  High Torque Training — Zwift workout
+  Last updated: YYYY-MM-DD
+
+  Site:      https://high-torque.jelen.dk/
+  Calendar:  https://high-torque.jelen.dk/content/workouts.md
+  Rationale: https://high-torque.jelen.dk/content/rationale.md
+  LLMs:      https://high-torque.jelen.dk/llms.txt
+-->
+<workout_file>
+```
+
+Constraints:
+
+- The `Last updated:` line is the first content line of the comment. `site/scripts/extract-workouts-last-updated.mjs` depends on its position and the `YYYY-MM-DD` format.
+- The four URLs are exactly as above. Do not substitute the HTML pages (`/`, `/rationale`) for the markdown URLs — the markdown URLs are deliberate (primary audience is machines).
+- Do not write the literal string "Last updated:" elsewhere in the file (e.g. inside a `<description>` or `<textevent>`), because the extractor uses a multiline regex and would pick up the first match.
+
 ## Naming
 
 - `<name>` — prefix with `HT`. Example: `HT Torque Entry 80%`.
@@ -110,3 +134,4 @@ After creating or editing a `.zwo` file, verify:
 10. Countdown timing: `timeoffset = Duration - X` for "X seconds left" messages.
 11. `<author>Tom Jelen</author>`.
 12. All displayed values show source prescription ranges, not ZWO-fixed values.
+13. **`Last updated:` date is current.** If this edit changed any content of the workout (interval added/removed, duration/cadence/intensity tweaked, description corrected, text-event typo fixed, file renamed), bump the date in the header comment to today's date. Do not bump for cosmetic edits to the header comment itself (e.g. fixing a URL typo). Same semantics as `HOME_LAST_UPDATED` in `site/CLAUDE.md`.
