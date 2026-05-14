@@ -19,10 +19,11 @@
 
 ## Workout files
 
-- [ ] Put a version timestamp inside the .zwo files. I think maybe we add a comment with this, and other information that LLMs can read, and make it so the website re-expands Download/Install with a `updated` badge.
+- [x] Put a version timestamp inside the .zwo files. I think maybe we add a comment with this, and other information that LLMs can read
+- [ ] Make it so the website re-expands Download/Install with a `updated` badge.
 - [x] Investigate if duration is an actual attribute of textevent.
 - [x] Update text-events to use duration
-- [ ] Add link to site in llm-meta inside .zwo files
+- [x] Add link to site in llm-meta inside .zwo files
 - [x] Move text-events that requires reading comprehension to the off-blocks in intervals.
 - [ ] Bug: The save-name for stable 3x5 was very convoluted
 - [x] Link to site in welcome message
