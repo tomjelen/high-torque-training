@@ -14,7 +14,7 @@ import type { AppState } from './types'
 
 export const HOME_LAST_UPDATED = '2026-05-02'
 export const RATIONALE_LAST_UPDATED = '2026-04-30'
-export const ZWO_WORKOUTS_LAST_UPDATED: string = __ZWO_WORKOUTS_LAST_UPDATED__
+export const ZWO_WORKOUTS_LAST_UPDATED = __ZWO_WORKOUTS_LAST_UPDATED__
 
 function HomePage({ state, setState }: { state: AppState; setState: React.Dispatch<React.SetStateAction<AppState>> }) {
   useEffect(() => { document.title = 'High Torque Training — Free Training Plan for Zwift' }, [])

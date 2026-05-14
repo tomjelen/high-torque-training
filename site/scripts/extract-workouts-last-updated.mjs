@@ -21,7 +21,7 @@ async function findZwoFiles(dir) {
   return files
 }
 
-export async function extractMaxDate(workoutsDir = DEFAULT_WORKOUTS_DIR) {
+export async function getZwoWorkoutsLastUpdated(workoutsDir = DEFAULT_WORKOUTS_DIR) {
   const files = await findZwoFiles(workoutsDir)
   if (files.length === 0) throw new Error(`No .zwo files found in ${workoutsDir}`)
   let max = null

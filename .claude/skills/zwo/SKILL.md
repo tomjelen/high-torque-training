@@ -33,7 +33,7 @@ Every `.zwo` file in `workouts/` must carry an XML comment between the `<?xml ?>
 
 Constraints:
 
-- The `Last updated:` line is the first content line of the comment. `site/scripts/extract-workouts-last-updated.mjs` depends on its position and the `YYYY-MM-DD` format.
+- The `Last updated:` line should be the first content line of the comment (convention). The parser in `site/scripts/extract-workouts-last-updated.mjs` matches by pattern across the whole file, so the `YYYY-MM-DD` format and the "don't repeat the literal elsewhere" rule below are what's actually enforced.
 - The four URLs are exactly as above. Do not substitute the HTML pages (`/`, `/rationale`) for the markdown URLs — the markdown URLs are deliberate (primary audience is machines).
 - Do not write the literal string "Last updated:" elsewhere in the file (e.g. inside a `<description>` or `<textevent>`), because the extractor uses a multiline regex and would pick up the first match.
 

@@ -1,1 +1,1 @@
-export function extractMaxDate(workoutsDir?: string): Promise<string>
+export function getZwoWorkoutsLastUpdated(workoutsDir?: string): Promise<string>
