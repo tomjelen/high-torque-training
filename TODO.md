@@ -27,7 +27,7 @@
 - [x] Move text-events that requires reading comprehension to the off-blocks in intervals.
 - [x] The save-name for stable 3x5 was very convoluted
 - [x] Link to site in welcome message
-- [ ] SIT workouts: Max effort should not be 1.5 FTP. You die to the spiral of death. <SteadyState Duration="30" Power="1.50" Cadence="55">
+- [x] SIT workouts: Max effort should not be 1.5 FTP. You die to the spiral of death. <SteadyState Duration="30" Power="1.50" Cadence="55">
 
 ## zwo-skill
 

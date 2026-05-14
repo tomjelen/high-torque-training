@@ -31,44 +31,44 @@
         </Warmup>
 
         <!-- Set 1 -->
-        <SteadyState Duration="30" Power="1.50" Cadence="55">
+        <MaxEffort Duration="30" Cadence="55">
             <textevent timeoffset="0" message="STAY SEATED. GO. Set 1. Maximal effort. 50-60rpm." />
             <textevent timeoffset="15" message="Halfway. Keep driving. Seated." />
             <textevent timeoffset="28" message="2 seconds. Do not stand." />
-        </SteadyState>
+        </MaxEffort>
         <SteadyState Duration="90" Power="0.50">
             <textevent timeoffset="2" message="Recover. Spin easy. 90 seconds." />
             <textevent timeoffset="30" message="Stay loose. Let the legs recover." />
             <textevent timeoffset="70" message="Find your gear for the next sprint." />
         </SteadyState>
 
-        <SteadyState Duration="30" Power="1.50" Cadence="55">
+        <MaxEffort Duration="30" Cadence="55">
             <textevent timeoffset="0" message="STAY SEATED. GO. Maximal." />
             <textevent timeoffset="15" message="Halfway. Seated." />
             <textevent timeoffset="28" message="2 seconds." />
-        </SteadyState>
+        </MaxEffort>
         <SteadyState Duration="90" Power="0.50">
             <textevent timeoffset="2" message="Recover. Easy spin." />
             <textevent timeoffset="30" message="Good. Stay loose." />
             <textevent timeoffset="70" message="Next sprint coming." />
         </SteadyState>
 
-        <SteadyState Duration="30" Power="1.50" Cadence="55">
+        <MaxEffort Duration="30" Cadence="55">
             <textevent timeoffset="0" message="STAY SEATED. GO. Maximal." />
             <textevent timeoffset="15" message="Halfway. Seated." />
             <textevent timeoffset="28" message="2 seconds." />
-        </SteadyState>
+        </MaxEffort>
         <SteadyState Duration="90" Power="0.50">
             <textevent timeoffset="2" message="Recover." />
             <textevent timeoffset="30" message="Three down in this set." />
             <textevent timeoffset="70" message="Last sprint of set 1. Find your gear." />
         </SteadyState>
 
-        <SteadyState Duration="30" Power="1.50" Cadence="55">
+        <MaxEffort Duration="30" Cadence="55">
             <textevent timeoffset="0" message="STAY SEATED. GO. Last sprint of set 1." />
             <textevent timeoffset="15" message="Halfway. Drive it." />
             <textevent timeoffset="28" message="2 seconds." />
-        </SteadyState>
+        </MaxEffort>
         <SteadyState Duration="90" Power="0.50">
             <textevent timeoffset="2" message="Recover. Set 1 done." />
             <textevent timeoffset="30" message="25 minutes active rest coming." />
@@ -84,44 +84,44 @@
         </SteadyState>
 
         <!-- Set 2 -->
-        <SteadyState Duration="30" Power="1.50" Cadence="55">
+        <MaxEffort Duration="30" Cadence="55">
             <textevent timeoffset="0" message="STAY SEATED. GO. Set 2. Maximal." />
             <textevent timeoffset="15" message="Halfway. Drive it. Seated." />
             <textevent timeoffset="28" message="2 seconds." />
-        </SteadyState>
+        </MaxEffort>
         <SteadyState Duration="90" Power="0.50">
             <textevent timeoffset="2" message="Recover. Easy spin. 90 seconds." />
             <textevent timeoffset="30" message="Good. Hold the quality." />
             <textevent timeoffset="70" message="Next sprint coming. Stay focused." />
         </SteadyState>
 
-        <SteadyState Duration="30" Power="1.50" Cadence="55">
+        <MaxEffort Duration="30" Cadence="55">
             <textevent timeoffset="0" message="STAY SEATED. GO. Maximal." />
             <textevent timeoffset="15" message="Halfway. Seated." />
             <textevent timeoffset="28" message="2 seconds." />
-        </SteadyState>
+        </MaxEffort>
         <SteadyState Duration="90" Power="0.50">
             <textevent timeoffset="2" message="Recover." />
             <textevent timeoffset="30" message="Good. Stay in the gear." />
             <textevent timeoffset="70" message="Next sprint." />
         </SteadyState>
 
-        <SteadyState Duration="30" Power="1.50" Cadence="55">
+        <MaxEffort Duration="30" Cadence="55">
             <textevent timeoffset="0" message="STAY SEATED. GO. Maximal." />
             <textevent timeoffset="15" message="Halfway. Seated." />
             <textevent timeoffset="28" message="2 seconds." />
-        </SteadyState>
+        </MaxEffort>
         <SteadyState Duration="90" Power="0.50">
             <textevent timeoffset="2" message="Recover." />
             <textevent timeoffset="30" message="Three down in set 2." />
             <textevent timeoffset="70" message="Last sprint of set 2. Find your gear." />
         </SteadyState>
 
-        <SteadyState Duration="30" Power="1.50" Cadence="55">
+        <MaxEffort Duration="30" Cadence="55">
             <textevent timeoffset="0" message="STAY SEATED. GO. Last sprint of set 2." />
             <textevent timeoffset="15" message="Halfway. Drive it." />
             <textevent timeoffset="28" message="2 seconds." />
-        </SteadyState>
+        </MaxEffort>
         <SteadyState Duration="90" Power="0.50">
             <textevent timeoffset="2" message="Recover. Set 2 done." />
             <textevent timeoffset="30" message="Final set coming after 25 minutes rest." />
@@ -137,42 +137,42 @@
         </SteadyState>
 
         <!-- Set 3 -->
-        <SteadyState Duration="30" Power="1.50" Cadence="55">
+        <MaxEffort Duration="30" Cadence="55">
             <textevent timeoffset="0" message="STAY SEATED. GO. Final set. Maximal effort." />
             <textevent timeoffset="15" message="Halfway. Do not let up. Seated." />
             <textevent timeoffset="28" message="2 seconds." />
-        </SteadyState>
+        </MaxEffort>
         <SteadyState Duration="90" Power="0.50">
             <textevent timeoffset="2" message="Recover. Easy spin." />
             <textevent timeoffset="30" message="Good. Stay in the gear." />
             <textevent timeoffset="70" message="Next sprint coming." />
         </SteadyState>
 
-        <SteadyState Duration="30" Power="1.50" Cadence="55">
+        <MaxEffort Duration="30" Cadence="55">
             <textevent timeoffset="0" message="STAY SEATED. GO. Maximal." />
             <textevent timeoffset="15" message="Halfway. Seated." />
             <textevent timeoffset="28" message="2 seconds." />
-        </SteadyState>
+        </MaxEffort>
         <SteadyState Duration="90" Power="0.50">
             <textevent timeoffset="2" message="Recover." />
             <textevent timeoffset="70" message="Next sprint." />
         </SteadyState>
 
-        <SteadyState Duration="30" Power="1.50" Cadence="55">
+        <MaxEffort Duration="30" Cadence="55">
             <textevent timeoffset="0" message="STAY SEATED. GO. Maximal." />
             <textevent timeoffset="15" message="Halfway. Seated." />
             <textevent timeoffset="28" message="2 seconds." />
-        </SteadyState>
+        </MaxEffort>
         <SteadyState Duration="90" Power="0.50">
             <textevent timeoffset="2" message="Recover. Almost done." />
             <textevent timeoffset="70" message="Last sprint. Leave nothing." />
         </SteadyState>
 
-        <SteadyState Duration="30" Power="1.50" Cadence="55">
+        <MaxEffort Duration="30" Cadence="55">
             <textevent timeoffset="0" message="STAY SEATED. GO. Final sprint." />
             <textevent timeoffset="15" message="Halfway. Last effort." />
             <textevent timeoffset="28" message="2 seconds." />
-        </SteadyState>
+        </MaxEffort>
         <SteadyState Duration="90" Power="0.50">
             <textevent timeoffset="2" message="Recover. 12 sprints done." />
             <textevent timeoffset="30" message="Full study volume achieved." />

@@ -39,11 +39,11 @@
             <textevent timeoffset="270" message="30 seconds. The sprint starts immediately after. Get ready." />
         </SteadyState>
 
-        <SteadyState Duration="60" Power="1.50">
+        <MaxEffort Duration="60">
             <textevent timeoffset="0" message="SPRINT. Maximal effort. 1 minute. Any cadence — seated or standing." />
             <textevent timeoffset="30" message="Halfway. Keep driving." />
             <textevent timeoffset="50" message="10 seconds." />
-        </SteadyState>
+        </MaxEffort>
 
         <SteadyState Duration="600" Power="0.50">
             <textevent timeoffset="0" message="Recovery. 10 minutes. You need them." />
@@ -63,11 +63,11 @@
             <textevent timeoffset="270" message="30 seconds. Get ready to sprint." />
         </SteadyState>
 
-        <SteadyState Duration="60" Power="1.50">
+        <MaxEffort Duration="60">
             <textevent timeoffset="0" message="SPRINT. Maximal. 1 minute. Any cadence." />
             <textevent timeoffset="30" message="Halfway." />
             <textevent timeoffset="50" message="10 seconds." />
-        </SteadyState>
+        </MaxEffort>
 
         <SteadyState Duration="600" Power="0.50">
             <textevent timeoffset="0" message="Recovery. 10 minutes. Last set coming." />
@@ -86,11 +86,11 @@
             <textevent timeoffset="270" message="30 seconds. Prepare for the final sprint." />
         </SteadyState>
 
-        <SteadyState Duration="60" Power="1.50">
+        <MaxEffort Duration="60">
             <textevent timeoffset="0" message="FINAL SPRINT. Everything. 1 minute. Any cadence." />
             <textevent timeoffset="30" message="Halfway. Leave nothing." />
             <textevent timeoffset="50" message="10 seconds." />
-        </SteadyState>
+        </MaxEffort>
 
         <SteadyState Duration="600" Power="0.50">
             <textevent timeoffset="0" message="Final recovery. 10 minutes. Easy spinning." />

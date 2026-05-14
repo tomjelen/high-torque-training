@@ -1,6 +1,6 @@
 ---
 name: zwo-format
-description: Use when creating, editing, or reviewing .zwo Zwift workout files — especially for power ramp direction (Warmup/Cooldown), IntervalsT cadence attributes, textevent timing and duration, or workout naming limits.
+description: Use when creating, editing, or reviewing .zwo Zwift workout files — especially for power ramp direction (Warmup/Cooldown), IntervalsT cadence attributes, textevent timing and duration, workout naming limits, or max effort/sprint blocks (MaxEffort element).
 paths: "**/*.zwo"
 allowed-tools: Read, Edit, Write, Grep, Glob
 ---
@@ -32,6 +32,10 @@ Rules for the Zwift `.zwo` XML format. These come from testing against Zwift and
             <textevent timeoffset="10" message="Text shown during each interval cycle."/>
         </IntervalsT>
 
+        <MaxEffort Duration="30" Cadence="55">
+            <textevent timeoffset="0" message="GO. Maximal effort — no power cap."/>
+        </MaxEffort>
+
         <Cooldown Duration="600" PowerLow="0.50" PowerHigh="0.40">
             <textevent timeoffset="30" message="Text shown during cooldown."/>
         </Cooldown>
@@ -42,6 +46,20 @@ Rules for the Zwift `.zwo` XML format. These come from testing against Zwift and
 ## Power targets
 
 All power values can have fractions of FTP: `0.88` = 88% FTP.
+
+### Max effort blocks — use `MaxEffort`, not `SteadyState`
+
+For all-out sprint blocks where the rider should go as hard as possible, use `MaxEffort` instead of `SteadyState` with a high power value:
+
+```xml
+<MaxEffort Duration="30" Cadence="55">
+    <textevent timeoffset="0" message="GO. Maximal effort." />
+</MaxEffort>
+```
+
+- **Do not** use `SteadyState Power="1.50"` (or any high fraction) to represent max efforts. ERG mode caps output at the target, preventing a true all-out sprint. `MaxEffort` disables the power target and lets the rider go unrestricted.
+- `MaxEffort` accepts `Duration` and `Cadence` attributes. Drop `Power` entirely.
+- Omit `Cadence` if the source prescribes unconstrained cadence for the sprint.
 
 ### Power continuity (critical — this is the most common mistake)
 
@@ -96,6 +114,7 @@ If you need one of the phases to have free/unspecified cadence, you cannot do th
 | Using `cadenceHigh`/`cadenceLow` | These have no effect — use `Cadence` only |
 | `<name>` over ~35 chars | Causes UI artifacts in Zwift |
 | Countdown offset wrong | `timeoffset = Duration - X` (not X) |
+| `SteadyState Power="1.50"` for a sprint | Use `MaxEffort Duration="..."` — ERG mode caps effort at the wattage target, killing the all-out nature of the effort |
 
 ## Reference
 
