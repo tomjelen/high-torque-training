@@ -1,7 +1,10 @@
 import { StrictMode } from 'react'
 import { renderToString } from 'react-dom/server'
 import { StaticRouter } from 'react-router-dom/server'
-import App, { HOME_LAST_UPDATED, RATIONALE_LAST_UPDATED } from './App'
+import App, {
+  HOME_LAST_UPDATED, RATIONALE_LAST_UPDATED, ABOUT_LAST_UPDATED,
+  HOME_TITLE, RATIONALE_TITLE, ABOUT_TITLE,
+} from './App'
 
 interface PageMeta {
   title: string
@@ -17,14 +20,19 @@ interface PageMeta {
 // here to match either query.
 const ROUTE_META: Record<string, PageMeta> = {
   '/': {
-    title: 'High Torque Training — Free Training Plan for Zwift',
+    title: HOME_TITLE,
     description: 'Free Zwift training plan for high torque, low-cadence cycling — research-backed workouts with a 12-week calendar.',
     lastmod: HOME_LAST_UPDATED,
   },
   '/rationale': {
-    title: 'High Torque Training — The Science and Rationale',
+    title: RATIONALE_TITLE,
     description: 'Why grind a big gear? The research and coaching evidence behind low-cadence, high-torque cycling training — and how it shapes the workouts.',
     lastmod: RATIONALE_LAST_UPDATED,
+  },
+  '/about': {
+    title: ABOUT_TITLE,
+    description: 'About Tom Jelen — AI/ML engineer and A/B-category Zwift racer who built this site as a methodical, research-grounded learning project on high-torque, low-cadence cycling training.',
+    lastmod: ABOUT_LAST_UPDATED,
   },
 }
 

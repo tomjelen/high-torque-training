@@ -119,6 +119,33 @@ const ROUTES = [
       isPartOf: { '@type': 'WebSite', name: SITE_NAME, url: urlFor('/') },
     }),
   },
+  {
+    path: '/about',
+    outputs: ['dist/about.html', 'dist/about/index.html'],
+    marker: 'Abzu',
+    primaryMd: '/content/about.md',
+    primaryDescription: 'about the author and why this site exists',
+    secondaryMd: '/content/workouts.md',
+    secondaryDescription: 'the workout library and training calendar (what to do)',
+    noscriptIntro: "About the author and why this site exists.",
+    ogType: 'profile',
+    schema: ({ title, description, lastmod }, canonical) => ({
+      '@context': 'https://schema.org',
+      '@type': 'ProfilePage',
+      name: title,
+      description,
+      url: canonical,
+      dateModified: lastmod,
+      mainEntity: {
+        '@type': 'Person',
+        name: AUTHOR_NAME,
+        jobTitle: 'AI/ML Engineer',
+        worksFor: { '@type': 'Organization', name: 'Abzu', url: 'https://abzu.ai' },
+        ...(AUTHOR_SAMEAS.length > 0 && { sameAs: AUTHOR_SAMEAS }),
+      },
+      isPartOf: { '@type': 'WebSite', name: SITE_NAME, url: urlFor('/') },
+    }),
+  },
 ]
 
 function buildHeadMeta(route, meta, canonical) {

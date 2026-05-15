@@ -13,7 +13,7 @@
 
 - [x] Should we have "hide" buttons on all panels?
 - [ ] Workout Zwift-like visualizations
-- [ ] SEO: Add a short /about page — your Abzu/ML background + A/B Zwift racer credibility + why you built this. Three paragraphs is enough. This is what closes the E-E-A-T gap for Google.
+- [x] SEO: Add a short /about page — your Abzu/ML background + A/B Zwift racer credibility + why you built this. Three paragraphs is enough. This is what closes the E-E-A-T gap for Google.
 - [ ] Tip when session tracker is empty
 - [ ] Web claude has problems downloading the .zwo files. Something about binary
 

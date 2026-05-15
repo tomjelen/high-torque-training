@@ -12,6 +12,7 @@ JavaScript is needed to render the pages, therefore plain-text versions for agen
 
 - Workout library (home): https://high-torque.jelen.dk/ or https://high-torque.jelen.dk/content/workouts.md
 - The science and rationale: https://high-torque.jelen.dk/rationale or https://high-torque.jelen.dk/content/rationale.md
+- About the author: https://high-torque.jelen.dk/about or https://high-torque.jelen.dk/content/about.md
 
 ## Workouts
 
