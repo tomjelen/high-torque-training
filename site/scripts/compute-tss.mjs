@@ -4,7 +4,8 @@ import { readFile } from 'node:fs/promises'
 import { relative } from 'node:path'
 import { findZwoFiles, WORKOUTS_DIR } from './zwo-files.mjs'
 
-const KNOWN_BLOCK_TYPES = new Set(['Warmup', 'Cooldown', 'SteadyState', 'IntervalsT'])
+const KNOWN_BLOCK_TYPES = new Set(['Warmup', 'Cooldown', 'SteadyState', 'IntervalsT', 'MaxEffort'])
+const BLOCK_TYPE_PATTERN = Array.from(KNOWN_BLOCK_TYPES).join('|')
 
 function parseAttrs(attrsStr) {
   const attrs = {}
@@ -24,7 +25,7 @@ function extractBlocks(xml, filePath) {
 
   const workoutXml = workoutMatch[1]
   const blocks = []
-  const blockRe = /<(Warmup|Cooldown|SteadyState|IntervalsT)\s+([^>]*)(?:\/>|>)/g
+  const blockRe = new RegExp(`<(${BLOCK_TYPE_PATTERN})\\s+([^>]*)(?:\\/>|>)`, 'g')
   let m
   while ((m = blockRe.exec(workoutXml)) !== null) {
     blocks.push({ type: m[1], attrs: parseAttrs(m[2]) })
@@ -57,6 +58,10 @@ function sampleBlock({ type, attrs }) {
   }
   if (type === 'Warmup' || type === 'Cooldown') {
     return sampleRamp(dur, Number(attrs.PowerLow), Number(attrs.PowerHigh))
+  }
+  if (type === 'MaxEffort') {
+    // No power attribute — sprint at ~150% FTP (reasonable estimate for TSS purposes)
+    return Array(dur).fill(1.5)
   }
   if (type === 'IntervalsT') {
     const repeat = Math.round(Number(attrs.Repeat))
