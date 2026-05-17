@@ -6,6 +6,7 @@ import AdaptationPanel from './components/AdaptationPanel'
 import CollectionPanel from './components/CollectionPanel'
 import RationalePage from './components/RationalePage'
 import AboutPage from './components/AboutPage'
+import ChartGallery from './components/ChartGallery'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import { loadState, saveState, PRERENDER_STATE } from './storage'
@@ -108,6 +109,10 @@ function App() {
         <Route path="/" element={<HomePage state={state} setState={setState} />} />
         <Route path="/rationale" element={<RationaleRoute />} />
         <Route path="/about" element={<AboutRoute />} />
+        {/* Dev-only chart gallery. Not in prerender.mjs ROUTES, no nav link.
+            Placeholder data + route fate (remove vs promote, and the
+            attendant bundle check) is a pre-merge decision, not M1. */}
+        <Route path="/dev/charts" element={<ChartGallery />} />
       </Routes>
     </div>
   )

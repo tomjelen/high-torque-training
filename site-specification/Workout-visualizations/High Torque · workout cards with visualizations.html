@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>High Torque · workout cards with visualizations</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  /* ── high-torque dark theme tokens (preserved from the live site) ──── */
+  :root {
+    --color-bg: #0E0F12;
+    --color-surface: #14161B;
+    --color-surface-2: #1A1D23;
+    --color-border: rgba(255,255,255,0.06);
+    --color-border-2: rgba(255,255,255,0.10);
+    --color-border-tertiary: rgba(255,255,255,0.22);
+    --color-text-primary: #F4F5F7;
+    --color-text-secondary: rgba(244,245,247,0.65);
+    --color-text-tertiary: rgba(244,245,247,0.42);
+    --color-text-quaternary: rgba(244,245,247,0.28);
+    --color-accent: #BA7517;
+    --color-accent-bg: rgba(186,117,23,0.10);
+    --color-accent-line: rgba(186,117,23,0.30);
+  }
+  html, body { margin: 0; padding: 0; min-height: 100%; background: var(--color-bg); }
+  body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+         color: var(--color-text-primary); -webkit-font-smoothing: antialiased;
+         line-height: 1.55; }
+  * { box-sizing: border-box; }
+  a { color: var(--color-text-primary); text-decoration: underline;
+      text-decoration-color: rgba(244,245,247,0.25); text-underline-offset: 3px; }
+  a:hover { text-decoration-color: rgba(244,245,247,0.6); }
+
+  /* ── Page chrome ────────────────────────────────────────────────────── */
+  .page { max-width: 880px; margin: 0 auto; padding: 32px 28px 96px; }
+  .topbar { display: flex; justify-content: space-between; align-items: baseline;
+            padding-bottom: 14px; border-bottom: 1px solid var(--color-border);
+            margin-bottom: 28px; }
+  .topbar .brand { font-weight: 600; font-size: 15px; letter-spacing: -0.01em; }
+  .topbar nav { display: flex; gap: 18px; font-size: 13px;
+                color: var(--color-text-secondary); }
+  .topbar nav a { color: inherit; text-decoration: none; }
+  .topbar nav a:hover { color: var(--color-text-primary); }
+
+  h1 { font-size: 30px; letter-spacing: -0.02em; margin: 0 0 26px;
+       font-weight: 600; line-height: 1.15; }
+
+  /* ── Collapsible page sections (intro, install, etc — kept collapsed) ─ */
+  .pagesec { border-top: 1px solid var(--color-border); padding: 18px 0; }
+  .pagesec h2 { margin: 0; font-size: 14px; font-weight: 600;
+                letter-spacing: 0.04em; text-transform: uppercase;
+                color: var(--color-text-secondary); display: flex;
+                gap: 12px; align-items: baseline; }
+  .pagesec h2 .ix { color: var(--color-text-quaternary);
+                    font-variant-numeric: tabular-nums; }
+  .pagesec .sub { color: var(--color-text-secondary); font-size: 13px;
+                  margin: 6px 0 0 30px; }
+  .pagesec .caret { margin-left: auto; color: var(--color-text-tertiary); }
+
+  /* ── Section with workouts ─────────────────────────────────────────── */
+  .sec-open { border-top: 1px solid var(--color-border); padding: 26px 0 8px; }
+  .sec-open h2 { font-size: 14px; font-weight: 600; letter-spacing: 0.04em;
+                 text-transform: uppercase; color: var(--color-text-primary);
+                 margin: 0 0 4px; display: flex; gap: 12px; align-items: baseline; }
+  .sec-open h2 .ix { color: var(--color-text-quaternary);
+                     font-variant-numeric: tabular-nums; }
+  .sec-open .secmeta { color: var(--color-text-secondary); font-size: 13px;
+                       margin: 0 0 18px 30px; }
+
+  /* Mini callout above adapt phase */
+  .knee { border: 1px solid var(--color-border-2);
+          background: var(--color-surface);
+          padding: 16px 18px; border-radius: 10px;
+          margin: 6px 0 22px;
+          font-size: 13px; color: var(--color-text-secondary);
+          line-height: 1.6; }
+  .knee strong { color: var(--color-text-primary); font-weight: 600;
+                 display: block; margin-bottom: 6px;
+                 font-size: 13px; }
+  .knee ol { margin: 4px 0 0 0; padding-left: 22px; }
+  .knee li { margin: 2px 0; }
+  .knee li b { color: var(--color-text-primary); font-weight: 500; }
+
+  /* ── Legend strip (one per section instead of one per card) ────────── */
+  .legend { display: flex; flex-wrap: wrap; gap: 8px 18px; align-items: center;
+            padding: 10px 14px; border: 1px solid var(--color-border);
+            background: var(--color-surface); border-radius: 8px;
+            margin-bottom: 18px; font-size: 12px;
+            color: var(--color-text-secondary); }
+  .legend .lbl { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;
+                 color: var(--color-text-tertiary); margin-right: 2px; }
+  .legend .item { display: inline-flex; align-items: center; gap: 7px; }
+  .legend .sw { width: 12px; height: 10px; border-radius: 1px; }
+  .legend .swHatch { width: 14px; height: 8px; position: relative; overflow: hidden;
+                     border-radius: 1px; }
+
+  /* ── Tier sub-heading inside the Collection ────────────────────────── */
+  .tier-sub { display: flex; align-items: baseline; gap: 12px;
+              margin: 26px 0 12px; padding-bottom: 6px;
+              border-bottom: 1px solid var(--color-border); }
+  .tier-sub h3 { margin: 0; font-size: 13px; font-weight: 600;
+                 letter-spacing: 0.04em; text-transform: uppercase; }
+  .tier-sub .desc { font-size: 12px; color: var(--color-text-tertiary); }
+
+  /* ── Workout card ──────────────────────────────────────────────────── */
+  .card { background: var(--color-surface);
+          border: 1px solid var(--color-border-2);
+          border-radius: 12px; padding: 20px 22px 18px;
+          margin-bottom: 14px; }
+  .card.is-active { border-color: rgba(186,117,23,0.45); }
+  .card.is-locked { opacity: 0.62; }
+
+  .card-head { display: grid;
+               grid-template-columns: auto 1fr auto;
+               gap: 14px; align-items: baseline; margin-bottom: 4px; }
+  .tier { font-size: 10px; font-weight: 700; letter-spacing: 0.06em;
+          padding: 3px 6px; border-radius: 4px; background: var(--color-surface-2);
+          color: var(--color-text-secondary); align-self: center; }
+  .tier-T3, .tier-T4 { color: var(--color-accent); background: var(--color-accent-bg); }
+  .tier-A { color: #1AA5DB; background: rgba(26,165,219,0.08); }
+
+  .card h3 { margin: 0; font-size: 18px; font-weight: 600; letter-spacing: -0.01em; }
+  .card-state { font-size: 10px; font-weight: 700; letter-spacing: 0.10em;
+                color: var(--color-text-tertiary); }
+  .card-state.is-active { color: var(--color-accent); }
+  .card-state.is-done { color: #3FAE54; }
+
+  /* Stats grid — preserves all metadata from the live site */
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr);
+           gap: 6px 18px; padding: 12px 0 4px;
+           border-top: 1px solid var(--color-border);
+           margin-top: 6px; }
+  .stat .k { font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase;
+             color: var(--color-text-tertiary); display: block; margin-bottom: 3px; }
+  .stat .v { font-size: 14px; color: var(--color-text-primary);
+             font-variant-numeric: tabular-nums; }
+
+  /* Chart area */
+  .chart-wrap { margin: 14px -4px 6px; }
+
+  /* Card footer — sources, downloads, completion */
+  .card-foot { display: flex; justify-content: space-between; align-items: center;
+               gap: 16px; padding-top: 14px; margin-top: 8px;
+               border-top: 1px solid var(--color-border);
+               font-size: 12px; color: var(--color-text-tertiary); }
+  .card-foot .left { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
+  .card-foot .right { display: flex; gap: 10px; align-items: center; }
+  .src { color: var(--color-text-secondary); text-decoration: none;
+         border-bottom: 1px dashed rgba(244,245,247,0.25); padding-bottom: 1px; }
+  .src:hover { color: var(--color-text-primary); }
+  .dl { color: var(--color-accent); text-decoration: none; font-size: 12px;
+        padding: 4px 10px; border: 1px solid var(--color-accent-line); border-radius: 6px; }
+  .dl:hover { background: var(--color-accent-bg); }
+  .markdone { font-size: 12px; padding: 4px 12px; border-radius: 6px;
+              background: transparent;
+              border: 1px solid var(--color-border-2);
+              color: var(--color-text-secondary); cursor: pointer;
+              font: inherit; font-size: 12px; }
+  .markdone:hover { color: var(--color-text-primary); border-color: var(--color-border-tertiary); }
+  .done-tag { color: #3FAE54; font-weight: 500; }
+
+  /* ── Session tracker (preserved at end) ─────────────────────────────── */
+  .tracker { margin: 36px 0 0; padding: 22px;
+             border: 1px solid var(--color-border-2);
+             border-radius: 12px; background: var(--color-surface); }
+  .tracker h2 { margin: 0 0 4px; font-size: 14px; font-weight: 600;
+                letter-spacing: 0.04em; text-transform: uppercase; }
+  .tracker .empty { color: var(--color-text-tertiary); font-size: 13px;
+                    margin: 0 0 14px; }
+  .strip { display: flex; gap: 2px; margin-bottom: 6px; }
+  .strip span { flex: 1; height: 22px; background: rgba(255,255,255,0.05);
+                border-radius: 2px; }
+  .strip-axis { display: flex; justify-content: space-between;
+                font-size: 11px; color: var(--color-text-tertiary);
+                letter-spacing: 0.04em; }
+  .strip-legend { display: flex; gap: 16px; margin-top: 10px;
+                  font-size: 11px; color: var(--color-text-secondary); }
+  .strip-legend i { display: inline-block; width: 10px; height: 10px;
+                    margin-right: 5px; border-radius: 2px; vertical-align: -1px; }
+
+  /* ── Footer ─────────────────────────────────────────────────────────── */
+  .foot { margin-top: 56px; padding-top: 22px;
+          border-top: 1px solid var(--color-border);
+          font-size: 12px; color: var(--color-text-tertiary); }
+  .foot a { color: var(--color-text-secondary); }
+
+  /* ── Responsive ─────────────────────────────────────────────────────── */
+  @media (max-width: 720px) {
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .card-head { grid-template-columns: auto 1fr; }
+    .card-state { grid-column: 2; justify-self: end; }
+  }
+
+  /* "How to read" full-mode example */
+  .reader { background: var(--color-surface);
+            border: 1px solid var(--color-border-2);
+            border-radius: 12px; padding: 22px 24px;
+            margin: 6px 0 26px; }
+  .reader h3 { margin: 0 0 4px; font-size: 13px;
+               letter-spacing: 0.04em; text-transform: uppercase;
+               color: var(--color-text-secondary); font-weight: 600; }
+  .reader p { margin: 0 0 14px; font-size: 13px;
+              color: var(--color-text-secondary); max-width: 60ch; }
+</style>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+  <script type="text/babel" src="workout-chart.jsx"></script>
+  <script type="text/babel" src="workouts-data.jsx"></script>
+  <script type="text/babel" src="page.jsx"></script>
+</body>
+</html>

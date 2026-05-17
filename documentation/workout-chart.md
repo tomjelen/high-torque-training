@@ -1,0 +1,185 @@
+# WorkoutChart — the workout visualization
+
+`site/src/components/WorkoutChart.tsx` (+ `chart-model.ts`) draws one Zwift
+workout as a single picture so a rider can grasp the shape of a session at a
+glance — and, above all, **see where the high-torque (prescribed-cadence) work
+is**. That last point is the whole reason this component exists and is not a
+generic power-profile chart.
+
+The audience for this doc is **a future Claude (or human) recreating,
+refactoring, or extending this component**. It records *what the chart must
+communicate and why*, separated from *how it currently happens to look*. Use it
+to decide whether a proposed change violates a requirement or merely changes an
+incidental. If a change keeps every requirement below true, it is safe no matter
+how different the result looks.
+
+The rule of thumb the requirements are written to support: **the exact RGB of
+grey doesn't matter, the exact dimensions don't matter, horizontal vs vertical
+doesn't matter. What matters is that the meaning survives.**
+
+## What it's for
+
+The project is about low-cadence, high-torque, seated cycling intervals. A rider
+about to do a session needs to answer, before clipping in:
+
+- How long and how hard is this, roughly, and how is it broken up?
+- **Where in the session am I supposed to be grinding a big gear at low
+  cadence?** (vs. just spinning easy / warming up / recovering)
+
+A generic power chart answers the first. The cadence accent answers the second,
+which is the one this site uniquely cares about.
+
+## Requirements — preserve these
+
+Any reimplementation must keep all of these true. They are stated in terms of
+*what the reader can perceive*, not pixels.
+
+1. **One workout, time-ordered, proportionally.** The chart shows exactly one
+   session as its blocks in their real order, each block's extent proportional
+   to its share of total session time. A long interval looks long; a 30 s sprint
+   looks short. The whole session is visible at once with no scroll and no
+   overflow of its container.
+
+2. **High vs. low intensity is distinguishable, and ordered.** A reader can tell
+   hard efforts from easy ones and roughly rank them. FTP is the reference
+   threshold: efforts above FTP vs. below FTP are distinguishable, because
+   "over/under threshold" is a meaningful training distinction. The *encoding*
+   (bar height, colour, both, something else) is replaceable; the
+   *distinguishability and ordering* are not.
+
+3. **High-torque prescription is positively marked; its absence carries no
+   claim.** Intervals where a specific cadence is prescribed are marked with a
+   distinct, consistent signal (today: an amber hatched rule). Intervals with no
+   cadence prescription get *nothing*. This asymmetry is deliberate: absence of
+   the mark means "nothing prescribed here" (warmup, cooldown, recoveries,
+   free-cadence efforts), **not** "free cadence is prescribed here." Never add a
+   positive "free cadence" marker — it would falsely imply a prescription the
+   workout doesn't make. The cadence mark is the single most important element
+   of the chart; if a change makes it hard to find or ambiguous, that's a
+   regression.
+
+4. **A set reads as one high-torque region, not a barcode.** Sprint/interval
+   sets produce many short alternating work/rest blocks (e.g. SIT 3×(4×30 s) =
+   24 blocks). The cadence mark must collapse a *set* into one continuous region:
+   adjacent cadence blocks separated only by *short* rests are one mark; sets
+   separated by *long* rests are separate marks. The rider should see "a chunk
+   of high-torque work here, then a long break, then another chunk," not a
+   strobing fence. The concrete, testable expression of this (from the original
+   design handoff — keep these as sanity checks):
+
+   | Workout | Expected high-torque regions |
+   |---|---|
+   | Staple 5×5 (3-min rests) | **5** separate marks (rests too long to merge) |
+   | SIT 3×(4×30 s) | **3** marks (one per set; intra-set rests merge) |
+   | Rüegg 3×(5 min @110% + 1 min sprint) | **3** marks (the embedded sprints carry no cadence flag, so they don't split the set) |
+
+   The pixel threshold that defines "short" is incidental; the *grouping
+   behaviour these counts encode* is the requirement.
+
+5. **Warmup/cooldown ramps are neutral, not intensity-coded.** A ramp sweeps
+   across several intensity zones, so colouring it as any one zone is arbitrary
+   and would make warmup and cooldown — the same kind of thing — look different.
+   Ramps must read as "transition / non-specific," and warmup and cooldown must
+   read as the same kind of element. The specific neutral colour is incidental.
+
+6. **Adjacent blocks are visually separable, including same-coloured ones.** A
+   reader can always tell where one block ends and the next begins, even when
+   neighbours share a fill (warmup ramp into an endurance block; a grey work
+   block into a grey cooldown). The *mechanism* for this has changed several
+   times (overlay line → per-block outline → background gap) and is fully
+   incidental — **but** whatever mechanism is used must not corrupt requirement 4:
+   block separation must be cosmetic only and must not shift the true block
+   geometry that clustering and the cadence marks are computed from. (Today:
+   marks are computed from untouched layout; only the *drawn* width is shrunk.)
+
+7. **Two presentation contexts.** The chart works *embedded* in a host card that
+   already shows the workout's title and cadence (it must not duplicate that
+   chrome) and *standalone* as a self-explanatory "how to read this" example
+   (it must then carry enough labelling — title, a key for the marks — to be
+   understood alone). The exact contents of each mode are negotiable; the
+   no-duplication-when-embedded and self-explanatory-when-standalone properties
+   are not.
+
+8. **It is accessible as an image.** Assistive tech gets at least the session
+   identity and whether/what cadence is prescribed. It is never an unlabelled
+   graphic. The host card header is the primary reader; this is the fallback.
+
+9. **No new runtime dependencies; pure, SSR-safe render.** The chart is a pure
+   function of its props — no data fetching, no effects, no `window`, no
+   animation state. It renders identically on the server and client (the site
+   prerenders — see `prerendering.md`). Adding a charting library, or making the
+   component stateful/effectful, is a requirement violation, not an upgrade.
+
+10. **Semantic colours are theme-invariant; chrome is themeable.** The colours
+    that carry workout *meaning* (intensity zones, the cadence accent) are
+    intentionally fixed so a given workout looks the same everywhere, including
+    in print. Non-data chrome (axis text, baseline, labels) uses theme tokens so
+    it can adapt (e.g. a future dark→light print override). Don't tokenize the
+    data colours; don't hardcode the chrome colours.
+
+## Explicitly incidental — change freely
+
+None of these are requirements. Changing any of them, alone, is not a
+regression, provided the requirements above still hold:
+
+- **Exact colours** — the specific greys, the amber hue, the zone palette
+  values. Only their *distinctness, consistency, and theme-invariance* (req. 2,
+  3, 5, 10) matter.
+- **Exact dimensions and constants** — chart height, the FTP-baseline position,
+  the ~130% clamp ceiling, hatch spacing, accent-strip thickness, axis-gutter
+  width, the narrow-width breakpoint, the cluster pixel threshold. These are
+  tuning, not contract. (The clamp exists only so a 150% sprint doesn't blow out
+  the scale while staying visibly the tallest thing — any approach with that
+  outcome is fine.)
+- **Orientation** — horizontal time axis is incidental; a vertical layout that
+  preserved every requirement would be equally valid.
+- **Rendering tech** — SVG is incidental; canvas or anything else that stays
+  dependency-free, SSR-safe, and accessible (req. 8, 9) is fine.
+- **The block-separation mechanism** — gap vs. border vs. whatever (req. 6 only
+  constrains the *outcome* and the don't-corrupt-geometry rule).
+- **What exactly each presentation mode contains** — within the constraints of
+  req. 7.
+- **Whether the neutral ramp colour is literally the zone-1 grey or a dedicated
+  constant** — req. 5 only needs "neutral and consistent."
+
+## Data model and the M2 contract
+
+The chart consumes a `ChartWorkout`: an ordered list of `ChartBlock`s
+(`chart-model.ts`). A block is either a steady `block` or a `ramp`
+(warmup/cooldown), with a power level as a fraction of FTP, a duration in
+seconds, an intensity `zone`, and an optional **`cadence` flag** — the single
+most important field, since it drives requirement 3/4.
+
+This component is milestone 1 of three. Milestone 2 replaces the placeholder
+example data with blocks parsed from the real `.zwo` files at build time. When
+that parser is written, these are **requirements on the data, derived from the
+requirements above** — a parser that breaks them breaks the chart's meaning:
+
+- Set `cadence: true` for any `.zwo` block specifying `Cadence`, `CadenceLow`,
+  or `CadenceHigh`; omit it otherwise. (Drives req. 3; getting this wrong moves
+  or deletes the high-torque marks — the worst possible regression.)
+- Do **not** assign warmup/cooldown ramps a "real" intensity zone for colour
+  purposes — they are neutral by design (req. 5).
+- Embedded sprints inside a cadence set that are themselves at free cadence must
+  *not* carry the flag, so they don't split the set (req. 4, the Rüegg case).
+- Key parsed data by `.zwo` file path, mirroring the existing build-time TSS map
+  (`site/scripts/compute-tss.mjs`), and reuse that file's existing `.zwo`
+  parsing rather than writing a second parser. Workout ids in the placeholder
+  data are *not* a stable key.
+
+## How to tell if a change is a regression
+
+Ask, in order:
+
+1. Does it still show one whole session, time-ordered and proportional? (req. 1)
+2. Can you still tell hard from easy, and over- vs. under-FTP? (req. 2)
+3. Are the high-torque regions still obvious, still positively-only marked, and
+   still one-per-set (run the table in req. 4)? (req. 3, 4)
+4. Do warmup and cooldown still look like the same neutral thing? (req. 5)
+5. Can you still see every block boundary, with clustering still correct? (req. 6)
+6. Does it still behave embedded and standalone? (req. 7)
+7. Still labelled for assistive tech, still dependency-free and SSR-safe, still
+   theme-correct? (req. 8, 9, 10)
+
+If all yes, the change is safe however different it looks. If any no, it's a
+regression even if it looks nicer.

@@ -1,5 +1,15 @@
 @import "tailwindcss";
 
+/* WorkoutChart non-bar elements (axis labels, baseline, full-mode header)
+   reference these. Mapped to the dark slate theme. A future @media print
+   block can override just these four for dark-on-light printed workouts. */
+:root {
+  --color-text-primary: #f1f5f9;   /* slate-100 */
+  --color-text-secondary: #94a3b8; /* slate-400 */
+  --color-text-tertiary: #64748b;  /* slate-500 */
+  --color-border-tertiary: #334155;/* slate-700 */
+}
+
 /* Base styles for RationalePage HTML content */
 .rationale-content p { @apply text-sm text-slate-300 mb-3 leading-relaxed; }
 .rationale-content strong { @apply text-slate-200; }
