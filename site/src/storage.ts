@@ -10,6 +10,7 @@ export const DEFAULT_STATE: AppState = {
     adaptation: { collapsed: false },
     collection: { collapsed: false },
     usageGuidelines: { collapsed: false },
+    chartExplainer: { collapsed: false },
   },
   log: [],
   adaptationCheckInConfirmed: false,
@@ -30,6 +31,7 @@ export const PRERENDER_STATE: AppState = {
     adaptation: { collapsed: true },
     collection: { collapsed: true },
     usageGuidelines: { collapsed: true },
+    chartExplainer: { collapsed: true },
   },
 }
 
@@ -59,6 +61,7 @@ export function loadState(isMobile = false): AppState {
         adaptation: loadPanel(parsed, 'adaptation'),
         collection: loadPanel(parsed, 'collection'),
         usageGuidelines: loadPanel(parsed, 'usageGuidelines'),
+        chartExplainer: loadPanel(parsed, 'chartExplainer'),
       },
       log: parsed?.log ?? [],
       adaptationCheckInConfirmed: parsed?.adaptationCheckInConfirmed ?? false,

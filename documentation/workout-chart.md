@@ -126,7 +126,8 @@ regression, provided the requirements above still hold:
   values. Only their *distinctness, consistency, and theme-invariance* (req. 2,
   3, 5, 10) matter.
 - **Exact dimensions and constants** — chart height, the FTP-baseline position,
-  the ~130% clamp ceiling, hatch spacing, accent-strip thickness, axis-gutter
+  the ~130% clamp ceiling, hatch spacing, accent-strip thickness
+  (`ACCENT_H_FULL` / `ACCENT_H_MINIMAL` — two values, one per mode), axis-gutter
   width, the narrow-width breakpoint, the cluster pixel threshold. These are
   tuning, not contract. (The clamp exists only so a 150% sprint doesn't blow out
   the scale while staying visibly the tallest thing — any approach with that
@@ -142,7 +143,7 @@ regression, provided the requirements above still hold:
 - **Whether the neutral ramp colour is literally the zone-1 grey or a dedicated
   constant** — req. 5 only needs "neutral and consistent."
 
-## Data model and the M2 contract
+## Data model and data contract
 
 The chart consumes a `ChartWorkout`: an ordered list of `ChartBlock`s
 (`chart-model.ts`). A block is either a steady `block` or a `ramp`
@@ -150,22 +151,29 @@ The chart consumes a `ChartWorkout`: an ordered list of `ChartBlock`s
 seconds, an intensity `zone`, and an optional **`cadence` flag** — the single
 most important field, since it drives requirement 3/4.
 
-This component is milestone 1 of three. Milestone 2 replaces the placeholder
-example data with blocks parsed from the real `.zwo` files at build time. When
-that parser is written, these are **requirements on the data, derived from the
-requirements above** — a parser that breaks them breaks the chart's meaning:
+The data is parsed from the real `.zwo` files at build time by
+`site/scripts/compute-chart-blocks.mjs` and injected as the
+`__ZWO_WORKOUTS_BLOCKS__` global via Vite's `define` (see `site/vite.config.ts`,
+mirroring the existing `__ZWO_WORKOUTS_TSS__` map). The parser reuses
+`compute-tss.mjs`'s regex `.zwo` reader — there is one parser in the
+codebase, not two, and no XML dependency.
+
+These are **requirements on that parser, derived from the requirements above** —
+a parser that breaks them breaks the chart's meaning:
 
 - Set `cadence: true` for any `.zwo` block specifying `Cadence`, `CadenceLow`,
   or `CadenceHigh`; omit it otherwise. (Drives req. 3; getting this wrong moves
   or deletes the high-torque marks — the worst possible regression.)
 - Do **not** assign warmup/cooldown ramps a "real" intensity zone for colour
-  purposes — they are neutral by design (req. 5).
+  purposes — they are neutral by design (req. 5). The parser stores a
+  placeholder `zone: 1` that the component ignores in favour of `RAMP_FILL`.
 - Embedded sprints inside a cadence set that are themselves at free cadence must
   *not* carry the flag, so they don't split the set (req. 4, the Rüegg case).
-- Key parsed data by `.zwo` file path, mirroring the existing build-time TSS map
-  (`site/scripts/compute-tss.mjs`), and reuse that file's existing `.zwo`
-  parsing rather than writing a second parser. Workout ids in the placeholder
-  data are *not* a stable key.
+  This falls out of the previous rule: the embedded `MaxEffort` sprints in
+  Rüegg carry no `Cadence` attribute, so they're unflagged automatically.
+- Key parsed data by `.zwo` file path relative to `workouts/`, mirroring the
+  existing build-time TSS map. The site's workout ids (`data.ts`) are *not*
+  the join key — they're a display concern; the `.zwo` path is the stable join.
 
 ### Where the chart's data comes from — three layers, read for three things
 
@@ -206,6 +214,102 @@ Two consequences worth stating so a later change doesn't undo them:
   need. Until then, read geometry from the `.zwo`, the flag from its
   `Cadence`-presence, and the label from `data.ts`.
 
+## Integration surface — where the chart lives in the app
+
+The component is consumed in three places. None of them is incidental; if you
+move the chart elsewhere, preserve the embedded/standalone split (req. 7) and
+the data-join contract below.
+
+**On every workout card (minimal mode):**
+
+- `site/src/components/CollectionCard.tsx` (the tier 1–4 library cards)
+- `site/src/components/AdaptationCard.tsx` (the W1–W3 onboarding cards)
+
+Both pass `mode="minimal"` and `showAxisLabels={false}`. Minimal mode suppresses
+the chart's title and axis labels because the surrounding card already shows
+the workout name, the intensity prescription, and the cadence label — repeating
+them in the SVG would violate req. 7 (no-duplication-when-embedded).
+
+**One full-mode "how to read" example in the Adaptation panel:**
+
+`site/src/components/AdaptationPanel.tsx` renders a collapsible "What is the
+high-torque block?" block containing a full-mode chart of the Staple 5×5
+workout. It is collapsed by default on return visits (persisted as
+`panels.chartExplainer` in app state) and expanded for new users. The choice
+is hardcoded by site id (`t2-staple`); `chart-data.test.ts` guards that id so
+a rename fails the build instead of silently dropping the example. The
+Collection panel no longer contains an explainer block — it shows only the
+`ChartLegend` strip.
+
+**One chart key per section:**
+
+`site/src/components/ChartLegend.tsx` is a static HTML legend rendered once at
+the top of each section (Collection panel and Adaptation panel). It shows only
+the amber high-torque-block swatch — zone colours are standard Zwift vocabulary
+and are intentionally omitted. Label: "High-torque block — where you drop to
+the low-cadence target." The cadence swatch is its own
+component, `CadenceHatchSwatch.tsx`, so any future surface that needs the
+swatch in isolation can drop it in without redefining the hatch. The hatch
+colours (`CADENCE_HATCH_LINE`, `CADENCE_HATCH_BG`) live in `chart-model.ts`
+alongside the zone palette and are imported by both `WorkoutChart`'s in-SVG
+accent/legend and `CadenceHatchSwatch` — these are *data* colours and are
+deliberately not tokenised (req. 10).
+
+### The data join — `chart-data.ts`
+
+`site/src/components/chart-data.ts` is the one place that joins a site
+`Workout` to its parsed `.zwo` chart geometry. Everything else reads
+`ChartWorkout`, never the raw `__ZWO_WORKOUTS_BLOCKS__` global.
+
+- `chartWorkoutFor(workout)` looks up the parsed blocks by `workout.file`,
+  overrides the `.zwo`'s `<name>` with the site-facing `workout.name`, and
+  attaches the `cadenceLabel` from `data.ts`'s "Cadence" param. Returns
+  `undefined` if the join misses (host card then renders no chart, not a
+  crash).
+- `cadenceLabelFor(workout)` is shared with `AdaptationCard.tsx` so the
+  "Cadence" param lookup isn't duplicated.
+
+`chart-data.test.ts` is the join contract test and the regression surface for
+the three-layer read: every `Workout.file` resolves, every parsed `.zwo` is
+referenced (no orphan `.zwo` shipped to Zwift but invisible on the site),
+`title` and `cadenceLabel` come from `data.ts` (not the `.zwo`), no `.zwo`
+point cadence value leaks into a block, the cadence flag and label agree in
+*both* directions, and the hardcoded `t2-staple` how-to id exists. A `.zwo`
+edit that drifts from `data.ts` (or vice versa) fails this test.
+
+### Sizing and SSR
+
+The chart renders at a fixed design `width={680}` everywhere on the site and
+scales to the host card via CSS — the SVG carries
+`style={{ width: '100%', height: 'auto', maxWidth: svgW }}` and a fixed
+`viewBox`. This is the simplest path that keeps every requirement true:
+
+- Cluster geometry (req. 4) is computed at the design width, so the cluster
+  counts on live cards match `workout-chart-clustering.test.ts` (also at 680px)
+  *by construction*. A future change that varies the runtime width per card
+  must ensure cluster counts still match the sanity table at every used width.
+- No `ResizeObserver`, no `useEffect`, no measured width. `WorkoutChart` stays
+  a pure function of its props (req. 9) and prerenders identically on server
+  and client (see `prerendering.md`).
+- `maxWidth: svgW` prevents upscaling past the design width — the chart never
+  blurs by stretching beyond its native resolution on a wide container.
+
+The narrow-width branch in `WorkoutChart` (`width < 380` → tighter clustering,
+axis labels drop) is preserved as an incidental capability for any caller that
+chooses to pass a narrow width directly; the in-tree consumers all pass 680.
+
+### Print
+
+`site/src/index.css` adds an `@media print` block that flips the four
+`--color-*` chart-chrome variables to a dark-on-light palette so axis labels
+and baselines read on white paper. The chart's *data* colours (zone palette
+and the amber cadence accent) are intentionally untouched — req. 10 mandates
+theme-invariance so a printed workout looks the same as the on-screen one
+where it matters. The surrounding card chrome (Tailwind `bg-slate-*` /
+`text-slate-*` utilities) is *not* covered by this override; printing converts
+the chart correctly but leaves the surrounding card in its dark theme. That's
+the current scope, deliberately narrow.
+
 ## How to tell if a change is a regression
 
 Ask, in order:
@@ -222,3 +326,11 @@ Ask, in order:
 
 If all yes, the change is safe however different it looks. If any no, it's a
 regression even if it looks nicer.
+
+The fastest mechanical checks: `chart-data.test.ts` covers the data-layer
+contract (the join, the three-layer read, the how-to id, flag↔label agreement);
+`workout-chart-clustering.test.ts` covers the req-4 sanity table on real
+parsed data; the rest is a browser eyeball at a normal desktop width plus one
+narrow (mobile) check. Run all of `npm run lint && npm run build && npm test`
+in `site/` before claiming the build is green — `vite build` runs `tsc -b`
+which catches `vite-env.d.ts` mistakes that `vitest` alone misses.

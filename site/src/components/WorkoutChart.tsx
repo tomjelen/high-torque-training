@@ -5,7 +5,14 @@
 // cadence" — see documentation/workout-chart.md for the load-bearing
 // requirements behind this and the clustering behaviour below.
 import { useId } from 'react'
-import { ZONE_FILL, RAMP_FILL, type ChartBlock, type ChartWorkout } from './chart-model'
+import {
+  ZONE_FILL,
+  RAMP_FILL,
+  CADENCE_HATCH_LINE,
+  CADENCE_HATCH_BG,
+  type ChartBlock,
+  type ChartWorkout,
+} from './chart-model'
 import { buildClusters, type LaidOutBlock } from './chart-clustering'
 
 // Vertical scale: power as a fraction of FTP maps to a bar-top y. Clamped at
@@ -16,7 +23,11 @@ const POWER_TO_TOP = 1.3
 
 // Cadence accent strip geometry (below the FTP baseline).
 const ACCENT_Y = 82
-const ACCENT_H = 8
+// Full mode renders close to its design width so 8px is visible. Minimal mode
+// is CSS-scaled down to card size (~250px), making 8px effectively invisible;
+// 16px at design width renders to ~6px in the card — clearly legible.
+const ACCENT_H_FULL = 8
+const ACCENT_H_MINIMAL = 16
 
 // Block separation is a background gap on each block's right edge. Blocks
 // narrower than the minimum keep full width (dense sprint sets, which read
@@ -78,7 +89,8 @@ export default function WorkoutChart({
   // Build cadence cluster bars.
   const clusters = buildClusters(workout.blocks, layout, threshold)
 
-  const chartGroupH = ACCENT_Y + ACCENT_H + 2 // chart area + accent strip + pad
+  const accentH = mode === 'minimal' ? ACCENT_H_MINIMAL : ACCENT_H_FULL
+  const chartGroupH = ACCENT_Y + accentH + 2 // chart area + accent strip + pad
   const phaseLabelH = mode === 'full' ? 18 : 0
   // Minimal mode is meant to be embedded inside a row that already shows the
   // workout title + cadence; the chart suppresses its own header to avoid
@@ -87,19 +99,27 @@ export default function WorkoutChart({
   const headerH = showHeader ? 22 : 0
   const legendH = mode === 'full' ? 26 : 0
   const svgH = headerH + chartGroupH + phaseLabelH + legendH + 6
-  const svgW = gutter + width + 16 // right margin for "Cadence target" header
+  const svgW = gutter + width + 16
 
   return (
     <svg
       width={svgW}
       height={svgH}
       viewBox={`0 0 ${svgW} ${svgH}`}
-      style={{ display: 'block' }}
+      // Scale to the host container: the viewBox fixes the coordinate system
+      // (so clustering and layout are computed at a stable design width — see
+      // `width`), while CSS shrinks the drawing to fit a narrower card. Capped
+      // at the natural width so it never upscales blurry on a wide container.
+      style={{ display: 'block', width: '100%', height: 'auto', maxWidth: svgW }}
       role="img"
       aria-labelledby={titleId}
     >
       <title id={titleId}>
-        {`${workout.title} power profile, cadence ${workout.cadenceLabel || 'free'}`}
+        {/* req-3: absence of a cadence prescription carries NO claim — never
+            say "free". Omit the cadence clause entirely when none is set. */}
+        {workout.cadenceLabel
+          ? `${workout.title} power profile, high-torque target ${workout.cadenceLabel}`
+          : `${workout.title} power profile`}
       </title>
 
       <defs>
@@ -110,7 +130,7 @@ export default function WorkoutChart({
           height="6"
           patternTransform="rotate(45)"
         >
-          <line x1="0" y1="0" x2="0" y2="6" stroke="#BA7517" strokeWidth="2" />
+          <line x1="0" y1="0" x2="0" y2="6" stroke={CADENCE_HATCH_LINE} strokeWidth="2" />
         </pattern>
       </defs>
 
@@ -135,7 +155,7 @@ export default function WorkoutChart({
               textAnchor="end"
               fill="var(--color-text-secondary)"
             >
-              Cadence target: {workout.cadenceLabel}
+              Target: {workout.cadenceLabel}
             </text>
           )}
         </g>
@@ -224,12 +244,12 @@ export default function WorkoutChart({
         {/* Cadence accent bars (one rect background + one rect hatch) */}
         {clusters.map((c, i) => (
           <g key={`acc-${i}`}>
-            <rect x={c.x} y={ACCENT_Y} width={c.w} height={ACCENT_H} fill="#633806" />
+            <rect x={c.x} y={ACCENT_Y} width={c.w} height={accentH} fill={CADENCE_HATCH_BG} />
             <rect
               x={c.x}
               y={ACCENT_Y}
               width={c.w}
-              height={ACCENT_H}
+              height={accentH}
               fill={`url(#${hatchId})`}
             />
           </g>
@@ -269,7 +289,7 @@ export default function WorkoutChart({
             Max effort
           </text>
           <g transform="translate(96, 0)">
-            <rect x="0" y="6" width="12" height="12" fill="#633806" />
+            <rect x="0" y="6" width="12" height="12" fill={CADENCE_HATCH_BG} />
             <rect
               x="0"
               y="6"
@@ -283,7 +303,7 @@ export default function WorkoutChart({
               fontSize="11"
               fill="var(--color-text-secondary)"
             >
-              Cadence target
+              High-torque block
             </text>
           </g>
         </g>

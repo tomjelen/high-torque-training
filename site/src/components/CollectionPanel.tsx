@@ -2,6 +2,7 @@ import Panel from './Panel'
 import UsageGuidelines from './UsageGuidelines'
 import CollectionCard from './CollectionCard'
 import SessionTracker from './SessionTracker'
+import ChartLegend from './ChartLegend'
 import { COLLECTION_WORKOUTS } from '../data'
 import { todayLocalIso } from '../utils/tracker'
 import type { AppState, LogEntry, Workout } from '../types'
@@ -59,7 +60,11 @@ export default function CollectionPanel({ state, setState }: Props) {
         onToggle={onToggleUsageGuidelines}
       />
 
-      <div className="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-4">
+      <div className="mb-4 px-1">
+        <ChartLegend />
+      </div>
+
+<div className="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-4">
         <div className="order-2 lg:order-1 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 content-start">
           {SORTED_WORKOUTS.map((workout) => (
             <CollectionCard

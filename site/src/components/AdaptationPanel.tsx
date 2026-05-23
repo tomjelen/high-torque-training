@@ -1,7 +1,17 @@
 import Panel from './Panel'
 import AdaptationCard from './AdaptationCard'
-import { ADAPTATION_WORKOUTS } from '../data'
+import ChartLegend from './ChartLegend'
+import WorkoutChart from './WorkoutChart'
+import { chartWorkoutFor } from './chart-data'
+import { ADAPTATION_WORKOUTS, COLLECTION_WORKOUTS } from '../data'
 import type { AdaptationId, AppState } from '../types'
+
+// Staple 5×5 is the canonical "how to read" example: a clean 5-rep set whose
+// high-torque marks read as five clearly separate regions.
+const HOW_TO_CHART = (() => {
+  const staple = COLLECTION_WORKOUTS.find((w) => w.id === 't2-staple')
+  return staple ? chartWorkoutFor(staple) : undefined
+})()
 
 const ORDER: AdaptationId[] = ['w1', 'w2', 'w3']
 
@@ -42,6 +52,10 @@ export default function AdaptationPanel({ state, setState }: Props) {
 
   function onToggle(collapsed: boolean) {
     setState((s) => ({ ...s, panels: { ...s.panels, adaptation: { collapsed } } }))
+  }
+
+  function onToggleChartExplainer(collapsed: boolean) {
+    setState((s) => ({ ...s, panels: { ...s.panels, chartExplainer: { collapsed } } }))
   }
 
   const progressLabel = `${completedCount}/${ORDER.length}`
@@ -86,6 +100,32 @@ export default function AdaptationPanel({ state, setState }: Props) {
             <strong className="text-red-100">All intervals are seated.</strong> Standing removes the training stimulus and changes the load pattern.
           </li>
         </ol>
+      </div>
+
+      <details
+        open={!state.panels.chartExplainer.collapsed}
+        onToggle={(e) => onToggleChartExplainer(!e.currentTarget.open)}
+        className="border border-slate-800 rounded bg-slate-950 mb-4 group"
+      >
+        <summary className="flex items-center justify-between gap-4 px-4 py-3 cursor-pointer list-none select-none hover:bg-slate-800/30 text-sm">
+          <span className="text-slate-300">
+            <strong className="text-slate-200">What is the high-torque block?</strong>
+          </span>
+          <span className="text-slate-500 text-xs flex-shrink-0 group-open:rotate-180 transition-transform inline-block">▾</span>
+        </summary>
+        <div className="px-4 pb-4 pt-3 border-t border-slate-800">
+          <p className="m-0 mb-3 text-sm text-slate-400">
+            The amber hatched blocks mark where you drop to the low-cadence target — the high-torque
+            work. Everything else is standard Zwift: bar height is effort, left to right is time.
+          </p>
+          {HOW_TO_CHART && (
+            <WorkoutChart workout={HOW_TO_CHART} mode="full" width={680} />
+          )}
+        </div>
+      </details>
+
+      <div className="mb-4 px-1">
+        <ChartLegend />
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
