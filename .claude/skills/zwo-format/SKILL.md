@@ -69,11 +69,12 @@ For all-out sprint blocks where the rider should go as hard as possible, use `Ma
   - Example: if followed by `IntervalsT OnPower="0.80"`, then `PowerHigh="0.80"`.
 - **Cooldown** ramps DOWN: `PowerLow` (start, high) > `PowerHigh` (end, low). `PowerLow` should match the power of the previous block. Yes, its counter-intuitive, PowerLow means start, which means the HIGHER power value.
   - If preceded by `IntervalsT`, the block ends on `OffPower`, so `PowerLow` = `OffPower`.
+  - **Exception — cooldown straight after a work block.** When intervals end on the final work block with no trailing recovery (see "Don't reproduce the trailing recovery" below), keep `PowerLow` at the easy/recovery level (e.g. `0.50`), **not** the work power. A cooldown is meant to start easy; the downward step from the work interval into the cooldown is intended — the mirror of a warmup not ramping all the way into a hard block.
 
 **Verify after every edit:**
 - Warmup: `PowerLow < PowerHigh`
 - Cooldown: `PowerLow > PowerHigh`
-- Adjacent blocks have matching power at their shared boundary.
+- Adjacent blocks have matching power at their shared boundary — except a deliberate step *down* into a recovery or cooldown block (a cooldown after a work interval starts at the easy ~0.50 level, not the work power).
 
 ## Cadence attributes
 
@@ -91,6 +92,12 @@ For all-out sprint blocks where the rider should go as hard as possible, use `Ma
 **Always specify both.** If only `Cadence` is set (no `CadenceResting`), Zwift exhibits a bug: it applies `Cadence+5` during `OnDuration` and `Cadence-5` during `OffDuration`. This is not documented anywhere — it was found through testing.
 
 If you need one of the phases to have free/unspecified cadence, you cannot do that with `IntervalsT`. Use repeated `<SteadyState>` blocks instead.
+
+### Don't reproduce the trailing recovery
+
+`IntervalsT Repeat="N"` expands to N work phases **and** N recovery phases — it always ends on an `OffDuration` recovery. When you emulate intervals with repeated `<SteadyState>` blocks (e.g. because the recovery phase needs free cadence, per above), it's tempting to copy that on/off pairing for every rep. That leaves an **orphan recovery block** before the `Cooldown`: it has no following work interval to bridge to, it just duplicates the cooldown, and it inflates the workout's total duration.
+
+Build interval sets as **N work blocks and N−1 recovery blocks** — recovery sits *between* intervals only — then go straight to the `Cooldown`. With native `IntervalsT`, get the same shape with `Repeat="N-1"` plus a standalone final work block before the `Cooldown`. The cooldown absorbs the post-final-interval recovery; see the power-continuity exception above for the intended power step.
 
 ## Naming
 

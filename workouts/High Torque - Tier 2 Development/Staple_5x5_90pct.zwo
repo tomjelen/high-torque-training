@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   High Torque Training — Zwift workout
-  Last updated: 2026-05-14
+  Last updated: 2026-05-23
 
   Site:      https://high-torque.jelen.dk/
   Calendar:  https://high-torque.jelen.dk/content/workouts.md
@@ -77,12 +77,8 @@
             <textevent timeoffset="270" message="30 seconds. Finish it." />
         </SteadyState>
 
-        <SteadyState Duration="300" Power="0.50">
-            <textevent timeoffset="10" message="Recovery. Five done." />
-            <textevent timeoffset="150" message="Five 5-minute intervals at 90% FTP. That's 25 minutes of torque work." />
-        </SteadyState>
-
         <Cooldown Duration="600" PowerLow="0.50" PowerHigh="0.40">
+            <textevent timeoffset="10" message="Five 5-minute intervals at ~90% FTP — 25 minutes of torque work." />
             <textevent timeoffset="30" message="Cool down. Easy spin at normal cadence." />
             <textevent timeoffset="120" duration="20" message="EVOQ also offers a longer version: 5x8 min at the same intensity. Try it when this format feels comfortable." />
             <textevent timeoffset="300" duration="25" message="Henderson: musculoskeletal load is the main limiter in torque work, not cardiovascular. Respect the joints to train this way for years." />

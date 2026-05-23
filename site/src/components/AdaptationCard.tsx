@@ -1,7 +1,7 @@
 import Cite from './Cite'
 import WorkoutParams from './WorkoutParams'
 import WorkoutChart from './WorkoutChart'
-import { chartWorkoutFor, cadenceLabelFor } from './chart-data'
+import { chartWorkoutFor, cadenceLabelFor, durationMinFor } from './chart-data'
 import type { Workout } from '../types'
 
 type CardState = 'locked' | 'active' | 'complete'
@@ -54,7 +54,7 @@ export default function AdaptationCard({ workout, step, cardState, completedAt, 
         </span>
       </div>
 
-      <WorkoutParams params={workout.params} />
+      <WorkoutParams params={workout.params} durationMin={durationMinFor(workout)} />
 
       {/* Power profile + high-torque mark (minimal mode — see CollectionCard). */}
       {chart && (

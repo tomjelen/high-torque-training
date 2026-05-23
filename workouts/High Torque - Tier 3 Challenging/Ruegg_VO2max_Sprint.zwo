@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   High Torque Training — Zwift workout
-  Last updated: 2026-05-14
+  Last updated: 2026-05-23
 
   Site:      https://high-torque.jelen.dk/
   Calendar:  https://high-torque.jelen.dk/content/workouts.md
@@ -91,13 +91,6 @@
             <textevent timeoffset="30" message="Halfway. Leave nothing." />
             <textevent timeoffset="50" message="10 seconds." />
         </MaxEffort>
-
-        <SteadyState Duration="600" Power="0.50">
-            <textevent timeoffset="0" message="Final recovery. 10 minutes. Easy spinning." />
-            <textevent timeoffset="120" message="Three sets of VO2max-to-sprint complete. That is the full Rüegg-adapted protocol." />
-            <textevent timeoffset="300" duration="25" message="Knee check. The combination of sustained torque and explosive sprints is the highest overall joint stress. How do they feel?" />
-            <textevent timeoffset="480" duration="20" message="15 minutes of VO2max torque work plus 3 maximal sprints. Substantial neuromuscular and aerobic stimulus." />
-        </SteadyState>
 
         <Cooldown Duration="720" PowerLow="0.50" PowerHigh="0.40">
             <textevent timeoffset="10" message="Rüegg protocol complete. Spin easy." />

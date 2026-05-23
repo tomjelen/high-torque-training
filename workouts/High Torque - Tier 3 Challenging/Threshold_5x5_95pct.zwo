@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   High Torque Training — Zwift workout
-  Last updated: 2026-05-14
+  Last updated: 2026-05-23
 
   Site:      https://high-torque.jelen.dk/
   Calendar:  https://high-torque.jelen.dk/content/workouts.md
@@ -74,11 +74,6 @@
             <textevent timeoffset="10" message="Final interval. ~95% FTP, 50-60 rpm. Stay seated." />
             <textevent timeoffset="150" message="Halfway. Last effort." />
             <textevent timeoffset="270" message="30 seconds. Finish it." />
-        </SteadyState>
-
-        <SteadyState Duration="210" Power="0.50">
-            <textevent timeoffset="10" message="Recovery. Five done." />
-            <textevent timeoffset="120" message="Spin easy. Cool down coming." />
         </SteadyState>
 
         <Cooldown Duration="600" PowerLow="0.50" PowerHigh="0.40">

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   High Torque Training — Zwift workout
-  Last updated: 2026-05-14
+  Last updated: 2026-05-23
 
   Site:      https://high-torque.jelen.dk/
   Calendar:  https://high-torque.jelen.dk/content/workouts.md
@@ -83,12 +83,8 @@
             <textevent timeoffset="450" message="30 seconds. Finish it." />
         </SteadyState>
 
-        <SteadyState Duration="300" Power="0.50">
-            <textevent timeoffset="10" message="Recovery. Five 8-minute intervals done. That's 40 minutes of torque work." />
-            <textevent timeoffset="60" message="Spin easy. Cool down coming." />
-        </SteadyState>
-
         <Cooldown Duration="600" PowerLow="0.50" PowerHigh="0.40">
+            <textevent timeoffset="10" message="Five 8-minute intervals done — 40 minutes of torque work." />
             <textevent timeoffset="30" message="Cool down. Easy spin at normal cadence." />
             <textevent timeoffset="120" duration="30" message="Patellofemoral compressive force increases with knee flexion: ~1x bodyweight at 15 degrees, ~3x at 45 degrees, ~6x at 75 degrees. Low cadence maximises force through each cycle." />
             <textevent timeoffset="300" duration="25" message="Never do torque sessions on back-to-back days. The joints need recovery time. 1-2 sessions per week, always separated by a normal-cadence day." />

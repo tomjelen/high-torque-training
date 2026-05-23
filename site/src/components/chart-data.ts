@@ -19,6 +19,23 @@ export function cadenceLabelFor(workout: Workout): string | undefined {
   return workout.params.find((p) => p.label === 'Cadence')?.value
 }
 
+// Total ride time, rounded to the nearest 5 minutes — a glanceable
+// "more or less than an hour" figure, not a precise duration. Summed from the
+// parsed .zwo block durations (the same blocks the chart scales its width to,
+// so the sum is exactly the wall-clock total — verified to carry no merging or
+// trimming). Returns undefined for a broken join, matching chartWorkoutFor.
+//
+// The displayed total derives mechanically from the .zwo: to change it, change
+// the workout — there is no per-card override. The "~" prefix in the UI is
+// cosmetic ("approximate / 5-min granularity"); drop it in WorkoutParams if an
+// exact figure is ever wanted.
+export function durationMinFor(workout: Workout): number | undefined {
+  const parsed = BLOCKS[workout.file]
+  if (!parsed) return undefined
+  const totalSec = parsed.blocks.reduce((s, b) => s + b.dur, 0)
+  return Math.round(totalSec / 60 / 5) * 5
+}
+
 // Resolve the ChartWorkout for a card. Returns undefined if the workout's
 // `.zwo` has no parsed entry (a broken join — caught by chart-data.test.ts so
 // it never ships, but the card simply renders no chart rather than throwing).

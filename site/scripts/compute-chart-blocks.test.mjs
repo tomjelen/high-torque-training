@@ -119,9 +119,9 @@ describe('getChartBlocksMap — real corpus invariants', () => {
     expect(map[STAPLE].title).toBe('Staple 5x5')
   })
 
-  it('preserves total session duration: Staple 5×5 sums to 4500 s (75 min)', () => {
+  it('preserves total session duration: Staple 5×5 sums to 4200 s (70 min)', () => {
     const total = map[STAPLE].blocks.reduce((s, b) => s + b.dur, 0)
-    expect(total).toBe(4500)
+    expect(total).toBe(4200)
   })
 
   it("does not flag Rüegg's embedded MaxEffort sprints (they must not split the set)", () => {

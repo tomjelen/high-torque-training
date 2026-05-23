@@ -94,7 +94,6 @@ export const ADAPTATION_WORKOUTS: Workout[] = [
       { label: 'Intensity', value: 'Zone 2 (~65% FTP)' },
       { label: 'Cadence', value: '65–70 rpm' },
       { label: 'Recovery', value: '5 min easy spin' },
-      { label: 'Total time', value: '~50 min' },
     ],
     source: 'evoq',
     file: 'High Torque - Adaptation/Week1_2x10_65-70rpm.zwo',
@@ -107,7 +106,6 @@ export const ADAPTATION_WORKOUTS: Workout[] = [
       { label: 'Intensity', value: 'Zone 2 (~65% FTP)' },
       { label: 'Cadence', value: '65 rpm' },
       { label: 'Recovery', value: '5 min easy between' },
-      { label: 'Total time', value: '~60 min' },
     ],
     source: 'evoq',
     file: 'High Torque - Adaptation/Week2_2x15_65rpm.zwo',
@@ -120,7 +118,6 @@ export const ADAPTATION_WORKOUTS: Workout[] = [
       { label: 'Intensity', value: 'Zone 2 (~65% FTP)' },
       { label: 'Cadence', value: '60–65 rpm' },
       { label: 'Recovery', value: '5 min easy between' },
-      { label: 'Total time', value: '~65 min' },
     ],
     source: 'evoq',
     file: 'High Torque - Adaptation/Week3_3x10_60-65rpm.zwo',
@@ -141,7 +138,6 @@ export const TIERS: Tier[] = [
         params: [
           { label: 'Intervals', value: '4×4 min @ 80–85% FTP' },
           { label: 'Cadence', value: '50–60 rpm' },
-          { label: 'Total time', value: '~60 min' },
         ],
         source: 'henderson',
         file: 'High Torque - Tier 1 Entry/Entry_4x4_80pct.zwo',
@@ -152,7 +148,6 @@ export const TIERS: Tier[] = [
         params: [
           { label: 'Intervals', value: '3×5 min @ ~90% FTP' },
           { label: 'Cadence', value: '50–60 rpm' },
-          { label: 'Total time', value: '~55 min' },
         ],
         source: 'evoq',
         sourceNote: 'Scaled — fewer reps (3×5 instead of EVOQ\'s 5×5) as a lower-volume entry point.',
@@ -173,7 +168,6 @@ export const TIERS: Tier[] = [
         params: [
           { label: 'Intervals', value: '5×5 min @ ~90% FTP' },
           { label: 'Cadence', value: '50–60 rpm' },
-          { label: 'Total time', value: '~75 min' },
         ],
         source: 'evoq',
         file: 'High Torque - Tier 2 Development/Staple_5x5_90pct.zwo',
@@ -184,7 +178,6 @@ export const TIERS: Tier[] = [
         params: [
           { label: 'Intervals', value: '5×8 min @ ~90% FTP' },
           { label: 'Cadence', value: '50–60 rpm' },
-          { label: 'Total time', value: '~90 min' },
         ],
         source: 'evoq',
         file: 'High Torque - Tier 2 Development/Staple_5x8_90pct.zwo',
@@ -195,7 +188,6 @@ export const TIERS: Tier[] = [
         params: [
           { label: 'Intervals', value: '3×3 min @ ~110% FTP' },
           { label: 'Cadence', value: '60–70 rpm' },
-          { label: 'Total time', value: '~55 min' },
         ],
         source: 'hebisz2024',
         sourceNote: 'Scaled — fewer reps and shorter intervals (3×3 instead of the study\'s 4×4) as a lower-stress introduction.',
@@ -216,7 +208,6 @@ export const TIERS: Tier[] = [
         params: [
           { label: 'Intervals', value: '5×5 min @ ~95% FTP' },
           { label: 'Cadence', value: '50–60 rpm' },
-          { label: 'Total time', value: '~68 min' },
         ],
         source: 'henderson',
         file: 'High Torque - Tier 3 Challenging/Threshold_5x5_95pct.zwo',
@@ -227,7 +218,6 @@ export const TIERS: Tier[] = [
         params: [
           { label: 'Intervals', value: '4×4 min @ ~110% FTP' },
           { label: 'Cadence', value: '60–70 rpm' },
-          { label: 'Total time', value: '~83 min' },
         ],
         source: 'hebisz2024',
         file: 'High Torque - Tier 3 Challenging/HIIT_VO2max_4rep.zwo',
@@ -238,7 +228,6 @@ export const TIERS: Tier[] = [
         params: [
           { label: 'Intervals', value: '3×(5 min @ ~110% FTP + 1 min max sprint)' },
           { label: 'Cadence', value: '50–60 rpm (sprint at normal cadence)' },
-          { label: 'Total time', value: '~80 min' },
         ],
         source: 'ef',
         file: 'High Torque - Tier 3 Challenging/Ruegg_VO2max_Sprint.zwo',
@@ -258,7 +247,6 @@ export const TIERS: Tier[] = [
         params: [
           { label: 'Intervals', value: '6×2–3 min @ 105–110% FTP' },
           { label: 'Cadence', value: '50–60 rpm' },
-          { label: 'Total time', value: '~71 min' },
         ],
         source: 'evoq',
         file: 'High Torque - Tier 4 Advanced/TorqueMax_110pct.zwo',
@@ -269,7 +257,6 @@ export const TIERS: Tier[] = [
         params: [
           { label: 'Intervals', value: '2×(4×30 sec max)' },
           { label: 'Cadence', value: '50–60 rpm' },
-          { label: 'Total time', value: '~76 min' },
         ],
         source: 'hebisz2024',
         file: 'High Torque - Tier 4 Advanced/SIT_2sets.zwo',
@@ -280,7 +267,6 @@ export const TIERS: Tier[] = [
         params: [
           { label: 'Intervals', value: '6×4 min @ ~110% FTP' },
           { label: 'Cadence', value: '60–70 rpm' },
-          { label: 'Total time', value: '~107 min' },
         ],
         source: 'hebisz2024',
         file: 'High Torque - Tier 4 Advanced/HIIT_VO2max_6rep.zwo',
@@ -291,7 +277,6 @@ export const TIERS: Tier[] = [
         params: [
           { label: 'Intervals', value: '3×(4×30 sec max)' },
           { label: 'Cadence', value: '50–60 rpm' },
-          { label: 'Total time', value: '~109 min' },
         ],
         source: 'hebisz2024',
         file: 'High Torque - Tier 4 Advanced/SIT_3sets.zwo',

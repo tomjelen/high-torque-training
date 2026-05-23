@@ -95,7 +95,12 @@ function computeTss(powerSamples) {
   const mean4th = rolled.reduce((s, v) => s + v ** 4, 0) / n
   const np = mean4th ** 0.25
   const durationHours = n / 3600
-  return Math.round(durationHours * np * np * 100)
+  const raw = durationHours * np * np * 100
+  // Bucketed to nearest 5: riders glance at TSS to gauge "hard or not", and
+  // the underlying value already carries false precision (MaxEffort blocks are
+  // modelled at 1.5×FTP — a rough estimate that itself exceeds 5-pt granularity).
+  // The site renders this with a "~" prefix to signal the bucketing.
+  return Math.round(raw / 5) * 5
 }
 
 async function computeFileTss(filePath) {

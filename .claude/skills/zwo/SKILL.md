@@ -61,9 +61,18 @@ Never show "80% FTP" when the source says "80-85% FTP". The ZWO format forced us
 
 No cadence attributes on warmup, cooldown, recovery, or opener segments. Only on interval blocks where the research prescribes a specific cadence.
 
-## Warmup power exception
+## Interval structure — no trailing recovery
 
-Warmups before blocks at 85%+ FTP intentionally end lower — you don't ramp into threshold/VO2max. This overrides the general power continuity rule from `zwo-format`.
+High Torque interval sessions are built from repeated `<SteadyState>` blocks rather than `IntervalsT`, because the recovery phase needs free (unspecified) cadence and `IntervalsT` can't do that without the ±5 rpm bug (see `zwo-format`).
+
+When emulating this way, write **N work blocks and N−1 recovery blocks** — recovery sits *between* intervals only. After the final work block, go **straight to the `Cooldown`**. Do not append a trailing recovery block: it has no interval to bridge to, it just duplicates the cooldown, and it inflates the workout duration. (A faithful copy of `IntervalsT`'s on/off pairing produces exactly this orphan — that's the trap to avoid.)
+
+## Warmup / cooldown power exceptions
+
+Two intentional breaks from the `zwo-format` power-continuity rule:
+
+- **Warmup before a hard block.** Warmups before blocks at 85%+ FTP intentionally end lower — you don't ramp into threshold/VO2max.
+- **Cooldown after a work interval.** Because interval sessions end on the final work block and drop straight into the cooldown (see "Interval structure" above), keep the `Cooldown` `PowerLow` at the easy/recovery level (~0.50) regardless of the higher work power before it. A cooldown is meant to start easy; the downward step into it is correct — the mirror of the warmup exception. Do **not** raise `PowerLow` to match the work interval.
 
 ## Text event requirements
 
@@ -122,7 +131,7 @@ These rules exist because a previous refactor introduced invented workouts with 
 
 After creating or editing a `.zwo` file, verify:
 
-1. Power continuity: Warmup `PowerHigh` matches next block (exception: 85%+ FTP blocks). Cooldown `PowerLow` matches previous block.
+1. Power continuity: Warmup `PowerHigh` matches next block (exception: 85%+ FTP blocks). Cooldown `PowerLow` matches the previous block — or stays at the easy recovery level (~0.50) when the cooldown follows a work interval directly (see "Warmup / cooldown power exceptions").
 2. Warmup ramps up (`PowerLow < PowerHigh`). Cooldown ramps down (`PowerLow > PowerHigh`).
 3. No `Cadence=` on warmup, cooldown, recovery, or opener blocks.
 4. `Cadence="X"` (capital C) on all interval blocks.
@@ -135,3 +144,4 @@ After creating or editing a `.zwo` file, verify:
 11. `<author>Tom Jelen</author>`.
 12. All displayed values show source prescription ranges, not ZWO-fixed values.
 13. **`Last updated:` date is current.** If this edit changed any content of the workout (interval added/removed, duration/cadence/intensity tweaked, description corrected, text-event typo fixed, file renamed), bump the date in the header comment to today's date. Do not bump for cosmetic edits to the header comment itself (e.g. fixing a URL typo). Same semantics as `HOME_LAST_UPDATED` in `site/CLAUDE.md`.
+14. **No trailing recovery before the cooldown.** The block immediately before `<Cooldown>` is the final work interval, not a recovery block (see "Interval structure"). If the workout's duration must match the calendar, recompute the total after removing/adding any recovery.

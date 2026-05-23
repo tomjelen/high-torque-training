@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   High Torque Training — Zwift workout
-  Last updated: 2026-05-14
+  Last updated: 2026-05-23
 
   Site:      https://high-torque.jelen.dk/
   Calendar:  https://high-torque.jelen.dk/content/workouts.md
@@ -118,11 +118,6 @@
             <textevent timeoffset="75" message="Halfway. Almost done." />
             <textevent timeoffset="120" message="30 seconds. Do not stand. Finish it." />
             <textevent timeoffset="145" message="5 seconds." />
-        </SteadyState>
-
-        <SteadyState Duration="240" Power="0.50">
-            <textevent timeoffset="2" message="Recovery. Six done." />
-            <textevent timeoffset="60" message="Cool down coming." />
         </SteadyState>
 
         <Cooldown Duration="900" PowerLow="0.50" PowerHigh="0.40">

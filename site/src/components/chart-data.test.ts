@@ -5,7 +5,7 @@
 // data.ts) — so drift fails the build instead of shipping silently.
 import { describe, it, expect, beforeAll } from 'vitest'
 import { COLLECTION_WORKOUTS, ADAPTATION_WORKOUTS } from '../data'
-import { chartWorkoutFor, cadenceLabelFor } from './chart-data'
+import { chartWorkoutFor, cadenceLabelFor, durationMinFor } from './chart-data'
 import { getChartBlocksMap } from '../../scripts/compute-chart-blocks.mjs'
 import type { Workout } from '../types'
 import type { ChartWorkout } from './chart-model'
@@ -66,6 +66,22 @@ describe('chart data join (Workout.file → parsed .zwo blocks)', () => {
         expect(b).not.toHaveProperty('cadenceValue')
       }
     }
+  })
+
+  it('durationMinFor returns the .zwo total rounded to the nearest 5 minutes', () => {
+    for (const w of ALL_WORKOUTS) {
+      const min = durationMinFor(w)
+      expect(min, `no duration for ${w.id} (${w.file})`).toBeDefined()
+      expect(min! % 5, `${w.id} duration not a multiple of 5`).toBe(0)
+      // Cross-check against the independent parsed map, not the helper's own
+      // read: the displayed value must be the rounded sum of block durations.
+      const totalSec = parsed[w.file].blocks.reduce((s, b) => s + b.dur, 0)
+      expect(min).toBe(Math.round(totalSec / 60 / 5) * 5)
+    }
+    // Teeth: a concrete known value. Staple 5×5 = 15 min warmup + 5×5 min work
+    // + 4×5 min recovery + 10 min cooldown = 4200s = exactly 70 min.
+    const staple = COLLECTION_WORKOUTS.find((w) => w.id === 't2-staple')!
+    expect(durationMinFor(staple)).toBe(70)
   })
 
   it('the Collection how-to example workout id (t2-staple) still exists', () => {

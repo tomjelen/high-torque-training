@@ -2,7 +2,7 @@ import TierBadge from './TierBadge'
 import Cite from './Cite'
 import WorkoutParams from './WorkoutParams'
 import WorkoutChart from './WorkoutChart'
-import { chartWorkoutFor } from './chart-data'
+import { chartWorkoutFor, durationMinFor } from './chart-data'
 import type { Workout } from '../types'
 
 interface Props {
@@ -25,7 +25,7 @@ export default function CollectionCard({ workout, onDidThis }: Props) {
         {workout.name}
       </h3>
 
-      <WorkoutParams params={workout.params} tss={workout.tss} />
+      <WorkoutParams params={workout.params} durationMin={durationMinFor(workout)} tss={workout.tss} />
 
       {/* Power profile with the high-torque (cadence) mark. Minimal mode: no
           title (the card header already shows it) and no axis labels (the
