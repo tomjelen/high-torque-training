@@ -167,6 +167,45 @@ requirements above** — a parser that breaks them breaks the chart's meaning:
   parsing rather than writing a second parser. Workout ids in the placeholder
   data are *not* a stable key.
 
+### Where the chart's data comes from — three layers, read for three things
+
+A natural-but-wrong assumption (it tripped up a reviewing Claude) is that the
+`.zwo` file is the chart's source of truth. It is not. **The calendar
+(`research/training-calendar.md`, surfaced in the site as `site/src/data.ts`) is
+the source of truth** (root `CLAUDE.md`); the `.zwo` is a *lossy projection* of
+it. Two known losses:
+
+- **Cadence ranges collapse to a point.** The prescription is `50–60 rpm`; the
+  `.zwo` can only carry `Cadence="55"` (the format has no range). The single
+  value is an artifact of the format, not the real target.
+- **Sets are expanded into repetition.** A cleaner `IntervalsT` element exists,
+  but it can't carry a different cadence on its on/off blocks, so a set is
+  written as repeated `SteadyState` blocks (with `<!-- Set N -->` comments).
+
+Because of this, the chart reads **each layer for only the thing that layer
+represents faithfully**:
+
+| What the chart needs | Read from | Why this layer |
+|---|---|---|
+| **Geometry** — block durations, powers, order | the `.zwo` | The only *machine-readable* form. `data.ts` has it as prose (`'4×4 min @ 80–85% FTP'`). M2 verifies Σ block-durations == the calendar duration, so the projection can't silently drift on duration. |
+| **High-torque flag** (req. 3/4) | `.zwo` `Cadence`-attr *presence* | The lossiness is irrelevant here: the chart reads only *whether* a cadence is prescribed, never its value. `Cadence="55"` vs. the true `50–60` makes no difference to a boolean. |
+| **Displayed cadence label** (a11y title, full-mode key) | `data.ts` params | This is where the un-collapsed `50–60 rpm` lives. The `.zwo`'s point value is **never displayed** — it would misreport the prescription. |
+
+Two consequences worth stating so a later change doesn't undo them:
+
+- **The `<!-- Set N -->` comments are not parser inputs and must not become
+  load-bearing.** Set structure is recovered geometrically by the clusterer
+  (req. 4 table), which is robust to how the `.zwo` happens to be authored.
+  Driving set detection off comments (or off parsing `data.ts` prose like
+  `'4×4'`) would couple rendering to copy-editing — a drift surface the current
+  design deliberately avoids.
+- **This three-layer read is the deliberate trade-off, not an accident.**
+  Pulling definitions from several places has a cost; the alternative —
+  promoting the `.zwo` into a fully structured representation of the calendar —
+  was considered and deferred until a second workout platform makes it a real
+  need. Until then, read geometry from the `.zwo`, the flag from its
+  `Cadence`-presence, and the label from `data.ts`.
+
 ## How to tell if a change is a regression
 
 Ask, in order:
