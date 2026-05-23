@@ -97,9 +97,8 @@ export default function WorkoutChart({
   // duplication. Full mode (standalone reference) keeps the header.
   const showHeader = mode === 'full'
   const headerH = showHeader ? 22 : 0
-  const legendH = mode === 'full' ? 26 : 0
-  const svgH = headerH + chartGroupH + phaseLabelH + legendH + 6
-  const svgW = gutter + width + 16
+  const svgH = headerH + chartGroupH + phaseLabelH + 6
+  const svgW = gutter + width + gutter
 
   return (
     <svg
@@ -273,41 +272,6 @@ export default function WorkoutChart({
           </g>
         )}
       </g>
-
-      {/* Legend (full mode only) */}
-      {mode === 'full' && (
-        <g
-          transform={`translate(${gutter}, ${headerH + chartGroupH + phaseLabelH + 4})`}
-        >
-          <rect x="0" y="6" width="12" height="12" fill={ZONE_FILL[6]} />
-          <text
-            x="18"
-            y="16"
-            fontSize="11"
-            fill="var(--color-text-secondary)"
-          >
-            Max effort
-          </text>
-          <g transform="translate(96, 0)">
-            <rect x="0" y="6" width="12" height="12" fill={CADENCE_HATCH_BG} />
-            <rect
-              x="0"
-              y="6"
-              width="12"
-              height="12"
-              fill={`url(#${hatchId})`}
-            />
-            <text
-              x="18"
-              y="16"
-              fontSize="11"
-              fill="var(--color-text-secondary)"
-            >
-              High-torque block
-            </text>
-          </g>
-        </g>
-      )}
     </svg>
   )
 }

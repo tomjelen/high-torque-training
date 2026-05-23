@@ -10,6 +10,19 @@
   --color-border-tertiary: #334155;/* slate-700 */
 }
 
+/* Print: flip the chart chrome to dark-on-light so a printed workout reads on
+   white paper. Only the chrome vars move — the chart's data colours (zones,
+   the amber cadence accent) are intentionally theme-invariant (req. 10), so a
+   workout looks the same on screen and on paper. */
+@media print {
+  :root {
+    --color-text-primary: #0f172a;   /* slate-900 */
+    --color-text-secondary: #334155; /* slate-700 */
+    --color-text-tertiary: #475569;  /* slate-600 */
+    --color-border-tertiary: #cbd5e1;/* slate-300 */
+  }
+}
+
 /* Base styles for RationalePage HTML content */
 .rationale-content p { @apply text-sm text-slate-300 mb-3 leading-relaxed; }
 .rationale-content strong { @apply text-slate-200; }

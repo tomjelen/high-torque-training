@@ -6,7 +6,6 @@ import AdaptationPanel from './components/AdaptationPanel'
 import CollectionPanel from './components/CollectionPanel'
 import RationalePage from './components/RationalePage'
 import AboutPage from './components/AboutPage'
-import ChartGallery from './components/ChartGallery'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import { loadState, saveState, PRERENDER_STATE } from './storage'
@@ -14,7 +13,7 @@ import useIsomorphicLayoutEffect from './lib/useIsomorphicLayoutEffect'
 import useGoatCounterPageviews from './lib/useGoatCounterPageviews'
 import type { AppState } from './types'
 
-export const HOME_LAST_UPDATED = '2026-05-02'
+export const HOME_LAST_UPDATED = '2026-05-23'
 export const RATIONALE_LAST_UPDATED = '2026-04-30'
 export const ABOUT_LAST_UPDATED = '2026-05-15'
 export const ZWO_WORKOUTS_LAST_UPDATED = __ZWO_WORKOUTS_LAST_UPDATED__
@@ -109,10 +108,6 @@ function App() {
         <Route path="/" element={<HomePage state={state} setState={setState} />} />
         <Route path="/rationale" element={<RationaleRoute />} />
         <Route path="/about" element={<AboutRoute />} />
-        {/* Dev-only chart gallery. Not in prerender.mjs ROUTES, no nav link.
-            Placeholder data + route fate (remove vs promote, and the
-            attendant bundle check) is a pre-merge decision, not M1. */}
-        <Route path="/dev/charts" element={<ChartGallery />} />
       </Routes>
     </div>
   )

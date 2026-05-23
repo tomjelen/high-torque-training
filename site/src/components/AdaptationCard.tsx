@@ -1,5 +1,7 @@
 import Cite from './Cite'
 import WorkoutParams from './WorkoutParams'
+import WorkoutChart from './WorkoutChart'
+import { chartWorkoutFor, cadenceLabelFor } from './chart-data'
 import type { Workout } from '../types'
 
 type CardState = 'locked' | 'active' | 'complete'
@@ -27,8 +29,9 @@ export default function AdaptationCard({ workout, step, cardState, completedAt, 
   const isLocked = cardState === 'locked'
   const isComplete = cardState === 'complete'
   const badge = STATE_BADGE[cardState]
-  const cadence = workout.params.find((p) => p.label === 'Cadence')?.value
+  const cadence = cadenceLabelFor(workout)
   const shortTitle = cadence ? `W${step} — ${cadence}` : `W${step}`
+  const chart = chartWorkoutFor(workout)
 
   return (
     <article
@@ -52,6 +55,13 @@ export default function AdaptationCard({ workout, step, cardState, completedAt, 
       </div>
 
       <WorkoutParams params={workout.params} />
+
+      {/* Power profile + high-torque mark (minimal mode — see CollectionCard). */}
+      {chart && (
+        <div className="mb-3">
+          <WorkoutChart workout={chart} mode="minimal" width={680} showAxisLabels={false} />
+        </div>
+      )}
 
       {isComplete && completedAt && (
         <p className="text-xs text-green-400 mb-2 m-0">✓ Completed {formatDate(completedAt)}</p>

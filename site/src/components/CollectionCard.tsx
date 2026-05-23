@@ -1,6 +1,8 @@
 import TierBadge from './TierBadge'
 import Cite from './Cite'
 import WorkoutParams from './WorkoutParams'
+import WorkoutChart from './WorkoutChart'
+import { chartWorkoutFor } from './chart-data'
 import type { Workout } from '../types'
 
 interface Props {
@@ -10,6 +12,7 @@ interface Props {
 
 export default function CollectionCard({ workout, onDidThis }: Props) {
   const tier = workout.tier!
+  const chart = chartWorkoutFor(workout)
 
   return (
     <article className="relative flex flex-col rounded border border-slate-700 bg-slate-800 p-4">
@@ -23,6 +26,17 @@ export default function CollectionCard({ workout, onDidThis }: Props) {
       </h3>
 
       <WorkoutParams params={workout.params} tss={workout.tss} />
+
+      {/* Power profile with the high-torque (cadence) mark. Minimal mode: no
+          title (the card header already shows it) and no axis labels (the
+          card already states intensity + cadence). Rendered at a fixed design
+          width and scaled to the card by CSS — keeps cluster geometry stable
+          across card sizes. */}
+      {chart && (
+        <div className="mb-3">
+          <WorkoutChart workout={chart} mode="minimal" width={680} showAxisLabels={false} />
+        </div>
+      )}
 
       <div className="border-t border-slate-700 pt-3 flex items-center justify-between gap-2">
         <small className="text-slate-500 text-xs">

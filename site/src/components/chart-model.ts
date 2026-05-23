@@ -48,3 +48,11 @@ export const ZONE_FILL: Record<Zone, string> = {
 // as zone 1 (non-specific intensity), kept as its own constant so the intent
 // is explicit and M2's .zwo parser doesn't have to fabricate a ramp zone.
 export const RAMP_FILL = '#7A7A7A'
+
+// The cadence (high-torque) accent: an amber hatch over a dark amber ground.
+// This is a *data* colour (req. 10) — the single most important mark on the
+// chart — so it is hardcoded, not tokenized. Shared by WorkoutChart's accent
+// bars/legend and the standalone ChartLegend swatch so the hatch is defined
+// once, not duplicated across components.
+export const CADENCE_HATCH_LINE = '#BA7517' // diagonal rule
+export const CADENCE_HATCH_BG = '#633806' // ground behind the hatch

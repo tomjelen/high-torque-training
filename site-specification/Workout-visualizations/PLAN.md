@@ -1,4 +1,4 @@
-# Workout visualizations — PLAN (M1, M2 done · M3 ahead)
+# Workout visualizations — PLAN (M1, M2, M3 done · pre-merge gate all but consistency-check)
 
 Three-milestone effort to put a cadence-accented power-profile chart on every
 workout card of the site. This file is the durable, pick-up-in-a-new-session
@@ -85,20 +85,66 @@ post-review cleanup on top).** Delivered:
 - The dev gallery now renders **real** data; the M2 verification re-check
   superseded by `workout-chart-clustering.test.ts` (authoritative).
 
+**M3 (done — uncommitted on `feat/workout-chart`).** Delivered:
+
+- `site/src/components/chart-data.ts` — the `Workout.file` → parsed-blocks join
+  (`chartWorkoutFor`), plus `cadenceLabelFor` (shared with `AdaptationCard`).
+  Title from `data.ts` `name`, cadence label from the `data.ts` "Cadence" param
+  (the un-collapsed range), never the `.zwo` point value (three-layer read).
+- `site/src/components/CollectionCard.tsx`, `AdaptationCard.tsx` — minimal-mode
+  `<WorkoutChart>` slotted below `WorkoutParams`, above the source/download row.
+  Rendered at a fixed design `width={680}` (== the clustering test's width, so
+  live-card cluster counts are correct by construction) with `showAxisLabels=
+  {false}`; the SVG is now fluid (`width:100%`, `height:auto`, `maxWidth:svgW`)
+  so it scales to any card without a ResizeObserver and stays SSR-pure (req-9).
+- `site/src/components/ChartLegend.tsx` + `CadenceHatchSwatch.tsx` — promoted
+  from the gallery's `LegendStrip`; one `<ChartLegend>` per section (Collection
+  + Adaptation panels). The amber hatch is now a single shared swatch component;
+  hatch colours centralised as `CADENCE_HATCH_LINE/BG` in `chart-model.ts`.
+- `site/src/components/CollectionPanel.tsx` — full-mode "how to read the chart"
+  panel (Staple 5×5) at the top of the Collection; `AdaptationPanel.tsx` — the
+  section legend above its card grid.
+- `site/src/index.css` — `@media print` override of the four `--color-*` chrome
+  vars (dark-on-light); data colours stay theme-invariant (req-10).
+- `site/src/App.tsx` — `/dev/charts` route + `ChartGallery` import removed;
+  `ChartGallery.tsx` **deleted**; `HOME_LAST_UPDATED` bumped to `2026-05-23`.
+- `site/src/components/chart-data.test.ts` — join-key contract test (every
+  `Workout.file` resolves; title/label provenance; every cadence-prescribing
+  workout has ≥1 flagged block). 78 tests green.
+
+**M3 build-infra fix (was a latent pre-existing breakage):** `tsc -b` failed —
+`vite-env.d.ts`'s build-time globals were declared as bare top-level `declare
+const`, but `moduleDetection: "force"` (tsconfig.app/test) treats the `.d.ts`
+as a module, so they were module-scoped, not ambient. `vite build`/`vitest`
+use esbuild (no typecheck) so dev + tests masked it. Fixed by wrapping them in
+`export {}` + `declare global`, and adding `src/vite-env.d.ts` to
+`tsconfig.test.json`'s `include` (the test project pulled in global-using code
+for the first time via the new contract test). **Don't revert to bare
+`declare const` here.**
+
 ---
 
 ## Pre-merge gate (settle before merging the whole feature)
 
-- [ ] `/dev/charts` + `ChartGallery`: decide **remove vs promote** (M3). The
-  placeholder `chart-examples.ts` is already gone; the gallery is now wired to
-  real M2 data, so the open question is only delete-the-route vs keep-as-dev-
-  tool, plus a code-split / bundle check (belongs **here**, not earlier).
-- [ ] Full spec regression checklist (`documentation/workout-chart.md` →
-  "How to tell if a change is a regression").
-- [ ] `npm run lint && npm run build && npm test` green; `npm run test:e2e`
-  green except the known-unrelated `session-tracker-edits:57`.
-- [ ] Prerender still emits only `/`, `/rationale`, `/about`; sitemap unchanged.
-- [ ] `HOME_LAST_UPDATED` bumped (M3 changes the workout-library page — see M3).
+- [x] `/dev/charts` + `ChartGallery`: **removed** (Tom's call, M3) after
+  promoting `LegendStrip` + how-to copy into the real panels. The route block,
+  the component, and the App import are gone; the bundle/code-split concern goes
+  with them.
+- [x] Full spec regression checklist (`documentation/workout-chart.md`) —
+  verified on the live cards (browser): proportional/no-overflow (req-1),
+  intensity ordering (req-2), positive-only cadence mark (req-3), cluster sanity
+  Staple 5×5→5 / SIT 3-set→3 on live cards (req-4), neutral ramps (req-5),
+  visible block gaps (req-6), minimal=no-chrome / full=self-explanatory (req-7),
+  `<title>` a11y (req-8), SSR prerender clean (req-9), print override (req-10).
+- [x] `npm run lint && npm run build && npm test` green; `npm run test:e2e`
+  green except the known-unrelated `session-tracker-edits:57` (12 pass, that 1
+  fails — matches clean `main`).
+- [x] Prerender still emits only `/`, `/rationale`, `/about`; sitemap unchanged.
+- [x] `HOME_LAST_UPDATED` bumped to `2026-05-23`.
+- [ ] **Consistency check (Tom runs this — needs `ANTHROPIC_API_KEY` + a running
+  dev/preview server):** `ANTHROPIC_API_KEY=… node site/scripts/check-
+  consistency.mjs`. Required by root `CLAUDE.md` after `site/src/` changes;
+  I can't run it without the key.
 
 ---
 

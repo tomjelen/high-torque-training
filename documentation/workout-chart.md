@@ -96,7 +96,11 @@ Any reimplementation must keep all of these true. They are stated in terms of
    already shows the workout's title and cadence (it must not duplicate that
    chrome) and *standalone* as a self-explanatory "how to read this" example
    (it must then carry enough labelling — title, a key for the marks — to be
-   understood alone). The exact contents of each mode are negotiable; the
+   understood alone). The labelling in the standalone case may be provided by
+   the *host context* (e.g. `ChartLegend showZones` placed below the SVG by
+   `AdaptationPanel`) rather than baked into the SVG itself — what matters is
+   that the page view as a whole is self-explanatory, not that the SVG is
+   self-contained. The exact contents of each mode are negotiable; the
    no-duplication-when-embedded and self-explanatory-when-standalone properties
    are not.
 
@@ -243,17 +247,31 @@ Collection panel no longer contains an explainer block — it shows only the
 
 **One chart key per section:**
 
-`site/src/components/ChartLegend.tsx` is a static HTML legend rendered once at
-the top of each section (Collection panel and Adaptation panel). It shows only
-the amber high-torque-block swatch — zone colours are standard Zwift vocabulary
-and are intentionally omitted. Label: "High-torque block — where you drop to
-the low-cadence target." The cadence swatch is its own
-component, `CadenceHatchSwatch.tsx`, so any future surface that needs the
-swatch in isolation can drop it in without redefining the hatch. The hatch
-colours (`CADENCE_HATCH_LINE`, `CADENCE_HATCH_BG`) live in `chart-model.ts`
-alongside the zone palette and are imported by both `WorkoutChart`'s in-SVG
-accent/legend and `CadenceHatchSwatch` — these are *data* colours and are
-deliberately not tokenised (req. 10).
+`site/src/components/ChartLegend.tsx` is a static HTML legend with two modes,
+controlled by a `showZones` prop (default `false`):
+
+- **Compact (`showZones=false`):** amber swatch + "High-torque block — where
+  you drop to the low-cadence target." Used in the Collection panel above the
+  workout grid.
+- **Expanded (`showZones=true`):** amber swatch + pipe separator + all six
+  power-zone swatches (Rest, Endurance, Tempo, Threshold, VO2 / 110%, Sprint /
+  max) on a single line. Used inside the Adaptation panel's collapsible
+  explainer block, directly below the example chart.
+
+The Adaptation panel no longer renders a standalone `ChartLegend` strip above
+its workout cards — the only legend there is the expanded one inside the
+explainer.
+
+The cadence swatch is its own component, `CadenceHatchSwatch.tsx`, so any
+future surface that needs the swatch in isolation can drop it in without
+redefining the hatch. The hatch colours (`CADENCE_HATCH_LINE`, `CADENCE_HATCH_BG`)
+live in `chart-model.ts` alongside the zone palette and are imported by both
+`WorkoutChart`'s accent bars and `CadenceHatchSwatch` — these are *data* colours
+and are deliberately not tokenised (req. 10).
+
+`WorkoutChart` no longer renders its own internal SVG legend row. The
+full-mode chart relies on the host context (`AdaptationPanel`) to supply the
+key via `<ChartLegend showZones />` placed below the SVG.
 
 ### The data join — `chart-data.ts`
 

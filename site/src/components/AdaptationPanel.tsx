@@ -7,10 +7,13 @@ import { ADAPTATION_WORKOUTS, COLLECTION_WORKOUTS } from '../data'
 import type { AdaptationId, AppState } from '../types'
 
 // Staple 5×5 is the canonical "how to read" example: a clean 5-rep set whose
-// high-torque marks read as five clearly separate regions.
+// high-torque marks read as five clearly separate regions. Title is blanked so
+// the workout name ("Staple 5×5") doesn't appear — the user is looking at
+// Adaptation workouts and the name means nothing to them here.
 const HOW_TO_CHART = (() => {
   const staple = COLLECTION_WORKOUTS.find((w) => w.id === 't2-staple')
-  return staple ? chartWorkoutFor(staple) : undefined
+  const chart = staple ? chartWorkoutFor(staple) : undefined
+  return chart ? { ...chart, title: '' } : undefined
 })()
 
 const ORDER: AdaptationId[] = ['w1', 'w2', 'w3']
@@ -115,18 +118,17 @@ export default function AdaptationPanel({ state, setState }: Props) {
         </summary>
         <div className="px-4 pb-4 pt-3 border-t border-slate-800">
           <p className="m-0 mb-3 text-sm text-slate-400">
-            The amber hatched blocks mark where you drop to the low-cadence target — the high-torque
-            work. Everything else is standard Zwift: bar height is effort, left to right is time.
+            Each bar is one interval — height is effort, left to right is time. The amber hatched
+            blocks mark where you drop to the low-cadence target: the high-torque work.
           </p>
           {HOW_TO_CHART && (
-            <WorkoutChart workout={HOW_TO_CHART} mode="full" width={680} />
+            <div className="mb-3">
+              <WorkoutChart workout={HOW_TO_CHART} mode="full" width={680} showAxisLabels={false} />
+            </div>
           )}
+          <ChartLegend showZones />
         </div>
       </details>
-
-      <div className="mb-4 px-1">
-        <ChartLegend />
-      </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {ADAPTATION_WORKOUTS.map((workout, i) => {
