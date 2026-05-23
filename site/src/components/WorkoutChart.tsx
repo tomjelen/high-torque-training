@@ -72,7 +72,7 @@ export default function WorkoutChart({
   const isNarrow = width < 380
   const axisLabels = isNarrow ? false : showAxisLabels
   const gutter = axisGutter ?? (axisLabels ? 36 : 6)
-  const threshold = clusterThresholdPx ?? (isNarrow ? 8 : 12)
+  const threshold = clusterThresholdPx ?? (isNarrow ? 8 : 20)
 
   const total = totalDuration(workout.blocks)
   const pxPerSec = width / total

@@ -11,7 +11,7 @@ import type { ChartBlock } from './chart-model'
 // Mirror WorkoutChart's layout pass at the gallery's desktop width: each
 // block gets width proportional to its share of total session time.
 const DESKTOP_W = 680
-const DESKTOP_THRESHOLD = 12 // WorkoutChart: non-narrow clusterThresholdPx
+const DESKTOP_THRESHOLD = 20 // WorkoutChart: non-narrow clusterThresholdPx
 
 function layoutAt(blocks: ChartBlock[], width: number) {
   const total = blocks.reduce((s, b) => s + b.dur, 0)
@@ -40,6 +40,12 @@ describe('cadence clustering on real .zwo data (req-4 sanity table)', () => {
     expect(
       clusterCount(map['High Torque - Tier 2 Development/Staple_5x5_90pct.zwo'].blocks),
     ).toBe(5)
+  })
+
+  it('SIT 2×(4×30 s) → 2 marks (intra-set rests merge, 25-min rest splits)', () => {
+    expect(
+      clusterCount(map['High Torque - Tier 4 Advanced/SIT_2sets.zwo'].blocks),
+    ).toBe(2)
   })
 
   it('SIT 3×(4×30 s) → 3 marks (intra-set rests merge, 25-min rests split)', () => {
