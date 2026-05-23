@@ -7,7 +7,7 @@ import { findZwoFiles, WORKOUTS_DIR } from './zwo-files.mjs'
 const KNOWN_BLOCK_TYPES = new Set(['Warmup', 'Cooldown', 'SteadyState', 'IntervalsT', 'MaxEffort'])
 const BLOCK_TYPE_PATTERN = Array.from(KNOWN_BLOCK_TYPES).join('|')
 
-function parseAttrs(attrsStr) {
+export function parseAttrs(attrsStr) {
   const attrs = {}
   const re = /(\w+)="([^"]*)"/g
   let m
@@ -19,7 +19,7 @@ function parseAttrs(attrsStr) {
 
 // Extract workout blocks in document order from ZWO XML.
 // Returns array of { type, attrs } objects.
-function extractBlocks(xml, filePath) {
+export function extractBlocks(xml, filePath) {
   const workoutMatch = xml.match(/<workout>([\s\S]*?)<\/workout>/)
   if (!workoutMatch) throw new Error(`No <workout> section in ${filePath}`)
 

@@ -6,6 +6,7 @@
 // requirements behind this and the clustering behaviour below.
 import { useId } from 'react'
 import { ZONE_FILL, RAMP_FILL, type ChartBlock, type ChartWorkout } from './chart-model'
+import { buildClusters, type LaidOutBlock } from './chart-clustering'
 
 // Vertical scale: power as a fraction of FTP maps to a bar-top y. Clamped at
 // POWER_TO_TOP so a maximal sprint (~150% FTP) stays the tallest bar without
@@ -30,71 +31,6 @@ function yForPower(pct: number): number {
 
 function totalDuration(blocks: ChartBlock[]): number {
   return blocks.reduce((s, b) => s + b.dur, 0)
-}
-
-interface LaidOutBlock {
-  x: number
-  w: number
-  b: ChartBlock
-}
-
-interface Cluster {
-  x: number
-  w: number
-  blockIdxs: number[]
-}
-
-// Build cluster ranges from a block list.
-// A "set" = a maximal run of work-blocks separated by short rests. We cluster
-// when ALL intra-set rests are narrow (< clusterThresholdPx after layout).
-function buildClusters(
-  blocks: ChartBlock[],
-  layout: LaidOutBlock[],
-  clusterThresholdPx: number,
-): Cluster[] {
-  const cadenceIdx = blocks
-    .map((b, i) => (b.cadence ? i : -1))
-    .filter((i) => i >= 0)
-
-  if (cadenceIdx.length === 0) return []
-
-  // Merge consecutive cadence blocks into one accent when every block
-  // between them is narrow (≤ threshold px after layout). Width is the
-  // only criterion: a wide gap — a long rest or a long non-cadence
-  // effort — splits the accent, so each set reads as one region instead
-  // of a barcode of per-rep stripes.
-  const clusters: number[][] = []
-  let cur: number[] = [cadenceIdx[0]]
-
-  for (let k = 1; k < cadenceIdx.length; k++) {
-    const prev = cadenceIdx[k - 1]
-    const curIdx = cadenceIdx[k]
-    let allNarrow = true
-    for (let m = prev + 1; m < curIdx; m++) {
-      const g = layout[m]
-      if (!g) {
-        allNarrow = false
-        break
-      }
-      if (g.w > clusterThresholdPx) {
-        allNarrow = false
-        break
-      }
-    }
-    if (allNarrow) {
-      cur.push(curIdx)
-    } else {
-      clusters.push(cur)
-      cur = [curIdx]
-    }
-  }
-  clusters.push(cur)
-
-  return clusters.map((idxs) => {
-    const first = layout[idxs[0]]
-    const last = layout[idxs[idxs.length - 1]]
-    return { x: first.x, w: last.x + last.w - first.x, blockIdxs: idxs }
-  })
 }
 
 export interface WorkoutChartProps {
