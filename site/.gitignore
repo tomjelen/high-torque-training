@@ -15,9 +15,6 @@ public/workouts/
 public/content/
 .vite/
 
-# playwright-cli scratch workspace (sessions, snapshots, ad-hoc screenshots)
-.playwright-cli/
-
 # Playwright test output
 test-results/
 playwright-report/

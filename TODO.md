@@ -11,14 +11,9 @@
 
 ## Site
 
-- [x] Workout Zwift-like visualizations
 - [ ] Tip when session tracker is empty
 - [ ] Web claude has problems downloading the .zwo files. Something about binary
-
-## Workout files
-
-- [ ] Make it so the website re-expands Download/Install with a `updated` badge.
-- [x] Fine tune them, now that we have visualizations. Especially the cool-down stuff looks a bit off.
+- [-] Can I get API access to Zwift for the workouts?
 
 ## zwo-skill
 
@@ -29,5 +24,4 @@
 - [ ] MyWhoosh? Its free, I guess many people will be using that instead of Zwift in the future
 - [ ] Garmin/Wahoo/etc workouts
 - [ ] Another iteration on the research/rationale. Is it all sound?
-- [ ] Can I get API access to Zwift for the workouts?
 - [ ] Bi-directional state management

@@ -14,6 +14,7 @@ export const DEFAULT_STATE: AppState = {
   },
   log: [],
   adaptationCheckInConfirmed: false,
+  workoutsDownloadedDate: null,
 }
 
 // Initial state for SSR and the client's first hydrate render. All panels
@@ -65,6 +66,7 @@ export function loadState(isMobile = false): AppState {
       },
       log: parsed?.log ?? [],
       adaptationCheckInConfirmed: parsed?.adaptationCheckInConfirmed ?? false,
+      workoutsDownloadedDate: parsed?.workoutsDownloadedDate ?? null,
     }
   } catch {
     return DEFAULT_STATE

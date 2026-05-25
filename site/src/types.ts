@@ -60,4 +60,7 @@ export interface AppState {
   }
   log: LogEntry[]
   adaptationCheckInConfirmed: boolean
+  // The ZWO_WORKOUTS_LAST_UPDATED value captured when the user last downloaded
+  // the zip. null = never downloaded. Drives the "Workouts updated" badge.
+  workoutsDownloadedDate: string | null
 }

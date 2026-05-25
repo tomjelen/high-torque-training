@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "prebuild": "rsync -a --delete --delete-excluded --include='*/' --include='*.zwo' --exclude='*' ../workouts/ public/workouts && cd public/workouts && zip -r high-torque-workouts.zip . && cd ../.. && mkdir -p public/content && cp ../research/high-torque-training-research.md public/content/rationale.md && cp ../research/training-calendar.md public/content/workouts.md && cp ../research/about.md public/content/about.md",
+    "prebuild": "node scripts/build-public-assets.mjs",
     "build": "tsc -b && vite build && vite build --ssr src/entry-server.tsx --outDir dist-ssr",
     "postbuild": "node scripts/prerender.mjs",
     "lint": "eslint .",

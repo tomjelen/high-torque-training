@@ -1,4 +1,5 @@
 import Panel from './Panel'
+import { shouldShowUpdateBadge } from './update-badge'
 import type { AppState } from '../types'
 
 interface Props {
@@ -6,17 +7,37 @@ interface Props {
   setState: React.Dispatch<React.SetStateAction<AppState>>
 }
 
-const ZIP_HREF = '/workouts/high-torque-workouts.zip'
+// Stable served path + a ?v=<date> cache-bust token so an updated zip is never
+// shadowed by a stale browser/CDN copy. The saved filename (download attr) still
+// carries the date so re-downloads don't collide in the user's Downloads folder.
+const ZIP_HREF = `/workouts/high-torque-workouts.zip?v=${__ZWO_WORKOUTS_LAST_UPDATED__}`
+const ZIP_DOWNLOAD_NAME = `high-torque-workouts-${__ZWO_WORKOUTS_LAST_UPDATED__}.zip`
 
 export default function DownloadInstallPanel({ state, setState }: Props) {
   function onToggle(collapsed: boolean) {
     setState((s) => ({ ...s, panels: { ...s.panels, download: { collapsed } } }))
   }
 
+  function onDownload() {
+    setState((s) => ({ ...s, workoutsDownloadedDate: __ZWO_WORKOUTS_LAST_UPDATED__ }))
+  }
+
+  const showBadge = shouldShowUpdateBadge(
+    state.workoutsDownloadedDate,
+    __ZWO_WORKOUTS_LAST_UPDATED__,
+  )
+
+  const badge = showBadge && (
+    <span className="text-xs font-semibold uppercase tracking-wider text-orange-300 bg-orange-950 border border-orange-800/60 rounded-full px-2 py-0.5">
+      Workouts updated
+    </span>
+  )
+
   const zipButton = (
     <a
       href={ZIP_HREF}
-      download
+      download={ZIP_DOWNLOAD_NAME}
+      onClick={onDownload}
       className="inline-block bg-orange-600 hover:bg-orange-500 text-white text-xs font-bold font-mono px-3 py-1.5 rounded no-underline"
     >
       ⤓ .zip
@@ -25,7 +46,7 @@ export default function DownloadInstallPanel({ state, setState }: Props) {
 
   return (
     <Panel
-      heading="Install Zwift workouts"
+      heading={<>Install Zwift workouts {badge}</>}
       teaser="Download all workouts (.zip) — install once, then collapse me"
       headerAction={zipButton}
       collapsed={state.panels.download.collapsed}
@@ -39,7 +60,8 @@ export default function DownloadInstallPanel({ state, setState }: Props) {
         <div className="flex items-center gap-3 sm:flex-shrink-0">
           <a
             href={ZIP_HREF}
-            download
+            download={ZIP_DOWNLOAD_NAME}
+            onClick={onDownload}
             className="inline-block bg-orange-600 hover:bg-orange-500 text-white text-sm font-bold font-mono px-4 py-2 rounded no-underline"
           >
             ⤓ Download All (.zip)
