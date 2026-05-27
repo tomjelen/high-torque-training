@@ -13,7 +13,7 @@
 
 - [ ] Tip when session tracker is empty
 - [ ] Web claude has problems downloading the .zwo files. Something about binary
-- [-] Can I get API access to Zwift for the workouts?
+- [x] Request API access to Zwift for the workouts
 
 ## zwo-skill
 
