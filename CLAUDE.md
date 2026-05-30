@@ -68,3 +68,17 @@ The site has a deliberate setup for making its content readable to AI agents (Cl
 - `site/scripts/check-consistency.mjs`
 
 Also relevant context when a user asks about LLM/agent behaviour against the deployed site.
+
+## Installing npm dependencies
+
+`sfw` (Socket Firewall) is a `devDependency` in `site/`. When adding a new npm package, run the install through it so install-time scripts and the package itself get scanned:
+
+```
+cd site && npx sfw npm install <pkg>      # instead of: npm install <pkg>
+```
+
+On a fresh checkout, run a plain `npm install` in `site/` once to pull the dev tooling (including `sfw` itself — it can't bootstrap-scan its own install), then use `npx sfw npm install …` for everything after. `npx sfw` downloads the actual firewall binary on first run, so the first call needs network.
+
+This is a **convention, not an enforced boundary.** We tried automatic interception (PATH shims, a BASH_ENV hook, a command-rewriting hook) and removed all of it: PATH shims can't win against the harness, which re-applies its own PATH after `BASH_ENV` runs, and command-string matching is trivially evaded (`n""pm`, variable indirection, and even a plain `npm install` from `package.json` slip past). A clear instruction everyone can read beats a leaky guard that looks stronger than it is.
+
+`sfw` catches known-bad and AI-flagged packages, not zero-days or freshly-compromised ones. The only real boundary would be environment-level (sandboxing the session, network-egress control) — out of scope unless this work moves into a container.
