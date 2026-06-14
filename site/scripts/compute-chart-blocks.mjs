@@ -66,7 +66,11 @@ function mapBlock(type, attrs, filePath) {
     return block
   }
 
-  if (type === 'MaxEffort') {
+  // FreeRide and MaxEffort both render as the tallest zone-6 sprint bar. Every
+  // FreeRide in this library IS a max-effort sprint authored as FreeRide so it
+  // escapes ERG (MaxEffort deadlocks ERG — the "spiral of death"). Mapping it to
+  // MAX_EFFORT_POWER keeps the chart identical to the old MaxEffort rendering.
+  if (type === 'MaxEffort' || type === 'FreeRide') {
     const block = { kind: 'block', zone: 6, power: MAX_EFFORT_POWER, dur }
     if (hasCadence(attrs)) block.cadence = true
     return block

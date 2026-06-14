@@ -61,6 +61,13 @@ Never show "80% FTP" when the source says "80-85% FTP". The ZWO format forced us
 
 No cadence attributes on warmup, cooldown, recovery, or opener segments. Only on interval blocks where the research prescribes a specific cadence.
 
+## Max-effort sprints — `FreeRide`, marked as deliberate
+
+All-out sprints use `FreeRide` (format mechanics: see `zwo-format`). Project rule on top of that:
+
+- **Marker comment.** A `FreeRide` normally means "easy free spin," but ours are the opposite — max efforts. Place an XML comment before the first sprint block stating they ARE max-effort sprints authored as `FreeRide` to escape ERG (`MaxEffort` deadlocks ERG — the spiral of death), and to not convert them back. This stops a future refactor from "fixing" them.
+- **Cadence follows the source** (same rule as "Cadence placement" above): keep `Cadence` on sprints with a prescribed cadence (SIT's 50-60 rpm → `Cadence="55"`); omit it where the source leaves sprint cadence free (Rüegg).
+
 ## Interval structure — no trailing recovery
 
 High Torque interval sessions are built from repeated `<SteadyState>` blocks rather than `IntervalsT`, because the recovery phase needs free (unspecified) cadence and `IntervalsT` can't do that without the ±5 rpm bug (see `zwo-format`).
@@ -145,3 +152,4 @@ After creating or editing a `.zwo` file, verify:
 12. All displayed values show source prescription ranges, not ZWO-fixed values.
 13. **`Last updated:` date is current.** If this edit changed any content of the workout (interval added/removed, duration/cadence/intensity tweaked, description corrected, text-event typo fixed, file renamed), bump the date in the header comment to today's date. Do not bump for cosmetic edits to the header comment itself (e.g. fixing a URL typo). Same semantics as `HOME_LAST_UPDATED` in `site/CLAUDE.md`.
 14. **No trailing recovery before the cooldown.** The block immediately before `<Cooldown>` is the final work interval, not a recovery block (see "Interval structure"). If the workout's duration must match the calendar, recompute the total after removing/adding any recovery.
+15. **Sprints use `FreeRide`, not `MaxEffort`,** and the first sprint block is preceded by the max-effort marker comment. Keep `Cadence` on cadence-prescribed sprints; omit it on free-cadence sprints.

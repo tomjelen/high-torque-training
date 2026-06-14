@@ -13,7 +13,7 @@ import useIsomorphicLayoutEffect from './lib/useIsomorphicLayoutEffect'
 import useGoatCounterPageviews from './lib/useGoatCounterPageviews'
 import type { AppState } from './types'
 
-export const HOME_LAST_UPDATED = '2026-05-23'
+export const HOME_LAST_UPDATED = '2026-06-14'
 export const RATIONALE_LAST_UPDATED = '2026-04-30'
 export const ABOUT_LAST_UPDATED = '2026-05-15'
 export const ZWO_WORKOUTS_LAST_UPDATED = __ZWO_WORKOUTS_LAST_UPDATED__

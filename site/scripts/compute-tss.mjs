@@ -4,7 +4,7 @@ import { readFile } from 'node:fs/promises'
 import { relative } from 'node:path'
 import { findZwoFiles, WORKOUTS_DIR } from './zwo-files.mjs'
 
-const KNOWN_BLOCK_TYPES = new Set(['Warmup', 'Cooldown', 'SteadyState', 'IntervalsT', 'MaxEffort'])
+const KNOWN_BLOCK_TYPES = new Set(['Warmup', 'Cooldown', 'SteadyState', 'IntervalsT', 'MaxEffort', 'FreeRide'])
 const BLOCK_TYPE_PATTERN = Array.from(KNOWN_BLOCK_TYPES).join('|')
 
 export function parseAttrs(attrsStr) {
@@ -59,8 +59,10 @@ function sampleBlock({ type, attrs }) {
   if (type === 'Warmup' || type === 'Cooldown') {
     return sampleRamp(dur, Number(attrs.PowerLow), Number(attrs.PowerHigh))
   }
-  if (type === 'MaxEffort') {
-    // No power attribute — sprint at ~150% FTP (reasonable estimate for TSS purposes)
+  if (type === 'MaxEffort' || type === 'FreeRide') {
+    // No power attribute — sprint at ~150% FTP (reasonable estimate for TSS purposes).
+    // FreeRide is how the library authors max-effort sprints (it escapes ERG; MaxEffort
+    // deadlocks ERG — the "spiral of death"), so it is modelled identically to MaxEffort.
     return Array(dur).fill(1.5)
   }
   if (type === 'IntervalsT') {

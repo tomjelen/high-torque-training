@@ -173,8 +173,10 @@ a parser that breaks them breaks the chart's meaning:
   placeholder `zone: 1` that the component ignores in favour of `RAMP_FILL`.
 - Embedded sprints inside a cadence set that are themselves at free cadence must
   *not* carry the flag, so they don't split the set (req. 4, the Rüegg case).
-  This falls out of the previous rule: the embedded `MaxEffort` sprints in
+  This falls out of the previous rule: the embedded `FreeRide` sprints in
   Rüegg carry no `Cadence` attribute, so they're unflagged automatically.
+  (Sprints are authored as `FreeRide`, not `MaxEffort`, to escape ERG — see
+  the `zwo` skill; the parser maps both block types identically.)
 - Key parsed data by `.zwo` file path relative to `workouts/`, mirroring the
   existing build-time TSS map. The site's workout ids (`data.ts`) are *not*
   the join key — they're a display concern; the `.zwo` path is the stable join.

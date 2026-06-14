@@ -115,7 +115,7 @@ the library (15 entries — match the ids to the .zwo filenames).
   power fraction.
 - `<IntervalsT Repeat=… OnDuration=… OffDuration=… OnPower=…
   OffPower=…>` → expand into alternating `block` entries.
-- `<MaxEffort Duration=… >` (or `Power >= 1.40`) → zone 6 sprint.
+- `<FreeRide Duration=… >` or legacy `<MaxEffort Duration=… >` (or `Power >= 1.40`) → zone 6 sprint. Sprints are authored as `FreeRide` to escape ERG; both map identically.
 
 **Zone mapping** (matches `ZONE_FILL` in the chart):
 

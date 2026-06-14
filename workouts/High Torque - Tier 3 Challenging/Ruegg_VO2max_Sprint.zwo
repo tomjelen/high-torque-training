@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   High Torque Training — Zwift workout
-  Last updated: 2026-05-23
+  Last updated: 2026-06-14
 
   Site:      https://high-torque.jelen.dk/
   Calendar:  https://high-torque.jelen.dk/content/workouts.md
@@ -22,7 +22,6 @@
             <textevent timeoffset="120" duration="30" message="Each set: 5 minutes at 106-120% FTP and 50-60 rpm, then shift to a lighter gear for a 1-minute max sprint. 10-minute recovery between sets." />
             <textevent timeoffset="240" duration="25" message="Schep: the sprint at the end is to 'better your ability to transfer torque into power.' The combination trains both force production and explosiveness." />
             <textevent timeoffset="360" duration="25" message="Schep's progression for recreational riders: start at 60 rpm, 80-85% FTP for 15 min. Then threshold. Only then VO2max torque work like this." />
-            <textevent timeoffset="510" duration="30" message="MODE NOTE: The sprints reach 150% FTP — ERG mode will not deliver a natural sprint feel at that intensity. Ride this workout in slope/resistance mode and manage gear yourself." />
             <textevent timeoffset="570" duration="25" message="SEATED for the 5-minute VO2max blocks. The sprint can be seated or standing — cadence is unconstrained during the sprint." />
             <textevent timeoffset="690" duration="30" message="KNEE WARNING: This session combines sustained high-torque load with explosive sprint effort. Elevated injury risk. Only attempt if Tier 2 sessions have been consistently comfortable." />
             <textevent timeoffset="900" duration="25" message="The 10-minute recovery between sets is essential. The combination of VO2max and sprint work requires full recovery for quality." />
@@ -39,11 +38,16 @@
             <textevent timeoffset="270" message="30 seconds. The sprint starts immediately after. Get ready." />
         </SteadyState>
 
-        <MaxEffort Duration="60">
+        <!-- The FreeRide blocks below ARE max-effort sprints. They use FreeRide, not
+             MaxEffort, because MaxEffort deadlocks with ERG (the "spiral of death");
+             FreeRide auto-releases ERG for the sprint and restores it after. The chart
+             parser maps FreeRide -> zone-6 max sprint, so they still render as max
+             efforts. Do not convert these back to MaxEffort. -->
+        <FreeRide Duration="60" FlatRoad="1">
             <textevent timeoffset="0" message="SPRINT. Maximal effort. 1 minute. Any cadence — seated or standing." />
             <textevent timeoffset="30" message="Halfway. Keep driving." />
             <textevent timeoffset="50" message="10 seconds." />
-        </MaxEffort>
+        </FreeRide>
 
         <SteadyState Duration="600" Power="0.50">
             <textevent timeoffset="0" message="Recovery. 10 minutes. You need them." />
@@ -63,11 +67,11 @@
             <textevent timeoffset="270" message="30 seconds. Get ready to sprint." />
         </SteadyState>
 
-        <MaxEffort Duration="60">
+        <FreeRide Duration="60" FlatRoad="1">
             <textevent timeoffset="0" message="SPRINT. Maximal. 1 minute. Any cadence." />
             <textevent timeoffset="30" message="Halfway." />
             <textevent timeoffset="50" message="10 seconds." />
-        </MaxEffort>
+        </FreeRide>
 
         <SteadyState Duration="600" Power="0.50">
             <textevent timeoffset="0" message="Recovery. 10 minutes. Last set coming." />
@@ -86,11 +90,11 @@
             <textevent timeoffset="270" message="30 seconds. Prepare for the final sprint." />
         </SteadyState>
 
-        <MaxEffort Duration="60">
+        <FreeRide Duration="60" FlatRoad="1">
             <textevent timeoffset="0" message="FINAL SPRINT. Everything. 1 minute. Any cadence." />
             <textevent timeoffset="30" message="Halfway. Leave nothing." />
             <textevent timeoffset="50" message="10 seconds." />
-        </MaxEffort>
+        </FreeRide>
 
         <Cooldown Duration="720" PowerLow="0.50" PowerHigh="0.40">
             <textevent timeoffset="10" message="Rüegg protocol complete. Spin easy." />

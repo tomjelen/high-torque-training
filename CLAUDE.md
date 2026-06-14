@@ -4,6 +4,13 @@
 
 Zwift workout files (.zwo), a research document, and a training calendar for low-cadence/high-torque cycling training. The target audience is a recreational-competitive cyclist doing ~10 hours/week — not a professional athlete.
 
+## Git workflow — Tom commits, not me (IMPORTANT)
+
+- **Work directly on `main`.** Do **not** create feature branches or worktrees unless Tom explicitly asks. This is the default for every task.
+- **Do not commit. Do not stage.** Leave all changes in the working tree as **unstaged** modifications. Tom reviews, stages, and commits them himself — that is his QA pass and how he keeps his head around what changed.
+- This applies even when a task "feels done" or a plan/skill suggests committing. Finishing a task means: changes made, verified, left unstaged on `main`, and a summary of what changed. Stop there.
+- Only branch/commit/push when Tom says so in that session. Approval to commit in one session does not carry to the next.
+
 ## Protocol standards
 
 - All training protocols must be grounded in **peer-reviewed research** or **guidance from respected professional coaches** (e.g. Neal Henderson, EF Pro Cycling staff, CTS, EVOQ.BIKE). Do not invent protocols based on general reasoning alone.

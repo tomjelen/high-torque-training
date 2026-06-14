@@ -98,6 +98,29 @@ describe('blocksFromZwo — mapping rules', () => {
     expect(unflagged.cadence).toBeUndefined()
   })
 
+  it('maps FreeRide to a zone-6 sprint block at the fixed sprint power (same as MaxEffort)', () => {
+    const { blocks } = blocksFromZwo(
+      wrap('<FreeRide Duration="60" FlatRoad="1" />'),
+      'fr.zwo',
+    )
+    expect(blocks).toEqual([
+      { kind: 'block', zone: 6, power: MAX_EFFORT_POWER, dur: 60 },
+    ])
+  })
+
+  it('flags FreeRide with Cadence (SIT sprints) but not without (Rüegg sprints)', () => {
+    const flagged = blocksFromZwo(
+      wrap('<FreeRide Duration="30" FlatRoad="1" Cadence="55" />'),
+      'sit.zwo',
+    ).blocks[0]
+    const unflagged = blocksFromZwo(
+      wrap('<FreeRide Duration="60" FlatRoad="1" />'),
+      'ruegg.zwo',
+    ).blocks[0]
+    expect(flagged.cadence).toBe(true)
+    expect(unflagged.cadence).toBeUndefined()
+  })
+
   it('takes the workout title from the .zwo <name>', () => {
     const { title } = blocksFromZwo(wrap('<MaxEffort Duration="30" />', 'Staple 5x5'), 'x.zwo')
     expect(title).toBe('Staple 5x5')
@@ -124,7 +147,7 @@ describe('getChartBlocksMap — real corpus invariants', () => {
     expect(total).toBe(4200)
   })
 
-  it("does not flag Rüegg's embedded MaxEffort sprints (they must not split the set)", () => {
+  it("does not flag Rüegg's embedded FreeRide sprints (they must not split the set)", () => {
     const sprints = map[RUEGG].blocks.filter(
       (b) => b.kind === 'block' && b.power === MAX_EFFORT_POWER,
     )

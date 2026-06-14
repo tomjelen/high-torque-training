@@ -75,10 +75,12 @@ post-review cleanup on top).** Delivered:
   zone-6 red**, not the placeholder's zone-5 orange. Intentional, per the
   thresholds; not a bug at M3 visual review.
 - `cadence: true` is set **iff** the block has a `Cadence`/`CadenceLow`/
-  `CadenceHigh` attr, and never on ramps. Rüegg's `MaxEffort` sprints have no
+  `CadenceHigh` attr, and never on ramps. Rüegg's `FreeRide` sprints have no
   `Cadence` attr → unflagged → they don't split the set (verified by test).
-- `MaxEffort` → `power: MAX_EFFORT_POWER` (1.45, above the ~130% clamp); ramp
-  `zone` is a placeholder `1` (unused — `RAMP_FILL`).
+- `FreeRide` (and legacy `MaxEffort`) → `power: MAX_EFFORT_POWER` (1.45, above
+  the ~130% clamp); ramp `zone` is a placeholder `1` (unused — `RAMP_FILL`).
+  Sprints are now authored as `FreeRide` (escapes ERG); the parser maps both
+  block types identically.
 - `buildClusters` now lives in `chart-clustering.ts`; `WorkoutChart.tsx`
   imports it. Don't move it back into the component (re-introduces the
   react-refresh warning).
@@ -170,7 +172,8 @@ path is the stable join key (same as the TSS map; `data.ts` workouts carry
 `file`).
 
 **Corpus reality (verified):** only `Warmup`, `Cooldown`, `SteadyState`,
-`MaxEffort` appear — **no `IntervalsT`**. Only the `Cadence=` attribute appears
+`FreeRide` (sprints; legacy corpora used `MaxEffort`) appear — **no
+`IntervalsT`**. Only the `Cadence=` attribute appears
 — no `CadenceLow/High`. Handle `IntervalsT`/`CadenceLow/High` only if you want
 parity with `compute-tss.mjs`; not required by the current corpus.
 
@@ -181,7 +184,7 @@ parity with `compute-tss.mjs`; not required by the current corpus.
 | `<Warmup Duration PowerLow PowerHigh>` | `{kind:'ramp', fromPower:PowerLow, toPower:PowerHigh, dur:Duration}` (ascending) |
 | `<Cooldown Duration PowerLow PowerHigh>` | `{kind:'ramp', fromPower:PowerLow, toPower:PowerHigh, dur:Duration}` (descending — PowerLow>PowerHigh in the files; preserve direction) |
 | `<SteadyState Duration Power [Cadence]>` | `{kind:'block', power:Power, zone:zoneForPower(Power), dur:Duration, cadence: hasCadenceAttr}` |
-| `<MaxEffort Duration [Cadence]>` | `{kind:'block', zone:6, power:~1.45, dur:Duration, cadence: hasCadenceAttr}` (no Power attr; pick a fixed sprint value — clamp handles >130%) |
+| `<FreeRide Duration [FlatRoad] [Cadence]>` (and legacy `<MaxEffort Duration [Cadence]>`) | `{kind:'block', zone:6, power:~1.45, dur:Duration, cadence: hasCadenceAttr}` (no Power attr; pick a fixed sprint value — clamp handles >130%. Sprints are authored as `FreeRide` to escape ERG; both map identically) |
 
 - `zone` for ramps is irrelevant to rendering (RAMP_FILL); set any valid value
   and document that it's unused for colour.

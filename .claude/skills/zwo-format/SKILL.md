@@ -1,6 +1,6 @@
 ---
 name: zwo-format
-description: Use when creating, editing, or reviewing .zwo Zwift workout files — especially for power ramp direction (Warmup/Cooldown), IntervalsT cadence attributes, textevent timing and duration, workout naming limits, or max effort/sprint blocks (MaxEffort element).
+description: Use when creating, editing, or reviewing .zwo Zwift workout files — especially for power ramp direction (Warmup/Cooldown), IntervalsT cadence attributes, textevent timing and duration, workout naming limits, or max effort/sprint blocks (FreeRide element).
 paths: "**/*.zwo"
 allowed-tools: Read, Edit, Write, Grep, Glob
 ---
@@ -32,9 +32,9 @@ Rules for the Zwift `.zwo` XML format. These come from testing against Zwift and
             <textevent timeoffset="10" message="Text shown during each interval cycle."/>
         </IntervalsT>
 
-        <MaxEffort Duration="30" Cadence="55">
-            <textevent timeoffset="0" message="GO. Maximal effort — no power cap."/>
-        </MaxEffort>
+        <FreeRide Duration="30" FlatRoad="1">
+            <textevent timeoffset="0" message="GO. Maximal effort — ERG is off, just gear up."/>
+        </FreeRide>
 
         <Cooldown Duration="600" PowerLow="0.50" PowerHigh="0.40">
             <textevent timeoffset="30" message="Text shown during cooldown."/>
@@ -47,19 +47,22 @@ Rules for the Zwift `.zwo` XML format. These come from testing against Zwift and
 
 All power values can have fractions of FTP: `0.88` = 88% FTP.
 
-### Max effort blocks — use `MaxEffort`, not `SteadyState`
+### Max effort blocks — use `FreeRide`, not `MaxEffort` or `SteadyState`
 
-For all-out sprint blocks where the rider should go as hard as possible, use `MaxEffort` instead of `SteadyState` with a high power value:
+For all-out sprint blocks where the rider should go as hard as possible, use `FreeRide`:
 
 ```xml
-<MaxEffort Duration="30" Cadence="55">
+<FreeRide Duration="30" FlatRoad="1">
     <textevent timeoffset="0" message="GO. Maximal effort." />
-</MaxEffort>
+</FreeRide>
 ```
 
-- **Do not** use `SteadyState Power="1.50"` (or any high fraction) to represent max efforts. ERG mode caps output at the target, preventing a true all-out sprint. `MaxEffort` disables the power target and lets the rider go unrestricted.
-- `MaxEffort` accepts `Duration` and `Cadence` attributes. Drop `Power` entirely.
-- Omit `Cadence` if the source prescribes unconstrained cadence for the sprint.
+- **Do not** use `SteadyState Power="1.50"` (or any high fraction): ERG mode caps output at the target, preventing a true all-out sprint.
+- **Do not** use `MaxEffort` either. It is *supposed* to disable ERG, but it is barely-supported (the format reference documents only a `Duration` attribute, no child elements) and in practice ERG stays engaged on real setups — producing the cadence/resistance "spiral of death" during the sprint. This was hit empirically in the High Torque SIT and Rüegg workouts (2026-06-14).
+- `FreeRide` is the native block that **automatically turns ERG off** for its duration and back on afterward, with no rider intervention. It supports nested text events and a `Cadence` attribute.
+- `FlatRoad="1"` gives flat, controlled resistance the rider gears against, instead of following the in-game gradient.
+- Most sprints are free-cadence — omit `Cadence` (as above). Add it only when the source prescribes a specific sprint cadence (it drives the HUD target); e.g. the High Torque SIT sprints are 50-60 rpm, so they carry `Cadence="55"`.
+- Drop `Power` entirely — a free-ride block has no target.
 
 ### Power continuity (critical — this is the most common mistake)
 
@@ -121,7 +124,7 @@ Build interval sets as **N work blocks and N−1 recovery blocks** — recovery 
 | Using `cadenceHigh`/`cadenceLow` | These have no effect — use `Cadence` only |
 | `<name>` over ~35 chars | Causes UI artifacts in Zwift |
 | Countdown offset wrong | `timeoffset = Duration - X` (not X) |
-| `SteadyState Power="1.50"` for a sprint | Use `MaxEffort Duration="..."` — ERG mode caps effort at the wattage target, killing the all-out nature of the effort |
+| `SteadyState Power="1.50"` or `MaxEffort` for a sprint | Use `FreeRide Duration="..." FlatRoad="1"` — `SteadyState` ERG-caps the effort; `MaxEffort` is supposed to disable ERG but doesn't reliably, causing the spiral of death. `FreeRide` toggles ERG off and back on automatically. |
 
 ## Reference
 
