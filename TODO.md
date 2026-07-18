@@ -8,16 +8,11 @@
   This feeds `site/public/content/workouts.md`, which is what LLMs and agents see when they fetch the site as text. Right now, workout descriptions tend to *name* a source ("Hebisz-style") without making the underlying claim machine-extractable — an agent relaying "3×10 minutes at 50rpm" has nothing concrete to cite. After the refresh, every cadence target, intensity, and protocol detail in the calendar should sit next to a citation an LLM can lift verbatim (researcher name + year, or coach name + outlet).
 
   Pairs with the citation rule in `site/public/llms.txt`: that rule *asks* LLMs to cite original researchers and coaches whenever they relay a claim; this task makes complying easy by putting the citation right next to the claim.
+- [ ] The trainerroad podcast had an episode on this, they mentioned some other studies that could be interested to include.
 
 ## Site
 
 - [ ] Tip when session tracker is empty
-- [ ] Web claude has problems downloading the .zwo files. Something about binary
-- [x] Request API access to Zwift for the workouts
-
-## zwo-skill
-
-- [ ] zwo-skill to public repo. Share with the world!
 
 ## Future / parking lot
 

@@ -47,6 +47,14 @@ This is the most important principle in the project: **every session, every rule
 - `<author>` tag: "Tom Jelen"
 - Each `.zwo` file carries a machine-readable XML header comment between `<?xml ?>` and `<workout_file>`, with a hand-maintained `Last updated: YYYY-MM-DD` line and breadcrumb links to the site, calendar, rationale, and `/llms.txt`. **Bump the date on any content edit to that workout** (same semantics as `HOME_LAST_UPDATED` in `site/CLAUDE.md`). The site-level `ZWO_WORKOUTS_LAST_UPDATED` constant is derived as `max()` of these dates by `site/scripts/extract-workouts-last-updated.mjs` and injected at build time via Vite's `define`.
 
+## ZWO format skill — comes from a plugin
+
+The generic ZWO format knowledge (block types, power-ramp semantics, ERG/`FreeRide` mechanics, cadence bugs) lives in the **`zwift-workout-skills` plugin** — a public repo checked out at `~/code/jelen/zwift-workout-skills` (github.com/tomjelen/zwift-workout-skills). This repo deliberately consumes it like any other user would (dogfooding).
+
+- Fresh setup: `/plugin marketplace add tomjelen/zwift-workout-skills`, then `/plugin install zwift-workout-skills@zwift-workout-skills`.
+- **Changing format knowledge:** edit in `~/code/jelen/zwift-workout-skills`, Tom pushes, then `/plugin update zwift-workout-skills` here. Do **not** recreate a local `zwo-format` skill in this repo.
+- Project-specific ZWO conventions stay local in `.claude/skills/high-torque-zwo/`.
+
 ## Naming
 
 - The project's brand name is "High Torque" / "High Torque Training."

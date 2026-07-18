@@ -7,6 +7,7 @@
 - [llms.txt and agent accessibility](project_llms_and_agents.md) — research/ folder, served markdown, consistency script, llms.txt TODO about researcher citation
 - [vite-env.d.ts globals + moduleDetection](project_vite_env_globals_moduledetection.md) — build-time `define` globals need `export {} + declare global` (not bare `declare const`) or `tsc -b` silently breaks; run full `npm run build`, not just vitest
 - [FreeRide sprint conversion](project_freeride_sprint_conversion.md) — applied to main working tree (unstaged) 2026-06-14, Tom to commit; fixes MaxEffort↔ERG spiral; still needs trainer verification
+- [zwo-format skill extraction](project_zwo_skill_extraction.md) — DONE 2026-07-18: published as `tomjelen/zwift-workout-skills` plugin, installed here, local copy deleted, `zwo`→`high-torque-zwo`; format edits go in the plugin repo checkout, never locally; remaining: directory PRs + deferred skill test
 
 ## User & Feedback
 

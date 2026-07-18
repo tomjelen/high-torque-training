@@ -1,5 +1,5 @@
 ---
-name: zwo
+name: high-torque-zwo
 description: Use when creating or editing .zwo files in the High Torque Training project — applies to source attribution, display text, text event content and timing, message complexity during intervals, and the post-edit validation checklist.
 paths: "**/*.zwo"
 allowed-tools: Read, Edit, Write, Grep, Glob
@@ -7,7 +7,7 @@ allowed-tools: Read, Edit, Write, Grep, Glob
 
 # High Torque Training — ZWO Conventions
 
-Project-specific rules for `.zwo` files in the High Torque Training library. For ZWO format basics (XML structure, power ramp semantics, cadence attributes), see the **zwo-format** skill.
+Project-specific rules for `.zwo` files in the High Torque Training library. For ZWO format basics (XML structure, power ramp semantics, cadence attributes), see the **zwo-format** skill, provided by the `zwift-workout-skills` plugin (github.com/tomjelen/zwift-workout-skills).
 
 ## Author
 
