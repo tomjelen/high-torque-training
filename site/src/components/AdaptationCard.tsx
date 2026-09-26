@@ -70,7 +70,12 @@ export default function AdaptationCard({ workout, step, cardState, completedAt, 
       <div className="border-t border-slate-700 pt-3 mt-auto">
         <div className="flex items-center justify-between gap-2 mb-2">
           <small className="text-slate-500 text-xs">
-            Source: <Cite sourceKey={workout.source} note={workout.sourceNote} />
+            Source:{' '}
+            {workout.source === 'site' ? (
+              <span title={workout.sourceNote}>this site's own on-ramp</span>
+            ) : (
+              <Cite sourceKey={workout.source} note={workout.sourceNote} />
+            )}
           </small>
           <a
             href={`/workouts/${workout.file}`}

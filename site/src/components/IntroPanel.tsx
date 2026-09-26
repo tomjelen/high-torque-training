@@ -99,7 +99,7 @@ export default function IntroPanel({ state, setState }: Props) {
                 including cycling interval training at low cadence (50–70 rpm) than freely chosen
                 cadence (above 80 rpm),"
               </a>{' '}
-              PLOS ONE. n = 24 well-trained junior female cyclists. The directional result is the
+              PLOS ONE. n = 24 well-trained female cyclists aged 17–20. The directional result is the
               strongest in its body of literature (Hansen &amp; Rønnestad 2017 systematic review
               found no clear benefit for low-cadence training overall) — but it is one trial, and
               has not been replicated.
@@ -109,8 +109,8 @@ export default function IntroPanel({ state, setState }: Props) {
               Low-cadence HIIT delivers a <em>different</em> stimulus, not necessarily a strictly
               superior one. The same prime movers — quads, glutes, hamstrings — are active at all
               cadences, but at lower cadence each pedal stroke requires more force, which
-              preferentially recruits high-threshold (Type II) motor units (Ahlquist 1992; Sarre
-              &amp; Lepers 2006). I treat low-cadence HIIT as a high-value complement to standard
+              preferentially recruits high-threshold (Type II) motor units (Ahlquist 1992 — indirect
+              evidence from muscle glycogen use in 8 men). I treat low-cadence HIIT as a high-value complement to standard
               HIIT, not a strict upgrade.
             </p>
             <p className="m-0">
@@ -124,14 +124,15 @@ export default function IntroPanel({ state, setState }: Props) {
             <p className="m-0">
               <sup className="text-slate-500 mr-1">4</sup>
               A note on sourcing: the Hebisz 2024 study itself doesn't include a graduated cadence
-              ramp — its participants were monitored junior racers who went straight into 50–60
-              rpm intervals after three months of standardized base training. The 3-week
-              adaptation phase here follows coaching practice (Wakefield/UAE, Walsh/Roadman,
-              Housler/EVOQ), which is universal among coaches who prescribe torque intervals.
+              ramp — its participants were well-trained 17–20-year-old racers who went straight into
+              50–60 rpm intervals after three months of standardized base training. The 3-week
+              adaptation phase here is this site's own conservative on-ramp. It is loosely informed
+              by coaches' general advice to start torque work gradually, but it is not any named
+              coach's or study's protocol.
             </p>
             <p className="m-0">
               <sup className="text-slate-500 mr-1">5</sup>
-              The contraindications follow coach guidance from{' '}
+              The knee-history and "natural grinder" items follow{' '}
               <a
                 href={SOURCES.evoq.url}
                 target="_blank"
@@ -139,9 +140,14 @@ export default function IntroPanel({ state, setState }: Props) {
                 className="text-blue-400 hover:text-blue-300"
               >
                 EVOQ.BIKE
-              </a>
-              . The knee-history item is the strongest one and is consistent across
-              physiotherapy and coaching sources alike.
+              </a>{' '}
+              (Landry Bobo), who says riders with a history of overuse injuries, particularly knee
+              pain, should avoid low-cadence training. Naming patellar tendinopathy and PFPS is our
+              reading of that — check with a physio. "Coming off a rest period or injury" is this
+              site's own precaution: EVOQ actually uses a low-cadence session to get going{' '}
+              <em>after</em> a rest week, so this is a deliberately extra-cautious choice. The
+              reasoning for grinders (stimulus reduced, knee stress higher) is also ours; EVOQ's
+              reason is that they should train high cadence and their aerobic engine instead.
             </p>
             <p className="m-0 pt-1">
               <Link to="/rationale" className="text-blue-400 hover:text-blue-300">

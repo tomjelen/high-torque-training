@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   High Torque Training — Zwift workout
-  Last updated: 2026-05-23
+  Last updated: 2026-09-26
 
   Site:      https://high-torque.jelen.dk/
   Calendar:  https://high-torque.jelen.dk/content/workouts.md
@@ -12,17 +12,17 @@
     <author>Tom Jelen</author>
     <name>TorqueMax 110%</name>
     <activitySaveName>High Torque: TorqueMax - 6x2.5min 105-110% FTP @ 50-60 rpm</activitySaveName>
-    <description>EVOQ.BIKE's TorqueMax session. Six 2.5-minute intervals at 105-110% FTP and 50-60 rpm, 4-minute recovery. EVOQ explicitly warns: 'There is an increased risk of injury with these intervals, so you should start with the lower intensity torque intervals first.' Seated throughout.</description>
+    <description>EVOQ.BIKE's TorqueMax session. Six 2.5-minute intervals at 105-110% FTP and 50-60 rpm, 4-minute recovery (our choice; EVOQ doesn't specify recovery). EVOQ explicitly warns: 'There is an increased risk of injury with these intervals, so you should start with the lower intensity torque intervals mentioned earlier in the blog before progressing to the TorqueMax intervals.' Seated throughout.</description>
     <sportType>bike</sportType>
     <tags />
     <workout>
         <Warmup Duration="900" PowerLow="0.40" PowerHigh="0.75">
-            <textevent timeoffset="10" duration="30" message="Source: EVOQ.BIKE TorqueMax. '2-3 minutes at 105-110% of FTP and around 50-60 rpm. Start with six repetitions and work up to eight.'" />
+            <textevent timeoffset="10" duration="35" message="Source: EVOQ.BIKE TorqueMax (Landry Bobo): 'around 2-3 minutes at 105-110% of FTP and around 50-60 rpm. I would recommend starting with six repetitions and working up to eight.'" />
             <textevent timeoffset="75" duration="20" message="All the research behind this program: high-torque.jelen.dk" />
-            <textevent timeoffset="120" duration="25" message="EVOQ explicitly warns: 'There is an increased risk of injury with these intervals, so you should start with the lower intensity torque intervals first.'" />
+            <textevent timeoffset="120" duration="30" message="EVOQ explicitly warns: 'There is an increased risk of injury with these intervals, so you should start with the lower intensity torque intervals mentioned earlier in the blog before progressing to the TorqueMax intervals.'" />
             <textevent timeoffset="270" duration="25" message="Prerequisites: several months of regular torque sessions. Tier 3 consistently comfortable. Knees fine throughout. If not, do a Tier 2 or 3 session instead." />
             <textevent timeoffset="420" duration="25" message="105-110% FTP at 50-60 rpm. The highest above-threshold power at the lowest cadence in the collection. Patellofemoral load is at its maximum." />
-            <textevent timeoffset="540" duration="20" message="Henderson: musculoskeletal load is the main limiter in torque work, not cardiovascular. This session tests that limit." />
+            <textevent timeoffset="540" duration="30" message="Henderson caps torque work at 1-2 sessions a week because it is 'a bit more stressful from a musculoskeletal standpoint'. This is the most demanding of them." />
             <textevent timeoffset="660" duration="25" message="SEATED: More critical here than anywhere else. At this power and cadence, standing shifts the load in ways that increase injury risk further. Stay down. Always." />
             <textevent timeoffset="750" duration="20" message="Six intervals. 2.5 minutes each. 4 minutes recovery. Openers first." />
             <textevent timeoffset="840" duration="20" message="In ERG mode, drop to 50-60 rpm — the trainer adjusts resistance to match 105-110% FTP automatically." />
@@ -122,10 +122,10 @@
 
         <Cooldown Duration="900" PowerLow="0.50" PowerHigh="0.40">
             <textevent timeoffset="10" message="TorqueMax complete. Six intervals done." />
-            <textevent timeoffset="150" duration="25" message="This session represents the top end of what EVOQ prescribes for torque training. Beyond this, the injury risk outweighs the incremental benefit for most cyclists." />
+            <textevent timeoffset="150" duration="25" message="This is EVOQ's starting volume for TorqueMax. They suggest working up to eight reps. We stop at six here because it's our highest-load session. That's our choice, not EVOQ's." />
             <textevent timeoffset="360" duration="30" message="Post-session knee check is especially important here. 105-110% FTP at 50-60 rpm produces the highest patellofemoral load in the collection. Any discomfort persisting beyond 24 hours warrants a break from torque work." />
             <textevent timeoffset="600" duration="25" message="The 2024 study found significant improvements in VO2max and maximal power with the low-cadence protocol. The science supports this training. Your knees are the limiting factor to respect." />
-            <textevent timeoffset="780" duration="25" message="Neal Henderson on high-torque training: the musculoskeletal demand is the limiting factor, not the cardiovascular system. Respect the joints and you can train this way for years." />
+            <textevent timeoffset="780" duration="25" message="Neal Henderson limits these sessions to one, at most two, a week because they are 'a bit more stressful from a musculoskeletal standpoint'. Respect the recovery." />
         </Cooldown>
     </workout>
 </workout_file>

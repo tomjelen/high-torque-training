@@ -41,9 +41,10 @@ export default function UsageGuidelines({ collapsed, onToggle }: Props) {
             </li>
             <li>
               <strong className="text-slate-300">Maximum: never more than 2 per week.</strong>{' '}
-              Every coaching source converges on this ceiling (Henderson, EVOQ, EF Pro Cycling). The joint stress is the
-              limiter, not the aerobic demand. When doing 2, make one harder and one easier.
-              <Cite sourceKey="henderson" /><Cite sourceKey="evoq" /><Cite sourceKey="ef" />
+              Both coaching sources that give a frequency agree on this ceiling (Henderson, EVOQ). Henderson's reason is
+              that the sessions are "a bit more stressful from a musculoskeletal standpoint". When doing 2, make one
+              harder and one easier.
+              <Cite sourceKey="henderson" /><Cite sourceKey="evoq" />
             </li>
             <li>
               <strong className="text-slate-300">Never on back-to-back days.</strong>{' '}

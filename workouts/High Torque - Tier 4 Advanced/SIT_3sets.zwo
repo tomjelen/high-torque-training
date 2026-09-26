@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   High Torque Training — Zwift workout
-  Last updated: 2026-06-14
+  Last updated: 2026-09-26
 
   Site:      https://high-torque.jelen.dk/
   Calendar:  https://high-torque.jelen.dk/content/workouts.md
@@ -180,7 +180,7 @@
 
         <Cooldown Duration="900" PowerLow="0.50" PowerHigh="0.40">
             <textevent timeoffset="10" message="12 sprints done. Full study volume achieved." />
-            <textevent timeoffset="150" duration="25" message="That third set is the progression from the study's higher-volume phase. You have now matched their protocol." />
+            <textevent timeoffset="150" duration="25" message="That third set is the progression from the study's higher-volume phase. This matches the study's 12-rep SIT session, adapted for Zwift." />
             <textevent timeoffset="300" duration="20" message="Knee check post-session. Note anything — even mild. The cumulative load from 12 sprints at 50-60rpm is the highest in the High Torque Collection." />
             <textevent timeoffset="480" duration="20" message="Allow at least one rest day before the next hard session. The musculoskeletal load from 12 maximal sprints is substantial." />
             <textevent timeoffset="840" duration="30" message="Full recovery — not just between sets, but in the days after — is when the adaptation actually occurs. Twelve maximal sprints at low cadence represents a large neuromuscular stimulus." />

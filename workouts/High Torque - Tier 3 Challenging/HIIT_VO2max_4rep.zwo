@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   High Torque Training — Zwift workout
-  Last updated: 2026-05-23
+  Last updated: 2026-09-26
 
   Site:      https://high-torque.jelen.dk/
   Calendar:  https://high-torque.jelen.dk/content/workouts.md
@@ -12,16 +12,16 @@
     <author>Tom Jelen</author>
     <name>VO2max HIIT 4-rep</name>
     <activitySaveName>High Torque: VO2max - 4x4min ~110% FTP @ 60-70 rpm</activitySaveName>
-    <description>The HIIT session from Hebisz &amp; Hebisz (2024). Four 4-minute intervals at 110% FTP and 60-70 rpm, with 8 minutes easy recovery between each. VO2max-level effort with high torque. Seated throughout.</description>
+    <description>The HIIT session from Hebisz &amp; Hebisz (2024), adapted for Zwift (FTP-based target, indoors). Four 4-minute intervals at ~110% FTP (the study used 90-100% of maximal aerobic power) and 60-70 rpm, with 8 minutes easy recovery between each. VO2max-level effort with high torque. Seated throughout.</description>
     <sportType>bike</sportType>
     <tags />
     <workout>
         <Warmup Duration="900" PowerLow="0.40" PowerHigh="0.75">
-            <textevent timeoffset="10" duration="30" message="Source: Hebisz &amp; Hebisz (2024) HIIT protocol, weeks 1-4. 4x4 min at 90-100% Pmax (~110% FTP), 60-70 rpm, 8 min recovery." />
+            <textevent timeoffset="10" duration="30" message="Source: Hebisz &amp; Hebisz (2024) HIIT protocol, weeks 1-4. 4x4 min at 90-100% Pmax, 60-70 rpm, 8 min recovery. We use ~110% FTP." />
             <textevent timeoffset="75" duration="20" message="Session logger and full workout calendar at high-torque.jelen.dk" />
-            <textevent timeoffset="120" duration="25" message="This is the actual study protocol. The low-cadence group doing this session improved VO2max by 8.7% vs 4.6% for the normal-cadence group." />
+            <textevent timeoffset="120" duration="25" message="This is the study's HIIT session, adapted for Zwift. The low-cadence group did it every four days as part of an 8-week program that improved VO2max by 8.7% vs 4.6%." />
             <textevent timeoffset="180" duration="25" message="Important: the study uses 60-70 rpm for HIIT — not 50-60. SIT sprints use 50-60. These cadence ranges are different and deliberate." />
-            <textevent timeoffset="300" duration="30" message="The study used 90-100% of maximal aerobic power (Pmax). For most trained cyclists, Pmax sits at roughly 110-120% of FTP. 110% FTP is the conservative end of that range." />
+            <textevent timeoffset="300" duration="30" message="The study used 90-100% of maximal aerobic power (Pmax). Knowledge is Watt estimates that at ~110-120% of FTP (a commentary estimate, not from the paper). 110% is the conservative end." />
             <textevent timeoffset="480" duration="25" message="Four intervals. 4 minutes each. 8-minute recovery between them. The recovery is genuinely necessary at this intensity." />
             <textevent timeoffset="600" duration="25" message="SEATED: Every interval, every second. At 110% FTP the temptation to stand is even stronger than at sweet spot. Resist completely." />
             <textevent timeoffset="720" duration="25" message="KNEE PRIORITY: This is the highest sustained power in the High Torque Collection. Any knee discomfort that appears mid-interval means you stop the interval immediately — not at the end." />
@@ -56,7 +56,7 @@
 
         <SteadyState Duration="480" Power="0.50">
             <textevent timeoffset="2" message="Recovery. 8 full minutes. Use every second." />
-            <textevent timeoffset="60" duration="30" message="The study found that moving from VT1 intensity up to VO2max nearly doubles the percentage of maximum dynamic force on the pedals. Combining that force with low cadence is what makes this protocol unique." />
+            <textevent timeoffset="60" duration="30" message="A research note from Knowledge is Watt found that, at the same cadence, going from first-threshold (VT1) to VO2max intensity nearly doubles the share of your maximum pedal force used on each stroke." />
             <textevent timeoffset="180" message="Knee check. Any discomfort that feels joint-related (not muscle burn)?" />
             <textevent timeoffset="210" message="Next interval. Same: seated, 60-70rpm, 110% FTP." />
         </SteadyState>
@@ -73,7 +73,7 @@
 
         <SteadyState Duration="480" Power="0.50">
             <textevent timeoffset="2" message="Recovery. 8 minutes." />
-            <textevent timeoffset="60" duration="25" message="The Hebisz study's low-cadence group did exactly this. Your effort is replicating the protocol that produced the results." />
+            <textevent timeoffset="60" duration="30" message="The Hebisz study's low-cadence group did this session every four days as part of their program — outdoors, uphill, with power set from a lab ramp test." />
             <textevent timeoffset="180" message="Knee check." />
             <textevent timeoffset="210" message="Interval 3 coming. Seated. 60-70rpm. 110% FTP." />
         </SteadyState>
@@ -106,8 +106,8 @@
         </SteadyState>
 
         <Cooldown Duration="900" PowerLow="0.50" PowerHigh="0.40">
-            <textevent timeoffset="10" message="Four VO2max intervals done. That was the study protocol HIIT session." />
-            <textevent timeoffset="150" duration="25" message="You have now done exactly what the low-cadence group in the 2024 PLOS One study did. The combination of high torque and high power is the key mechanism." />
+            <textevent timeoffset="10" message="Four VO2max intervals done. That was the study's HIIT session, adapted for Zwift." />
+            <textevent timeoffset="150" duration="25" message="You have now done the HIIT session the low-cadence group in the 2024 PLOS One study did, adapted for Zwift. High torque plus high power is the proposed mechanism." />
             <textevent timeoffset="360" duration="25" message="Knee check: how do they feel now, post-effort? Anything that lingers should be noted and not ignored." />
             <textevent timeoffset="540" duration="25" message="Allow at least one rest day before the next low-cadence session. The musculoskeletal load from VO2max torque work is substantial." />
             <textevent timeoffset="720" duration="25" message="The study found the low-cadence group improved VO2max by 8.7% over 8 weeks — nearly double the 4.6% in the normal-cadence group." />

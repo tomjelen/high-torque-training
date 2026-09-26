@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   High Torque Training — Zwift workout
-  Last updated: 2026-05-23
+  Last updated: 2026-09-26
 
   Site:      https://high-torque.jelen.dk/
   Calendar:  https://high-torque.jelen.dk/content/workouts.md
@@ -12,7 +12,7 @@
     <author>Tom Jelen</author>
     <name>Staple 5x8</name>
     <activitySaveName>High Torque: Staple 5×8 min ~90% FTP @ 50–60 rpm</activitySaveName>
-    <description>Extended version of EVOQ.BIKE's staple torque session. Five 8-minute intervals at ~90% FTP and 50-60 rpm, with 5-minute recovery between each. EVOQ explicitly mentions extending intervals to 8 minutes to work on muscular endurance. 40 minutes of total torque work. Seated throughout.</description>
+    <description>Extended version of EVOQ.BIKE's staple torque session. Five 8-minute intervals at ~90% FTP and 50-60 rpm, with 5-minute recovery between each (our choice; EVOQ doesn't specify recovery). EVOQ explicitly mentions extending intervals to 8 minutes to work on muscular endurance. 40 minutes of total torque work. Seated throughout.</description>
     <sportType>bike</sportType>
     <tags />
     <workout>
@@ -86,7 +86,7 @@
         <Cooldown Duration="600" PowerLow="0.50" PowerHigh="0.40">
             <textevent timeoffset="10" message="Five 8-minute intervals done — 40 minutes of torque work." />
             <textevent timeoffset="30" message="Cool down. Easy spin at normal cadence." />
-            <textevent timeoffset="120" duration="30" message="Patellofemoral compressive force increases with knee flexion: ~1x bodyweight at 15 degrees, ~3x at 45 degrees, ~6x at 75 degrees. Low cadence maximises force through each cycle." />
+            <textevent timeoffset="120" duration="30" message="Kneecap (patellofemoral) load rises with knee bend and with force per pedal stroke. Low cadence raises the force per stroke. That is why knee ache means stop." />
             <textevent timeoffset="300" duration="25" message="Never do torque sessions on back-to-back days. The joints need recovery time. 1-2 sessions per week, always separated by a normal-cadence day." />
         </Cooldown>
     </workout>

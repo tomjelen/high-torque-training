@@ -20,23 +20,29 @@ export const SOURCES: Record<string, Source> = {
       'Hebisz R & Hebisz P (2024). Greater improvement in aerobic capacity after a polarized training program including cycling interval training at low cadence (50–70 rpm) than freely chosen cadence (above 80 rpm). PLOS One.',
     url: 'https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0311833',
   },
-  munoz2014: {
-    key: 'munoz2014',
-    shortName: 'Muñoz 2014',
+  kristoffersen2014: {
+    key: 'kristoffersen2014',
+    shortName: 'Kristoffersen 2014',
     fullCitation:
-      'Muñoz I et al. (2014). Low cadence interval training at moderate intensity does not improve cycling performance in highly trained veteran cyclists. PMC3907705.',
+      'Kristoffersen M, Gundersen H, Leirdal S, Iversen VV (2014). Low cadence interval training at moderate intensity does not improve cycling performance in highly trained veteran cyclists. Frontiers in Physiology 5:34. PMC3907705.',
     url: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC3907705/',
   },
-  dye: {
-    key: 'dye',
-    shortName: 'Dye et al.',
+  johnston2017: {
+    key: 'johnston2017',
+    shortName: 'Johnston 2017',
     fullCitation:
-      'Dye SF et al. The influence of extrinsic factors on knee biomechanics during cycling. PMC5717478.',
+      'Johnston TE, Baskins TA, Koppel RV, Oliver SA, Stieber DJ, Hoglund LT (2017). The influence of extrinsic factors on knee biomechanics during cycling: a systematic review of the literature. International Journal of Sports Physical Therapy 12(7):1023–1033. PMC5717478.',
     url: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC5717478/',
+  },
+  physiopediaSpringKnee: {
+    key: 'physiopediaSpringKnee',
+    shortName: 'Physio-pedia: Spring Knee',
+    fullCitation: 'Physio-pedia: Spring Knee (section "Gearing and Cadence").',
+    url: 'https://www.physio-pedia.com/Spring_Knee',
   },
   physiopedia: {
     key: 'physiopedia',
-    shortName: 'Physio-pedia',
+    shortName: "Physio-pedia: Cyclist's Knee",
     fullCitation: "Physio-pedia: Cyclist's Knee.",
     url: "https://www.physio-pedia.com/Cyclist's_Knee",
   },
@@ -44,7 +50,7 @@ export const SOURCES: Record<string, Source> = {
     key: 'evoq',
     shortName: 'EVOQ.BIKE',
     fullCitation:
-      'EVOQ.BIKE — Low Cadence Cycling: How Torque Training Makes You Faster.',
+      'EVOQ.BIKE (Landry Bobo) — Low Cadence Cycling: How Torque Training Makes You Faster.',
     url: 'https://www.evoq.bike/blog/low-cadence-cycling-how-torque-training-makes-you-faster',
   },
   kiw58: {
@@ -64,27 +70,32 @@ export const SOURCES: Record<string, Source> = {
     key: 'henderson',
     shortName: 'Henderson',
     fullCitation:
-      'Neal Henderson on Fast Talk Labs — Put It in the Big Gear — We Explore Low-Cadence, High-Torque Training.',
+      'Neal Henderson on Fast Talk Labs, episode 125 (20 August 2020) — Put It in the Big Gear — We Explore Low-Cadence, High-Torque Training.',
     url: 'https://www.fasttalklabs.com/fast-talk/neal-henderson-put-it-in-the-big-gear-we-explore-low-cadence-high-torque-training/',
   },
   roadman: {
     key: 'roadman',
     shortName: 'Roadman Podcast',
     fullCitation:
-      'The Roadman Podcast — New Study FINALLY Confirms What Cycling Coaches Have Been Saying For Years (YouTube, 2024).',
+      'The Roadman Podcast — New Study FINALLY Confirms What Cycling Coaches Have Been Saying For Years (YouTube, March 2026).',
     url: 'https://www.youtube.com/watch?v=tcar3G2v73I',
   },
   ef: {
     key: 'ef',
     shortName: 'EF Pro',
     fullCitation:
-      "EF Pro Cycling — Pro Workouts: Torque Efforts with Noemi Rüegg.",
+      "EF Pro Cycling — Pro Workouts: Torque Efforts with Noemi Rüegg (Noemi Rüegg's session; progression advice from EF Head of Performance Peter Schep).",
     url: 'https://www.efprocycling.com/tips-recipes/noemi-rueegg-torque-workouts/',
   },
 }
 
-// Adaptation phase workouts — source: EVOQ.BIKE progression structure
-// Research doc: "adapted from standard coach guidance on torque training progressions [EVOQ.BIKE]"
+// Adaptation phase workouts — source: this site's own conservative on-ramp.
+// Not a named source's protocol (EVOQ.BIKE's article contains no such phase).
+// Research doc: "Where this phase comes from — honestly". `source: 'site'` is
+// rendered as plain text by AdaptationCard, not as a citation.
+const ADAPTATION_SOURCE_NOTE =
+  "This site's own conservative on-ramp, loosely informed by coaches' general advice to start torque work gradually. Not taken from any named source's protocol, and not from the Hebisz study."
+
 export const ADAPTATION_WORKOUTS: Workout[] = [
   {
     id: 'w1',
@@ -95,7 +106,8 @@ export const ADAPTATION_WORKOUTS: Workout[] = [
       { label: 'Cadence', value: '65–70 rpm' },
       { label: 'Recovery', value: '5 min easy spin' },
     ],
-    source: 'evoq',
+    source: 'site',
+    sourceNote: ADAPTATION_SOURCE_NOTE,
     file: 'High Torque - Adaptation/Week1_2x10_65-70rpm.zwo',
   },
   {
@@ -107,7 +119,8 @@ export const ADAPTATION_WORKOUTS: Workout[] = [
       { label: 'Cadence', value: '65 rpm' },
       { label: 'Recovery', value: '5 min easy between' },
     ],
-    source: 'evoq',
+    source: 'site',
+    sourceNote: ADAPTATION_SOURCE_NOTE,
     file: 'High Torque - Adaptation/Week2_2x15_65rpm.zwo',
   },
   {
@@ -119,7 +132,8 @@ export const ADAPTATION_WORKOUTS: Workout[] = [
       { label: 'Cadence', value: '60–65 rpm' },
       { label: 'Recovery', value: '5 min easy between' },
     ],
-    source: 'evoq',
+    source: 'site',
+    sourceNote: ADAPTATION_SOURCE_NOTE,
     file: 'High Torque - Adaptation/Week3_3x10_60-65rpm.zwo',
   },
 ]
@@ -230,6 +244,7 @@ export const TIERS: Tier[] = [
           { label: 'Cadence', value: '50–60 rpm (sprint at normal cadence)' },
         ],
         source: 'ef',
+        sourceNote: "Noemi Rüegg's own session, as published by EF Pro Cycling. Scaled — shorter warm-up and cool-down for Zwift (EF's version uses 30 min each).",
         file: 'High Torque - Tier 3 Challenging/Ruegg_VO2max_Sprint.zwo',
       },
     ],

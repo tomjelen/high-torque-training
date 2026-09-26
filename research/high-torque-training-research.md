@@ -1,6 +1,6 @@
 # High Torque (Low Cadence) Training for Cyclists
 **Permanent integration guide**
-Last reviewed: April 2026
+Last reviewed: September 2026
 
 ---
 
@@ -16,7 +16,7 @@ This document is a guide for **permanently integrating high-torque training into
 
 Most cyclists pedal at 80–100 rpm. Dropping to 50–70 rpm at the same power output forces each leg muscle contraction to produce much more force per stroke — that's what "high torque" means.
 
-The same prime movers (quads, glutes, hamstrings) are active at all cadences, but at lower cadence each stroke preferentially recruits high-threshold (Type II) motor units that stay quieter at higher cadences [Ahlquist 1992; Sarre & Lepers 2006]. The hypothesis: combining this recruitment shift with high-intensity intervals drives stronger aerobic adaptations — particularly VO2max and maximal aerobic power — than the same intervals at freely chosen cadence.
+The same prime movers (quads, glutes, hamstrings) are active at all cadences, but at lower cadence each stroke preferentially recruits high-threshold (Type II) motor units that stay quieter at higher cadences [Ahlquist 1992 — greater Type II fibre glycogen use at 50 than at 100 rpm; indirect evidence from 8 men]. The hypothesis: combining this recruitment shift with high-intensity intervals drives stronger aerobic adaptations — particularly VO2max and maximal aerobic power — than the same intervals at freely chosen cadence.
 
 The same mechanism that makes the stimulus effective also makes it demanding on connective tissue. More force per stroke means more load on knees, patellar and quadriceps tendons, and the muscles that stabilize the joint. Tendons and connective tissue adapt slower than the cardiovascular system, which is why this protocol begins with a 3-week adaptation phase at low cadence and easy power before any high-intensity work is layered on top.
 
@@ -30,7 +30,7 @@ The same mechanism that makes the stimulus effective also makes it demanding on 
 > PLOS One, November 2024.
 > https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0311833
 
-**What they did:** Two groups of well-trained female cyclists followed an identical 8-week polarized training program (~8 hours/week, 4-day microcycles). The only difference: one group did all high-intensity intervals at **freely chosen cadence (>80 rpm)**, the other at **low cadence (50–70 rpm)**.
+**What they did:** Two groups of well-trained female cyclists followed an identical 8-week polarized training program (4-day microcycles repeated back to back). The paper doesn't state weekly hours; the often-quoted figure of about 8 hours per week comes from a commentary (Knowledge is Watt #58), not the study. Before the study, participants trained at least 10 hours per week. The only difference: one group did all high-intensity intervals at **freely chosen cadence (>80 rpm)**, the other at **low cadence (50–70 rpm)**.
 
 Both programs included:
 - Sprint Interval Training (SIT): 8–12 × 30-second all-out efforts
@@ -47,7 +47,7 @@ Both programs included:
 
 The low-cadence group also improved their second ventilatory threshold (VT2), which the free-cadence group did not.
 
-**Why it might work:** At any given power output, pedaling slower means each pedal stroke requires more force. Research has shown that moving from the first threshold (VT1) up to VO2max effort nearly **doubles the percentage of maximum dynamic force** expressed on the pedals. Combining high force *and* high intensity likely drives greater muscle fiber recruitment — both slow-twitch fibers (already active) and additional fast-twitch fibers — leading to stronger aerobic adaptations. [Source: Hebisz & Hebisz 2024, citing prior biomechanical cadence research]
+**Why it might work:** At any given power output, pedaling slower means each pedal stroke requires more force. Knowledge is Watt (issue #58, citing its own research note) reports that at the same rpm, going from first-threshold (VT1) to VO2max intensity almost **doubles the percentage of maximum dynamic force** on the pedals, and suggests this could matter for which muscle fibres are recruited. That is a commentary, not peer-reviewed. The idea that high force *and* high intensity together recruit more fast-twitch fibres is our extrapolation from it (and from Ahlquist 1992). The Hebisz authors themselves only speculate ("Perhaps…") that heavy-gear uphill efforts may increase motor-unit activation, as resistance training does. [Knowledge is Watt #58; Hebisz & Hebisz 2024]
 
 **Important caveat:** The study tested a program where **all** high-intensity work was done at low cadence for 8 weeks. It did not test the use case of adding 1–2 low-cadence sessions to an otherwise normal-cadence training week. The ongoing training approach in this document is based on coaching practice, not on this study directly.
 
@@ -64,7 +64,7 @@ The study used a 4-day microcycle, repeated across 8 weeks with volume progressi
 
 **Note the different cadence ranges:** SIT uses **50–60 rpm**, HIIT uses **60–70 rpm**. These are not interchangeable.
 
-**FTP translation:** The study prescribes HIIT at 90–100% of maximal aerobic power (Pmax). For most trained cyclists, Pmax ≈ 110–120% of FTP, so 90–100% Pmax ≈ 100–120% FTP. The workouts use ~110% FTP as a practical mid-range target.
+**FTP translation:** The study prescribes HIIT at 90–100% of maximal aerobic power (Pmax, from a ramp test with 3-minute steps). The paper gives no FTP equivalent. Knowledge is Watt #58 translates the HIIT intervals to roughly 110–120% of FTP — a commentary estimate, not from the paper. The workouts use ~110% FTP, the conservative end of that range. How Pmax maps onto FTP varies by rider; this is a question for a coach or physiologist.
 
 ### How solid is this evidence?
 
@@ -83,7 +83,7 @@ The study used a 4-day microcycle, repeated across 8 weeks with volume progressi
 
 3. **No injury monitoring.** The study tracked performance but not joint stress, knee pain, or any injury risk markers. Low cadence is mechanically harder on the knees (see below), and this was not studied.
 
-4. **Mixed literature overall.** The authors acknowledge that "to date, there is no data reporting a clear and unequivocal benefit of torque (low cadence) training." Earlier studies using moderate-intensity low-cadence work with amateur middle-aged cyclists showed no advantage over freely chosen cadence — suggesting that **intensity matters**: the benefit may only emerge when combining low cadence with high intensity. [Hebisz & Hebisz 2024; also see: *Low cadence interval training at moderate intensity does not improve cycling performance in highly trained veteran cyclists*, PMC3907705]
+4. **Mixed literature overall.** Knowledge is Watt (issue #58, a commentary on the study — not the study authors) notes that "to date, there is no data reporting a clear and unequivocal benefit of torque (low cadence) training." Kristoffersen et al. (2014) found no advantage from moderate-intensity low-cadence intervals (40 rpm at 73–82% of max heart rate, twice a week for 12 weeks) over freely chosen cadence in well-trained male veteran cyclists (mean age 47). Set against the Hebisz result, this suggests that **intensity matters**: the benefit may only emerge when combining low cadence with high intensity. That comparison is ours (and Knowledge is Watt's), not the Hebisz authors'. [Knowledge is Watt #58; Kristoffersen et al. 2014]
 
 5. **Comparison to male cohorts.** The same polarized model applied to well-trained men in previous research produced ~14% VO2max improvements overall — larger than either group here. Gender and training history appear to significantly affect the magnitude of response. [Hebisz & Hebisz 2024]
 
@@ -91,11 +91,11 @@ The study used a 4-day microcycle, repeated across 8 weeks with volume progressi
 
 The study shows the mechanism works. The coaching sources below show how practitioners integrate it into ongoing training. This combination — study mechanism + coaching practice — is the basis for this document.
 
-**Neal Henderson** (Apex Coaching, coached Rohan Dennis, Taylor Phinney): *"Generally I do about one of these sessions a week, at most two."* He has never programmed back-to-back big gear sessions and stresses the musculoskeletal load as the main limiter. His athlete Petr Vakoc: *"Once to twice a week... three times per two weeks."* Henderson's progression for new athletes: start with tempo (3–5 min at 75–85% FTP, 50–60 rpm), then threshold (5×5 min at ~95% FTP, 50–60 rpm), then VO2max (30–90s at ~5-min power). [Fast Talk Labs podcast]
+**Neal Henderson** (founder of the Apex Performance Centre; head of sport science at Wahoo at the time of the August 2020 episode; coached Rohan Dennis and Taylor Phinney): *"Generally I do about one of these sessions a week, at most two"* — because they are "a bit more stressful from a musculoskeletal standpoint". He has never programmed back-to-back big gear sessions. Henderson's entry point for a new athlete: tempo, 3–5 min at 75–85% of threshold, 50–60 rpm, ~20 min total work. He then moves to threshold (e.g. 5×5 min at ~95% FTP, 50–60 rpm) and short VO2max-power efforts (e.g. 2 sets of 6×30 s at 5-min power). In a full block he often *starts* with short seated, then standing, big-gear starts (~20 s) before the longer efforts. Petr Vakoč (pro road rider, formerly with Quick-Step, in a clip on the same episode), on his 12×30-s low-gear session: *"now I do it one to twice a week … I would say three times per two weeks."* [Fast Talk ep. 125, 20 Aug 2020]
 
-**EVOQ.BIKE:** Start with 1 session per week, work up to 2 per week during base season. During race season: 1–2× per month for maintenance. They position low-cadence work as an ongoing training tool, not a block to complete. [EVOQ.BIKE]
+**EVOQ.BIKE (Landry Bobo):** Start with 1 session per week, work up to 2 per week during base season. During race season: 1–2× per month for maintenance. They keep low-cadence work going year-round, not as a block to complete. [EVOQ.BIKE]
 
-**Peter Schep / EF Pro Cycling:** Progressive approach — start at 60 rpm, 80–85% FTP for 15 minutes, then advance to threshold efforts, and only then to VO2max torque work (e.g. 3×5 min at 106–120% FTP, 50–60 rpm — the Noemi Rüegg workout). Recreational riders should proceed cautiously. The VO2max torque workout is a post-adaptation session, not a starting point. [EF Pro Cycling]
+**EF Pro Cycling (Peter Schep, EF Head of Performance):** Progressive approach — start at 60 rpm, 80–85% FTP for 15 minutes, then advance to threshold efforts, and only then above threshold. Recreational riders "need to proceed cautiously to limit the risk of injury." The VO2max torque workout EF publishes alongside this advice is **Noemi Rüegg's own session** (3×5 min at VO2max pace — EF defines that as 106–120% FTP — at 50–60 rpm). It is a post-adaptation session, not a starting point. [EF Pro Cycling]
 
 **Honest statement:** No controlled trial has tested 1–2 low-cadence sessions per week mixed with normal-cadence training against a control group. The ongoing training recommendations in this document are coaching consensus, not experimentally validated. We are using the study to understand *why* low-cadence training may work, and coaching practice to guide *how* to integrate it.
 
@@ -104,7 +104,7 @@ The study shows the mechanism works. The coaching sources below show how practit
 Both the research and coaching sources converge on this: low-cadence work must be at **tempo intensity or above** to be effective as a torque training stimulus.
 
 - **EVOQ.BIKE** explicitly states: *"If you go below tempo into zone 2, you probably won't be producing enough torque to make a meaningful difference."* They recommend tempo or threshold power as the minimum. [EVOQ.BIKE]
-- **Hebisz & Hebisz (2024):** The null-result study (Muñoz et al., 2014) used moderate-intensity low-cadence work and found no benefit over freely chosen cadence. The positive results in Hebisz came specifically from combining low cadence with **high** intensity (90–100% Pmax for HIIT, maximal for SIT).
+- **Kristoffersen et al. (2014) vs. Hebisz & Hebisz (2024):** The null-result study (Kristoffersen et al., 2014) used moderate-intensity low-cadence work and found no benefit over freely chosen cadence. The positive results in Hebisz came specifically from combining low cadence with **high** intensity (90–100% Pmax for HIIT, maximal for SIT). The comparison between the two studies is ours — Hebisz & Hebisz do not cite Kristoffersen et al.
 - **Henderson:** His entry-level torque work starts at 75–85% FTP (low tempo to sweet spot), not Zone 2. [Fast Talk Labs]
 
 **Practical implication:** All torque workouts in the calendar must be at tempo (~76% FTP) or above. Zone 2 low-cadence sessions are just normal riding at a slightly uncomfortable cadence — they do not provide the torque stimulus that makes this training worthwhile. The adaptation phase (weeks 1–3) is the only exception: it uses Zone 2 power intentionally, to introduce the mechanical stress to joints and tendons before adding intensity. It is not meant to drive performance gains.
@@ -115,16 +115,16 @@ Both the research and coaching sources converge on this: low-cadence work must b
 
 This is the main practical concern. Low cadence cycling significantly increases patellofemoral (kneecap) joint load.
 
-Biomechanical research shows that patellofemoral compressive force increases with knee flexion angle: at 15° flexion it is approximately 1× bodyweight, at 45° it rises to 3× bodyweight, and at 75° it reaches 6× bodyweight. Cycling seats you in a position of sustained knee flexion, and grinding at low cadence maximises force through each cycle.
+Patellofemoral (kneecap) load rises with knee bend and with the force pushed through each pedal stroke. A systematic review of knee biomechanics in cycling notes that "increasing knee flexion angle can increase forces impacting the knee" and that cadence and workload affect the loads (moments) around the knee [Johnston et al. 2017]. Cycling keeps the knee bent throughout the stroke, and low cadence raises the force per stroke — that combination is our reasoning for treating knee load as the main risk.
 
-Clinically: *"Pushing hard gears at low revolutions puts a high load through the patella, whereas lower gears at high cadence (85–90 rpm) will put less load through the patellofemoral joint with each stroke."* [Physio-pedia: Cyclist's Knee, citing general cycling biomechanics literature; see also PMC5717478 — systematic review of extrinsic factors on knee biomechanics during cycling]
+Clinically: *"Pushing hard gears at low revolutions puts a high load through the patella, whereas lower gears at a high cadence (85-90rpm) will put less load through the Patellofemoral joint with each stroke."* [Physio-pedia: Spring Knee. The page's own footnote for this sentence is a neuromuscular-fatigue study (Lepers et al. 2001), so its sourcing is thin.] Physio-pedia's Cyclist's Knee page likewise lists slow cadence (putting much greater force through the knee) among causes of anterior knee pain, alongside bike-fit problems. [Physio-pedia: Cyclist's Knee]
 
 **All low-cadence interval work must be done seated.** Standing eliminates the training stimulus — you can use body weight to press the pedal down, bypassing the forced muscular contraction that makes this training work.
 
 **Who should avoid low-cadence training entirely:**
-- Any history of knee overuse injury, patellar tendinopathy, or patellofemoral pain syndrome (PFPS) [EVOQ.BIKE coach guidance]
-- Coming off a rest period or injury
-- Cyclists who already naturally grind at low cadences (the stimulus is reduced and the knee stress is higher)
+- Any history of overuse injury, particularly knee pain [EVOQ.BIKE]. We read that as including patellar tendinopathy and patellofemoral pain syndrome (PFPS) — our interpretation; check with a physio.
+- Coming off a rest period or injury — this site's own precaution, not EVOQ's. (EVOQ actually uses a low-cadence session to get the muscles going *after* a rest week; we are deliberately more cautious.)
+- Cyclists who already naturally grind at low cadences [EVOQ.BIKE]. EVOQ's reason: they should work on high cadence and their aerobic engine instead. Our added reason: the extra stimulus is smaller and the knee stress is higher.
 
 ### Knee protection rules
 
@@ -135,7 +135,7 @@ These apply to every low-cadence session, always:
 3. **Don't go below 50 rpm** unless you have months of established low-cadence work behind you.
 4. **Never do low-cadence sessions on back-to-back days.** The joint needs recovery time.
 5. **All intervals are seated.** Standing removes the training stimulus and changes the load pattern.
-6. If you have had patellofemoral pain, patellar tendinopathy, or any knee overuse injury: skip low-cadence training entirely. [EVOQ.BIKE; Physio-pedia: Cyclist's Knee]
+6. If you have had patellofemoral pain, patellar tendinopathy, or any knee overuse injury: skip low-cadence training entirely. [EVOQ.BIKE says riders with a history of overuse injuries, particularly knee pain, should avoid it; naming PFPS and tendinopathy is our reading of that.]
 
 ---
 
@@ -143,7 +143,7 @@ These apply to every low-cadence session, always:
 
 **Goal:** Introduce the mechanical stimulus before adding intensity. Tendons and connective tissue adapt more slowly than muscles; this phase is non-negotiable.
 
-The cadence, session structure, and progressive volume here is adapted from standard coach guidance on torque training progressions [EVOQ.BIKE low cadence article], not from the study (the study did not include an adaptation phase — participants were already highly trained).
+**Where this phase comes from — honestly:** it is this site's own conservative on-ramp. The cadences, session structure, and volume below are not taken from any named source's protocol. They are loosely informed by the general advice among coaches to start torque work gradually, but no source we cite prescribes these sessions. It is not from the study either (the study did not include an adaptation phase — participants were already highly trained). Note that EVOQ.BIKE argues Zone 2 low-cadence work is too easy to be a meaningful torque stimulus; this phase uses Zone 2 on purpose, as a tissue-loading on-ramp rather than a training stimulus (see "Intensity floor" above).
 
 **Frequency: 1 low-cadence session per week.** All other sessions: normal cadence.
 
@@ -176,37 +176,37 @@ All of these must be true before starting ongoing training:
 
 This section documents what each source actually prescribes. All workouts in the calendar must trace back to these. See `training-calendar.md` for the implemented workout library.
 
-### EVOQ.BIKE
+### EVOQ.BIKE (Landry Bobo)
 
-Two prescribed workouts, both at **50–60 rpm**:
+Two prescribed workouts, both at **50–60 rpm**. EVOQ gives no recovery duration for either; the recoveries in our workouts are our choice.
 
 1. **Staple torque session:** 5×5 min at ~90% FTP, 50–60 rpm. *"You can extend the duration of these intervals up to 8 minutes to work on muscular endurance."* Can also decrease cadence or increase to threshold intensity as progressions.
-2. **TorqueMax:** 6–8×2–3 min at 105–110% FTP, 50–60 rpm. Explicitly warns: *"There is an increased risk of injury with these intervals, so you should start with the lower intensity torque intervals mentioned earlier."*
+2. **TorqueMax:** 6–8×2–3 min at 105–110% FTP, 50–60 rpm. Explicitly warns: *"There is an increased risk of injury with these intervals, so you should start with the lower intensity torque intervals mentioned earlier in the blog before progressing to the TorqueMax intervals."*
 
 **Intensity floor:** *"Typically, low cadence training is best performed at either tempo or threshold power. If you go below tempo into zone 2, you probably won't be producing enough torque to make a meaningful difference."*
 
-**Frequency:** Start with 1/week, work up to 2/week. During race season: 1–2×/month for maintenance.
+**Frequency:** Start with 1/week, work up to 2/week (in base season). During race season: 1–2×/month for maintenance.
 
 **Periodization:** *"The bulk of torque workouts are best performed during base season when you are also lifting in the gym."*
 
 ### Neal Henderson (Fast Talk Labs)
 
-**Frequency:** *"Generally I do about one of these sessions a week, at most two."* Never back-to-back days. Athlete Petr Vakoc: *"Once to twice a week... three times per two weeks."*
+**Frequency:** *"Generally I do about one of these sessions a week, at most two."* Never back-to-back days. (Petr Vakoč, in a clip on the same episode, on his own 12×30-s low-gear session: *"now I do it one to twice a week … I would say three times per two weeks."* That refers to that one session, not torque work in general.)
 
-**Progression for new athletes** (all at 50–60 rpm):
-1. Entry: 3–5 min efforts at 75–85% FTP (*"the first thing I would do"*)
+**Progression for new athletes** (all at 50–60 rpm; Fast Talk ep. 125, 20 Aug 2020):
+1. Entry: 3–5 min efforts at 75–85% of threshold (*"the first thing I would do"*), then 20-s seated and standing big-gear starts with full recovery
 2. Threshold: 5×5 min at ~95% FTP, half-time recovery
 3. VO2max: 30–90s at ~5-min power, equal to double-time recovery
 
-Henderson uses a reverse periodization (short/intense → longer/sustained), stressing musculoskeletal load as the main limiter.
+In a full ~6-week block, Henderson often uses a reverse order: 20-s seated starts, then standing starts, then tempo, threshold and 2×(6×30 s) VO2max-power efforts (short/intense → longer/sustained). He limits sessions to one, at most two, a week because they are "a bit more stressful from a musculoskeletal standpoint".
 
-### EF Pro Cycling (Peter Schep / Noemi Rüegg)
+### EF Pro Cycling (Noemi Rüegg's session; progression advice: Peter Schep)
 
-**The Rüegg workout:** 3×5 min at 106–120% FTP (VO2max pace), 50–60 rpm. 10 min easy recovery between sets. Optional: shift to a lighter gear at the end of each 5-min effort and do a 1-min max sprint to *"better your ability to transfer torque into power."*
+**The Rüegg workout** (Noemi Rüegg's own session, as published by EF; EF's article text, not Schep): 3×5 min at 106–120% FTP (VO2max pace), 50–60 rpm. 10 min easy recovery between sets. Optional: shift to a lighter gear at the end of each 5-min effort and do a 1-min max effort to *"better your ability to transfer torque into power"* (EF's article text).
 
-**Progression:** Start at 60 rpm, 80–85% FTP for 15 min → threshold efforts → VO2max torque work. The Rüegg workout is a post-adaptation session, not a starting point.
+**Progression (Peter Schep):** Start at 60 rpm, 80–85% FTP for 15 min → threshold efforts → above threshold. The Rüegg workout is a post-adaptation session, not a starting point.
 
-**Warm-up:** 30 min easy. Cool-down: 30 min easy.
+**Warm-up:** 30 min easy. Cool-down: 30 min easy (EF's workout box). Our Zwift version shortens both (scaled — see the calendar).
 
 ### Hebisz & Hebisz (2024)
 
@@ -229,12 +229,12 @@ You are not following a periodized block. You are adding a permanent training to
 **1–2 sessions per week.** One is the norm, two is the ceiling.
 
 - **1 per week is the standard.** Some weeks you'll fit none. That's okay — this is a long-term practice, not a protocol with a deadline.
-- **Maximum: never more than 2 per week.** Every coaching source converges on this ceiling (Henderson, EVOQ, EF Pro Cycling). The joint stress is the limiter, not the aerobic demand. When doing 2, make one harder and one easier.
+- **Maximum: never more than 2 per week.** Both coaching sources that give a frequency agree on this ceiling (Henderson, EVOQ). Henderson's reason is that the sessions are "a bit more stressful from a musculoskeletal standpoint". When doing 2, make one harder and one easier.
 - **Never on back-to-back days.** At least one normal-cadence day between torque sessions.
 - **Race weeks:** If you have a target Zwift race with hard sprints that week, consider dropping to 1 torque session and make it an easier one. Don't stack a Tier 4 sprint session and a race in the same week.
 - **Race season maintenance:** 1–2 low-cadence sessions per month is sufficient to preserve the adaptation. [EVOQ.BIKE]
 
-[Henderson: *"Generally I do about one of these sessions a week, at most two."* Fast Talk Labs. EVOQ.BIKE: *"Start with 1/week, work up to 2/week."* EF Pro Cycling: Peter Schep recommends a progressive approach.]
+[Henderson: *"Generally I do about one of these sessions a week, at most two."* Fast Talk Labs. EVOQ.BIKE: *"I'd recommend starting with one day per week of low cadence, and working up to two once you've gotten used to them."* (base season). EF Pro Cycling gives no frequency; Peter Schep recommends a progressive approach to intensity.]
 
 ### How to fit this into your existing ~10 hrs/week
 
@@ -333,13 +333,13 @@ This section tracks how solid each claim is and what would change it.
 | Claim | Current confidence | What would change it |
 |-------|-------------------|----------------------|
 | +8.7% vs +4.6% VO2max finding | Low-medium — one small study | Replication in larger, mixed-gender, recreational cyclist cohorts |
-| Benefit requires *high* intensity at low cadence | Medium-high — biomechanical theory + null results at moderate intensity (Muñoz 2014) + EVOQ explicitly states Zone 2 is ineffective | A well-controlled study showing moderate-intensity low-cadence also works |
-| 1–2 sessions/week mixed into normal training is effective | Medium — coaching consensus (Henderson, EVOQ, EF Pro), no controlled trial | A study directly testing mixed integration vs. control |
+| Benefit requires *high* intensity at low cadence | Medium-high — biomechanical theory + null results at moderate intensity (Kristoffersen 2014) + EVOQ explicitly states Zone 2 is ineffective | A well-controlled study showing moderate-intensity low-cadence also works |
+| 1–2 sessions/week mixed into normal training is effective | Medium — coaching consensus (Henderson, EVOQ), no controlled trial | A study directly testing mixed integration vs. control |
 | Knee injury risk at low cadence | High — well-established biomechanics | Would need evidence of a safe low-cadence technique that reduces patellofemoral load |
 | Seated requirement | High — biomechanically obvious | No plausible mechanism to change this |
-| 3-week adaptation is sufficient | Low — coach-derived, no controlled trial | A study comparing fast vs. gradual introduction |
+| 3-week adaptation is sufficient | Low — this site's own on-ramp (not a named source's protocol), no controlled trial | A study comparing fast vs. gradual introduction |
 | Applicability to recreational male cyclists | Unknown — the study used young competitive women | Studies on non-elite, mixed-gender, or masters populations |
-| 2/week ongoing frequency ceiling | Medium — coach consensus (Henderson, EVOQ, EF), no controlled trial | A dose-response study comparing 1, 2, and 3 sessions/week |
+| 2/week ongoing frequency ceiling | Medium — coach consensus (Henderson, EVOQ), no controlled trial | A dose-response study comparing 1, 2, and 3 sessions/week |
 | Tier-based progression is safe | Medium — standard progressive overload principle + coach guidance | Injury data from structured torque training programs |
 | SIT sessions improve Zwift race sprints | Low-medium — study used SIT but did not isolate sprint performance; biomechanically plausible | A study testing low-cadence sprint training and race outcomes |
 
@@ -349,11 +349,11 @@ This section tracks how solid each claim is and what would change it.
 
 1. **Primary study:** Hebisz R & Hebisz P (2024). *Greater improvement in aerobic capacity after a polarized training program including cycling interval training at low cadence (50–70 rpm) than freely chosen cadence (above 80 rpm)*. PLOS One. https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0311833
 
-2. **Null result at moderate intensity:** Muñoz I et al. (2014). *Low cadence interval training at moderate intensity does not improve cycling performance in highly trained veteran cyclists*. PMC3907705. https://pmc.ncbi.nlm.nih.gov/articles/PMC3907705/
+2. **Null result at moderate intensity:** Kristoffersen M, Gundersen H, Leirdal S, Iversen VV (2014). *Low cadence interval training at moderate intensity does not improve cycling performance in highly trained veteran cyclists*. Frontiers in Physiology 5:34. PMC3907705. https://pmc.ncbi.nlm.nih.gov/articles/PMC3907705/
 
-3. **Knee biomechanics in cycling (systematic review):** Dye SF et al. *The influence of extrinsic factors on knee biomechanics during cycling*. PMC5717478. https://pmc.ncbi.nlm.nih.gov/articles/PMC5717478/
+3. **Knee biomechanics in cycling (systematic review):** Johnston TE, Baskins TA, Koppel RV, Oliver SA, Stieber DJ, Hoglund LT (2017). *The influence of extrinsic factors on knee biomechanics during cycling: a systematic review of the literature*. International Journal of Sports Physical Therapy 12(7):1023–1033. PMC5717478. https://pmc.ncbi.nlm.nih.gov/articles/PMC5717478/
 
-4. **Patellofemoral force and cadence (clinical):** Physio-pedia: Cyclist's Knee. https://www.physio-pedia.com/Cyclist's_Knee
+4. **Patellofemoral load and cadence (clinical):** Physio-pedia: Spring Knee (section "Gearing and Cadence"). https://www.physio-pedia.com/Spring_Knee — and Physio-pedia: Cyclist's Knee (slow cadence puts much greater force through the knee; check bike fit). https://www.physio-pedia.com/Cyclist's_Knee
 
 5. **Coach-level session structures and integration advice:** EVOQ.BIKE — *Low Cadence Cycling: How Torque Training Makes You Faster*. https://www.evoq.bike/blog/low-cadence-cycling-how-torque-training-makes-you-faster
 
@@ -361,10 +361,8 @@ This section tracks how solid each claim is and what would change it.
 
 7. **Overview of cadence research landscape:** W/KG — *Have Low Cadence Training Come Full Circle?* https://www.wattkg.com/low-cadence-training/
 
-8. **Ongoing frequency guidance (coach):** Neal Henderson on Fast Talk Labs — *Put It in the Big Gear — We Explore Low-Cadence, High-Torque Training*. https://www.fasttalklabs.com/fast-talk/neal-henderson-put-it-in-the-big-gear-we-explore-low-cadence-high-torque-training/
+8. **Ongoing frequency guidance (coach):** Neal Henderson on Fast Talk Labs, episode 125 (20 August 2020) — *Put It in the Big Gear — We Explore Low-Cadence, High-Torque Training*. https://www.fasttalklabs.com/fast-talk/neal-henderson-put-it-in-the-big-gear-we-explore-low-cadence-high-torque-training/
 
-9. **Pro team protocol:** EF Pro Cycling — *Pro Workouts: Torque Efforts with Noemi Rüegg*. https://www.efprocycling.com/tips-recipes/noemi-rueegg-torque-workouts/
+9. **Pro rider's session:** EF Pro Cycling — *Pro Workouts: Torque Efforts with Noemi Rüegg* (Noemi Rüegg's session; progression advice from EF Head of Performance Peter Schep). https://www.efprocycling.com/tips-recipes/noemi-rueegg-torque-workouts/
 
 10. **Motor unit recruitment at low cadence (Type I/II glycogen depletion):** Ahlquist LE et al. (1992). *The effect of pedaling frequency on glycogen depletion rates in type I and type II quadriceps muscle fibers during submaximal cycling exercise*. European Journal of Applied Physiology and Occupational Physiology, 65(4):360–364.
-
-11. **EMG and neuromuscular activity across cadences (same prime movers, different recruitment magnitude):** Sarre G & Lepers R (2006). Cycling cadence and EMG/muscle-activity research; cited in Hebisz & Hebisz 2024 and the broader cadence literature review by Mater, Clos & Lepers (2021).

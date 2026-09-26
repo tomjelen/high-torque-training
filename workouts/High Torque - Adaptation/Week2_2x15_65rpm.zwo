@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   High Torque Training — Zwift workout
-  Last updated: 2026-05-14
+  Last updated: 2026-09-26
 
   Site:      https://high-torque.jelen.dk/
   Calendar:  https://high-torque.jelen.dk/content/workouts.md
@@ -18,7 +18,7 @@
     <workout>
         <Warmup Duration="900" PowerLow="0.40" PowerHigh="0.65">
             <textevent timeoffset="10" message="Warmup at normal cadence. Enjoy the easy spinning." />
-            <textevent timeoffset="30" duration="30" message="Source: Adaptation block — 3 weeks at Zone 2 and low cadence. Builds tendon and connective tissue tolerance before the high-intensity sessions. Henderson and EVOQ both emphasise musculoskeletal readiness before adding intensity." />
+            <textevent timeoffset="30" duration="30" message="Source: this site's own conservative on-ramp, not a named coach's or study's protocol. 3 weeks at Zone 2 and low cadence to build tendon and connective tissue tolerance before harder sessions." />
             <textevent timeoffset="75" duration="20" message="Log this session at high-torque.jelen.dk — track your progression over the weeks" />
             <textevent timeoffset="120" message="Week 2. Cadence drops to 65rpm today, intervals grow to 15 minutes. Still Zone 2 only." />
             <textevent timeoffset="240" duration="25" message="WHY SEATED? Standing lets you use your body weight on the downstroke. The point of this training is forcing your muscles to generate all the force themselves." />
@@ -31,7 +31,7 @@
         <SteadyState Duration="900" Power="0.65" Cadence="65">
             <textevent timeoffset="0" message="STAY SEATED. Settle into 65rpm. Zone 2 power." />
             <textevent timeoffset="30" duration="25" message="Cadence still above 65? Just slow your pedaling — in ERG mode, resistance increases automatically as you drop to 65rpm." />
-            <textevent timeoffset="120" duration="25" message="At 65rpm and Zone 2 power, you are producing roughly 50% more force per stroke than you would at 90rpm for the same wattage." />
+            <textevent timeoffset="120" duration="25" message="At 65rpm and Zone 2 power, you are producing roughly 40% more force per stroke than you would at 90rpm for the same wattage." />
             <textevent timeoffset="240" duration="20" message="This heavier, almost grinding sensation is normal. Your quads are doing real work. Glutes and hamstrings too." />
             <textevent timeoffset="360" message="6 minutes in. Knees tracking well? Good. Hips staying level? Keep them stable." />
             <textevent timeoffset="480" duration="20" message="Halfway. Zone 2 should mean you can still hold a conversation. If you are gasping, reduce power slightly." />

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   High Torque Training — Zwift workout
-  Last updated: 2026-05-23
+  Last updated: 2026-09-26
 
   Site:      https://high-torque.jelen.dk/
   Calendar:  https://high-torque.jelen.dk/content/workouts.md
@@ -12,15 +12,15 @@
     <author>Tom Jelen</author>
     <name>VO2max HIIT 6-rep</name>
     <activitySaveName>High Torque: VO2max - 6x4min ~110% FTP @ 60-70 rpm</activitySaveName>
-    <description>Extended volume progression of the Hebisz &amp; Hebisz (2024) HIIT protocol. Six 4-minute intervals at 110% FTP and 60-70 rpm, with 8 minutes easy recovery between each. 24 minutes of total VO2max work at low cadence. Seated throughout.</description>
+    <description>Extended volume progression of the Hebisz &amp; Hebisz (2024) HIIT protocol. Six 4-minute intervals at ~110% FTP (the study used 90-100% of maximal aerobic power) and 60-70 rpm, with 8 minutes easy recovery between each. 24 minutes of total VO2max work at low cadence. Seated throughout.</description>
     <sportType>bike</sportType>
     <tags />
     <workout>
         <Warmup Duration="900" PowerLow="0.40" PowerHigh="0.75">
-            <textevent timeoffset="10" duration="30" message="Source: Hebisz &amp; Hebisz (2024) HIIT protocol, weeks 5-8. 6x4 min at 90-100% Pmax (~110% FTP), 60-70 rpm, 8 min recovery." />
+            <textevent timeoffset="10" duration="30" message="Source: Hebisz &amp; Hebisz (2024) HIIT protocol, weeks 5-8. 6x4 min at 90-100% Pmax, 60-70 rpm, 8 min recovery. We use ~110% FTP." />
             <textevent timeoffset="75" duration="20" message="Log this session at high-torque.jelen.dk — track your progression over the weeks" />
-            <textevent timeoffset="120" duration="25" message="Volume progression from 4 to 6 reps. The study increased HIIT volume at the midpoint — this is the higher-volume phase where the strongest results emerged." />
-            <textevent timeoffset="300" duration="25" message="110% FTP at 60-70rpm. Same intensity as the 4-rep version, but two extra intervals. The additional volume is where the study found its strongest results." />
+            <textevent timeoffset="120" duration="25" message="Volume progression from 4 to 6 reps. The study increased HIIT volume at the midpoint; this is that higher-volume phase." />
+            <textevent timeoffset="300" duration="25" message="110% FTP at 60-70rpm. Same intensity as the 4-rep version, two extra intervals." />
             <textevent timeoffset="480" duration="25" message="Six intervals. 4 minutes each. 8-minute recovery between them. 24 minutes of total VO2max work at low cadence." />
             <textevent timeoffset="600" duration="25" message="SEATED: Every interval, every second. By intervals 5 and 6, fatigue will make standing very tempting. That is when it matters most to stay down." />
             <textevent timeoffset="720" duration="25" message="KNEE PRIORITY: Six intervals is 50% more joint stress than four. If the 4-rep version caused any knee discomfort, do that version instead." />
@@ -55,7 +55,7 @@
 
         <SteadyState Duration="480" Power="0.50">
             <textevent timeoffset="2" message="Recovery. 8 full minutes. Use every second. You need them more with 6 reps." />
-            <textevent timeoffset="60" duration="25" message="The study's low-cadence group improved VO2max by 8.7% over 8 weeks. This higher-volume phase is where the adaptation accelerated." />
+            <textevent timeoffset="60" duration="25" message="The study's low-cadence group improved VO2max by 8.7% over the full 8 weeks. This is the second half of that program." />
             <textevent timeoffset="180" message="Knee check in recovery. Any discomfort that feels joint-related?" />
             <textevent timeoffset="210" message="Next interval. Same: seated, 60-70rpm, 110% FTP." />
         </SteadyState>
@@ -89,7 +89,7 @@
 
         <SteadyState Duration="480" Power="0.50">
             <textevent timeoffset="2" message="Recovery. Three done, three to go." />
-            <textevent timeoffset="60" duration="25" message="The study used 60-70 rpm specifically for HIIT — the higher cadence combined with VO2max power is the key mechanism." />
+            <textevent timeoffset="60" duration="25" message="The study used 60-70 rpm specifically for HIIT — low cadence combined with VO2max power is the proposed mechanism." />
             <textevent timeoffset="180" message="Knee check." />
             <textevent timeoffset="210" message="Interval 4. Seated. 60-70rpm. 110% FTP." />
         </SteadyState>
@@ -139,7 +139,7 @@
 
         <Cooldown Duration="900" PowerLow="0.50" PowerHigh="0.40">
             <textevent timeoffset="10" message="Six VO2max intervals at low cadence done. Full study volume achieved." />
-            <textevent timeoffset="150" duration="25" message="You have now done the Hebisz &amp; Hebisz (2024) protocol at its highest volume. Well done." />
+            <textevent timeoffset="150" duration="25" message="You have now done the Hebisz &amp; Hebisz (2024) HIIT session at its highest volume, adapted for Zwift. Well done." />
             <textevent timeoffset="360" duration="20" message="Allow at least one easy day before any more hard sessions." />
             <textevent timeoffset="540" message="Knee check: how do they feel post-effort? Anything that lingers should be noted." />
             <textevent timeoffset="720" duration="30" message="The study measured an 8.7% VO2max improvement in the low-cadence group — nearly double the 4.6% in the normal-cadence group. Same hours, same structure, only the cadence differed." />

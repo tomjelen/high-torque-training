@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   High Torque Training — Zwift workout
-  Last updated: 2026-05-14
+  Last updated: 2026-09-26
 
   Site:      https://high-torque.jelen.dk/
   Calendar:  https://high-torque.jelen.dk/content/workouts.md
@@ -18,7 +18,7 @@
     <workout>
         <Warmup Duration="900" PowerLow="0.40" PowerHigh="0.65">
             <textevent timeoffset="10" message="Final adaptation session. 60-65rpm today — lowest cadence you have done so far." />
-            <textevent timeoffset="30" duration="30" message="Source: Adaptation block — 3 weeks at Zone 2 and low cadence. Builds tendon and connective tissue tolerance before the high-intensity sessions. Henderson and EVOQ both emphasise musculoskeletal readiness before adding intensity." />
+            <textevent timeoffset="30" duration="30" message="Source: this site's own conservative on-ramp, not a named coach's or study's protocol. 3 weeks at Zone 2 and low cadence to build tendon and connective tissue tolerance before harder sessions." />
             <textevent timeoffset="75" duration="20" message="Want to go deeper on the science? high-torque.jelen.dk/rationale" />
             <textevent timeoffset="120" duration="20" message="Three 10-minute blocks at Zone 2. More total volume than previous sessions, slightly lower cadence." />
             <textevent timeoffset="270" duration="25" message="After this session, the post-adaptation sessions open up: intensity climbs from sweet spot all the way to VO2max." />
@@ -40,7 +40,7 @@
 
         <SteadyState Duration="300" Power="0.50">
             <textevent timeoffset="0" message="Recovery. Spin up to 85+rpm. Let the legs flush out." />
-            <textevent timeoffset="120" duration="30" message="The researchers note: no study yet shows a clear benefit from low-cadence work at MODERATE intensity. The benefit seems to require HIGH intensity. The post-adaptation sessions are where it gets interesting." />
+            <textevent timeoffset="120" duration="30" message="A 2014 study (Kristoffersen et al.) found no benefit from low-cadence work at MODERATE intensity. The benefit seems to need HIGH intensity. The post-adaptation sessions are where it gets interesting." />
             <textevent timeoffset="240" message="Second block in 60 seconds. Same: 60-65rpm, Zone 2, seated." />
         </SteadyState>
 
@@ -74,7 +74,7 @@
             <textevent timeoffset="120" duration="25" message="Three sessions done. If your knees have been fine throughout, you are ready for the post-adaptation sessions." />
             <textevent timeoffset="270" duration="25" message="If your knees have had any discomfort: do not rush. Repeat this session or take an extra easy week before progressing." />
             <textevent timeoffset="420" duration="20" message="Start with Tier 1 workouts. Do not schedule two low-cadence sessions on consecutive days." />
-            <textevent timeoffset="540" duration="25" message="Research on tendon remodelling suggests connective tissue needs 3-4 weeks of progressive loading before tolerating high-intensity work safely." />
+            <textevent timeoffset="540" duration="20" message="Tendons and connective tissue adapt more slowly than muscle. That's why this block exists." />
         </Cooldown>
     </workout>
 </workout_file>

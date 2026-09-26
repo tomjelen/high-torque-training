@@ -67,9 +67,9 @@ Threshold and VO2max. Higher knee stress. Only after several weeks of comfortabl
 
 | Workout | What | Cadence | Duration | Source |
 |---------|------|---------|----------|--------|
-| [Threshold 5×5](/workouts/High%20Torque%20-%20Tier%203%20Challenging/Threshold_5x5_95pct.zwo) | 5×5 min @ ~95% FTP | 50–60 rpm | ~65 min | Henderson |
+| [Threshold 5×5](/workouts/High%20Torque%20-%20Tier%203%20Challenging/Threshold_5x5_95pct.zwo) | 5×5 min @ ~95% FTP | 50–60 rpm | ~60 min | Henderson |
 | [HIIT VO2max (4 reps)](/workouts/High%20Torque%20-%20Tier%203%20Challenging/HIIT_VO2max_4rep.zwo) | 4×4 min @ ~110% FTP | 60–70 rpm | ~75 min | Hebisz 2024 |
-| [Rüegg VO2max + Sprint](/workouts/High%20Torque%20-%20Tier%203%20Challenging/Ruegg_VO2max_Sprint.zwo) | 3×(5 min @ ~110% FTP + 1 min max sprint) | 50–60 rpm (sprint at normal cadence) | ~70 min | EF Pro / Schep |
+| [Rüegg VO2max + Sprint](/workouts/High%20Torque%20-%20Tier%203%20Challenging/Ruegg_VO2max_Sprint.zwo) | 3×(5 min @ ~110% FTP + 1 min max sprint) | 50–60 rpm (sprint at normal cadence) | ~70 min | EF Pro Cycling (Noemi Rüegg's session; progression advice: Peter Schep) (scaled — shorter warm-up and cool-down for Zwift) |
 
 #### Tier 4 — Advanced
 

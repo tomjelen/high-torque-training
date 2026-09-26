@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   High Torque Training — Zwift workout
-  Last updated: 2026-05-14
+  Last updated: 2026-09-26
 
   Site:      https://high-torque.jelen.dk/
   Calendar:  https://high-torque.jelen.dk/content/workouts.md
@@ -18,10 +18,10 @@
     <workout>
         <Warmup Duration="900" PowerLow="0.40" PowerHigh="0.65">
             <textevent timeoffset="10" message="Warmup at normal cadence. Enjoy the easy spinning." />
-            <textevent timeoffset="30" duration="30" message="Source: Adaptation block — 3 weeks at Zone 2 and low cadence. Builds tendon and connective tissue tolerance before the high-intensity sessions. Henderson and EVOQ both emphasise musculoskeletal readiness before adding intensity." />
+            <textevent timeoffset="30" duration="30" message="Source: this site's own conservative on-ramp, not a named coach's or study's protocol. 3 weeks at Zone 2 and low cadence to build tendon and connective tissue tolerance before harder sessions." />
             <textevent timeoffset="75" duration="20" message="Full research and protocol rationale at high-torque.jelen.dk" />
             <textevent timeoffset="120" duration="20" message="WHY LOW CADENCE? At the same power, pedaling slower forces each leg contraction to produce far more force per stroke." />
-            <textevent timeoffset="240" duration="25" message="A 2024 study (PLOS One) found that adding low-cadence intervals boosted VO2max by 8.7% vs 4.6% for the normal-cadence group." />
+            <textevent timeoffset="240" duration="25" message="A 2024 study (PLOS One) found that doing the same intervals at low cadence improved VO2max by 8.7% vs 4.6% at normal cadence." />
             <textevent timeoffset="360" duration="20" message="Same training hours. Same sessions. Only the cadence differed. The low-cadence group improved nearly twice as much." />
             <textevent timeoffset="480" message="Today is the first adaptation session — Zone 2 power, 65-70rpm. No heroics." />
             <textevent timeoffset="600" duration="25" message="KNEE AWARENESS: Low cadence increases the load through your kneecap with every stroke. Note how your knees feel today." />
@@ -57,7 +57,7 @@
 
         <Cooldown Duration="600" PowerLow="0.65" PowerHigh="0.40">
             <textevent timeoffset="10" message="Cooldown. Back to normal cadence. How did the knees feel?" />
-            <textevent timeoffset="120" duration="30" message="Neal Henderson (coach to Rohan Dennis, Taylor Phinney): 'Generally I do about one of these sessions a week, at most two.' The musculoskeletal load is real — respect the recovery." />
+            <textevent timeoffset="120" duration="30" message="Neal Henderson (who coached Rohan Dennis and Taylor Phinney): 'Generally I do about one of these sessions a week, at most two.' The musculoskeletal load is real — respect the recovery." />
             <textevent timeoffset="300" duration="20" message="The adaptation block is three sessions. Each one adds a little more duration and drops the cadence slightly." />
             <textevent timeoffset="480" message="Well done. One session in the bank." />
         </Cooldown>

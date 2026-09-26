@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   High Torque Training — Zwift workout
-  Last updated: 2026-05-23
+  Last updated: 2026-09-26
 
   Site:      https://high-torque.jelen.dk/
   Calendar:  https://high-torque.jelen.dk/content/workouts.md
@@ -12,17 +12,17 @@
     <author>Tom Jelen</author>
     <name>Threshold 5x5</name>
     <activitySaveName>High Torque: Threshold 5×5 min ~95% FTP @ 50–60 rpm</activitySaveName>
-    <description>Threshold torque session based on Neal Henderson's prescription. Five 5-minute intervals at ~95% FTP and 50-60 rpm, with approximately half-time recovery (3.5 min). Henderson uses this as the threshold step in his torque progression. Seated throughout.</description>
+    <description>Threshold torque session based on Neal Henderson's prescription. Five 5-minute intervals at ~95% FTP and 50-60 rpm, with half-time recovery (2.5 min). Henderson uses this as the threshold step in his torque progression. Seated throughout.</description>
     <sportType>bike</sportType>
     <tags />
     <workout>
         <Warmup Duration="900" PowerLow="0.40" PowerHigh="0.75">
-            <textevent timeoffset="30" duration="30" message="Source: Neal Henderson (Fast Talk Labs). Henderson prescribes 5x5 min at ~95% FTP, 50-60 rpm with half-time recovery — the threshold step in his torque progression." />
+            <textevent timeoffset="30" duration="30" message="Source: Neal Henderson (Fast Talk Labs, ep. 125, 2020). Henderson prescribes 5x5 min at ~95% FTP, 50-60 rpm with half-time recovery — the threshold step in his torque progression." />
             <textevent timeoffset="90" duration="20" message="Full research and protocol rationale at high-torque.jelen.dk" />
-            <textevent timeoffset="120" duration="20" message="Henderson's progression: tempo (80-85% FTP) first, then threshold (this session), then VO2max. Each step builds on the last." />
+            <textevent timeoffset="120" duration="25" message="Henderson's entry point for new athletes: tempo (75-85% of threshold) first, then threshold (this session), then short VO2max-power efforts." />
             <textevent timeoffset="240" duration="25" message="~95% FTP at 50-60 rpm produces very high force per pedal stroke. This is a demanding session — only attempt it after several weeks of comfortable Tier 2 work." />
             <textevent timeoffset="420" message="All intervals are SEATED. Target cadence: 50-60 rpm." />
-            <textevent timeoffset="600" duration="25" message="Recovery between intervals is about half the work time — 3.5 minutes. Henderson: 'half time recovery' for threshold torque efforts." />
+            <textevent timeoffset="600" duration="25" message="Recovery between intervals is half the work time — 2.5 minutes. Henderson: 'half time recovery' for threshold torque efforts." />
             <textevent timeoffset="780" duration="20" message="If your knees ache at any point, stop the interval. At threshold intensity, the temptation to push through is high. Don't." />
         </Warmup>
 
@@ -32,9 +32,9 @@
             <textevent timeoffset="270" message="30 seconds left. Hold cadence and power." />
         </SteadyState>
 
-        <SteadyState Duration="210" Power="0.50">
-            <textevent timeoffset="10" message="Recovery. Short — about 3.5 minutes. Spin easy." />
-            <textevent timeoffset="120" duration="20" message="Henderson has never programmed back-to-back torque sessions. He stresses: musculoskeletal load is the main limiter." />
+        <SteadyState Duration="150" Power="0.50">
+            <textevent timeoffset="10" message="Recovery. Short — 2.5 minutes. Spin easy." />
+            <textevent timeoffset="120" duration="25" message="Henderson has never programmed back-to-back torque sessions. He caps them at 1-2 a week: 'a bit more stressful from a musculoskeletal standpoint'." />
         </SteadyState>
 
         <SteadyState Duration="300" Power="0.95" Cadence="55">
@@ -43,7 +43,7 @@
             <textevent timeoffset="270" message="30 seconds left." />
         </SteadyState>
 
-        <SteadyState Duration="210" Power="0.50">
+        <SteadyState Duration="150" Power="0.50">
             <textevent timeoffset="10" message="Recovery. Two down, three to go." />
             <textevent timeoffset="120" message="Knees still fine? This intensity puts real load on the joints." />
         </SteadyState>
@@ -54,7 +54,7 @@
             <textevent timeoffset="270" message="30 seconds left." />
         </SteadyState>
 
-        <SteadyState Duration="210" Power="0.50">
+        <SteadyState Duration="150" Power="0.50">
             <textevent timeoffset="10" message="Recovery. Three down, two to go." />
             <textevent timeoffset="120" message="Halfway through the session." />
         </SteadyState>
@@ -65,7 +65,7 @@
             <textevent timeoffset="270" message="30 seconds left." />
         </SteadyState>
 
-        <SteadyState Duration="210" Power="0.50">
+        <SteadyState Duration="150" Power="0.50">
             <textevent timeoffset="10" message="Recovery. One more interval." />
             <textevent timeoffset="120" message="Final interval next. Knees still fine?" />
         </SteadyState>

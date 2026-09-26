@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   High Torque Training — Zwift workout
-  Last updated: 2026-06-14
+  Last updated: 2026-09-26
 
   Site:      https://high-torque.jelen.dk/
   Calendar:  https://high-torque.jelen.dk/content/workouts.md
@@ -19,8 +19,8 @@
         <Warmup Duration="1200" PowerLow="0.40" PowerHigh="0.75">
             <textevent timeoffset="10" duration="25" message="Source: Hebisz &amp; Hebisz (2024) SIT protocol, weeks 1-4. 8x30s maximal at 50-60 rpm in 2 sets of 4, 90s recovery, 25 min between sets." />
             <textevent timeoffset="75" duration="20" message="Want to go deeper on the science? high-torque.jelen.dk/rationale" />
-            <textevent timeoffset="120" duration="25" message="This is the exact study protocol for sprint interval training (SIT). Note: SIT uses 50-60 rpm — lower than the HIIT sessions which use 60-70." />
-            <textevent timeoffset="240" duration="25" message="The researchers used 8 x 30-second all-out sprints split into two sets of four, with 25 minutes active rest between sets. That is exactly what you are doing today." />
+            <textevent timeoffset="120" duration="25" message="This is the study's sprint interval training (SIT) session, adapted for Zwift (indoors, not uphill). Note: SIT uses 50-60 rpm — lower than the HIIT sessions which use 60-70." />
+            <textevent timeoffset="240" duration="25" message="The researchers used 8 x 30-second all-out sprints split into two sets of four, with 25 minutes active rest between sets. Today's session follows the same structure." />
             <textevent timeoffset="270" duration="25" message="Cadence target: 50-60rpm. This is the lowest cadence in the High Torque Collection. At sprint intensity, maintaining 50-60rpm requires a very hard gear." />
             <textevent timeoffset="420" duration="20" message="The sprints are maximal — as hard as you can go. The 150% FTP power target is a guide; treat it as a floor, not a ceiling." />
             <textevent timeoffset="570" duration="25" message="SEATED: Every sprint, every second, seated. At this effort level the urge to stand is strong. Do not. The torque stimulus depends on you staying down." />
@@ -131,11 +131,11 @@
         </FreeRide>
 
         <Cooldown Duration="900" PowerLow="0.50" PowerHigh="0.40">
-            <textevent timeoffset="10" message="SIT session done. That was the study protocol for the sprint session." />
+            <textevent timeoffset="10" message="SIT session done. That was the study's sprint session, adapted for Zwift." />
             <textevent timeoffset="150" duration="20" message="Legs should feel genuinely emptied. That is appropriate after 8 maximal sprints." />
             <textevent timeoffset="300" duration="25" message="Knee check post-session: how do they feel now compared to during the sprints? Note anything unusual." />
             <textevent timeoffset="480" message="Allow at least one rest day before the next hard session. Do not rush recovery." />
-            <textevent timeoffset="660" duration="25" message="The combination of SIT and HIIT in the same week is what the study tested. You are doing exactly what the low-cadence group did." />
+            <textevent timeoffset="660" duration="25" message="The study tested SIT and HIIT together in every 4-day cycle. This session is one part of that program, not the whole of it." />
             <textevent timeoffset="840" duration="30" message="The 25-minute rest allows near-complete phosphocreatine resynthesis — the energy system that powers short maximal efforts. That's why it is non-negotiable." />
         </Cooldown>
     </workout>

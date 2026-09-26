@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   High Torque Training — Zwift workout
-  Last updated: 2026-05-23
+  Last updated: 2026-09-26
 
   Site:      https://high-torque.jelen.dk/
   Calendar:  https://high-torque.jelen.dk/content/workouts.md
@@ -12,12 +12,12 @@
     <author>Tom Jelen</author>
     <name>Staple 5x5</name>
     <activitySaveName>High Torque: Staple 5×5 min ~90% FTP @ 50–60 rpm</activitySaveName>
-    <description>EVOQ.BIKE's staple torque session. Five 5-minute intervals at ~90% FTP and 50-60 rpm, with 5-minute recovery between each. The bread-and-butter torque workout — high enough intensity to drive adaptation, sustainable enough to do regularly. Seated throughout.</description>
+    <description>EVOQ.BIKE's staple torque session. Five 5-minute intervals at ~90% FTP and 50-60 rpm, with 5-minute recovery between each (our choice; EVOQ doesn't specify recovery). The bread-and-butter torque workout — high enough intensity to drive adaptation, sustainable enough to do regularly. Seated throughout.</description>
     <sportType>bike</sportType>
     <tags />
     <workout>
         <Warmup Duration="900" PowerLow="0.40" PowerHigh="0.75">
-            <textevent timeoffset="30" duration="25" message="Source: EVOQ.BIKE. This is their staple torque session: '5x5 minutes at ~90% of FTP and 50-60 rpm.' The core of a torque training program." />
+            <textevent timeoffset="30" duration="25" message="Source: EVOQ.BIKE (Landry Bobo). This is their staple torque session: '5x5 minutes at ~90% of FTP and 50-60 rpm.' The core of a torque training program." />
             <textevent timeoffset="90" duration="20" message="Log this session at high-torque.jelen.dk — track your progression over the weeks" />
             <textevent timeoffset="120" duration="25" message="EVOQ: 'Typically, low cadence training is best performed at either tempo or threshold power.' ~90% FTP is right in that sweet spot." />
             <textevent timeoffset="240" duration="30" message="Hebisz &amp; Hebisz (2024) found +8.7% VO2max improvement in the low-cadence group vs +4.6% in the normal-cadence group over 8 weeks." />
@@ -35,7 +35,7 @@
         <SteadyState Duration="300" Power="0.50">
             <textevent timeoffset="10" message="Recovery. Spin easy at whatever cadence feels natural." />
             <textevent timeoffset="60" duration="25" message="At 55 rpm vs 90 rpm, each pedal stroke produces roughly 60% more force. That extra muscular demand is what drives the adaptation." />
-            <textevent timeoffset="150" duration="25" message="Muñoz et al. (2014): no benefit from low cadence at moderate intensity. The intensity matters — that's why we're at ~90%, not Zone 2." />
+            <textevent timeoffset="150" duration="25" message="Kristoffersen et al. (2014): no benefit from low cadence at moderate intensity. The intensity matters — that's why we're at ~90%, not Zone 2." />
         </SteadyState>
 
         <SteadyState Duration="300" Power="0.90" Cadence="55">
@@ -81,7 +81,7 @@
             <textevent timeoffset="10" message="Five 5-minute intervals at ~90% FTP — 25 minutes of torque work." />
             <textevent timeoffset="30" message="Cool down. Easy spin at normal cadence." />
             <textevent timeoffset="120" duration="20" message="EVOQ also offers a longer version: 5x8 min at the same intensity. Try it when this format feels comfortable." />
-            <textevent timeoffset="300" duration="25" message="Henderson: musculoskeletal load is the main limiter in torque work, not cardiovascular. Respect the joints to train this way for years." />
+            <textevent timeoffset="300" duration="30" message="Henderson caps torque work at 1-2 sessions a week because it is 'a bit more stressful from a musculoskeletal standpoint'. Respect the recovery." />
         </Cooldown>
     </workout>
 </workout_file>

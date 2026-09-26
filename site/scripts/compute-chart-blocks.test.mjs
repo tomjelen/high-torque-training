@@ -13,8 +13,9 @@ const wrap = (inner, name = 'Test Workout') => `<?xml version="1.0" encoding="UT
 </workout_file>`
 
 describe('zoneForPower', () => {
-  // Thresholds from the M2 contract (PLAN / chart-model handoff):
-  // <0.60→1, 0.60–0.75→2, 0.76–0.87→3, 0.88–0.95→4, 0.96–1.05→5, ≥1.06→6
+  // <0.60→1, 0.60–0.75→2, 0.76–0.87→3, 0.88–0.95→4, 0.96–1.20→5, >1.20→6
+  // (zone-5/6 boundary moved from 1.06 to 1.20 so 110% VO2max blocks match
+  // the legend's "VO2 / 110%" — see compute-chart-blocks.mjs)
   it.each([
     [0.4, 1],
     [0.59, 1],
@@ -27,8 +28,10 @@ describe('zoneForPower', () => {
     [0.95, 4],
     [0.96, 5],
     [1.05, 5],
-    [1.06, 6],
-    [1.1, 6],
+    [1.06, 5],
+    [1.1, 5],
+    [1.2, 5],
+    [1.21, 6],
     [1.45, 6],
   ])('maps power %f to zone %i', (power, zone) => {
     expect(zoneForPower(power)).toBe(zone)
