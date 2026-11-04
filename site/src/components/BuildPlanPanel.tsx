@@ -276,8 +276,7 @@ export default function BuildPlanPanel({ state, setState }: Props) {
           )}
         </div>
         <p className="m-0 text-xs text-slate-500">
-          Coming back after a long break? Restart from adaptation, or only the build if you kept up
-          torque sessions.
+          After a long break, restart from adaptation or from week 5, as you see fit (ours).
         </p>
         <p className="m-0 text-xs text-slate-500">
           After a break (illness, travel): weeks 3–4 is a good session to come back with (a suggestion, ours).
