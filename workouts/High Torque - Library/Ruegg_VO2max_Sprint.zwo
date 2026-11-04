@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  High Torque Training — Zwift workout
+  Last updated: 2026-11-03
+
+  Site:      https://high-torque.jelen.dk/
+  Calendar:  https://high-torque.jelen.dk/content/workouts.md
+  Rationale: https://high-torque.jelen.dk/content/rationale.md
+  LLMs:      https://high-torque.jelen.dk/llms.txt
+-->
+<workout_file>
+    <author>Tom Jelen</author>
+    <name>HT Rüegg VO2max Sprint</name>
+    <activitySaveName>High Torque: Rüegg - 3x(5min VO2max + sprint) @ 50-60 rpm</activitySaveName>
+    <description>Noemi Rüegg's torque session, as published by EF Pro Cycling, with progression advice from EF Head of Performance Peter Schep. EF's workout box: 3 × 5 min at 50–60 rpm at "VO2 max pace" (EF: 106–120% FTP), 10 min easy between, with a variation of a 1-minute max effort in a lighter gear at the end of each effort, in EF's words to 'better your ability to transfer torque into power.' Our file: 3 efforts (EF's text says 3–5) at 110% FTP and 55 rpm, inside EF's 106–120%. Scaled: shorter warm-up and cool-down than EF's 30 min each, for Zwift. Seated for the 5-minute blocks; the sprint is at free cadence.</description>
+    <sportType>bike</sportType>
+    <tags />
+    <workout>
+        <Warmup Duration="1200" PowerLow="0.40" PowerHigh="0.75">
+            <textevent timeoffset="5" duration="15" message="Warm up at your normal cadence. No low cadence until the first interval." />
+            <textevent timeoffset="30" duration="25" message="Source: EF Pro Cycling article on Noemi Rüegg's own session. A pro rider's workout, not a research study." />
+            <textevent timeoffset="75" duration="20" message="All the research behind this program: high-torque.jelen.dk" />
+            <textevent timeoffset="120" duration="30" message="Each set: 5 minutes at 106-120% FTP and 50-60 rpm, then shift to a lighter gear for a 1-minute max effort. 10 minutes easy between sets." />
+            <textevent timeoffset="240" duration="30" message="EF's text says three to five efforts; we use three. 110% sits inside EF's 106-120% ('VO2 max pace')." />
+            <textevent timeoffset="360" duration="30" message="Peter Schep (EF Head of Performance): start at 60 rpm and 80-85% FTP, then threshold, then above threshold. Recreational riders 'need to proceed cautiously to limit the risk of injury.'" />
+            <textevent timeoffset="570" duration="25" message="SEATED for the 5-minute blocks. Standing lets you use body weight on the pedals, bypassing the forced muscular contraction that makes this training work." />
+            <textevent timeoffset="690" duration="20" message="If your knees ache at any point during an interval, stop the interval. Don't push through knee discomfort." />
+            <textevent timeoffset="900" duration="25" message="The sprint is in a lighter gear at free cadence. It is not a low-cadence sprint." />
+            <textevent timeoffset="1080" duration="20" message="First set in 2 minutes. Find your gear for 50-60 rpm at 110% FTP." />
+            <textevent timeoffset="1140" message="STAY SEATED for the 5-minute block. Sprint cadence is your choice." />
+        </Warmup>
+
+        <!-- Set 1 -->
+        <SteadyState Duration="300" Power="1.10" Cadence="55">
+            <textevent timeoffset="0" message="STAY SEATED. 50-60 rpm. 110% FTP. 5 minutes." />
+            <textevent timeoffset="30" message="Hard from the start. Hold the cadence." />
+            <textevent timeoffset="150" message="2.5 minutes. Halfway. Hold cadence." />
+            <textevent timeoffset="210" message="Sprint after this block. It is maximal." />
+            <textevent timeoffset="270" message="30 seconds. The sprint starts immediately after. Get ready." />
+        </SteadyState>
+
+        <!-- The FreeRide blocks below ARE max-effort sprints. They use FreeRide, not
+             MaxEffort, because MaxEffort deadlocks with ERG (the "spiral of death");
+             FreeRide auto-releases ERG for the sprint and restores it after. The chart
+             parser maps FreeRide -> zone-6 max sprint, so they still render as max
+             efforts. Do not convert these back to MaxEffort. -->
+        <FreeRide Duration="60" FlatRoad="1">
+            <textevent timeoffset="0" message="SPRINT. Lighter gear. Maximal effort. 1 minute. Any cadence." />
+            <textevent timeoffset="30" message="Halfway. Keep driving." />
+            <textevent timeoffset="50" message="10 seconds." />
+        </FreeRide>
+
+        <SteadyState Duration="600" Power="0.50">
+            <textevent timeoffset="0" message="Recovery. 10 minutes, as in EF's workout box. Easy spin." />
+            <textevent timeoffset="60" duration="25" message="If your cadence sags below target, lower the workout intensity (FTP bias) rather than grinding." />
+            <textevent timeoffset="180" duration="25" message="EF's article: the sprint at the end is there to 'better your ability to transfer torque into power.'" />
+            <textevent timeoffset="300" duration="25" message="At 250 W FTP, 110% at 55 rpm is about 48 Nm per pedal stroke (our arithmetic)." />
+            <textevent timeoffset="420" message="Knee check. How do they feel?" />
+            <textevent timeoffset="480" duration="20" message="Set 2 in 2 minutes. Same structure: 5 min at 110% FTP, 50-60 rpm, then 1-min sprint." />
+            <textevent timeoffset="540" message="Find your gear. 50-60 rpm. STAY SEATED for the 5-minute block." />
+        </SteadyState>
+
+        <!-- Set 2 -->
+        <SteadyState Duration="300" Power="1.10" Cadence="55">
+            <textevent timeoffset="0" message="STAY SEATED. Set 2. 50-60 rpm. 110% FTP. 5 minutes." />
+            <textevent timeoffset="60" message="Set 2 feels harder from the start. Hold form." />
+            <textevent timeoffset="150" message="Halfway. Hold cadence." />
+            <textevent timeoffset="240" message="1 minute left. Sprint coming." />
+            <textevent timeoffset="270" message="30 seconds. Get ready to sprint." />
+        </SteadyState>
+
+        <FreeRide Duration="60" FlatRoad="1">
+            <textevent timeoffset="0" message="SPRINT. Lighter gear. Maximal. 1 minute. Any cadence." />
+            <textevent timeoffset="30" message="Halfway." />
+            <textevent timeoffset="50" message="10 seconds." />
+        </FreeRide>
+
+        <SteadyState Duration="600" Power="0.50">
+            <textevent timeoffset="0" message="Recovery. 10 minutes. Last set coming." />
+            <textevent timeoffset="120" duration="25" message="Two sets done. If your knees feel anything joint-related, skip set 3. Two sets is still a meaningful session." />
+            <textevent timeoffset="300" duration="25" message="Rüegg recommends focusing on a target number of Nm (torque) (EF article)." />
+            <textevent timeoffset="480" message="Final set in 2 minutes." />
+            <textevent timeoffset="540" message="Find your gear. 50-60 rpm. STAY SEATED for the 5-minute block." />
+        </SteadyState>
+
+        <!-- Set 3 -->
+        <SteadyState Duration="300" Power="1.10" Cadence="55">
+            <textevent timeoffset="0" message="STAY SEATED. Final set. 50-60 rpm. 110% FTP. 5 minutes." />
+            <textevent timeoffset="60" message="Hardest set. Hold the cadence." />
+            <textevent timeoffset="150" message="Halfway. One more sprint after this." />
+            <textevent timeoffset="240" message="1 minute. Last sprint coming." />
+            <textevent timeoffset="270" message="30 seconds. Prepare for the final sprint." />
+        </SteadyState>
+
+        <FreeRide Duration="60" FlatRoad="1">
+            <textevent timeoffset="0" message="FINAL SPRINT. Lighter gear. Everything. 1 minute." />
+            <textevent timeoffset="30" message="Halfway. Leave nothing." />
+            <textevent timeoffset="50" message="10 seconds." />
+        </FreeRide>
+
+        <Cooldown Duration="720" PowerLow="0.50" PowerHigh="0.40">
+            <textevent timeoffset="10" message="Rüegg session complete. Spin easy at normal cadence." />
+            <textevent timeoffset="180" duration="20" message="Note how your knees feel. Any ache or tightness? If yes, skip the next torque session and monitor." />
+            <textevent timeoffset="360" duration="25" message="Our rule: no torque sessions on back-to-back days. CTS coach Jim Rutberg says beginner and intermediate riders should separate them by at least a full day." />
+            <textevent timeoffset="540" duration="30" message="EF's published version of this workout uses a 30-min warm-up and a 30-min cool-down. We use shorter ones for Zwift (scaled)." />
+        </Cooldown>
+    </workout>
+</workout_file>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   High Torque Training — Zwift workout
-  Last updated: 2026-09-26
+  Last updated: 2026-11-03
 
   Site:      https://high-torque.jelen.dk/
   Calendar:  https://high-torque.jelen.dk/content/workouts.md
@@ -10,22 +10,23 @@
 -->
 <workout_file>
     <author>Tom Jelen</author>
-    <name>TorqueMax 110%</name>
+    <name>HT TorqueMax 110%</name>
     <activitySaveName>High Torque: TorqueMax - 6x2.5min 105-110% FTP @ 50-60 rpm</activitySaveName>
-    <description>EVOQ.BIKE's TorqueMax session. Six 2.5-minute intervals at 105-110% FTP and 50-60 rpm, 4-minute recovery (our choice; EVOQ doesn't specify recovery). EVOQ explicitly warns: 'There is an increased risk of injury with these intervals, so you should start with the lower intensity torque intervals mentioned earlier in the blog before progressing to the TorqueMax intervals.' Seated throughout.</description>
+    <description>EVOQ.BIKE's TorqueMax session (Landry Bobo, EVOQ blog, 2026): "around 2-3 minutes at 105-110% of FTP and around 50-60 rpm", "starting with six repetitions and working up to eight". Our file: six 2.5-minute intervals at 110% FTP (the top of EVOQ's range) and 55 rpm, with 4 minutes of easy spin between them. 2.5 min and 110% are our picks inside EVOQ's range; EVOQ gives no recovery, so the 4 minutes are ours. EVOQ warns: "There is an increased risk of injury with these intervals", so do the lower-intensity torque intervals first. TorqueMax is EVOQ's extension of the Hebisz 2024 study to a new format; no study has tested it. The two short openers (30 s at normal cadence) are our addition, not from EVOQ. Seated throughout.</description>
     <sportType>bike</sportType>
     <tags />
     <workout>
         <Warmup Duration="900" PowerLow="0.40" PowerHigh="0.75">
-            <textevent timeoffset="10" duration="35" message="Source: EVOQ.BIKE TorqueMax (Landry Bobo): 'around 2-3 minutes at 105-110% of FTP and around 50-60 rpm. I would recommend starting with six repetitions and working up to eight.'" />
+            <textevent timeoffset="5" duration="15" message="Warm up at your normal cadence. No low cadence until the first interval." />
+            <textevent timeoffset="30" duration="30" message="Source: EVOQ.BIKE TorqueMax (Landry Bobo): 'around 2-3 minutes at 105-110% of FTP and around 50-60 rpm', 'starting with six repetitions and working up to eight'." />
             <textevent timeoffset="75" duration="20" message="All the research behind this program: high-torque.jelen.dk" />
-            <textevent timeoffset="120" duration="30" message="EVOQ explicitly warns: 'There is an increased risk of injury with these intervals, so you should start with the lower intensity torque intervals mentioned earlier in the blog before progressing to the TorqueMax intervals.'" />
-            <textevent timeoffset="270" duration="25" message="Prerequisites: several months of regular torque sessions. Tier 3 consistently comfortable. Knees fine throughout. If not, do a Tier 2 or 3 session instead." />
-            <textevent timeoffset="420" duration="25" message="105-110% FTP at 50-60 rpm. The highest above-threshold power at the lowest cadence in the collection. Patellofemoral load is at its maximum." />
-            <textevent timeoffset="540" duration="30" message="Henderson caps torque work at 1-2 sessions a week because it is 'a bit more stressful from a musculoskeletal standpoint'. This is the most demanding of them." />
-            <textevent timeoffset="660" duration="25" message="SEATED: More critical here than anywhere else. At this power and cadence, standing shifts the load in ways that increase injury risk further. Stay down. Always." />
-            <textevent timeoffset="750" duration="20" message="Six intervals. 2.5 minutes each. 4 minutes recovery. Openers first." />
-            <textevent timeoffset="840" duration="20" message="In ERG mode, drop to 50-60 rpm — the trainer adjusts resistance to match 105-110% FTP automatically." />
+            <textevent timeoffset="120" duration="30" message="EVOQ warns: 'There is an increased risk of injury with these intervals.' Do the lower-intensity torque intervals before this one." />
+            <textevent timeoffset="270" duration="30" message="TorqueMax is EVOQ's term and EVOQ's extension of the Hebisz 2024 study to a new format. No study has tested it. Treat it as coaching practice, not tested science." />
+            <textevent timeoffset="420" duration="25" message="Our picks inside EVOQ's range: 2.5 minutes at 110%, the top of it. EVOQ gives no recovery; the 4 minutes are ours." />
+            <textevent timeoffset="540" duration="30" message="Neal Henderson: 'Generally I do about one of these sessions a week at most two', because they are 'a bit more stressful from a muscular skeletal standpoint' (machine transcript)." />
+            <textevent timeoffset="660" duration="25" message="All intervals are SEATED. Standing lets you use body weight on the pedals, bypassing the forced muscular contraction that makes this training work." />
+            <textevent timeoffset="750" duration="20" message="If your knees ache at any point during an interval, stop the interval. Don't push through knee discomfort." />
+            <textevent timeoffset="840" duration="20" message="Six intervals. 2.5 minutes each. 4 minutes recovery. Two short openers first: our addition, not from EVOQ." />
         </Warmup>
 
         <SteadyState Duration="30" Power="1.10">
@@ -33,12 +34,12 @@
         </SteadyState>
         <SteadyState Duration="120" Power="0.55">
             <textevent timeoffset="0" message="Easy spin. Opener 2 coming." />
-            <textevent timeoffset="90" message="Settle to 55rpm. SEATED." />
         </SteadyState>
         <SteadyState Duration="30" Power="1.10">
             <textevent timeoffset="0" message="Opener 2." />
         </SteadyState>
         <SteadyState Duration="120" Power="0.55">
+            <textevent timeoffset="10" duration="20" message="In ERG mode, just drop to 50-60 rpm when the interval starts. The trainer raises the resistance to hold 110% FTP." />
             <textevent timeoffset="60" duration="20" message="First interval in 60 seconds. STAY SEATED. 50-60 rpm. 105-110% FTP. 2.5 minutes." />
         </SteadyState>
 
@@ -51,9 +52,9 @@
         </SteadyState>
 
         <SteadyState Duration="240" Power="0.50">
-            <textevent timeoffset="2" message="Recovery. 4 minutes." />
-            <textevent timeoffset="60" duration="20" message="Patellofemoral load at 105-110% FTP and 50-60rpm is the highest in the collection." />
-            <textevent timeoffset="120" message="Next interval. Settle to 50-60rpm. Seated." />
+            <textevent timeoffset="2" message="Recovery. 4 minutes. Easy spin." />
+            <textevent timeoffset="40" duration="25" message="If your cadence sags below target, lower the workout intensity (FTP bias) rather than grinding." />
+            <textevent timeoffset="180" message="Next interval. Settle to 50-60 rpm. Seated." />
         </SteadyState>
 
         <SteadyState Duration="150" Power="1.10" Cadence="55">
@@ -67,7 +68,7 @@
         <SteadyState Duration="240" Power="0.50">
             <textevent timeoffset="2" message="Recovery. 4 minutes." />
             <textevent timeoffset="60" message="Knee check. Anything beyond muscle burn?" />
-            <textevent timeoffset="120" message="Next interval. 50-60rpm. Seated." />
+            <textevent timeoffset="180" message="Next interval. 50-60 rpm. Seated." />
         </SteadyState>
 
         <SteadyState Duration="150" Power="1.10" Cadence="55">
@@ -80,8 +81,8 @@
 
         <SteadyState Duration="240" Power="0.50">
             <textevent timeoffset="2" message="Recovery." />
-            <textevent timeoffset="60" message="Halfway through the session. Three down, three to go." />
-            <textevent timeoffset="120" message="Next interval. 50-60rpm. Seated." />
+            <textevent timeoffset="60" duration="25" message="At 250 W FTP, 110% at 55 rpm is about 48 Nm per pedal stroke (our arithmetic). Short reps, high force." />
+            <textevent timeoffset="180" message="Next interval. 50-60 rpm. Seated." />
         </SteadyState>
 
         <SteadyState Duration="150" Power="1.10" Cadence="55">
@@ -94,22 +95,22 @@
 
         <SteadyState Duration="240" Power="0.50">
             <textevent timeoffset="2" message="Recovery." />
-            <textevent timeoffset="60" duration="20" message="EVOQ: start with six reps, work up to eight once this is consistently comfortable." />
-            <textevent timeoffset="120" message="Next interval. 50-60rpm. Seated." />
+            <textevent timeoffset="60" duration="20" message="EVOQ: start with six reps, work up to eight." />
+            <textevent timeoffset="180" message="Next interval. 50-60 rpm. Seated." />
         </SteadyState>
 
         <SteadyState Duration="150" Power="1.10" Cadence="55">
             <textevent timeoffset="0" message="STAY SEATED. 50-60 rpm. 105-110% FTP. GO." />
             <textevent timeoffset="20" message="Hold 50-60 rpm." />
-            <textevent timeoffset="75" message="Halfway. Penultimate interval." />
+            <textevent timeoffset="75" message="Halfway. One more after this." />
             <textevent timeoffset="120" message="30 seconds. Do not stand." />
             <textevent timeoffset="145" message="5 seconds." />
         </SteadyState>
 
         <SteadyState Duration="240" Power="0.50">
             <textevent timeoffset="2" message="Recovery." />
-            <textevent timeoffset="60" message="Five down, one to go. Knees still fine?" />
-            <textevent timeoffset="120" message="Final interval. Everything you have. 50-60rpm. Seated." />
+            <textevent timeoffset="60" duration="20" message="Five down, one to go. If your knees are aching, skip the final interval." />
+            <textevent timeoffset="180" message="Final interval. 50-60 rpm. Seated." />
         </SteadyState>
 
         <SteadyState Duration="150" Power="1.10" Cadence="55">
@@ -121,11 +122,10 @@
         </SteadyState>
 
         <Cooldown Duration="900" PowerLow="0.50" PowerHigh="0.40">
-            <textevent timeoffset="10" message="TorqueMax complete. Six intervals done." />
-            <textevent timeoffset="150" duration="25" message="This is EVOQ's starting volume for TorqueMax. They suggest working up to eight reps. We stop at six here because it's our highest-load session. That's our choice, not EVOQ's." />
-            <textevent timeoffset="360" duration="30" message="Post-session knee check is especially important here. 105-110% FTP at 50-60 rpm produces the highest patellofemoral load in the collection. Any discomfort persisting beyond 24 hours warrants a break from torque work." />
-            <textevent timeoffset="600" duration="25" message="The 2024 study found significant improvements in VO2max and maximal power with the low-cadence protocol. The science supports this training. Your knees are the limiting factor to respect." />
-            <textevent timeoffset="780" duration="25" message="Neal Henderson limits these sessions to one, at most two, a week because they are 'a bit more stressful from a musculoskeletal standpoint'. Respect the recovery." />
+            <textevent timeoffset="10" message="TorqueMax complete. Six intervals done. Spin easy at normal cadence." />
+            <textevent timeoffset="150" duration="25" message="Six reps is EVOQ's starting volume; they suggest working up to eight. This file stays at six (our choice)." />
+            <textevent timeoffset="360" duration="20" message="Note how your knees feel. Any ache or tightness? If yes, skip the next torque session and monitor." />
+            <textevent timeoffset="600" duration="25" message="Our rule: no torque sessions on back-to-back days. CTS coach Jim Rutberg says beginner and intermediate riders should separate them by at least a full day." />
         </Cooldown>
     </workout>
 </workout_file>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   High Torque Training — Zwift workout
-  Last updated: 2026-09-26
+  Last updated: 2026-11-04
 
   Site:      https://high-torque.jelen.dk/
   Calendar:  https://high-torque.jelen.dk/content/workouts.md
@@ -10,23 +10,24 @@
 -->
 <workout_file>
     <author>Tom Jelen</author>
-    <name>SIT 3 Sets</name>
+    <name>HT SIT 3 Sets</name>
     <activitySaveName>High Torque: SIT - 3x(4x30s) Sprint @ 50-60 rpm</activitySaveName>
-    <description>Volume progression of the Hebisz &amp; Hebisz (2024) SIT protocol. Three sets of 4 x 30-second maximal sprints at 50-60 rpm, with 90 seconds recovery between sprints and 25 minutes active rest between sets. 12 total sprints. Seated throughout.</description>
+    <description>Volume progression of the Hebisz &amp; Hebisz (2024) SIT protocol. Three sets of 4 x 30-second maximal sprints at 50-60 rpm, with 90 seconds of active rest between sprints and 25 minutes between sets. 12 total sprints. The study set both rests 'similar to the power at VT1' (90 s) and 'also at low intensity' (25 min); ~65% FTP for both is our estimate and choice. The sprints have no power target: you set the force. Seated throughout. The study riders were 17–20-year-old women with at least 3 years' training (10+ hours a week), and had done 3 months of base work, including core work, running with jumping exercises and lower-limb strength training, before day one.</description>
     <sportType>bike</sportType>
     <tags />
     <workout>
         <Warmup Duration="1200" PowerLow="0.40" PowerHigh="0.75">
-            <textevent timeoffset="10" duration="25" message="Source: Hebisz &amp; Hebisz (2024) SIT protocol, weeks 5-8. 12x30s maximal at 50-60 rpm in 3 sets of 4. Volume progression from 8 to 12 reps." />
+            <textevent timeoffset="5" duration="15" message="Warm up at your normal cadence. No low cadence until the first sprint." />
+            <textevent timeoffset="30" duration="25" message="Source: Hebisz &amp; Hebisz (2024) SIT protocol, weeks 5-8. 12x30s maximal at 50-60 rpm in 3 sets of 4. Volume progression from 8 to 12 reps." />
             <textevent timeoffset="75" duration="20" message="Session logger and full workout calendar at high-torque.jelen.dk" />
             <textevent timeoffset="120" duration="25" message="Sprint intervals — extended volume. 12 sprint reps today: three sets of four. The study progressed from 8 reps to 12 reps. This session matches the higher-volume phase." />
-            <textevent timeoffset="270" duration="25" message="Same rules: 50-60rpm, maximal effort, 90-second recovery between reps, 25-minute active rest between sets." />
-            <textevent timeoffset="420" duration="30" message="The extra set is significant. Twelve 30-second sprints at 50-60rpm is a large neuromuscular and joint load. Only attempt if the 2-set version has been consistently comfortable." />
-            <textevent timeoffset="570" duration="25" message="SEATED: Every sprint, every second. The third set will be hard — the temptation to stand increases with fatigue. Do not." />
-            <textevent timeoffset="720" duration="25" message="KNEE WARNING: This is the highest total sprint volume in the High Torque Collection. Monitor knee health carefully throughout all three sets." />
-            <textevent timeoffset="900" duration="20" message="Sprints are short — 30 seconds. Recoveries are long — 90 seconds. The 25-minute rest between sets is not optional." />
-            <textevent timeoffset="1050" message="Three sets. Pace yourself mentally. The third set is the one that matters most." />
-            <textevent timeoffset="1140" duration="20" message="First sprint in 1 minute. Find your gear. Hard gear. 50-60rpm. Maximal effort." />
+            <textevent timeoffset="270" duration="25" message="Same rules: 50-60 rpm, maximal effort, 90 seconds of active rest between reps, 25 minutes between sets. The sprints have no power target; ERG switches off for each sprint block." />
+            <textevent timeoffset="420" duration="30" message="The study did 8 sprints in weeks 1-4 and 12 in weeks 5-8. Twelve 30-second sprints at 50-60 rpm is a lot more work than eight. If the 2-set version left your knees sore, do that one instead." />
+            <textevent timeoffset="570" duration="25" message="SEATED: Every sprint, every second. Standing lets you use body weight on the pedals, bypassing the forced muscular contraction that makes this training work." />
+            <textevent timeoffset="720" duration="25" message="KNEE WARNING: If your knees ache during a sprint, stop the sprint. Don't push through knee discomfort. If your knees are not 100% today, skip this session." />
+            <textevent timeoffset="900" duration="20" message="Sprints are short: 30 seconds. Rests are 90 seconds. The 25-minute break between sets is part of the study design. The paper gives no reason for its length." />
+            <textevent timeoffset="1050" message="Three sets. Pace yourself mentally. The third set will be the hardest." />
+            <textevent timeoffset="1140" duration="20" message="First sprint in 1 minute. Find your gear. Hard gear. 50-60 rpm. Maximal effort." />
         </Warmup>
 
         <!-- Set 1 -->
@@ -36,12 +37,12 @@
              parser maps FreeRide -> zone-6 max sprint, so they still render as max
              efforts. Do not convert these back to MaxEffort. -->
         <FreeRide Duration="30" FlatRoad="1" Cadence="55">
-            <textevent timeoffset="0" message="STAY SEATED. GO. Set 1. Maximal effort. 50-60rpm." />
+            <textevent timeoffset="0" message="STAY SEATED. GO. Set 1. Maximal effort. 50-60 rpm." />
             <textevent timeoffset="15" message="Halfway. Keep driving. Seated." />
             <textevent timeoffset="28" message="2 seconds. Do not stand." />
         </FreeRide>
-        <SteadyState Duration="90" Power="0.50">
-            <textevent timeoffset="2" message="Recover. Spin easy. 90 seconds." />
+        <SteadyState Duration="90" Power="0.65">
+            <textevent timeoffset="2" message="Active rest. 90 seconds at ~65% FTP." />
             <textevent timeoffset="30" message="Stay loose. Let the legs recover." />
             <textevent timeoffset="70" message="Find your gear for the next sprint." />
         </SteadyState>
@@ -51,7 +52,7 @@
             <textevent timeoffset="15" message="Halfway. Seated." />
             <textevent timeoffset="28" message="2 seconds." />
         </FreeRide>
-        <SteadyState Duration="90" Power="0.50">
+        <SteadyState Duration="90" Power="0.65">
             <textevent timeoffset="2" message="Recover. Easy spin." />
             <textevent timeoffset="30" message="Good. Stay loose." />
             <textevent timeoffset="70" message="Next sprint coming." />
@@ -62,7 +63,7 @@
             <textevent timeoffset="15" message="Halfway. Seated." />
             <textevent timeoffset="28" message="2 seconds." />
         </FreeRide>
-        <SteadyState Duration="90" Power="0.50">
+        <SteadyState Duration="90" Power="0.65">
             <textevent timeoffset="2" message="Recover." />
             <textevent timeoffset="30" message="Three down in this set." />
             <textevent timeoffset="70" message="Last sprint of set 1. Find your gear." />
@@ -73,17 +74,12 @@
             <textevent timeoffset="15" message="Halfway. Drive it." />
             <textevent timeoffset="28" message="2 seconds." />
         </FreeRide>
-        <SteadyState Duration="90" Power="0.50">
-            <textevent timeoffset="2" message="Recover. Set 1 done." />
-            <textevent timeoffset="30" message="25 minutes active rest coming." />
-        </SteadyState>
-
-        <SteadyState Duration="1500" Power="0.55">
-            <textevent timeoffset="10" message="Set 1 complete. 25 minutes active rest. Do not skip or shorten." />
-            <textevent timeoffset="120" message="55% FTP, easy spinning. Flush out the lactate." />
+        <SteadyState Duration="1500" Power="0.65">
+            <textevent timeoffset="10" message="Set 1 complete. 25 minutes of active rest now." />
+            <textevent timeoffset="120" duration="30" message="~65% FTP. The study says only 'also at low intensity' for this break; ~65% is our choice, the same level as the 90-second rests." />
             <textevent timeoffset="600" message="10 minutes into rest. Knees okay after the first set?" />
-            <textevent timeoffset="900" message="Halfway through rest. Legs recovering." />
-            <textevent timeoffset="1380" duration="20" message="2 minutes to set 2. Find your gear. Same hard gear. 50-60rpm." />
+            <textevent timeoffset="900" duration="30" message="The study riders did SIT from day one, but after at least 3 years of training and 3 months of base work that included strength and jumping exercises." />
+            <textevent timeoffset="1380" duration="20" message="2 minutes to set 2. Find your gear. Same hard gear. 50-60 rpm." />
             <textevent timeoffset="1470" message="30 seconds. Get ready. Seated. Maximal." />
         </SteadyState>
 
@@ -93,8 +89,8 @@
             <textevent timeoffset="15" message="Halfway. Drive it. Seated." />
             <textevent timeoffset="28" message="2 seconds." />
         </FreeRide>
-        <SteadyState Duration="90" Power="0.50">
-            <textevent timeoffset="2" message="Recover. Easy spin. 90 seconds." />
+        <SteadyState Duration="90" Power="0.65">
+            <textevent timeoffset="2" message="Active rest. 90 seconds at ~65% FTP." />
             <textevent timeoffset="30" message="Good. Hold the quality." />
             <textevent timeoffset="70" message="Next sprint coming. Stay focused." />
         </SteadyState>
@@ -104,7 +100,7 @@
             <textevent timeoffset="15" message="Halfway. Seated." />
             <textevent timeoffset="28" message="2 seconds." />
         </FreeRide>
-        <SteadyState Duration="90" Power="0.50">
+        <SteadyState Duration="90" Power="0.65">
             <textevent timeoffset="2" message="Recover." />
             <textevent timeoffset="30" message="Good. Stay in the gear." />
             <textevent timeoffset="70" message="Next sprint." />
@@ -115,7 +111,7 @@
             <textevent timeoffset="15" message="Halfway. Seated." />
             <textevent timeoffset="28" message="2 seconds." />
         </FreeRide>
-        <SteadyState Duration="90" Power="0.50">
+        <SteadyState Duration="90" Power="0.65">
             <textevent timeoffset="2" message="Recover." />
             <textevent timeoffset="30" message="Three down in set 2." />
             <textevent timeoffset="70" message="Last sprint of set 2. Find your gear." />
@@ -126,15 +122,10 @@
             <textevent timeoffset="15" message="Halfway. Drive it." />
             <textevent timeoffset="28" message="2 seconds." />
         </FreeRide>
-        <SteadyState Duration="90" Power="0.50">
-            <textevent timeoffset="2" message="Recover. Set 2 done." />
-            <textevent timeoffset="30" message="Final set coming after 25 minutes rest." />
-        </SteadyState>
-
-        <SteadyState Duration="1500" Power="0.55">
+        <SteadyState Duration="1500" Power="0.65">
             <textevent timeoffset="10" message="Set 2 complete. 25 minutes active rest before the final set." />
-            <textevent timeoffset="120" duration="25" message="This is the extra set. Your body is now doing what the study's higher-volume phase demanded." />
-            <textevent timeoffset="600" message="10 minutes. Knee check. The cumulative load from 8 sprints is already significant." />
+            <textevent timeoffset="120" duration="25" message="Two sets done. The third set is what the study added in weeks 5-8." />
+            <textevent timeoffset="600" message="10 minutes. Knee check. Anything joint-related, not muscle burn?" />
             <textevent timeoffset="900" duration="20" message="Halfway through rest. If anything feels wrong in the knees, skip set 3. Eight sprints is still a good session." />
             <textevent timeoffset="1380" message="2 minutes to set 3. Last set. Find your gear." />
             <textevent timeoffset="1470" message="30 seconds. Everything you have left. Seated. Maximal." />
@@ -146,7 +137,7 @@
             <textevent timeoffset="15" message="Halfway. Do not let up. Seated." />
             <textevent timeoffset="28" message="2 seconds." />
         </FreeRide>
-        <SteadyState Duration="90" Power="0.50">
+        <SteadyState Duration="90" Power="0.65">
             <textevent timeoffset="2" message="Recover. Easy spin." />
             <textevent timeoffset="30" message="Good. Stay in the gear." />
             <textevent timeoffset="70" message="Next sprint coming." />
@@ -157,7 +148,7 @@
             <textevent timeoffset="15" message="Halfway. Seated." />
             <textevent timeoffset="28" message="2 seconds." />
         </FreeRide>
-        <SteadyState Duration="90" Power="0.50">
+        <SteadyState Duration="90" Power="0.65">
             <textevent timeoffset="2" message="Recover." />
             <textevent timeoffset="70" message="Next sprint." />
         </SteadyState>
@@ -167,7 +158,7 @@
             <textevent timeoffset="15" message="Halfway. Seated." />
             <textevent timeoffset="28" message="2 seconds." />
         </FreeRide>
-        <SteadyState Duration="90" Power="0.50">
+        <SteadyState Duration="90" Power="0.65">
             <textevent timeoffset="2" message="Recover. Almost done." />
             <textevent timeoffset="70" message="Last sprint. Leave nothing." />
         </SteadyState>
@@ -181,9 +172,9 @@
         <Cooldown Duration="900" PowerLow="0.50" PowerHigh="0.40">
             <textevent timeoffset="10" message="12 sprints done. Full study volume achieved." />
             <textevent timeoffset="150" duration="25" message="That third set is the progression from the study's higher-volume phase. This matches the study's 12-rep SIT session, adapted for Zwift." />
-            <textevent timeoffset="300" duration="20" message="Knee check post-session. Note anything — even mild. The cumulative load from 12 sprints at 50-60rpm is the highest in the High Torque Collection." />
-            <textevent timeoffset="480" duration="20" message="Allow at least one rest day before the next hard session. The musculoskeletal load from 12 maximal sprints is substantial." />
-            <textevent timeoffset="840" duration="30" message="Full recovery — not just between sets, but in the days after — is when the adaptation actually occurs. Twelve maximal sprints at low cadence represents a large neuromuscular stimulus." />
+            <textevent timeoffset="300" duration="20" message="Knee check post-session. Any ache or tightness? If yes, skip the next torque session and monitor." />
+            <textevent timeoffset="480" duration="25" message="Our rule: no torque sessions on back-to-back days. CTS coach Jim Rutberg says beginner and intermediate riders should separate them by at least a full day." />
+            <textevent timeoffset="840" duration="30" message="One small study: well-trained women aged 17-20, 12 per group. The paper reports no knee or injury monitoring. Promising, not proven." />
         </Cooldown>
     </workout>
 </workout_file>

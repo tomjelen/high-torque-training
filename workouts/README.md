@@ -4,14 +4,11 @@
 
 ```
 workouts/
-  High Torque - Adaptation/             ← 3 workouts (weeks 1-3)
-  High Torque - Tier 1 Entry/           ← 2 workouts
-  High Torque - Tier 2 Development/     ← 3 workouts
-  High Torque - Tier 3 Challenging/     ← 3 workouts
-  High Torque - Tier 4 Advanced/        ← 4 workouts
+  High Torque - Adaptation/   ← 2 workouts (build weeks 1–2 and 3–4)
+  High Torque - Library/      ← 10 workouts (build weeks 5–12, then free choice)
 ```
 
-Start with the 3-week Adaptation block, then pick from the tiered library. Each subfolder becomes a named folder inside Zwift's custom workout menu.
+The program is a 12-week build, one session a week. Weeks 1–4 are adaptation, using the two files in `High Torque - Adaptation`. Weeks 5–12 use four files from `High Torque - Library`, each ridden twice: Torque Endurance 3×8 (weeks 5–6), Threshold 5×5 (weeks 7–8), TorqueMax (weeks 9–10) and HIIT 4×4 (weeks 11–12). After the build you pick freely from the whole library. The site (high-torque.jelen.dk) and `research/training-calendar.md` have the full plan and the rule for moving on. Each subfolder becomes a named folder inside Zwift's custom workout menu.
 
 ## How to install
 
@@ -20,7 +17,7 @@ Start with the 3-week Adaptation block, then pick from the tiered library. Each 
    - **macOS:** `~/Documents/Zwift/Workouts/[your_user_id]/`
    - **iOS/Android:** not supported for custom workouts — use a PC/Mac to load them
 
-2. Copy the five `High Torque - ...` folders (including their `.zwo` files) directly into your user workout directory.
+2. Copy the two `High Torque - ...` folders (including their `.zwo` files) directly into your user workout directory.
 
 3. Restart Zwift. The folders will appear under **Custom Workouts** in the workout selection screen.
 

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  High Torque Training — Zwift workout
+  Last updated: 2026-11-03
+
+  Site:      https://high-torque.jelen.dk/
+  Calendar:  https://high-torque.jelen.dk/content/workouts.md
+  Rationale: https://high-torque.jelen.dk/content/rationale.md
+  LLMs:      https://high-torque.jelen.dk/llms.txt
+-->
+<workout_file>
+    <author>Tom Jelen</author>
+    <name>HT Threshold 5x5</name>
+    <activitySaveName>High Torque: Threshold 5×5 min ~95% FTP @ 50–60 rpm</activitySaveName>
+    <description>Threshold 5×5: five 5-minute intervals at ~95% FTP and 50–60 rpm, with 2:30 of easy spin between them. Seated throughout. Source: Neal Henderson (Fast Talk ep. 125, 2020, machine transcript). In his ~6-week block, the threshold step is "five by five minutes at say 95% of FTP at that same 50 to 60 rpm"; that passage gives no recovery. In a separate passage he gives threshold efforts of 3–6 minutes at 50–60 rpm "with typically about half time recovery". Half of 5 minutes is 2:30: Henderson's half-time rule, applied by us. EVOQ's written progression for its 5×5 staple ("increase power up to threshold") also supports 95%.</description>
+    <sportType>bike</sportType>
+    <tags />
+    <workout>
+        <Warmup Duration="900" PowerLow="0.40" PowerHigh="0.75">
+            <textevent timeoffset="5" duration="15" message="Warm up at your normal cadence. No low cadence until the first interval." />
+            <textevent timeoffset="30" duration="30" message="Source: Neal Henderson (Fast Talk ep. 125, 2020, machine transcript): 'five by five minutes at say 95% of FTP at that same 50 to 60 rpm'." />
+            <textevent timeoffset="90" duration="20" message="Full research and protocol rationale at high-torque.jelen.dk" />
+            <textevent timeoffset="120" duration="30" message="That passage gives no recovery. Elsewhere Henderson gives threshold efforts 'typically about half time recovery'. Half of 5 min is 2:30: his rule, applied by us." />
+            <textevent timeoffset="240" duration="25" message="In Henderson's ~6-week block this threshold step comes after tempo efforts at 85% and before short efforts at 5-minute power." />
+            <textevent timeoffset="420" duration="25" message="All intervals are SEATED. Standing lets you use body weight on the pedals, bypassing the forced muscular contraction that makes this training work." />
+            <textevent timeoffset="600" duration="25" message="Target cadence: 50-60 rpm. In ERG mode, just drop to this cadence. The trainer raises the resistance to hold ~95% FTP." />
+            <textevent timeoffset="780" duration="20" message="If your knees ache at any point, stop the interval. At threshold intensity, the temptation to push through is high. Don't." />
+        </Warmup>
+
+        <SteadyState Duration="300" Power="0.95" Cadence="55">
+            <textevent timeoffset="10" message="Interval 1. ~95% FTP, 50-60 rpm. Stay seated. 5 minutes." />
+            <textevent timeoffset="150" message="Halfway. Hold the power. Breathe." />
+            <textevent timeoffset="270" message="30 seconds left. Hold cadence and power." />
+        </SteadyState>
+
+        <SteadyState Duration="150" Power="0.50">
+            <textevent timeoffset="10" message="Recovery. Short: 2:30. Easy spin at any cadence." />
+            <textevent timeoffset="40" duration="30" message="Fact: even in torque intervals, pedal force stays below about 54% of your maximum (Barranco-Gil 2024). This is endurance work, not strength training." />
+            <textevent timeoffset="120" message="Next interval in 30 seconds. Seated." />
+        </SteadyState>
+
+        <SteadyState Duration="300" Power="0.95" Cadence="55">
+            <textevent timeoffset="10" message="Interval 2. ~95% FTP, 50-60 rpm. Stay seated." />
+            <textevent timeoffset="150" message="Halfway. Smooth pedal strokes." />
+            <textevent timeoffset="270" message="30 seconds left." />
+        </SteadyState>
+
+        <SteadyState Duration="150" Power="0.50">
+            <textevent timeoffset="10" message="Recovery. Two down, three to go." />
+            <textevent timeoffset="40" duration="25" message="If your cadence sags below target, lower the workout intensity (FTP bias) rather than grinding." />
+            <textevent timeoffset="120" message="Knees still fine?" />
+        </SteadyState>
+
+        <SteadyState Duration="300" Power="0.95" Cadence="55">
+            <textevent timeoffset="10" message="Interval 3. ~95% FTP, 50-60 rpm. Stay seated." />
+            <textevent timeoffset="150" message="Halfway. Seated, smooth strokes." />
+            <textevent timeoffset="270" message="30 seconds left." />
+        </SteadyState>
+
+        <SteadyState Duration="150" Power="0.50">
+            <textevent timeoffset="10" message="Recovery. Three down, two to go." />
+            <textevent timeoffset="40" duration="30" message="At 250 W FTP, ~95% at 55 rpm is about 41 Nm per pedal stroke (our arithmetic). More force per stroke than the Torque Endurance sessions." />
+        </SteadyState>
+
+        <SteadyState Duration="300" Power="0.95" Cadence="55">
+            <textevent timeoffset="10" message="Interval 4. ~95% FTP, 50-60 rpm. Stay seated." />
+            <textevent timeoffset="150" message="Halfway. One more after this." />
+            <textevent timeoffset="270" message="30 seconds left." />
+        </SteadyState>
+
+        <SteadyState Duration="150" Power="0.50">
+            <textevent timeoffset="10" message="Recovery. One more interval." />
+            <textevent timeoffset="40" duration="20" message="If your knees are aching, skip the final interval. Protecting the joints is always the right call on torque work." />
+            <textevent timeoffset="120" message="Final interval next. Seated." />
+        </SteadyState>
+
+        <SteadyState Duration="300" Power="0.95" Cadence="55">
+            <textevent timeoffset="10" message="Final interval. ~95% FTP, 50-60 rpm. Stay seated." />
+            <textevent timeoffset="150" message="Halfway. Last effort." />
+            <textevent timeoffset="270" message="30 seconds. Finish it." />
+        </SteadyState>
+
+        <Cooldown Duration="600" PowerLow="0.50" PowerHigh="0.40">
+            <textevent timeoffset="30" message="Cool down. Easy spin at normal cadence." />
+            <textevent timeoffset="120" duration="20" message="Note how your knees feel. Any ache or tightness? If yes, skip the next torque session and monitor." />
+            <textevent timeoffset="270" duration="30" message="Henderson (machine transcript): 'Generally I do about one of these sessions a week at most two', because they are 'a bit more stressful from a muscular skeletal standpoint'." />
+            <textevent timeoffset="420" duration="25" message="Our rule: no torque sessions on back-to-back days. CTS coach Jim Rutberg says beginner and intermediate riders should separate them by at least a full day." />
+        </Cooldown>
+    </workout>
+</workout_file>

@@ -6,3 +6,5 @@ ZWO conventions are split across two skills:
 - `.claude/skills/high-torque-zwo/SKILL.md` — High Torque Training project conventions.
 
 Both auto-load when editing `.zwo` files.
+
+Folders: `High Torque - Adaptation/` (2 files, build weeks 1–4) and `High Torque - Library/` (10 files, build weeks 5–12 and the free-choice library). No tiers. The calendar (`research/training-calendar.md`) says which file each build week uses.
