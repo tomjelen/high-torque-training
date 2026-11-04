@@ -312,7 +312,7 @@ Nothing in the saved Henderson texts covers ERG or riding by feel.
 
 ### EF Pro Cycling: Noemi Rüegg's session, Peter Schep's progression (elite / pro-team coach)
 
-From EF's article "Pro Workouts: Torque Efforts with Noemi Rueegg" (written). Only the quoted sentences are Peter Schep's (EF Pro Cycling Head of Performance); the workout box and its notes are EF's article text.
+From EF's article "Pro Workouts: Torque Efforts with Noemi Rueegg" (written). Only the quoted sentences are Peter Schep's (EF Pro Cycling Head of Performance); the workout box and its notes are EF's article text. Noemi Rüegg is an EF Education-Cannondale rider, a Swiss sprinter (EF's article; a rider, not a coach).
 
 - **Rüegg's session:** "three to five five-minute efforts at 50 rpm to 60 rpm at the power she can produce at her Vo2 max", on a hill. EF's workout box: 30 min easy warm-up; 3 × 5 min at 50–60 rpm at "VO2 max pace", 10 min easy between; 30 min easy cool-down. Box footnote: "VO2 max pace is 106% - 120% of FTP". Variation: at the end of each effort "shift into a lighter gear and do a one-minute max effort".
 - **Schep:** "Begin with strength training sessions at 60 rpms at 80 to 85% of your FTP for 15 minutes. If those go well, move on to threshold sessions and then go above threshold for these five-minute efforts." Recreational riders "need to proceed cautiously to limit the risk of injury."
@@ -321,7 +321,7 @@ From EF's article "Pro Workouts: Torque Efforts with Noemi Rueegg" (written). On
 
 ### EVOQ.BIKE: Landry Bobo (coaching business)
 
-EVOQ senior leader and coach; Master's degree in Exercise Science (Appalachian State University). Blog "Low Cadence Cycling", 1 Jan 2026 (written).
+EVOQ senior leader and coach; races in the elite categories (EVOQ bio); Master's degree in Exercise Science (Appalachian State University). Blog "Low Cadence Cycling", 1 Jan 2026 (written).
 
 - **Staple:** 5 × 5 min at ~90% FTP and 50–60 rpm; progressions: reps up to 8 min, lower cadence, or "increase power up to threshold". (Not in the library since the Nov 2026 rewrite; its progression supports Threshold 5×5 at 95%.)
 - **TorqueMax:** "around 2-3 minutes at 105-110% of FTP and around 50-60 rpm", "starting with six repetitions and working up to eight", "based on the study done by Hebisz". Warning: "There is an increased risk of injury with these intervals", so start with the lower-intensity torque intervals. No recovery given.
@@ -331,7 +331,7 @@ EVOQ senior leader and coach; Master's degree in Exercise Science (Appalachian S
 
 ### EVOQ.BIKE: Brendan Housler (coaching business)
 
-EVOQ president, coach and owner; coached over 250 cyclists one-to-one. Blog "Gravel Racing & Training Tips", 3 Aug 2020 (written):
+EVOQ president, coach and owner; 13× P/1 State Champion and 4 Master's National Championships (EVOQ bio); coached over 250 cyclists one-to-one. Blog "Gravel Racing & Training Tips", 3 Aug 2020 (written):
 
 - **Torque Endurance:** "Start off with 4 x 8m @ 95% at 60-70rpm. Eventually move to 50-60rpm, and extend out to 3 x 15m. Aim for 90-105% FTP." No recovery given. (A gravel-racing article, not a torque article.)
 - Our TE files: TE 3×8 (scaled: 3 reps instead of 4), TE 4×8 (unscaled), TE 3×15 at 90% (the floor of his range, our choice). Recovery = rep length, as Wakefield and CTS use (ours).
@@ -341,7 +341,7 @@ EVOQ president, coach and owner; coached over 250 cyclists one-to-one. Blog "Gra
 
 One organisation, two sources.
 
-- **Jim Rutberg, CTS MuscleTension article (written):** tempo or sweet-spot power, 76–85% or 88–94% of threshold, at about 50–55 rpm; reps of 5–10 min; total time at intensity ~20 min (beginner), 30 (intermediate), 40 (advanced); start with 4 × 5 min; "Recovery between intervals should be equal to the duration of the efforts"; increase workload "by adding intervals"; "a two to three-week block"; beginner and intermediate riders "should separate MT workouts by at least a full day"; indoors, "level" or "resistance" mode is better than ERG, which can help beginners focus on cadence.
+- **Jim Rutberg, CTS MuscleTension article (written):** CTS coach of over two decades and co-author of *The Time-Crunched Cyclist* (his author bio on the article). Tempo or sweet-spot power, 76–85% or 88–94% of threshold, at about 50–55 rpm; reps of 5–10 min; total time at intensity ~20 min (beginner), 30 (intermediate), 40 (advanced); start with 4 × 5 min; "Recovery between intervals should be equal to the duration of the efforts"; increase workload "by adding intervals"; "a two to three-week block"; beginner and intermediate riders "should separate MT workouts by at least a full day"; indoors, "level" or "resistance" mode is better than ERG, which can help beginners focus on cadence.
 - **Adam Pulford, CTS YouTube video (auto-captions):** "Everything has a season including torque training"; heavy lifting in base; build 1: 50–60 rpm at zone 3–4, 1–2 sessions a week for a few weeks; later in the build, a block of at least two weeks of 50–60 rpm zone 5–6 work, twice a week, full recovery, at least 15 min in zone. Low cadence at lower power "doesn't make you stronger".
 
 ### Hebisz & Hebisz 2024 (research)

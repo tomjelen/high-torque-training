@@ -29,6 +29,5 @@ Everything here is traceable to a source; where the evidence is weak, the ration
 ---
 
 Elsewhere: [LinkedIn](https://www.linkedin.com/in/tom-jelen/) ·
-[GitHub](https://github.com/tomjelen) ·
 [Strava](https://www.strava.com/athletes/8943272) ·
 [Email](mailto:high-torque@jelen.dk)
