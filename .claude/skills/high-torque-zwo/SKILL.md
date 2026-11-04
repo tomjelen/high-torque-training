@@ -40,7 +40,8 @@ Constraints:
 ## Naming
 
 - `<name>` — prefix with `HT`. Example: `HT Threshold 5x5`.
-- `<activitySaveName>` — shape: `High Torque: <Name> <reps×duration> <%FTP range> @ <cadence range> rpm`. Examples from the files: `High Torque: Threshold 5×5 min ~95% FTP @ 50–60 rpm`, `High Torque: Adaptation weeks 1–2 - 4×4 min 80% FTP @ 60–65 rpm`. Use **source prescription ranges**, not ZWO-fixed values. There are no tiers: never put "Tier N" in a name. (The current files are not fully uniform: some use `x` and `-`, others `×` and `–`, and some put ` - ` after the name. Follow the shape above for new files; don't churn existing files just for this.)
+- `<name>` and `<activitySaveName>` use plain characters only (Tom's rule: no special characters unless needed): `x` not `×`, `-` not `–`. Keep `ü` in Rüegg (a name), and keep `~` and `%`.
+- `<activitySaveName>` — shape: `High Torque: <Name> <reps>x<duration> <%FTP range> @ <cadence range> rpm`. A single space between the parts (no ` - ` after the name). Examples from the files: `High Torque: Threshold 5x5 min ~95% FTP @ 50-60 rpm`, `High Torque: Adaptation weeks 1-2 4x4 min 80% FTP @ 60-65 rpm`, `High Torque: SIT 2x(4x30s) sprint @ 50-60 rpm`. Use **source prescription ranges**, not ZWO-fixed values. There are no tiers: never put "Tier N" in a name. All 12 files follow this shape.
 
 ## Folders
 

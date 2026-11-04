@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   High Torque Training — Zwift workout
-  Last updated: 2026-11-03
+  Last updated: 2026-11-04
 
   Site:      https://high-torque.jelen.dk/
   Calendar:  https://high-torque.jelen.dk/content/workouts.md
@@ -10,8 +10,8 @@
 -->
 <workout_file>
     <author>Tom Jelen</author>
-    <name>HT Adaptation weeks 1–2</name>
-    <activitySaveName>High Torque: Adaptation weeks 1–2 - 4×4 min 80% FTP @ 60–65 rpm</activitySaveName>
+    <name>HT Adaptation weeks 1-2</name>
+    <activitySaveName>High Torque: Adaptation weeks 1-2 4x4 min 80% FTP @ 60-65 rpm</activitySaveName>
     <description>Adaptation weeks 1–2: your first high-torque sessions. Four 4-minute intervals at 80% FTP and 60–65 rpm, with 4 minutes of easy spin between them. Seated throughout. Structure from John Wakefield (That Triathlon Show #465 podcast, machine transcript): riders new to torque work start at around 60–65 rpm, do four 4-minute reps the first time, rest as long as the rep, and stay below threshold. Wakefield gives no %FTP; 80% is our choice, inside Neal Henderson's 75–85% for riders just starting (Fast Talk ep. 125, 2020, machine transcript) and Peter Schep's (EF Pro Cycling) 80–85%. Schep's own entry session, 15 minutes at 60 rpm and 80–85% FTP, is very close to this one. The 4-week adaptation (this session in weeks 1–2, then 4×4 at 50–60 rpm in weeks 3–4, one session a week) is our arrangement.</description>
     <sportType>bike</sportType>
     <tags />

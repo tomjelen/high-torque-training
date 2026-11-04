@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   High Torque Training — Zwift workout
-  Last updated: 2026-11-03
+  Last updated: 2026-11-04
 
   Site:      https://high-torque.jelen.dk/
   Calendar:  https://high-torque.jelen.dk/content/workouts.md
@@ -11,7 +11,7 @@
 <workout_file>
     <author>Tom Jelen</author>
     <name>HT Rüegg VO2max Sprint</name>
-    <activitySaveName>High Torque: Rüegg - 3x(5min VO2max + sprint) @ 50-60 rpm</activitySaveName>
+    <activitySaveName>High Torque: Rüegg 3x(5min VO2max + sprint) @ 50-60 rpm</activitySaveName>
     <description>Noemi Rüegg's torque session, as published by EF Pro Cycling, with progression advice from EF Head of Performance Peter Schep. EF's workout box: 3 × 5 min at 50–60 rpm at "VO2 max pace" (EF: 106–120% FTP), 10 min easy between, with a variation of a 1-minute max effort in a lighter gear at the end of each effort, in EF's words to 'better your ability to transfer torque into power.' Our file: 3 efforts (EF's text says 3–5) at 110% FTP and 55 rpm, inside EF's 106–120%. Scaled: shorter warm-up and cool-down than EF's 30 min each, for Zwift. Seated for the 5-minute blocks; the sprint is at free cadence.</description>
     <sportType>bike</sportType>
     <tags />

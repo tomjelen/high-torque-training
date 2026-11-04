@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   High Torque Training — Zwift workout
-  Last updated: 2026-11-03
+  Last updated: 2026-11-04
 
   Site:      https://high-torque.jelen.dk/
   Calendar:  https://high-torque.jelen.dk/content/workouts.md
@@ -11,7 +11,7 @@
 <workout_file>
     <author>Tom Jelen</author>
     <name>HT Torque Endurance 3x15</name>
-    <activitySaveName>High Torque: Torque Endurance 3×15 min 90% FTP @ 50–60 rpm</activitySaveName>
+    <activitySaveName>High Torque: Torque Endurance 3x15 min 90% FTP @ 50-60 rpm</activitySaveName>
     <description>Torque Endurance 3×15: three 15-minute intervals at 90% FTP and 50–60 rpm, with 15 minutes of easy spin between them. Seated throughout. Source: EVOQ / Brendan Housler, the later step of his ladder (EVOQ.BIKE blog, 2020): "Eventually move to 50-60rpm, and extend out to 3 x 15m. Aim for 90-105% FTP." The file holds 90%, the floor of Housler's 90–105% (our choice). 45 min of work is above CTS's ~40 min for advanced riders, and the 15-minute reps are longer than CTS's 5–10 min. Housler gives no recovery; resting as long as the rep is our choice, as John Wakefield and CTS (Jim Rutberg) use. The name "Torque Endurance" is the one used on the EVOQ podcast (auto-captions).</description>
     <sportType>bike</sportType>
     <tags />
