@@ -10,8 +10,8 @@ description: Use after changes to research/ or site/src/, and before a release, 
 ## Steps
 
 1. **Build.** `cd site && npm run build` (the prebuild copies `research/*.md` to `public/content/`, so the served markdown is current).
-2. **Serve.** `npx vite preview --port 4173 --strictPort` in the background (from `site/`).
-3. **View the pages** with the `playwright-cli` skill. For each of `/`, `/rationale` and `/about`, at desktop (`resize 1440 900`) and phone (`open --mobile`, or `resize 390 844`):
+2. **Serve.** `npx vite preview --port 4173 --strictPort` in the background (from `site/`). If the port is taken, pick another (e.g. 4180); don't kill a server you didn't start.
+3. **View the pages** with the `playwright-cli` skill. For each of `/`, `/rationale` and `/about`, at desktop (`open --browser=chromium`, then `resize 1440 900`) and phone (`open --mobile --browser=chromium`). Pass `--browser=chromium`: the CLI's default browser may not be installed.
    - `playwright-cli goto http://localhost:4173<path>`
    - `playwright-cli screenshot --full-page --filename=.playwright-cli/site-consistency/<page>-<width>.png` (at the repo root; `.playwright-cli/` is gitignored)
    - read the rendered text: `playwright-cli --raw eval "document.querySelector('main')?.innerText ?? document.body.innerText"`. Open collapsed panels (`<details>`, "show more", the install panel) before reading, so hidden text is checked too.
