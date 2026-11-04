@@ -19,21 +19,23 @@ import { findZwoFiles, WORKOUTS_DIR } from './zwo-files.mjs'
 // equal bar (the clamp handles the rest). The exact value is incidental.
 export const MAX_EFFORT_POWER = 1.45
 
-// Intensity zone from power (fraction of FTP): <0.60→1, 0.60–0.75→2,
-// 0.76–0.87→3, 0.88–0.95→4, 0.96–1.20→5, >1.20→6. Only used for
-// steady/sprint block fill colour, never for ramps.
-// Zone 5 is the legend's "VO2 / 110%" and runs up to 120% FTP — the top of
-// EF Pro Cycling's "VO2 max pace is 106% - 120% of FTP" (and of the common
-// Coggan-style VO2max level). The M2 contract had ≥1.06→6, which drew every
-// 110% VO2max block in the red the legend calls "Sprint / max" (review
-// 2026-09, item A8). Zone 6 is now reserved for FreeRide/MaxEffort sprints
-// (assigned directly below) and anything clearly supramaximal (>120% FTP).
+// Intensity zone from power (fraction of FTP), using Zwift's own power zones
+// (Zwift support pages; evidence file Z1): Z1 Recovery <60%, Z2 Endurance
+// 60–75%, Z3 Tempo 76–89%, Z4 Threshold 90–104%, Z5 VO2 Max 105–118%,
+// Z6 Anaerobic >118%. The chart colours match what the rider sees in Zwift.
+// Zwift's bands are whole percentages (75 then 76), so power is rounded to a
+// whole percent first (2 decimals of FTP): 75.5% counts as 76% → Z3 (our
+// choice), and float noise (e.g. 1.18 from arithmetic) can't push a block
+// across a boundary. Only used for
+// steady/sprint block fill colour, never for ramps; FreeRide/MaxEffort
+// sprints are assigned zone 6 directly below.
 export function zoneForPower(power) {
-  if (power < 0.6) return 1
-  if (power < 0.76) return 2
-  if (power < 0.88) return 3
-  if (power < 0.96) return 4
-  if (power <= 1.2) return 5
+  const p = Math.round(power * 100) / 100
+  if (p < 0.6) return 1
+  if (p < 0.76) return 2
+  if (p < 0.9) return 3
+  if (p < 1.05) return 4
+  if (p <= 1.18) return 5
   return 6
 }
 

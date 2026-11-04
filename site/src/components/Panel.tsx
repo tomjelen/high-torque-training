@@ -20,7 +20,7 @@ export default function Panel({ heading, teaser, headerAction, collapsed, onTogg
       onToggle={handleToggle}
       className="border border-slate-800 rounded bg-slate-900 mb-4 group"
     >
-      <summary className="flex items-center justify-between gap-4 px-5 py-4 cursor-pointer list-none select-none hover:bg-slate-800/50">
+      <summary className="flex items-center justify-between gap-4 px-4 sm:px-5 py-4 cursor-pointer list-none select-none hover:bg-slate-800/50">
         <div className="flex items-baseline gap-3 min-w-0">
           <h2 className="font-semibold text-slate-100 m-0 text-base">{heading}</h2>
           {teaser && collapsed && (
@@ -36,7 +36,7 @@ export default function Panel({ heading, teaser, headerAction, collapsed, onTogg
           <span className="text-slate-500 text-sm group-open:rotate-180 transition-transform inline-block">▾</span>
         </div>
       </summary>
-      <div className="px-5 pb-5 pt-1 border-t border-slate-800">
+      <div className="px-4 sm:px-5 pb-5 pt-1 border-t border-slate-800">
         {children}
       </div>
     </details>

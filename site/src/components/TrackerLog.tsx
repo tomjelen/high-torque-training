@@ -4,7 +4,10 @@ import TrackerLogEntry from './TrackerLogEntry'
 export interface AnnotatedEntry {
   id: string
   name: string
-  isHard: boolean
+  // Same or next day as the previous (older) session (see isTooClose): this
+  // session came too soon. `warning` is the visible text for it.
+  tooClose: boolean
+  warning: string | null
   dateLabel: string
   isoDate: string // YYYY-MM-DD
   gap: number
@@ -26,7 +29,7 @@ export default function TrackerLog({ entries, onDeleteEntry, onSetEntryDate }: P
   const hasMore = entries.length > INITIAL_SHOW
 
   return (
-    <section aria-label="Session tracker log">
+    <section aria-label="Session tracker log" className="md:col-span-2 lg:col-span-1">
       <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2 m-0">
         Recent entries
       </p>
@@ -34,7 +37,7 @@ export default function TrackerLog({ entries, onDeleteEntry, onSetEntryDate }: P
         <p className="text-slate-600 text-xs italic m-0">No sessions logged yet.</p>
       ) : (
         <>
-          <ul className="space-y-2 m-0 p-0 list-none">
+          <ul className="sm:space-y-2 m-0 p-0 list-none">
             {visible.map((entry) => (
               <TrackerLogEntry
                 key={entry.id}
@@ -48,7 +51,7 @@ export default function TrackerLog({ entries, onDeleteEntry, onSetEntryDate }: P
             <button
               type="button"
               onClick={() => setShowAll((v) => !v)}
-              className="mt-3 text-xs text-slate-500 hover:text-slate-300 cursor-pointer"
+              className="mt-3 min-h-11 sm:min-h-0 text-xs text-slate-400 hover:text-slate-200 cursor-pointer"
             >
               {showAll ? '↑ show fewer' : `view full log → (${entries.length})`}
             </button>

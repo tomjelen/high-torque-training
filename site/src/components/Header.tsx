@@ -21,7 +21,7 @@ export default function Header() {
           {others.map((n, i) => (
             <Fragment key={n.path}>
               {i > 0 && <span className="text-slate-600" aria-hidden="true">·</span>}
-              <Link to={n.path} className="text-slate-400 no-underline hover:text-slate-200">
+              <Link to={n.path} className="inline-block py-3 -my-3 px-1 -mx-1 text-slate-400 no-underline hover:text-slate-200">
                 {n.label}
               </Link>
             </Fragment>

@@ -25,9 +25,22 @@ export function formatGap(days: number, isFirst: boolean): string {
   return `+${days}d`
 }
 
+// Two sessions on the same or consecutive days. "Never on consecutive days"
+// rests on CTS (Rutberg, written): beginner and intermediate riders "should
+// separate MT workouts by at least a full day". Only meaningful between two
+// logged sessions; the newest entry's gap is measured to today instead.
+export function isTooClose(days: number): boolean {
+  return days <= 1
+}
+
+const FULL_DAY_HINT = 'Leave at least a full day between high-torque sessions.'
+
+// With isFirst=false and a 0/1-day gap this is also the visible warning on the
+// newer session of a too-close pair (SessionTracker).
 export function formatGapTitle(days: number, isFirst: boolean): string {
   if (isFirst && days === 0) return 'Today!'
-  if (!isFirst && days === 0) return 'Same day. Don\'t do HT sessions back-to-back!'
+  if (!isFirst && days === 0) return `Same day. ${FULL_DAY_HINT}`
+  if (!isFirst && days === 1) return `Consecutive days. ${FULL_DAY_HINT}`
   const d = `${days} day${days === 1 ? '' : 's'}`
   return isFirst ? `${d} since this session` : `${d} between this and the following session`
 }

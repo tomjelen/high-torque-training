@@ -1,19 +1,20 @@
+import { capMoveOnLogIds } from './utils/build-plan'
 import type { AppState, PanelState } from './types'
 
 const KEY = 'ht-state'
 
 export const DEFAULT_STATE: AppState = {
-  adaptation: {},
+  buildProgress: 0,
+  moveOnLogIds: [],
   panels: {
     intro: { collapsed: false },
     download: { collapsed: false },
-    adaptation: { collapsed: false },
+    build: { collapsed: false },
     collection: { collapsed: false },
     usageGuidelines: { collapsed: false },
     chartExplainer: { collapsed: false },
   },
   log: [],
-  adaptationCheckInConfirmed: false,
   workoutsDownloadedDate: null,
 }
 
@@ -29,7 +30,7 @@ export const PRERENDER_STATE: AppState = {
   panels: {
     intro: { collapsed: true },
     download: { collapsed: true },
-    adaptation: { collapsed: true },
+    build: { collapsed: true },
     collection: { collapsed: true },
     usageGuidelines: { collapsed: true },
     chartExplainer: { collapsed: true },
@@ -38,6 +39,16 @@ export const PRERENDER_STATE: AppState = {
 
 function loadPanel(parsed: AppState | null, name: keyof AppState['panels']): PanelState {
   return { collapsed: parsed?.panels?.[name]?.collapsed ?? false }
+}
+
+function validProgress(v: unknown): number {
+  return typeof v === 'number' && Number.isInteger(v) && v >= 0 && v <= 12 ? v : 0
+}
+
+// Missing or invalid → [] (old states: undo then only steps back a week).
+function validMoveOnIds(v: unknown, progress: number): string[] {
+  if (!Array.isArray(v) || !v.every((x) => typeof x === 'string')) return []
+  return capMoveOnLogIds(v, progress)
 }
 
 export function loadState(isMobile = false): AppState {
@@ -54,18 +65,19 @@ export function loadState(isMobile = false): AppState {
       }
     }
     const parsed = JSON.parse(raw) as AppState | null
+    const buildProgress = validProgress(parsed?.buildProgress)
     return {
-      adaptation: parsed?.adaptation ?? {},
+      buildProgress,
+      moveOnLogIds: validMoveOnIds(parsed?.moveOnLogIds, buildProgress),
       panels: {
         intro: loadPanel(parsed, 'intro'),
         download: loadPanel(parsed, 'download'),
-        adaptation: loadPanel(parsed, 'adaptation'),
+        build: loadPanel(parsed, 'build'),
         collection: loadPanel(parsed, 'collection'),
         usageGuidelines: loadPanel(parsed, 'usageGuidelines'),
         chartExplainer: loadPanel(parsed, 'chartExplainer'),
       },
       log: parsed?.log ?? [],
-      adaptationCheckInConfirmed: parsed?.adaptationCheckInConfirmed ?? false,
       workoutsDownloadedDate: parsed?.workoutsDownloadedDate ?? null,
     }
   } catch {

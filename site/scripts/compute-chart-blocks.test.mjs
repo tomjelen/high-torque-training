@@ -13,29 +13,10 @@ const wrap = (inner, name = 'Test Workout') => `<?xml version="1.0" encoding="UT
 </workout_file>`
 
 describe('zoneForPower', () => {
-  // <0.60→1, 0.60–0.75→2, 0.76–0.87→3, 0.88–0.95→4, 0.96–1.20→5, >1.20→6
-  // (zone-5/6 boundary moved from 1.06 to 1.20 so 110% VO2max blocks match
-  // the legend's "VO2 / 110%" — see compute-chart-blocks.mjs)
-  it.each([
-    [0.4, 1],
-    [0.59, 1],
-    [0.6, 2],
-    [0.75, 2],
-    [0.76, 3],
-    [0.87, 3],
-    [0.88, 4],
-    [0.9, 4],
-    [0.95, 4],
-    [0.96, 5],
-    [1.05, 5],
-    [1.06, 5],
-    [1.1, 5],
-    [1.2, 5],
-    [1.21, 6],
-    [1.45, 6],
-  ])('maps power %f to zone %i', (power, zone) => {
-    expect(zoneForPower(power)).toBe(zone)
-  })
+  // Zwift's power zones (evidence file Z1): Z1 <60%, Z2 60–75%, Z3 76–89%,
+  // Z4 90–104%, Z5 105–118%, Z6 >118% of FTP. The last two cases check the
+  // round-to-whole-percent step (75.5% → 76% → Z3; float noise stays Z5).
+  it.each([[0.59,1],[0.60,2],[0.75,2],[0.76,3],[0.89,3],[0.90,4],[1.04,4],[1.05,5],[1.18,5],[1.19,6],[1.20,6],[1.10,5],[1.45,6],[0.755,3],[1.1800000001,5]])('%f → zone %i', (p, z) => expect(zoneForPower(p)).toBe(z))
 })
 
 describe('blocksFromZwo — mapping rules', () => {
@@ -136,18 +117,18 @@ describe('getChartBlocksMap — real corpus invariants', () => {
     map = await getChartBlocksMap()
   })
 
-  const STAPLE = 'High Torque - Tier 2 Development/Staple_5x5_90pct.zwo'
-  const RUEGG = 'High Torque - Tier 3 Challenging/Ruegg_VO2max_Sprint.zwo'
+  const THRESHOLD = 'High Torque - Library/Threshold_5x5_95pct.zwo'
+  const RUEGG = 'High Torque - Library/Ruegg_VO2max_Sprint.zwo'
 
   it('keys workouts by .zwo path relative to the workouts dir (same as the TSS map)', () => {
-    expect(map[STAPLE]).toBeDefined()
-    expect(map[STAPLE].id).toBe(STAPLE)
-    expect(map[STAPLE].title).toBe('Staple 5x5')
+    expect(map[THRESHOLD]).toBeDefined()
+    expect(map[THRESHOLD].id).toBe(THRESHOLD)
+    expect(map[THRESHOLD].title).toBe('HT Threshold 5x5')
   })
 
-  it('preserves total session duration: Staple 5×5 sums to 4200 s (70 min)', () => {
-    const total = map[STAPLE].blocks.reduce((s, b) => s + b.dur, 0)
-    expect(total).toBe(4200)
+  it('preserves total session duration: Threshold 5×5 sums to 3600 s (60 min)', () => {
+    const total = map[THRESHOLD].blocks.reduce((s, b) => s + b.dur, 0)
+    expect(total).toBe(3600)
   })
 
   it("does not flag Rüegg's embedded FreeRide sprints (they must not split the set)", () => {

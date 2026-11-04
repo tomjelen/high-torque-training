@@ -2,8 +2,9 @@ import { useEffect, useState, type ReactNode } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import IntroPanel from './components/IntroPanel'
 import DownloadInstallPanel from './components/DownloadInstallPanel'
-import AdaptationPanel from './components/AdaptationPanel'
+import BuildPlanPanel from './components/BuildPlanPanel'
 import CollectionPanel from './components/CollectionPanel'
+import TrackerSection from './components/TrackerSection'
 import RationalePage from './components/RationalePage'
 import AboutPage from './components/AboutPage'
 import Header from './components/Header'
@@ -13,9 +14,9 @@ import useIsomorphicLayoutEffect from './lib/useIsomorphicLayoutEffect'
 import useGoatCounterPageviews from './lib/useGoatCounterPageviews'
 import type { AppState } from './types'
 
-export const HOME_LAST_UPDATED = '2026-09-26'
-export const RATIONALE_LAST_UPDATED = '2026-09-26'
-export const ABOUT_LAST_UPDATED = '2026-05-15'
+export const HOME_LAST_UPDATED = '2026-11-04'
+export const RATIONALE_LAST_UPDATED = '2026-11-04'
+export const ABOUT_LAST_UPDATED = '2026-11-04'
 export const ZWO_WORKOUTS_LAST_UPDATED = __ZWO_WORKOUTS_LAST_UPDATED__
 
 export const HOME_TITLE = 'High Torque Training — Free Training Plan for Zwift'
@@ -52,7 +53,8 @@ function HomePage({ state, setState }: { state: AppState; setState: React.Dispat
       <h1 className="text-2xl sm:text-3xl font-bold text-slate-100 mt-6 mb-6">Free training plan for Zwift</h1>
       <IntroPanel state={state} setState={setState} />
       <DownloadInstallPanel state={state} setState={setState} />
-      <AdaptationPanel state={state} setState={setState} />
+      <BuildPlanPanel state={state} setState={setState} />
+      <TrackerSection state={state} setState={setState} />
       <CollectionPanel state={state} setState={setState} />
     </PageShell>
   )

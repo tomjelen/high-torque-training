@@ -32,14 +32,15 @@ export interface ChartWorkout {
 }
 
 // Zone fill palette. Hardcoded by design (per the visualizations handoff) —
-// do not tokenize. Mirrors the ZONE mapping in the handoff's zone table.
+// do not tokenize. Zwift's own zone names and colours (Zwift support pages;
+// evidence file Z1), so the chart matches what the rider sees in Zwift.
 export const ZONE_FILL: Record<Zone, string> = {
-  1: '#7A7A7A', // recovery / inter-set
-  2: '#1AA5DB', // endurance / warmup ramp top
-  3: '#3FAE54', // tempo (reserved)
-  4: '#F4C430', // threshold
-  5: '#E68A2E', // VO2 / sweet-spot (reserved)
-  6: '#DC2626', // anaerobic / sprint
+  1: '#7A7A7A', // Z1 Recovery, grey (<60% FTP)
+  2: '#1AA5DB', // Z2 Endurance, blue (60–75%)
+  3: '#3FAE54', // Z3 Tempo, green (76–89%)
+  4: '#F4C430', // Z4 Threshold, yellow (90–104%)
+  5: '#E68A2E', // Z5 VO2 Max, orange (105–118%)
+  6: '#DC2626', // Z6 Anaerobic, red (>118%; also FreeRide/MaxEffort sprints)
 }
 
 // Fill for warmup/cooldown ramps. A ramp crosses several power zones, so it

@@ -1,6 +1,6 @@
 // WorkoutChart — renders one workout as a power profile with an amber
 // hatched rule marking where a cadence (high-torque) target is prescribed.
-// Ported from site-specification/Workout-visualizations/workout-chart.jsx.
+// Ported from the original design-handoff mockup (see documentation/decisions.md).
 // Absence of the amber rule means "nothing prescribed here", NOT "free
 // cadence" — see documentation/workout-chart.md for the load-bearing
 // requirements behind this and the clustering behaviour below.

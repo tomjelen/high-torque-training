@@ -16,79 +16,70 @@ export default function IntroPanel({ state, setState }: Props) {
   return (
     <Panel
       heading="Intro — what, why & who"
-      teaser="+8.7% VO2max at low cadence — one small trial, but the cleanest test we have"
+      teaser="A 12-week build, one torque session a week, then your choice. Every number traced to a source or labelled ours."
       collapsed={state.panels.intro.collapsed}
       onToggle={onToggle}
     >
-      <p className="text-slate-300 mb-0">
-        High-torque training is{' '}
-        <strong className="text-slate-100">low cadence at high power</strong>. In an 8-week
-        study,<sup className="text-slate-500">1</sup> cyclists doing their high-intensity
-        intervals at 50–70 rpm gained{' '}
-        <strong className="text-green-400">+8.7% VO2max</strong> and{' '}
-        <strong className="text-green-400">+8.1% max aerobic power</strong>, compared with +4.6%
-        and +3.0% for the same intervals at freely chosen cadence above 80 rpm. That's a single
-        small trial — the cleanest comparison the literature has, but not yet replicated.
-      </p>
+      {/* Prose is capped near 90 characters a line so it stays readable on wide screens. */}
+      <div className="max-w-3xl">
+        <p className="text-slate-300 mb-0">
+          High-torque training is{' '}
+          <strong className="text-slate-100">low cadence at meaningful power</strong>, seated. In an 8-week
+          study,<sup className="text-slate-500">1</sup> cyclists who rode their sprint and high-intensity
+          intervals at 50–70 rpm improved absolute VO2max by{' '}
+          <strong className="text-green-400">+8.7%</strong>, VO2max per kg by{' '}
+          <strong className="text-green-400">+8.8%</strong> and max aerobic power by{' '}
+          <strong className="text-green-400">+8.1%</strong>, all significant. The same intervals at free cadence
+          above 80 rpm gave +4.6% absolute VO2max (significant), but the +3.7% per kg and +3.0% max aerobic power
+          were not significant. That is one small study of young women.
+        </p>
 
-      <p className="text-slate-300 mt-3 mb-0">
-        <strong className="text-slate-100">Why low cadence specifically?</strong> Each pedal
-        stroke takes more force, so the same muscles work harder per revolution — pulling in
-        higher-threshold motor units that stay quieter at 90 rpm.<sup className="text-slate-500">2</sup>{' '}
-        More force per stroke also means more load on knees and tendons, and connective tissue
-        adapts slower than your aerobic system.<sup className="text-slate-500">3</sup> Hence the
-        adaptation phase below: three weeks at easy power and low cadence before any intensity
-        stacks on top.<sup className="text-slate-500">4</sup>
-      </p>
+        <p className="text-slate-300 mt-3 mb-0">
+          <strong className="text-slate-100">Why low cadence?</strong> At the same power, each pedal stroke has to
+          carry more force: 60 rpm is 1.5 times the force per stroke of 90 rpm (our arithmetic). More force per
+          stroke also means more load on the knees,<sup className="text-slate-500">2</sup> hence the four-week
+          Adaptation below, at a controlled, below-threshold effort, before the harder build sessions.
+        </p>
 
-      <p className="text-slate-300 mt-3 mb-0">
-        <strong className="text-slate-100">Who this is for.</strong> A cyclist doing 10–15
-        hours/week of mixed Zwift and outdoor training — fit, consistent, used to structured
-        intervals. Likes races on Zwift, but does not have an outdoor race season. Not a
-        beginner, but not a full-time athlete either.
-      </p>
-      <p className="text-slate-300 mt-3 mb-2">
-        <strong className="text-slate-100">Who this is not for.</strong>
-        <sup className="text-slate-500">5</sup> Skip low-cadence training entirely if any of
-        the following applies:
-      </p>
-      <ul className="text-slate-300 list-disc pl-6 mb-0 space-y-1">
-        <li>
-          Any history of knee overuse injury, patellar tendinopathy, or patellofemoral pain
-          syndrome (PFPS).
-        </li>
-        <li>You are coming off a rest period or injury.</li>
-        <li>
-          You already naturally grind at low cadences — the stimulus is reduced and the knee
-          stress is higher.
-        </li>
-      </ul>
-      <p className="text-slate-300 mt-3 mb-0">
-        Inspired by this {' '}
-        <a
-          href={SOURCES.roadman.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-blue-400 hover:text-blue-300"
-        >
-          Roadman Podcast
-        </a>
-        .
-      </p>
+        <p className="text-slate-300 mt-3 mb-0">
+          <strong className="text-slate-100">Who this is for.</strong> A cyclist doing ~10 hours/week of mixed
+          Zwift and outdoor training: fit, consistent, used to structured intervals. Not a beginner, but not a
+          full-time athlete either.
+        </p>
+        <p className="text-slate-300 mt-3 mb-0">
+          <strong className="text-slate-100">Who this is not for.</strong>
+          <sup className="text-slate-500">3</sup> Riders with a history of overuse injuries, particularly knee
+          pain. We read that as including patellar tendinopathy and patellofemoral pain (our reading; check with a
+          professional).
+        </p>
+        <p className="text-slate-300 mt-3 mb-0">
+          Inspired by this {' '}
+          <a
+            href={SOURCES.roadman.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-400 hover:text-blue-300"
+          >
+            Roadman Podcast
+          </a>
+          .
+        </p>
+      </div>
 
       <div className="border-t border-slate-800 mt-4 pt-3 text-sm text-slate-500">
-        <p className="mb-0">
-          <strong className="text-slate-300">How this site is structured:</strong> Start with the
-          adaptation phase below, then use the collection weekly. 1–2 sessions per week.
+        <p className="mb-0 max-w-3xl">
+          <strong className="text-slate-300">How this site is structured:</strong> a 12-week build, one torque
+          session a week (4 weeks of adaptation, then 8 weeks of build sessions). After that, maintain or keep
+          going with free choice from the library.
         </p>
-        <details className="mt-3 group">
-          <summary className="cursor-pointer list-none hover:text-slate-300 select-none">
+        <details className="mt-1 group">
+          <summary className="inline-flex items-center min-h-11 sm:min-h-0 sm:py-2 cursor-pointer list-none hover:text-slate-300 select-none">
             Caveats and sourcing ▸
           </summary>
-          <div className="mt-3 space-y-3 pl-3 border-l border-slate-800">
+          <div className="mt-2 max-w-3xl space-y-3 pl-3 border-l border-slate-800">
             <p className="m-0">
               <sup className="text-slate-500 mr-1">1</sup>
-              The 8-week study is Hebisz &amp; Hebisz (2024),{' '}
+              Hebisz &amp; Hebisz (2024),{' '}
               <a
                 href={SOURCES.hebisz2024.url}
                 target="_blank"
@@ -99,40 +90,22 @@ export default function IntroPanel({ state, setState }: Props) {
                 including cycling interval training at low cadence (50–70 rpm) than freely chosen
                 cadence (above 80 rpm),"
               </a>{' '}
-              PLOS ONE. n = 24 well-trained female cyclists aged 17–20. The directional result is the
-              strongest in its body of literature (Hansen &amp; Rønnestad 2017 systematic review
-              found no clear benefit for low-cadence training overall) — but it is one trial, and
-              has not been replicated.
+              PLoS ONE (full text read). 24 well-trained female cyclists aged 17–20 finished, 12 per group.
+              The often-quoted "+8.7% vs +4.6%" is absolute VO2max (litres per minute), not per kg. The
+              difference between the groups was significant for max aerobic power and VO2max per kg. The paper
+              reports no monitoring of knee pain or injuries, and every hard session was at low cadence, which is
+              not the same as adding one torque session a week. The other studies are thin and mixed; the
+              rationale page goes through them.
             </p>
             <p className="m-0">
               <sup className="text-slate-500 mr-1">2</sup>
-              Low-cadence HIIT delivers a <em>different</em> stimulus, not necessarily a strictly
-              superior one. The same prime movers — quads, glutes, hamstrings — are active at all
-              cadences, but at lower cadence each pedal stroke requires more force, which
-              preferentially recruits high-threshold (Type II) motor units (Ahlquist 1992 — indirect
-              evidence from muscle glycogen use in 8 men). I treat low-cadence HIIT as a high-value complement to standard
-              HIIT, not a strict upgrade.
+              At second-threshold power, 90 rpm gave a 29% smaller kneecap compressive force than 70 rpm in 12
+              competitive cyclists (Bini &amp; Hume 2013, abstract only); applying it to 50–60 rpm is our
+              extrapolation. The adaptation weeks are a labelled composite of coaches' advice for riders new to
+              torque work (Wakefield, Henderson, Schep); the four-week arrangement is ours.
             </p>
             <p className="m-0">
               <sup className="text-slate-500 mr-1">3</sup>
-              Joints don't really get "trained" — what adapts is patellar and quadriceps tendon
-              stiffness, the muscles around the knee, hip stabilizers, and the neuromuscular
-              control of a high-force pedal stroke. All of those adapt slower than VO2max. If you
-              have active knee pain or your bike fit isn't dialled, fix that first. The
-              adaptation phase won't rescue chronic patellar tendinopathy or a bad fit.
-            </p>
-            <p className="m-0">
-              <sup className="text-slate-500 mr-1">4</sup>
-              A note on sourcing: the Hebisz 2024 study itself doesn't include a graduated cadence
-              ramp — its participants were well-trained 17–20-year-old racers who went straight into
-              50–60 rpm intervals after three months of standardized base training. The 3-week
-              adaptation phase here is this site's own conservative on-ramp. It is loosely informed
-              by coaches' general advice to start torque work gradually, but it is not any named
-              coach's or study's protocol.
-            </p>
-            <p className="m-0">
-              <sup className="text-slate-500 mr-1">5</sup>
-              The knee-history and "natural grinder" items follow{' '}
               <a
                 href={SOURCES.evoq.url}
                 target="_blank"
@@ -141,13 +114,8 @@ export default function IntroPanel({ state, setState }: Props) {
               >
                 EVOQ.BIKE
               </a>{' '}
-              (Landry Bobo), who says riders with a history of overuse injuries, particularly knee
-              pain, should avoid low-cadence training. Naming patellar tendinopathy and PFPS is our
-              reading of that — check with a physio. "Coming off a rest period or injury" is this
-              site's own precaution: EVOQ actually uses a low-cadence session to get going{' '}
-              <em>after</em> a rest week, so this is a deliberately extra-cautious choice. The
-              reasoning for grinders (stimulus reduced, knee stress higher) is also ours; EVOQ's
-              reason is that they should train high cadence and their aerobic engine instead.
+              (Landry Bobo, written) says riders with a history of overuse injuries, particularly knee pain, should avoid
+              low-cadence training. Naming patellar tendinopathy and patellofemoral pain is our reading.
             </p>
             <p className="m-0 pt-1">
               <Link to="/rationale" className="text-blue-400 hover:text-blue-300">

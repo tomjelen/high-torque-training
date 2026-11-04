@@ -36,28 +36,28 @@ describe('cadence clustering on real .zwo data (req-4 sanity table)', () => {
     map = await getChartBlocksMap()
   })
 
-  it('Staple 5×5 → 5 marks (5-min rests too long to merge)', () => {
+  it('Threshold 5×5 → 5 marks (2:30 rests, ~28 px at 680 px, too long to merge)', () => {
     expect(
-      clusterCount(map['High Torque - Tier 2 Development/Staple_5x5_90pct.zwo'].blocks),
+      clusterCount(map['High Torque - Library/Threshold_5x5_95pct.zwo'].blocks),
     ).toBe(5)
   })
 
   it('SIT 2×(4×30 s) → 2 marks (intra-set rests merge, 25-min rest splits)', () => {
     expect(
-      clusterCount(map['High Torque - Tier 4 Advanced/SIT_2sets.zwo'].blocks),
+      clusterCount(map['High Torque - Library/SIT_2sets.zwo'].blocks),
     ).toBe(2)
   })
 
   it('SIT 3×(4×30 s) → 3 marks (intra-set rests merge, 25-min rests split)', () => {
     expect(
-      clusterCount(map['High Torque - Tier 4 Advanced/SIT_3sets.zwo'].blocks),
+      clusterCount(map['High Torque - Library/SIT_3sets.zwo'].blocks),
     ).toBe(3)
   })
 
   it('Rüegg 3×(5 min + sprint) → 3 marks (unflagged sprints do not split the set)', () => {
     expect(
       clusterCount(
-        map['High Torque - Tier 3 Challenging/Ruegg_VO2max_Sprint.zwo'].blocks,
+        map['High Torque - Library/Ruegg_VO2max_Sprint.zwo'].blocks,
       ),
     ).toBe(3)
   })

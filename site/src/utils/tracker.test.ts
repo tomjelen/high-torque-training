@@ -1,5 +1,5 @@
 import { describe, test, expect } from 'vitest'
-import { calcGap, formatGap, formatGapTitle } from './tracker'
+import { calcGap, formatGap, formatGapTitle, isTooClose } from './tracker'
 
 describe('calcGap', () => {
   // Most recent entry (nextIsoDate = null) — gap is days from entry to today
@@ -59,12 +59,24 @@ describe('formatGapTitle', () => {
     expect(formatGapTitle(5, true)).toBe('5 days since this session')
   })
   test('older entry on the same day as the next session → "Same day"', () => {
-    expect(formatGapTitle(0, false)).toBe('Same day. Don\'t do HT sessions back-to-back!')
+    expect(formatGapTitle(0, false)).toContain('Same day')
   })
-  test('older entry 1 day before the next session is singular', () => {
-    expect(formatGapTitle(1, false)).toBe('1 day between this and the following session')
+  test('older entry 1 day before the next session warns about consecutive days', () => {
+    expect(formatGapTitle(1, false)).toMatch(/consecutive days/i)
   })
   test('older entry several days before the next session is plural', () => {
     expect(formatGapTitle(7, false)).toBe('7 days between this and the following session')
+  })
+})
+
+describe('isTooClose', () => {
+  test('same day is too close', () => {
+    expect(isTooClose(0)).toBe(true)
+  })
+  test('consecutive days are too close', () => {
+    expect(isTooClose(1)).toBe(true)
+  })
+  test('a full day between sessions is fine', () => {
+    expect(isTooClose(2)).toBe(false)
   })
 })

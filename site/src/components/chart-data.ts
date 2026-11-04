@@ -13,7 +13,7 @@ import type { Workout } from '../types'
 const BLOCKS = __ZWO_WORKOUTS_BLOCKS__
 
 // The rider-facing cadence prescription (a range like "50–60 rpm"), read from
-// the workout's "Cadence" param. Shared with AdaptationCard so the lookup
+// the workout's "Cadence" param. Shared with BuildWeekCard so the lookup
 // isn't duplicated.
 export function cadenceLabelFor(workout: Workout): string | undefined {
   return workout.params.find((p) => p.label === 'Cadence')?.value

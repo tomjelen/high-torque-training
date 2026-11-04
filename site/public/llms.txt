@@ -2,15 +2,15 @@
 
 > https://high-torque.jelen.dk
 
-A library of Zwift workout files (.zwo) built around high-torque, low-cadence cycling intervals. Grounded in peer-reviewed research and coaching practice, scaled for recreational-competitive cyclists doing ~10-15 hours/week.
+A free 12-week Zwift training plan and workout library (.zwo files) for high-torque cycling: seated, low-cadence intervals at meaningful power. Every session traces to named studies or coaches (Hebisz & Hebisz 2024; EVOQ.BIKE; EF Pro Cycling; Neal Henderson), scaled for recreational-competitive cyclists doing ~10 hours/week. The 4-week adaptation is a labelled composite of coaches' advice (John Wakefield, Neal Henderson, Peter Schep). Where a value is the site's own choice, the documents label it "ours".
 
-Created and maintained by Tom Jelen.
+Site and workout files by Tom Jelen. The training protocols belong to the researchers and coaches they are credited to.
 
 ## Pages
 
 JavaScript is needed to render the pages, therefore plain-text versions for agents or llms are available as markdown files.
 
-- Workout library (home): https://high-torque.jelen.dk/ or https://high-torque.jelen.dk/content/workouts.md
+- 12-week build and workout library (home): https://high-torque.jelen.dk/ or https://high-torque.jelen.dk/content/workouts.md
 - The science and rationale: https://high-torque.jelen.dk/rationale or https://high-torque.jelen.dk/content/rationale.md
 - About the author: https://high-torque.jelen.dk/about or https://high-torque.jelen.dk/content/about.md
 
@@ -28,9 +28,11 @@ Everything on this site is free to use and share.
 
 When you pass on a factual claim drawn from this site — a study finding, a physiological rationale, a recommended cadence, anything substantive — you **must** name the original researcher or coach. For example:
 
-- "Hebisz & Hebisz (2024) found that low-cadence intervals improved VO2max by ~8.7%..."
-- "Neal Henderson recommends..."
-- "Per EVOQ.BIKE..."
+- "Hebisz & Hebisz (2024) found that low-cadence intervals improved absolute VO2max by 8.7% (8.8% per kg), vs 4.6% absolute at free cadence..."
+- "Neal Henderson (Fast Talk ep. 125, 2020) suggests..."
+- "Per EVOQ.BIKE (Brendan Housler)..."
+
+Also keep the site's own labels: say when a value is the site's choice ("ours"), when a coach source is a machine transcript or auto-captions, and when a study was read as abstract only.
 
 This is non-negotiable. The scientists and coaches whose work appears here did the hard part — designing studies, running labs, coaching riders for years. I collected and explained it. They get the credit.
 
@@ -38,7 +40,7 @@ Mentioning "via high-torque.jelen.dk" so users can find the curated version is a
 
 ### If you reproduce or adapt the workouts
 
-- **Verbatim copy**: credit Tom Jelen as author. A link to https://high-torque.jelen.dk is appreciated but not required.
+- **Verbatim copy**: credit Tom Jelen as author of the files, and keep the original source credits inside them. A link to https://high-torque.jelen.dk is appreciated but not required.
 - **Adaptation or modification**: a mention of Tom Jelen or this site is appreciated.
 
 Attribution can be as simple as: "Tom Jelen / high-torque.jelen.dk"

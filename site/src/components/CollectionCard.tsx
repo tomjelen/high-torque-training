@@ -1,9 +1,27 @@
-import TierBadge from './TierBadge'
 import Cite from './Cite'
 import WorkoutParams from './WorkoutParams'
 import WorkoutChart from './WorkoutChart'
 import { chartWorkoutFor, durationMinFor } from './chart-data'
-import type { Workout } from '../types'
+import { SOURCES } from '../data'
+import type { SourceCategory, Workout } from '../types'
+
+// Intensity groups as the research doc splits them: Torque Endurance and
+// Threshold at or below threshold; TorqueMax, Rüegg, HIIT and SIT above it.
+// SIT stays inside "above threshold" so the "mix" hint and the labels agree.
+const KIND_LABELS: Record<Workout['kind'], string> = {
+  moderate: 'At or below threshold',
+  'above-threshold': 'Above threshold',
+  maximal: 'Above threshold (maximal sprints)',
+}
+
+// The category describes the source, not the people: Rüegg is a rider whose
+// session EF published, so it sits on the source line, not the people line.
+const CATEGORY_LABELS: Record<SourceCategory, string> = {
+  research: 'Research',
+  'pro-team': 'Elite / pro-team',
+  'coaching-business': 'Coaching business',
+  media: 'Media',
+}
 
 interface Props {
   workout: Workout
@@ -11,19 +29,18 @@ interface Props {
 }
 
 export default function CollectionCard({ workout, onDidThis }: Props) {
-  const tier = workout.tier!
   const chart = chartWorkoutFor(workout)
+  const category = SOURCES[workout.source]?.category
 
   return (
     <article className="relative flex flex-col rounded border border-slate-700 bg-slate-800 p-4">
-      <TierBadge tier={tier} className="absolute top-3 right-3" />
-
       <h3
-        className="text-sm font-semibold text-slate-100 truncate m-0 mb-3 pr-10"
+        className="text-sm font-semibold text-slate-100 truncate m-0 mb-1"
         title={workout.name}
       >
         {workout.name}
       </h3>
+      <p className="text-xs text-slate-400 m-0 mb-3">{KIND_LABELS[workout.kind]}</p>
 
       <WorkoutParams params={workout.params} durationMin={durationMinFor(workout)} tss={workout.tss} />
 
@@ -38,15 +55,25 @@ export default function CollectionCard({ workout, onDidThis }: Props) {
         </div>
       )}
 
-      <div className="border-t border-slate-700 pt-3 flex items-center justify-between gap-2">
-        <small className="text-slate-500 text-xs">
-          <Cite sourceKey={workout.source} note={workout.sourceNote} />
-        </small>
+      <p className="text-xs text-slate-400 m-0 mb-1">{workout.people.join(', ')}</p>
+      <p className="text-xs text-slate-400 m-0 mb-3">
+        Source:
+        <Cite sourceKey={workout.source} note={workout.sourceNote} />
+        {/* The separator stays with the citation; the line may break only after it. */}
+        {category && (
+          <>
+            <span className="whitespace-nowrap">{'\u00a0·'}</span>{' '}
+            <span className="whitespace-nowrap">{CATEGORY_LABELS[category]}</span>
+          </>
+        )}
+      </p>
+
+      <div className="border-t border-slate-700 pt-3 flex items-center justify-end gap-2">
         <div className="flex items-center gap-2">
           <a
             href={`/workouts/${workout.file}`}
             download
-            className="text-sm sm:text-xs text-slate-500 hover:text-slate-300 no-underline px-2 py-1 sm:p-0"
+            className="inline-flex items-center justify-center min-w-11 min-h-11 sm:min-w-8 sm:min-h-8 text-base text-slate-400 hover:text-slate-200 no-underline rounded"
             title="Download .zwo"
           >
             ⤓
@@ -54,7 +81,7 @@ export default function CollectionCard({ workout, onDidThis }: Props) {
           <button
             type="button"
             onClick={onDidThis}
-            className="text-xs font-mono text-slate-400 hover:text-slate-200 border border-slate-700 hover:border-slate-500 px-3 py-1.5 sm:px-2 sm:py-0.5 rounded cursor-pointer"
+            className="text-xs font-mono text-slate-400 hover:text-slate-200 border border-slate-700 hover:border-slate-500 min-h-11 px-4 sm:min-h-0 sm:px-2 sm:py-1 rounded cursor-pointer"
           >
             ✓ today
           </button>

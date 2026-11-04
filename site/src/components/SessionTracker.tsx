@@ -1,11 +1,12 @@
 import { useMemo } from 'react'
-import { COLLECTION_WORKOUTS } from '../data'
-import { calcGap, todayLocalIso } from '../utils/tracker'
+import { workoutById } from '../data'
+import { calcGap, formatGapTitle, isTooClose, todayLocalIso } from '../utils/tracker'
 import TrackerCounter from './TrackerCounter'
 import TrackerStrip from './TrackerStrip'
 import TrackerLog from './TrackerLog'
 import PrivacyPopover from './PrivacyPopover'
 import type { AnnotatedEntry } from './TrackerLog'
+import type { DayKind } from './TrackerStrip'
 import type { AppState } from '../types'
 
 interface Props {
@@ -14,71 +15,96 @@ interface Props {
   onSetEntryDate: (id: string, isoDate: string) => void
 }
 
-// Module-level: COLLECTION_WORKOUTS is a static constant, no need to recompute per mount
-const WORKOUT_META = new Map<string, { tier: number; name: string }>(
-  COLLECTION_WORKOUTS.map((w) => [w.id, { tier: w.tier ?? 0, name: w.name }]),
-)
+// Unknown ids (retired ids still in an old browser's localStorage) fall back
+// to the raw id so old log entries still render. They still count as rides.
+function workoutName(workoutId: string): string {
+  return workoutById(workoutId)?.name ?? workoutId
+}
 
-function isHardWorkout(workoutId: string): boolean {
-  return (WORKOUT_META.get(workoutId)?.tier ?? 0) >= 3
+function dayOf(timestamp: string): string {
+  return timestamp.slice(0, 10)
 }
 
 function formatDateLabel(isoTimestamp: string): string {
-  const [y, m, d] = isoTimestamp.slice(0, 10).split('-').map(Number)
+  const [y, m, d] = dayOf(isoTimestamp).split('-').map(Number)
   return new Date(y, m - 1, d).toLocaleDateString(undefined, { month: 'short', day: 'numeric' })
 }
 
 export default function SessionTracker({ state, onDeleteEntry, onSetEntryDate }: Props) {
+  // Newest first. Entries on the same date keep log order reversed: the log
+  // is append-only, so a later index is a later click.
   const sortedLog = useMemo(
-    () => [...state.log].sort((a, b) => b.timestamp.localeCompare(a.timestamp)),
+    () =>
+      state.log
+        .map((entry, idx) => ({ entry, idx }))
+        .sort((a, b) => dayOf(b.entry.timestamp).localeCompare(dayOf(a.entry.timestamp)) || b.idx - a.idx)
+        .map(({ entry }) => entry),
     [state.log],
   )
 
   const todayIso = todayLocalIso()
 
-  const daysSinceLastHard = useMemo(() => {
-    const lastHard = sortedLog.find((e) => isHardWorkout(e.workoutId))
-    if (!lastHard) return null
-    return calcGap(lastHard.timestamp, null, todayIso)
+  // Any session counts, build or library.
+  const daysSinceLast = useMemo(() => {
+    const last = sortedLog[0]
+    return last ? calcGap(last.timestamp, null, todayIso) : null
   }, [sortedLog, todayIso])
 
+  // One colour for a session day; the warning colour when the day holds two
+  // sessions or sits next to another session day (not on consecutive days).
   const dayMap = useMemo(() => {
-    const map = new Map<string, 'hard' | 'easy'>()
-    for (const entry of sortedLog) {
-      const day = entry.timestamp.slice(0, 10)
-      const hard = isHardWorkout(entry.workoutId)
-      if (!map.has(day) || hard) map.set(day, hard ? 'hard' : 'easy')
+    const days = [...new Set(sortedLog.map((e) => dayOf(e.timestamp)))]
+    const map = new Map<string, DayKind>()
+    for (const day of days) {
+      const count = sortedLog.filter((e) => dayOf(e.timestamp) === day).length
+      map.set(day, count > 1 ? 'too-close' : 'session')
+    }
+    for (let i = 1; i < days.length; i++) {
+      if (isTooClose(calcGap(days[i], days[i - 1], todayIso))) {
+        map.set(days[i], 'too-close')
+        map.set(days[i - 1], 'too-close')
+      }
     }
     return map
-  }, [sortedLog])
+  }, [sortedLog, todayIso])
 
   const annotatedEntries = useMemo((): AnnotatedEntry[] => {
     return sortedLog.map((entry, i) => {
       const nextEntry = i === 0 ? null : sortedLog[i - 1]
       const gap = calcGap(entry.timestamp, nextEntry?.timestamp ?? null, todayIso)
+      const isFirst = i === 0
+      // The warning sits on the newer session of a too-close pair: that is the
+      // one that came too soon. Its gap is measured back to the previous session.
+      const olderEntry = sortedLog[i + 1]
+      const gapToOlder = olderEntry ? calcGap(olderEntry.timestamp, entry.timestamp, todayIso) : null
+      const tooClose = gapToOlder !== null && isTooClose(gapToOlder)
       return {
         id: entry.id,
-        name: WORKOUT_META.get(entry.workoutId)?.name ?? entry.workoutId,
-        isHard: isHardWorkout(entry.workoutId),
+        name: workoutName(entry.workoutId),
+        tooClose,
+        warning: tooClose ? formatGapTitle(gapToOlder, false) : null,
         dateLabel: formatDateLabel(entry.timestamp),
-        isoDate: entry.timestamp.slice(0, 10),
+        isoDate: dayOf(entry.timestamp),
         gap,
-        isFirst: i === 0,
+        isFirst,
       }
     })
   }, [sortedLog, todayIso])
 
+  // Same frame as the neighbouring panels (Panel.tsx), but always open. On
+  // tablets the counter and the 30-day strip share a row with the log below;
+  // on wide screens all three sit side by side.
   return (
-    <div className="bg-slate-900/50 border border-slate-800 rounded-lg p-4">
-      <div className="flex items-center justify-between mb-3">
-        <h2 className="text-xs font-semibold text-slate-400 uppercase tracking-wider m-0">
-          Session Tracker
-        </h2>
+    <div className="border border-slate-800 rounded bg-slate-900 mb-4">
+      <div className="flex items-center justify-between gap-4 px-4 sm:px-5 py-4">
+        <h2 className="font-semibold text-slate-100 m-0 text-base">Session Tracker</h2>
         <PrivacyPopover />
       </div>
-      <TrackerCounter daysSince={daysSinceLastHard} />
-      <TrackerStrip dayMap={dayMap} />
-      <TrackerLog entries={annotatedEntries} onDeleteEntry={onDeleteEntry} onSetEntryDate={onSetEntryDate} />
+      <div className="px-4 sm:px-5 pb-5 pt-4 border-t border-slate-800 md:grid md:grid-cols-[200px_minmax(0,1fr)] md:gap-x-6 md:gap-y-5 md:items-start lg:grid-cols-[220px_minmax(0,1fr)_minmax(0,1fr)]">
+        <TrackerCounter daysSince={daysSinceLast} />
+        <TrackerStrip dayMap={dayMap} />
+        <TrackerLog entries={annotatedEntries} onDeleteEntry={onDeleteEntry} onSetEntryDate={onSetEntryDate} />
+      </div>
     </div>
   )
 }

@@ -8,9 +8,11 @@ export default function SourcesList() {
         {Object.values(SOURCES).map((s) => (
           <li key={s.key} className="leading-relaxed">
             <strong className="text-slate-300">{s.shortName}</strong> — {s.fullCitation}{' '}
-            <a href={s.url} target="_blank" rel="noopener noreferrer" className="break-all text-slate-500 hover:text-slate-300">
-              {s.url}
-            </a>
+            {s.url && (
+              <a href={s.url} target="_blank" rel="noopener noreferrer" className="break-all text-slate-500 hover:text-slate-300">
+                {s.url}
+              </a>
+            )}
           </li>
         ))}
       </ol>

@@ -69,7 +69,8 @@ Any reimplementation must keep all of these true. They are stated in terms of
 
    | Workout | Expected high-torque regions |
    |---|---|
-   | Staple 5×5 (3-min rests) | **5** separate marks (rests too long to merge) |
+   | Threshold 5×5 (2:30 rests) | **5** separate marks (rests too long to merge) |
+   | SIT 2×(4×30 s) | **2** marks (one per set; intra-set rests merge, the 25-min break splits) |
    | SIT 3×(4×30 s) | **3** marks (one per set; intra-set rests merge) |
    | Rüegg 3×(5 min @110% + 1 min sprint) | **3** marks (the embedded sprints carry no cadence flag, so they don't split the set) |
 
@@ -98,7 +99,7 @@ Any reimplementation must keep all of these true. They are stated in terms of
    (it must then carry enough labelling — title, a key for the marks — to be
    understood alone). The labelling in the standalone case may be provided by
    the *host context* (e.g. `ChartLegend showZones` placed below the SVG by
-   `AdaptationPanel`) rather than baked into the SVG itself — what matters is
+   `BuildPlanPanel`) rather than baked into the SVG itself — what matters is
    that the page view as a whole is self-explanatory, not that the SVG is
    self-contained. The exact contents of each mode are negotiable; the
    no-duplication-when-embedded and self-explanatory-when-standalone properties
@@ -220,6 +221,30 @@ Two consequences worth stating so a later change doesn't undo them:
   need. Until then, read geometry from the `.zwo`, the flag from its
   `Cadence`-presence, and the label from `data.ts`.
 
+
+### Intensity zones
+
+Steady blocks are coloured by `zoneForPower` in `compute-chart-blocks.mjs`,
+using Zwift's own power zones, names and colours (Zwift support, "Using the
+Heads Up Display when Cycling" and "Zwift Fitness Tracking"; evidence file
+Z1), so the chart matches what the rider sees in Zwift. Colours live in
+`ZONE_FILL` in `chart-model.ts`; labels in `ChartLegend.tsx`.
+
+| Zone | Zwift name | Colour | % FTP | `zoneForPower` rule |
+|---|---|---|---|---|
+| 1 | Recovery | grey | below 60 | `< 0.60` |
+| 2 | Endurance | blue | 60–75 | `< 0.76` |
+| 3 | Tempo | green | 76–89 | `< 0.90` |
+| 4 | Threshold | yellow | 90–104 | `< 1.05` |
+| 5 | VO2 Max | orange | 105–118 | `<= 1.18` |
+| 6 | Anaerobic | red | above 118 | otherwise |
+
+Power is rounded to a whole percent (2 decimals of FTP) before the lookup, so
+float noise can't move a block across a boundary and a fractional value such as
+75.5% counts as 76% (Z3); that rounding is our choice, since Zwift's bands are
+whole percentages. `FreeRide`/`MaxEffort` sprints are zone 6 directly. In this
+library: 80% = green, 90–95% = yellow, 110% = orange, ~120% = red.
+
 ## Integration surface — where the chart lives in the app
 
 The component is consumed in three places. None of them is incidental; if you
@@ -228,24 +253,24 @@ the data-join contract below.
 
 **On every workout card (minimal mode):**
 
-- `site/src/components/CollectionCard.tsx` (the tier 1–4 library cards)
-- `site/src/components/AdaptationCard.tsx` (the W1–W3 onboarding cards)
+- `site/src/components/CollectionCard.tsx` (the library cards)
+- `site/src/components/BuildWeekCard.tsx` (the current week's card in the 12-week build panel)
 
 Both pass `mode="minimal"` and `showAxisLabels={false}`. Minimal mode suppresses
 the chart's title and axis labels because the surrounding card already shows
 the workout name, the intensity prescription, and the cadence label — repeating
 them in the SVG would violate req. 7 (no-duplication-when-embedded).
 
-**One full-mode "how to read" example in the Adaptation panel:**
+**One full-mode "how to read" example in the build-plan panel:**
 
-`site/src/components/AdaptationPanel.tsx` renders a collapsible "What is the
-high-torque block?" block containing a full-mode chart of the Staple 5×5
-workout. It is collapsed by default on return visits (persisted as
-`panels.chartExplainer` in app state) and expanded for new users. The choice
-is hardcoded by site id (`t2-staple`); `chart-data.test.ts` guards that id so
-a rename fails the build instead of silently dropping the example. The
-Collection panel no longer contains an explainer block — it shows only the
-`ChartLegend` strip.
+`site/src/components/BuildPlanPanel.tsx` renders a collapsible "What is the
+high-torque block?" block containing a full-mode chart of the Torque Endurance
+4×8 workout (four clearly separate marks). It is collapsed by default on return
+visits (persisted as `panels.chartExplainer` in app state) and expanded for new
+users. The choice is hardcoded by site id (`te-4x8`); `chart-data.test.ts`
+guards that id so a rename fails the build instead of silently dropping the
+example. The library panel (`CollectionPanel`) contains no explainer block — it
+shows only the `ChartLegend` strip.
 
 **One chart key per section:**
 
@@ -253,15 +278,15 @@ Collection panel no longer contains an explainer block — it shows only the
 controlled by a `showZones` prop (default `false`):
 
 - **Compact (`showZones=false`):** amber swatch + "High-torque block — where
-  you drop to the low-cadence target." Used in the Collection panel above the
+  you drop to the low-cadence target." Used in the library panel above the
   workout grid.
 - **Expanded (`showZones=true`):** amber swatch + pipe separator + all six
-  power-zone swatches (Rest, Endurance, Tempo, Threshold, VO2 / 110%, Sprint /
-  max) on a single line. Used inside the Adaptation panel's collapsible
+  power-zone swatches (Zwift's names: Recovery, Endurance, Tempo, Threshold,
+  VO2 Max, Anaerobic) on a single line. Used inside the build-plan panel's collapsible
   explainer block, directly below the example chart.
 
-The Adaptation panel no longer renders a standalone `ChartLegend` strip above
-its workout cards — the only legend there is the expanded one inside the
+The build-plan panel renders no standalone `ChartLegend` strip above
+its week card — the only legend there is the expanded one inside the
 explainer.
 
 The cadence swatch is its own component, `CadenceHatchSwatch.tsx`, so any
@@ -272,7 +297,7 @@ live in `chart-model.ts` alongside the zone palette and are imported by both
 and are deliberately not tokenised (req. 10).
 
 `WorkoutChart` no longer renders its own internal SVG legend row. The
-full-mode chart relies on the host context (`AdaptationPanel`) to supply the
+full-mode chart relies on the host context (`BuildPlanPanel`) to supply the
 key via `<ChartLegend showZones />` placed below the SVG.
 
 ### The data join — `chart-data.ts`
@@ -286,15 +311,15 @@ key via `<ChartLegend showZones />` placed below the SVG.
   attaches the `cadenceLabel` from `data.ts`'s "Cadence" param. Returns
   `undefined` if the join misses (host card then renders no chart, not a
   crash).
-- `cadenceLabelFor(workout)` is shared with `AdaptationCard.tsx` so the
-  "Cadence" param lookup isn't duplicated.
+- `cadenceLabelFor(workout)` is the single "Cadence" param lookup, used by
+  `chartWorkoutFor` and the contract test, so it isn't duplicated.
 
 `chart-data.test.ts` is the join contract test and the regression surface for
 the three-layer read: every `Workout.file` resolves, every parsed `.zwo` is
 referenced (no orphan `.zwo` shipped to Zwift but invisible on the site),
 `title` and `cadenceLabel` come from `data.ts` (not the `.zwo`), no `.zwo`
 point cadence value leaks into a block, the cadence flag and label agree in
-*both* directions, and the hardcoded `t2-staple` how-to id exists. A `.zwo`
+*both* directions, and the hardcoded `te-4x8` how-to id exists. A `.zwo`
 edit that drifts from `data.ts` (or vice versa) fails this test.
 
 ### Sizing and SSR

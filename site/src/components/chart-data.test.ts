@@ -4,13 +4,10 @@
 // lock the join — and the three-layer read (geometry from .zwo, label from
 // data.ts) — so drift fails the build instead of shipping silently.
 import { describe, it, expect, beforeAll } from 'vitest'
-import { COLLECTION_WORKOUTS, ADAPTATION_WORKOUTS } from '../data'
+import { ALL_WORKOUTS, BUILD_WEEKS, workoutById } from '../data'
 import { chartWorkoutFor, cadenceLabelFor, durationMinFor } from './chart-data'
 import { getChartBlocksMap } from '../../scripts/compute-chart-blocks.mjs'
-import type { Workout } from '../types'
 import type { ChartWorkout } from './chart-model'
-
-const ALL_WORKOUTS: Workout[] = [...COLLECTION_WORKOUTS, ...ADAPTATION_WORKOUTS]
 
 describe('chart data join (Workout.file → parsed .zwo blocks)', () => {
   // The parsed .zwo map keyed by path — the *independent* source the join
@@ -45,7 +42,7 @@ describe('chart data join (Workout.file → parsed .zwo blocks)', () => {
     }
     // Teeth: the override is load-bearing only if the .zwo <name> actually
     // differs from the site name for at least one workout. It does — the .zwo
-    // uses ASCII "x" (Staple 5x5) where data.ts uses "×" (Staple 5×5).
+    // uses "HT Threshold 5x5" where data.ts uses "Threshold 5×5".
     const overrideMatters = ALL_WORKOUTS.some(
       (w) => parsed[w.file] && parsed[w.file].title !== w.name,
     )
@@ -78,18 +75,18 @@ describe('chart data join (Workout.file → parsed .zwo blocks)', () => {
       const totalSec = parsed[w.file].blocks.reduce((s, b) => s + b.dur, 0)
       expect(min).toBe(Math.round(totalSec / 60 / 5) * 5)
     }
-    // Teeth: a concrete known value. Staple 5×5 = 15 min warmup + 5×5 min work
-    // + 4×5 min recovery + 10 min cooldown = 4200s = exactly 70 min.
-    const staple = COLLECTION_WORKOUTS.find((w) => w.id === 't2-staple')!
-    expect(durationMinFor(staple)).toBe(70)
+    // Teeth: a concrete known value. Threshold 5×5 = 15 min warmup + 5×5 min work
+    // + 4×2.5 min recovery + 10 min cooldown = 3600s = exactly 60 min.
+    const threshold = ALL_WORKOUTS.find((w) => w.id === 'threshold-5x5')!
+    expect(durationMinFor(threshold)).toBe(60)
   })
 
-  it('the Collection how-to example workout id (t2-staple) still exists', () => {
-    // CollectionPanel hardcodes this id for the "how to read the chart"
+  it('the how-to example workout id (te-4x8) still exists', () => {
+    // BuildPlanPanel hardcodes this id for the "how to read the chart"
     // example; a rename would silently drop the example chart. Guard it here.
     expect(
-      COLLECTION_WORKOUTS.find((w) => w.id === 't2-staple'),
-      'CollectionPanel HOW_TO_CHART id t2-staple not found in data.ts',
+      ALL_WORKOUTS.find((w) => w.id === 'te-4x8'),
+      'BuildPlanPanel HOW_TO_CHART id te-4x8 not found in data.ts',
     ).toBeDefined()
   })
 
@@ -108,5 +105,17 @@ describe('chart data join (Workout.file → parsed .zwo blocks)', () => {
         expect(hasLabel, `${w.id} has a high-torque mark but no cadence label`).toBe(true)
       }
     }
+  })
+
+  it('every BUILD_WEEKS id resolves; retired ids resolve to undefined', () => {
+    expect(BUILD_WEEKS.map((b) => b.week)).toEqual([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12])
+    for (const b of BUILD_WEEKS) {
+      for (const id of b.workoutIds) {
+        expect(workoutById(id), `week ${b.week}: unknown id ${id}`).toBeDefined()
+      }
+    }
+    // Old localStorage may still hold retired ids; lookups must not throw.
+    expect(workoutById('t1-entry')).toBeUndefined()
+    expect(workoutById('w1')).toBeUndefined()
   })
 })

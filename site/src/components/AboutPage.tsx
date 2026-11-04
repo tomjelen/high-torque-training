@@ -1,6 +1,6 @@
 export default function AboutPage() {
   return (
-    <article>
+    <article className="max-w-3xl">
       <div className="mb-6">
         <h1 className="text-3xl font-bold text-slate-100 mt-6 mb-1">About</h1>
         <p className="text-slate-400 text-sm m-0">Who built this site, and why.</p>
@@ -23,9 +23,8 @@ export default function AboutPage() {
           I'm also a cyclist — based in Barcelona, where outdoor riding is year-round, and racing
           A/B category on <a href="https://www.strava.com/athletes/8943272">Zwift</a> through the
           winter indoor season. The outdoor events I sign up for tend to be long and climbing-heavy:
-          Mallorca 312, La Purito. I train about 10-15 hours a week, give or take. I'm not a coach, and
-          this site doesn't pretend to be coaching. But every workout in the library is one I've
-          done myself or am currently doing, and the rationale you read here is the same one
+          Mallorca 312, La Purito. I train about 10 hours a week, give or take. I'm not a coach, and
+          this site doesn't pretend to be coaching. But the rationale you read here is the same one
           structuring my own training. The site is, in honest terms, a research notebook that
           happens to be useful as a workout library.
         </p>
