@@ -167,7 +167,7 @@ This is the main practical concern.
 3. **If your knees ache during an interval, stop the interval.** Don't push through (Henderson: "if it hurts, stop doing it").
 4. **Knee pain after a session → repeat last week's session** instead of moving on. If it keeps coming back, stop torque work and see a professional (ours).
 5. **Not below 50 rpm.** No session in the library goes below 50 (ours). Henderson suggests riders with limitations go nearer 70 rpm.
-6. **Not on consecutive days** (see "After the build").
+6. **Not on consecutive days** (ours, anchored on CTS/Rutberg: beginner and intermediate riders separate muscle-tension workouts by at least a full day). See "After the build".
 
 ---
 

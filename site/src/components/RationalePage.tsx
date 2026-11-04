@@ -461,7 +461,7 @@ function renderBody(id: string) {
               riders with limitations go nearer 70 rpm.
             </li>
             <li>
-              <strong>Not on consecutive days</strong> (see "After the build").
+              <strong>Not on consecutive days</strong> (ours, anchored on CTS/Rutberg: beginner and intermediate riders separate muscle-tension workouts by at least a full day). See "After the build".
             </li>
           </ol>
         </>
