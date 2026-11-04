@@ -10,8 +10,8 @@ Done 2026-07-18: `zwo-format` extracted to public repo `tomjelen/zwift-workout-s
 `/plugin install zwift-workout-skills@zwift-workout-skills`, and verified loading.
 Local copy deleted; project skill renamed `zwo` → `high-torque-zwo`; root and
 `workouts/` CLAUDE.md updated (all left unstaged for Tom). Spec:
-`docs/superpowers/specs/2026-07-06-zwo-skill-extraction-design.md`. Plan:
-`docs/superpowers/plans/2026-07-07-zwo-skill-extraction.md`.
+`explorations/2026-07-zwo-skill-extraction/2026-07-06-zwo-skill-extraction-design.md` (gitignored; moved there 2026-11-04). Plan:
+`explorations/2026-07-zwo-skill-extraction/2026-07-07-zwo-skill-extraction.md` (gitignored; moved there 2026-11-04).
 
 Standing rules:
 - **Format-knowledge changes** are edited in `~/code/jelen/zwift-workout-skills`, Tom pushes, then `/plugin update zwift-workout-skills` here. Never recreate a local zwo-format skill. Bump `version` in plugin.json per its CONTRIBUTING (patch=fix, minor=new claim).

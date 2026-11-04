@@ -2,7 +2,7 @@
 
 This is the web site for the high torque training sessions.
 
-Specs, plans and a todo list for this site can be found in ../site-specification.
+Design decisions for this site that are still in force (and which old ones were superseded) are recorded in `../documentation/decisions.md`. Details of specific subsystems live next to it in `../documentation/` (prerendering, the workout chart, agent interfacing).
 
 ## Node version
 

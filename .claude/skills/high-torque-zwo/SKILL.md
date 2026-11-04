@@ -39,8 +39,12 @@ Constraints:
 
 ## Naming
 
-- `<name>` — prefix with `HT`. Example: `HT Torque Entry 80%`.
-- `<activitySaveName>` — format: `High Torque Tier N: Name - XxYmin Z% FTP R rpm`. Use **source prescription ranges**, not ZWO-fixed values.
+- `<name>` — prefix with `HT`. Example: `HT Threshold 5x5`.
+- `<activitySaveName>` — shape: `High Torque: <Name> <reps×duration> <%FTP range> @ <cadence range> rpm`. Examples from the files: `High Torque: Threshold 5×5 min ~95% FTP @ 50–60 rpm`, `High Torque: Adaptation weeks 1–2 - 4×4 min 80% FTP @ 60–65 rpm`. Use **source prescription ranges**, not ZWO-fixed values. There are no tiers: never put "Tier N" in a name. (The current files are not fully uniform: some use `x` and `-`, others `×` and `–`, and some put ` - ` after the name. Follow the shape above for new files; don't churn existing files just for this.)
+
+## Folders
+
+Two folders only: `workouts/High Torque - Adaptation/` (build weeks 1–4, 2 files) and `workouts/High Torque - Library/` (build weeks 5–12 and the free-choice library, 10 files). A new or moved file must also update the `file:` path in `site/src/data.ts`.
 
 ## Display text: always show source prescriptions
 
@@ -74,6 +78,19 @@ High Torque interval sessions are built from repeated `<SteadyState>` blocks rat
 
 When emulating this way, write **N work blocks and N−1 recovery blocks** — recovery sits *between* intervals only. After the final work block, go **straight to the `Cooldown`**. Do not append a trailing recovery block: it has no interval to bridge to, it just duplicates the cooldown, and it inflates the workout duration. (A faithful copy of `IntervalsT`'s on/off pairing produces exactly this orphan — that's the trap to avoid.)
 
+## Power conventions for rest blocks
+
+These values are what the files use today. Keep them consistent, and keep the text events honest about where each number comes from.
+
+| Block | Power | Where | How the text events describe it |
+|---|---|---|---|
+| Recovery between work reps | `0.50` | Adaptation, Torque Endurance, Threshold, TorqueMax, Rüegg | "Easy spin" (e.g. "Recovery: 8 minutes, as long as the rep. Easy spin at any cadence."). The 0.50 is ours: never credit it to a source. |
+| Gap after each opener | `0.55` | TorqueMax, HIIT 4×4, HIIT 6×4 | "Easy spin. Opener 2 coming." / "Easy spin. Second opener coming." The openers themselves (2 × 30 s at 110%, normal cadence) are our addition and the files say so. |
+| HIIT 8-min active rest, SIT 90-s rests | `0.65` | HIIT 4×4, HIIT 6×4, SIT 2 and 3 sets | "Active rest. 8 minutes at ~65% FTP." / "Active rest. 90 seconds at ~65% FTP." plus the explanation: "The study's rest was 'at an intensity similar to the power achieved at VT1'. By the same arithmetic that is about 65% FTP (our estimate)." |
+| SIT 25-min break between sets | `0.65` | SIT 2 and 3 sets | Different grounds from the 90-s rests: "~65% FTP. The study says only 'also at low intensity' for this break; ~65% is our choice, the same level as the 90-second rests." |
+
+Do not fold the SIT set break under "similar to VT1": the study only says "also at low intensity" for it.
+
 ## Warmup / cooldown power exceptions
 
 Two intentional breaks from the `zwo-format` power-continuity rule:
@@ -85,7 +102,7 @@ Two intentional breaks from the `zwo-format` power-continuity rule:
 
 ### Source attribution in warmup
 Every workout must have a text event early in the warmup (~30s) stating:
-- The source (e.g. "Source: EVOQ.BIKE staple torque session" or "Source: Hebisz & Hebisz (2024), weeks 1-4")
+- The source (e.g. "Source: Hebisz and Hebisz (2024), HIIT session, weeks 1-4. 4x4 min at 90-100% of Pmax (maximal aerobic power), 60-70 rpm, 8 min active rest." or "Source: EF Pro Cycling article on Noemi Rüegg's own session. A pro rider's workout, not a research study.")
 - Brief context on why this prescription exists
 
 Then a second event at ~60-90s with a site tidbit (pick one, rotate across workouts):
@@ -112,6 +129,21 @@ Every low-cadence workout must include at least one knee warning. Example: "If y
 
 ### SEATED reminder
 All low-cadence intervals are seated — non-negotiable. State "SEATED" or "Stay seated" prominently in or before every interval block. Standing lets you use body weight on the pedals, bypassing the forced muscular contraction that makes torque training work.
+
+### Cadence-sag (ERG) event
+
+Every file with a power-targeted low-cadence block carries this event in a recovery block (with a `duration` of 25–30 s), so the rider knows what to do when ERG starts to win:
+
+- Standard wording (8 files: Torque Endurance ×3, Threshold, TorqueMax, Rüegg, HIIT ×2): "If your cadence sags below target, lower the workout intensity (FTP bias) rather than grinding."
+- Adaptation wording (both adaptation files): "If your cadence sags below target, lower the workout intensity (FTP bias) rather than grinding. These weeks are the low-stakes place to learn ERG at low cadence."
+
+The SIT files do not carry it, by design: their sprints are `FreeRide` blocks with no power target, so ERG is off and cannot spiral. Use Zwift's own names "workout intensity" / "FTP bias" (±25%, i.e. 75–125%). Never mention "Trainer Difficulty", which is a different setting.
+
+### Fact events
+
+Short, sourced facts shown in a recovery block, so the screen isn't only numbers. Rules: start with "Fact:", cite the source inline, check the wording against the evidence file like any other claim, and use each fact in one or two build sessions only. The one fact in use today (TE 3×8 and Threshold 5×5, `duration="30"`):
+
+"Fact: even in torque intervals, pedal force stays below about 54% of your maximum (Barranco-Gil 2024). This is endurance work, not strength training."
 
 ### Research facts and coach quotes
 Text events should include:
@@ -153,3 +185,6 @@ After creating or editing a `.zwo` file, verify:
 13. **`Last updated:` date is current.** If this edit changed any content of the workout (interval added/removed, duration/cadence/intensity tweaked, description corrected, text-event typo fixed, file renamed), bump the date in the header comment to today's date. Do not bump for cosmetic edits to the header comment itself (e.g. fixing a URL typo). Same semantics as `HOME_LAST_UPDATED` in `site/CLAUDE.md`.
 14. **No trailing recovery before the cooldown.** The block immediately before `<Cooldown>` is the final work interval, not a recovery block (see "Interval structure"). If the workout's duration must match the calendar, recompute the total after removing/adding any recovery.
 15. **Sprints use `FreeRide`, not `MaxEffort`,** and the first sprint block is preceded by the max-effort marker comment. Keep `Cadence` on cadence-prescribed sprints; omit it on free-cadence sprints.
+16. **Rest-block power follows "Power conventions for rest blocks"** (0.50 easy spin, 0.55 after openers, 0.65 in HIIT/SIT) and the text event says where the number comes from (ours / our estimate / the study).
+17. **Cadence-sag event present** in every file with a power-targeted low-cadence block (all except SIT), in the exact wording above.
+18. **No "Tier" anywhere** (name, `activitySaveName`, description, text events), and the file sits in one of the two folders.
