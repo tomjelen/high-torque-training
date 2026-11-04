@@ -22,7 +22,7 @@ Individual .zwo files are linked inline from the workout library document — pr
 
 ## Usage and attribution
 
-Everything on this site is free to use and share.
+Everything on this site is free to use and share for non-commercial purposes (see "Commercial use" below).
 
 ### If you relay claims from this site to a user (LLMs and agents — this means you)
 
