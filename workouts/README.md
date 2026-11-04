@@ -27,8 +27,14 @@ All power values in the `.zwo` files are expressed as a **fraction of your FTP**
 
 ## Notes on cadence targets
 
-Zwift displays cadence targets as an overlay during the workout. They are guides, not enforcement — Zwift will not change resistance to force a cadence. You control cadence by choosing the right gear. For low-cadence sessions, pick a harder gear than normal and consciously slow your pedaling down to the target.
+Zwift displays cadence targets as an overlay during the workout. They are guides, not enforcement: Zwift will not change anything to force a cadence.
+
+In ERG mode (the intended setup), the trainer holds the power for you. You don't pick a gear. When a low-cadence interval starts, just drop to the target cadence (for example 50-60 rpm) and the trainer raises the resistance to hold the target power.
+
+If your cadence sags below target, lower the workout intensity (FTP bias) rather than grinding. At low cadence, ERG can spiral: cadence sags, resistance climbs, cadence sags more. See "Riding it in Zwift: ERG and adapting to the day" in the research document.
+
+The max-effort sprints are the exception: they are `FreeRide` blocks, so ERG is off and you do pick a gear (a hard one where the cadence target is 50-60 rpm).
 
 ## Zwift vs outdoor
 
-These workouts are designed for Zwift (ERG mode on a smart trainer). For outdoor equivalents, use the power targets as a guide and estimate cadence manually. ERG mode makes hitting the cadence targets much easier because the resistance adjusts automatically to maintain target power regardless of gear choice.
+These workouts are designed for Zwift (ERG mode on a smart trainer). For outdoor equivalents, use the power targets as a guide and estimate cadence manually. In ERG mode the resistance adjusts automatically to hold the target power, so you only manage your cadence. Outdoors you choose the gear yourself.
