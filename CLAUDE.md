@@ -64,13 +64,9 @@ The generic ZWO format knowledge (block types, power-ramp semantics, ERG/`FreeRi
 
 ## Consistency check
 
-After any session that modifies files under `research/` or `site/src/`, run the consistency check to verify the website and source documents still tell the same story:
+After any session that modifies files under `research/` or `site/src/`, and before a release, run the **`site-consistency` skill** (`.claude/skills/site-consistency/SKILL.md`) to verify the website and source documents still tell the same story. Claude runs it in-session, with no API key: build, `vite preview`, view home, `/rationale` and `/about` at desktop and phone width with `playwright-cli`, compare the rendered prose against `research/*.md`, `llms.txt` and the served markdown, and report contradictions with file:line and a screenshot path.
 
-```
-ANTHROPIC_API_KEY=... node site/scripts/check-consistency.mjs
-```
-
-Requires a running dev or preview server (`npm run dev` in `site/`) and an `ANTHROPIC_API_KEY`. The script takes full-page screenshots of both site pages, compares them against the markdown source documents using Claude Sonnet vision (5 samples in parallel), and exits non-zero if any sample finds a contradiction.
+The exact facts (file list, durations, sources, seated/knee text) are checked deterministically by `site/src/content-consistency.test.ts`, which `npm test` runs; the skill covers meaning in the prose.
 
 ## Agent / LLM interfacing
 
@@ -81,7 +77,7 @@ The site has a deliberate setup for making its content readable to AI agents (Cl
 - `site/public/llms.txt`
 - the `<noscript>`, `<link rel="alternate">`, or off-screen agent-index anchor in `site/index.html`
 - the `prebuild` script in `site/package.json` (it generates the agent-served markdown)
-- `site/scripts/check-consistency.mjs`
+- `.claude/skills/site-consistency/SKILL.md`
 
 Also relevant context when a user asks about LLM/agent behaviour against the deployed site.
 

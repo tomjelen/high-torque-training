@@ -9,7 +9,7 @@ Check:
 
 Do:
 
-- [ ] Run the consistency check: `npm run dev` in `site/`, then `ANTHROPIC_API_KEY=... node site/scripts/check-consistency.mjs`.
+- [ ] Run the site-consistency skill (`.claude/skills/site-consistency/`).
 - [ ] Ride-test the new and changed workouts in Zwift (TE 3×15 and the SIT files can wait until after week 12).
 - [ ] Review, commit and release.
 - [ ] After release: delete `explorations/archive-unverified/`.

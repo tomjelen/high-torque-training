@@ -92,9 +92,11 @@ breaking anything.
 
 **Why.** The project's core transparency principle (root `CLAUDE.md` → "Transparency and traceability") is that every claim must be traceable to its source. Agents relaying claims to end users must preserve that chain. Cannot be enforced technically — relies on the agent reading and choosing to obey. Lets foster a "be nice, and credit people for their work"-culture. Its a small drop, but its something.
 
-### 8. `site/scripts/check-consistency.mjs` — drift detector
+### 8. `.claude/skills/site-consistency/` — drift detector
 
-**What.** A Playwright + Claude Sonnet vision script. Takes full-page screenshots of `/` and `/rationale`, compares each against the corresponding markdown source via 5 parallel vision calls, and exits non-zero on any contradiction. Documented in root `CLAUDE.md` → "Consistency check"; usage requires `ANTHROPIC_API_KEY` and a running dev/preview server.
+**What.** A project skill that Claude runs in-session (no API key). It builds the site, serves it with `vite preview`, views `/`, `/rationale` and `/about` at desktop and phone width with `playwright-cli`, reads the rendered text, and compares it against `research/*.md`, `llms.txt` and the served markdown under `/content/`. It reports each contradiction with file:line and a screenshot path. Documented in root `CLAUDE.md` → "Consistency check". The exact facts (file list, durations, sources, seated/knee text) are checked deterministically by `site/src/content-consistency.test.ts` in `npm test`; the skill covers meaning in the prose.
+
+It replaced `site/scripts/check-consistency.mjs` (2026-11-04), a Playwright + Claude Sonnet vision script that needed `ANTHROPIC_API_KEY` and was never run.
 
 **Why.** Risk being prevented: someone edits a React component but forgets the markdown source, or vice versa. The page and the canonical document drift. The check catches that before it ships.
 
@@ -113,7 +115,7 @@ site/public/content/workouts.md         generated from research/training-calenda
 site/public/content/rationale.md        generated from research/high-torque-training-research.md
 site/scripts/build-public-assets.mjs     prebuild: zip .zwo files + copy research/*.md → public/content/
 site/index.html                         <head> link tags + <body> noscript + off-screen anchor
-site/scripts/check-consistency.mjs      drift detector (used per CLAUDE.md)
+.claude/skills/site-consistency/       drift detector skill (used per CLAUDE.md)
 site/scripts/prerender.mjs              per-route static HTML emitter (postbuild)
 site/src/entry-server.tsx               SSR entry: renderToString(<App/>)
 research/training-calendar.md           canonical source — workout library + calendar

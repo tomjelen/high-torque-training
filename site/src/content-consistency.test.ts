@@ -1,7 +1,7 @@
 // Deterministic content-consistency checks between the research calendar
 // (research/training-calendar.md, the source of truth for *what* to ride),
 // the .zwo files under workouts/ and the site's data model (data.ts).
-// The vision-based check-consistency.mjs script covers prose; this covers the
+// The site-consistency skill (.claude/skills/site-consistency) covers prose; this covers the
 // facts that can be compared exactly.
 import { describe, it, expect } from 'vitest'
 import { readFileSync, readdirSync } from 'node:fs'
