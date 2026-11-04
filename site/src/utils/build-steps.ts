@@ -69,6 +69,13 @@ export function stepTitle(step: BuildStep): string {
   return step.workout.name.replace(/^Weeks? [\d–]+ — /, '')
 }
 
+// True when Done at week index `progress` leads to a new workout (or ends the
+// build), i.e. this is the last session of its step.
+export function stepEndsAt(progress: number): boolean {
+  const step = stepIndexForProgress(progress)
+  return step !== null && stepIndexForProgress(progress + 1) !== step
+}
+
 // What "Done" leads to from the week at index `progress`, as the rest of the
 // button's sentence ("Done — …"). Plain words, no counters: "session 2 of 2"
 // on a button read as "done with session 2 of 2".

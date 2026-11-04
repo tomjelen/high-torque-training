@@ -15,6 +15,9 @@ type Props = {
       onDone: () => void
       // The rest of the button's sentence, e.g. "repeat this session next week".
       nextLabel: string
+      // Done leads to a new workout (second session of a step, or the end):
+      // the three move-on checks apply. Otherwise only the knee rule does.
+      stepEnds: boolean
       // Step back a week (a mistaken click, or wrecked the day after).
       onBackOneWeek?: () => void
     }
@@ -90,16 +93,25 @@ export default function BuildWeekCard(props: Props) {
           </div>
         ) : (
           <div className="flex flex-col gap-3 text-sm text-slate-400">
-            <div>
-              <p className="m-0 mb-1 text-slate-300 font-semibold">
-                Click Done when all three were fine (the day after is fine):
+            {/* The calendar's move-on rule: the three checks gate the step
+                change (after its second session); knee pain stops you after
+                any session. */}
+            {props.stepEnds ? (
+              <div>
+                <p className="m-0 mb-1 text-slate-300 font-semibold">
+                  Before moving on to a new workout, click Done when all three were fine (the day after is fine):
+                </p>
+                <ul className="m-0 pl-4 space-y-0.5 list-disc">
+                  <li>knees fine, during and after</li>
+                  <li>cadence held</li>
+                  <li>not wrecked the next day</li>
+                </ul>
+              </div>
+            ) : (
+              <p className="m-0 text-slate-300 font-semibold">
+                Click Done when your knees were fine, during and after (the day after is fine).
               </p>
-              <ul className="m-0 pl-4 space-y-0.5 list-disc">
-                <li>knees fine, during and after</li>
-                <li>cadence held</li>
-                <li>not wrecked the next day</li>
-              </ul>
-            </div>
+            )}
             <button
               type="button"
               onClick={props.onDone}
@@ -108,8 +120,8 @@ export default function BuildWeekCard(props: Props) {
               Done ✓ <span className="font-normal">— {props.nextLabel}</span>
             </button>
             <p className="m-0">
-              Not all three? Don't click: ride it again next week. Knee pain that keeps coming back → stop torque
-              work and see a professional.
+              {props.stepEnds ? 'Not all three?' : 'Knee pain?'} Don't click: ride it again next week. Knee pain
+              that keeps coming back → stop torque work and see a professional.
             </p>
             {week.phase === 'adaptation' && (
               <p className="m-0">Controlled: steady, below your threshold. Heavy legs are normal.</p>

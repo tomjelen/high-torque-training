@@ -8,7 +8,7 @@ import WorkoutChart from './WorkoutChart'
 import { chartWorkoutFor } from './chart-data'
 import { workoutById } from '../data'
 import { confettiBurst } from '../lib/confetti'
-import { BUILD_STEPS, nextLabel, stepIndexForProgress, weekRangeLabel } from '../utils/build-steps'
+import { BUILD_STEPS, nextLabel, stepEndsAt, stepIndexForProgress, weekRangeLabel } from '../utils/build-steps'
 import {
   ADAPTATION_LENGTH,
   BUILD_LENGTH,
@@ -239,6 +239,7 @@ export default function BuildPlanPanel({ state, setState }: Props) {
                 }
               }}
               nextLabel={nextLabel(progress)}
+              stepEnds={stepEndsAt(progress)}
               onBackOneWeek={progress > 0 ? backOneWeek : undefined}
             />
           )

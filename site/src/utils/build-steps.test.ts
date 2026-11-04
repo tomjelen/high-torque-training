@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { BUILD_STEPS, nextLabel, stepIndexForProgress, torquePowerFor, torquePowerLabel, weekRangeLabel } from './build-steps'
+import { BUILD_STEPS, nextLabel, stepEndsAt, stepIndexForProgress, torquePowerFor, torquePowerLabel, weekRangeLabel } from './build-steps'
 
 describe('BUILD_STEPS', () => {
   it('groups the 12 weeks into six two-week steps, in calendar order', () => {
@@ -46,5 +46,14 @@ describe('nextLabel', () => {
     expect(nextLabel(3)).toBe('next week: Torque Endurance 3×8')
     expect(nextLabel(11)).toBe('finish the build')
     expect(nextLabel(12)).toBe('')
+  })
+})
+
+describe('stepEndsAt', () => {
+  it('is true on the second session of each step, where the move-on checks apply', () => {
+    expect(Array.from({ length: 12 }, (_, i) => stepEndsAt(i))).toEqual([
+      false, true, false, true, false, true, false, true, false, true, false, true,
+    ])
+    expect(stepEndsAt(12)).toBe(false)
   })
 })
