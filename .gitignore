@@ -1,3 +1,6 @@
 # Superpowers plugin scratch data (brainstorm sessions, visual companion)
 .superpowers/
 .playwright-cli/
+
+# Private working notes and copyrighted source texts — never commit (move to a private repo later)
+explorations/
