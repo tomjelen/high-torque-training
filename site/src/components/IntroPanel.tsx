@@ -20,8 +20,9 @@ export default function IntroPanel({ state, setState }: Props) {
       collapsed={state.panels.intro.collapsed}
       onToggle={onToggle}
     >
-      {/* Prose is capped near 90 characters a line so it stays readable on wide screens. */}
-      <div className="max-w-3xl">
+      {/* Full panel width, like the other panels (a capped column inside a
+          full-width panel looked off-centre). */}
+      <div>
         <p className="text-slate-300 mb-0">
           High-torque training is{' '}
           <strong className="text-slate-100">low cadence at meaningful power</strong>, seated. In an 8-week
@@ -67,7 +68,7 @@ export default function IntroPanel({ state, setState }: Props) {
       </div>
 
       <div className="border-t border-slate-800 mt-4 pt-3 text-sm text-slate-500">
-        <p className="mb-0 max-w-3xl">
+        <p className="mb-0">
           <strong className="text-slate-300">How this site is structured:</strong> a 12-week build, one torque
           session a week (4 weeks of adaptation, then 8 weeks of build sessions). After that, maintain or keep
           going with free choice from the library.
@@ -76,7 +77,7 @@ export default function IntroPanel({ state, setState }: Props) {
           <summary className="inline-flex items-center min-h-11 sm:min-h-0 sm:py-2 cursor-pointer list-none hover:text-slate-300 select-none">
             Caveats and sourcing ▸
           </summary>
-          <div className="mt-2 max-w-3xl space-y-3 pl-3 border-l border-slate-800">
+          <div className="mt-2 space-y-3 pl-3 border-l border-slate-800">
             <p className="m-0">
               <sup className="text-slate-500 mr-1">1</sup>
               Hebisz &amp; Hebisz (2024),{' '}
