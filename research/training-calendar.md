@@ -1,120 +1,121 @@
 # High Torque Training — Calendar
 
-Two parts: a fixed adaptation phase (follow exactly), then ongoing training (flexible, indefinite).
+A 12-week build, one torque session a week, then your choice: maintain, or keep going with free choice from the library.
 
-See `high-torque-training-research.md` for the reasoning behind every decision here.
+This calendar is the source of truth for **what** to ride: which workouts exist, their parameters and durations. See `high-torque-training-research.md` for **why**, and for the source behind every number. Durations are each file's total ride time, rounded to the nearest 5 minutes.
 
----
-
-## Adaptation (Weeks 1–3)
-
-**1 low-cadence session per week.** All other rides: normal cadence. Do not skip weeks or double up.
-
-| # | Workout | Duration | Done | Date | Notes |
-|---|---------|----------|------|------|-------|
-| 1 | [W1](/workouts/High%20Torque%20-%20Adaptation/Week1_2x10_65-70rpm.zwo) — 2×10 min Zone 2, **65–70 rpm** | ~50 min | [ ] | | |
-| 2 | [W2](/workouts/High%20Torque%20-%20Adaptation/Week2_2x15_65rpm.zwo) — 2×15 min Zone 2, **65 rpm** | ~60 min | [ ] | | |
-| 3 | [W3](/workouts/High%20Torque%20-%20Adaptation/Week3_3x10_60-65rpm.zwo) — 3×10 min Zone 2, **60–65 rpm** | ~65 min | [ ] | | |
-
-### Ready to move on?
-
-All boxes must be checked before starting ongoing training:
-
-- [ ] All 3 sessions completed
-- [ ] No knee pain during or after any session
-- [ ] No lingering knee discomfort 24+ hours after any session
-- [ ] Cadence targets felt achievable (not struggling to stay above target)
-- [ ] RPE for the intervals was no higher than ~6/10
-
-**If any box is unchecked:** Repeat the week that gave you trouble. If knee pain is the issue, take a full week off low-cadence work and restart from W1.
+All low-cadence intervals are **seated**. If your knees ache during an interval, stop the interval.
 
 ---
 
-## Ongoing Training — The High Torque Collection
+## The build (weeks 1–12)
 
-**1–2 sessions per week.** One is the norm, two is the ceiling. Separated by at least one normal-cadence day.
+**One torque session a week.** All other rides at normal cadence. Each session is ridden in two consecutive weeks. Progress counts sessions done, not calendar weeks. The two-weeks-per-session arrangement is ours; the order comes from the coaches (Schep, EVOQ, Henderson for sustained efforts, CTS).
 
-- 1 per week is the standard. 0 is fine occasionally. Never more than 2.
-- When doing 2, make one harder and one easier.
-- There is no end date. Pick sessions from the High Torque Collection below and rotate.
+### Adaptation (weeks 1–4)
 
-### The High Torque Collection
+| Weeks | Workout | What | Cadence | Duration | Source |
+|---|---|---|---|---|---|
+| 1–2 | [Adaptation weeks 1–2](/workouts/High%20Torque%20-%20Adaptation/Adapt_W1-2_4x4_60-65rpm.zwo) | 4×4 min @ 80% FTP, 4 min easy spin | 60–65 rpm | ~55 min | Composite (ours): Wakefield (cadence, 4×4, rest = rep); 80% our pick inside Henderson's 75–85% and Schep's 80–85% |
+| 3–4 | [Adaptation weeks 3–4](/workouts/High%20Torque%20-%20Adaptation/Adapt_W3-4_4x4_50-60rpm.zwo) | 4×4 min @ 80–85% FTP (file holds 80%), 4 min easy spin | 50–60 rpm | ~55 min | Composite (ours): Henderson (cadence, 75–85%); Schep (80–85%); Wakefield (4×4, rest = rep) |
 
-Sessions are grouped into 4 tiers by intensity and knee stress. Start with Tiers 1–2 and work up over weeks and months. The tier structure is this document's organization — the sources support progressive overload but don't use this exact grouping.
+How it should feel: controlled, steady, below your threshold. Heavy legs are normal.
 
-#### Tier 1 — Entry
+### Build (weeks 5–12)
 
-Your first ongoing sessions. Lower intensity to bridge from adaptation into real torque work.
+| Weeks | Workout | What | Cadence | Duration | Source |
+|---|---|---|---|---|---|
+| 5–6 | [Torque Endurance 3×8](/workouts/High%20Torque%20-%20Library/TE_3x8_95pct.zwo) | 3×8 min @ 95% FTP, 8 min easy spin | 60–70 rpm | ~65 min | EVOQ / Housler (scaled: 3 reps instead of 4); rest = rep is our choice, as Wakefield and CTS (Rutberg) use |
+| 7–8 | [Threshold 5×5](/workouts/High%20Torque%20-%20Library/Threshold_5x5_95pct.zwo) | 5×5 min @ 95% FTP, 2:30 easy spin | 50–60 rpm | ~60 min | Henderson (5×5 @ 95%); 2:30 is Henderson's half-time rule, applied by us |
+| 9–10 | [TorqueMax](/workouts/High%20Torque%20-%20Library/TorqueMax_110pct.zwo) | 6×2.5 min @ 110% FTP, 4 min easy spin | 50–60 rpm | ~70 min | EVOQ (Bobo): 6×2–3 min @ 105–110%; 2.5 min, 110% and the 4-min recovery are our picks |
+| 11–12 | [HIIT 4×4](/workouts/High%20Torque%20-%20Library/HIIT_4x4_120pct.zwo) | 4×4 min @ ~120% FTP, 8 min @ ~65% | 60–70 rpm | ~75 min | Hebisz 2024 (4×4, 60–70 rpm, 8-min active rest); ~120% and ~65% are our estimates from the paper |
+
+Wherever a row says "easy spin", it is 50% FTP (ours; no source gives a recovery %FTP for these sessions). HIIT recovers at ~65%, our estimate of the study's "similar to VT1".
+
+### Moving on
+
+After the second session of each step, move to the next step only if:
+
+- [ ] your knees were fine, during and after;
+- [ ] you held the cadence;
+- [ ] you weren't wrecked the next day.
+
+**Any "no" → repeat last week's session.** This rule is ours (nearest sources: Roadman's "if your joints feel good", Henderson's "if it hurts, stop doing it").
+
+**Knee pain → repeat last week's session** instead of moving on. If it keeps coming back, stop torque work and see a professional.
+
+**After a break** (illness, travel): the weeks 3–4 session is a good one to come back with. A suggestion, not a rule. After a long break, restart from adaptation or from week 5, as you see fit.
+
+| Week | Workout | Date | Knees fine? | Cadence held? | Fine next day? | Notes |
+|---|---|---|---|---|---|---|
+| 1 | Adaptation weeks 1–2 | | | | | |
+| 2 | Adaptation weeks 1–2 | | | | | |
+| 3 | Adaptation weeks 3–4 | | | | | |
+| 4 | Adaptation weeks 3–4 | | | | | |
+| 5 | Torque Endurance 3×8 | | | | | |
+| 6 | Torque Endurance 3×8 | | | | | |
+| 7 | Threshold 5×5 | | | | | |
+| 8 | Threshold 5×5 | | | | | |
+| 9 | TorqueMax | | | | | |
+| 10 | TorqueMax | | | | | |
+| 11 | HIIT 4×4 | | | | | |
+| 12 | HIIT 4×4 | | | | | |
+
+---
+
+## After the build
+
+Choose one (ours, on the sources in the research document):
+
+- **Maintain:** about one torque session a month (EVOQ gives 1–2 a month in season).
+- **Keep going:** 1–2 sessions a week, **never on consecutive days** (CTS/Rutberg: separate them by at least a full day; Henderson: one, at most two, a week).
+
+**Free choice from the library.** No rotation, no "next session". A plain hint (ours): mix moderate sessions (Torque Endurance, Threshold) with above-threshold ones (TorqueMax, Rüegg, HIIT, SIT). The research backs particular workouts inside their own study programs; no study tested this site's arrangement, and no source says what order to ride things in after week 12.
+
+### The library
 
 | Workout | What | Cadence | Duration | Source |
-|---------|------|---------|----------|--------|
-| [Entry 4×4](/workouts/High%20Torque%20-%20Tier%201%20Entry/Entry_4x4_80pct.zwo) | 4×4 min @ 80–85% FTP | 50–60 rpm | ~55 min | Henderson |
-| [Staple 3×5](/workouts/High%20Torque%20-%20Tier%201%20Entry/Staple_3x5_90pct.zwo) | 3×5 min @ ~90% FTP | 50–60 rpm | ~50 min | EVOQ (scaled — fewer reps: 3×5 instead of 5×5) |
+|---|---|---|---|---|
+| [Torque Endurance 3×8](/workouts/High%20Torque%20-%20Library/TE_3x8_95pct.zwo) | 3×8 min @ 95% FTP, 8 min easy spin | 60–70 rpm | ~65 min | EVOQ / Housler (scaled: 3 reps instead of 4); rest = rep is our choice (as Wakefield and CTS use) |
+| [Torque Endurance 4×8](/workouts/High%20Torque%20-%20Library/TE_4x8_95pct.zwo) | 4×8 min @ 95% FTP, 8 min easy spin | 60–70 rpm | ~80 min | EVOQ / Housler; rest = rep is our choice (as Wakefield and CTS use) |
+| [Torque Endurance 3×15](/workouts/High%20Torque%20-%20Library/TE_3x15_90pct.zwo) | 3×15 min @ 90% FTP, 15 min easy spin | 50–60 rpm | ~100 min | EVOQ / Housler; 90% is the floor of Housler's 90–105% (our choice); rest = rep is our choice |
+| [Threshold 5×5](/workouts/High%20Torque%20-%20Library/Threshold_5x5_95pct.zwo) | 5×5 min @ 95% FTP, 2:30 easy spin | 50–60 rpm | ~60 min | Henderson; 2:30 is his half-time rule, applied by us |
+| [TorqueMax](/workouts/High%20Torque%20-%20Library/TorqueMax_110pct.zwo) | 6×2.5 min @ 110% FTP, 4 min easy spin | 50–60 rpm | ~70 min | EVOQ (Bobo): 6×2–3 min @ 105–110%; 2.5 min, 110% and the 4-min recovery are our picks |
+| [Rüegg VO2max + Sprint](/workouts/High%20Torque%20-%20Library/Ruegg_VO2max_Sprint.zwo) | 3×(5 min @ 110% FTP + 1 min max effort in a lighter gear), 10 min easy between | 50–60 rpm (sprint at free cadence) | ~70 min | EF Pro Cycling (Noemi Rüegg's session; progression advice: Peter Schep) (scaled: shorter warm-up and cool-down for Zwift) |
+| [HIIT 4×4](/workouts/High%20Torque%20-%20Library/HIIT_4x4_120pct.zwo) | 4×4 min @ ~120% FTP, 8 min @ ~65% | 60–70 rpm | ~75 min | Hebisz 2024; ~120% and ~65% are our estimates |
+| [HIIT 6×4](/workouts/High%20Torque%20-%20Library/HIIT_6x4_120pct.zwo) | 6×4 min @ ~120% FTP, 8 min @ ~65% | 60–70 rpm | ~100 min | Hebisz 2024 (weeks 5–8 volume); ~120% and ~65% are our estimates |
+| [SIT (2 sets)](/workouts/High%20Torque%20-%20Library/SIT_2sets.zwo) | 2×(4×30 s max), 90 s @ ~65% between sprints, 25 min @ ~65% between sets | 50–60 rpm | ~75 min | Hebisz 2024 (weeks 1–4 volume); ~65% is our estimate |
+| [SIT (3 sets)](/workouts/High%20Torque%20-%20Library/SIT_3sets.zwo) | 3×(4×30 s max), same recoveries | 50–60 rpm | ~105 min | Hebisz 2024 (weeks 5–8 volume); ~65% is our estimate |
 
-#### Tier 2 — Development
+SIT sprints have no power target: you set the force. No source gives a lead-in to SIT; the study riders did it from day one, after years of training and three months of base work that included strength and jumping exercises.
 
-The bread-and-butter sessions. EVOQ's staple format and a shorter VO2max intro.
+---
 
-| Workout | What | Cadence | Duration | Source |
-|---------|------|---------|----------|--------|
-| [Staple 5×5](/workouts/High%20Torque%20-%20Tier%202%20Development/Staple_5x5_90pct.zwo) | 5×5 min @ ~90% FTP | 50–60 rpm | ~70 min | EVOQ |
-| [Staple 5×8](/workouts/High%20Torque%20-%20Tier%202%20Development/Staple_5x8_90pct.zwo) | 5×8 min @ ~90% FTP | 50–60 rpm | ~85 min | EVOQ |
-| [HIIT Intro](/workouts/High%20Torque%20-%20Tier%202%20Development/HIIT_Intro_110pct.zwo) | 3×3 min @ ~110% FTP | 60–70 rpm | ~50 min | Hebisz 2024 (scaled — fewer reps, shorter intervals) |
+## Workout files
 
-#### Tier 3 — Challenging
+Machine-readable list of every `.zwo` file. Paths are relative to `workouts/`. Duration is the file's total, rounded to the nearest 5 minutes.
 
-Threshold and VO2max. Higher knee stress. Only after several weeks of comfortable Tier 2 work.
+| Workout | File | Duration (min) |
+|---|---|---|
+| Adaptation weeks 1–2 | `High Torque - Adaptation/Adapt_W1-2_4x4_60-65rpm.zwo` | 55 |
+| Adaptation weeks 3–4 | `High Torque - Adaptation/Adapt_W3-4_4x4_50-60rpm.zwo` | 55 |
+| Torque Endurance 3×8 | `High Torque - Library/TE_3x8_95pct.zwo` | 65 |
+| Torque Endurance 4×8 | `High Torque - Library/TE_4x8_95pct.zwo` | 80 |
+| Torque Endurance 3×15 | `High Torque - Library/TE_3x15_90pct.zwo` | 100 |
+| Threshold 5×5 | `High Torque - Library/Threshold_5x5_95pct.zwo` | 60 |
+| TorqueMax | `High Torque - Library/TorqueMax_110pct.zwo` | 70 |
+| Rüegg VO2max + Sprint | `High Torque - Library/Ruegg_VO2max_Sprint.zwo` | 70 |
+| HIIT 4×4 | `High Torque - Library/HIIT_4x4_120pct.zwo` | 75 |
+| HIIT 6×4 | `High Torque - Library/HIIT_6x4_120pct.zwo` | 100 |
+| SIT (2 sets) | `High Torque - Library/SIT_2sets.zwo` | 75 |
+| SIT (3 sets) | `High Torque - Library/SIT_3sets.zwo` | 105 |
 
-| Workout | What | Cadence | Duration | Source |
-|---------|------|---------|----------|--------|
-| [Threshold 5×5](/workouts/High%20Torque%20-%20Tier%203%20Challenging/Threshold_5x5_95pct.zwo) | 5×5 min @ ~95% FTP | 50–60 rpm | ~60 min | Henderson |
-| [HIIT VO2max (4 reps)](/workouts/High%20Torque%20-%20Tier%203%20Challenging/HIIT_VO2max_4rep.zwo) | 4×4 min @ ~110% FTP | 60–70 rpm | ~75 min | Hebisz 2024 |
-| [Rüegg VO2max + Sprint](/workouts/High%20Torque%20-%20Tier%203%20Challenging/Ruegg_VO2max_Sprint.zwo) | 3×(5 min @ ~110% FTP + 1 min max sprint) | 50–60 rpm (sprint at normal cadence) | ~70 min | EF Pro Cycling (Noemi Rüegg's session; progression advice: Peter Schep) (scaled — shorter warm-up and cool-down for Zwift) |
+---
 
-#### Tier 4 — Advanced
+## Training log
 
-Sprint and supra-threshold. Highest knee stress. Monthly at most initially. Relevant to Zwift sprint racing.
-
-| Workout | What | Cadence | Duration | Source |
-|---------|------|---------|----------|--------|
-| [TorqueMax](/workouts/High%20Torque%20-%20Tier%204%20Advanced/TorqueMax_110pct.zwo) | 6×2–3 min @ 105–110% FTP | 50–60 rpm | ~70 min | EVOQ |
-| [SIT (2 sets)](/workouts/High%20Torque%20-%20Tier%204%20Advanced/SIT_2sets.zwo) | 2×(4×30 sec max) | 50–60 rpm | ~75 min | Hebisz 2024 |
-| [HIIT VO2max (6 reps)](/workouts/High%20Torque%20-%20Tier%204%20Advanced/HIIT_VO2max_6rep.zwo) | 6×4 min @ ~110% FTP | 60–70 rpm | ~100 min | Hebisz 2024 |
-| [SIT (3 sets)](/workouts/High%20Torque%20-%20Tier%204%20Advanced/SIT_3sets.zwo) | 3×(4×30 sec max) | 50–60 rpm | ~110 min | Hebisz 2024 |
-
-### When to progress
-
-| Stage | Typical timing | What to do |
-|-------|---------------|------------|
-| First weeks of ongoing | Weeks 4–7 overall | Mix Tier 1 + Tier 2. Try each Tier 2 workout at least once. |
-| Introduce Tier 3 | After 3–4 weeks of Tier 2 without knee issues, RPE ≤ 7/10 | Use Tier 3 as the "hard" session, Tier 1–2 as the "easy" one. |
-| Introduce Tier 4 | After 8+ weeks of ongoing (~11+ weeks total) | Monthly at most. Always pair with a Tier 1 easy session that week. |
-
-**Signs you are NOT ready to move up:**
-- Knee pain or discomfort during or after sessions
-- Can't hold the target cadence (grinding 5+ rpm below)
-- RPE consistently above 8/10 on current-tier sessions
-- Your normal (non-torque) training is suffering — can't hit numbers, feel flat
-
-**If any of these appear:** Drop back a tier. If it's knee-related, take a week off torque work entirely.
-
-### Weekly template
-
-Use this to plan each week. Pick one session from a lower tier and one from the same or one higher tier.
-
-```
-Week of: __________
-
-[ ] Session 1 (easier): _______________ (Tier ___) | Date: _____ | Notes: _____
-[ ] Session 2 (harder):  _______________ (Tier ___) | Date: _____ | Notes: _____
-
-Knee check: fine / some tightness / pain → _______________
-```
-
-### Training log
-
-| # | Date | Workout | Tier | Hard/Easy | Knee status | Notes |
-|---|------|---------|------|-----------|-------------|-------|
+| # | Date | Workout | Knees fine? | Cadence held? | Fine next day? | Notes |
+|---|---|---|---|---|---|---|
 | 1 | | | | | | |
 | 2 | | | | | | |
 | 3 | | | | | | |
@@ -135,25 +136,13 @@ Knee check: fine / some tightness / pain → _______________
 | 18 | | | | | | |
 | 19 | | | | | | |
 | 20 | | | | | | |
-| 21 | | | | | | |
-| 22 | | | | | | |
-| 23 | | | | | | |
-| 24 | | | | | | |
-| 25 | | | | | | |
-| 26 | | | | | | |
-| 27 | | | | | | |
-| 28 | | | | | | |
-| 29 | | | | | | |
-| 30 | | | | | | |
 
-### FTP retest tracker
+### FTP tracker
 
-Retest every 6–8 weeks. All workouts auto-scale with FTP changes.
+All targets are %FTP, so they scale when your FTP changes.
 
 | Date | FTP (watts) | Notes |
-|------|-------------|-------|
-| | | |
-| | | |
+|---|---|---|
 | | | |
 | | | |
 | | | |

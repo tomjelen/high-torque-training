@@ -13,9 +13,8 @@ to build something in it.
 I'm also a cyclist — based in Barcelona, where outdoor riding is year-round, and racing A/B
 category on [Zwift](https://www.strava.com/athletes/8943272) through the winter indoor season.
 The outdoor events I sign up for tend to be long and climbing-heavy: Mallorca 312, La Purito.
-I train about 10-15 hours a week, give or take. I'm not a coach, and this site doesn't pretend to be
-coaching. But every workout in the library is one I've done myself or am currently doing, and
-the rationale you read here is the same one structuring my own training. The site is, in honest
+I train about 10 hours a week, give or take. I'm not a coach, and this site doesn't pretend to be
+coaching. But the rationale you read here is the same one structuring my own training. The site is, in honest
 terms, a research notebook that happens to be useful as a workout library.
 
 I built it because I wanted to learn high-torque training, and a site is how I learn. The trigger

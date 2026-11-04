@@ -1,368 +1,419 @@
-# High Torque (Low Cadence) Training for Cyclists
-**Permanent integration guide**
-Last reviewed: September 2026
+# High Torque Training for Cyclists
+
+**A 12-week build, then your choice**
+
+Last reviewed: November 2026
 
 ---
 
 ## Who this is for
 
-A cyclist doing 10–15 hours/week of mixed Zwift and outdoor training — fit, consistent, used to structured intervals. Likes races on Zwift, but does not have an outdoor race season. Not a beginner, but not a full-time athlete either.
+A cyclist doing ~10 hours/week of mixed Zwift and outdoor training: fit, consistent, used to structured intervals. Not a beginner, but not a full-time athlete either.
 
-This document is a guide for **permanently integrating high-torque training into your weekly routine** — not a one-off training block. The goal is simple: include 1–2 low-cadence sessions per week alongside your normal training, indefinitely, to build and maintain stronger legs.
+This document explains **why** the training works and where each number comes from. The calendar (`training-calendar.md`) says **what** to ride. The program is a 12-week build (4 weeks of adaptation, then 8 weeks of build sessions, one torque session a week), after which you choose: maintain, keep going, or stop for a while.
+
+---
+
+## How to read the sources
+
+Every source in this document carries one of four trust categories:
+
+| Category | What it means | Sources here |
+|---|---|---|
+| **Research** | Peer-reviewed studies. Where only the abstract was read, we say "abstract only" and claim nothing beyond it. | Hebisz 2024, de Pablos 2026, Nimmerichter 2012, Kristoffersen 2014, Barranco-Gil 2024, Hansen & Rønnestad 2017, Ahlquist 1992, Bini & Hume 2013, Johnston 2017 |
+| **Elite / pro-team coach** | Coaches who work with elite and WorldTour riders. | Peter Schep (EF Pro Cycling), John Wakefield (Red Bull – BORA – hansgrohe), Neal Henderson |
+| **Coaching business** | Established coaching companies that publish their methods. | EVOQ.BIKE (Landry Bobo, Brendan Housler), CTS (Jim Rutberg, Adam Pulford) |
+| **Media relay** | Outlets that report on other people's work: shows and newsletters where the host or writer relays what coaches and studies say. We follow them to their own sources and never use them as the basis for a number. A podcast where the coach speaks (Fast Talk with Henderson, That Triathlon Show with Wakefield, the EVOQ podcast) counts as that coach's source, not as media relay. | Roadman Cycling Podcast, Knowledge is Watt |
+
+Some coach statements exist only as audio. Two labels mark them: **machine transcript** (our own Whisper transcription of the audio: Wakefield on That Triathlon Show, Henderson on Fast Talk) and **auto-captions** (YouTube's automatic captions: the CTS/Pulford video, the EVOQ podcast, Roadman). Both are weaker than written text, especially for numbers and for who is speaking; auto-captions are the weaker of the two.
+
+Zwift facts (zones, FTP bias, ERG behaviour) come from Zwift's own support pages. They are product documentation, not training advice, so they sit outside the four categories.
+
+Anything labelled **ours** is our own choice, arithmetic or reading of a source. It may rest on sourced inputs, but the result is ours.
 
 ---
 
 ## The core idea
 
-Most cyclists pedal at 80–100 rpm. Dropping to 50–70 rpm at the same power output forces each leg muscle contraction to produce much more force per stroke — that's what "high torque" means.
+Most cyclists pedal at 80–100 rpm. Dropping to 50–70 rpm at the same power means each pedal stroke has to carry more force. That is what "high torque" means. Torque in newton-metres (Nm) is power × 60 ÷ (2π × cadence): 300 W at 60 rpm is about 48 Nm. At the same power, 60 rpm is 1.5 times the force per stroke of 90 rpm (our arithmetic). [Formula: standard physics, also written out by John Wakefield, Science to Sport, 2026.]
 
-The same prime movers (quads, glutes, hamstrings) are active at all cadences, but at lower cadence each stroke preferentially recruits high-threshold (Type II) motor units that stay quieter at higher cadences [Ahlquist 1992 — greater Type II fibre glycogen use at 50 than at 100 rpm; indirect evidence from 8 men]. The hypothesis: combining this recruitment shift with high-intensity intervals drives stronger aerobic adaptations — particularly VO2max and maximal aerobic power — than the same intervals at freely chosen cadence.
+Torque figures in this document assume a 250 W FTP and the middle of the cadence range. They scale in proportion to your FTP (ours).
 
-The same mechanism that makes the stimulus effective also makes it demanding on connective tissue. More force per stroke means more load on knees, patellar and quadriceps tendons, and the muscles that stabilize the joint. Tendons and connective tissue adapt slower than the cardiovascular system, which is why this protocol begins with a 3-week adaptation phase at low cadence and easy power before any high-intensity work is layered on top.
+**Fibre recruitment (indirect evidence).** In eight men riding 30 min at ~85% of aerobic capacity, fast-twitch (type II) fibres lost more glycogen at 50 rpm than at 100 rpm [Ahlquist 1992, research, abstract only]. That suggests lower cadence at the same effort uses more fast-twitch fibres. It is indirect evidence from one small study.
+
+**How much force, really?** In 11 cyclists measured from easy riding up to maximal aerobic power, at free, 40, 60 and 80 rpm and in all-out resisted sprints, the force per pedal stroke rose with intensity and with lower cadence, but stayed below 54% of the rider's maximum "for all conditions, even during the so-called 'torque training'" [Barranco-Gil 2024, research, abstract only]. Torque intervals put more force on each stroke than normal riding, but they are endurance work, not strength training (see "Torque intervals and the gym" below).
 
 ---
 
-## The evidence
+## The evidence: thin and mixed
 
-### The key study (Hebisz & Hebisz, 2024)
+The honest summary [our wording on the studies below]:
 
-> Hebisz R & Hebisz P. *"Greater improvement in aerobic capacity after a polarized training program including cycling interval training at low cadence (50–70 rpm) than freely chosen cadence (above 80 rpm)."*
-> PLOS One, November 2024.
-> https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0311833
+- **High intensity at low cadence** has one small positive trial (Hebisz 2024).
+- **Near-maximal force efforts** have one positive trial (de Pablos 2026, HIGH-Load), but the difference between its high- and moderate-load groups was not statistically significant.
+- **Moderate, threshold-level torque sessions** have thin and mixed evidence: a small, tentative positive result (Nimmerichter 2012), a null result at 40 rpm (Kristoffersen 2014), and de Pablos' moderate group, which showed no significant change within the group but did beat the control group on one measure.
+- Hebisz and de Pablos each tested their own multi-week arrangement. **No study has tested this site's arrangement** (the order of the build, the two weeks per session, what to do after week 12).
 
-**What they did:** Two groups of well-trained female cyclists followed an identical 8-week polarized training program (4-day microcycles repeated back to back). The paper doesn't state weekly hours; the often-quoted figure of about 8 hours per week comes from a commentary (Knowledge is Watt #58), not the study. Before the study, participants trained at least 10 hours per week. The only difference: one group did all high-intensity intervals at **freely chosen cadence (>80 rpm)**, the other at **low cadence (50–70 rpm)**.
+The moderate sessions in the build (adaptation, Torque Endurance, Threshold) are **coaching practice**: preparation and muscular endurance. The study with the clearest result is about the above-threshold sessions.
 
-Both programs included:
-- Sprint Interval Training (SIT): 8–12 × 30-second all-out efforts
-- High-Intensity Interval Training (HIIT): 4–6 × 4-minute efforts at 90–100% of max aerobic power
-- Low-Intensity Endurance (LIT): long Zone 2 rides
-- Active Recovery day
+A 2017 systematic review of seven studies found "no strong evidence for a benefit of training at low cadences", and tentatively recommended including low-cadence bouts "at moderate to maximal intensity" [Hansen & Rønnestad 2017, research, abstract only]. It searched up to April 2016, so it predates Hebisz 2024 and de Pablos 2026.
+
+### Hebisz & Hebisz 2024: the key study
+
+> Hebisz R, Hebisz P (2024). *Greater improvement in aerobic capacity after a polarized training program including cycling interval training at low cadence (50–70 rpm) than freely chosen cadence (above 80 rpm).* PLoS ONE 19(11):e0311833. [Research, full text read.]
+
+**What they did.** 26 well-trained female cyclists aged 17–20 (two dropped out, 12 per group) followed the same 8-week polarised program, built from a 4-day cycle repeated back to back: sprint intervals (SIT), high-intensity intervals (HIIT), a long easy ride, an active-rest day. One group rode the SIT and HIIT at low cadence, the other at free cadence above 80 rpm.
+
+**Who the riders were.** Before day one they had at least 3 years of training, trained at least 10 hours a week, raced at least 15 times a year, and had done 3 months of base training that included core work, running with jumping exercises and lower-limb strength training. So "no lead-in" was true of the low cadence, not of their preparation.
+
+**Where they rode.** Outdoors, uphill on 6–9% grades.
+
+**Safety valve.** If a rider's morning heart-rate variability (HRV, a readiness measure) was low, that day's HIIT was ridden for the same time at the power of the first ventilatory threshold (VT1, roughly the top of easy riding) instead. In the recovery cycles the main set was cut by 50%. This is the study's own "tired → turn it down".
 
 **What they found:**
 
-| Group | VO2max improvement | Max aerobic power improvement |
-|-------|-------------------|-------------------------------|
-| Low cadence (50–70 rpm) | **+8.7%** | **+8.1%** |
-| Freely chosen cadence (>80 rpm) | +4.6% | +3.0% |
+| Group | Absolute VO2max change (L/min) | VO2max per kg change (ml/kg/min) | Max aerobic power (Pmax) change |
+|---|---|---|---|
+| Low cadence (50–70 rpm) | **+8.7%** (3.09 → 3.36, significant, p < 0.001) | **+8.8%** (54.5 → 59.3, significant, p < 0.001) | **+8.1%** (268.8 → 290.7 W, significant, p = 0.001) |
+| Free cadence (>80 rpm) | +4.6% (3.02 → 3.16, significant, p = 0.032) | +3.7% (54.4 → 56.4, **not** significant, p = 0.108) | +3.0% (259.8 → 267.5 W, **not** significant, p = 0.423) |
 
-The low-cadence group also improved their second ventilatory threshold (VT2), which the free-cadence group did not.
+Values from Hebisz & Hebisz (2024), Table 2. The often-quoted "+8.7% vs +4.6%" is absolute VO2max (litres of oxygen per minute), not VO2max per kg of body weight.
 
-**Why it might work:** At any given power output, pedaling slower means each pedal stroke requires more force. Knowledge is Watt (issue #58, citing its own research note) reports that at the same rpm, going from first-threshold (VT1) to VO2max intensity almost **doubles the percentage of maximum dynamic force** on the pedals, and suggests this could matter for which muscle fibres are recruited. That is a commentary, not peer-reviewed. The idea that high force *and* high intensity together recruit more fast-twitch fibres is our extrapolation from it (and from Ahlquist 1992). The Hebisz authors themselves only speculate ("Perhaps…") that heavy-gear uphill efforts may increase motor-unit activation, as resistance training does. [Knowledge is Watt #58; Hebisz & Hebisz 2024]
+The difference between the groups was significant for Pmax (η² = 0.18, p = 0.03) and VO2max per kg (η² = 0.23, p = 0.02); η² of 0.14 or more is usually called a large effect. In the free-cadence group only absolute VO2max (litres per minute) rose significantly. Gross efficiency did not change in either group. VT2 was only tested within each group.
 
-**Important caveat:** The study tested a program where **all** high-intensity work was done at low cadence for 8 weeks. It did not test the use case of adding 1–2 low-cadence sessions to an otherwise normal-cadence training week. The ongoing training approach in this document is based on coaching practice, not on this study directly.
+**Limits.** One small study of young women. The paper reports no monitoring of knee pain or injuries. And every hard session was at low cadence for 8 weeks, which is not the same as adding one torque session a week to normal training.
 
-#### Exact Hebisz study protocol
-
-The study used a 4-day microcycle, repeated across 8 weeks with volume progression at the midpoint:
+#### The study protocol
 
 | Day | Session | Weeks 1–4 | Weeks 5–8 |
-|-----|---------|-----------|-----------|
-| 1 | SIT (Sprint Interval Training) | 8×30s maximal at **50–60 rpm** (2 sets of 4), 90s recovery between reps, 25 min between sets. ~80 min total. | 12×30s maximal at **50–60 rpm** (3 sets of 4), same recovery. ~110 min total. |
-| 2 | HIIT (High-Intensity Intervals) | 4×4 min at 90–100% Pmax at **60–70 rpm**, 8 min recovery. ~85 min total. | 6×4 min, same intensity and cadence. ~110 min total. |
-| 3 | LIT (Low-Intensity Endurance) | 150 min at ~VT1 power | 180 min at ~VT1 power |
-| 4 | Active Recovery | Easy spin | Easy spin |
+|---|---|---|---|
+| 1 | SIT | 8 × 30 s maximal at **50–60 rpm** (2 sets of 4), 90 s active rest "similar to the power at VT1", 25 min between sets "also at low intensity". ~80 min including warm-up. | 12 × 30 s (3 sets of 4), same rests. ~110 min. |
+| 2 | HIIT | 4 × 4 min at 90–100% of Pmax at **60–70 rpm**, 8 min active rest "at an intensity similar to the power achieved at VT1". ~85 min including warm-up. | 6 × 4 min, same intensity and cadence. ~110 min. |
+| 3 | Long easy ride | long, easy | longer |
+| 4 | Active rest | 60–80 min at 20% less power than VT1 | same |
 
-**Note the different cadence ranges:** SIT uses **50–60 rpm**, HIIT uses **60–70 rpm**. These are not interchangeable.
+SIT is at **50–60 rpm**, HIIT at **60–70 rpm**. They are not interchangeable. The paper gives no reason for the 25-minute break between SIT sets.
 
-**FTP translation:** The study prescribes HIIT at 90–100% of maximal aerobic power (Pmax, from a ramp test with 3-minute steps). The paper gives no FTP equivalent. Knowledge is Watt #58 translates the HIIT intervals to roughly 110–120% of FTP — a commentary estimate, not from the paper. The workouts use ~110% FTP, the conservative end of that range. How Pmax maps onto FTP varies by rider; this is a question for a coach or physiologist.
+#### Translating the study's intensity to %FTP (ours)
 
-### How solid is this evidence?
+The study gives HIIT as 90–100% of Pmax, where Pmax came from a test with 3-minute steps rising by 40 W (which gives a lower "max" than a 1-minute ramp test). It gives no FTP. From the study's own baseline values (Table 2: low-cadence group Pmax 268.8 W, VT2 197.7 W, VT1 129.0 W; free-cadence group 259.8, 195.7, 128.4 W), 90–100% of Pmax is 1.19–1.36 × VT2. Taking FTP ≈ VT2 (the second ventilatory threshold, close to FTP), that is **~120–136% FTP**. Our HIIT files use ~120%, the bottom of that range. In our judgement FTP is usually at or a little below VT2, so the estimate errs on the easy side (ours). **This is our estimate and the most uncertain number in the library.**
 
-**Honest answer: interesting, but not conclusive.** Here's why:
+The same arithmetic puts "similar to VT1" at about 65% FTP (VT1/VT2 = 0.65), so the in-session recoveries in HIIT and SIT are ~65% FTP (ours). The study's separate active-rest days were lower, at about 52% FTP by the same arithmetic.
 
-**Strengths:**
-- Published in a peer-reviewed journal (PLOS One)
-- Controlled design: same hours, same structure, same effort levels, only cadence differed
-- Effect size is large and practically meaningful (+8.7% vs +4.6% VO2max)
+### de Pablos 2026: the site's use case
 
-**Weaknesses:**
+> de Pablos R, Valenzuela PL, Martínez-Cava A, Alejo LB, Revuelta C, Sánchez-Redondo IR, Barranco-Gil D, Pallarés JG (2026). *The Role of Pedaling Intensity During Torque Training in Cyclists: A Three-Arm Randomized Controlled Trial.* Scand J Med Sci Sports 36(5):e70294. [Research, abstract only.]
 
-1. **Tiny sample.** 12 cyclists per group. The authors themselves state the findings are "not representative for the general group of training female cyclists." [Hebisz & Hebisz 2024]
+46 well-trained men, 10 weeks. A control group (n = 15) kept their usual training. Two groups **added** two torque sessions a week to it: the site's use case.
 
-2. **Female-only, youth cohort.** Participants were 17–20 year old competitive female cyclists. Results cannot be assumed to transfer directly to older, male, or recreational cyclists.
+- **HIGH-Load** (n = 16): all-out pedalling against 70% of maximum dynamic force (the most force a rider can put into a stroke). Improved within the group (Wingate sprint peak and mean power, maximal aerobic power, ventilatory thresholds, thigh-muscle size) and beat control on Wingate power and thigh-muscle size.
+- **LOW-Load** (n = 15): 4-minute intervals against 35% of maximum dynamic force. No significant change within the group, but **beat control on Wingate mean power** (p = 0.008).
+- **HIGH vs LOW: not significantly different.** The authors say HIGH-Load's advantage "should be confirmed in larger studies".
 
-3. **No injury monitoring.** The study tracked performance but not joint stress, knee pain, or any injury risk markers. Low cadence is mechanically harder on the knees (see below), and this was not studied.
+The abstract gives no cadence, %FTP or rep count for either group, so we cannot say which of our sessions LOW-Load resembles. No library workout uses the near-maximal HIGH-Load format, so de Pablos is not evidence for our SIT sessions.
 
-4. **Mixed literature overall.** Knowledge is Watt (issue #58, a commentary on the study — not the study authors) notes that "to date, there is no data reporting a clear and unequivocal benefit of torque (low cadence) training." Kristoffersen et al. (2014) found no advantage from moderate-intensity low-cadence intervals (40 rpm at 73–82% of max heart rate, twice a week for 12 weeks) over freely chosen cadence in well-trained male veteran cyclists (mean age 47). Set against the Hebisz result, this suggests that **intensity matters**: the benefit may only emerge when combining low cadence with high intensity. That comparison is ours (and Knowledge is Watt's), not the Hebisz authors'. [Knowledge is Watt #58; Kristoffersen et al. 2014]
+### Nimmerichter 2012: a close cousin of Threshold 5×5
 
-5. **Comparison to male cohorts.** The same polarized model applied to well-trained men in previous research produced ~14% VO2max improvements overall — larger than either group here. Gender and training history appear to significantly affect the magnitude of response. [Hebisz & Hebisz 2024]
+> Nimmerichter A, Eston R, Bachl N, Williams C (2012). Eur J Appl Physiol 112:69–78. [Research, abstract only.]
 
-### Coaching consensus on long-term integration
+18 male cyclists, 4 weeks, twice a week: six 5-minute bouts at the power of the respiratory compensation point (roughly threshold), one group uphill at 60 rpm, one on the flat at 100 rpm, plus a control group. Lab tests showed "no significant group effects". In field time trials the 60-rpm group gained 4.4% uphill and 1.5% on the flat; the 100-rpm group −1.3% uphill and +2.6% on the flat; control +4.0% uphill and −3.5% on the flat. Only the 60-rpm group improved on both, but control gained almost as much uphill, and on the flat the 100-rpm group gained more. The authors say the higher forces "are potentially beneficial". Our reading: **a small trial with a tentative positive result.**
 
-The study shows the mechanism works. The coaching sources below show how practitioners integrate it into ongoing training. This combination — study mechanism + coaching practice — is the basis for this document.
+### Kristoffersen 2014: a null result at 40 rpm
 
-**Neal Henderson** (founder of the Apex Performance Centre; head of sport science at Wahoo at the time of the August 2020 episode; coached Rohan Dennis and Taylor Phinney): *"Generally I do about one of these sessions a week, at most two"* — because they are "a bit more stressful from a musculoskeletal standpoint". He has never programmed back-to-back big gear sessions. Henderson's entry point for a new athlete: tempo, 3–5 min at 75–85% of threshold, 50–60 rpm, ~20 min total work. He then moves to threshold (e.g. 5×5 min at ~95% FTP, 50–60 rpm) and short VO2max-power efforts (e.g. 2 sets of 6×30 s at 5-min power). In a full block he often *starts* with short seated, then standing, big-gear starts (~20 s) before the longer efforts. Petr Vakoč (pro road rider, formerly with Quick-Step, in a clip on the same episode), on his 12×30-s low-gear session: *"now I do it one to twice a week … I would say three times per two weeks."* [Fast Talk ep. 125, 20 Aug 2020]
+> Kristoffersen M, Gundersen H, Leirdal S, Iversen VV (2014). Front Physiol 5:34. [Research, full text read.]
 
-**EVOQ.BIKE (Landry Bobo):** Start with 1 session per week, work up to 2 per week during base season. During race season: 1–2× per month for maintenance. They keep low-cadence work going year-round, not as a block to complete. [EVOQ.BIKE]
+22 well-trained veteran cyclists (mean age ~47), 12 weeks. The low-cadence group added 5 × 6 min at 40 rpm at 73–82% of max heart rate twice a week: no significant effect on any measure. The comparison group added 90 min a week at free cadence and the same intensity, and improved. 40 rpm is below this site's 50-rpm floor, intensity was set by heart rate, and the comparison group did extra training, so it is not a clean "moderate intensity doesn't work" result.
 
-**EF Pro Cycling (Peter Schep, EF Head of Performance):** Progressive approach — start at 60 rpm, 80–85% FTP for 15 minutes, then advance to threshold efforts, and only then above threshold. Recreational riders "need to proceed cautiously to limit the risk of injury." The VO2max torque workout EF publishes alongside this advice is **Noemi Rüegg's own session** (3×5 min at VO2max pace — EF defines that as 106–120% FTP — at 50–60 rpm). It is a post-adaptation session, not a starting point. [EF Pro Cycling]
+---
 
-**Honest statement:** No controlled trial has tested 1–2 low-cadence sessions per week mixed with normal-cadence training against a control group. The ongoing training recommendations in this document are coaching consensus, not experimentally validated. We are using the study to understand *why* low-cadence training may work, and coaching practice to guide *how* to integrate it.
+## Intensity floor: Zone 2 torque work doesn't count
 
-### Intensity floor: Zone 2 torque work is not effective
+- **EVOQ (Landry Bobo, written):** *"If you go below tempo into zone 2, you probably won't be producing enough torque to make a meaningful difference."*
+- **CTS (Adam Pulford, video, auto-captions):** low cadence at lower power "doesn't make you stronger"; go harder than zone 2 to see a benefit.
+- **CTS (Jim Rutberg, written):** tempo or sweet-spot power, 76–85% or 88–94% of threshold, at about 50–55 rpm.
+- **Henderson:** riders just starting do tempo at 75–85% of threshold (machine transcript).
 
-Both the research and coaching sources converge on this: low-cadence work must be at **tempo intensity or above** to be effective as a torque training stimulus.
+So every session in the build is at 80% FTP or above. An earlier version of this site began with three weeks of Zone 2 low-cadence riding and credited it to EVOQ. EVOQ's article contains no adaptation phase and says the opposite. Those sessions put less force on the pedals than ordinary riding at FTP and 90 rpm (about 23–25 Nm vs 26.5 Nm, our arithmetic). They were removed.
 
-- **EVOQ.BIKE** explicitly states: *"If you go below tempo into zone 2, you probably won't be producing enough torque to make a meaningful difference."* They recommend tempo or threshold power as the minimum. [EVOQ.BIKE]
-- **Kristoffersen et al. (2014) vs. Hebisz & Hebisz (2024):** The null-result study (Kristoffersen et al., 2014) used moderate-intensity low-cadence work and found no benefit over freely chosen cadence. The positive results in Hebisz came specifically from combining low cadence with **high** intensity (90–100% Pmax for HIIT, maximal for SIT). The comparison between the two studies is ours — Hebisz & Hebisz do not cite Kristoffersen et al.
-- **Henderson:** His entry-level torque work starts at 75–85% FTP (low tempo to sweet spot), not Zone 2. [Fast Talk Labs]
+---
 
-**Practical implication:** All torque workouts in the calendar must be at tempo (~76% FTP) or above. Zone 2 low-cadence sessions are just normal riding at a slightly uncomfortable cadence — they do not provide the torque stimulus that makes this training worthwhile. The adaptation phase (weeks 1–3) is the only exception: it uses Zone 2 power intentionally, to introduce the mechanical stress to joints and tendons before adding intensity. It is not meant to drive performance gains.
+## Torque intervals and the gym
+
+Torque intervals are not strength training. Even in "torque training", pedal force stays below about 54% of the rider's maximum [Barranco-Gil 2024, research, abstract only, n = 11]. Henderson describes long big-gear efforts as "truly a muscular endurance type of thing" (Fast Talk ep. 125, machine transcript; speaker inferred from context).
+
+The coaches pair torque work with lifting, in different ways:
+
+- **EVOQ (written):** the bulk of torque work in base season "when you are also lifting in the gym". EVOQ calls lifting in the morning and doing torque intervals later the same day "totally theoretical".
+- **CTS (Pulford, video, auto-captions):** heavy lifting in base, then low-cadence torque intervals in the build to "transfer" the strength to the bike. A sequence, not both at once.
+- **EF (written):** Noemi Rüegg does gym work (squats, box jumps) in winter and torque work on the bike in season.
+- **Henderson (machine transcript):** "a firm believer in an appropriate strength and conditioning program"; "if you haven't done the gym work, well, this might be too much for you".
+
+This site doesn't cover gym training and has no gym programme.
 
 ---
 
 ## Knee safety
 
-This is the main practical concern. Low cadence cycling significantly increases patellofemoral (kneecap) joint load.
+This is the main practical concern.
 
-Patellofemoral (kneecap) load rises with knee bend and with the force pushed through each pedal stroke. A systematic review of knee biomechanics in cycling notes that "increasing knee flexion angle can increase forces impacting the knee" and that cadence and workload affect the loads (moments) around the knee [Johnston et al. 2017]. Cycling keeps the knee bent throughout the stroke, and low cadence raises the force per stroke — that combination is our reasoning for treating knee load as the main risk.
+- **What the research shows.** At second-threshold power, 90 rpm gave a 29% smaller kneecap (patellofemoral) compressive force than 70 rpm in 12 competitive cyclists; the main knee-joint forces were "not largely affected" [Bini & Hume 2013, research, abstract only]. They tested 70 vs 90 rpm only; applying it to 50–60 rpm is our extrapolation. A review of knee biomechanics in cycling notes that "increasing knee flexion angle can increase forces impacting the knee" and that cadence and workload affect the loads around the knee [Johnston 2017, research, full text; the reviewed studies were small and of low to moderate quality].
+- **Who should avoid it.** EVOQ: riders with a history of overuse injuries, particularly knee pain, should avoid low-cadence training (written). We read that as including patellar tendinopathy and patellofemoral pain (ours; check with a professional).
+- **Henderson (machine transcript):** "And if it hurts, stop doing it." Riders with limitations go to a higher cadence ("70 rpm rather than the 50") and stay seated (less joint compression).
 
-Clinically: *"Pushing hard gears at low revolutions puts a high load through the patella, whereas lower gears at a high cadence (85-90rpm) will put less load through the Patellofemoral joint with each stroke."* [Physio-pedia: Spring Knee. The page's own footnote for this sentence is a neuromuscular-fatigue study (Lepers et al. 2001), so its sourcing is thin.] Physio-pedia's Cyclist's Knee page likewise lists slow cadence (putting much greater force through the knee) among causes of anterior knee pain, alongside bike-fit problems. [Physio-pedia: Cyclist's Knee]
+### Knee rules
 
-**All low-cadence interval work must be done seated.** Standing eliminates the training stimulus — you can use body weight to press the pedal down, bypassing the forced muscular contraction that makes this training work.
-
-**Who should avoid low-cadence training entirely:**
-- Any history of overuse injury, particularly knee pain [EVOQ.BIKE]. We read that as including patellar tendinopathy and patellofemoral pain syndrome (PFPS) — our interpretation; check with a physio.
-- Coming off a rest period or injury — this site's own precaution, not EVOQ's. (EVOQ actually uses a low-cadence session to get the muscles going *after* a rest week; we are deliberately more cautious.)
-- Cyclists who already naturally grind at low cadences [EVOQ.BIKE]. EVOQ's reason: they should work on high cadence and their aerobic engine instead. Our added reason: the extra stimulus is smaller and the knee stress is higher.
-
-### Knee protection rules
-
-These apply to every low-cadence session, always:
-
-1. **Always warm up at normal cadence first** (minimum 15 minutes). Don't start a low-cadence interval cold.
-2. **If your knees ache during a set, stop the set.** Don't push through. End the session if it continues.
-3. **Don't go below 50 rpm** unless you have months of established low-cadence work behind you.
-4. **Never do low-cadence sessions on back-to-back days.** The joint needs recovery time.
-5. **All intervals are seated.** Standing removes the training stimulus and changes the load pattern.
-6. If you have had patellofemoral pain, patellar tendinopathy, or any knee overuse injury: skip low-cadence training entirely. [EVOQ.BIKE says riders with a history of overuse injuries, particularly knee pain, should avoid it; naming PFPS and tendinopathy is our reading of that.]
+1. **All low-cadence intervals are seated.** Henderson's reason is less joint compression (machine transcript). Our added reason: standing lets body weight push the pedal down, which bypasses the muscular effort the session is for (ours).
+2. **Warm up at normal cadence** for about 15 minutes first (every file does this; ours).
+3. **If your knees ache during an interval, stop the interval.** Don't push through (Henderson: "if it hurts, stop doing it").
+4. **Knee pain after a session → repeat last week's session** instead of moving on. If it keeps coming back, stop torque work and see a professional (ours).
+5. **Not below 50 rpm.** No session in the library goes below 50 (ours). Henderson suggests riders with limitations go nearer 70 rpm.
+6. **Not on consecutive days** (see "After the build").
 
 ---
 
-## Adaptation (~3 weeks)
+## The 12-week build
 
-**Goal:** Introduce the mechanical stimulus before adding intensity. Tendons and connective tissue adapt more slowly than muscles; this phase is non-negotiable.
+**One torque session a week.** All other rides at normal cadence. Each session is ridden twice (two weeks), then you move on if the move-on rule says yes. Progress counts sessions done, not calendar weeks. **The 12-week arrangement (two-week steps, one session a week) is ours.** The order comes from the coaches (see "Why this order").
 
-**Where this phase comes from — honestly:** it is this site's own conservative on-ramp. The cadences, session structure, and volume below are not taken from any named source's protocol. They are loosely informed by the general advice among coaches to start torque work gradually, but no source we cite prescribes these sessions. It is not from the study either (the study did not include an adaptation phase — participants were already highly trained). Note that EVOQ.BIKE argues Zone 2 low-cadence work is too easy to be a meaningful torque stimulus; this phase uses Zone 2 on purpose, as a tissue-loading on-ramp rather than a training stimulus (see "Intensity floor" above).
+| Weeks | Session | Source | Status |
+|---|---|---|---|
+| 1–2 | Adaptation 4 × 4 min @ 80% FTP, 60–65 rpm, 4 min easy spin | Wakefield (cadence, 4 × 4, rest = rep); 80% our pick inside Henderson's 75–85% and Schep's 80–85% | Composite, ours. Wakefield: machine transcript. Schep: written. Henderson: machine transcript. |
+| 3–4 | Adaptation 4 × 4 min @ 80–85% FTP (file holds 80%), 50–60 rpm, 4 min easy spin | Henderson (cadence, 75–85%); Schep (80–85%, ~15 min of work); Wakefield (4 × 4, rest = rep) | Composite, ours. Henderson: machine transcript. Schep: written. Wakefield: machine transcript. 16 min of work is a little under Henderson's "20 or so". |
+| 5–6 | Torque Endurance 3 × 8 min @ 95% FTP, 60–70 rpm, 8 min easy spin | EVOQ / Housler (scaled: 3 reps instead of 4); rest = rep is our choice, as Wakefield and CTS (Rutberg) use | Housler written. Scaling and recovery ours. |
+| 7–8 | Threshold 5 × 5 min @ 95% FTP, 50–60 rpm, 2:30 easy spin | Henderson (5 × 5 @ 95%, 50–60 rpm); 2:30 is Henderson's half-time rule, applied by us | Machine transcript. Derivation ours. |
+| 9–10 | TorqueMax 6 × 2.5 min @ 110% FTP, 50–60 rpm, 4 min easy spin | EVOQ (Bobo): 2–3 min at 105–110%, 50–60 rpm, start with 6 reps | Written. 2.5 min and 110% are our picks inside the range; the 4-min recovery is ours. |
+| 11–12 | HIIT 4 × 4 min @ ~120% FTP, 60–70 rpm, 8 min at ~65% | Hebisz 2024 (4 × 4, 60–70 rpm, 8-min active rest at ~VT1) | Research. ~120% and ~65% are our estimates from the paper. |
 
-**Frequency: 1 low-cadence session per week.** All other sessions: normal cadence.
+**Recovery power.** In adaptation, Torque Endurance, Threshold and TorqueMax, the recoveries are easy spin at 50% FTP. No source gives an easy-recovery %FTP for these sessions; it is ours. HIIT and SIT recoveries follow the study (~65% FTP, our estimate of "similar to VT1").
 
-| Week | Session | Details |
-|------|---------|---------|
-| 1 | 1× low-cadence endurance | Warm up 15 min normal cadence. Then 2× 10 min Zone 2 (~65% FTP) at **65–70 rpm**, 5 min easy spin between. Cool down 10 min. |
-| 2 | 1× low-cadence endurance | 2× 15 min Zone 2 at **65 rpm**, 5 min easy between. |
-| 3 | 1× low-cadence endurance | 3× 10 min Zone 2 at **60–65 rpm**, 5 min easy between. |
+### Adaptation, weeks 1–4
 
-### Ready to move on?
+**Goal:** get the knees, tendons and legs used to low-cadence force at a controlled, below-threshold effort before the build sessions.
 
-All of these must be true before starting ongoing training:
+- **Weeks 1–2** rest on John Wakefield (That Triathlon Show #465, machine transcript): riders new to torque work start at "around 60, 65" rpm, do "four by fours" the first time, rest as long as the rep, and stay "below thresholds". Wakefield gives no %FTP. 80% is our pick inside Henderson's 75–85% and Schep's 80–85%. Peter Schep's written entry session ("Begin with strength training sessions at 60 rpms at 80 to 85% of your FTP for 15 minutes") is almost the same session: the strongest single anchor for weeks 1–2.
+- **Weeks 3–4** lower the cadence to 50–60 rpm, Henderson's cadence for riders just starting (tempo efforts of 3–5 min at 75–85% of threshold, 3–4 min recovery, about 20 min of work).
+- **Wakefield's written version differs.** His Science to Sport article (2026) has a 3-week Phase 1 at 55–60 rpm, 5 × 4 min or 3 × 10 min, 8 min rest, RPE 7/10, ~90 min with a 30-min warm-up and cool-down, on a 6%+ climb. Our weeks 1–2 follow his podcast, not the article.
+- **How it should feel:** controlled, steady, below your threshold. Heavy legs are normal. Wakefield rates his written session 7/10, so it isn't meant to feel easy (ours, wording on his inputs).
+- Peak torque: 30.6 Nm in weeks 1–2 (80% at 62.5 rpm), 34.7 Nm in weeks 3–4 (80% at 55 rpm; 40.6 Nm at 85% and 50 rpm). Ours, at 250 W FTP.
 
-- [ ] All 3 adaptation sessions completed
-- [ ] No knee pain during or after any session
-- [ ] No lingering knee discomfort 24+ hours after any session
-- [ ] Cadence targets felt achievable (not struggling to stay above target)
-- [ ] RPE for the intervals was no higher than ~6/10 (it's Zone 2 power — the effort should come from the legs, not the lungs)
+### Build, weeks 5–12
 
-### When to stop or go back
+- **Weeks 5–6, Torque Endurance 3 × 8.** Brendan Housler (EVOQ, written): "Start off with 4 x 8m @ 95% at 60-70rpm. Eventually move to 50-60rpm, and extend out to 3 x 15m. Aim for 90-105% FTP." We start with one rep fewer (scaled: 3 reps instead of 4), same intensity. Why: 4 × 8 would double the time under load in one step (16 → 32 min) while power rises from 80–85% to 95%. 3 × 8 = 24 min of work, between CTS's ~20 min (beginner) and ~30 min (intermediate) time at intensity, and CTS says to progress "by adding intervals" (Rutberg, written). Wakefield's long-interval range starts at three reps ("three or five by tens", machine transcript). Peak torque stays about the same as week 4 (~35 Nm at 95% and 65 rpm), but time under load rises from 16 to 24 min and power from 80–85% to 95%. So this week is harder than weeks 3–4, not "the same force, longer". The name "Torque Endurance" is the one used on the EVOQ podcast (auto-captions); it isn't Bobo's coinage.
+- **Weeks 7–8, Threshold 5 × 5.** Henderson (machine transcript): "move into threshold, say five by five minutes at say 95% of FTP at that same 50 to 60 rpm". That passage gives no recovery. In another passage he gives threshold efforts of 3–6 min at 50–60 rpm "with typically about half time recovery". Half of 5 min is 2:30: Henderson's half-time rule, applied by us. EVOQ's written progression for its 5 × 5 staple ("increase power up to threshold") also supports 95%. Peak torque ~41 Nm.
+- **Weeks 9–10, TorqueMax.** EVOQ (Bobo, written): "around 2-3 minutes at 105-110% of FTP and around 50-60 rpm", "starting with six repetitions and working up to eight". EVOQ warns: "There is an increased risk of injury with these intervals", so do the lower-intensity torque intervals first. TorqueMax is EVOQ's extension of the Hebisz study to a new format; **no study has tested it.** "TorqueMax" is EVOQ's term ("we have dubbed"). Our file: 6 × 2.5 min at 110% (the top of EVOQ's range), 55 rpm, 4 min recovery (ours). Peak torque ~48 Nm.
+- **Weeks 11–12, HIIT 4 × 4.** The Hebisz HIIT session at its weeks 1–4 volume: 4 × 4 min at 60–70 rpm, 8 min active rest. At ~120% FTP (our estimate, see above) it is much harder on the lungs. Peak torque depends on cadence: ~41–48 Nm at 70–60 rpm (~44 Nm at 65 rpm). Ridden indoors at a %FTP target, not outdoors uphill as in the study.
 
-- **Any knee pain during or after a session:** Stop low-cadence work for at least a week. When you restart, go back to Week 1. If it recurs, see a physiotherapist before continuing.
-- **Can't maintain target cadence** (grinding 5+ rpm below target): The gear is too hard. Reduce power target, not cadence.
-- **Any sharp pain anywhere:** Stop immediately. This is not normal muscular discomfort.
-- **Feeling overly fatigued from the sessions:** This is Zone 2 power — it should not be draining. If it is, your overall training load may be too high. Reduce other sessions that week.
+### Why this order
+
+- **Peter Schep (EF, written):** start at 60 rpm and 80–85% FTP; "If those go well, move on to threshold sessions and then go above threshold". The clearest written support for moderate → threshold → above threshold.
+- **EVOQ (Bobo, written):** do the lower-intensity torque intervals before TorqueMax. **EVOQ podcast (auto-captions):** if you're new, start with torque endurance, then "sprinkle in" TorqueMax.
+- **Housler (written):** the Torque Endurance ladder starts at 4 × 8.
+- **Henderson (machine transcript):** tempo → threshold → VO2max power, **for sustained efforts**. In a full block he puts short seated and standing big-gear starts **first**, so he is not a source for "maximal efforts last".
+- **CTS (Pulford, video, auto-captions):** low-cadence zone 3–4 work first, then high-force zone 5–6 work later in the build.
+- **Hebisz 2024:** 4 HIIT reps before 6; 8 sprints before 12.
+
+The two-weeks-per-session arrangement and the week counts are ours.
+
+**How the load steps up** (our arithmetic, 250 W FTP): peak torque per stroke goes 30.6 → 34.7 → 34.9 → 41.2 → 47.7 → 44.1 Nm (+13%, 0%, +18%, +16%, −8%). Total torque × time goes ≈ 490 → 555 → 838 → 1,030 → 716 → 705 Nm·min. Weeks 5–6 are the biggest step in total load, which is why Torque Endurance is scaled to 3 reps there.
+
+### The move-on rule (ours)
+
+After the second session of a step, move to the next step only if all three are true:
+
+1. Your knees were fine, during and after.
+2. You held the cadence.
+3. You weren't wrecked the next day.
+
+Any "no" → repeat last week's session. The rule is ours. The nearest sources are the Roadman Cycling Podcast's "push down towards that 50 rpm if your joints feel good" (media relay, auto-captions; the speaker is presumed to be host Anthony Walsh) and Henderson's "if it hurts, stop doing it" (machine transcript).
+
+### After a break
+
+After illness or travel, the weeks 3–4 session is a good one to come back with. This is a suggestion, not a rule (ours). After a long break, restart from adaptation or from week 5, as you see fit (ours).
+
+---
+
+## After the build
+
+After week 12 you choose:
+
+- **Maintain:** about one torque session a month. EVOQ (written) gives "1-2x per month depending on your training schedule is sufficient" during the race season; we use it as the maintenance option (ours).
+- **Keep going:** 1–2 sessions a week, **never on consecutive days** (ours, combining these). CTS (Jim Rutberg, written): beginner and intermediate riders "should separate MT workouts by at least a full day"; "Experienced and/or advanced riders can often do MuscleTension intervals on back-to-back days". Henderson (machine transcript): "Generally I do about one of these sessions a week at most two", because it is "a bit more stressful from a muscular skeletal standpoint"; he has never asked anyone to do two days in a row, though he adds "maybe it could work". EVOQ (written): start with one day a week and work up to two.
+
+**Free choice from the library.** After week 12 there is no rotation and no "next session". Pick from the ten library workouts (TE 3×8, TE 4×8, TE 3×15, Threshold 5×5, TorqueMax, Rüegg, HIIT 4×4, HIIT 6×4, SIT 2 sets, SIT 3 sets). A few plain hints (ours): mix moderate sessions (Torque Endurance, Threshold) with above-threshold ones (TorqueMax, Rüegg, HIIT, SIT); the smaller and bigger variants are useful when you swap one session of another training plan for one of these at a similar load.
+
+**Where the evidence ends.** The research backs particular workouts (Hebisz: HIIT and SIT; de Pablos: near-maximal efforts), each tested inside its own multi-week program. No study tested this site's arrangement. The build order comes from the coaches; the week counts are ours; after week 12 no source says what order to ride things in. Each workout keeps its own source label.
+
+**Fitting it into ~10 hours/week (ours).** de Pablos' riders added two sessions to their usual training. At ~10 hours/week, swapping a torque session for one of your existing interval sessions is usually easier than adding one on top. Keep the long endurance ride and all other rides at normal cadence. All targets are %FTP, so they scale when your FTP changes.
+
+### The sessions after the build
+
+- **TE 4×8** at 95%, 60–70 rpm, 8 min easy spin: Housler's unscaled start (EVOQ, written).
+- **TE 3×15** at 90%, 50–60 rpm (file 55), 15 min easy spin: Housler's later step ("Eventually move to 50-60rpm, and extend out to 3 x 15m"), at the floor of his 90–105% range (our choice). 45 min of work is above CTS's ~40 min for advanced riders, and its 15-min reps are longer than CTS's 5–10 min.
+- **Rüegg VO2max + sprint:** Noemi Rüegg's session, published by EF: 3 × 5 min at 50–60 rpm at "VO2 max pace" (EF: 106–120% FTP), 10 min easy between, with an optional 1-min max effort in a lighter gear at the end of each effort. Our file: 110% at 55 rpm (inside EF's range), 3 efforts (EF's text says 3–5), shorter warm-up and cool-down than EF's 30 min each (scaled for Zwift).
+- **HIIT 6×4:** the Hebisz weeks 5–8 volume, same intensity and recoveries as HIIT 4×4.
+- **SIT 2 sets / 3 sets:** the Hebisz SIT session at its weeks 1–4 (8 sprints) and weeks 5–8 (12 sprints) volumes, 50–60 rpm. The sprints are free-ride blocks with no power target; you set the force. 90 s at ~65% between sprints; the 25-min break between sets is also at ~65% (ours: the paper says only "also at low intensity" and gives no reason for the length). No lead-in session exists in any source; the study riders did it from day one, after the preparation described above. The Rüegg sprint is in a light gear at free cadence, so it is not a lead-in to SIT.
+
+### Seasons
+
+The coach sources run torque work as a block or with a seasonal emphasis:
+
+- **CTS (Pulford, video, auto-captions):** "Everything has a season including torque training": heavy lifting in base, low-cadence zone 3–4 work for a few weeks in the build, then a block of zone 5–6 low-cadence work.
+- **CTS (Rutberg, written):** "a two to three-week block" of these intervals.
+- **Wakefield (written):** a 3-week Phase 1.
+- **EVOQ (written):** year-round, with the bulk in base and 1–2 sessions a month in season.
+
+Taking a break from torque work, and coming back later, fits these sources (our reading). This site doesn't say when your season starts. The plan and the tracker work the same whenever you begin.
+
+---
+
+## Riding it in Zwift: ERG and adapting to the day
+
+**The %FTP numbers are the sources' own.** They are already prescribed at low cadence, so we don't lower them further. (On the EVOQ podcast, auto-captions only, the coaches say low-cadence threshold is "most likely going to be lower" than at normal cadence; the source numbers already allow for that.) HIIT at ~120% is the exception: it is our estimate, so it is the most uncertain.
+
+**Tired? Turn it down.** With ERG on, Zwift lets you change the workout intensity ("FTP bias") by ±25% during a workout, so 75–125% of the file's targets, from the Companion app or in game (Zwift support, "Workout Mode for Cycling"). The Hebisz study did the same thing in its own way: on a low HRV morning, that day's HIIT was ridden at VT1 power.
+
+**ERG at low cadence has a trap.** In ERG the trainer raises the resistance when your cadence drops, to hold the target power (Zwift support, "ERG Mode in Workouts"). At low cadence that can spiral: cadence sags → resistance climbs → cadence sags more → you stall. Keep the pedals turning steadily through the block. Zwift doesn't end the block when you stall, but restarting a heavy gear at low cadence is hard, so in practice a stall tends to cost you the rest of that interval (ours). Riders used to hard Zwift workouts know this; newcomers should expect it.
+
+**If your cadence sags or you stall (our tip, not yet tested in Zwift).** Lower the workout intensity, or switch ERG off from the action bar, spin up to a cadence you can hold, then switch ERG back on or raise the intensity again. Zwift gives no stall procedure; this is ours, built on Zwift's own controls. Adaptation weeks 1–4 (at 80%) are the low-stakes place to learn ERG at low cadence.
+
+**Riding by feel is a fine alternative.** CTS (Rutberg, written) prefers "level" or "resistance" mode to ERG for these intervals, and says ERG can help beginners focus on cadence. On the EVOQ podcast (auto-captions only) the advice is to ride by effort or a torque number: "ignore the watts a little bit and just make it hard".
 
 ---
 
 ## Source prescription reference
 
-This section documents what each source actually prescribes. All workouts in the calendar must trace back to these. See `training-calendar.md` for the implemented workout library.
+What each source actually prescribes. Every workout in the calendar must trace back to this section. See `training-calendar.md` for the implemented library.
 
-### EVOQ.BIKE (Landry Bobo)
+### John Wakefield (elite / pro-team coach)
 
-Two prescribed workouts, both at **50–60 rpm**. EVOQ gives no recovery duration for either; the recoveries in our workouts are our choice.
+Science to Sport coach and co-founder; Director of Coaching, Sports Science and Technical Development at Red Bull – BORA – hansgrohe; previously 4 years at UAE Team Emirates (his own author bio).
 
-1. **Staple torque session:** 5×5 min at ~90% FTP, 50–60 rpm. *"You can extend the duration of these intervals up to 8 minutes to work on muscular endurance."* Can also decrease cadence or increase to threshold intensity as progressions.
-2. **TorqueMax:** 6–8×2–3 min at 105–110% FTP, 50–60 rpm. Explicitly warns: *"There is an increased risk of injury with these intervals, so you should start with the lower intensity torque intervals mentioned earlier in the blog before progressing to the TorqueMax intervals."*
+**That Triathlon Show #465 (podcast, machine transcript):**
+- Riders new to torque work: "around 60, 65" rpm, lower as they get used to it.
+- First time: "four by fours"; later up to six or eight × 4 min, or three or five × 10 min.
+- Rest equals rep length: "if I do four minutes, I like a four-minute rest".
+- Intensity: "you want to be below thresholds", on his own zone model. **No %FTP.** (The split "upper zone 2 for the 10-minute, middle zone 3 for the 4-minute" is the host's paraphrase. Converting Wakefield's zones to %FTP would be an inference across two interviews; we don't print one.)
+- He prefers riders outdoors on a 4–7% climb.
 
-**Intensity floor:** *"Typically, low cadence training is best performed at either tempo or threshold power. If you go below tempo into zone 2, you probably won't be producing enough torque to make a meaningful difference."*
+**Science to Sport article (written, 6 Feb 2026, updated 18 Feb 2026):** Phase 1: 3 weeks, 1 session a week, 55–60 rpm, 5 × 4 min or 3 × 10 min, 8 min rest, RPE 7/10, ~90 min session with a 30-min warm-up and cool-down, on a 6%+ climb, ridden to a torque target. Differs from the podcast on cadence and rest; our weeks 1–2 follow the podcast.
 
-**Frequency:** Start with 1/week, work up to 2/week (in base season). During race season: 1–2×/month for maintenance.
+### Neal Henderson (elite coach)
 
-**Periodization:** *"The bulk of torque workouts are best performed during base season when you are also lifting in the gym."*
+Head of sports science at Wahoo at the time of the episode; coaches elite and WorldTour athletes (host intro). **Fast Talk podcast ep. 125, 20 Aug 2020, machine transcript** (re-transcribed from the publisher's audio; speakers inferred from context).
 
-### Neal Henderson (Fast Talk Labs)
+- **Just starting:** tempo efforts of 3–5 min at "75 to 85% of threshold power at say 50 to 60 rpm", 3–4 min recovery, about 20 min of work in total.
+- **Threshold:** efforts of 3–6 min at 50–60 rpm "with typically about half time recovery".
+- **His ~6-week block:** seated starts → standing starts → tempo 3 min at 85% with 2 min rest → threshold "five by five minutes at say 95% of FTP at that same 50 to 60 rpm" (no recovery given in this passage) → 2 × (6 × 30 s at 5-min power, 90 s rest, 10 min between sets).
+- **Frequency:** "Generally I do about one of these sessions a week at most two"; never two days in a row in his practice ("Maybe it could work").
+- **Gym:** "a firm believer in an appropriate strength and conditioning program"; "if you haven't done the gym work, well, this might be too much for you".
+- **Knees:** "And if it hurts, stop doing it"; riders with limitations "go more at 70 rpm rather than the 50" and stay seated.
 
-**Frequency:** *"Generally I do about one of these sessions a week, at most two."* Never back-to-back days. (Petr Vakoč, in a clip on the same episode, on his own 12×30-s low-gear session: *"now I do it one to twice a week … I would say three times per two weeks."* That refers to that one session, not torque work in general.)
+Nothing in the saved Henderson texts covers ERG or riding by feel.
 
-**Progression for new athletes** (all at 50–60 rpm; Fast Talk ep. 125, 20 Aug 2020):
-1. Entry: 3–5 min efforts at 75–85% of threshold (*"the first thing I would do"*), then 20-s seated and standing big-gear starts with full recovery
-2. Threshold: 5×5 min at ~95% FTP, half-time recovery
-3. VO2max: 30–90s at ~5-min power, equal to double-time recovery
+### EF Pro Cycling: Noemi Rüegg's session, Peter Schep's progression (elite / pro-team coach)
 
-In a full ~6-week block, Henderson often uses a reverse order: 20-s seated starts, then standing starts, then tempo, threshold and 2×(6×30 s) VO2max-power efforts (short/intense → longer/sustained). He limits sessions to one, at most two, a week because they are "a bit more stressful from a musculoskeletal standpoint".
+From EF's article "Pro Workouts: Torque Efforts with Noemi Rueegg" (written). Only the quoted sentences are Peter Schep's (EF Pro Cycling Head of Performance); the workout box and its notes are EF's article text.
 
-### EF Pro Cycling (Noemi Rüegg's session; progression advice: Peter Schep)
+- **Rüegg's session:** "three to five five-minute efforts at 50 rpm to 60 rpm at the power she can produce at her Vo2 max", on a hill. EF's workout box: 30 min easy warm-up; 3 × 5 min at 50–60 rpm at "VO2 max pace", 10 min easy between; 30 min easy cool-down. Box footnote: "VO2 max pace is 106% - 120% of FTP". Variation: at the end of each effort "shift into a lighter gear and do a one-minute max effort".
+- **Schep:** "Begin with strength training sessions at 60 rpms at 80 to 85% of your FTP for 15 minutes. If those go well, move on to threshold sessions and then go above threshold for these five-minute efforts." Recreational riders "need to proceed cautiously to limit the risk of injury."
+- **Gym:** Rüegg does squats and box jumps in winter and torque work on the bike in season.
+- Rüegg recommends focusing on a target number of Nm.
 
-**The Rüegg workout** (Noemi Rüegg's own session, as published by EF; EF's article text, not Schep): 3×5 min at 106–120% FTP (VO2max pace), 50–60 rpm. 10 min easy recovery between sets. Optional: shift to a lighter gear at the end of each 5-min effort and do a 1-min max effort to *"better your ability to transfer torque into power"* (EF's article text).
+### EVOQ.BIKE: Landry Bobo (coaching business)
 
-**Progression (Peter Schep):** Start at 60 rpm, 80–85% FTP for 15 min → threshold efforts → above threshold. The Rüegg workout is a post-adaptation session, not a starting point.
+EVOQ senior leader and coach; Master's degree in Exercise Science (Appalachian State University). Blog "Low Cadence Cycling", 1 Jan 2026 (written).
 
-**Warm-up:** 30 min easy. Cool-down: 30 min easy (EF's workout box). Our Zwift version shortens both (scaled — see the calendar).
+- **Staple:** 5 × 5 min at ~90% FTP and 50–60 rpm; progressions: reps up to 8 min, lower cadence, or "increase power up to threshold". (Not in the library since the Nov 2026 rewrite; its progression supports Threshold 5×5 at 95%.)
+- **TorqueMax:** "around 2-3 minutes at 105-110% of FTP and around 50-60 rpm", "starting with six repetitions and working up to eight", "based on the study done by Hebisz". Warning: "There is an increased risk of injury with these intervals", so start with the lower-intensity torque intervals. No recovery given.
+- **Intensity floor:** "If you go below tempo into zone 2, you probably won't be producing enough torque to make a meaningful difference."
+- **Frequency and season:** "The bulk of torque workouts are best performed during base season when you are also lifting in the gym"; start with one day a week and work up to two; in season "1-2x per month depending on your training schedule is sufficient".
+- **Who should avoid it:** a history of overuse injuries, particularly knee pain.
 
-### Hebisz & Hebisz (2024)
+### EVOQ.BIKE: Brendan Housler (coaching business)
 
-See "Exact Hebisz study protocol" in the evidence section above for the full 4-day microcycle and progression.
+EVOQ president, coach and owner; coached over 250 cyclists one-to-one. Blog "Gravel Racing & Training Tips", 3 Aug 2020 (written):
 
-Key cadence ranges: **SIT: 50–60 rpm. HIIT: 60–70 rpm.** These differ and should not be conflated.
+- **Torque Endurance:** "Start off with 4 x 8m @ 95% at 60-70rpm. Eventually move to 50-60rpm, and extend out to 3 x 15m. Aim for 90-105% FTP." No recovery given. (A gravel-racing article, not a torque article.)
+- Our TE files: TE 3×8 (scaled: 3 reps instead of 4), TE 4×8 (unscaled), TE 3×15 at 90% (the floor of his range, our choice). Recovery = rep length, as Wakefield and CTS use (ours).
+- On the EVOQ podcast (auto-captions) torque endurance is described as reps of at least 8 and up to 20 min at 60–70 rpm; we use the written numbers.
 
----
+### CTS: Jim Rutberg and Adam Pulford (coaching business)
 
-## Ongoing training
+One organisation, two sources.
 
-This is the core of the program. Once adaptation is complete, you integrate high-torque sessions into your weekly training permanently. There is no end date. The goal is that your regular training week yields slightly stronger legs because 1–2 of your sessions include high-torque work.
+- **Jim Rutberg, CTS MuscleTension article (written):** tempo or sweet-spot power, 76–85% or 88–94% of threshold, at about 50–55 rpm; reps of 5–10 min; total time at intensity ~20 min (beginner), 30 (intermediate), 40 (advanced); start with 4 × 5 min; "Recovery between intervals should be equal to the duration of the efforts"; increase workload "by adding intervals"; "a two to three-week block"; beginner and intermediate riders "should separate MT workouts by at least a full day"; indoors, "level" or "resistance" mode is better than ERG, which can help beginners focus on cadence.
+- **Adam Pulford, CTS YouTube video (auto-captions):** "Everything has a season including torque training"; heavy lifting in base; build 1: 50–60 rpm at zone 3–4, 1–2 sessions a week for a few weeks; later in the build, a block of at least two weeks of 50–60 rpm zone 5–6 work, twice a week, full recovery, at least 15 min in zone. Low cadence at lower power "doesn't make you stronger".
 
-### How it works
+### Hebisz & Hebisz 2024 (research)
 
-You are not following a periodized block. You are adding a permanent training tool to your weekly routine. The biggest improvements will come in the first months (novel stimulus), but the sessions continue to provide value indefinitely — the same way that any structured interval work does.
+See "The study protocol" above. HIIT: 4–6 × 4 min at 90–100% Pmax, 60–70 rpm, 8 min at ~VT1. SIT: 8–12 × 30 s maximal in sets of 4, 50–60 rpm, 90 s at ~VT1, 25 min between sets at low intensity. **HIIT ~120% FTP and recoveries at ~65% FTP are our derivation from Table 2** (see "Translating the study's intensity to %FTP").
 
-### Frequency
+### Media relay
 
-**1–2 sessions per week.** One is the norm, two is the ceiling.
-
-- **1 per week is the standard.** Some weeks you'll fit none. That's okay — this is a long-term practice, not a protocol with a deadline.
-- **Maximum: never more than 2 per week.** Both coaching sources that give a frequency agree on this ceiling (Henderson, EVOQ). Henderson's reason is that the sessions are "a bit more stressful from a musculoskeletal standpoint". When doing 2, make one harder and one easier.
-- **Never on back-to-back days.** At least one normal-cadence day between torque sessions.
-- **Race weeks:** If you have a target Zwift race with hard sprints that week, consider dropping to 1 torque session and make it an easier one. Don't stack a Tier 4 sprint session and a race in the same week.
-- **Race season maintenance:** 1–2 low-cadence sessions per month is sufficient to preserve the adaptation. [EVOQ.BIKE]
-
-[Henderson: *"Generally I do about one of these sessions a week, at most two."* Fast Talk Labs. EVOQ.BIKE: *"I'd recommend starting with one day per week of low cadence, and working up to two once you've gotten used to them."* (base season). EF Pro Cycling gives no frequency; Peter Schep recommends a progressive approach to intensity.]
-
-### How to fit this into your existing ~10 hrs/week
-
-- Replace 1–2 of your current interval sessions with a torque session from the calendar. Do not add torque sessions on top of your existing volume.
-- Keep your long endurance ride at normal cadence.
-- All other sessions (endurance, recovery, non-torque intervals): normal cadence.
-
-### The workout library
-
-The specific workouts, durations, and tier assignments are in `training-calendar.md`. The calendar is the source of truth for what to ride; this document explains why it works.
-
-**All sessions are seated throughout. All require a minimum 15-minute normal-cadence warm-up.**
-
-The library is organized into four tiers by intensity and knee stress. The tier structure is this document's organization — the sources support progressive overload but don't use this exact grouping:
-
-- **Tier 1 — Entry:** Henderson's tempo torque work and a short EVOQ staple. First weeks of ongoing training.
-- **Tier 2 — Development:** EVOQ's staple format (5×5 and 5×8) and a scaled Hebisz HIIT intro. The bread-and-butter sessions.
-- **Tier 3 — Challenging:** Henderson's threshold work, Hebisz HIIT at study intensity, and the Rüegg VO2max workout. Higher knee stress.
-- **Tier 4 — Advanced:** EVOQ TorqueMax, Hebisz SIT and full HIIT volume. Highest knee stress, monthly at most initially.
-
-### Progression guidelines
-
-There is no fixed schedule for moving between tiers. Progression is based on how your body responds, not on a calendar. Both Henderson and EVOQ support a progressive approach — starting with lower-intensity torque work and advancing to threshold and VO2max over weeks and months.
-
-**Starting out (first ~4 weeks of ongoing training):**
-- Mix Tier 1 and Tier 2 sessions. Example week: one Tier 1 entry session + one Tier 2 staple session.
-- Try each Tier 2 workout at least once to find what suits you.
-
-**Advancing to Tier 3:**
-- After 3–4 weeks of Tier 2 sessions with no knee issues and the sessions feeling manageable (RPE ≤ 7/10 for the intervals).
-- Introduce one Tier 3 session as your "hard" session. Keep a Tier 1 or Tier 2 session as the "easy" one.
-- Don't do two Tier 3 sessions in the same week initially.
-
-**Advancing to Tier 4:**
-- After at least 8 weeks of consistent ongoing training (~11 weeks total including adaptation).
-- Start with TorqueMax or the 2-set SIT. Monthly at most initially.
-- Tier 4 sessions always count as your "hard" session that week. Pair with a Tier 1 or easy Tier 2 session.
-- The SIT sessions (30-second all-out sprints at 50–60 rpm) are the highest knee-load sessions in the library. They are also the most directly transferable to Zwift race sprints.
-
-**FTP retesting:**
-- Retest every 6–8 weeks. As FTP increases, all percentage-based workouts automatically scale up in absolute power, maintaining the training stimulus.
-
-### Sprint work and Zwift racing
-
-The SIT sessions (Tier 4) develop low-cadence sprint force — the ability to produce very high power at low rpm. This is directly relevant to Zwift race sprints, particularly in situations where you need to accelerate from a slow pace in a heavy gear.
-
-Practical notes:
-- Don't do a SIT session in the same week as a target Zwift race. The neuromuscular fatigue competes with race freshness.
-- The TorqueMax session (EVOQ: 6×2–3 min at 105–110% FTP) develops a similar quality with lower sprint-specific stress. It can be used closer to race weeks.
-- Low-cadence sprint force complements, but does not replace, high-cadence sprint work. Both matter for racing.
-
-### Warning signs — when to back off
-
-| Sign | What to do |
-|------|------------|
-| Knee pain during or after a session | Stop torque work for at least a week. Resume with a Tier 1 session. If it recurs, see a physiotherapist. |
-| Can't hold target cadence (grinding 5+ rpm below) | The workout is too hard. Drop intensity or move to a lower tier. |
-| Normal training is suffering (can't hit numbers, feel flat) | You are overdoing torque work. Drop to 1 session/week for 2–3 weeks. |
-| Post-session ache lasting 48+ hours | Too much load. Drop a tier. |
-| Knee feels "tight" or "clicky" without pain | Precautionary: skip the next torque session, monitor. If it persists, get it checked. |
-
-### Sample weeks
-
-These are illustrative, not prescriptive. Fit the sessions into your existing schedule.
-
-**Early ongoing (weeks 4–6 overall):**
-
-| Day | Session |
-|-----|---------|
-| Tue | Entry 4×4 (Tier 1) |
-| Thu | Staple 5×5 (Tier 2) |
-| Other days | Normal training |
-
-**Established (weeks 10+ overall):**
-
-| Day | Session |
-|-----|---------|
-| Tue | Staple 5×5 (Tier 2) |
-| Thu | HIIT VO2max 4 reps (Tier 3) |
-| Other days | Normal training |
-
-**Sprint-focused week (after months of consistent work):**
-
-| Day | Session |
-|-----|---------|
-| Tue | Staple 3×5 (Tier 1) — light session |
-| Fri | SIT 2-set (Tier 4) — sprint session |
-| Other days | Normal training, no target race this week |
+- **Roadman Cycling Podcast** (auto-captions; the speaker is presumed to be host Anthony Walsh): an eight-week progression, twice a week; "push down towards that 50 rpm if your joints feel good". The nearest source for our move-on rule only. It is also the podcast that got this site started.
+- **Knowledge is Watt #58** (newsletter commentary on Hebisz 2024): earlier versions of this site took three things from it (an FTP estimate for the HIIT, a pedal-force mechanism and a "no clear benefit" quote). They are replaced here by our own derivation from the paper, by Barranco-Gil 2024 and by Hansen & Rønnestad 2017.
 
 ---
 
 ## What we'd update this document for
 
-This section tracks how solid each claim is and what would change it.
+How solid each claim is, and what would change it.
 
-| Claim | Current confidence | What would change it |
-|-------|-------------------|----------------------|
-| +8.7% vs +4.6% VO2max finding | Low-medium — one small study | Replication in larger, mixed-gender, recreational cyclist cohorts |
-| Benefit requires *high* intensity at low cadence | Medium-high — biomechanical theory + null results at moderate intensity (Kristoffersen 2014) + EVOQ explicitly states Zone 2 is ineffective | A well-controlled study showing moderate-intensity low-cadence also works |
-| 1–2 sessions/week mixed into normal training is effective | Medium — coaching consensus (Henderson, EVOQ), no controlled trial | A study directly testing mixed integration vs. control |
-| Knee injury risk at low cadence | High — well-established biomechanics | Would need evidence of a safe low-cadence technique that reduces patellofemoral load |
-| Seated requirement | High — biomechanically obvious | No plausible mechanism to change this |
-| 3-week adaptation is sufficient | Low — this site's own on-ramp (not a named source's protocol), no controlled trial | A study comparing fast vs. gradual introduction |
-| Applicability to recreational male cyclists | Unknown — the study used young competitive women | Studies on non-elite, mixed-gender, or masters populations |
-| 2/week ongoing frequency ceiling | Medium — coach consensus (Henderson, EVOQ), no controlled trial | A dose-response study comparing 1, 2, and 3 sessions/week |
-| Tier-based progression is safe | Medium — standard progressive overload principle + coach guidance | Injury data from structured torque training programs |
-| SIT sessions improve Zwift race sprints | Low-medium — study used SIT but did not isolate sprint performance; biomechanically plausible | A study testing low-cadence sprint training and race outcomes |
+| Claim | Confidence | What would change it |
+|---|---|---|
+| Low cadence beat free cadence for VO2max and Pmax in HIIT and SIT (Hebisz 2024) | Low-medium: one small study of young women; the free-cadence group's VO2max-per-kg and Pmax changes were not significant | Replication in larger, mixed-gender, recreational groups |
+| The best evidence is for high intensity at low cadence | Medium: Hebisz positive; de Pablos HIGH-Load positive but not significantly better than LOW-Load; Nimmerichter small positive at threshold | A trial comparing moderate and high intensity at low cadence head to head, with cadence and %FTP reported |
+| Moderate, threshold-level torque sessions help | Low: thin and mixed (Nimmerichter 2012 small positive; Kristoffersen 2014 null at 40 rpm; de Pablos LOW-Load no significant within-group change but beat control on Wingate mean power) | The de Pablos full text (cadence, %FTP); a larger trial of threshold torque intervals |
+| Adding torque sessions to normal training helps | Low-medium: de Pablos 2026 tested exactly this (2 a week added, abstract only) | The full paper; replication |
+| Zone 2 low-cadence work is too easy to count | Medium: EVOQ (written), CTS (Pulford, auto-captions), our torque arithmetic; no trial | A study showing Zone 2 low-cadence work improves performance |
+| Torque intervals are not strength training | Medium: Barranco-Gil 2024 (abstract only, n = 11) | Full text; force data from other groups |
+| Knee load rises at low cadence | Medium: Bini & Hume 2013 (70 vs 90 rpm, abstract only), Johnston 2017 review of small studies; 50–60 rpm is our extrapolation; Hebisz 2024 did not monitor injuries | Knee-force or injury data at 50–60 rpm |
+| Seated only | Our rule; Henderson (machine transcript) gives less joint compression as the reason | Evidence that standing low-cadence work is as safe and as useful |
+| The 4-week adaptation is enough | Low: our arrangement of coach sessions (Wakefield, Henderson, Schep) | Injury data from structured torque programs; a study of gradual vs fast introduction |
+| The build order (moderate → threshold → above threshold) | Medium: Schep and EVOQ (written), Henderson for sustained efforts (machine transcript), CTS/Pulford (auto-captions) | Coach sources that order it differently, or a study |
+| Two weeks per step, and the move-on rule | Low: ours | Rider feedback; a coach source that gives step lengths |
+| HIIT at ~120% FTP | Low: our estimate from the paper's Table 2 (FTP ≈ VT2 assumed) | A study or coach that maps Pmax from a 3-min step test to FTP |
+| 1–2 sessions a week, not on consecutive days | Medium: CTS (Rutberg, written), EVOQ (written), Henderson (machine transcript); no trial | A dose-response study |
+| About one session a month maintains the gains | Low-medium: EVOQ (written, about the race season); no trial | A detraining or maintenance study |
+| What to ride after week 12 | None: no source says; free choice is ours | A study or coach source on sequencing after a build |
+| Applies to recreational male riders | Unknown: Hebisz studied young competitive women; de Pablos well-trained men | Studies in non-elite, mixed-gender or masters riders |
 
 ---
 
 ## Sources
 
-1. **Primary study:** Hebisz R & Hebisz P (2024). *Greater improvement in aerobic capacity after a polarized training program including cycling interval training at low cadence (50–70 rpm) than freely chosen cadence (above 80 rpm)*. PLOS One. https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0311833
+**Research**
 
-2. **Null result at moderate intensity:** Kristoffersen M, Gundersen H, Leirdal S, Iversen VV (2014). *Low cadence interval training at moderate intensity does not improve cycling performance in highly trained veteran cyclists*. Frontiers in Physiology 5:34. PMC3907705. https://pmc.ncbi.nlm.nih.gov/articles/PMC3907705/
+1. Hebisz R, Hebisz P (2024). *Greater improvement in aerobic capacity after a polarized training program including cycling interval training at low cadence (50–70 rpm) than freely chosen cadence (above 80 rpm).* PLoS ONE 19(11):e0311833. https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0311833 (full text)
+2. de Pablos R, Valenzuela PL, Martínez-Cava A, Alejo LB, Revuelta C, Sánchez-Redondo IR, Barranco-Gil D, Pallarés JG (2026). *The Role of Pedaling Intensity During Torque Training in Cyclists: A Three-Arm Randomized Controlled Trial.* Scand J Med Sci Sports 36(5):e70294. PubMed 42076918. (abstract only)
+3. Nimmerichter A, Eston R, Bachl N, Williams C (2012). Eur J Appl Physiol 112:69–78. PubMed 21479957. (abstract only)
+4. Kristoffersen M, Gundersen H, Leirdal S, Iversen VV (2014). *Low cadence interval training at moderate intensity does not improve cycling performance in highly trained veteran cyclists.* Front Physiol 5:34. https://pmc.ncbi.nlm.nih.gov/articles/PMC3907705/ (full text)
+5. Barranco-Gil D, Hernández-Belmonte A, Iriberri J, Martínez-Cava A, Buendía-Romero Á, Alejo LB, Rodríguez-Rielves V, Sánchez-Redondo IR, de Pablos R, Lucia A, Valenzuela PL, Pallarés JG (2024). *Relative pedaling forces are low during cycling.* J Sci Med Sport 27(9):660–663. PubMed 38839539. (abstract only)
+6. Hansen EA, Rønnestad BR (2017). *Effects of Cycling Training at Imposed Low Cadences: A Systematic Review.* Int J Sports Physiol Perform 12:1127–1136. PubMed 28095074. (abstract only)
+7. Ahlquist LE, Bassett DR Jr, Sufit R, Nagle FJ, Thomas DP (1992). *The effect of pedaling frequency on glycogen depletion rates in type I and type II quadriceps muscle fibers during submaximal cycling exercise.* Eur J Appl Physiol Occup Physiol 65(4):360–364. (abstract only)
+8. Bini RR, Hume PA (2013). *Effects of workload and pedalling cadence on knee forces in competitive cyclists.* Sports Biomech 12:93–107. PubMed 23898683. (abstract only)
+9. Johnston TE, Baskins TA, Koppel RV, Oliver SA, Stieber DJ, Hoglund LT (2017). *The influence of extrinsic factors on knee biomechanics during cycling: a systematic review of the literature.* Int J Sports Phys Ther 12(7):1023–1033. https://pmc.ncbi.nlm.nih.gov/articles/PMC5717478/ (full text)
 
-3. **Knee biomechanics in cycling (systematic review):** Johnston TE, Baskins TA, Koppel RV, Oliver SA, Stieber DJ, Hoglund LT (2017). *The influence of extrinsic factors on knee biomechanics during cycling: a systematic review of the literature*. International Journal of Sports Physical Therapy 12(7):1023–1033. PMC5717478. https://pmc.ncbi.nlm.nih.gov/articles/PMC5717478/
+**Elite / pro-team coaches**
 
-4. **Patellofemoral load and cadence (clinical):** Physio-pedia: Spring Knee (section "Gearing and Cadence"). https://www.physio-pedia.com/Spring_Knee — and Physio-pedia: Cyclist's Knee (slow cadence puts much greater force through the knee; check bike fit). https://www.physio-pedia.com/Cyclist's_Knee
+10. EF Pro Cycling, *Pro Workouts: Torque Efforts with Noemi Rueegg* (Noemi Rüegg's session; progression advice from Peter Schep, EF Pro Cycling Head of Performance). https://www.efprocycling.com/tips-recipes/noemi-rueegg-torque-workouts/
+11. John Wakefield, That Triathlon Show #465 (podcast; machine transcript).
+12. John Wakefield, Science to Sport article, 6 Feb 2026 (updated 18 Feb 2026).
+13. Neal Henderson on Fast Talk, episode 125 (20 Aug 2020), *Put It in the Big Gear: We Explore Low-Cadence, High-Torque Training* (machine transcript). https://www.fasttalklabs.com/fast-talk/neal-henderson-put-it-in-the-big-gear-we-explore-low-cadence-high-torque-training/
 
-5. **Coach-level session structures and integration advice:** EVOQ.BIKE — *Low Cadence Cycling: How Torque Training Makes You Faster*. https://www.evoq.bike/blog/low-cadence-cycling-how-torque-training-makes-you-faster
+**Coaching businesses**
 
-6. **Secondary analysis and commentary on the 2024 study:** Knowledge is Watt (Substack), issue 58 — *High Intensity Torque Training Can Increase Cycling Performance*. https://knowledgeiswatt.substack.com/p/58-high-intensity-torque-training
+14. EVOQ.BIKE (Landry Bobo), *Low Cadence Cycling: How Torque Training Makes You Faster*, 1 Jan 2026. https://www.evoq.bike/blog/low-cadence-cycling-how-torque-training-makes-you-faster
+15. EVOQ.BIKE (Brendan Housler), *Gravel Racing & Training Tips*, 3 Aug 2020.
+16. EVOQ.BIKE podcast (Housler and Bobo; auto-captions).
+17. CTS (Jim Rutberg), MuscleTension intervals article, trainright.com.
+18. CTS (Adam Pulford), YouTube video on torque training (auto-captions).
 
-7. **Overview of cadence research landscape:** W/KG — *Have Low Cadence Training Come Full Circle?* https://www.wattkg.com/low-cadence-training/
+**Media relay**
 
-8. **Ongoing frequency guidance (coach):** Neal Henderson on Fast Talk Labs, episode 125 (20 August 2020) — *Put It in the Big Gear — We Explore Low-Cadence, High-Torque Training*. https://www.fasttalklabs.com/fast-talk/neal-henderson-put-it-in-the-big-gear-we-explore-low-cadence-high-torque-training/
+19. Roadman Cycling Podcast, https://www.youtube.com/watch?v=tcar3G2v73I (auto-captions; provenance and the nearest source for the move-on rule only).
+20. Knowledge is Watt #58, *High Intensity Torque Training Can Increase Cycling Performance*. https://knowledgeiswatt.substack.com/p/58-high-intensity-torque-training (commentary on Hebisz 2024; no longer the basis for any claim here).
 
-9. **Pro rider's session:** EF Pro Cycling — *Pro Workouts: Torque Efforts with Noemi Rüegg* (Noemi Rüegg's session; progression advice from EF Head of Performance Peter Schep). https://www.efprocycling.com/tips-recipes/noemi-rueegg-torque-workouts/
+**Zwift**
 
-10. **Motor unit recruitment at low cadence (Type I/II glycogen depletion):** Ahlquist LE et al. (1992). *The effect of pedaling frequency on glycogen depletion rates in type I and type II quadriceps muscle fibers during submaximal cycling exercise*. European Journal of Applied Physiology and Occupational Physiology, 65(4):360–364.
+21. Zwift support: "Workout Mode for Cycling" (FTP bias ±25%) and "ERG Mode in Workouts".
