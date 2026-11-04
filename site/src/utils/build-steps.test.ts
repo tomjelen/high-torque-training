@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { BUILD_STEPS, stepIndexForProgress, torquePowerFor, torquePowerLabel, weekRangeLabel } from './build-steps'
+import { BUILD_STEPS, nextLabel, stepIndexForProgress, torquePowerFor, torquePowerLabel, weekRangeLabel } from './build-steps'
 
 describe('BUILD_STEPS', () => {
   it('groups the 12 weeks into six two-week steps, in calendar order', () => {
@@ -36,5 +36,15 @@ describe('torquePowerLabel', () => {
     expect(BUILD_STEPS.map((s) => torquePowerLabel(s.workout))).toEqual([
       '80%', '80%', '95%', '95%', '110%', '~120%',
     ])
+  })
+})
+
+describe('nextLabel', () => {
+  it('says where Done leads: the second session, the next workout, or the end', () => {
+    expect(nextLabel(0)).toBe('session 2 of 2')
+    expect(nextLabel(1)).toBe('next: 4×4 @ 50–60 rpm')
+    expect(nextLabel(3)).toBe('next: Torque Endurance 3×8')
+    expect(nextLabel(11)).toBe('finish the build')
+    expect(nextLabel(12)).toBe('')
   })
 })

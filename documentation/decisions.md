@@ -64,7 +64,9 @@ Source abbreviations: **IS** = `site-specification/completed-tasks/0_initial-sit
 
 **After the build: the build greys out, "After the build" opens the library.** Once all 12 weeks are done the build overview fades (back to full on hover/focus) and links down to an "After the build" card at the top of the library: Maintain vs Keep going side by side with their sources, the mixing hint, where the evidence ends, and the every-session knee line. The knee box in the build panel never fades: its rules apply to library sessions too. 2026-11-04, UX review (Tom).
 
-**The session tracker sits in the panel you're at.** Under this week's card during the build, inside "After the build" once it's done. Why: as its own panel between build and library it was off screen in both phases. A sticky side column was prototyped and rejected (Tom: it leaves a column of unused space). Cost: collapsing the active panel hides the tracker too. 2026-11-04. Supersedes the standalone tracker between the panels.
+**The build has one Done button and doesn't log.** "Done ✓ → <what's next>" marks the week done when the move-on checks passed, which may be the day after the ride; not clicking is the repeat. "← Back one week" covers a mistaken click and "wrecked the day after" (the knee rule's "repeat last week's session"). Why: two buttons ("Done, move on" / "Done, repeat next week") weren't self-explanatory, and logging a dated session clashed with a check you can only answer the next day. Cost: a library session the day after a build session gets no consecutive-day warning, and the tracker starts empty after week 12. This is the original site's "Mark Complete writes no log entry" rule, back. 2026-11-04 (Tom).
+
+**The session tracker lives in "After the build", in the library.** Library sessions are what it tracks. Why: as its own panel between build and library it was off screen in both phases, and the build no longer logs. A sticky side column was prototyped and rejected (Tom: it leaves a column of unused space). 2026-11-04. Supersedes the standalone tracker between the panels.
 
 **"How to use" trimmed to "Rules for the build", collapsed by default, in the build panel.** Kept: moving on (with sources), breaks, fitting it into ~10 hours. Removed as repeats: the 12-week order (the chart shows it; its coach names and "progress counts sessions" moved into the chart caption), "After the build" (moved to its card), "Every session" (the knee box). 2026-11-04.
 
@@ -88,7 +90,7 @@ Source abbreviations: **IS** = `site-specification/completed-tasks/0_initial-sit
 - Tier "dual framing" as progression ladder and hard/easy classifier (RD §4.5.1).
 - Sort by tier then title (RD §4.5.2).
 - Hard/easy classification (T3–T4 hard) and the "X days since last HARD session" counter (RD §4.5.3, IP). Why dropped: the "one hard + one easy" rule had no source. The counter now counts days since the last session of any kind, and the tracker warns about sessions on the same or consecutive days (our rule, anchored on CTS/Rutberg).
-- Three gated adaptation weeks W1–W3 at Zone 2 with "Mark Complete", and the "Mark Complete must not write a log entry" rule (IS Task 2b, RD §4.4, §4.6, IP). Replaced by the 12-week build with "Done, move on" / "Done, repeat next week"; every ridden build session now goes into the log so the consecutive-day warning sees it.
+- Three gated adaptation weeks W1–W3 at Zone 2 with "Mark Complete", and the "Mark Complete must not write a log entry" rule (IS Task 2b, RD §4.4, §4.6, IP). Replaced by the 12-week build with "Done, move on" / "Done, repeat next week", which logged every build session so the consecutive-day warning saw it; that in turn was **superseded** 2026-11-04 (see "The build has one Done button and doesn't log").
 - The old Session Tracker form with dropdown and notes (IS Task 4).
 
 ## Workout chart

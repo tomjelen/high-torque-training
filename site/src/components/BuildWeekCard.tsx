@@ -10,14 +10,23 @@ type Props = {
   // Shown top right instead of "Week N", e.g. "Weeks 7–8".
   weekLabel?: string
 } & (
-  | { mode: 'current'; onMoveOn: () => void; onRepeat: () => void }
+  | {
+      mode: 'current'
+      onDone: () => void
+      // Where Done takes you, e.g. "session 2 of 2" or "next: Threshold 5×5".
+      nextLabel: string
+      // Step back a week (a mistaken click, or wrecked the day after).
+      onBackOneWeek?: () => void
+    }
   // Another step of the build, opened from the overview: what it is, but no
-  // way to log it (logging always records the current week's session).
+  // Done button (Done always marks the current week).
   | { mode: 'preview'; statusText: string; onBack?: () => void; backLabel?: string }
 )
 
 // One session of the 12-week build: what to ride and, for the current week,
-// the two ways to record it. The checks are a reminder, not a form.
+// one Done button. Done means "the move-on checks passed", which you may only
+// know the day after; not clicking is the repeat. The build doesn't write to
+// the session log.
 export default function BuildWeekCard(props: Props) {
   const { week, workout, weekLabel } = props
   const chart = chartWorkoutFor(workout)
@@ -65,7 +74,7 @@ export default function BuildWeekCard(props: Props) {
         </div>
       </div>
 
-      <div className="border-t border-slate-700 pt-3 mt-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-4 lg:border-t-0 lg:pt-0 lg:mt-0 lg:border-l lg:pl-8 lg:content-center">
+      <div className="border-t border-slate-700 pt-3 mt-auto lg:border-t-0 lg:pt-0 lg:mt-0 lg:border-l lg:pl-8 lg:flex lg:flex-col lg:justify-center">
         {props.mode === 'preview' ? (
           <div className="flex flex-col gap-2 text-sm text-slate-400">
             <p className="m-0 text-slate-300 font-semibold">{props.statusText}</p>
@@ -80,39 +89,41 @@ export default function BuildWeekCard(props: Props) {
             )}
           </div>
         ) : (
-        <div className="flex flex-col gap-2">
-          <button
-            type="button"
-            onClick={props.onMoveOn}
-            className="w-full text-sm font-semibold bg-orange-600 hover:bg-orange-500 text-white cursor-pointer rounded py-3 sm:py-1.5 transition-colors"
-          >
-            Done, move on
-          </button>
-          <button
-            type="button"
-            onClick={props.onRepeat}
-            className="w-full text-sm font-semibold border border-slate-600 hover:border-slate-400 text-slate-200 cursor-pointer rounded py-3 sm:py-1.5 transition-colors"
-          >
-            Done, repeat next week
-          </button>
-        </div>
-        )}
-
-        {isCurrent && (
-        <div className="text-sm text-slate-400">
-          <p className="m-0 mb-1 text-slate-300 font-semibold">Before moving on, check:</p>
-          <ul className="m-0 mb-2 pl-4 space-y-0.5 list-disc">
-            <li>knees fine</li>
-            <li>cadence held</li>
-            <li>not wrecked the next day</li>
-          </ul>
-          <p className="m-0">
-            Any 'no' → repeat. Knee pain that keeps coming back → stop torque work and see a professional.
-          </p>
-          {week.phase === 'adaptation' && (
-            <p className="m-0 mt-2">Controlled: steady, below your threshold. Heavy legs are normal.</p>
-          )}
-        </div>
+          <div className="flex flex-col gap-3 text-sm text-slate-400">
+            <div>
+              <p className="m-0 mb-1 text-slate-300 font-semibold">
+                Click Done when all three were fine (the day after is fine):
+              </p>
+              <ul className="m-0 pl-4 space-y-0.5 list-disc">
+                <li>knees fine, during and after</li>
+                <li>cadence held</li>
+                <li>not wrecked the next day</li>
+              </ul>
+            </div>
+            <button
+              type="button"
+              onClick={props.onDone}
+              className="w-full text-sm font-semibold bg-orange-600 hover:bg-orange-500 text-white cursor-pointer rounded py-3 sm:py-1.5 transition-colors"
+            >
+              Done ✓ <span className="font-normal">→ {props.nextLabel}</span>
+            </button>
+            <p className="m-0">
+              Not all three? Don't click: ride it again next week. Knee pain that keeps coming back → stop torque
+              work and see a professional.
+            </p>
+            {week.phase === 'adaptation' && (
+              <p className="m-0">Controlled: steady, below your threshold. Heavy legs are normal.</p>
+            )}
+            {props.onBackOneWeek && (
+              <button
+                type="button"
+                onClick={props.onBackOneWeek}
+                className="self-start min-h-11 sm:min-h-0 text-xs text-slate-400 hover:text-slate-200 border border-slate-700 hover:border-slate-500 px-3 sm:px-2 py-1 rounded cursor-pointer"
+              >
+                ← Back one week <span className="text-slate-500">(clicked by mistake, or wrecked the day after)</span>
+              </button>
+            )}
+          </div>
         )}
       </div>
     </section>

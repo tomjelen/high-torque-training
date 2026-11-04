@@ -1,4 +1,4 @@
-import { useEffect, useId, useRef, useState, type ReactNode } from 'react'
+import { useEffect, useId, useRef, useState } from 'react'
 import Panel from './Panel'
 import BuildWeekCard from './BuildWeekCard'
 import BuildProgression from './BuildProgression'
@@ -7,20 +7,18 @@ import ChartLegend from './ChartLegend'
 import WorkoutChart from './WorkoutChart'
 import { chartWorkoutFor } from './chart-data'
 import { workoutById } from '../data'
-import { BUILD_STEPS, stepIndexForProgress, weekRangeLabel } from '../utils/build-steps'
+import { BUILD_STEPS, nextLabel, stepIndexForProgress, weekRangeLabel } from '../utils/build-steps'
 import {
   ADAPTATION_LENGTH,
   BUILD_LENGTH,
   currentWeek,
-  logBuildSession,
-  undoLastMoveOn,
-  withProgress,
+  moveOn,
+  undoMoveOn,
   resetAdaptation,
   resetBuild,
   isBuildDone,
 } from '../utils/build-plan'
-import { todayLocalIso } from '../utils/tracker'
-import type { AppState, LogEntry } from '../types'
+import type { AppState } from '../types'
 
 // TE 4×8 is the canonical "how to read" example: a clean 4-rep set whose
 // high-torque marks read as four clearly separate regions. Title is blanked so
@@ -34,8 +32,6 @@ const HOW_TO_CHART = (() => {
 interface Props {
   state: AppState
   setState: React.Dispatch<React.SetStateAction<AppState>>
-  // The session tracker, shown under this week's card while the build runs.
-  trackerSlot?: ReactNode
 }
 
 type ResetKind = 'adaptation' | 'build'
@@ -50,24 +46,7 @@ const RESET_CONFIRM_LABEL: Record<ResetKind, string> = {
   build: 'Yes, restart build',
 }
 
-// Same LogEntry shape as CollectionPanel.handleDidThis, so build sessions
-// show up in the session tracker like any other logged session.
-function logEntryFor(workoutId: string): LogEntry {
-  return {
-    id: `log-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
-    workoutId,
-    timestamp: todayLocalIso(),
-  }
-}
-
-// Log the current week's session; optionally move on to the next week.
-// Reads the week from prev so rapid clicks never log the wrong workout.
-function logSession(prev: AppState, advance: boolean): AppState {
-  const workoutId = currentWeek(prev.buildProgress)?.workoutIds[0]
-  return workoutId ? logBuildSession(prev, logEntryFor(workoutId), advance) : prev
-}
-
-export default function BuildPlanPanel({ state, setState, trackerSlot }: Props) {
+export default function BuildPlanPanel({ state, setState }: Props) {
   const [confirming, setConfirming] = useState<ResetKind | null>(null)
   const cancelRef = useRef<HTMLButtonElement>(null)
   const restartRefs = useRef<Record<ResetKind, HTMLButtonElement | null>>({ adaptation: null, build: null })
@@ -108,6 +87,10 @@ export default function BuildPlanPanel({ state, setState, trackerSlot }: Props) 
   const shown = shownStep !== null && shownStep !== currentStep ? BUILD_STEPS[shownStep] : null
   const detailId = useId()
 
+  function backOneWeek() {
+    setState((prev) => ({ ...prev, buildProgress: undoMoveOn(prev.buildProgress) }))
+  }
+
   function onToggle(collapsed: boolean) {
     setState((s) => ({ ...s, panels: { ...s.panels, build: { collapsed } } }))
   }
@@ -118,7 +101,7 @@ export default function BuildPlanPanel({ state, setState, trackerSlot }: Props) 
 
   function confirmReset(kind: ResetKind) {
     setState((s) =>
-      withProgress(s, kind === 'adaptation' ? resetAdaptation() : resetBuild(s.buildProgress)),
+      ({ ...s, buildProgress: kind === 'adaptation' ? resetAdaptation() : resetBuild(s.buildProgress) }),
     )
     closeConfirm(kind)
   }
@@ -189,7 +172,14 @@ export default function BuildPlanPanel({ state, setState, trackerSlot }: Props) 
           <strong className="text-slate-100">Build done ✓</strong> All 12 weeks ridden.{' '}
           <a href="#after-build" className="text-blue-400 hover:text-blue-300">
             What's next: after the build ↓
-          </a>
+          </a>{' '}
+          <button
+            type="button"
+            onClick={backOneWeek}
+            className="ml-2 min-h-11 sm:min-h-0 text-xs text-slate-400 hover:text-slate-200 border border-slate-700 hover:border-slate-500 px-3 sm:px-2 py-1 rounded cursor-pointer"
+          >
+            ← Back one week
+          </button>
         </p>
       )}
 
@@ -235,26 +225,16 @@ export default function BuildPlanPanel({ state, setState, trackerSlot }: Props) 
               mode="current"
               week={week}
               workout={workout}
-              onMoveOn={() => setState((prev) => logSession(prev, true))}
-              onRepeat={() => setState((prev) => logSession(prev, false))}
+              onDone={() => setState((prev) => ({ ...prev, buildProgress: moveOn(prev.buildProgress) }))}
+              nextLabel={nextLabel(progress)}
+              onBackOneWeek={progress > 0 ? backOneWeek : undefined}
             />
           )
         )}
       </div>
 
-      {!done && trackerSlot && <div className="mb-4">{trackerSlot}</div>}
 
       <div className="flex flex-col gap-3 text-sm">
-        <div>
-          <button
-            type="button"
-            onClick={() => setState(undoLastMoveOn)}
-            disabled={progress <= 0}
-            className="text-xs text-slate-400 hover:text-slate-200 border border-slate-700 hover:border-slate-500 disabled:opacity-40 disabled:cursor-not-allowed min-h-11 sm:min-h-0 px-3 sm:px-2 py-1 rounded font-mono cursor-pointer"
-          >
-            Undo last move-on
-          </button>
-        </div>
 
         <div className="flex flex-wrap items-center gap-2">
           {(['adaptation', 'build'] as const).map((kind) =>

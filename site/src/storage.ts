@@ -1,11 +1,9 @@
-import { capMoveOnLogIds } from './utils/build-plan'
 import type { AppState, PanelState } from './types'
 
 const KEY = 'ht-state'
 
 export const DEFAULT_STATE: AppState = {
   buildProgress: 0,
-  moveOnLogIds: [],
   panels: {
     intro: { collapsed: false },
     download: { collapsed: false },
@@ -45,12 +43,6 @@ function validProgress(v: unknown): number {
   return typeof v === 'number' && Number.isInteger(v) && v >= 0 && v <= 12 ? v : 0
 }
 
-// Missing or invalid → [] (old states: undo then only steps back a week).
-function validMoveOnIds(v: unknown, progress: number): string[] {
-  if (!Array.isArray(v) || !v.every((x) => typeof x === 'string')) return []
-  return capMoveOnLogIds(v, progress)
-}
-
 export function loadState(isMobile = false): AppState {
   try {
     const raw = localStorage.getItem(KEY)
@@ -65,10 +57,8 @@ export function loadState(isMobile = false): AppState {
       }
     }
     const parsed = JSON.parse(raw) as AppState | null
-    const buildProgress = validProgress(parsed?.buildProgress)
     return {
-      buildProgress,
-      moveOnLogIds: validMoveOnIds(parsed?.moveOnLogIds, buildProgress),
+      buildProgress: validProgress(parsed?.buildProgress),
       panels: {
         intro: loadPanel(parsed, 'intro'),
         download: loadPanel(parsed, 'download'),

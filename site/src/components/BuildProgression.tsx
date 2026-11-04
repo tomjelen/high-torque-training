@@ -1,7 +1,7 @@
 import WorkoutChart from './WorkoutChart'
 import { chartWorkoutFor, cadenceLabelFor } from './chart-data'
 import { ZONE_FILL } from './chart-model'
-import { BUILD_STEPS, torquePowerFor, torquePowerLabel, weekRangeLabel, type BuildStep } from '../utils/build-steps'
+import { BUILD_STEPS, stepTitle, torquePowerFor, torquePowerLabel, weekRangeLabel, type BuildStep } from '../utils/build-steps'
 
 // The whole 12-week build at a glance: a progression chart (one bar per week,
 // height = %FTP of the high-torque intervals, read from the .zwo files) with
@@ -21,12 +21,6 @@ interface Props {
   currentStep: number | null
   onSelect: (index: number) => void
   detailId: string
-}
-
-// The adaptation workouts are named after their weeks ("Weeks 1–2 — 4×4 @ …");
-// the card already shows the week range, so drop the duplicate prefix.
-function stepTitle(step: BuildStep): string {
-  return step.workout.name.replace(/^Weeks? [\d–]+ — /, '')
 }
 
 function weekStatus(weekIndex: number, progress: number): WeekStatus {

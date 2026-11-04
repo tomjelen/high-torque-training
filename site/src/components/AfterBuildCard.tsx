@@ -4,7 +4,7 @@ import Cite from './Cite'
 interface Props {
   // The build is finished: this is now the rider's current step.
   active: boolean
-  // The session tracker, shown here once the build is done.
+  // The session tracker: library sessions log here, always shown.
   trackerSlot?: ReactNode
 }
 
@@ -73,7 +73,7 @@ export default function AfterBuildCard({ active, trackerSlot }: Props) {
         </p>
       </div>
 
-      {active && trackerSlot && <div className="mt-4">{trackerSlot}</div>}
+      {trackerSlot && <div className="mt-4">{trackerSlot}</div>}
     </section>
   )
 }

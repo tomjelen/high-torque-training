@@ -62,3 +62,23 @@ export function torquePowerLabel(workout: Workout): string | undefined {
   const approx = workout.params.some((p) => p.value.includes(`~${pct}%`))
   return `${approx ? '~' : ''}${pct}%`
 }
+
+// The adaptation workouts are named after their weeks ("Weeks 1–2 — 4×4 @ …");
+// where the week range is already shown, drop the duplicate prefix.
+export function stepTitle(step: BuildStep): string {
+  return step.workout.name.replace(/^Weeks? [\d–]+ — /, '')
+}
+
+// What "Done" leads to from the week at index `progress`.
+export function nextLabel(progress: number): string {
+  const step = stepIndexForProgress(progress)
+  if (step === null) return ''
+  const next = stepIndexForProgress(progress + 1)
+  if (next === null) return 'finish the build'
+  if (next === step) {
+    const s = BUILD_STEPS[step]
+    const n = s.weeks.findIndex((w) => w.week === progress + 2) + 1
+    return `session ${n} of ${s.weeks.length}`
+  }
+  return `next: ${stepTitle(BUILD_STEPS[next])}`
+}

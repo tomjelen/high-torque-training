@@ -59,10 +59,6 @@ export interface PanelState {
 export interface AppState {
   // Weeks of the 12-week build moved on from (0-12).
   buildProgress: number
-  // Stack, one id per "Done, move on": the LogEntry that move-on created.
-  // Lets undo remove exactly that entry (paired weeks share a workout id, so
-  // matching by workout would hit a repeat). Length <= buildProgress.
-  moveOnLogIds: string[]
   panels: {
     intro: PanelState
     download: PanelState
