@@ -267,7 +267,7 @@ const LIBRARY_BASE: Workout[] = [
     id: 'threshold-5x5',
     name: 'Threshold 5×5',
     params: [
-      { label: 'Intervals', value: '5×5 min @ ~95% FTP' },
+      { label: 'Intervals', value: '5×5 min @ 95% FTP' },
       { label: 'Cadence', value: '50–60 rpm' },
     ],
     source: 'henderson',

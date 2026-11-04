@@ -31,11 +31,10 @@ describe('torquePowerFor', () => {
 })
 
 describe('torquePowerLabel', () => {
-  // Follows the workout's own params in data.ts. Threshold 5×5 is "~95%"
-  // there but plain "95%" in the calendar (flagged to Tom, 2026-11-04).
+  // Follows the workout's own params in data.ts, which match the calendar.
   it('keeps the "~" where the workout params write the intensity as approximate', () => {
     expect(BUILD_STEPS.map((s) => torquePowerLabel(s.workout))).toEqual([
-      '80%', '80%', '95%', '~95%', '110%', '~120%',
+      '80%', '80%', '95%', '95%', '110%', '~120%',
     ])
   })
 })
