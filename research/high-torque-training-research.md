@@ -178,7 +178,7 @@ This is the main practical concern.
 | Weeks | Session | Source | Status |
 |---|---|---|---|
 | 1–2 | Adaptation 4 × 4 min @ 80% FTP, 60–65 rpm, 4 min easy spin | Wakefield (cadence, 4 × 4, rest = rep); 80% our pick inside Henderson's 75–85% and Schep's 80–85% | Composite, ours. Wakefield: machine transcript. Schep: written. Henderson: machine transcript. |
-| 3–4 | Adaptation 4 × 4 min @ 80–85% FTP (file holds 80%), 50–60 rpm, 4 min easy spin | Henderson (cadence, 75–85%); Schep (80–85%, ~15 min of work); Wakefield (4 × 4, rest = rep) | Composite, ours. Henderson: machine transcript. Schep: written. Wakefield: machine transcript. 16 min of work is a little under Henderson's "20 or so". |
+| 3–4 | Adaptation 4 × 4 min @ 80% FTP (inside the coaches' 80–85%), 50–60 rpm, 4 min easy spin | Henderson (cadence, 75–85%); Schep (80–85%, ~15 min of work); Wakefield (4 × 4, rest = rep) | Composite, ours. Henderson: machine transcript. Schep: written. Wakefield: machine transcript. 16 min of work is a little under Henderson's "20 or so". |
 | 5–6 | Torque Endurance 3 × 8 min @ 95% FTP, 60–70 rpm, 8 min easy spin | EVOQ / Housler (scaled: 3 reps instead of 4); rest = rep is our choice, as Wakefield and CTS (Rutberg) use | Housler written. Scaling and recovery ours. |
 | 7–8 | Threshold 5 × 5 min @ 95% FTP, 50–60 rpm, 2:30 easy spin | Henderson (5 × 5 @ 95%, 50–60 rpm); 2:30 is Henderson's half-time rule, applied by us | Machine transcript. Derivation ours. |
 | 9–10 | TorqueMax 6 × 2.5 min @ 110% FTP, 50–60 rpm, 4 min easy spin | EVOQ (Bobo): 2–3 min at 105–110%, 50–60 rpm, start with 6 reps | Written. 2.5 min and 110% are our picks inside the range; the 4-min recovery is ours. |

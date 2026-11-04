@@ -10,7 +10,7 @@
 -->
 <workout_file>
     <author>Tom Jelen</author>
-    <name>HT TorqueMax 110%</name>
+    <name>TorqueMax</name>
     <activitySaveName>High Torque: TorqueMax 6x2.5 min 105-110% FTP @ 50-60 rpm</activitySaveName>
     <description>EVOQ.BIKE's TorqueMax session (Landry Bobo, EVOQ blog, 2026): "around 2-3 minutes at 105-110% of FTP and around 50-60 rpm", "starting with six repetitions and working up to eight". Our file: six 2.5-minute intervals at 110% FTP (the top of EVOQ's range) and 55 rpm, with 4 minutes of easy spin between them. 2.5 min and 110% are our picks inside EVOQ's range; EVOQ gives no recovery, so the 4 minutes are ours. EVOQ warns: "There is an increased risk of injury with these intervals", so do the lower-intensity torque intervals first. TorqueMax is EVOQ's extension of the Hebisz 2024 study to a new format; no study has tested it. The two short openers (30 s at normal cadence) are our addition, not from EVOQ. Seated throughout.</description>
     <sportType>bike</sportType>

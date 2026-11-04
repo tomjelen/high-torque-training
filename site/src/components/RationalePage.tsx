@@ -490,7 +490,7 @@ function renderBody(id: string) {
               </tr>
               <tr>
                 <td>3–4</td>
-                <td>Adaptation 4 × 4 min @ 80–85% FTP (file holds 80%), 50–60 rpm, 4 min easy spin</td>
+                <td>Adaptation 4 × 4 min @ 80% FTP (inside the coaches' 80–85%), 50–60 rpm, 4 min easy spin</td>
                 <td>Henderson (cadence, 75–85%); Schep (80–85%, ~15 min of work); Wakefield (4 × 4, rest = rep)</td>
                 <td>
                   Composite, ours. Henderson: machine transcript. Schep: written. Wakefield: machine transcript. 16 min

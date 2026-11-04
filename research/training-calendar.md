@@ -16,8 +16,8 @@ All low-cadence intervals are **seated**. If your knees ache during an interval,
 
 | Weeks | Workout | What | Cadence | Duration | Source |
 |---|---|---|---|---|---|
-| 1–2 | [Adaptation weeks 1–2](/workouts/High%20Torque%20-%20Adaptation/Adapt_W1-2_4x4_60-65rpm.zwo) | 4×4 min @ 80% FTP, 4 min easy spin | 60–65 rpm | ~55 min | Composite (ours): Wakefield (cadence, 4×4, rest = rep); 80% our pick inside Henderson's 75–85% and Schep's 80–85% |
-| 3–4 | [Adaptation weeks 3–4](/workouts/High%20Torque%20-%20Adaptation/Adapt_W3-4_4x4_50-60rpm.zwo) | 4×4 min @ 80–85% FTP (file holds 80%), 4 min easy spin | 50–60 rpm | ~55 min | Composite (ours): Henderson (cadence, 75–85%); Schep (80–85%); Wakefield (4×4, rest = rep) |
+| 1–2 | [Weeks 1–2 — 4×4 @ 60–65 rpm](/workouts/High%20Torque%20-%20Adaptation/Adapt_W1-2_4x4_60-65rpm.zwo) | 4×4 min @ 80% FTP, 4 min easy spin | 60–65 rpm | ~55 min | Composite (ours): Wakefield (cadence, 4×4, rest = rep); 80% our pick inside Henderson's 75–85% and Schep's 80–85% |
+| 3–4 | [Weeks 3–4 — 4×4 @ 50–60 rpm](/workouts/High%20Torque%20-%20Adaptation/Adapt_W3-4_4x4_50-60rpm.zwo) | 4×4 min @ 80% FTP (inside the coaches' 80–85%), 4 min easy spin | 50–60 rpm | ~55 min | Composite (ours): Henderson (cadence, 75–85%); Schep (80–85%); Wakefield (4×4, rest = rep) |
 
 How it should feel: controlled, steady, below your threshold. Heavy legs are normal.
 
@@ -48,10 +48,10 @@ After the second session of each step, move to the next step only if:
 
 | Week | Workout | Date | Knees fine? | Cadence held? | Fine next day? | Notes |
 |---|---|---|---|---|---|---|
-| 1 | Adaptation weeks 1–2 | | | | | |
-| 2 | Adaptation weeks 1–2 | | | | | |
-| 3 | Adaptation weeks 3–4 | | | | | |
-| 4 | Adaptation weeks 3–4 | | | | | |
+| 1 | Weeks 1–2 — 4×4 @ 60–65 rpm | | | | | |
+| 2 | Weeks 1–2 — 4×4 @ 60–65 rpm | | | | | |
+| 3 | Weeks 3–4 — 4×4 @ 50–60 rpm | | | | | |
+| 4 | Weeks 3–4 — 4×4 @ 50–60 rpm | | | | | |
 | 5 | Torque Endurance 3×8 | | | | | |
 | 6 | Torque Endurance 3×8 | | | | | |
 | 7 | Threshold 5×5 | | | | | |
@@ -97,8 +97,8 @@ Machine-readable list of every `.zwo` file. Paths are relative to `workouts/`. D
 
 | Workout | File | Duration (min) |
 |---|---|---|
-| Adaptation weeks 1–2 | `High Torque - Adaptation/Adapt_W1-2_4x4_60-65rpm.zwo` | 55 |
-| Adaptation weeks 3–4 | `High Torque - Adaptation/Adapt_W3-4_4x4_50-60rpm.zwo` | 55 |
+| Weeks 1–2 — 4×4 @ 60–65 rpm | `High Torque - Adaptation/Adapt_W1-2_4x4_60-65rpm.zwo` | 55 |
+| Weeks 3–4 — 4×4 @ 50–60 rpm | `High Torque - Adaptation/Adapt_W3-4_4x4_50-60rpm.zwo` | 55 |
 | Torque Endurance 3×8 | `High Torque - Library/TE_3x8_95pct.zwo` | 65 |
 | Torque Endurance 4×8 | `High Torque - Library/TE_4x8_95pct.zwo` | 80 |
 | Torque Endurance 3×15 | `High Torque - Library/TE_3x15_90pct.zwo` | 100 |

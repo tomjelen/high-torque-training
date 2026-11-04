@@ -30,5 +30,5 @@ Tom wants a dedicated pass to root out UI/UX issues together, because many are i
 - [x] The `activitySaveName` format is a little inconsistent across the 12 `.zwo` files (`x`/`×`, `-`/`–`).
 - [x] The `workouts/README.md` cadence notes say "choose the right gear", which clashes with ERG mode ("just drop to this cadence").
 - [x] Knee rule 6 ("not on consecutive days") is labelled "ours, anchored on CTS/Rutberg" in the build panel, but not in the research doc (around line 170) or on the Rationale page (around line 464). Make all three match.
-- [ ] Naming drift: the site calls the adaptation sessions "Weeks 1–2 — 4×4 @ 60–65 rpm", while the calendar and `.zwo` files say "Adaptation weeks 1–2". The weeks 3–4 card shows "80–85% FTP" without the calendar's "(file holds 80%)".
+- [x] Naming drift: the site calls the adaptation sessions "Weeks 1–2 — 4×4 @ 60–65 rpm", while the calendar and `.zwo` files say "Adaptation weeks 1–2". The weeks 3–4 card shows "80–85% FTP" without the calendar's "(file holds 80%)".
 - [x] Test gap: old saved state is only unit-tested. Nothing tests the production path (prerendered page, then hydrate with old localStorage) end to end.

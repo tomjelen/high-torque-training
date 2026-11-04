@@ -42,7 +42,7 @@ describe('chart data join (Workout.file → parsed .zwo blocks)', () => {
     }
     // Teeth: the override is load-bearing only if the .zwo <name> actually
     // differs from the site name for at least one workout. It does — the .zwo
-    // uses "HT Threshold 5x5" where data.ts uses "Threshold 5×5".
+    // uses plain "Threshold 5x5" where data.ts uses "Threshold 5×5".
     const overrideMatters = ALL_WORKOUTS.some(
       (w) => parsed[w.file] && parsed[w.file].title !== w.name,
     )

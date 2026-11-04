@@ -123,7 +123,7 @@ describe('getChartBlocksMap — real corpus invariants', () => {
   it('keys workouts by .zwo path relative to the workouts dir (same as the TSS map)', () => {
     expect(map[THRESHOLD]).toBeDefined()
     expect(map[THRESHOLD].id).toBe(THRESHOLD)
-    expect(map[THRESHOLD].title).toBe('HT Threshold 5x5')
+    expect(map[THRESHOLD].title).toBe('Threshold 5x5')
   })
 
   it('preserves total session duration: Threshold 5×5 sums to 3600 s (60 min)', () => {

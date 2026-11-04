@@ -10,7 +10,7 @@
 -->
 <workout_file>
     <author>Tom Jelen</author>
-    <name>HT HIIT 4x4 120%</name>
+    <name>HIIT 4x4</name>
     <activitySaveName>High Torque: HIIT 4x4 min ~120% FTP @ 60-70 rpm</activitySaveName>
     <description>The HIIT session from Hebisz and Hebisz (2024, PLoS ONE), weeks 1–4 volume: four 4-minute intervals at 60–70 rpm with 8 minutes of active rest between them. Seated throughout. The study set the intervals at 90–100% of maximal aerobic power (Pmax) and the rest "at an intensity similar to the power achieved at VT1" (the first ventilatory threshold). It gives no FTP. ~120% FTP is our estimate: in the paper's baseline values VT2 is about 75% of Pmax, so 90–100% of Pmax is ~120–136% of VT2, and we take FTP as roughly VT2 and use the bottom of that range. This is the most uncertain number in the library. ~65% FTP for the rest is our estimate the same way (VT1 is about 65% of VT2). The study riders rode outdoors uphill; this is an indoor adaptation at %FTP targets. The two short openers (30 s at normal cadence) are our addition, not from the study.</description>
     <sportType>bike</sportType>

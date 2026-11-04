@@ -39,9 +39,9 @@ Constraints:
 
 ## Naming
 
-- `<name>` — prefix with `HT`. Example: `HT Threshold 5x5`.
-- `<name>` and `<activitySaveName>` use plain characters only (Tom's rule: no special characters unless needed): `x` not `×`, `-` not `–`. Keep `ü` in Rüegg (a name), and keep `~` and `%`.
-- `<activitySaveName>` — shape: `High Torque: <Name> <reps>x<duration> <%FTP range> @ <cadence range> rpm`. A single space between the parts (no ` - ` after the name). Examples from the files: `High Torque: Threshold 5x5 min ~95% FTP @ 50-60 rpm`, `High Torque: Adaptation weeks 1-2 4x4 min 80% FTP @ 60-65 rpm`, `High Torque: SIT 2x(4x30s) sprint @ 50-60 rpm`. Use **source prescription ranges**, not ZWO-fixed values. There are no tiers: never put "Tier N" in a name. All 12 files follow this shape.
+- `<name>` — **no prefix.** It is the site's display name (`name:` in `site/src/data.ts`) written in plain characters, e.g. `Threshold 5x5`, `Weeks 1-2 - 4x4 @ 60-65 rpm`, `Rüegg VO2max + Sprint`. Why: in Zwift you browse Custom Workouts → the zip's folders ("High Torque - Adaptation", "High Torque - Library") → the workouts, so the folder already says "High Torque"; a brand prefix only eats the ~35 characters. Tom settled this in commit 8d2ec17 (2026-04-21); an "HT " prefix crept back in the Nov 2026 rewrite and was removed again. Rename a workout on the site and in the `.zwo` together.
+- `<name>` and `<activitySaveName>` use plain characters only (Tom's rule: no special characters unless needed): `x` not `×`, `-` not `–` or `—`. Keep `ü` in Rüegg (a name), and keep `~` and `%`. (The site, calendar and research doc keep typographic `×`, `–`, `—`.)
+- `<activitySaveName>` — **keeps the `High Torque:` prefix**, because a saved ride sits in Zwift history and on Strava with no folder around it. Shape: `High Torque: <name> <reps>x<duration> <%FTP range> @ <cadence range> rpm`, where `<name>` is exactly the `<name>` element; parts the name already carries are not repeated (the adaptation names hold the reps and cadence, so only `min <%FTP>` is added). A single space between the parts. Examples from the files: `High Torque: Threshold 5x5 min ~95% FTP @ 50-60 rpm`, `High Torque: Weeks 1-2 - 4x4 min 80% FTP @ 60-65 rpm`, `High Torque: Rüegg VO2max + Sprint 3x5 min 106-120% FTP @ 50-60 rpm`, `High Torque: SIT (2 sets) 4x30s sprint @ 50-60 rpm`. Use **source prescription ranges**, not ZWO-fixed values. There are no tiers: never put "Tier N" in a name. All 12 files follow this shape.
 
 ## Folders
 
@@ -176,7 +176,7 @@ After creating or editing a `.zwo` file, verify:
 3. No `Cadence=` on warmup, cooldown, recovery, or opener blocks.
 4. `Cadence="X"` (capital C) on all interval blocks.
 5. `activitySaveName` present with source prescription ranges.
-6. `<name>` is under ~35 characters.
+6. `<name>` is under ~35 characters, has no prefix, and matches the data.ts `name:` in plain characters; `activitySaveName` starts with `High Torque: <name>`.
 7. Source attribution text event in the warmup.
 8. Knee safety warning present.
 9. SEATED reminder in or before every low-cadence interval.

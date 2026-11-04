@@ -10,8 +10,8 @@
 -->
 <workout_file>
     <author>Tom Jelen</author>
-    <name>HT SIT 2 Sets</name>
-    <activitySaveName>High Torque: SIT 2x(4x30s) sprint @ 50-60 rpm</activitySaveName>
+    <name>SIT (2 sets)</name>
+    <activitySaveName>High Torque: SIT (2 sets) 4x30s sprint @ 50-60 rpm</activitySaveName>
     <description>Direct adaptation of the Hebisz &amp; Hebisz (2024) study SIT protocol. Two sets of 4 x 30-second maximal sprints at 50-60 rpm, with 90 seconds of active rest between sprints and 25 minutes between the two sets. The study set both rests 'similar to the power at VT1' (90 s) and 'also at low intensity' (25 min); ~65% FTP for both is our estimate and choice. The sprints have no power target: you set the force. Seated throughout. The study riders were 17–20-year-old women with at least 3 years' training (10+ hours a week), and had done 3 months of base work, including core work, running with jumping exercises and lower-limb strength training, before day one.</description>
     <sportType>bike</sportType>
     <tags />
