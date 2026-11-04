@@ -4,8 +4,8 @@
 
 Check:
 
-- [ ] Click the Adam Pulford (CTS) video link in the Sources list once. Its YouTube ID came from a file name, not a saved URL.
-- [ ] Optional: listen to Fast Talk ep. 125 at about 69:24 and 70:14 (feed mp3). Those Henderson quotes are credited to him from context, because the transcript has no speaker labels. Also optional: 12:00–13:30 and 71:00–71:35, to confirm the three lines we now credit to a co-host.
+- [x] Click the Adam Pulford (CTS) video link in the Sources list once. Its YouTube ID came from a file name, not a saved URL.
+- [ ] Optional, not blocking (the Whisper transcript is the record): listen to Fast Talk ep. 125 at about 69:24 and 70:14 (feed mp3). Those Henderson quotes are credited to him from context, because the transcript has no speaker labels. Also optional: 12:00–13:30 and 71:00–71:35, to confirm the three lines we now credit to a co-host.
 
 Do:
 
