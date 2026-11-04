@@ -11,31 +11,22 @@ export default function UsageGuidelines({ collapsed, onToggle }: Props) {
     onToggle(!e.currentTarget.open)
   }
 
-  // Wording follows the research doc ("The 12-week build", "The move-on
-  // rule", "After the build") and the calendar ("Moving on").
+  // The build's rules in full, with their sources. Wording follows the
+  // research doc ("The move-on rule") and the calendar ("Moving on"). The
+  // 12-week order is shown by the progression chart, "After the build" lives
+  // in AfterBuildCard, and the every-session rules in the knee box.
   return (
     <details open={!collapsed} onToggle={handleToggle} className="border border-slate-800 rounded bg-slate-950 mb-4 group">
       <summary className="flex items-center justify-between gap-4 px-4 py-3 cursor-pointer list-none select-none hover:bg-slate-800/30 text-sm">
         <span className="text-slate-300">
-          <strong className="text-slate-200">How to use the plan and the library</strong>
+          <strong className="text-slate-200">Rules for the build</strong>
           {' — '}
-          <span className="text-slate-500">12-week build, then free choice · never on consecutive days · all seated</span>
+          <span className="text-slate-500">moving on, breaks, fitting it into ~10 hours a week</span>
         </span>
         <span className="text-slate-500 text-xs flex-shrink-0 group-open:rotate-180 transition-transform inline-block">▾</span>
       </summary>
 
-      <div className="px-4 pb-4 pt-3 border-t border-slate-800 text-sm text-slate-400 space-y-5 [&>div:not(:last-child)]:max-w-3xl">
-        <div>
-          <h4 className="text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2 mt-0">The 12-week build</h4>
-          <p className="m-0">
-            <strong className="text-slate-300">One torque session a week.</strong> All other rides at normal cadence.
-            Each session is ridden in two consecutive weeks: 4 weeks of adaptation, then Torque Endurance 3×8,
-            Threshold 5×5, TorqueMax and HIIT 4×4. Progress counts sessions done, not calendar weeks. The
-            two-weeks-per-session arrangement is ours; the order comes from the coaches (Schep, EVOQ, Henderson for
-            sustained efforts, CTS).
-          </p>
-        </div>
-
+      <div className="px-4 pb-4 pt-3 border-t border-slate-800 text-sm text-slate-400 space-y-5">
         <div>
           <h4 className="text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2 mt-0">Moving on (our rule)</h4>
           <p className="m-0 mb-2">After the second session of each step, move to the next step only if:</p>
@@ -69,35 +60,6 @@ export default function UsageGuidelines({ collapsed, onToggle }: Props) {
         </div>
 
         <div>
-          <h4 className="text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2 mt-0">After the build</h4>
-          <ul className="m-0 pl-4 space-y-1">
-            <li>
-              <strong className="text-slate-300">Maintain:</strong> about one torque session a month (EVOQ gives 1–2 a
-              month in season; we use it as the maintenance option).<Cite sourceKey="evoq" />
-            </li>
-            <li>
-              <strong className="text-slate-300">Keep going:</strong> 1–2 sessions a week,{' '}
-              <strong className="text-slate-300">never on consecutive days</strong> (ours, combining these). CTS (Jim
-              Rutberg, written): beginner and intermediate riders "should separate MT workouts by at least a full
-              day". Henderson (machine transcript): "Generally I do about one of these sessions a week at most two".
-              EVOQ (written): start with one day a week and work up to two.
-              <Cite sourceKey="ctsRutberg" /><Cite sourceKey="henderson" /><Cite sourceKey="evoq" />
-            </li>
-            <li>
-              <strong className="text-slate-300">Free choice from the library.</strong> No rotation, no "next
-              session". A plain hint (ours): mix moderate sessions (Torque Endurance, Threshold) with above-threshold
-              ones (TorqueMax, Rüegg, HIIT, SIT).
-            </li>
-          </ul>
-          <p className="m-0 mt-2">
-            <strong className="text-slate-300">Where the evidence ends.</strong> The research backs particular
-            workouts (Hebisz: HIIT and SIT; de Pablos: near-maximal efforts), each tested inside its own multi-week
-            program. No study tested this site's arrangement. After week 12 no source says what order to ride things
-            in. Each workout keeps its own source label.
-          </p>
-        </div>
-
-        <div>
           <h4 className="text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2 mt-0">Fitting it into ~10 hours/week (ours)</h4>
           <ul className="m-0 pl-4 space-y-1">
             <li>
@@ -106,15 +68,6 @@ export default function UsageGuidelines({ collapsed, onToggle }: Props) {
             </li>
             <li>Keep the long endurance ride and all other rides at normal cadence.</li>
             <li>All targets are %FTP, so they scale when your FTP changes.</li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 className="text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2 mt-0">Every session</h4>
-          <ul className="m-0 pl-4 space-y-1">
-            <li>All low-cadence intervals are seated.</li>
-            <li>Warm up at normal cadence for about 15 minutes first (every file does this).</li>
-            <li>If your knees ache during an interval, stop the interval.</li>
           </ul>
         </div>
 

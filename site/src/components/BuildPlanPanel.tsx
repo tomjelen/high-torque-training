@@ -1,7 +1,8 @@
-import { useEffect, useId, useRef, useState } from 'react'
+import { useEffect, useId, useRef, useState, type ReactNode } from 'react'
 import Panel from './Panel'
 import BuildWeekCard from './BuildWeekCard'
 import BuildProgression from './BuildProgression'
+import UsageGuidelines from './UsageGuidelines'
 import ChartLegend from './ChartLegend'
 import WorkoutChart from './WorkoutChart'
 import { chartWorkoutFor } from './chart-data'
@@ -33,6 +34,8 @@ const HOW_TO_CHART = (() => {
 interface Props {
   state: AppState
   setState: React.Dispatch<React.SetStateAction<AppState>>
+  // The session tracker, shown under this week's card while the build runs.
+  trackerSlot?: ReactNode
 }
 
 type ResetKind = 'adaptation' | 'build'
@@ -64,7 +67,7 @@ function logSession(prev: AppState, advance: boolean): AppState {
   return workoutId ? logBuildSession(prev, logEntryFor(workoutId), advance) : prev
 }
 
-export default function BuildPlanPanel({ state, setState }: Props) {
+export default function BuildPlanPanel({ state, setState, trackerSlot }: Props) {
   const [confirming, setConfirming] = useState<ResetKind | null>(null)
   const cancelRef = useRef<HTMLButtonElement>(null)
   const restartRefs = useRef<Record<ResetKind, HTMLButtonElement | null>>({ adaptation: null, build: null })
@@ -120,7 +123,7 @@ export default function BuildPlanPanel({ state, setState }: Props) {
     closeConfirm(kind)
   }
 
-  const status = done || !week ? 'done' : `week ${week.week} of ${BUILD_LENGTH}`
+  const status = done || !week ? 'done ✓' : `week ${week.week} of ${BUILD_LENGTH}`
 
   return (
     <Panel
@@ -181,6 +184,19 @@ export default function BuildPlanPanel({ state, setState }: Props) {
         </div>
       </details>
 
+      {done && (
+        <p className="m-0 mb-4 border-l-4 border-green-700 pl-4 py-1 text-sm text-slate-300">
+          <strong className="text-slate-100">Build done ✓</strong> All 12 weeks ridden.{' '}
+          <a href="#after-build" className="text-blue-400 hover:text-blue-300">
+            What's next: after the build ↓
+          </a>
+        </p>
+      )}
+
+      {/* Once the build is done it greys out (still readable and usable);
+          the knee rules above stay at full strength, they apply to every
+          library session too. */}
+      <div className={done ? 'opacity-50 hover:opacity-100 focus-within:opacity-100 transition-opacity' : ''}>
       <BuildProgression
         progress={progress}
         shownStep={shownStep}
@@ -212,12 +228,7 @@ export default function BuildPlanPanel({ state, setState }: Props) {
             onBack={() => setSelectedStep(null)}
             backLabel={done ? 'Close' : '← Back to this week'}
           />
-        ) : done ? (
-          <p className="m-0 border-l-4 border-green-700 pl-4 py-1 text-sm text-slate-300">
-            Build done. Maintain (~1 session a month) or keep going (1–2 a week, never on consecutive
-            days). Pick freely from the library.
-          </p>
-        ) : (
+        ) : done ? null : (
           week &&
           workout && (
             <BuildWeekCard
@@ -230,6 +241,8 @@ export default function BuildPlanPanel({ state, setState }: Props) {
           )
         )}
       </div>
+
+      {!done && trackerSlot && <div className="mb-4">{trackerSlot}</div>}
 
       <div className="flex flex-col gap-3 text-sm">
         <div>
@@ -296,6 +309,16 @@ export default function BuildPlanPanel({ state, setState }: Props) {
         <p className="m-0 text-xs text-slate-500">
           After a break (illness, travel): weeks 3–4 is a good session to come back with (a suggestion, ours).
         </p>
+      </div>
+
+      <div className="mt-4">
+        <UsageGuidelines
+          collapsed={state.panels.usageGuidelines.collapsed}
+          onToggle={(collapsed) =>
+            setState((s) => ({ ...s, panels: { ...s.panels, usageGuidelines: { collapsed } } }))
+          }
+        />
+      </div>
       </div>
     </Panel>
   )

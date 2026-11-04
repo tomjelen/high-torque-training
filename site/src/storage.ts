@@ -11,7 +11,7 @@ export const DEFAULT_STATE: AppState = {
     download: { collapsed: false },
     build: { collapsed: false },
     collection: { collapsed: false },
-    usageGuidelines: { collapsed: false },
+    usageGuidelines: { collapsed: true },
     chartExplainer: { collapsed: false },
   },
   log: [],

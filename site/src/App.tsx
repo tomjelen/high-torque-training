@@ -44,6 +44,10 @@ function PageShell({
 }
 
 function HomePage({ state, setState }: { state: AppState; setState: React.Dispatch<React.SetStateAction<AppState>> }) {
+  // The tracker sits in the panel you're at: under this week's card during
+  // the build, inside "After the build" once it's done (Tom, 2026-11-04;
+  // a sticky side column was tried and dropped as wasted width).
+  const tracker = <TrackerSection state={state} setState={setState} />
   return (
     <PageShell
       title={HOME_TITLE}
@@ -53,9 +57,8 @@ function HomePage({ state, setState }: { state: AppState; setState: React.Dispat
       <h1 className="text-2xl sm:text-3xl font-bold text-slate-100 mt-6 mb-6">Free training plan for Zwift</h1>
       <IntroPanel state={state} setState={setState} />
       <DownloadInstallPanel state={state} setState={setState} />
-      <BuildPlanPanel state={state} setState={setState} />
-      <TrackerSection state={state} setState={setState} />
-      <CollectionPanel state={state} setState={setState} />
+      <BuildPlanPanel state={state} setState={setState} trackerSlot={tracker} />
+      <CollectionPanel state={state} setState={setState} trackerSlot={tracker} />
     </PageShell>
   )
 }

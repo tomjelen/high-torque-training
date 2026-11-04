@@ -6,9 +6,10 @@ interface Props {
   setState: React.Dispatch<React.SetStateAction<AppState>>
 }
 
-// The tracker sits on its own, outside both the build and library panels, so
-// it stays visible whichever of them is collapsed. Both panels log into
-// state.log; this is the only place that edits or deletes entries.
+// Rendered inside the panel the rider is at: the build panel during the
+// build, "After the build" in the library once it's done (see HomePage).
+// Both panels log into state.log; this is the only place that edits or
+// deletes entries.
 export default function TrackerSection({ state, setState }: Props) {
   function handleDeleteEntry(id: string) {
     setState((prev) => ({ ...prev, log: prev.log.filter((e) => e.id !== id) }))

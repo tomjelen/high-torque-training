@@ -152,8 +152,10 @@ export default function BuildProgression({ progress, shownStep, currentStep, onS
         The 12 weeks at a glance
       </h3>
       <p className="m-0 mb-4 text-xs text-slate-500">
-        Bar height is the power of the high-torque intervals (%FTP, from the workout files); the cadence is
-        under each pair. The order comes from the coaches; two weeks per workout is our arrangement.
+        One torque session a week; all other rides at normal cadence. Bar height is the power of the high-torque
+        intervals (%FTP, from the workout files); the cadence is under each pair. Progress counts sessions done,
+        not calendar weeks. The order comes from the coaches (Schep, EVOQ, Henderson for sustained efforts, CTS);
+        two weeks per workout is our arrangement.
       </p>
 
       <PhaseLabels />
