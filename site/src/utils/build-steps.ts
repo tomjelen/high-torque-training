@@ -69,16 +69,14 @@ export function stepTitle(step: BuildStep): string {
   return step.workout.name.replace(/^Weeks? [\d–]+ — /, '')
 }
 
-// What "Done" leads to from the week at index `progress`.
+// What "Done" leads to from the week at index `progress`, as the rest of the
+// button's sentence ("Done — …"). Plain words, no counters: "session 2 of 2"
+// on a button read as "done with session 2 of 2".
 export function nextLabel(progress: number): string {
   const step = stepIndexForProgress(progress)
   if (step === null) return ''
   const next = stepIndexForProgress(progress + 1)
   if (next === null) return 'finish the build'
-  if (next === step) {
-    const s = BUILD_STEPS[step]
-    const n = s.weeks.findIndex((w) => w.week === progress + 2) + 1
-    return `session ${n} of ${s.weeks.length}`
-  }
-  return `next: ${stepTitle(BUILD_STEPS[next])}`
+  if (next === step) return 'repeat this session next week'
+  return `next week: ${stepTitle(BUILD_STEPS[next])}`
 }

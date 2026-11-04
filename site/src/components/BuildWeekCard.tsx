@@ -13,7 +13,7 @@ type Props = {
   | {
       mode: 'current'
       onDone: () => void
-      // Where Done takes you, e.g. "session 2 of 2" or "next: Threshold 5×5".
+      // The rest of the button's sentence, e.g. "repeat this session next week".
       nextLabel: string
       // Step back a week (a mistaken click, or wrecked the day after).
       onBackOneWeek?: () => void
@@ -105,7 +105,7 @@ export default function BuildWeekCard(props: Props) {
               onClick={props.onDone}
               className="w-full text-sm font-semibold bg-orange-600 hover:bg-orange-500 text-white cursor-pointer rounded py-3 sm:py-1.5 transition-colors"
             >
-              Done ✓ <span className="font-normal">→ {props.nextLabel}</span>
+              Done ✓ <span className="font-normal">— {props.nextLabel}</span>
             </button>
             <p className="m-0">
               Not all three? Don't click: ride it again next week. Knee pain that keeps coming back → stop torque
