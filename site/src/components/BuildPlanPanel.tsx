@@ -7,6 +7,7 @@ import ChartLegend from './ChartLegend'
 import WorkoutChart from './WorkoutChart'
 import { chartWorkoutFor } from './chart-data'
 import { workoutById } from '../data'
+import { confettiBurst } from '../lib/confetti'
 import { BUILD_STEPS, nextLabel, stepIndexForProgress, weekRangeLabel } from '../utils/build-steps'
 import {
   ADAPTATION_LENGTH,
@@ -86,6 +87,7 @@ export default function BuildPlanPanel({ state, setState }: Props) {
   const shownStep = selectedStep ?? currentStep
   const shown = shownStep !== null && shownStep !== currentStep ? BUILD_STEPS[shownStep] : null
   const detailId = useId()
+  const doneId = useId()
 
   function backOneWeek() {
     setState((prev) => ({ ...prev, buildProgress: undoMoveOn(prev.buildProgress) }))
@@ -168,7 +170,7 @@ export default function BuildPlanPanel({ state, setState }: Props) {
       </details>
 
       {done && (
-        <p className="m-0 mb-4 border-l-4 border-green-700 pl-4 py-1 text-sm text-slate-300">
+        <p id={doneId} className="m-0 mb-4 border-l-4 border-green-700 pl-4 py-1 text-sm text-slate-300">
           <strong className="text-slate-100">Build done ✓</strong> All 12 weeks ridden.{' '}
           <a href="#after-build" className="text-blue-400 hover:text-blue-300">
             What's next: after the build ↓
@@ -225,7 +227,17 @@ export default function BuildPlanPanel({ state, setState }: Props) {
               mode="current"
               week={week}
               workout={workout}
-              onDone={() => setState((prev) => ({ ...prev, buildProgress: moveOn(prev.buildProgress) }))}
+              onDone={() => {
+                setState((prev) => ({ ...prev, buildProgress: moveOn(prev.buildProgress) }))
+                // Finishing week 12: confetti (Tom's request), and bring the
+                // "Build done" line into view, since this card disappears.
+                if (progress === BUILD_LENGTH - 1) {
+                  confettiBurst()
+                  requestAnimationFrame(() =>
+                    document.getElementById(doneId)?.scrollIntoView({ behavior: 'smooth', block: 'center' }),
+                  )
+                }
+              }}
               nextLabel={nextLabel(progress)}
               onBackOneWeek={progress > 0 ? backOneWeek : undefined}
             />
