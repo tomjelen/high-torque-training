@@ -7,7 +7,7 @@ import SourcesList from './SourcesList'
 export default function RationalePage() {
   // Capped width: long-form reading, so lines stay near 100 characters on wide screens.
   return (
-    <article className="max-w-3xl">
+    <article className="max-w-3xl mx-auto">
       <div className="mb-6">
         <h1 className="text-3xl font-bold text-slate-100 mt-6 mb-1">The Science and Rationale</h1>
         <p className="text-slate-400 text-sm m-0">
