@@ -1,10 +1,12 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useId, useRef, useState } from 'react'
 import Panel from './Panel'
 import BuildWeekCard from './BuildWeekCard'
+import BuildProgression from './BuildProgression'
 import ChartLegend from './ChartLegend'
 import WorkoutChart from './WorkoutChart'
 import { chartWorkoutFor } from './chart-data'
-import { BUILD_WEEKS, workoutById } from '../data'
+import { workoutById } from '../data'
+import { BUILD_STEPS, stepIndexForProgress, weekRangeLabel } from '../utils/build-steps'
 import {
   ADAPTATION_LENGTH,
   BUILD_LENGTH,
@@ -91,6 +93,17 @@ export default function BuildPlanPanel({ state, setState }: Props) {
   const done = isBuildDone(progress)
   const week = currentWeek(progress)
   const workout = week ? workoutById(week.workoutIds[0]) : undefined
+  const currentStep = stepIndexForProgress(progress)
+
+  // A step opened from the overview. null = follow the current week. Local,
+  // not persisted, and reset whenever progress changes (move on, undo,
+  // restart, and the load of saved state after the prerendered first paint),
+  // so the panel always comes back to the week you're on.
+  const [selectedStep, setSelectedStep] = useState<number | null>(null)
+  useEffect(() => setSelectedStep(null), [progress])
+  const shownStep = selectedStep ?? currentStep
+  const shown = shownStep !== null && shownStep !== currentStep ? BUILD_STEPS[shownStep] : null
+  const detailId = useId()
 
   function onToggle(collapsed: boolean) {
     setState((s) => ({ ...s, panels: { ...s.panels, build: { collapsed } } }))
@@ -168,53 +181,55 @@ export default function BuildPlanPanel({ state, setState }: Props) {
         </div>
       </details>
 
-      {done ? (
-        <p className="m-0 mb-4 border-l-4 border-green-700 pl-4 py-1 text-sm text-slate-300">
-          Build done. Maintain (~1 session a month) or keep going (1–2 a week, never on consecutive
-          days). Pick freely from the library.
-        </p>
-      ) : (
-        week &&
-        workout && (
-          <div className="mb-4">
+      <BuildProgression
+        progress={progress}
+        shownStep={shownStep}
+        currentStep={currentStep}
+        onSelect={(i) => {
+          setSelectedStep(i === currentStep ? null : i)
+          // Phones: the details sit below all six steps, so bring them into
+          // view; otherwise a tap looks like it did nothing.
+          const el = document.getElementById(detailId)
+          if (el && el.getBoundingClientRect().top > window.innerHeight * 0.6) {
+            el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+          }
+        }}
+        detailId={detailId}
+      />
+
+      <div id={detailId} className="mb-4 scroll-mt-20">
+        {shown ? (
+          <BuildWeekCard
+            mode="preview"
+            week={shown.weeks[0]}
+            workout={shown.workout}
+            weekLabel={weekRangeLabel(shown)}
+            statusText={
+              shown.weeks[shown.weeks.length - 1].week - 1 < progress
+                ? `Done · ${weekRangeLabel(shown).toLowerCase()}`
+                : `Coming up in ${weekRangeLabel(shown).toLowerCase()}`
+            }
+            onBack={() => setSelectedStep(null)}
+            backLabel={done ? 'Close' : '← Back to this week'}
+          />
+        ) : done ? (
+          <p className="m-0 border-l-4 border-green-700 pl-4 py-1 text-sm text-slate-300">
+            Build done. Maintain (~1 session a month) or keep going (1–2 a week, never on consecutive
+            days). Pick freely from the library.
+          </p>
+        ) : (
+          week &&
+          workout && (
             <BuildWeekCard
+              mode="current"
               week={week}
               workout={workout}
               onMoveOn={() => setState((prev) => logSession(prev, true))}
               onRepeat={() => setState((prev) => logSession(prev, false))}
             />
-          </div>
-        )
-      )}
-
-      <section aria-label="All 12 weeks" className="mb-4">
-        <h3 className="text-sm font-semibold text-slate-200 m-0 mb-1">All 12 weeks</h3>
-        <p className="m-0 mb-2 text-xs text-slate-500">
-          The order comes from the coaches; two weeks per workout is our arrangement.
-        </p>
-        <ol className="m-0 p-0 list-none grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-1 text-sm">
-          {BUILD_WEEKS.map((w, i) => {
-            const rowStatus = i < progress ? 'done' : i === progress ? 'this week' : 'later'
-            const name = workoutById(w.workoutIds[0])?.name ?? w.workoutIds[0]
-            const tone =
-              rowStatus === 'done'
-                ? 'text-green-400'
-                : rowStatus === 'this week'
-                  ? 'text-orange-300 font-semibold'
-                  : 'text-slate-500'
-            return (
-              <li
-                key={w.week}
-                className={`flex items-baseline gap-2 rounded px-2 py-1 bg-slate-950 ${tone}`}
-              >
-                <span className="font-mono text-xs w-6 flex-shrink-0">{w.week}</span>
-                <span className="truncate" title={name}>{name}</span>
-                <span className="ml-auto text-xs flex-shrink-0">{rowStatus}</span>
-              </li>
-            )
-          })}
-        </ol>
-      </section>
+          )
+        )}
+      </div>
 
       <div className="flex flex-col gap-3 text-sm">
         <div>
