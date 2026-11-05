@@ -100,7 +100,7 @@
 
         <Cooldown Duration="720" PowerLow="0.50" PowerHigh="0.40">
             <textevent timeoffset="10" message="Rüegg session complete. Spin easy at normal cadence." />
-            <textevent timeoffset="180" duration="25" message="Note how your knees feel. Any ache? My rule: next week, repeat this session instead of moving on. If it keeps coming back, stop torque work and see a professional." />
+            <textevent timeoffset="180" duration="25" message="Note how your knees feel. Any ache? If it keeps coming back, stop torque work and see a professional." />
             <textevent timeoffset="360" duration="25" message="My rule: no torque sessions on back-to-back days. CTS coach Jim Rutberg says beginner and intermediate riders should separate them by at least a full day." />
             <textevent timeoffset="540" duration="30" message="EF's published version of this workout uses a 30-min warm-up and a 30-min cool-down. I use shorter ones for Zwift (scaled)." />
         </Cooldown>

@@ -129,7 +129,7 @@
         <Cooldown Duration="900" PowerLow="0.50" PowerHigh="0.40">
             <textevent timeoffset="10" duration="15" message="SIT session done. That was the study's sprint session, adapted for Zwift." />
             <textevent timeoffset="150" duration="20" message="Spin easy at normal cadence." />
-            <textevent timeoffset="300" duration="30" message="Knee check: how do they feel now compared to during the sprints? Any ache? My rule: next week, repeat this session instead of moving on. If it keeps coming back, stop torque work and see a professional." />
+            <textevent timeoffset="300" duration="30" message="Knee check: how do they feel now compared to during the sprints? Any ache? If it keeps coming back, stop torque work and see a professional." />
             <textevent timeoffset="480" duration="25" message="My rule: no torque sessions on back-to-back days. CTS coach Jim Rutberg says beginner and intermediate riders should separate them by at least a full day." />
             <textevent timeoffset="660" duration="25" message="The study tested SIT and HIIT together in every 4-day cycle. This session is one part of that program, not the whole of it." />
             <textevent timeoffset="840" duration="30" message="One small study: well-trained women aged 17-20, 12 per group. The paper reports no knee or injury monitoring. Promising, not proven." />

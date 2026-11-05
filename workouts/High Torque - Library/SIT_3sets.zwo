@@ -172,7 +172,7 @@
         <Cooldown Duration="900" PowerLow="0.50" PowerHigh="0.40">
             <textevent timeoffset="10" message="12 sprints done. Full study volume achieved." />
             <textevent timeoffset="150" duration="25" message="That third set is the progression from the study's higher-volume phase. This matches the study's 12-rep SIT session, adapted for Zwift." />
-            <textevent timeoffset="300" duration="25" message="Note how your knees feel. Any ache? My rule: next week, repeat this session instead of moving on. If it keeps coming back, stop torque work and see a professional." />
+            <textevent timeoffset="300" duration="25" message="Note how your knees feel. Any ache? If it keeps coming back, stop torque work and see a professional." />
             <textevent timeoffset="480" duration="25" message="My rule: no torque sessions on back-to-back days. CTS coach Jim Rutberg says beginner and intermediate riders should separate them by at least a full day." />
             <textevent timeoffset="840" duration="30" message="One small study: well-trained women aged 17-20, 12 per group. The paper reports no knee or injury monitoring. Promising, not proven." />
         </Cooldown>

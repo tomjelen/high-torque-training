@@ -124,7 +124,7 @@
         <Cooldown Duration="900" PowerLow="0.50" PowerHigh="0.40">
             <textevent timeoffset="10" message="TorqueMax complete. Six intervals done. Spin easy at normal cadence." />
             <textevent timeoffset="150" duration="25" message="Six reps is EVOQ's starting volume; they suggest working up to eight. This file stays at six (my choice)." />
-            <textevent timeoffset="360" duration="25" message="Note how your knees feel. Any ache? My rule: next week, repeat this session instead of moving on. If it keeps coming back, stop torque work and see a professional." />
+            <textevent timeoffset="360" duration="25" message="Note how your knees feel. Any ache? If it keeps coming back, stop torque work and see a professional." />
             <textevent timeoffset="600" duration="25" message="My rule: no torque sessions on back-to-back days. CTS coach Jim Rutberg says beginner and intermediate riders should separate them by at least a full day." />
         </Cooldown>
     </workout>

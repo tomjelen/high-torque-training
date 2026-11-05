@@ -41,7 +41,7 @@ Constraints:
 
 - `<name>` — **no prefix.** It is the site's display name (`name:` in `site/src/data.ts`) written in plain characters, e.g. `Threshold 5x5`, `Weeks 1-2 - 4x4 @ 60-65 rpm`, `Rüegg VO2max + Sprint`. Why: in Zwift you browse Custom Workouts → the zip's folders ("High Torque - Adaptation", "High Torque - Library") → the workouts, so the folder already says "High Torque"; a brand prefix only eats the ~35 characters. Tom settled this in commit 8d2ec17 (2026-04-21); an "HT " prefix crept back in the Nov 2026 rewrite and was removed again. Rename a workout on the site and in the `.zwo` together.
 - `<name>` and `<activitySaveName>` use plain characters only (Tom's rule: no special characters unless needed): `x` not `×`, `-` not `–` or `—`. Keep `ü` in Rüegg (a name), and keep `~` and `%`. (The site, calendar and research doc keep typographic `×`, `–`, `—`.)
-- `<activitySaveName>` — **keeps the `High Torque:` prefix**, because a saved ride sits in Zwift history and on Strava with no folder around it. Shape: `High Torque: <name> <reps>x<duration> <%FTP range> @ <cadence range> rpm`, where `<name>` is exactly the `<name>` element; parts the name already carries are not repeated (the adaptation names hold the reps and cadence, so only `min <%FTP>` is added). A single space between the parts. Examples from the files: `High Torque: Threshold 5x5 min ~95% FTP @ 50-60 rpm`, `High Torque: Weeks 1-2 - 4x4 min 80% FTP @ 60-65 rpm`, `High Torque: Rüegg VO2max + Sprint 3x5 min 106-120% FTP @ 50-60 rpm`, `High Torque: SIT (2 sets) 4x30s sprint @ 50-60 rpm`. Use **source prescription ranges**, not ZWO-fixed values. There are no tiers: never put "Tier N" in a name. All 12 files follow this shape.
+- `<activitySaveName>` — **keeps the `High Torque:` prefix**, because a saved ride sits in Zwift history and on Strava with no folder around it. Shape: `High Torque: <name> <reps>x<duration> <%FTP range> @ <cadence range> rpm`, where `<name>` is exactly the `<name>` element; parts the name already carries are not repeated (the adaptation names hold the reps and cadence, so only `min <%FTP>` is added). A single space between the parts. Examples from the files: `High Torque: Threshold 5x5 min ~95% FTP @ 50-60 rpm`, `High Torque: Weeks 1-2 - 4x4 min 80-85% FTP @ 60-65 rpm`, `High Torque: Rüegg VO2max + Sprint 3x5 min 106-120% FTP @ 50-60 rpm`, `High Torque: SIT (2 sets) 4x30s sprint @ 50-60 rpm`. Use **source prescription ranges**, not ZWO-fixed values. There are no tiers: never put "Tier N" in a name. All 12 files follow this shape.
 
 ## Folders
 
@@ -131,6 +131,13 @@ These are longer messages — set a `duration` on them (20s is a reasonable defa
 
 ### Knee safety warning
 Every low-cadence workout must include at least one knee warning. Example: "If your knees ache at any point during an interval, stop the interval. Don't push through knee discomfort."
+
+The cooldown knee check has two wordings, by folder (Tom, 2026-11-05):
+
+- **Adaptation files:** "Note how your knees feel. Any ache? My rule: next week, repeat this session instead of moving on. If it keeps coming back, stop torque work and see a professional." (knee rule 4, as on the site's knee box.)
+- **Library files:** the same without the "My rule: next week, repeat…" sentence: "Note how your knees feel. Any ache? If it keeps coming back, stop torque work and see a professional." (SIT 2 sets opens with "Knee check: how do they feel now compared to during the sprints?" instead.)
+
+Why: the "repeat instead of moving on" rule only makes sense inside the plan. It was added to all twelve files on 2026-11-05 because it reads right when you think of the workouts through the build plan. But the library files are also ridden as free choice after the build, where there is nothing to move on to, and they may sit in someone else's plan. During the build, the site's Done button asks the knee question and covers the repeat. The adaptation files are only ridden in the adaptation, so they keep the rule. Don't add it back to the library files.
 
 ### SEATED reminder
 All low-cadence intervals are seated — non-negotiable. State "SEATED" or "Stay seated" prominently in or before every interval block. The warmup's SEATED event gives the sourced reason first, then the author's own: "All intervals are SEATED. Henderson: less joint compression (machine transcript). My added reason: standing lets body weight push the pedal down instead of your muscles." (research doc, knee rule 1).
