@@ -144,10 +144,9 @@ export default function BuildPlanPanel({ state, setState }: Props) {
           </li>
         </ol>
         <p className="mt-2 mb-0 text-xs text-red-200/80">
-          Where these come from: staying seated (for less joint compression) and stopping when it hurts are
-          Henderson's advice (podcast, machine transcript). Not on consecutive days is based on CTS (Jim Rutberg: beginner and intermediate riders
-          separate these workouts by at least a full day). The rest, and the extra reason for staying seated, are
-          my own safety margins. Reasons on the <Link to="/rationale" className="underline hover:text-red-100">rationale page</Link>.
+          Where these come from: staying seated and stopping when it hurts are coach Neal Henderson's advice. Not
+          on consecutive days is based on the coaching company CTS. The rest are my own safety margins. Sources
+          and reasons on the <Link to="/rationale" className="underline hover:text-red-100">rationale page</Link>.
         </p>
       </div>
 
@@ -304,10 +303,10 @@ export default function BuildPlanPanel({ state, setState }: Props) {
           )}
         </div>
         <p className="m-0 text-xs text-slate-500">
-          After a long break, restart from adaptation or from week 5, as you see fit (mine).
+          After a long break, restart from adaptation or from week 5, as you see fit.
         </p>
         <p className="m-0 text-xs text-slate-500">
-          After a break (illness, travel): weeks 3–4 is a good session to come back with (a suggestion, mine).
+          After a break (illness, travel): weeks 3–4 is a good session to come back with (a suggestion of mine).
         </p>
       </div>
 

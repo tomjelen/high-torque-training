@@ -181,7 +181,7 @@ export const SOURCES: Record<string, Source> = {
 // ep. 125, machine transcript) and Schep (EF); the 4-week arrangement is ours.
 // `source: 'site'` renders as plain text (no single source to cite).
 const ADAPTATION_SOURCE_NOTE =
-  "A labelled composite of coaches' advice for riders starting torque work. John Wakefield (That Triathlon Show #465, machine transcript): four 4-minute reps, around 60–65 rpm for riders new to it, rest as long as the rep. Neal Henderson (Fast Talk ep. 125, 2020, machine transcript): 75–85% of threshold at 50–60 rpm. Peter Schep (EF Pro Cycling): 80–85% of FTP. My choices: 80% FTP in weeks 1–2, and the 4-week arrangement."
+  "A combination of coaches' advice for riders starting torque work (the combination is mine). John Wakefield (That Triathlon Show #465, machine transcript): four 4-minute reps, around 60–65 rpm for riders new to it, rest as long as the rep. Neal Henderson (Fast Talk ep. 125, 2020, machine transcript): 75–85% of threshold at 50–60 rpm. Peter Schep (EF Pro Cycling): 80–85% of FTP. My choices: 80% FTP in weeks 1–2, and the 4-week arrangement."
 
 const ADAPTATION_PEOPLE = ['John Wakefield', 'Neal Henderson', 'Peter Schep']
 const HEBISZ_PEOPLE = ['R. Hebisz', 'P. Hebisz']

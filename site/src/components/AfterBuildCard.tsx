@@ -44,9 +44,9 @@ export default function AfterBuildCard({ active, trackerSlot }: Props) {
             Keep going: 1–2 sessions a week, never on consecutive days
           </p>
           <p className="m-0">
-            No single source says this; I combined these. CTS (Jim Rutberg, written): beginner and intermediate riders "should separate MT
-            workouts by at least a full day". Henderson (machine transcript): "Generally I do about one of these
-            sessions a week at most two". EVOQ (written): start with one day a week and work up to two.
+            Combined from three coaches: Jim Rutberg of the coaching company CTS says to separate these workouts
+            "by at least a full day"; coach Neal Henderson does "about one of these sessions a week at most two";
+            the coaching company EVOQ says to start with one a week and work up to two.
             <Cite sourceKey="ctsRutberg" />
             <Cite sourceKey="henderson" />
             <Cite sourceKey="evoq" />
@@ -57,7 +57,7 @@ export default function AfterBuildCard({ active, trackerSlot }: Props) {
       <div className="text-sm text-slate-400 space-y-2">
         <p className="m-0">
           <strong className="text-slate-300">Free choice from the library below.</strong> No rotation, no "next
-          session". A plain hint (mine): mix moderate sessions (Torque Endurance, Threshold) with above-threshold
+          session". A hint of mine: mix moderate sessions (Torque Endurance, Threshold) with above-threshold
           ones (TorqueMax, Rüegg, HIIT, SIT).
         </p>
         <p className="m-0">

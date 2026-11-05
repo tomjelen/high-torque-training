@@ -62,7 +62,7 @@ export default function BuildWeekCard(props: Props) {
           <small className="text-slate-400 text-xs">
             Source:{' '}
             {workout.source === 'site' ? (
-              <span title={workout.sourceNote}>composite of Wakefield, Henderson and Schep (mine)</span>
+              <span title={workout.sourceNote}>my combination of advice from three coaches (Wakefield, Henderson, Schep)</span>
             ) : (
               <Cite sourceKey={workout.source} note={workout.sourceNote} />
             )}

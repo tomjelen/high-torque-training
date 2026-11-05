@@ -38,8 +38,8 @@ export default function UsageGuidelines({ collapsed, onToggle }: Props) {
           <p className="m-0 mt-2">
             <strong className="text-slate-300">Any "no" → repeat last week's session.</strong> Knee pain → repeat last
             week's session instead of moving on; if it keeps coming back, stop torque work and see a professional.
-            The nearest sources are Roadman's "if your joints feel good" (media relay, auto-captions) and Henderson's
-            "if it hurts, stop doing it" (machine transcript).
+            No source gives a move-on test; the nearest are the Roadman Cycling Podcast's "if your joints feel
+            good" and coach Neal Henderson's "if it hurts, stop doing it".
             <Cite sourceKey="roadman" /><Cite sourceKey="henderson" />
           </p>
         </div>
@@ -48,11 +48,11 @@ export default function UsageGuidelines({ collapsed, onToggle }: Props) {
           <h4 className="text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2 mt-0">Breaks and restarting</h4>
           <ul className="m-0 pl-4 space-y-1">
             <li>
-              After a break (illness, travel), the weeks 3–4 session is a good one to come back with. A suggestion,
-              not a rule (mine).
+              After a break (illness, travel), the weeks 3–4 session is a good one to come back with. A suggestion of
+              mine, not a rule.
             </li>
             <li>
-              After a long break, restart from adaptation or from week 5, as you see fit (mine). The build plan has a
+              After a long break, restart from adaptation or from week 5, as you see fit. The build plan has a
               button for each: <strong className="text-slate-300">Restart adaptation</strong> and{' '}
               <strong className="text-slate-300">Restart build</strong>.
             </li>
@@ -60,7 +60,7 @@ export default function UsageGuidelines({ collapsed, onToggle }: Props) {
         </div>
 
         <div>
-          <h4 className="text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2 mt-0">Fitting it into ~10 hours/week (mine)</h4>
+          <h4 className="text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2 mt-0">Fitting it into ~10 hours/week (my suggestions)</h4>
           <ul className="m-0 pl-4 space-y-1">
             <li>
               Swapping a torque session for one of your existing interval sessions is usually easier than adding one
