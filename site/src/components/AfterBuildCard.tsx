@@ -68,7 +68,7 @@ export default function AfterBuildCard({ active, trackerSlot }: Props) {
         </p>
         <p className="m-0 text-red-200">
           <strong className="text-red-100">⚠ Every session:</strong> all low-cadence intervals are seated; warm up
-          at normal cadence for about 15 minutes first (every file does this); if your knees ache during an
+          at normal cadence for about 15 minutes first (every workout includes this warm-up); if your knees ache during an
           interval, stop the interval.
         </p>
       </div>

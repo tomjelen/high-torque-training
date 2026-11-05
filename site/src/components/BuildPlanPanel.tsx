@@ -120,6 +120,53 @@ export default function BuildPlanPanel({ state, setState }: Props) {
       collapsed={state.panels.build.collapsed}
       onToggle={onToggle}
     >
+
+      {done && (
+        <p id={doneId} className="m-0 mb-4 border-l-4 border-green-700 pl-4 py-1 text-sm text-slate-300">
+          <strong className="text-slate-100">Build done ✓</strong> Adaptation and build ridden.{' '}
+          <a href="#after-build" className="text-blue-400 hover:text-blue-300">
+            What's next: after the build ↓
+          </a>{' '}
+          <button
+            type="button"
+            onClick={backOneWeek}
+            className="ml-2 min-h-11 sm:min-h-0 text-xs text-slate-400 hover:text-slate-200 border border-slate-700 hover:border-slate-500 px-3 sm:px-2 py-1 rounded cursor-pointer"
+          >
+            ← Back one week
+          </button>
+        </p>
+      )}
+
+      {progress === ADAPTATION_LENGTH && selectedStep === null && (
+        <p className="m-0 mb-4 border-l-4 border-green-700 pl-4 py-1 text-sm text-slate-300">
+          <strong className="text-slate-100">Adaptation done ✓</strong> On to the build: 8 weeks, starting with{' '}
+          {stepTitle(BUILD_STEPS[stepIndexForProgress(ADAPTATION_LENGTH) ?? 0])}.
+        </p>
+      )}
+
+      {/* Order: the plan at a glance, then the knee rules right above this
+          week's card (where you act), then the card. Once the build is done
+          the overview and card grey out (still usable); the knee rules stay at
+          full strength, they apply to every library session too. */}
+      <div className={done ? 'opacity-50 hover:opacity-100 focus-within:opacity-100 transition-opacity' : ''}>
+      <BuildProgression
+        progress={progress}
+        shownStep={shownStep}
+        currentStep={currentStep}
+        onSelect={(i) => {
+          setSelectedStep(i === currentStep ? null : i)
+          // Phones: the details sit below all six steps, so bring them into
+          // view; otherwise a tap looks like it did nothing.
+          const el = document.getElementById(detailId)
+          if (el && el.getBoundingClientRect().top > window.innerHeight * 0.6) {
+            el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+          }
+        }}
+        detailId={detailId}
+      />
+
+      </div>
+
       <div
         role="alert"
         className="border border-red-900/60 bg-red-950/30 text-red-200 rounded px-4 py-3 text-sm mb-4"
@@ -153,6 +200,7 @@ export default function BuildPlanPanel({ state, setState }: Props) {
         </p>
       </div>
 
+
       <details
         open={!state.panels.chartExplainer.collapsed}
         onToggle={(e) => onToggleChartExplainer(!e.currentTarget.open)}
@@ -178,49 +226,7 @@ export default function BuildPlanPanel({ state, setState }: Props) {
         </div>
       </details>
 
-      {done && (
-        <p id={doneId} className="m-0 mb-4 border-l-4 border-green-700 pl-4 py-1 text-sm text-slate-300">
-          <strong className="text-slate-100">Build done ✓</strong> Adaptation and build ridden.{' '}
-          <a href="#after-build" className="text-blue-400 hover:text-blue-300">
-            What's next: after the build ↓
-          </a>{' '}
-          <button
-            type="button"
-            onClick={backOneWeek}
-            className="ml-2 min-h-11 sm:min-h-0 text-xs text-slate-400 hover:text-slate-200 border border-slate-700 hover:border-slate-500 px-3 sm:px-2 py-1 rounded cursor-pointer"
-          >
-            ← Back one week
-          </button>
-        </p>
-      )}
-
-      {progress === ADAPTATION_LENGTH && selectedStep === null && (
-        <p className="m-0 mb-4 border-l-4 border-green-700 pl-4 py-1 text-sm text-slate-300">
-          <strong className="text-slate-100">Adaptation done ✓</strong> On to the build: 8 weeks, starting with{' '}
-          {stepTitle(BUILD_STEPS[stepIndexForProgress(ADAPTATION_LENGTH) ?? 0])}.
-        </p>
-      )}
-
-      {/* Once the build is done it greys out (still readable and usable);
-          the knee rules above stay at full strength, they apply to every
-          library session too. */}
       <div className={done ? 'opacity-50 hover:opacity-100 focus-within:opacity-100 transition-opacity' : ''}>
-      <BuildProgression
-        progress={progress}
-        shownStep={shownStep}
-        currentStep={currentStep}
-        onSelect={(i) => {
-          setSelectedStep(i === currentStep ? null : i)
-          // Phones: the details sit below all six steps, so bring them into
-          // view; otherwise a tap looks like it did nothing.
-          const el = document.getElementById(detailId)
-          if (el && el.getBoundingClientRect().top > window.innerHeight * 0.6) {
-            el.scrollIntoView({ behavior: 'smooth', block: 'start' })
-          }
-        }}
-        detailId={detailId}
-      />
-
       <div id={detailId} className="mb-4 scroll-mt-20">
         {shown ? (
           <BuildWeekCard

@@ -1,7 +1,7 @@
 # About
 
 I'm [Tom Jelen](https://www.linkedin.com/in/tom-jelen/), an AI/ML engineer based in Barcelona.
-For most of the last decade I co-founded and built [Abzu](https://abzu.ai), an interpretable-ML company. The common thread, work and
+For most of the last decade I co-founded and built Abzu, an interpretable-ML company. The common thread, work and
 otherwise, is methodical curiosity — I learn a domain by digging until I understand it well enough
 to build something in it.
 

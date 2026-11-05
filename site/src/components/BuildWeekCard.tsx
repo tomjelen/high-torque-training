@@ -135,7 +135,7 @@ export default function BuildWeekCard(props: Props) {
                 onClick={props.onBackOneWeek}
                 className="self-start min-h-11 sm:min-h-0 text-xs text-slate-400 hover:text-slate-200 border border-slate-700 hover:border-slate-500 px-3 sm:px-2 py-1 rounded cursor-pointer"
               >
-                ← Back one week <span className="text-slate-500">(clicked by mistake, or wrecked the day after)</span>
+                ← Back one week <span className="text-slate-500">(clicked by mistake, or you feel wrecked the day after)</span>
               </button>
             )}
           </div>

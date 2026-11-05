@@ -19,7 +19,7 @@ export default function UsageGuidelines({ collapsed, onToggle }: Props) {
     <details open={!collapsed} onToggle={handleToggle} className="border border-slate-800 rounded bg-slate-950 mb-4 group">
       <summary className="flex items-center justify-between gap-4 px-4 py-3 cursor-pointer list-none select-none hover:bg-slate-800/30 text-sm">
         <span className="text-slate-300">
-          <strong className="text-slate-200">Rules for the build</strong>
+          <strong className="text-slate-200">Rules for the plan</strong>
           {' — '}
           <span className="text-slate-500">moving on, breaks, fitting it into ~10 hours a week</span>
         </span>
@@ -30,7 +30,7 @@ export default function UsageGuidelines({ collapsed, onToggle }: Props) {
         <div>
           <h4 className="text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2 mt-0">Moving on (my rule)</h4>
           <p className="m-0 mb-2">After the second session of each two-week block, move on to the next block only if:</p>
-          <ul className="m-0 pl-4 space-y-1">
+          <ul className="m-0 pl-5 space-y-1 list-disc">
             <li>your knees were fine, during and after;</li>
             <li>you held the cadence;</li>
             <li>you weren't wrecked the next day.</li>
@@ -46,7 +46,7 @@ export default function UsageGuidelines({ collapsed, onToggle }: Props) {
 
         <div>
           <h4 className="text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2 mt-0">Breaks and restarting</h4>
-          <ul className="m-0 pl-4 space-y-1">
+          <ul className="m-0 pl-5 space-y-1 list-disc">
             <li>
               After a break (illness, travel), the adaptation weeks 3–4 session is a good one to come back with. A suggestion of
               mine, not a rule.
@@ -61,7 +61,7 @@ export default function UsageGuidelines({ collapsed, onToggle }: Props) {
 
         <div>
           <h4 className="text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2 mt-0">Fitting it into ~10 hours/week (my suggestions)</h4>
-          <ul className="m-0 pl-4 space-y-1">
+          <ul className="m-0 pl-5 space-y-1 list-disc">
             <li>
               Swapping a torque session for one of your existing interval sessions is usually easier than adding one
               on top.

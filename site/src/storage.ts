@@ -10,7 +10,7 @@ export const DEFAULT_STATE: AppState = {
     build: { collapsed: false },
     collection: { collapsed: false },
     usageGuidelines: { collapsed: true },
-    chartExplainer: { collapsed: false },
+    chartExplainer: { collapsed: true },
   },
   log: [],
   workoutsDownloadedDate: null,

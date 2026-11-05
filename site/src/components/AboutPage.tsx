@@ -10,7 +10,7 @@ export default function AboutPage() {
         <p>
           I'm <a href="https://www.linkedin.com/in/tom-jelen/">Tom Jelen</a>, an AI/ML engineer
           based in Barcelona. For most of the last decade I co-founded and built{' '}
-          <a href="https://abzu.ai">Abzu</a>, an interpretable-ML company. The
+          Abzu, an interpretable-ML company. The
           common thread, work and otherwise, is methodical curiosity — I learn a domain by digging
           until I understand it well enough to build something in it.
         </p>
