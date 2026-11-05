@@ -35,7 +35,7 @@ export default function AfterBuildCard({ active, trackerSlot }: Props) {
         <div className="rounded border border-slate-700 p-3">
           <p className="m-0 mb-1 text-slate-100 font-semibold">Maintain: about one torque session a month</p>
           <p className="m-0">
-            EVOQ gives 1–2 a month in season; we use it as the maintenance option.
+            EVOQ gives 1–2 a month in season; I use it as the maintenance option.
             <Cite sourceKey="evoq" />
           </p>
         </div>
@@ -44,7 +44,7 @@ export default function AfterBuildCard({ active, trackerSlot }: Props) {
             Keep going: 1–2 sessions a week, never on consecutive days
           </p>
           <p className="m-0">
-            Ours, combining these. CTS (Jim Rutberg, written): beginner and intermediate riders "should separate MT
+            No single source says this; I combined these. CTS (Jim Rutberg, written): beginner and intermediate riders "should separate MT
             workouts by at least a full day". Henderson (machine transcript): "Generally I do about one of these
             sessions a week at most two". EVOQ (written): start with one day a week and work up to two.
             <Cite sourceKey="ctsRutberg" />
@@ -57,7 +57,7 @@ export default function AfterBuildCard({ active, trackerSlot }: Props) {
       <div className="text-sm text-slate-400 space-y-2">
         <p className="m-0">
           <strong className="text-slate-300">Free choice from the library below.</strong> No rotation, no "next
-          session". A plain hint (ours): mix moderate sessions (Torque Endurance, Threshold) with above-threshold
+          session". A plain hint (mine): mix moderate sessions (Torque Endurance, Threshold) with above-threshold
           ones (TorqueMax, Rüegg, HIIT, SIT).
         </p>
         <p className="m-0">

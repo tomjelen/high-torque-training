@@ -17,7 +17,7 @@ export const RATIONALE_SECTIONS: RationaleSection[] = [
   { id: 'after', heading: 'After the build' },
   { id: 'zwift', heading: 'Riding it in Zwift: ERG and adapting to the day' },
   { id: 'people', heading: 'Who this comes from' },
-  { id: 'confidence', heading: "What we'd update this document for" },
+  { id: 'confidence', heading: "What I'd update this document for" },
 ]
 
 
@@ -181,7 +181,7 @@ export const SOURCES: Record<string, Source> = {
 // ep. 125, machine transcript) and Schep (EF); the 4-week arrangement is ours.
 // `source: 'site'` renders as plain text (no single source to cite).
 const ADAPTATION_SOURCE_NOTE =
-  "A labelled composite of coaches' advice for riders starting torque work. John Wakefield (That Triathlon Show #465, machine transcript): four 4-minute reps, around 60–65 rpm for riders new to it, rest as long as the rep. Neal Henderson (Fast Talk ep. 125, 2020, machine transcript): 75–85% of threshold at 50–60 rpm. Peter Schep (EF Pro Cycling): 80–85% of FTP. Our choices: 80% FTP in weeks 1–2, and the 4-week arrangement."
+  "A labelled composite of coaches' advice for riders starting torque work. John Wakefield (That Triathlon Show #465, machine transcript): four 4-minute reps, around 60–65 rpm for riders new to it, rest as long as the rep. Neal Henderson (Fast Talk ep. 125, 2020, machine transcript): 75–85% of threshold at 50–60 rpm. Peter Schep (EF Pro Cycling): 80–85% of FTP. My choices: 80% FTP in weeks 1–2, and the 4-week arrangement."
 
 const ADAPTATION_PEOPLE = ['John Wakefield', 'Neal Henderson', 'Peter Schep']
 const HEBISZ_PEOPLE = ['R. Hebisz', 'P. Hebisz']
@@ -231,7 +231,7 @@ const LIBRARY_BASE: Workout[] = [
     ],
     source: 'housler',
     sourceNote:
-      'EVOQ / Housler (scaled: 3 reps instead of 4). Rest = rep (8 min easy spin) is our choice, as Wakefield and CTS (Rutberg) use.',
+      'EVOQ / Housler (scaled: 3 reps instead of 4). Rest = rep (8 min easy spin) is my choice, as Wakefield and CTS (Rutberg) use.',
     file: 'High Torque - Library/TE_3x8_95pct.zwo',
     people: ['Brendan Housler'],
     kind: 'moderate',
@@ -244,7 +244,7 @@ const LIBRARY_BASE: Workout[] = [
       { label: 'Cadence', value: '60–70 rpm' },
     ],
     source: 'housler',
-    sourceNote: 'EVOQ / Housler. Rest = rep (8 min easy spin) is our choice, as Wakefield and CTS (Rutberg) use.',
+    sourceNote: 'EVOQ / Housler. Rest = rep (8 min easy spin) is my choice, as Wakefield and CTS (Rutberg) use.',
     file: 'High Torque - Library/TE_4x8_95pct.zwo',
     people: ['Brendan Housler'],
     kind: 'moderate',
@@ -258,7 +258,7 @@ const LIBRARY_BASE: Workout[] = [
     ],
     source: 'housler',
     sourceNote:
-      "EVOQ / Housler. 90% is the floor of Housler's 90–105% (our choice); rest = rep (15 min easy spin) is our choice.",
+      "EVOQ / Housler. 90% is the floor of Housler's 90–105% (my choice); rest = rep (15 min easy spin) is my choice.",
     file: 'High Torque - Library/TE_3x15_90pct.zwo',
     people: ['Brendan Housler'],
     kind: 'moderate',
@@ -271,7 +271,7 @@ const LIBRARY_BASE: Workout[] = [
       { label: 'Cadence', value: '50–60 rpm' },
     ],
     source: 'henderson',
-    sourceNote: "2:30 easy spin is Henderson's half-time rule, applied by us.",
+    sourceNote: "2:30 easy spin is Henderson's half-time rule, applied by me.",
     file: 'High Torque - Library/Threshold_5x5_95pct.zwo',
     people: ['Neal Henderson'],
     kind: 'moderate',
@@ -284,7 +284,7 @@ const LIBRARY_BASE: Workout[] = [
       { label: 'Cadence', value: '50–60 rpm' },
     ],
     source: 'evoq',
-    sourceNote: 'EVOQ (Bobo): 6×2–3 min @ 105–110%. 2.5 min, 110% and the 4-min recovery are our picks.',
+    sourceNote: 'EVOQ (Bobo): 6×2–3 min @ 105–110%. 2.5 min, 110% and the 4-min recovery are my picks.',
     file: 'High Torque - Library/TorqueMax_110pct.zwo',
     people: ['Landry Bobo'],
     kind: 'above-threshold',
@@ -311,7 +311,7 @@ const LIBRARY_BASE: Workout[] = [
       { label: 'Cadence', value: '60–70 rpm' },
     ],
     source: 'hebisz2024',
-    sourceNote: '~120% FTP and the ~65% recoveries are our estimates from the paper.',
+    sourceNote: '~120% FTP and the ~65% recoveries are my estimates from the paper.',
     file: 'High Torque - Library/HIIT_4x4_120pct.zwo',
     people: HEBISZ_PEOPLE,
     kind: 'above-threshold',
@@ -324,7 +324,7 @@ const LIBRARY_BASE: Workout[] = [
       { label: 'Cadence', value: '60–70 rpm' },
     ],
     source: 'hebisz2024',
-    sourceNote: '~120% FTP and the ~65% recoveries are our estimates from the paper.',
+    sourceNote: '~120% FTP and the ~65% recoveries are my estimates from the paper.',
     file: 'High Torque - Library/HIIT_6x4_120pct.zwo',
     people: HEBISZ_PEOPLE,
     kind: 'above-threshold',
@@ -337,7 +337,7 @@ const LIBRARY_BASE: Workout[] = [
       { label: 'Cadence', value: '50–60 rpm' },
     ],
     source: 'hebisz2024',
-    sourceNote: '~65% FTP recoveries are our estimate.',
+    sourceNote: '~65% FTP recoveries are my estimate.',
     file: 'High Torque - Library/SIT_2sets.zwo',
     people: HEBISZ_PEOPLE,
     kind: 'maximal',
@@ -350,7 +350,7 @@ const LIBRARY_BASE: Workout[] = [
       { label: 'Cadence', value: '50–60 rpm' },
     ],
     source: 'hebisz2024',
-    sourceNote: '~65% FTP recoveries are our estimate.',
+    sourceNote: '~65% FTP recoveries are my estimate.',
     file: 'High Torque - Library/SIT_3sets.zwo',
     people: HEBISZ_PEOPLE,
     kind: 'maximal',

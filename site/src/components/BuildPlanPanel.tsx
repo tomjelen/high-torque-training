@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { useEffect, useId, useRef, useState } from 'react'
 import Panel from './Panel'
 import BuildWeekCard from './BuildWeekCard'
@@ -124,24 +125,30 @@ export default function BuildPlanPanel({ state, setState }: Props) {
         {/* The research doc's "Knee rules", in its order. */}
         <ol className="mt-2 mb-0 pl-5 space-y-1 list-decimal">
           <li>
-            <strong className="text-red-100">All low-cadence intervals are seated.</strong> Less joint compression (Henderson, machine transcript); standing lets body weight push the pedal down instead of your muscles (ours).
+            <strong className="text-red-100">All low-cadence intervals are seated.</strong> Standing lets body weight push the pedal down instead of your muscles.
           </li>
           <li>
-            <strong className="text-red-100">Warm up at normal cadence</strong> for about 15 minutes first. Every file does this (ours).
+            <strong className="text-red-100">Warm up at normal cadence</strong> for about 15 minutes first. Every workout includes this warm-up.
           </li>
           <li>
             <strong className="text-red-100">If your knees ache during an interval, stop the interval.</strong> Don't push through.
           </li>
           <li>
-            <strong className="text-red-100">Knee pain after a session → repeat last week's session</strong> instead of moving on. If it keeps coming back, stop torque work and see a professional (ours).
+            <strong className="text-red-100">Knee pain after a session → repeat last week's session</strong> instead of moving on. If it keeps coming back, stop torque work and see a professional.
           </li>
           <li>
-            <strong className="text-red-100">Not below 50 rpm.</strong> No session in the library goes below 50 (ours).
+            <strong className="text-red-100">Not below 50 rpm.</strong> No session in the library goes below 50.
           </li>
           <li>
-            <strong className="text-red-100">Not on consecutive days</strong> (ours, anchored on CTS/Rutberg: beginner and intermediate riders separate muscle-tension workouts by at least a full day). See "After the build".
+            <strong className="text-red-100">Not on consecutive days.</strong> See "After the build".
           </li>
         </ol>
+        <p className="mt-2 mb-0 text-xs text-red-200/80">
+          Where these come from: staying seated (for less joint compression) and stopping when it hurts are
+          Henderson's advice (podcast, machine transcript). Not on consecutive days is based on CTS (Jim Rutberg: beginner and intermediate riders
+          separate these workouts by at least a full day). The rest, and the extra reason for staying seated, are
+          my own safety margins. Reasons on the <Link to="/rationale" className="underline hover:text-red-100">rationale page</Link>.
+        </p>
       </div>
 
       <details
@@ -297,10 +304,10 @@ export default function BuildPlanPanel({ state, setState }: Props) {
           )}
         </div>
         <p className="m-0 text-xs text-slate-500">
-          After a long break, restart from adaptation or from week 5, as you see fit (ours).
+          After a long break, restart from adaptation or from week 5, as you see fit (mine).
         </p>
         <p className="m-0 text-xs text-slate-500">
-          After a break (illness, travel): weeks 3–4 is a good session to come back with (a suggestion, ours).
+          After a break (illness, travel): weeks 3–4 is a good session to come back with (a suggestion, mine).
         </p>
       </div>
 

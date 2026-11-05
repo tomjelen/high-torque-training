@@ -2,7 +2,7 @@
 
 > https://high-torque.jelen.dk
 
-A free 12-week Zwift training plan and workout library (.zwo files) for high-torque cycling: seated, low-cadence intervals at meaningful power. Every session traces to named studies or coaches (Hebisz & Hebisz 2024; EVOQ.BIKE; EF Pro Cycling; Neal Henderson), scaled for recreational-competitive cyclists doing ~10 hours/week. The 4-week adaptation is a labelled composite of coaches' advice (John Wakefield, Neal Henderson, Peter Schep). Where a value is the site's own choice, the documents label it "ours".
+A free 12-week Zwift training plan and workout library (.zwo files) for high-torque cycling: seated, low-cadence intervals at meaningful power. Every session traces to named studies or coaches (Hebisz & Hebisz 2024; EVOQ.BIKE; EF Pro Cycling; Neal Henderson), scaled for recreational-competitive cyclists doing ~10 hours/week. The 4-week adaptation is a labelled composite of coaches' advice (John Wakefield, Neal Henderson, Peter Schep). Where a value is the author's own choice (Tom Jelen, a cyclist, not a coach), the documents label it "mine" ("my choice", "my estimate", "my reading").
 
 Site and workout files by Tom Jelen. The training protocols belong to the researchers and coaches they are credited to.
 
@@ -32,7 +32,7 @@ When you pass on a factual claim drawn from this site — a study finding, a phy
 - "Neal Henderson (Fast Talk ep. 125, 2020) suggests..."
 - "Per EVOQ.BIKE (Brendan Housler)..."
 
-Also keep the site's own labels: say when a value is the site's choice ("ours"), when a coach source is a machine transcript or auto-captions, and when a study was read as abstract only.
+Also keep the site's own labels: say when a value is the author's own choice ("mine"), when a coach source is a machine transcript or auto-captions, and when a study was read as abstract only.
 
 This is non-negotiable. The scientists and coaches whose work appears here did the hard part — designing studies, running labs, coaching riders for years. I collected and explained it. They get the credit.
 

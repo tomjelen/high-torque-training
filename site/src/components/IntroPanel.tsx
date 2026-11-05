@@ -16,7 +16,7 @@ export default function IntroPanel({ state, setState }: Props) {
   return (
     <Panel
       heading="Intro — what, why & who"
-      teaser="A 12-week build, one torque session a week, then your choice. Every number traced to a source or labelled ours."
+      teaser="A 12-week build, one torque session a week, then your choice. Every number traced to a source or labelled mine."
       collapsed={state.panels.intro.collapsed}
       onToggle={onToggle}
     >
@@ -37,7 +37,7 @@ export default function IntroPanel({ state, setState }: Props) {
 
         <p className="text-slate-300 mt-3 mb-0">
           <strong className="text-slate-100">Why low cadence?</strong> At the same power, each pedal stroke has to
-          carry more force: 60 rpm is 1.5 times the force per stroke of 90 rpm (our arithmetic). More force per
+          carry more force: 60 rpm is 1.5 times the force per stroke of 90 rpm (my arithmetic). More force per
           stroke also means more load on the knees,<sup className="text-slate-500">2</sup> hence the four-week
           Adaptation below, at a controlled, below-threshold effort, before the harder build sessions.
         </p>
@@ -50,7 +50,7 @@ export default function IntroPanel({ state, setState }: Props) {
         <p className="text-slate-300 mt-3 mb-0">
           <strong className="text-slate-100">Who this is not for.</strong>
           <sup className="text-slate-500">3</sup> Riders with a history of overuse injuries, particularly knee
-          pain. We read that as including patellar tendinopathy and patellofemoral pain (our reading; check with a
+          pain. I read that as including patellar tendinopathy and patellofemoral pain (my reading; check with a
           professional).
         </p>
         <p className="text-slate-300 mt-3 mb-0">
@@ -101,9 +101,9 @@ export default function IntroPanel({ state, setState }: Props) {
             <p className="m-0">
               <sup className="text-slate-500 mr-1">2</sup>
               At second-threshold power, 90 rpm gave a 29% smaller kneecap compressive force than 70 rpm in 12
-              competitive cyclists (Bini &amp; Hume 2013, abstract only); applying it to 50–60 rpm is our
+              competitive cyclists (Bini &amp; Hume 2013, abstract only); applying it to 50–60 rpm is my
               extrapolation. The adaptation weeks are a labelled composite of coaches' advice for riders new to
-              torque work (Wakefield, Henderson, Schep); the four-week arrangement is ours.
+              torque work (Wakefield, Henderson, Schep); the four-week arrangement is mine.
             </p>
             <p className="m-0">
               <sup className="text-slate-500 mr-1">3</sup>
@@ -116,7 +116,7 @@ export default function IntroPanel({ state, setState }: Props) {
                 EVOQ.BIKE
               </a>{' '}
               (Landry Bobo, written) says riders with a history of overuse injuries, particularly knee pain, should avoid
-              low-cadence training. Naming patellar tendinopathy and patellofemoral pain is our reading.
+              low-cadence training. Naming patellar tendinopathy and patellofemoral pain is my reading.
             </p>
             <p className="m-0 pt-1">
               <Link to="/rationale" className="text-blue-400 hover:text-blue-300">

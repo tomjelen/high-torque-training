@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { RATIONALE_SECTIONS } from '../data'
 import Cite from './Cite'
 import SourcesList from './SourcesList'
@@ -64,7 +65,7 @@ function renderBody(id: string) {
             <tbody>
               <tr>
                 <td><strong>Research</strong></td>
-                <td>Peer-reviewed studies. Where only the abstract was read, we say "abstract only" and claim nothing beyond it.</td>
+                <td>Peer-reviewed studies. Where only the abstract was read, I say "abstract only" and claim nothing beyond it.</td>
                 <td>Hebisz 2024, de Pablos 2026, Nimmerichter 2012, Kristoffersen 2014, Barranco-Gil 2024, Hansen &amp; Rønnestad 2017, Ahlquist 1992, Bini &amp; Hume 2013, Johnston 2017</td>
               </tr>
               <tr>
@@ -80,7 +81,7 @@ function renderBody(id: string) {
               <tr>
                 <td><strong>Media relay</strong></td>
                 <td>
-                  Outlets that report on other people's work. We follow them to their own sources and never use them
+                  Outlets that report on other people's work. I follow them to their own sources and never use them
                   as the basis for a number. A podcast where the coach speaks (Fast Talk with Henderson, That
                   Triathlon Show with Wakefield, the EVOQ podcast) counts as that coach's source, not as media relay.
                 </td>
@@ -90,7 +91,7 @@ function renderBody(id: string) {
           </table>
           </div>
           <p>
-            Some coach statements exist only as audio. Two labels mark them: <strong>machine transcript</strong> (our
+            Some coach statements exist only as audio. Two labels mark them: <strong>machine transcript</strong> (my
             own Whisper transcription of the audio: Wakefield on That Triathlon Show, Henderson on Fast Talk) and{' '}
             <strong>auto-captions</strong> (YouTube's automatic captions: the CTS/Pulford video, the EVOQ podcast,
             Roadman). Both are weaker than written text, especially for numbers and for who is speaking;
@@ -101,8 +102,10 @@ function renderBody(id: string) {
             documentation, not training advice, so they sit outside the four categories.
           </p>
           <p>
-            Anything labelled <strong>ours</strong> is our own choice, arithmetic or reading of a source. It may rest
-            on sourced inputs, but the result is ours.
+            Anything labelled <strong>mine</strong> (my choice, my estimate, my reading, my arithmetic) is my own
+            call, not taken from a study or coach. I'm a cyclist, not a coach (see <Link to="/about">About</Link>):
+            these fill gaps where no source gives an answer. They may rest on sourced inputs, but the result is
+            mine.
           </p>
         </>
       )
@@ -114,12 +117,12 @@ function renderBody(id: string) {
             Most cyclists pedal at 80–100 rpm. Dropping to 50–70 rpm at the same power means each pedal stroke has to
             carry more force. That is what "high torque" means. Torque in newton-metres (Nm) is power × 60 ÷ (2π ×
             cadence): 300 W at 60 rpm is about 48 Nm. At the same power, 60 rpm is 1.5 times the force per stroke of
-            90 rpm (our arithmetic). The formula is standard physics, also written out by John Wakefield.
+            90 rpm (my arithmetic). The formula is standard physics, also written out by John Wakefield.
             <Cite sourceKey="wakefieldS2S" />
           </p>
           <p>
             Torque figures on this page assume a 250 W FTP and the middle of the cadence range. They scale in
-            proportion to your FTP (ours).
+            proportion to your FTP (mine).
           </p>
           <p>
             <strong>Fibre recruitment (indirect evidence).</strong> In eight men riding 30 min at ~85% of aerobic
@@ -141,7 +144,7 @@ function renderBody(id: string) {
     case 'evidence':
       return (
         <>
-          <p>The honest summary (our wording on the studies below):</p>
+          <p>The honest summary (my wording on the studies below):</p>
           <ul>
             <li>
               <strong>High intensity at low cadence</strong> has one small positive trial (Hebisz 2024).
@@ -275,19 +278,19 @@ function renderBody(id: string) {
             The paper gives no reason for the 25-minute break between SIT sets.
           </p>
 
-          <p><strong>Translating the study's intensity to %FTP (ours).</strong></p>
+          <p><strong>Translating the study's intensity to %FTP (mine).</strong></p>
           <p>
             The study gives HIIT as 90–100% of Pmax, where Pmax came from a test with 3-minute steps rising by 40 W
             (which gives a lower "max" than a 1-minute ramp test). It gives no FTP. From the study's own baseline
             values (Table 2: low-cadence group Pmax 268.8 W, VT2 197.7 W, VT1 129.0 W; free-cadence group 259.8,
             195.7, 128.4 W), 90–100% of Pmax is 1.19–1.36 × VT2. Taking FTP ≈ VT2 (the second ventilatory threshold,
-            close to FTP), that is <strong>~120–136% FTP</strong>. Our HIIT files use ~120%, the bottom of that range.
-            In our judgement FTP is usually at or a little below VT2, so the estimate errs on the easy side (ours).{' '}
-            <strong>This is our estimate and the most uncertain number in the library.</strong>
+            close to FTP), that is <strong>~120–136% FTP</strong>. My HIIT files use ~120%, the bottom of that range.
+            In my judgement FTP is usually at or a little below VT2, so the estimate errs on the easy side.{' '}
+            <strong>This is my estimate and the most uncertain number in the library.</strong>
           </p>
           <p>
             The same arithmetic puts "similar to VT1" at about 65% FTP (VT1/VT2 = 0.65), so the in-session recoveries
-            in HIIT and SIT are ~65% FTP (ours). The study's separate active-rest days were lower, at about 52% FTP by
+            in HIIT and SIT are ~65% FTP (mine). The study's separate active-rest days were lower, at about 52% FTP by
             the same arithmetic.
           </p>
 
@@ -315,9 +318,9 @@ function renderBody(id: string) {
             </li>
           </ul>
           <p>
-            The abstract gives no cadence, %FTP or rep count for either group, so we cannot say which of our sessions
+            The abstract gives no cadence, %FTP or rep count for either group, so I cannot say which of my sessions
             LOW-Load resembles. No library workout uses the near-maximal HIGH-Load format, so de Pablos is not
-            evidence for our SIT sessions.
+            evidence for my SIT sessions.
           </p>
 
           <h4>Nimmerichter 2012: a close cousin of Threshold 5×5</h4>
@@ -328,7 +331,7 @@ function renderBody(id: string) {
             60-rpm group gained 4.4% uphill and 1.5% on the flat; the 100-rpm group −1.3% uphill and +2.6% on the
             flat; control +4.0% uphill and −3.5% on the flat. Only the 60-rpm group improved on both, but control
             gained almost as much uphill, and on the flat the 100-rpm group gained more. The authors say the higher
-            forces "are potentially beneficial". Our reading: <strong>a small trial with a tentative positive
+            forces "are potentially beneficial". My reading: <strong>a small trial with a tentative positive
             result.</strong>
             <Cite sourceKey="nimmerichter2012" />
           </p>
@@ -372,7 +375,7 @@ function renderBody(id: string) {
             So every session in the build is at 80% FTP or above. An earlier version of this site began with three
             weeks of Zone 2 low-cadence riding and credited it to EVOQ. EVOQ's article contains no adaptation phase and
             says the opposite. Those sessions put less force on the pedals than ordinary riding at FTP and 90 rpm
-            (about 23–25 Nm vs 26.5 Nm, our arithmetic). They were removed.
+            (about 23–25 Nm vs 26.5 Nm, my arithmetic). They were removed.
           </p>
         </>
       )
@@ -421,15 +424,15 @@ function renderBody(id: string) {
               <strong>What the research shows.</strong> At second-threshold power, 90 rpm gave a 29% smaller kneecap
               (patellofemoral) compressive force than 70 rpm in 12 competitive cyclists; the main knee-joint forces
               were "not largely affected" (abstract only).<Cite sourceKey="bini2013" /> They tested 70 vs 90 rpm only;
-              applying it to 50–60 rpm is our extrapolation. A review of knee biomechanics in cycling notes that
+              applying it to 50–60 rpm is my extrapolation. A review of knee biomechanics in cycling notes that
               "increasing knee flexion angle can increase forces impacting the knee" and that cadence and workload
               affect the loads around the knee (full text; the reviewed studies were small and of low to moderate
               quality).<Cite sourceKey="johnston2017" />
             </li>
             <li>
               <strong>Who should avoid it.</strong> EVOQ: riders with a history of overuse injuries, particularly knee
-              pain, should avoid low-cadence training (written).<Cite sourceKey="evoq" /> We read that as including
-              patellar tendinopathy and patellofemoral pain (ours; check with a professional).
+              pain, should avoid low-cadence training (written).<Cite sourceKey="evoq" /> I read that as including
+              patellar tendinopathy and patellofemoral pain (mine; check with a professional).
             </li>
             <li>
               <strong>Henderson (machine transcript):</strong> "And if it hurts, stop doing it." Riders with
@@ -442,11 +445,11 @@ function renderBody(id: string) {
           <ol>
             <li>
               <strong>All low-cadence intervals are seated.</strong> Henderson's reason is less joint compression
-              (machine transcript). Our added reason: standing lets body weight push the pedal down, which bypasses
-              the muscular effort the session is for (ours).
+              (machine transcript). My added reason: standing lets body weight push the pedal down, which bypasses
+              the muscular effort the session is for (mine).
             </li>
             <li>
-              <strong>Warm up at normal cadence</strong> for about 15 minutes first (every file does this; ours).
+              <strong>Warm up at normal cadence</strong> for about 15 minutes first (every file does this; mine).
             </li>
             <li>
               <strong>If your knees ache during an interval, stop the interval.</strong> Don't push through
@@ -454,14 +457,14 @@ function renderBody(id: string) {
             </li>
             <li>
               <strong>Knee pain after a session → repeat last week's session</strong> instead of moving on. If it
-              keeps coming back, stop torque work and see a professional (ours).
+              keeps coming back, stop torque work and see a professional (mine).
             </li>
             <li>
-              <strong>Not below 50 rpm.</strong> No session in the library goes below 50 (ours). Henderson suggests
+              <strong>Not below 50 rpm.</strong> No session in the library goes below 50 (mine). Henderson suggests
               riders with limitations go nearer 70 rpm.
             </li>
             <li>
-              <strong>Not on consecutive days</strong> (ours, anchored on CTS/Rutberg: beginner and intermediate riders separate muscle-tension workouts by at least a full day). See "After the build".
+              <strong>Not on consecutive days</strong> (mine, anchored on CTS/Rutberg: beginner and intermediate riders separate muscle-tension workouts by at least a full day). See "After the build".
             </li>
           </ol>
         </>
@@ -473,7 +476,7 @@ function renderBody(id: string) {
           <p>
             <strong>One torque session a week.</strong> All other rides at normal cadence. Each session is ridden twice
             (two weeks), then you move on if the move-on rule says yes. Progress counts sessions done, not calendar
-            weeks. <strong>The 12-week arrangement (two-week steps, one session a week) is ours.</strong> The order
+            weeks. <strong>The 12-week arrangement (two-week steps, one session a week) is mine.</strong> The order
             comes from the coaches (see "Why this order").
           </p>
           <div className="table-scroll" role="region" aria-label="The 12-week build" tabIndex={0}>
@@ -485,49 +488,49 @@ function renderBody(id: string) {
               <tr>
                 <td>1–2</td>
                 <td>Adaptation 4 × 4 min @ 80% FTP, 60–65 rpm, 4 min easy spin</td>
-                <td>Wakefield (cadence, 4 × 4, rest = rep); 80% our pick inside Henderson's 75–85% and Schep's 80–85%</td>
-                <td>Composite, ours. Wakefield: machine transcript. Schep: written. Henderson: machine transcript.</td>
+                <td>Wakefield (cadence, 4 × 4, rest = rep); 80% my pick inside Henderson's 75–85% and Schep's 80–85%</td>
+                <td>Composite, mine. Wakefield: machine transcript. Schep: written. Henderson: machine transcript.</td>
               </tr>
               <tr>
                 <td>3–4</td>
                 <td>Adaptation 4 × 4 min @ 80% FTP (inside the coaches' 80–85%), 50–60 rpm, 4 min easy spin</td>
                 <td>Henderson (cadence, 75–85%); Schep (80–85%, ~15 min of work); Wakefield (4 × 4, rest = rep)</td>
                 <td>
-                  Composite, ours. Henderson: machine transcript. Schep: written. Wakefield: machine transcript. 16 min
+                  Composite, mine. Henderson: machine transcript. Schep: written. Wakefield: machine transcript. 16 min
                   of work is a little under Henderson's "20 or so".
                 </td>
               </tr>
               <tr>
                 <td>5–6</td>
                 <td>Torque Endurance 3 × 8 min @ 95% FTP, 60–70 rpm, 8 min easy spin</td>
-                <td>EVOQ / Housler (scaled: 3 reps instead of 4); rest = rep is our choice, as Wakefield and CTS (Rutberg) use</td>
-                <td>Housler written. Scaling and recovery ours.</td>
+                <td>EVOQ / Housler (scaled: 3 reps instead of 4); rest = rep is my choice, as Wakefield and CTS (Rutberg) use</td>
+                <td>Housler written. Scaling and recovery mine.</td>
               </tr>
               <tr>
                 <td>7–8</td>
                 <td>Threshold 5 × 5 min @ 95% FTP, 50–60 rpm, 2:30 easy spin</td>
-                <td>Henderson (5 × 5 @ 95%, 50–60 rpm); 2:30 is Henderson's half-time rule, applied by us</td>
-                <td>Machine transcript. Derivation ours.</td>
+                <td>Henderson (5 × 5 @ 95%, 50–60 rpm); 2:30 is Henderson's half-time rule, applied by me</td>
+                <td>Machine transcript. Derivation mine.</td>
               </tr>
               <tr>
                 <td>9–10</td>
                 <td>TorqueMax 6 × 2.5 min @ 110% FTP, 50–60 rpm, 4 min easy spin</td>
                 <td>EVOQ (Bobo): 2–3 min at 105–110%, 50–60 rpm, start with 6 reps</td>
-                <td>Written. 2.5 min and 110% are our picks inside the range; the 4-min recovery is ours.</td>
+                <td>Written. 2.5 min and 110% are my picks inside the range; the 4-min recovery is mine.</td>
               </tr>
               <tr>
                 <td>11–12</td>
                 <td>HIIT 4 × 4 min @ ~120% FTP, 60–70 rpm, 8 min at ~65%</td>
                 <td>Hebisz 2024 (4 × 4, 60–70 rpm, 8-min active rest at ~VT1)</td>
-                <td>Research. ~120% and ~65% are our estimates from the paper.</td>
+                <td>Research. ~120% and ~65% are my estimates from the paper.</td>
               </tr>
             </tbody>
           </table>
           </div>
           <p>
             <strong>Recovery power.</strong> In adaptation, Torque Endurance, Threshold and TorqueMax, the recoveries
-            are easy spin at 50% FTP. No source gives an easy-recovery %FTP for these sessions; it is ours. HIIT and
-            SIT recoveries follow the study (~65% FTP, our estimate of "similar to VT1").
+            are easy spin at 50% FTP. No source gives an easy-recovery %FTP for these sessions; it is mine. HIIT and
+            SIT recoveries follow the study (~65% FTP, my estimate of "similar to VT1").
           </p>
 
           <h4>Adaptation, weeks 1–4</h4>
@@ -540,7 +543,7 @@ function renderBody(id: string) {
               <strong>Weeks 1–2</strong> rest on John Wakefield (That Triathlon Show #465, machine transcript): riders
               new to torque work start at "around 60, 65" rpm, do "four by fours" the first time, rest as long as the
               rep, and stay "below thresholds".<Cite sourceKey="wakefieldTts465" /> Wakefield gives no %FTP. 80% is
-              our pick inside Henderson's 75–85% and Schep's 80–85%. Peter Schep's written entry session ("Begin with
+              my pick inside Henderson's 75–85% and Schep's 80–85%. Peter Schep's written entry session ("Begin with
               strength training sessions at 60 rpms at 80 to 85% of your FTP for 15 minutes") is almost the same
               session: the strongest single anchor for weeks 1–2.<Cite sourceKey="ef" />
             </li>
@@ -552,16 +555,16 @@ function renderBody(id: string) {
             <li>
               <strong>Wakefield's written version differs.</strong> His Science to Sport article (2026) has a 3-week
               Phase 1 at 55–60 rpm, 5 × 4 min or 3 × 10 min, 8 min rest, RPE 7/10, ~90 min with a 30-min warm-up and
-              cool-down, on a 6%+ climb. Our weeks 1–2 follow his podcast, not the article.
+              cool-down, on a 6%+ climb. My weeks 1–2 follow his podcast, not the article.
               <Cite sourceKey="wakefieldS2S" />
             </li>
             <li>
               <strong>How it should feel:</strong> controlled, steady, below your threshold. Heavy legs are normal.
-              Wakefield rates his written session 7/10, so it isn't meant to feel easy (ours, wording on his inputs).
+              Wakefield rates his written session 7/10, so it isn't meant to feel easy (my wording, based on his inputs).
             </li>
             <li>
               Peak torque: 30.6 Nm in weeks 1–2 (80% at 62.5 rpm), 34.7 Nm in weeks 3–4 (80% at 55 rpm; 40.6 Nm at
-              85% and 50 rpm). Ours, at 250 W FTP.
+              85% and 50 rpm). My arithmetic, at 250 W FTP.
             </li>
           </ul>
 
@@ -570,7 +573,7 @@ function renderBody(id: string) {
             <li>
               <strong>Weeks 5–6, Torque Endurance 3 × 8.</strong> Brendan Housler (EVOQ, written): "Start off with 4 x
               8m @ 95% at 60-70rpm. Eventually move to 50-60rpm, and extend out to 3 x 15m. Aim for 90-105% FTP."
-              <Cite sourceKey="housler" /> We start with one rep fewer (scaled: 3 reps instead of 4), same intensity.
+              <Cite sourceKey="housler" /> I start with one rep fewer (scaled: 3 reps instead of 4), same intensity.
               Why: 4 × 8 would double the time under load in one step (16 → 32 min) while power rises from 80–85% to
               95%. 3 × 8 = 24 min of work, between CTS's ~20 min (beginner) and ~30 min (intermediate) time at
               intensity, and CTS says to progress "by adding intervals" (Rutberg, written).
@@ -584,7 +587,7 @@ function renderBody(id: string) {
               <strong>Weeks 7–8, Threshold 5 × 5.</strong> Henderson (machine transcript): "move into threshold, say
               five by five minutes at say 95% of FTP at that same 50 to 60 rpm". That passage gives no recovery. In
               another passage he gives threshold efforts of 3–6 min at 50–60 rpm "with typically about half time
-              recovery". Half of 5 min is 2:30: Henderson's half-time rule, applied by us.
+              recovery". Half of 5 min is 2:30: Henderson's half-time rule, applied by me.
               <Cite sourceKey="henderson" /> EVOQ's written progression for its 5 × 5 staple ("increase power up to
               threshold") also supports 95%.<Cite sourceKey="evoq" /> Peak torque ~41 Nm.
             </li>
@@ -593,12 +596,12 @@ function renderBody(id: string) {
               around 50-60 rpm", "starting with six repetitions and working up to eight". EVOQ warns: "There is an
               increased risk of injury with these intervals", so do the lower-intensity torque intervals first.
               TorqueMax is EVOQ's extension of the Hebisz study to a new format; <strong>no study has tested
-              it.</strong> "TorqueMax" is EVOQ's term ("we have dubbed"). Our file: 6 × 2.5 min at 110% (the top of
-              EVOQ's range), 55 rpm, 4 min recovery (ours). Peak torque ~48 Nm.<Cite sourceKey="evoq" />
+              it.</strong> "TorqueMax" is EVOQ's term ("we have dubbed"). My file: 6 × 2.5 min at 110% (the top of
+              EVOQ's range), 55 rpm, 4 min recovery (mine). Peak torque ~48 Nm.<Cite sourceKey="evoq" />
             </li>
             <li>
               <strong>Weeks 11–12, HIIT 4 × 4.</strong> The Hebisz HIIT session at its weeks 1–4 volume: 4 × 4 min at
-              60–70 rpm, 8 min active rest. At ~120% FTP (our estimate, see above) it is much harder on the lungs.
+              60–70 rpm, 8 min active rest. At ~120% FTP (my estimate, see above) it is much harder on the lungs.
               Peak torque depends on cadence: ~41–48 Nm at 70–60 rpm (~44 Nm at 65 rpm). Ridden indoors at a %FTP
               target, not outdoors uphill as in the study.<Cite sourceKey="hebisz2024" />
             </li>
@@ -633,15 +636,15 @@ function renderBody(id: string) {
               <strong>Hebisz 2024:</strong> 4 HIIT reps before 6; 8 sprints before 12.<Cite sourceKey="hebisz2024" />
             </li>
           </ul>
-          <p>The two-weeks-per-session arrangement and the week counts are ours.</p>
+          <p>The two-weeks-per-session arrangement and the week counts are mine.</p>
           <p>
-            <strong>How the load steps up</strong> (our arithmetic, 250 W FTP): peak torque per stroke goes 30.6 → 34.7
+            <strong>How the load steps up</strong> (my arithmetic, 250 W FTP): peak torque per stroke goes 30.6 → 34.7
             → 34.9 → 41.2 → 47.7 → 44.1 Nm (+13%, 0%, +18%, +16%, −8%). Total torque × time goes ≈ 490 → 555 → 838 →
             1,030 → 716 → 705 Nm·min. Weeks 5–6 are the biggest step in total load, which is why Torque Endurance is
             scaled to 3 reps there.
           </p>
 
-          <h4>The move-on rule (ours)</h4>
+          <h4>The move-on rule (mine)</h4>
           <p>After the second session of a step, move to the next step only if all three are true:</p>
           <ol>
             <li>Your knees were fine, during and after.</li>
@@ -649,7 +652,7 @@ function renderBody(id: string) {
             <li>You weren't wrecked the next day.</li>
           </ol>
           <p>
-            Any "no" → repeat last week's session. The rule is ours. The nearest sources are the Roadman Cycling
+            Any "no" → repeat last week's session. The rule is mine. The nearest sources are the Roadman Cycling
             Podcast's "push down towards that 50 rpm if your joints feel good" (media relay, auto-captions; the speaker
             is presumed to be host Anthony Walsh)<Cite sourceKey="roadman" /> and Henderson's "if it hurts, stop doing
             it" (machine transcript).<Cite sourceKey="henderson" />
@@ -658,7 +661,7 @@ function renderBody(id: string) {
           <h4>After a break</h4>
           <p>
             After illness or travel, the weeks 3–4 session is a good one to come back with. This is a suggestion, not a
-            rule (ours). After a long break, restart from adaptation or from week 5, as you see fit (ours).
+            rule (mine). After a long break, restart from adaptation or from week 5, as you see fit (mine).
           </p>
         </>
       )
@@ -670,11 +673,11 @@ function renderBody(id: string) {
           <ul>
             <li>
               <strong>Maintain:</strong> about one torque session a month. EVOQ (written) gives "1-2x per month
-              depending on your training schedule is sufficient" during the race season; we use it as the maintenance
-              option (ours).<Cite sourceKey="evoq" />
+              depending on your training schedule is sufficient" during the race season; I use it as the maintenance
+              option (mine).<Cite sourceKey="evoq" />
             </li>
             <li>
-              <strong>Keep going:</strong> 1–2 sessions a week, <strong>never on consecutive days</strong> (ours,
+              <strong>Keep going:</strong> 1–2 sessions a week, <strong>never on consecutive days</strong> (mine,
               combining these). CTS (Jim Rutberg, written): beginner and intermediate riders "should separate MT
               workouts by at least a full day"; "Experienced and/or advanced riders can often do MuscleTension
               intervals on back-to-back days".<Cite sourceKey="ctsRutberg" /> Henderson (machine transcript):
@@ -687,18 +690,18 @@ function renderBody(id: string) {
           <p>
             <strong>Free choice from the library.</strong> After week 12 there is no rotation and no "next session".
             Pick from the ten library workouts (TE 3×8, TE 4×8, TE 3×15, Threshold 5×5, TorqueMax, Rüegg, HIIT 4×4,
-            HIIT 6×4, SIT 2 sets, SIT 3 sets). A few plain hints (ours): mix moderate sessions (Torque Endurance,
+            HIIT 6×4, SIT 2 sets, SIT 3 sets). A few plain hints (mine): mix moderate sessions (Torque Endurance,
             Threshold) with above-threshold ones (TorqueMax, Rüegg, HIIT, SIT); the smaller and bigger variants are
             useful when you swap one session of another training plan for one of these at a similar load.
           </p>
           <p>
             <strong>Where the evidence ends.</strong> The research backs particular workouts (Hebisz: HIIT and SIT; de
             Pablos: near-maximal efforts), each tested inside its own multi-week program. No study tested this site's
-            arrangement. The build order comes from the coaches; the week counts are ours; after week 12 no source
+            arrangement. The build order comes from the coaches; the week counts are mine; after week 12 no source
             says what order to ride things in. Each workout keeps its own source label.
           </p>
           <p>
-            <strong>Fitting it into ~10 hours/week (ours).</strong> de Pablos' riders added two sessions to their usual
+            <strong>Fitting it into ~10 hours/week (mine).</strong> de Pablos' riders added two sessions to their usual
             training. At ~10 hours/week, swapping a torque session for one of your existing interval sessions is
             usually easier than adding one on top. Keep the long endurance ride and all other rides at normal cadence.
             All targets are %FTP, so they scale when your FTP changes.
@@ -712,14 +715,14 @@ function renderBody(id: string) {
             </li>
             <li>
               <strong>TE 3×15</strong> at 90%, 50–60 rpm (file 55), 15 min easy spin: Housler's later step
-              ("Eventually move to 50-60rpm, and extend out to 3 x 15m"), at the floor of his 90–105% range (our
+              ("Eventually move to 50-60rpm, and extend out to 3 x 15m"), at the floor of his 90–105% range (my
               choice). 45 min of work is above CTS's ~40 min for advanced riders, and its 15-min reps are longer than
               CTS's 5–10 min.<Cite sourceKey="housler" /><Cite sourceKey="ctsRutberg" />
             </li>
             <li>
               <strong>Rüegg VO2max + sprint:</strong> Noemi Rüegg's session, published by EF: 3 × 5 min at 50–60 rpm
               at "VO2 max pace" (EF: 106–120% FTP), 10 min easy between, with an optional 1-min max effort in a lighter
-              gear at the end of each effort. Our file: 110% at 55 rpm (inside EF's range), 3 efforts (EF's text says
+              gear at the end of each effort. My file: 110% at 55 rpm (inside EF's range), 3 efforts (EF's text says
               3–5), shorter warm-up and cool-down than EF's 30 min each (scaled for Zwift).<Cite sourceKey="ef" />
             </li>
             <li>
@@ -729,7 +732,7 @@ function renderBody(id: string) {
             <li>
               <strong>SIT 2 sets / 3 sets:</strong> the Hebisz SIT session at its weeks 1–4 (8 sprints) and weeks 5–8
               (12 sprints) volumes, 50–60 rpm. The sprints are free-ride blocks with no power target; you set the
-              force. 90 s at ~65% between sprints; the 25-min break between sets is also at ~65% (ours: the paper says
+              force. 90 s at ~65% between sprints; the 25-min break between sets is also at ~65% (mine: the paper says
               only "also at low intensity" and gives no reason for the length). No lead-in session exists in any
               source; the study riders did it from day one, after the preparation described above. The Rüegg sprint is
               in a light gear at free cadence, so it is not a lead-in to SIT.<Cite sourceKey="hebisz2024" />
@@ -757,7 +760,7 @@ function renderBody(id: string) {
             </li>
           </ul>
           <p>
-            Taking a break from torque work, and coming back later, fits these sources (our reading). This site
+            Taking a break from torque work, and coming back later, fits these sources (my reading). This site
             doesn't say when your season starts. The plan and the tracker work the same whenever you begin.
           </p>
         </>
@@ -767,10 +770,10 @@ function renderBody(id: string) {
       return (
         <>
           <p>
-            <strong>The %FTP numbers are the sources' own.</strong> They are already prescribed at low cadence, so we
+            <strong>The %FTP numbers are the sources' own.</strong> They are already prescribed at low cadence, so I
             don't lower them further. (On the EVOQ podcast, auto-captions only, the coaches say low-cadence threshold is
             "most likely going to be lower" than at normal cadence; the source numbers already allow for that.)
-            <Cite sourceKey="evoqPodcast" /> HIIT at ~120% is the exception: it is our estimate, so it is the most
+            <Cite sourceKey="evoqPodcast" /> HIIT at ~120% is the exception: it is my estimate, so it is the most
             uncertain.
           </p>
           <p>
@@ -784,13 +787,13 @@ function renderBody(id: string) {
             drops, to hold the target power (Zwift support, "ERG Mode in Workouts"). At low cadence that can spiral:
             cadence sags → resistance climbs → cadence sags more → you stall. Keep the pedals turning steadily through
             the block. Zwift doesn't end the block when you stall, but restarting a heavy gear at low cadence is hard,
-            so in practice a stall tends to cost you the rest of that interval (ours). Riders used to hard Zwift
+            so in practice a stall tends to cost you the rest of that interval (mine). Riders used to hard Zwift
             workouts know this; newcomers should expect it.
           </p>
           <p>
-            <strong>If your cadence sags or you stall (our tip, not yet tested in Zwift).</strong> Lower the workout
+            <strong>If your cadence sags or you stall (my tip, not yet tested in Zwift).</strong> Lower the workout
             intensity, or switch ERG off from the action bar, spin up to a cadence you can hold, then switch ERG back
-            on or raise the intensity again. Zwift gives no stall procedure; this is ours, built on Zwift's own
+            on or raise the intensity again. Zwift gives no stall procedure; this is mine, built on Zwift's own
             controls. Adaptation weeks 1–4 (at 80%) are the low-stakes place to learn ERG at low cadence.
           </p>
           <p>
@@ -807,7 +810,7 @@ function renderBody(id: string) {
         <>
           <p>
             The sessions on this site come from these people; the arrangement, the labelled composites and the Zwift
-            files are ours. Roles are as their own
+            files are mine. Roles are as their own
             pages or the cited source state them.
           </p>
           <h4>Research</h4>
@@ -882,7 +885,7 @@ function renderBody(id: string) {
       return (
         <>
           <p>How solid each claim is, and what would change it.</p>
-          <div className="table-scroll" role="region" aria-label="What we'd update this document for" tabIndex={0}>
+          <div className="table-scroll" role="region" aria-label="What I'd update this document for" tabIndex={0}>
           <table>
             <thead>
               <tr><th>Claim</th><th>Confidence</th><th>What would change it</th></tr>
@@ -930,7 +933,7 @@ const CONFIDENCE_ROWS: [string, string, string][] = [
   ],
   [
     'Zone 2 low-cadence work is too easy to count',
-    'Medium: EVOQ (written), CTS (Pulford, auto-captions), our torque arithmetic; no trial',
+    'Medium: EVOQ (written), CTS (Pulford, auto-captions), my torque arithmetic; no trial',
     'A study showing Zone 2 low-cadence work improves performance',
   ],
   [
@@ -940,17 +943,17 @@ const CONFIDENCE_ROWS: [string, string, string][] = [
   ],
   [
     'Knee load rises at low cadence',
-    'Medium: Bini & Hume 2013 (70 vs 90 rpm, abstract only), Johnston 2017 review of small studies; 50–60 rpm is our extrapolation; Hebisz 2024 did not monitor injuries',
+    'Medium: Bini & Hume 2013 (70 vs 90 rpm, abstract only), Johnston 2017 review of small studies; 50–60 rpm is my extrapolation; Hebisz 2024 did not monitor injuries',
     'Knee-force or injury data at 50–60 rpm',
   ],
   [
     'Seated only',
-    'Our rule; Henderson (machine transcript) gives less joint compression as the reason',
+    'Henderson (machine transcript): seated, for less joint compression; making it a rule for every interval is mine',
     'Evidence that standing low-cadence work is as safe and as useful',
   ],
   [
     'The 4-week adaptation is enough',
-    'Low: our arrangement of coach sessions (Wakefield, Henderson, Schep)',
+    'Low: my arrangement of coach sessions (Wakefield, Henderson, Schep)',
     'Injury data from structured torque programs; a study of gradual vs fast introduction',
   ],
   [
@@ -960,12 +963,12 @@ const CONFIDENCE_ROWS: [string, string, string][] = [
   ],
   [
     'Two weeks per step, and the move-on rule',
-    'Low: ours',
+    'Low: mine',
     'Rider feedback; a coach source that gives step lengths',
   ],
   [
     'HIIT at ~120% FTP',
-    "Low: our estimate from the paper's Table 2 (FTP ≈ VT2 assumed)",
+    "Low: my estimate from the paper's Table 2 (FTP ≈ VT2 assumed)",
     'A study or coach that maps Pmax from a 3-min step test to FTP',
   ],
   [
@@ -980,7 +983,7 @@ const CONFIDENCE_ROWS: [string, string, string][] = [
   ],
   [
     'What to ride after week 12',
-    'None: no source says; free choice is ours',
+    'None: no source says; free choice is mine',
     'A study or coach source on sequencing after a build',
   ],
   [

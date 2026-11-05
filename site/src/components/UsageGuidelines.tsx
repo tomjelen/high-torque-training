@@ -28,7 +28,7 @@ export default function UsageGuidelines({ collapsed, onToggle }: Props) {
 
       <div className="px-4 pb-4 pt-3 border-t border-slate-800 text-sm text-slate-400 space-y-5">
         <div>
-          <h4 className="text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2 mt-0">Moving on (our rule)</h4>
+          <h4 className="text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2 mt-0">Moving on (my rule)</h4>
           <p className="m-0 mb-2">After the second session of each step, move to the next step only if:</p>
           <ul className="m-0 pl-4 space-y-1">
             <li>your knees were fine, during and after;</li>
@@ -49,10 +49,10 @@ export default function UsageGuidelines({ collapsed, onToggle }: Props) {
           <ul className="m-0 pl-4 space-y-1">
             <li>
               After a break (illness, travel), the weeks 3–4 session is a good one to come back with. A suggestion,
-              not a rule (ours).
+              not a rule (mine).
             </li>
             <li>
-              After a long break, restart from adaptation or from week 5, as you see fit (ours). The build plan has a
+              After a long break, restart from adaptation or from week 5, as you see fit (mine). The build plan has a
               button for each: <strong className="text-slate-300">Restart adaptation</strong> and{' '}
               <strong className="text-slate-300">Restart build</strong>.
             </li>
@@ -60,7 +60,7 @@ export default function UsageGuidelines({ collapsed, onToggle }: Props) {
         </div>
 
         <div>
-          <h4 className="text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2 mt-0">Fitting it into ~10 hours/week (ours)</h4>
+          <h4 className="text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2 mt-0">Fitting it into ~10 hours/week (mine)</h4>
           <ul className="m-0 pl-4 space-y-1">
             <li>
               Swapping a torque session for one of your existing interval sessions is usually easier than adding one
