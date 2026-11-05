@@ -1,6 +1,6 @@
 import { StrictMode } from 'react'
 import { renderToString } from 'react-dom/server'
-import { StaticRouter } from 'react-router-dom/server'
+import { StaticRouter } from 'react-router-dom'
 import App, {
   HOME_LAST_UPDATED, RATIONALE_LAST_UPDATED, ABOUT_LAST_UPDATED,
   HOME_TITLE, RATIONALE_TITLE, ABOUT_TITLE,
