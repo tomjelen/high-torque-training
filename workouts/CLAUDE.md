@@ -7,4 +7,4 @@ ZWO conventions are split across two skills:
 
 Both auto-load when editing `.zwo` files.
 
-Folders: `High Torque - Adaptation/` (2 files, build weeks 1–4) and `High Torque - Library/` (10 files, build weeks 5–12 and the free-choice library). No tiers. The calendar (`research/training-calendar.md`) says which file each build week uses.
+Folders: `High Torque - Adaptation/` (2 files, the 4-week adaptation) and `High Torque - Library/` (10 files, the 8-week build and the free-choice library). No tiers. The calendar (`research/training-calendar.md`) says which file each week of each plan uses.

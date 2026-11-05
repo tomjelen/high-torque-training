@@ -1,50 +1,25 @@
-# React + TypeScript + Vite
+# Site
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The website at [high-torque.jelen.dk](https://high-torque.jelen.dk/): React + TypeScript + Vite + Tailwind, prerendered to static HTML at build time and deployed to GitHub Pages on every push to `main` (`.github/workflows/deploy.yml`).
 
-Currently, two official plugins are available:
+## Commands
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Node version: see `.nvmrc`. Run from this folder.
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```
+npm install          # once, on a fresh checkout (pulls in sfw, see the root CLAUDE.md)
+npm run dev          # dev server
+npm run build        # prebuild (copies .zwo files and research markdown) + type-check + build + prerender
+npm run preview      # serve the built site
+npm test             # unit tests, incl. the content-consistency test against research/*.md
+npm run test:e2e     # Playwright end-to-end tests
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+Add new npm packages through Socket Firewall: `npx sfw npm install <pkg>`.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## Where things are documented
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+- `CLAUDE.md` (this folder): UX scope, last-updated date rules.
+- `../documentation/decisions.md`: design decisions still in force, and which ones were superseded.
+- `../documentation/prerendering.md`, `workout-chart.md`, `agent-interfacing.md`: how those subsystems work.
+- `../research/`: the training content the site renders (the calendar is the source of truth for what to ride).

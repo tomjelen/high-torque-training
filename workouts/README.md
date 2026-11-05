@@ -4,11 +4,11 @@
 
 ```
 workouts/
-  High Torque - Adaptation/   ← 2 workouts (build weeks 1–2 and 3–4)
-  High Torque - Library/      ← 10 workouts (build weeks 5–12, then free choice)
+  High Torque - Adaptation/   ← 2 workouts (the 4-week adaptation: weeks 1–2 and 3–4)
+  High Torque - Library/      ← 10 workouts (the 8-week build, then free choice)
 ```
 
-The program is a 12-week build, one session a week. Weeks 1–4 are adaptation, using the two files in `High Torque - Adaptation`. Weeks 5–12 use four files from `High Torque - Library`, each ridden twice: Torque Endurance 3×8 (weeks 5–6), Threshold 5×5 (weeks 7–8), TorqueMax (weeks 9–10) and HIIT 4×4 (weeks 11–12). After the build you pick freely from the whole library. The site (high-torque.jelen.dk) and `research/training-calendar.md` have the full plan and the rule for moving on. Each subfolder becomes a named folder inside Zwift's custom workout menu.
+The program is two plans, one session a week: a 4-week adaptation, then an 8-week build. The adaptation uses the two files in `High Torque - Adaptation`. The build uses four files from `High Torque - Library`, each ridden twice: Torque Endurance 3×8 (build weeks 1–2), Threshold 5×5 (weeks 3–4), TorqueMax (weeks 5–6) and HIIT 4×4 (weeks 7–8). After the build you pick freely from the whole library. The site (high-torque.jelen.dk) and `research/training-calendar.md` have the full plan and the rule for moving on. Each subfolder becomes a named folder inside Zwift's custom workout menu.
 
 ## How to install
 
