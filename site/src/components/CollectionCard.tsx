@@ -16,11 +16,13 @@ const KIND_LABELS: Record<Workout['kind'], string> = {
 
 // The category describes the source, not the people: Rüegg is a rider whose
 // session EF published, so it sits on the source line, not the people line.
+// Plain words for a visitor; the trust categories themselves are explained
+// on the rationale page.
 const CATEGORY_LABELS: Record<SourceCategory, string> = {
-  research: 'Research',
-  'pro-team': 'Elite / pro-team',
-  'coaching-business': 'Coaching business',
-  media: 'Media',
+  research: 'peer-reviewed study',
+  'pro-team': 'pro team / elite coach',
+  'coaching-business': 'coaching company',
+  media: 'media',
 }
 
 interface Props {
@@ -56,9 +58,9 @@ export default function CollectionCard({ workout, onDidThis }: Props) {
       )}
 
       <p className="text-xs text-slate-400 m-0 mb-1">{workout.people.join(', ')}</p>
-      <p className="text-xs text-slate-400 m-0 mb-3">
+      <p className="text-xs text-slate-400 m-0 mb-1">
         Source:
-        <Cite sourceKey={workout.source} note={workout.sourceNote} />
+        <Cite sourceKey={workout.source} />
         {/* The separator stays with the citation; the line may break only after it. */}
         {category && (
           <>
@@ -67,6 +69,9 @@ export default function CollectionCard({ workout, onDidThis }: Props) {
           </>
         )}
       </p>
+      {/* What's scaled, picked or estimated: visible, not a hover tooltip
+          (invisible on phones). */}
+      {workout.sourceNote && <p className="text-xs text-slate-500 m-0 mb-3">{workout.sourceNote}</p>}
 
       <div className="border-t border-slate-700 pt-3 flex items-center justify-end gap-2">
         <div className="flex items-center gap-2">

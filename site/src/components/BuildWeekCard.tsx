@@ -64,7 +64,7 @@ export default function BuildWeekCard(props: Props) {
             {workout.source === 'site' ? (
               <span title={workout.sourceNote}>my combination of advice from three coaches (Wakefield, Henderson, Schep)</span>
             ) : (
-              <Cite sourceKey={workout.source} note={workout.sourceNote} />
+              <Cite sourceKey={workout.source} />
             )}
           </small>
           <a
@@ -75,6 +75,9 @@ export default function BuildWeekCard(props: Props) {
             ⤓ .zwo
           </a>
         </div>
+        {workout.source !== 'site' && workout.sourceNote && (
+          <p className="m-0 mb-3 text-xs text-slate-500">{workout.sourceNote}</p>
+        )}
       </div>
 
       <div className="border-t border-slate-700 pt-3 mt-auto lg:border-t-0 lg:pt-0 lg:mt-0 lg:border-l lg:pl-8 lg:flex lg:flex-col lg:justify-center">
