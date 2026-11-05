@@ -192,7 +192,7 @@ const ADAPTATION_BASE: Workout[] = [
     name: 'Weeks 1–2 — 4×4 @ 60–65 rpm',
     params: [
       { label: 'Sets × duration', value: '4 × 4 min' },
-      { label: 'Intensity', value: '80% FTP' },
+      { label: 'Intensity', value: "80% FTP (inside the coaches' 80–85%)" },
       { label: 'Cadence', value: '60–65 rpm' },
       { label: 'Recovery', value: '4 min easy spin' },
     ],

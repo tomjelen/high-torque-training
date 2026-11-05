@@ -177,7 +177,7 @@ This is the main practical concern.
 
 | Weeks | Session | Source | How solid |
 |---|---|---|---|
-| Adaptation 1–2 | 4 × 4 min @ 80% FTP, 60–65 rpm, 4 min easy spin | Wakefield (cadence, 4 × 4, rest = rep: recovery as long as the interval); 80% my pick inside Henderson's 75–85% and Schep's 80–85% | Composite, mine. Wakefield: machine transcript. Schep: written. Henderson: machine transcript. |
+| Adaptation 1–2 | 4 × 4 min @ 80% FTP (inside the coaches' 80–85%), 60–65 rpm, 4 min easy spin | Wakefield (cadence, 4 × 4, rest = rep: recovery as long as the interval); 80% my pick inside Henderson's 75–85% and Schep's 80–85% | Composite, mine. Wakefield: machine transcript. Schep: written. Henderson: machine transcript. |
 | Adaptation 3–4 | 4 × 4 min @ 80% FTP (inside the coaches' 80–85%), 50–60 rpm, 4 min easy spin | Henderson (cadence, 75–85%); Schep (80–85%, ~15 min of work); Wakefield (4 × 4, rest = rep) | Composite, mine. Henderson: machine transcript. Schep: written. Wakefield: machine transcript. 16 min of work is a little under Henderson's "20 or so". |
 | Build 1–2 | Torque Endurance 3 × 8 min @ 95% FTP, 60–70 rpm, 8 min easy spin | EVOQ / Housler (scaled: 3 reps instead of 4); rest = rep is my choice, as Wakefield and CTS (Rutberg) use | Housler written. Scaling and recovery mine. |
 | Build 3–4 | Threshold 5 × 5 min @ 95% FTP, 50–60 rpm, 2:30 easy spin | Henderson (5 × 5 @ 95%, 50–60 rpm); 2:30 is Henderson's half-time rule (recover for half the interval time), applied by me | Machine transcript. Derivation mine. |
@@ -274,7 +274,7 @@ Taking a break from torque work, and coming back later, fits these sources (my r
 
 **ERG at low cadence has a trap.** In ERG the trainer raises the resistance when your cadence drops, to hold the target power (Zwift support, "ERG Mode in Workouts"). At low cadence that can spiral: cadence sags → resistance climbs → cadence sags more → you stall. Keep the pedals turning steadily through the block. Zwift doesn't end the block when you stall, but restarting a heavy gear at low cadence is hard, so in practice a stall tends to cost you the rest of that interval (mine). Riders used to hard Zwift workouts know this; newcomers should expect it.
 
-**If your cadence sags or you stall (my tip, not yet tested in Zwift).** Lower the workout intensity, or switch ERG off from the action bar, spin up to a cadence you can hold, then switch ERG back on or raise the intensity again. Zwift gives no stall procedure; this is mine, built on Zwift's own controls. The adaptation weeks (at 80%) are the low-stakes place to learn ERG at low cadence.
+**If you can't hold the power at the cadence (my tip, from my own riding).** Lower the workout intensity (FTP bias) a few percent rather than grinding. If you have already stalled, switch ERG off from the action bar, spin up to a cadence you can hold, then switch ERG back on or raise the intensity again. Zwift gives no procedure for this; it is mine, built on Zwift's own controls. The adaptation weeks (at 80%) are the low-stakes place to learn it.
 
 **Riding by feel is a fine alternative.** CTS (Rutberg, written) prefers "level" or "resistance" mode to ERG for these intervals, and says ERG can help beginners focus on cadence. On the EVOQ podcast (auto-captions only) the advice is to ride by effort or a torque number: "ignore the watts a little bit and just make it hard".
 

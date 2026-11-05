@@ -485,7 +485,7 @@ function renderBody(id: string) {
             <tbody>
               <tr>
                 <td>Adaptation 1–2</td>
-                <td>4 × 4 min @ 80% FTP, 60–65 rpm, 4 min easy spin</td>
+                <td>4 × 4 min @ 80% FTP (inside the coaches' 80–85%), 60–65 rpm, 4 min easy spin</td>
                 <td>Wakefield (cadence, 4 × 4, rest = rep: recovery as long as the interval); 80% my pick inside Henderson's 75–85% and Schep's 80–85%</td>
                 <td>Composite, mine. Wakefield: machine transcript. Schep: written. Henderson: machine transcript.</td>
               </tr>
@@ -784,10 +784,11 @@ function renderBody(id: string) {
             workouts know this; newcomers should expect it.
           </p>
           <p>
-            <strong>If your cadence sags or you stall (my tip, not yet tested in Zwift).</strong> Lower the workout
-            intensity, or switch ERG off from the action bar, spin up to a cadence you can hold, then switch ERG back
-            on or raise the intensity again. Zwift gives no stall procedure; this is mine, built on Zwift's own
-            controls. The adaptation weeks (at 80%) are the low-stakes place to learn ERG at low cadence.
+            <strong>If you can't hold the power at the cadence (my tip, from my own riding).</strong> Lower the
+            workout intensity (FTP bias) a few percent rather than grinding. If you have already stalled, switch ERG
+            off from the action bar, spin up to a cadence you can hold, then switch ERG back on or raise the intensity
+            again. Zwift gives no procedure for this; it is mine, built on Zwift's own controls. The adaptation weeks
+            (at 80%) are the low-stakes place to learn it.
           </p>
           <p>
             <strong>Riding by feel is a fine alternative.</strong> CTS (Rutberg, written) prefers "level" or

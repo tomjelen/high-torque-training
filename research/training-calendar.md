@@ -18,7 +18,7 @@ Two plans: a 4-week adaptation, then an 8-week build. Week numbers restart at 1 
 
 | Weeks | Workout | What | Cadence | Duration | Source |
 |---|---|---|---|---|---|
-| 1–2 | [Weeks 1–2 — 4×4 @ 60–65 rpm](/workouts/High%20Torque%20-%20Adaptation/Adapt_W1-2_4x4_60-65rpm.zwo) | 4×4 min @ 80% FTP, 4 min easy spin | 60–65 rpm | ~55 min | Composite (mine): Wakefield (cadence, 4×4, rest = rep); 80% my pick inside Henderson's 75–85% and Schep's 80–85% |
+| 1–2 | [Weeks 1–2 — 4×4 @ 60–65 rpm](/workouts/High%20Torque%20-%20Adaptation/Adapt_W1-2_4x4_60-65rpm.zwo) | 4×4 min @ 80% FTP (inside the coaches' 80–85%), 4 min easy spin | 60–65 rpm | ~55 min | Composite (mine): Wakefield (cadence, 4×4, rest = rep); 80% my pick inside Henderson's 75–85% and Schep's 80–85% |
 | 3–4 | [Weeks 3–4 — 4×4 @ 50–60 rpm](/workouts/High%20Torque%20-%20Adaptation/Adapt_W3-4_4x4_50-60rpm.zwo) | 4×4 min @ 80% FTP (inside the coaches' 80–85%), 4 min easy spin | 50–60 rpm | ~55 min | Composite (mine): Henderson (cadence, 75–85%); Schep (80–85%); Wakefield (4×4, rest = rep) |
 
 How it should feel: controlled, steady, below your threshold. Heavy legs are normal.
