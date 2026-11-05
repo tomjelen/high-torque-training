@@ -12,7 +12,7 @@ export default function RationalePage() {
       <div className="mb-6">
         <h1 className="text-3xl font-bold text-slate-100 mt-6 mb-1">The Science and Rationale</h1>
         <p className="text-slate-400 text-sm m-0">
-          A 12-week build, then your choice. Why the workouts are built the way they are, where each number comes
+          A 4-week adaptation and an 8-week build, then your choice. Why the workouts are built the way they are, where each number comes
           from, and how solid the evidence is.
         </p>
       </div>
@@ -46,9 +46,9 @@ function renderBody(id: string) {
           </p>
           <p>
             This page explains <strong>why</strong> the training works and where each number comes from. The
-            workout library says <strong>what</strong> to ride. The program is a 12-week build (4 weeks of
-            adaptation, then 8 weeks of build sessions, one torque session a week), after which you choose: maintain,
-            keep going, or stop for a while.
+            workout library says <strong>what</strong> to ride. The program is two plans, one torque session a week: a
+            4-week adaptation, then an 8-week build. After that you choose: maintain, keep going, or stop for a
+            while.
           </p>
         </>
       )
@@ -162,7 +162,7 @@ function renderBody(id: string) {
             <li>
               Hebisz and de Pablos each tested their own multi-week arrangement.{' '}
               <strong>No study has tested this site's arrangement</strong> (the order of the build, the two weeks per
-              session, what to do after week 12).
+              session, what to do after the build).
             </li>
           </ul>
           <p>
@@ -476,24 +476,24 @@ function renderBody(id: string) {
           <p>
             <strong>One torque session a week.</strong> All other rides at normal cadence. Each session is ridden twice
             (two weeks), then you move on if the move-on rule says yes. Progress counts sessions done, not calendar
-            weeks. <strong>The 12-week arrangement (two-week steps, one session a week) is mine.</strong> The order
+            weeks. <strong>The arrangement (a 4-week adaptation and an 8-week build, in two-week blocks, one session a week) is mine.</strong> Week numbers restart at 1 in each plan. The order
             comes from the coaches (see "Why this order").
           </p>
-          <div className="table-scroll" role="region" aria-label="The 12-week build" tabIndex={0}>
+          <div className="table-scroll" role="region" aria-label="The plan: adaptation and build" tabIndex={0}>
           <table>
             <thead>
               <tr><th>Weeks</th><th>Session</th><th>Source</th><th>Status</th></tr>
             </thead>
             <tbody>
               <tr>
-                <td>1–2</td>
-                <td>Adaptation 4 × 4 min @ 80% FTP, 60–65 rpm, 4 min easy spin</td>
+                <td>Adaptation 1–2</td>
+                <td>4 × 4 min @ 80% FTP, 60–65 rpm, 4 min easy spin</td>
                 <td>Wakefield (cadence, 4 × 4, rest = rep); 80% my pick inside Henderson's 75–85% and Schep's 80–85%</td>
                 <td>Composite, mine. Wakefield: machine transcript. Schep: written. Henderson: machine transcript.</td>
               </tr>
               <tr>
-                <td>3–4</td>
-                <td>Adaptation 4 × 4 min @ 80% FTP (inside the coaches' 80–85%), 50–60 rpm, 4 min easy spin</td>
+                <td>Adaptation 3–4</td>
+                <td>4 × 4 min @ 80% FTP (inside the coaches' 80–85%), 50–60 rpm, 4 min easy spin</td>
                 <td>Henderson (cadence, 75–85%); Schep (80–85%, ~15 min of work); Wakefield (4 × 4, rest = rep)</td>
                 <td>
                   Composite, mine. Henderson: machine transcript. Schep: written. Wakefield: machine transcript. 16 min
@@ -501,25 +501,25 @@ function renderBody(id: string) {
                 </td>
               </tr>
               <tr>
-                <td>5–6</td>
+                <td>Build 1–2</td>
                 <td>Torque Endurance 3 × 8 min @ 95% FTP, 60–70 rpm, 8 min easy spin</td>
                 <td>EVOQ / Housler (scaled: 3 reps instead of 4); rest = rep is my choice, as Wakefield and CTS (Rutberg) use</td>
                 <td>Housler written. Scaling and recovery mine.</td>
               </tr>
               <tr>
-                <td>7–8</td>
+                <td>Build 3–4</td>
                 <td>Threshold 5 × 5 min @ 95% FTP, 50–60 rpm, 2:30 easy spin</td>
                 <td>Henderson (5 × 5 @ 95%, 50–60 rpm); 2:30 is Henderson's half-time rule, applied by me</td>
                 <td>Machine transcript. Derivation mine.</td>
               </tr>
               <tr>
-                <td>9–10</td>
+                <td>Build 5–6</td>
                 <td>TorqueMax 6 × 2.5 min @ 110% FTP, 50–60 rpm, 4 min easy spin</td>
                 <td>EVOQ (Bobo): 2–3 min at 105–110%, 50–60 rpm, start with 6 reps</td>
                 <td>Written. 2.5 min and 110% are my picks inside the range; the 4-min recovery is mine.</td>
               </tr>
               <tr>
-                <td>11–12</td>
+                <td>Build 7–8</td>
                 <td>HIIT 4 × 4 min @ ~120% FTP, 60–70 rpm, 8 min at ~65%</td>
                 <td>Hebisz 2024 (4 × 4, 60–70 rpm, 8-min active rest at ~VT1)</td>
                 <td>Research. ~120% and ~65% are my estimates from the paper.</td>
@@ -533,7 +533,7 @@ function renderBody(id: string) {
             SIT recoveries follow the study (~65% FTP, my estimate of "similar to VT1").
           </p>
 
-          <h4>Adaptation, weeks 1–4</h4>
+          <h4>Adaptation (4 weeks)</h4>
           <p>
             <strong>Goal:</strong> get the knees, tendons and legs used to low-cadence force at a controlled,
             below-threshold effort before the build sessions.
@@ -568,10 +568,10 @@ function renderBody(id: string) {
             </li>
           </ul>
 
-          <h4>Build, weeks 5–12</h4>
+          <h4>Build (8 weeks)</h4>
           <ul>
             <li>
-              <strong>Weeks 5–6, Torque Endurance 3 × 8.</strong> Brendan Housler (EVOQ, written): "Start off with 4 x
+              <strong>Build weeks 1–2, Torque Endurance 3 × 8.</strong> Brendan Housler (EVOQ, written): "Start off with 4 x
               8m @ 95% at 60-70rpm. Eventually move to 50-60rpm, and extend out to 3 x 15m. Aim for 90-105% FTP."
               <Cite sourceKey="housler" /> I start with one rep fewer (scaled: 3 reps instead of 4), same intensity.
               Why: 4 × 8 would double the time under load in one step (16 → 32 min) while power rises from 80–85% to
@@ -584,7 +584,7 @@ function renderBody(id: string) {
               (auto-captions); it isn't Bobo's coinage.<Cite sourceKey="evoqPodcast" />
             </li>
             <li>
-              <strong>Weeks 7–8, Threshold 5 × 5.</strong> Henderson (machine transcript): "move into threshold, say
+              <strong>Build weeks 3–4, Threshold 5 × 5.</strong> Henderson (machine transcript): "move into threshold, say
               five by five minutes at say 95% of FTP at that same 50 to 60 rpm". That passage gives no recovery. In
               another passage he gives threshold efforts of 3–6 min at 50–60 rpm "with typically about half time
               recovery". Half of 5 min is 2:30: Henderson's half-time rule, applied by me.
@@ -592,7 +592,7 @@ function renderBody(id: string) {
               threshold") also supports 95%.<Cite sourceKey="evoq" /> Peak torque ~41 Nm.
             </li>
             <li>
-              <strong>Weeks 9–10, TorqueMax.</strong> EVOQ (Bobo, written): "around 2-3 minutes at 105-110% of FTP and
+              <strong>Build weeks 5–6, TorqueMax.</strong> EVOQ (Bobo, written): "around 2-3 minutes at 105-110% of FTP and
               around 50-60 rpm", "starting with six repetitions and working up to eight". EVOQ warns: "There is an
               increased risk of injury with these intervals", so do the lower-intensity torque intervals first.
               TorqueMax is EVOQ's extension of the Hebisz study to a new format; <strong>no study has tested
@@ -600,7 +600,7 @@ function renderBody(id: string) {
               EVOQ's range), 55 rpm, 4 min recovery (mine). Peak torque ~48 Nm.<Cite sourceKey="evoq" />
             </li>
             <li>
-              <strong>Weeks 11–12, HIIT 4 × 4.</strong> The Hebisz HIIT session at its weeks 1–4 volume: 4 × 4 min at
+              <strong>Build weeks 7–8, HIIT 4 × 4.</strong> The Hebisz HIIT session at its weeks 1–4 volume: 4 × 4 min at
               60–70 rpm, 8 min active rest. At ~120% FTP (my estimate, see above) it is much harder on the lungs.
               Peak torque depends on cadence: ~41–48 Nm at 70–60 rpm (~44 Nm at 65 rpm). Ridden indoors at a %FTP
               target, not outdoors uphill as in the study.<Cite sourceKey="hebisz2024" />
@@ -640,12 +640,12 @@ function renderBody(id: string) {
           <p>
             <strong>How the load steps up</strong> (my arithmetic, 250 W FTP): peak torque per stroke goes 30.6 → 34.7
             → 34.9 → 41.2 → 47.7 → 44.1 Nm (+13%, 0%, +18%, +16%, −8%). Total torque × time goes ≈ 490 → 555 → 838 →
-            1,030 → 716 → 705 Nm·min. Weeks 5–6 are the biggest step in total load, which is why Torque Endurance is
+            1,030 → 716 → 705 Nm·min. Build weeks 1–2 are the biggest step in total load, which is why Torque Endurance is
             scaled to 3 reps there.
           </p>
 
           <h4>The move-on rule (mine)</h4>
-          <p>After the second session of a step, move to the next step only if all three are true:</p>
+          <p>After the second session of a two-week block, move on to the next block only if all three are true:</p>
           <ol>
             <li>Your knees were fine, during and after.</li>
             <li>You held the cadence.</li>
@@ -660,8 +660,8 @@ function renderBody(id: string) {
 
           <h4>After a break</h4>
           <p>
-            After illness or travel, the weeks 3–4 session is a good one to come back with. This is a suggestion, not a
-            rule (mine). After a long break, restart from adaptation or from week 5, as you see fit (mine).
+            After illness or travel, the adaptation weeks 3–4 session is a good one to come back with. This is a suggestion, not a
+            rule (mine). After a long break, restart the adaptation or the build, as you see fit (mine).
           </p>
         </>
       )
@@ -669,7 +669,7 @@ function renderBody(id: string) {
     case 'after':
       return (
         <>
-          <p>After week 12 you choose:</p>
+          <p>After the build you choose:</p>
           <ul>
             <li>
               <strong>Maintain:</strong> about one torque session a month. EVOQ (written) gives "1-2x per month
@@ -688,7 +688,7 @@ function renderBody(id: string) {
             </li>
           </ul>
           <p>
-            <strong>Free choice from the library.</strong> After week 12 there is no rotation and no "next session".
+            <strong>Free choice from the library.</strong> After the build there is no rotation and no "next session".
             Pick from the ten library workouts (TE 3×8, TE 4×8, TE 3×15, Threshold 5×5, TorqueMax, Rüegg, HIIT 4×4,
             HIIT 6×4, SIT 2 sets, SIT 3 sets). A few plain hints (mine): mix moderate sessions (Torque Endurance,
             Threshold) with above-threshold ones (TorqueMax, Rüegg, HIIT, SIT); the smaller and bigger variants are
@@ -697,7 +697,7 @@ function renderBody(id: string) {
           <p>
             <strong>Where the evidence ends.</strong> The research backs particular workouts (Hebisz: HIIT and SIT; de
             Pablos: near-maximal efforts), each tested inside its own multi-week program. No study tested this site's
-            arrangement. The build order comes from the coaches; the week counts are mine; after week 12 no source
+            arrangement. The build order comes from the coaches; the week counts are mine; after the build no source
             says what order to ride things in. Each workout keeps its own source label.
           </p>
           <p>
@@ -794,7 +794,7 @@ function renderBody(id: string) {
             <strong>If your cadence sags or you stall (my tip, not yet tested in Zwift).</strong> Lower the workout
             intensity, or switch ERG off from the action bar, spin up to a cadence you can hold, then switch ERG back
             on or raise the intensity again. Zwift gives no stall procedure; this is mine, built on Zwift's own
-            controls. Adaptation weeks 1–4 (at 80%) are the low-stakes place to learn ERG at low cadence.
+            controls. The adaptation weeks (at 80%) are the low-stakes place to learn ERG at low cadence.
           </p>
           <p>
             <strong>Riding by feel is a fine alternative.</strong> CTS (Rutberg, written) prefers "level" or
@@ -962,9 +962,9 @@ const CONFIDENCE_ROWS: [string, string, string][] = [
     'Coach sources that order it differently, or a study',
   ],
   [
-    'Two weeks per step, and the move-on rule',
+    'Two weeks per workout, and the move-on rule',
     'Low: mine',
-    'Rider feedback; a coach source that gives step lengths',
+    'Rider feedback; a coach source that gives block lengths',
   ],
   [
     'HIIT at ~120% FTP',
@@ -982,7 +982,7 @@ const CONFIDENCE_ROWS: [string, string, string][] = [
     'A detraining or maintenance study',
   ],
   [
-    'What to ride after week 12',
+    'What to ride after the build',
     'None: no source says; free choice is mine',
     'A study or coach source on sequencing after a build',
   ],

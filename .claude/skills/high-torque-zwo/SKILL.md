@@ -45,7 +45,7 @@ Constraints:
 
 ## Folders
 
-Two folders only: `workouts/High Torque - Adaptation/` (build weeks 1–4, 2 files) and `workouts/High Torque - Library/` (build weeks 5–12 and the free-choice library, 10 files). A new or moved file must also update the `file:` path in `site/src/data.ts`.
+Two folders only: `workouts/High Torque - Adaptation/` (the 4-week adaptation, 2 files) and `workouts/High Torque - Library/` (the 8-week build and the free-choice library, 10 files). A new or moved file must also update the `file:` path in `site/src/data.ts`.
 
 ## Display text: always show source prescriptions
 

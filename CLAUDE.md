@@ -59,7 +59,7 @@ The generic ZWO format knowledge (block types, power-ramp semantics, ERG/`FreeRi
 
 - The project's brand name is "High Torque" / "High Torque Training."
 - **Prefer "high torque" over "low cadence" in user-facing copy** (taglines, page titles, meta descriptions, marketing text). "High torque" captures both the low cadence *and* the meaningful intensity that defines this training; plain "low cadence" also covers easy spinning, which is not what this is about. "Low cadence" is fine when describing the mechanical aspect specifically (e.g., "seated, low-cadence intervals" in a workout description) — but the *training modality* is "high-torque training," not "low-cadence training."
-- Workout folder names: exactly two folders, "High Torque - Adaptation" (build weeks 1–4) and "High Torque - Library" (build weeks 5–12 and the free-choice library). There are no tiers.
+- Workout folder names: exactly two folders, "High Torque - Adaptation" (the 4-week adaptation) and "High Torque - Library" (the 8-week build and the free-choice library). There are no tiers.
 - Site design decisions that are still in force (and which old ones were superseded) are recorded in `documentation/decisions.md`.
 
 ## Consistency check

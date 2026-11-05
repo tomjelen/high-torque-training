@@ -1,4 +1,5 @@
 import { BUILD_WEEKS, workoutById } from '../data'
+import { ADAPTATION_LENGTH } from './build-plan'
 import { chartWorkoutFor } from '../components/chart-data'
 import type { Zone } from '../components/chart-model'
 import type { BuildWeek, Workout } from '../types'
@@ -32,10 +33,32 @@ export function stepIndexForProgress(progress: number): number | null {
   return BUILD_STEPS.findIndex((s) => s.weeks.includes(week))
 }
 
+// The plan is two plans: a 4-week adaptation, then an 8-week build. Week
+// numbers restart at 1 in each (BUILD_WEEKS keeps one running 1–12 count,
+// which is also what buildProgress counts).
+export function phaseName(phase: BuildWeek['phase']): string {
+  return phase === 'adaptation' ? 'Adaptation' : 'Build'
+}
+
+export function phaseLength(phase: BuildWeek['phase']): number {
+  return BUILD_WEEKS.filter((w) => w.phase === phase).length
+}
+
+// The week's number inside its own plan: adaptation 1–4, build 1–8.
+export function phaseWeek(week: BuildWeek): number {
+  return week.phase === 'adaptation' ? week.week : week.week - ADAPTATION_LENGTH
+}
+
+// "Weeks 1–2" (inside its plan; for places where the plan is already shown).
 export function weekRangeLabel(step: BuildStep): string {
-  const first = step.weeks[0].week
-  const last = step.weeks[step.weeks.length - 1].week
+  const first = phaseWeek(step.weeks[0])
+  const last = phaseWeek(step.weeks[step.weeks.length - 1])
   return first === last ? `Week ${first}` : `Weeks ${first}–${last}`
+}
+
+// "Build weeks 1–2": the step with its plan named.
+export function stepLabel(step: BuildStep): string {
+  return `${phaseName(step.phase)} ${weekRangeLabel(step).toLowerCase()}`
 }
 
 // The power of the high-torque (cadence-prescribed) work in a workout, read
@@ -85,5 +108,7 @@ export function nextLabel(progress: number): string {
   const next = stepIndexForProgress(progress + 1)
   if (next === null) return 'finish the build'
   if (next === step) return 'repeat this session next week'
+  if (BUILD_STEPS[next].phase !== BUILD_STEPS[step].phase)
+    return `next week: the build, starting with ${stepTitle(BUILD_STEPS[next])}`
   return `next week: ${stepTitle(BUILD_STEPS[next])}`
 }

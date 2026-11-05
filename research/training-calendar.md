@@ -1,6 +1,6 @@
 # High Torque Training — Calendar
 
-A 12-week build, one torque session a week, then your choice: maintain, or keep going with free choice from the library.
+A 4-week adaptation, then an 8-week build, one torque session a week, then your choice: maintain, or keep going with free choice from the library.
 
 This calendar is the source of truth for **what** to ride: which workouts exist, their parameters and durations. See `high-torque-training-research.md` for **why**, and for the source behind every number. Durations are each file's total ride time, rounded to the nearest 5 minutes.
 
@@ -8,11 +8,13 @@ All low-cadence intervals are **seated**. If your knees ache during an interval,
 
 ---
 
-## The build (weeks 1–12)
+## The plan: adaptation, then build
+
+Two plans: a 4-week adaptation, then an 8-week build. Week numbers restart at 1 in each.
 
 **One torque session a week.** All other rides at normal cadence. Each session is ridden in two consecutive weeks. Progress counts sessions done, not calendar weeks. The two-weeks-per-session arrangement is mine; the order comes from the coaches (Schep, EVOQ, Henderson for sustained efforts, CTS).
 
-### Adaptation (weeks 1–4)
+### Adaptation (4 weeks)
 
 | Weeks | Workout | What | Cadence | Duration | Source |
 |---|---|---|---|---|---|
@@ -21,20 +23,20 @@ All low-cadence intervals are **seated**. If your knees ache during an interval,
 
 How it should feel: controlled, steady, below your threshold. Heavy legs are normal.
 
-### Build (weeks 5–12)
+### Build (8 weeks)
 
 | Weeks | Workout | What | Cadence | Duration | Source |
 |---|---|---|---|---|---|
-| 5–6 | [Torque Endurance 3×8](/workouts/High%20Torque%20-%20Library/TE_3x8_95pct.zwo) | 3×8 min @ 95% FTP, 8 min easy spin | 60–70 rpm | ~65 min | EVOQ / Housler (scaled: 3 reps instead of 4); rest = rep is my choice, as Wakefield and CTS (Rutberg) use |
-| 7–8 | [Threshold 5×5](/workouts/High%20Torque%20-%20Library/Threshold_5x5_95pct.zwo) | 5×5 min @ 95% FTP, 2:30 easy spin | 50–60 rpm | ~60 min | Henderson (5×5 @ 95%); 2:30 is Henderson's half-time rule, applied by me |
-| 9–10 | [TorqueMax](/workouts/High%20Torque%20-%20Library/TorqueMax_110pct.zwo) | 6×2.5 min @ 110% FTP, 4 min easy spin | 50–60 rpm | ~70 min | EVOQ (Bobo): 6×2–3 min @ 105–110%; 2.5 min, 110% and the 4-min recovery are my picks |
-| 11–12 | [HIIT 4×4](/workouts/High%20Torque%20-%20Library/HIIT_4x4_120pct.zwo) | 4×4 min @ ~120% FTP, 8 min @ ~65% | 60–70 rpm | ~75 min | Hebisz 2024 (4×4, 60–70 rpm, 8-min active rest); ~120% and ~65% are my estimates from the paper |
+| 1–2 | [Torque Endurance 3×8](/workouts/High%20Torque%20-%20Library/TE_3x8_95pct.zwo) | 3×8 min @ 95% FTP, 8 min easy spin | 60–70 rpm | ~65 min | EVOQ / Housler (scaled: 3 reps instead of 4); rest = rep is my choice, as Wakefield and CTS (Rutberg) use |
+| 3–4 | [Threshold 5×5](/workouts/High%20Torque%20-%20Library/Threshold_5x5_95pct.zwo) | 5×5 min @ 95% FTP, 2:30 easy spin | 50–60 rpm | ~60 min | Henderson (5×5 @ 95%); 2:30 is Henderson's half-time rule, applied by me |
+| 5–6 | [TorqueMax](/workouts/High%20Torque%20-%20Library/TorqueMax_110pct.zwo) | 6×2.5 min @ 110% FTP, 4 min easy spin | 50–60 rpm | ~70 min | EVOQ (Bobo): 6×2–3 min @ 105–110%; 2.5 min, 110% and the 4-min recovery are my picks |
+| 7–8 | [HIIT 4×4](/workouts/High%20Torque%20-%20Library/HIIT_4x4_120pct.zwo) | 4×4 min @ ~120% FTP, 8 min @ ~65% | 60–70 rpm | ~75 min | Hebisz 2024 (4×4, 60–70 rpm, 8-min active rest); ~120% and ~65% are my estimates from the paper |
 
 Wherever a row says "easy spin", it is 50% FTP (mine; no source gives a recovery %FTP for these sessions). HIIT recovers at ~65%, my estimate of the study's "similar to VT1".
 
 ### Moving on
 
-After the second session of each step, move to the next step only if:
+After the second session of each two-week block, move on to the next block only if:
 
 - [ ] your knees were fine, during and after;
 - [ ] you held the cadence;
@@ -44,22 +46,22 @@ After the second session of each step, move to the next step only if:
 
 **Knee pain → repeat last week's session** instead of moving on. If it keeps coming back, stop torque work and see a professional.
 
-**After a break** (illness, travel): the weeks 3–4 session is a good one to come back with. A suggestion, not a rule. After a long break, restart from adaptation or from week 5, as you see fit.
+**After a break** (illness, travel): the adaptation weeks 3–4 session is a good one to come back with. A suggestion, not a rule. After a long break, restart the adaptation or the build, as you see fit.
 
 | Week | Workout | Date | Knees fine? | Cadence held? | Fine next day? | Notes |
 |---|---|---|---|---|---|---|
-| 1 | Weeks 1–2 — 4×4 @ 60–65 rpm | | | | | |
-| 2 | Weeks 1–2 — 4×4 @ 60–65 rpm | | | | | |
-| 3 | Weeks 3–4 — 4×4 @ 50–60 rpm | | | | | |
-| 4 | Weeks 3–4 — 4×4 @ 50–60 rpm | | | | | |
-| 5 | Torque Endurance 3×8 | | | | | |
-| 6 | Torque Endurance 3×8 | | | | | |
-| 7 | Threshold 5×5 | | | | | |
-| 8 | Threshold 5×5 | | | | | |
-| 9 | TorqueMax | | | | | |
-| 10 | TorqueMax | | | | | |
-| 11 | HIIT 4×4 | | | | | |
-| 12 | HIIT 4×4 | | | | | |
+| Adaptation 1 | Weeks 1–2 — 4×4 @ 60–65 rpm | | | | | |
+| Adaptation 2 | Weeks 1–2 — 4×4 @ 60–65 rpm | | | | | |
+| Adaptation 3 | Weeks 3–4 — 4×4 @ 50–60 rpm | | | | | |
+| Adaptation 4 | Weeks 3–4 — 4×4 @ 50–60 rpm | | | | | |
+| Build 1 | Torque Endurance 3×8 | | | | | |
+| Build 2 | Torque Endurance 3×8 | | | | | |
+| Build 3 | Threshold 5×5 | | | | | |
+| Build 4 | Threshold 5×5 | | | | | |
+| Build 5 | TorqueMax | | | | | |
+| Build 6 | TorqueMax | | | | | |
+| Build 7 | HIIT 4×4 | | | | | |
+| Build 8 | HIIT 4×4 | | | | | |
 
 ---
 
@@ -70,7 +72,7 @@ Choose one (mine, on the sources in the research document):
 - **Maintain:** about one torque session a month (EVOQ gives 1–2 a month in season).
 - **Keep going:** 1–2 sessions a week, **never on consecutive days** (CTS/Rutberg: separate them by at least a full day; Henderson: one, at most two, a week).
 
-**Free choice from the library.** No rotation, no "next session". A plain hint (mine): mix moderate sessions (Torque Endurance, Threshold) with above-threshold ones (TorqueMax, Rüegg, HIIT, SIT). The research backs particular workouts inside their own study programs; no study tested this site's arrangement, and no source says what order to ride things in after week 12.
+**Free choice from the library.** No rotation, no "next session". A plain hint (mine): mix moderate sessions (Torque Endurance, Threshold) with above-threshold ones (TorqueMax, Rüegg, HIIT, SIT). The research backs particular workouts inside their own study programs; no study tested this site's arrangement, and no source says what order to ride things in after the build.
 
 ### The library
 

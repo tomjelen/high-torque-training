@@ -16,7 +16,7 @@ export default function IntroPanel({ state, setState }: Props) {
   return (
     <Panel
       heading="Intro — what, why & who"
-      teaser="A 12-week build, one torque session a week, then your choice. Every number traced to a source, or marked as my own call."
+      teaser="A 4-week adaptation, then an 8-week build, one torque session a week, then your choice. Every number traced to a source, or marked as my own call."
       collapsed={state.panels.intro.collapsed}
       onToggle={onToggle}
     >
@@ -39,7 +39,7 @@ export default function IntroPanel({ state, setState }: Props) {
           <strong className="text-slate-100">Why low cadence?</strong> At the same power, each pedal stroke has to
           carry more force: 60 rpm is 1.5 times the force per stroke of 90 rpm. More force per
           stroke also means more load on the knees,<sup className="text-slate-500">2</sup> hence the four-week
-          Adaptation below, at a controlled, below-threshold effort, before the harder build sessions.
+          adaptation below, at a controlled, below-threshold effort, before the harder build sessions.
         </p>
 
         <p className="text-slate-300 mt-3 mb-0">
@@ -74,9 +74,9 @@ export default function IntroPanel({ state, setState }: Props) {
 
       <div className="border-t border-slate-800 mt-4 pt-3 text-sm text-slate-500">
         <p className="mb-0">
-          <strong className="text-slate-300">How this site is structured:</strong> a 12-week build, one torque
-          session a week (4 weeks of adaptation, then 8 weeks of build sessions). After that, maintain or keep
-          going with free choice from the library.
+          <strong className="text-slate-300">How this site is structured:</strong> two plans, one torque session a
+          week: a 4-week adaptation, then an 8-week build. After that, maintain or keep going with free choice
+          from the library.
         </p>
         <details className="mt-1 group">
           <summary className="inline-flex items-center min-h-11 sm:min-h-0 sm:py-2 cursor-pointer list-none hover:text-slate-300 select-none">

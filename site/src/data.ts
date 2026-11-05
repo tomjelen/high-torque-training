@@ -13,7 +13,7 @@ export const RATIONALE_SECTIONS: RationaleSection[] = [
   { id: 'floor', heading: "Intensity floor: Zone 2 torque work doesn't count" },
   { id: 'gym', heading: 'Torque intervals and the gym' },
   { id: 'knee', heading: 'Knee safety' },
-  { id: 'build', heading: 'The 12-week build' },
+  { id: 'build', heading: 'The plan: adaptation and build' },
   { id: 'after', heading: 'After the build' },
   { id: 'zwift', heading: 'Riding it in Zwift: ERG and adapting to the day' },
   { id: 'people', heading: 'Who this comes from' },
@@ -372,7 +372,7 @@ export function workoutById(id: string): Workout | undefined {
   return WORKOUTS_BY_ID.get(id)
 }
 
-// The 12-week build, per research/training-calendar.md "The build (weeks 1–12)".
+// The plan: a 4-week adaptation, then an 8-week build (running week 1–12 here), per research/training-calendar.md "The plan: adaptation, then build".
 export const BUILD_WEEKS: BuildWeek[] = [
   { week: 1, phase: 'adaptation', workoutIds: ['a1'] },
   { week: 2, phase: 'adaptation', workoutIds: ['a1'] },

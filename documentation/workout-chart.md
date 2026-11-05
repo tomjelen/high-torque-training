@@ -254,7 +254,7 @@ the data-join contract below.
 **On every workout card (minimal mode):**
 
 - `site/src/components/CollectionCard.tsx` (the library cards)
-- `site/src/components/BuildWeekCard.tsx` (the current week's card in the 12-week build panel)
+- `site/src/components/BuildWeekCard.tsx` (the current week's card in the plan panel: adaptation, then build)
 
 Both pass `mode="minimal"` and `showAxisLabels={false}`. Minimal mode suppresses
 the chart's title and axis labels because the surrounding card already shows

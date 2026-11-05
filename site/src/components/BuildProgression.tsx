@@ -1,7 +1,7 @@
 import WorkoutChart from './WorkoutChart'
 import { chartWorkoutFor, cadenceLabelFor } from './chart-data'
 import { ZONE_FILL } from './chart-model'
-import { BUILD_STEPS, stepTitle, torquePowerFor, torquePowerLabel, weekRangeLabel, type BuildStep } from '../utils/build-steps'
+import { BUILD_STEPS, phaseName, phaseWeek, stepTitle, torquePowerFor, torquePowerLabel, weekRangeLabel, type BuildStep } from '../utils/build-steps'
 
 // The whole 12-week build at a glance: a progression chart (one bar per week,
 // height = %FTP of the high-torque intervals, read from the .zwo files) with
@@ -33,10 +33,10 @@ function PhaseLabels() {
   return (
     <div className="grid grid-cols-6 gap-2 mb-1 text-[11px] uppercase tracking-wide text-slate-500">
       <div style={{ gridColumn: `span ${adaptation}` }} className="border-b border-slate-700 pb-1">
-        Adaptation<span className="hidden sm:inline"> · weeks 1–4</span>
+        Adaptation<span className="hidden sm:inline"> · 4 weeks</span>
       </div>
       <div style={{ gridColumn: `span ${build}` }} className="border-b border-slate-700 pb-1">
-        Build<span className="hidden sm:inline"> · weeks 5–12</span>
+        Build<span className="hidden sm:inline"> · 8 weeks</span>
       </div>
     </div>
   )
@@ -91,7 +91,7 @@ function ProgressionChart({ progress }: { progress: number }) {
                   key={w.week}
                   className={`w-1/3 max-w-9 ${w.week - 1 === progress ? 'text-orange-300 font-semibold' : ''}`}
                 >
-                  {w.week}
+                  {phaseWeek(w)}
                 </span>
               ))}
             </div>
@@ -143,10 +143,10 @@ export default function BuildProgression({ progress, shownStep, currentStep, onS
   return (
     <section aria-labelledby="build-glance-heading" className="mb-4">
       <h3 id="build-glance-heading" className="text-sm font-semibold text-slate-200 m-0 mb-1">
-        The 12 weeks at a glance
+        The plan at a glance
       </h3>
       <p className="m-0 mb-4 text-xs text-slate-500">
-        One torque session a week; all other rides at normal cadence. Bar height is the power of the high-torque
+        A 4-week adaptation, then an 8-week build: one torque session a week; all other rides at normal cadence. Bar height is the power of the high-torque
         intervals (%FTP, from the workout files); the cadence is under each pair. Progress counts sessions done,
         not calendar weeks. The order comes from the coaches (Schep, EVOQ, Henderson for sustained efforts, CTS);
         two weeks per workout is my arrangement.
@@ -178,6 +178,7 @@ export default function BuildProgression({ progress, shownStep, currentStep, onS
                       className={`text-[11px] font-mono ${isCurrent ? 'text-orange-300' : 'text-slate-500'}`}
                     >
                       {weekRangeLabel(step)}
+                      <span className="lg:hidden"> · {phaseName(step.phase)}</span>
                     </span>
                     <WeekDots step={step} progress={progress} />
                   </span>

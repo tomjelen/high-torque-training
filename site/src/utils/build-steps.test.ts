@@ -1,15 +1,15 @@
 import { describe, expect, it } from 'vitest'
-import { BUILD_STEPS, nextLabel, stepEndsAt, stepIndexForProgress, torquePowerFor, torquePowerLabel, weekRangeLabel } from './build-steps'
+import { BUILD_STEPS, nextLabel, phaseWeek, stepEndsAt, stepIndexForProgress, stepLabel, torquePowerFor, torquePowerLabel, weekRangeLabel } from './build-steps'
 
 describe('BUILD_STEPS', () => {
   it('groups the 12 weeks into six two-week steps, in calendar order', () => {
     expect(BUILD_STEPS.map((s) => [s.workout.id, weekRangeLabel(s), s.phase])).toEqual([
       ['a1', 'Weeks 1–2', 'adaptation'],
       ['a2', 'Weeks 3–4', 'adaptation'],
-      ['te-3x8', 'Weeks 5–6', 'build'],
-      ['threshold-5x5', 'Weeks 7–8', 'build'],
-      ['torquemax', 'Weeks 9–10', 'build'],
-      ['hiit-4x4', 'Weeks 11–12', 'build'],
+      ['te-3x8', 'Weeks 1–2', 'build'],
+      ['threshold-5x5', 'Weeks 3–4', 'build'],
+      ['torquemax', 'Weeks 5–6', 'build'],
+      ['hiit-4x4', 'Weeks 7–8', 'build'],
     ])
   })
 
@@ -43,7 +43,7 @@ describe('nextLabel', () => {
   it('says where Done leads: the second session, the next workout, or the end', () => {
     expect(nextLabel(0)).toBe('repeat this session next week')
     expect(nextLabel(1)).toBe('next week: 4×4 @ 50–60 rpm')
-    expect(nextLabel(3)).toBe('next week: Torque Endurance 3×8')
+    expect(nextLabel(3)).toBe('next week: the build, starting with Torque Endurance 3×8')
     expect(nextLabel(11)).toBe('finish the build')
     expect(nextLabel(12)).toBe('')
   })
@@ -55,5 +55,15 @@ describe('stepEndsAt', () => {
       false, true, false, true, false, true, false, true, false, true, false, true,
     ])
     expect(stepEndsAt(12)).toBe(false)
+  })
+})
+
+describe('two plans', () => {
+  it('numbers weeks inside each plan: adaptation 1–4, build 1–8', () => {
+    expect(BUILD_STEPS.flatMap((s) => s.weeks.map(phaseWeek))).toEqual([1, 2, 3, 4, 1, 2, 3, 4, 5, 6, 7, 8])
+    expect(BUILD_STEPS.map(stepLabel)).toEqual([
+      'Adaptation weeks 1–2', 'Adaptation weeks 3–4',
+      'Build weeks 1–2', 'Build weeks 3–4', 'Build weeks 5–6', 'Build weeks 7–8',
+    ])
   })
 })

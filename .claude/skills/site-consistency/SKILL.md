@@ -22,6 +22,6 @@ description: Use after changes to research/ or site/src/, and before a release, 
    - `research/about.md` (about page),
    - `site/public/llms.txt` and the served copies `site/public/content/*.md`, fetched from the preview server (`curl -s http://localhost:4173/content/workouts.md` etc.).
 
-   Look for: numbers (cadence, %FTP, reps, durations, rest), who a session or quote is credited to and its trust label, what is marked "ours", the 12-week order and move-on rule, after-the-build frequency, knee and seated rules, and any claim present in one place but missing or contradicted in another. Wording differences that keep the meaning are fine.
+   Look for: numbers (cadence, %FTP, reps, durations, rest), who a session or quote is credited to and its trust label, what is marked "mine", the order of the adaptation and the build and the move-on rule, after-the-build frequency, knee and seated rules, and any claim present in one place but missing or contradicted in another. Wording differences that keep the meaning are fine.
 5. **Report** each contradiction as: what the page says, what the source says, the source `file:line`, the component that renders it (`site/src/...:line`, found with grep), and the screenshot path. Say "no contradictions" if there are none. Don't fix anything unless asked; a fix goes in its own commit.
 6. **Stop the server** (kill the background preview) and `playwright-cli close`.

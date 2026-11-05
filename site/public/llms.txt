@@ -2,7 +2,7 @@
 
 > https://high-torque.jelen.dk
 
-A free 12-week Zwift training plan and workout library (.zwo files) for high-torque cycling: seated, low-cadence intervals at meaningful power. Every session traces to named studies or coaches (Hebisz & Hebisz 2024; EVOQ.BIKE; EF Pro Cycling; Neal Henderson), scaled for recreational-competitive cyclists doing ~10 hours/week. The 4-week adaptation is a labelled composite of coaches' advice (John Wakefield, Neal Henderson, Peter Schep). Where a value is the author's own choice (Tom Jelen, a cyclist, not a coach), the documents label it "mine" ("my choice", "my estimate", "my reading").
+A free Zwift training plan (a 4-week adaptation, then an 8-week build) and workout library (.zwo files) for high-torque cycling: seated, low-cadence intervals at meaningful power. Every session traces to named studies or coaches (Hebisz & Hebisz 2024; EVOQ.BIKE; EF Pro Cycling; Neal Henderson), scaled for recreational-competitive cyclists doing ~10 hours/week. The 4-week adaptation is a labelled composite of coaches' advice (John Wakefield, Neal Henderson, Peter Schep). Where a value is the author's own choice (Tom Jelen, a cyclist, not a coach), the documents label it "mine" ("my choice", "my estimate", "my reading").
 
 Site and workout files by Tom Jelen. The training protocols belong to the researchers and coaches they are credited to.
 
@@ -10,7 +10,7 @@ Site and workout files by Tom Jelen. The training protocols belong to the resear
 
 JavaScript is needed to render the pages, therefore plain-text versions for agents or llms are available as markdown files.
 
-- 12-week build and workout library (home): https://high-torque.jelen.dk/ or https://high-torque.jelen.dk/content/workouts.md
+- The plan (adaptation + build) and workout library (home): https://high-torque.jelen.dk/ or https://high-torque.jelen.dk/content/workouts.md
 - The science and rationale: https://high-torque.jelen.dk/rationale or https://high-torque.jelen.dk/content/rationale.md
 - About the author: https://high-torque.jelen.dk/about or https://high-torque.jelen.dk/content/about.md
 

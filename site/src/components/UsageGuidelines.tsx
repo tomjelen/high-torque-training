@@ -29,7 +29,7 @@ export default function UsageGuidelines({ collapsed, onToggle }: Props) {
       <div className="px-4 pb-4 pt-3 border-t border-slate-800 text-sm text-slate-400 space-y-5">
         <div>
           <h4 className="text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2 mt-0">Moving on (my rule)</h4>
-          <p className="m-0 mb-2">After the second session of each step, move to the next step only if:</p>
+          <p className="m-0 mb-2">After the second session of each two-week block, move on to the next block only if:</p>
           <ul className="m-0 pl-4 space-y-1">
             <li>your knees were fine, during and after;</li>
             <li>you held the cadence;</li>
@@ -48,11 +48,11 @@ export default function UsageGuidelines({ collapsed, onToggle }: Props) {
           <h4 className="text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2 mt-0">Breaks and restarting</h4>
           <ul className="m-0 pl-4 space-y-1">
             <li>
-              After a break (illness, travel), the weeks 3–4 session is a good one to come back with. A suggestion of
+              After a break (illness, travel), the adaptation weeks 3–4 session is a good one to come back with. A suggestion of
               mine, not a rule.
             </li>
             <li>
-              After a long break, restart from adaptation or from week 5, as you see fit. The build plan has a
+              After a long break, restart the adaptation or the build, as you see fit. The plan has a
               button for each: <strong className="text-slate-300">Restart adaptation</strong> and{' '}
               <strong className="text-slate-300">Restart build</strong>.
             </li>

@@ -26,7 +26,7 @@ export default function AfterBuildCard({ active, trackerSlot }: Props) {
           After the build
         </h3>
         <span className={`text-xs font-mono ${active ? 'text-orange-300' : 'text-slate-500'}`}>
-          {active ? 'you are here' : 'after week 12'}
+          {active ? 'you are here' : 'after the 8-week build'}
         </span>
       </div>
 
@@ -63,7 +63,7 @@ export default function AfterBuildCard({ active, trackerSlot }: Props) {
         <p className="m-0">
           <strong className="text-slate-300">Where the evidence ends.</strong> The research backs particular
           workouts (Hebisz: HIIT and SIT; de Pablos: near-maximal efforts), each tested inside its own multi-week
-          program. No study tested this site's arrangement. After week 12 no source says what order to ride things
+          program. No study tested this site's arrangement. After the build no source says what order to ride things
           in. Each workout keeps its own source label.
         </p>
         <p className="m-0 text-red-200">

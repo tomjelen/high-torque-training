@@ -9,7 +9,7 @@ import WorkoutChart from './WorkoutChart'
 import { chartWorkoutFor } from './chart-data'
 import { workoutById } from '../data'
 import { confettiBurst } from '../lib/confetti'
-import { BUILD_STEPS, nextLabel, stepEndsAt, stepIndexForProgress, weekRangeLabel } from '../utils/build-steps'
+import { BUILD_STEPS, nextLabel, phaseLength, phaseName, phaseWeek, stepEndsAt, stepIndexForProgress, stepLabel, stepTitle } from '../utils/build-steps'
 import {
   ADAPTATION_LENGTH,
   BUILD_LENGTH,
@@ -39,8 +39,8 @@ interface Props {
 type ResetKind = 'adaptation' | 'build'
 
 const RESET_LABEL: Record<ResetKind, string> = {
-  adaptation: 'Restart adaptation (weeks 1–4)',
-  build: 'Restart build (weeks 5–12)',
+  adaptation: 'Restart adaptation',
+  build: 'Restart build',
 }
 
 const RESET_CONFIRM_LABEL: Record<ResetKind, string> = {
@@ -109,11 +109,14 @@ export default function BuildPlanPanel({ state, setState }: Props) {
     closeConfirm(kind)
   }
 
-  const status = done || !week ? 'done ✓' : `week ${week.week} of ${BUILD_LENGTH}`
+  // Two plans: "Adaptation · week 3 of 4", "Build · week 2 of 8".
+  const status =
+    done || !week ? 'done ✓' : `${phaseName(week.phase)} · week ${phaseWeek(week)} of ${phaseLength(week.phase)}`
+  const weekLabel = week ? `${phaseName(week.phase)} week ${phaseWeek(week)}` : undefined
 
   return (
     <Panel
-      heading={`12-week build · ${status}`}
+      heading={`The plan · ${status}`}
       collapsed={state.panels.build.collapsed}
       onToggle={onToggle}
     >
@@ -177,7 +180,7 @@ export default function BuildPlanPanel({ state, setState }: Props) {
 
       {done && (
         <p id={doneId} className="m-0 mb-4 border-l-4 border-green-700 pl-4 py-1 text-sm text-slate-300">
-          <strong className="text-slate-100">Build done ✓</strong> All 12 weeks ridden.{' '}
+          <strong className="text-slate-100">Build done ✓</strong> Adaptation and build ridden.{' '}
           <a href="#after-build" className="text-blue-400 hover:text-blue-300">
             What's next: after the build ↓
           </a>{' '}
@@ -188,6 +191,13 @@ export default function BuildPlanPanel({ state, setState }: Props) {
           >
             ← Back one week
           </button>
+        </p>
+      )}
+
+      {progress === ADAPTATION_LENGTH && selectedStep === null && (
+        <p className="m-0 mb-4 border-l-4 border-green-700 pl-4 py-1 text-sm text-slate-300">
+          <strong className="text-slate-100">Adaptation done ✓</strong> On to the build: 8 weeks, starting with{' '}
+          {stepTitle(BUILD_STEPS[stepIndexForProgress(ADAPTATION_LENGTH) ?? 0])}.
         </p>
       )}
 
@@ -217,11 +227,11 @@ export default function BuildPlanPanel({ state, setState }: Props) {
             mode="preview"
             week={shown.weeks[0]}
             workout={shown.workout}
-            weekLabel={weekRangeLabel(shown)}
+            weekLabel={stepLabel(shown)}
             statusText={
               shown.weeks[shown.weeks.length - 1].week - 1 < progress
-                ? `Done · ${weekRangeLabel(shown).toLowerCase()}`
-                : `Coming up in ${weekRangeLabel(shown).toLowerCase()}`
+                ? `Done · ${stepLabel(shown).toLowerCase()}`
+                : `Coming up in ${stepLabel(shown).toLowerCase()}`
             }
             onBack={() => setSelectedStep(null)}
             backLabel={done ? 'Close' : '← Back to this week'}
@@ -231,6 +241,7 @@ export default function BuildPlanPanel({ state, setState }: Props) {
           workout && (
             <BuildWeekCard
               mode="current"
+              weekLabel={weekLabel}
               week={week}
               workout={workout}
               onDone={() => {
@@ -303,10 +314,11 @@ export default function BuildPlanPanel({ state, setState }: Props) {
           )}
         </div>
         <p className="m-0 text-xs text-slate-500">
-          After a long break, restart from adaptation or from week 5, as you see fit.
+          After a long break, restart the adaptation or the build, as you see fit.
         </p>
         <p className="m-0 text-xs text-slate-500">
-          After a break (illness, travel): weeks 3–4 is a good session to come back with (a suggestion of mine).
+          After a break (illness, travel): the adaptation weeks 3–4 session is a good one to come back with (a
+          suggestion of mine).
         </p>
       </div>
 
