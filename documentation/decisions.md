@@ -38,7 +38,7 @@ Source abbreviations: **IS** = `site-specification/completed-tasks/0_initial-sit
 
 **Log import/export: deferred, not rejected.** If asked for via the footer feedback line, add two small buttons reading/writing a JSON file. No sync, no cloud. 2026-04-15 RD §2, §5.4.
 
-**Log entries carry timestamps, not only dates; edited dates are saved at noon UTC.** "Did this today" writes the current timestamp. Editing an entry's date stores `YYYY-MM-DDT12:00:00.000Z`, which lands on the same calendar day in every populated time zone. 2026-04-15 RD §4.5.3; 2026-05-02 ST.
+**Log entries carry timestamps, not only dates; edited dates are saved at noon UTC.** "✓ Rode it today" (originally "Did this today") writes the current timestamp. Editing an entry's date stores `YYYY-MM-DDT12:00:00.000Z`, which lands on the same calendar day in every populated time zone. 2026-04-15 RD §4.5.3; 2026-05-02 ST.
 
 **Tracker edits: inline two-step delete, clickable date to edit.** First click on ✕ turns the row into "delete? · cancel"; no native dialog. Clicking the date label opens an inline date input with save/cancel; save is disabled when empty. 2026-05-02 ST.
 

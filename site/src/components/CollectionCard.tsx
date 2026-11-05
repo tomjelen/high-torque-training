@@ -83,7 +83,7 @@ export default function CollectionCard({ workout, onDidThis }: Props) {
             onClick={onDidThis}
             className="text-xs font-mono text-slate-400 hover:text-slate-200 border border-slate-700 hover:border-slate-500 min-h-11 px-4 sm:min-h-0 sm:px-2 sm:py-1 rounded cursor-pointer"
           >
-            ✓ today
+            ✓ Rode it today
           </button>
         </div>
       </div>

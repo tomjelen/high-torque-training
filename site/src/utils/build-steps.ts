@@ -107,7 +107,7 @@ export function nextLabel(progress: number): string {
   if (step === null) return ''
   const next = stepIndexForProgress(progress + 1)
   if (next === null) return 'finish the build'
-  if (next === step) return 'repeat this session next week'
+  if (next === step) return 'ride it once more next week'
   if (BUILD_STEPS[next].phase !== BUILD_STEPS[step].phase)
     return `next week: the build, starting with ${stepTitle(BUILD_STEPS[next])}`
   return `next week: ${stepTitle(BUILD_STEPS[next])}`

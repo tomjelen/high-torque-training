@@ -53,7 +53,7 @@ export default function TrackerStrip({ dayMap }: Props) {
           </span>
           <span className="flex items-center gap-1">
             <span className="inline-block w-2 h-2 rounded-sm bg-amber-500" />
-            too close (same or next day)
+            too close: same or next day as another session
           </span>
         </div>
         <span className="text-xs text-slate-500 flex-shrink-0">today →</span>

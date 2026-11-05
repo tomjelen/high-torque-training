@@ -41,7 +41,7 @@ describe('torquePowerLabel', () => {
 
 describe('nextLabel', () => {
   it('says where Done leads: the second session, the next workout, or the end', () => {
-    expect(nextLabel(0)).toBe('repeat this session next week')
+    expect(nextLabel(0)).toBe('ride it once more next week')
     expect(nextLabel(1)).toBe('next week: 4×4 @ 50–60 rpm')
     expect(nextLabel(3)).toBe('next week: the build, starting with Torque Endurance 3×8')
     expect(nextLabel(11)).toBe('finish the build')

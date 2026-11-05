@@ -13,7 +13,7 @@ type Props = {
   | {
       mode: 'current'
       onDone: () => void
-      // The rest of the button's sentence, e.g. "repeat this session next week".
+      // The rest of the button's sentence, e.g. "ride it once more next week".
       nextLabel: string
       // Done leads to a new workout (second session of a step, or the end):
       // the three move-on checks apply. Otherwise only the knee rule does.
@@ -99,7 +99,7 @@ export default function BuildWeekCard(props: Props) {
             {props.stepEnds ? (
               <div>
                 <p className="m-0 mb-1 text-slate-300 font-semibold">
-                  Before moving on to a new workout, click Done when all three were fine (the day after is fine):
+                  Before moving on to a new workout, click Done when all three were fine. You can click it the day after, once you know:
                 </p>
                 <ul className="m-0 pl-4 space-y-0.5 list-disc">
                   <li>knees fine, during and after</li>
@@ -109,7 +109,7 @@ export default function BuildWeekCard(props: Props) {
               </div>
             ) : (
               <p className="m-0 text-slate-300 font-semibold">
-                Click Done when your knees were fine, during and after (the day after is fine).
+                Click Done when your knees were fine, during and after. You can click it the day after, once you know.
               </p>
             )}
             <button

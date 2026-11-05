@@ -134,9 +134,9 @@ function stepStatusText(step: BuildStep, progress: number): string {
   if (statuses.every((s) => s === 'done')) return 'done'
   if (statuses.includes('current')) {
     const n = statuses.indexOf('current') + 1
-    return `now · session ${n} of ${step.weeks.length}`
+    return `current, session ${n} of ${step.weeks.length}`
   }
-  return 'later'
+  return 'coming up'
 }
 
 export default function BuildProgression({ progress, shownStep, currentStep, onSelect, detailId }: Props) {
@@ -188,7 +188,7 @@ export default function BuildProgression({ progress, shownStep, currentStep, onS
                   <span className="text-xs text-slate-400 truncate">
                     {torquePowerLabel(step.workout)} FTP · {cadenceLabelFor(step.workout)}
                   </span>
-                  <span className="sr-only">, {status}</span>
+                  <span className="sr-only"> ({status})</span>
                 </span>
                 {chart && (
                   <span className="block w-24 sm:w-40 lg:w-full flex-shrink-0 lg:mt-1" aria-hidden="true">
