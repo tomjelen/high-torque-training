@@ -165,7 +165,7 @@ function renderBody(id: string) {
             </li>
           </ul>
           <p>
-            The moderate sessions in the build (adaptation, Torque Endurance, Threshold) are{' '}
+            The moderate sessions in the plan (adaptation, Torque Endurance, Threshold) are{' '}
             <strong>coaching practice</strong>: preparation and muscular endurance. The study with the clearest result
             is about the above-threshold sessions.
           </p>
@@ -572,13 +572,11 @@ function renderBody(id: string) {
               <strong>Build weeks 1–2, Torque Endurance 3 × 8.</strong> Brendan Housler (EVOQ, written): "Start off with 4 x
               8m @ 95% at 60-70rpm. Eventually move to 50-60rpm, and extend out to 3 x 15m. Aim for 90-105% FTP."
               <Cite sourceKey="housler" /> I start with one rep fewer (scaled: 3 reps instead of 4), same intensity.
-              Why: 4 × 8 would double the time under load in one step (16 → 32 min) while power rises from 80–85% to
-              95%. 3 × 8 = 24 min of work, between CTS's ~20 min (beginner) and ~30 min (intermediate) time at
+              Why: 4 × 8 would double the time under load in one step (16 → 32 min) while power rises from 80% to 95%. 3 × 8 = 24 min of work, between CTS's ~20 min (beginner) and ~30 min (intermediate) time at
               intensity, and CTS says to progress "by adding intervals" (Rutberg, written).
               <Cite sourceKey="ctsRutberg" /> Wakefield's long-interval range starts at three reps ("three or five by
-              tens", machine transcript). Peak torque stays about the same as week 4 (~35 Nm at 95% and 65 rpm), but
-              time under load rises from 16 to 24 min and power from 80–85% to 95%. So this week is harder than weeks
-              3–4, not "the same force, longer". The name "Torque Endurance" is the one used on the EVOQ podcast
+              tens", machine transcript). Peak torque stays about the same as adaptation week 4 (~35 Nm at 95% and 65 rpm), but
+              time under load rises from 16 to 24 min and power from 80% to 95%. So these two weeks are harder than adaptation weeks 3–4, not "the same force, longer". The name "Torque Endurance" is the one used on the EVOQ podcast
               (auto-captions); Bobo didn't coin it.<Cite sourceKey="evoqPodcast" />
             </li>
             <li>
@@ -835,13 +833,12 @@ function renderBody(id: string) {
             <li>
               <strong>John Wakefield</strong>: Science to Sport coach and co-founder; Director of Coaching, Sports
               Science and Technical Development at Red Bull – BORA – hansgrohe; previously 4 years at UAE Team
-              Emirates (his own author bio). Source for the weeks 1–2 cadence, the 4 × 4 and rest = rep.
+              Emirates (his own author bio). Source for the adaptation weeks 1–2 cadence, the 4 × 4 and rest = rep.
               <Cite sourceKey="wakefieldTts465" />
             </li>
             <li>
               <strong>Neal Henderson</strong>: head of sports science at Wahoo at the time of Fast Talk episode 125
-              (August 2020); coaches elite and WorldTour athletes (host intro, machine transcript). Source for the weeks
-              3–4 cadence and intensity, Threshold 5×5 and the half-time rule.<Cite sourceKey="henderson" />
+              (August 2020); coaches elite and WorldTour athletes (host intro, machine transcript). Source for the adaptation weeks 3–4 cadence and intensity, Threshold 5×5 and the half-time rule.<Cite sourceKey="henderson" />
             </li>
           </ul>
           <h4>Coaching business</h4>

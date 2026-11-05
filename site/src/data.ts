@@ -178,7 +178,7 @@ export const SOURCES: Record<string, Source> = {
 
 // Adaptation phase workouts (weeks 1–4). A labelled composite: structure from
 // Wakefield (TTS #465, machine transcript), intensity from Henderson (Fast Talk
-// ep. 125, machine transcript) and Schep (EF); the 4-week arrangement is ours.
+// ep. 125, machine transcript) and Schep (EF); the 4-week arrangement is mine.
 // `source: 'site'` renders as plain text (no single source to cite).
 const ADAPTATION_SOURCE_NOTE =
   "A combination of coaches' advice for riders starting torque work (the combination is mine). John Wakefield (That Triathlon Show #465, machine transcript): four 4-minute reps, around 60–65 rpm for riders new to it, rest as long as the rep. Neal Henderson (Fast Talk ep. 125, 2020, machine transcript): 75–85% of threshold at 50–60 rpm. Peter Schep (EF Pro Cycling): 80–85% of FTP. My choices: 80% FTP in weeks 1–2, and the 4-week arrangement."
@@ -220,7 +220,7 @@ const ADAPTATION_BASE: Workout[] = [
 ]
 
 // The library, in display order: moderate → threshold → above threshold
-// (Schep, evidence file O1; EVOQ, O2); SIT (maximal) last is our choice (O9).
+// (Schep, evidence file O1; EVOQ, O2); SIT (maximal) last is my choice (O9).
 const LIBRARY_BASE: Workout[] = [
   {
     id: 'te-3x8',
