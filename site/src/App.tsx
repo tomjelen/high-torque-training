@@ -14,9 +14,9 @@ import useIsomorphicLayoutEffect from './lib/useIsomorphicLayoutEffect'
 import useGoatCounterPageviews from './lib/useGoatCounterPageviews'
 import type { AppState } from './types'
 
-export const HOME_LAST_UPDATED = '2026-11-04'
+export const HOME_LAST_UPDATED = '2026-11-05'
 export const RATIONALE_LAST_UPDATED = '2026-11-04'
-export const ABOUT_LAST_UPDATED = '2026-11-04'
+export const ABOUT_LAST_UPDATED = '2026-11-05'
 export const ZWO_WORKOUTS_LAST_UPDATED = __ZWO_WORKOUTS_LAST_UPDATED__
 
 export const HOME_TITLE = 'High Torque Training — Free Training Plan for Zwift'
