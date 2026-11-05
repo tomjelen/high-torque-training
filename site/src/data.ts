@@ -17,7 +17,7 @@ export const RATIONALE_SECTIONS: RationaleSection[] = [
   { id: 'after', heading: 'After the build' },
   { id: 'zwift', heading: 'Riding it in Zwift: ERG and adapting to the day' },
   { id: 'people', heading: 'Who this comes from' },
-  { id: 'confidence', heading: "What I'd update this document for" },
+  { id: 'confidence', heading: "What would change my mind" },
 ]
 
 
@@ -163,7 +163,7 @@ export const SOURCES: Record<string, Source> = {
     category: 'media',
     shortName: 'Roadman Podcast',
     fullCitation:
-      'Roadman Cycling Podcast (auto-captions; provenance and the nearest source for the move-on rule only).',
+      'Roadman Cycling Podcast (auto-captions; the episode that inspired this site, and the nearest source for the move-on rule).',
     url: 'https://www.youtube.com/watch?v=tcar3G2v73I',
   },
   kiw58: {
@@ -171,7 +171,7 @@ export const SOURCES: Record<string, Source> = {
     category: 'media',
     shortName: 'Knowledge is Watt #58',
     fullCitation:
-      'Knowledge is Watt #58, High Intensity Torque Training Can Increase Cycling Performance (commentary on Hebisz 2024; no longer the basis for any claim here).',
+      'Knowledge is Watt #58, High Intensity Torque Training Can Increase Cycling Performance (commentary on Hebisz 2024; background reading only).',
     url: 'https://knowledgeiswatt.substack.com/p/58-high-intensity-torque-training',
   },
 }
@@ -231,7 +231,7 @@ const LIBRARY_BASE: Workout[] = [
     ],
     source: 'housler',
     sourceNote:
-      'EVOQ / Housler (scaled: 3 reps instead of 4). Rest = rep (8 min easy spin) is my choice, as Wakefield and CTS (Rutberg) use.',
+      "Scaled: 3 reps instead of Housler's 4. Recovery as long as the interval (8 min easy spin) is my choice, as coaches Wakefield and Rutberg (CTS) use.",
     file: 'High Torque - Library/TE_3x8_95pct.zwo',
     people: ['Brendan Housler'],
     kind: 'moderate',
@@ -244,7 +244,7 @@ const LIBRARY_BASE: Workout[] = [
       { label: 'Cadence', value: '60–70 rpm' },
     ],
     source: 'housler',
-    sourceNote: 'EVOQ / Housler. Rest = rep (8 min easy spin) is my choice, as Wakefield and CTS (Rutberg) use.',
+    sourceNote: 'Recovery as long as the interval (8 min easy spin) is my choice, as coaches Wakefield and Rutberg (CTS) use.',
     file: 'High Torque - Library/TE_4x8_95pct.zwo',
     people: ['Brendan Housler'],
     kind: 'moderate',
@@ -258,7 +258,7 @@ const LIBRARY_BASE: Workout[] = [
     ],
     source: 'housler',
     sourceNote:
-      "EVOQ / Housler. 90% is the floor of Housler's 90–105% (my choice); rest = rep (15 min easy spin) is my choice.",
+      "90% is the bottom of Housler's 90–105% (my choice); recovery as long as the interval (15 min easy spin) is my choice.",
     file: 'High Torque - Library/TE_3x15_90pct.zwo',
     people: ['Brendan Housler'],
     kind: 'moderate',
@@ -271,7 +271,7 @@ const LIBRARY_BASE: Workout[] = [
       { label: 'Cadence', value: '50–60 rpm' },
     ],
     source: 'henderson',
-    sourceNote: "2:30 easy spin is Henderson's half-time rule, applied by me.",
+    sourceNote: "2:30 easy spin: Henderson's rule of thumb of recovering for half the interval time, applied by me.",
     file: 'High Torque - Library/Threshold_5x5_95pct.zwo',
     people: ['Neal Henderson'],
     kind: 'moderate',
@@ -284,7 +284,7 @@ const LIBRARY_BASE: Workout[] = [
       { label: 'Cadence', value: '50–60 rpm' },
     ],
     source: 'evoq',
-    sourceNote: 'EVOQ (Bobo): 6×2–3 min @ 105–110%. 2.5 min, 110% and the 4-min recovery are my picks.',
+    sourceNote: 'EVOQ (Bobo) gives 6×2–3 min at 105–110%. 2.5 min, 110% and the 4-min recovery are my picks.',
     file: 'High Torque - Library/TorqueMax_110pct.zwo',
     people: ['Landry Bobo'],
     kind: 'above-threshold',
@@ -298,7 +298,7 @@ const LIBRARY_BASE: Workout[] = [
     ],
     source: 'ef',
     sourceNote:
-      "Noemi Rüegg's own session, as published by EF Pro Cycling. Scaled — shorter warm-up and cool-down for Zwift (EF's version uses 30 min each).",
+      "Noemi Rüegg's own session, as published by EF Pro Cycling. Scaled: shorter warm-up and cool-down for Zwift (EF's version uses 30 min each).",
     file: 'High Torque - Library/Ruegg_VO2max_Sprint.zwo',
     people: ['Noemi Rüegg'],
     kind: 'above-threshold',

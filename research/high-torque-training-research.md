@@ -10,7 +10,7 @@ Last reviewed: November 2026
 
 A cyclist doing ~10 hours/week of mixed Zwift and outdoor training: fit, consistent, used to structured intervals. Not a beginner, but not a full-time athlete either.
 
-This document explains **why** the training works and where each number comes from. The calendar (`training-calendar.md`) says **what** to ride. The program is two plans, one torque session a week: a 4-week adaptation, then an 8-week build. After that you choose: maintain, keep going, or stop for a while.
+This document explains **why** the training works and where each number comes from. The workout library (/content/workouts.md) says **what** to ride. The program is two plans, one torque session a week: a 4-week adaptation, then an 8-week build. After that you choose: maintain, keep going, or stop for a while.
 
 ---
 
@@ -25,7 +25,7 @@ Every source in this document carries one of four trust categories:
 | **Coaching business** | Established coaching companies that publish their methods. | EVOQ.BIKE (Landry Bobo, Brendan Housler), CTS (Jim Rutberg, Adam Pulford) |
 | **Media relay** | Outlets that report on other people's work: shows and newsletters where the host or writer relays what coaches and studies say. I follow them to their own sources and never use them as the basis for a number. A podcast where the coach speaks (Fast Talk with Henderson, That Triathlon Show with Wakefield, the EVOQ podcast) counts as that coach's source, not as media relay. | Roadman Cycling Podcast, Knowledge is Watt |
 
-Some coach statements exist only as audio. Two labels mark them: **machine transcript** (my own Whisper transcription of the audio: Wakefield on That Triathlon Show, Henderson on Fast Talk) and **auto-captions** (YouTube's automatic captions: the CTS/Pulford video, the EVOQ podcast, Roadman). Both are weaker than written text, especially for numbers and for who is speaking; auto-captions are the weaker of the two.
+Some coach statements exist only as audio. Two labels mark them: **machine transcript** (my own speech-to-text transcription of the audio: Wakefield on That Triathlon Show, Henderson on Fast Talk) and **auto-captions** (YouTube's automatic captions: the CTS/Pulford video, the EVOQ podcast, Roadman). Both are weaker than written text, especially for numbers and for who is speaking; auto-captions are the weaker of the two.
 
 Zwift facts (zones, FTP bias, ERG behaviour) come from Zwift's own support pages. They are product documentation, not training advice, so they sit outside the four categories.
 
@@ -79,7 +79,7 @@ A 2017 systematic review of seven studies found "no strong evidence for a benefi
 
 Values from Hebisz & Hebisz (2024), Table 2. The often-quoted "+8.7% vs +4.6%" is absolute VO2max (litres of oxygen per minute), not VO2max per kg of body weight.
 
-The difference between the groups was significant for Pmax (η² = 0.18, p = 0.03) and VO2max per kg (η² = 0.23, p = 0.02); η² of 0.14 or more is usually called a large effect. In the free-cadence group only absolute VO2max (litres per minute) rose significantly. Gross efficiency did not change in either group. VT2 was only tested within each group.
+The difference between the groups was significant for Pmax (η² = 0.18, p = 0.03) and VO2max per kg (η² = 0.23, p = 0.02); η² of 0.14 or more is usually called a large effect. In the free-cadence group only absolute VO2max (litres per minute) rose significantly. Gross efficiency did not change in either group. VT2 (the second ventilatory threshold, roughly FTP) was only tested within each group.
 
 **Limits.** One small study of young women. The paper reports no monitoring of knee pain or injuries. And every hard session was at low cadence for 8 weeks, which is not the same as adding one torque session a week to normal training.
 
@@ -100,11 +100,11 @@ The study gives HIIT as 90–100% of Pmax, where Pmax came from a test with 3-mi
 
 The same arithmetic puts "similar to VT1" at about 65% FTP (VT1/VT2 = 0.65), so the in-session recoveries in HIIT and SIT are ~65% FTP (mine). The study's separate active-rest days were lower, at about 52% FTP by the same arithmetic.
 
-### de Pablos 2026: the site's use case
+### de Pablos 2026: the closest match to this plan
 
 > de Pablos R, Valenzuela PL, Martínez-Cava A, Alejo LB, Revuelta C, Sánchez-Redondo IR, Barranco-Gil D, Pallarés JG (2026). *The Role of Pedaling Intensity During Torque Training in Cyclists: A Three-Arm Randomized Controlled Trial.* Scand J Med Sci Sports 36(5):e70294. [Research, abstract only.]
 
-46 well-trained men, 10 weeks. A control group (n = 15) kept their usual training. Two groups **added** two torque sessions a week to it: the site's use case.
+46 well-trained men, 10 weeks. A control group (n = 15) kept their usual training. Two groups **added** two torque sessions a week to it: the closest match to adding torque work to your own training.
 
 - **HIGH-Load** (n = 16): all-out pedalling against 70% of maximum dynamic force (the most force a rider can put into a stroke). Improved within the group (Wingate sprint peak and mean power, maximal aerobic power, ventilatory thresholds, thigh-muscle size) and beat control on Wingate power and thigh-muscle size.
 - **LOW-Load** (n = 15): 4-minute intervals against 35% of maximum dynamic force. No significant change within the group, but **beat control on Wingate mean power** (p = 0.008).
@@ -133,7 +133,7 @@ The abstract gives no cadence, %FTP or rep count for either group, so I cannot s
 - **CTS (Jim Rutberg, written):** tempo or sweet-spot power, 76–85% or 88–94% of threshold, at about 50–55 rpm.
 - **Henderson:** riders just starting do tempo at 75–85% of threshold (machine transcript).
 
-So every session in the build is at 80% FTP or above. An earlier version of this site began with three weeks of Zone 2 low-cadence riding and credited it to EVOQ. EVOQ's article contains no adaptation phase and says the opposite. Those sessions put less force on the pedals than ordinary riding at FTP and 90 rpm (about 23–25 Nm vs 26.5 Nm, my arithmetic). They were removed.
+So every session in the plan is at 80% FTP or above. Why not start with Zone 2 low-cadence riding? It puts less force on the pedals than ordinary riding at FTP and 90 rpm (about 23–25 Nm vs 26.5 Nm, my arithmetic), and EVOQ and CTS both say to go harder than zone 2.
 
 ---
 
@@ -175,12 +175,12 @@ This is the main practical concern.
 
 **One torque session a week.** All other rides at normal cadence. Each session is ridden twice (two weeks), then you move on if the move-on rule says yes. Progress counts sessions done, not calendar weeks. **The arrangement (a 4-week adaptation and an 8-week build, in two-week blocks, one session a week) is mine.** Week numbers restart at 1 in each plan. The order comes from the coaches (see "Why this order").
 
-| Weeks | Session | Source | Status |
+| Weeks | Session | Source | How solid |
 |---|---|---|---|
-| Adaptation 1–2 | 4 × 4 min @ 80% FTP, 60–65 rpm, 4 min easy spin | Wakefield (cadence, 4 × 4, rest = rep); 80% my pick inside Henderson's 75–85% and Schep's 80–85% | Composite, mine. Wakefield: machine transcript. Schep: written. Henderson: machine transcript. |
+| Adaptation 1–2 | 4 × 4 min @ 80% FTP, 60–65 rpm, 4 min easy spin | Wakefield (cadence, 4 × 4, rest = rep: recovery as long as the interval); 80% my pick inside Henderson's 75–85% and Schep's 80–85% | Composite, mine. Wakefield: machine transcript. Schep: written. Henderson: machine transcript. |
 | Adaptation 3–4 | 4 × 4 min @ 80% FTP (inside the coaches' 80–85%), 50–60 rpm, 4 min easy spin | Henderson (cadence, 75–85%); Schep (80–85%, ~15 min of work); Wakefield (4 × 4, rest = rep) | Composite, mine. Henderson: machine transcript. Schep: written. Wakefield: machine transcript. 16 min of work is a little under Henderson's "20 or so". |
 | Build 1–2 | Torque Endurance 3 × 8 min @ 95% FTP, 60–70 rpm, 8 min easy spin | EVOQ / Housler (scaled: 3 reps instead of 4); rest = rep is my choice, as Wakefield and CTS (Rutberg) use | Housler written. Scaling and recovery mine. |
-| Build 3–4 | Threshold 5 × 5 min @ 95% FTP, 50–60 rpm, 2:30 easy spin | Henderson (5 × 5 @ 95%, 50–60 rpm); 2:30 is Henderson's half-time rule, applied by me | Machine transcript. Derivation mine. |
+| Build 3–4 | Threshold 5 × 5 min @ 95% FTP, 50–60 rpm, 2:30 easy spin | Henderson (5 × 5 @ 95%, 50–60 rpm); 2:30 is Henderson's half-time rule (recover for half the interval time), applied by me | Machine transcript. Derivation mine. |
 | Build 5–6 | TorqueMax 6 × 2.5 min @ 110% FTP, 50–60 rpm, 4 min easy spin | EVOQ (Bobo): 2–3 min at 105–110%, 50–60 rpm, start with 6 reps | Written. 2.5 min and 110% are my picks inside the range; the 4-min recovery is mine. |
 | Build 7–8 | HIIT 4 × 4 min @ ~120% FTP, 60–70 rpm, 8 min at ~65% | Hebisz 2024 (4 × 4, 60–70 rpm, 8-min active rest at ~VT1) | Research. ~120% and ~65% are my estimates from the paper. |
 
@@ -198,9 +198,9 @@ This is the main practical concern.
 
 ### Build (8 weeks)
 
-- **Build weeks 1–2, Torque Endurance 3 × 8.** Brendan Housler (EVOQ, written): "Start off with 4 x 8m @ 95% at 60-70rpm. Eventually move to 50-60rpm, and extend out to 3 x 15m. Aim for 90-105% FTP." I start with one rep fewer (scaled: 3 reps instead of 4), same intensity. Why: 4 × 8 would double the time under load in one step (16 → 32 min) while power rises from 80–85% to 95%. 3 × 8 = 24 min of work, between CTS's ~20 min (beginner) and ~30 min (intermediate) time at intensity, and CTS says to progress "by adding intervals" (Rutberg, written). Wakefield's long-interval range starts at three reps ("three or five by tens", machine transcript). Peak torque stays about the same as week 4 (~35 Nm at 95% and 65 rpm), but time under load rises from 16 to 24 min and power from 80–85% to 95%. So this week is harder than weeks 3–4, not "the same force, longer". The name "Torque Endurance" is the one used on the EVOQ podcast (auto-captions); it isn't Bobo's coinage.
+- **Build weeks 1–2, Torque Endurance 3 × 8.** Brendan Housler (EVOQ, written): "Start off with 4 x 8m @ 95% at 60-70rpm. Eventually move to 50-60rpm, and extend out to 3 x 15m. Aim for 90-105% FTP." I start with one rep fewer (scaled: 3 reps instead of 4), same intensity. Why: 4 × 8 would double the time under load in one step (16 → 32 min) while power rises from 80–85% to 95%. 3 × 8 = 24 min of work, between CTS's ~20 min (beginner) and ~30 min (intermediate) time at intensity, and CTS says to progress "by adding intervals" (Rutberg, written). Wakefield's long-interval range starts at three reps ("three or five by tens", machine transcript). Peak torque stays about the same as week 4 (~35 Nm at 95% and 65 rpm), but time under load rises from 16 to 24 min and power from 80–85% to 95%. So this week is harder than weeks 3–4, not "the same force, longer". The name "Torque Endurance" is the one used on the EVOQ podcast (auto-captions); Bobo didn't coin it.
 - **Build weeks 3–4, Threshold 5 × 5.** Henderson (machine transcript): "move into threshold, say five by five minutes at say 95% of FTP at that same 50 to 60 rpm". That passage gives no recovery. In another passage he gives threshold efforts of 3–6 min at 50–60 rpm "with typically about half time recovery". Half of 5 min is 2:30: Henderson's half-time rule, applied by me. EVOQ's written progression for its 5 × 5 staple ("increase power up to threshold") also supports 95%. Peak torque ~41 Nm.
-- **Build weeks 5–6, TorqueMax.** EVOQ (Bobo, written): "around 2-3 minutes at 105-110% of FTP and around 50-60 rpm", "starting with six repetitions and working up to eight". EVOQ warns: "There is an increased risk of injury with these intervals", so do the lower-intensity torque intervals first. TorqueMax is EVOQ's extension of the Hebisz study to a new format; **no study has tested it.** "TorqueMax" is EVOQ's term ("we have dubbed"). My file: 6 × 2.5 min at 110% (the top of EVOQ's range), 55 rpm, 4 min recovery (mine). Peak torque ~48 Nm.
+- **Build weeks 5–6, TorqueMax.** EVOQ (Bobo, written): "around 2-3 minutes at 105-110% of FTP and around 50-60 rpm", "starting with six repetitions and working up to eight". EVOQ warns: "There is an increased risk of injury with these intervals", so do the lower-intensity torque intervals first. TorqueMax is EVOQ's extension of the Hebisz study to a new format; **no study has tested it.** "TorqueMax" is EVOQ's term ("we have dubbed"). The workout: 6 × 2.5 min at 110% (the top of EVOQ's range), 55 rpm, 4 min recovery (mine). Peak torque ~48 Nm.
 - **Build weeks 7–8, HIIT 4 × 4.** The Hebisz HIIT session at its weeks 1–4 volume: 4 × 4 min at 60–70 rpm, 8 min active rest. At ~120% FTP (my estimate, see above) it is much harder on the lungs. Peak torque depends on cadence: ~41–48 Nm at 70–60 rpm (~44 Nm at 65 rpm). Ridden indoors at a %FTP target, not outdoors uphill as in the study.
 
 ### Why this order
@@ -214,7 +214,7 @@ This is the main practical concern.
 
 The two-weeks-per-session arrangement and the week counts are mine.
 
-**How the load steps up** (my arithmetic, 250 W FTP): peak torque per stroke goes 30.6 → 34.7 → 34.9 → 41.2 → 47.7 → 44.1 Nm (+13%, 0%, +18%, +16%, −8%). Total torque × time goes ≈ 490 → 555 → 838 → 1,030 → 716 → 705 Nm·min. Build weeks 1–2 are the biggest step in total load, which is why Torque Endurance is scaled to 3 reps there.
+**How the load steps up** (my arithmetic, 250 W FTP): peak torque per stroke goes 30.6 → 34.7 → 34.9 → 41.2 → 47.7 → 44.1 Nm (+13%, 0%, +18%, +16%, −8%). A rough load number (mine): torque per stroke × minutes at that torque. It goes ≈ 490 → 555 → 840 → 1,030 → 715 → 705. Build weeks 1–2 are the biggest jump, which is why Torque Endurance is scaled to 3 reps there.
 
 ### The move-on rule (mine)
 
@@ -237,9 +237,9 @@ After illness or travel, the adaptation weeks 3–4 session is a good one to com
 After the build you choose:
 
 - **Maintain:** about one torque session a month. EVOQ (written) gives "1-2x per month depending on your training schedule is sufficient" during the race season; I use it as the maintenance option (mine).
-- **Keep going:** 1–2 sessions a week, **never on consecutive days** (mine, combining these). CTS (Jim Rutberg, written): beginner and intermediate riders "should separate MT workouts by at least a full day"; "Experienced and/or advanced riders can often do MuscleTension intervals on back-to-back days". Henderson (machine transcript): "Generally I do about one of these sessions a week at most two", because it is "a bit more stressful from a muscular skeletal standpoint"; he has never asked anyone to do two days in a row, though he adds "maybe it could work". EVOQ (written): start with one day a week and work up to two.
+- **Keep going:** 1–2 sessions a week, **never on consecutive days** (mine, combining these). CTS (Jim Rutberg, written): beginner and intermediate riders "should separate MT [MuscleTension] workouts by at least a full day"; "Experienced and/or advanced riders can often do MuscleTension intervals on back-to-back days". Henderson (machine transcript): "Generally I do about one of these sessions a week at most two", because it is "a bit more stressful from a muscular skeletal standpoint"; he has never asked anyone to do two days in a row, though he adds "maybe it could work". EVOQ (written): start with one day a week and work up to two.
 
-**Free choice from the library.** After the build there is no rotation and no "next session". Pick from the ten library workouts (TE 3×8, TE 4×8, TE 3×15, Threshold 5×5, TorqueMax, Rüegg, HIIT 4×4, HIIT 6×4, SIT 2 sets, SIT 3 sets). A few plain hints (mine): mix moderate sessions (Torque Endurance, Threshold) with above-threshold ones (TorqueMax, Rüegg, HIIT, SIT); the smaller and bigger variants are useful when you swap one session of another training plan for one of these at a similar load.
+**Free choice from the library.** After the build there is no rotation and no "next session". Pick from the ten library workouts (Torque Endurance (TE) 3×8, TE 4×8, TE 3×15, Threshold 5×5, TorqueMax, Rüegg, HIIT 4×4, HIIT 6×4, SIT 2 sets, SIT 3 sets). A few plain hints (mine): mix moderate sessions (Torque Endurance, Threshold) with above-threshold ones (TorqueMax, Rüegg, HIIT, SIT); the smaller and bigger variants are useful when you swap one session of another training plan for one of these at a similar load.
 
 **Where the evidence ends.** The research backs particular workouts (Hebisz: HIIT and SIT; de Pablos: near-maximal efforts), each tested inside its own multi-week program. No study tested this site's arrangement. The build order comes from the coaches; the week counts are mine; after the build no source says what order to ride things in. Each workout keeps its own source label.
 
@@ -248,10 +248,10 @@ After the build you choose:
 ### The sessions after the build
 
 - **TE 4×8** at 95%, 60–70 rpm, 8 min easy spin: Housler's unscaled start (EVOQ, written).
-- **TE 3×15** at 90%, 50–60 rpm (file 55), 15 min easy spin: Housler's later step ("Eventually move to 50-60rpm, and extend out to 3 x 15m"), at the floor of his 90–105% range (my choice). 45 min of work is above CTS's ~40 min for advanced riders, and its 15-min reps are longer than CTS's 5–10 min.
-- **Rüegg VO2max + sprint:** Noemi Rüegg's session, published by EF: 3 × 5 min at 50–60 rpm at "VO2 max pace" (EF: 106–120% FTP), 10 min easy between, with an optional 1-min max effort in a lighter gear at the end of each effort. My file: 110% at 55 rpm (inside EF's range), 3 efforts (EF's text says 3–5), shorter warm-up and cool-down than EF's 30 min each (scaled for Zwift).
+- **TE 3×15** at 90%, 50–60 rpm (the workout uses 55 rpm), 15 min easy spin: Housler's later step ("Eventually move to 50-60rpm, and extend out to 3 x 15m"), at the floor of his 90–105% range (my choice). 45 min of work is above CTS's ~40 min for advanced riders, and its 15-min reps are longer than CTS's 5–10 min.
+- **Rüegg VO2max + sprint:** Noemi Rüegg's session, published by EF: 3 × 5 min at 50–60 rpm at "VO2 max pace" (EF: 106–120% FTP), 10 min easy between, with an optional 1-min max effort in a lighter gear at the end of each effort. The workout: 110% at 55 rpm (inside EF's range), 3 efforts (EF's text says 3–5), shorter warm-up and cool-down than EF's 30 min each (scaled for Zwift).
 - **HIIT 6×4:** the Hebisz weeks 5–8 volume, same intensity and recoveries as HIIT 4×4.
-- **SIT 2 sets / 3 sets:** the Hebisz SIT session at its weeks 1–4 (8 sprints) and weeks 5–8 (12 sprints) volumes, 50–60 rpm. The sprints are free-ride blocks with no power target; you set the force. 90 s at ~65% between sprints; the 25-min break between sets is also at ~65% (mine: the paper says only "also at low intensity" and gives no reason for the length). No lead-in session exists in any source; the study riders did it from day one, after the preparation described above. The Rüegg sprint is in a light gear at free cadence, so it is not a lead-in to SIT.
+- **SIT 2 sets / 3 sets:** the Hebisz SIT session at its weeks 1–4 (8 sprints) and weeks 5–8 (12 sprints) volumes, 50–60 rpm. The sprints have no power target (ERG switches off for them); you set the force. 90 s at ~65% between sprints; the 25-min break between sets is also at ~65% (mine: the paper says only "also at low intensity" and gives no reason for the length). No lead-in session exists in any source; the study riders did it from day one, after the preparation described above. The Rüegg sprint is in a light gear at free cadence, so it is not a lead-in to SIT.
 
 ### Seasons
 
@@ -282,7 +282,7 @@ Taking a break from torque work, and coming back later, fits these sources (my r
 
 ## Source prescription reference
 
-What each source actually prescribes. Every workout in the calendar must trace back to this section. See `training-calendar.md` for the implemented library.
+What each source actually prescribes. Every workout in the library traces back to this section. See `training-calendar.md` for the implemented library.
 
 ### John Wakefield (elite / pro-team coach)
 
@@ -341,7 +341,7 @@ EVOQ president, coach and owner; 13× P/1 State Champion and 4 Master's National
 
 One organisation, two sources.
 
-- **Jim Rutberg, CTS MuscleTension article (written):** CTS coach of over two decades and co-author of *The Time-Crunched Cyclist* (his author bio on the article). Tempo or sweet-spot power, 76–85% or 88–94% of threshold, at about 50–55 rpm; reps of 5–10 min; total time at intensity ~20 min (beginner), 30 (intermediate), 40 (advanced); start with 4 × 5 min; "Recovery between intervals should be equal to the duration of the efforts"; increase workload "by adding intervals"; "a two to three-week block"; beginner and intermediate riders "should separate MT workouts by at least a full day"; indoors, "level" or "resistance" mode is better than ERG, which can help beginners focus on cadence.
+- **Jim Rutberg, CTS MuscleTension article (written):** CTS coach of over two decades and co-author of *The Time-Crunched Cyclist* (his author bio on the article). Tempo or sweet-spot power, 76–85% or 88–94% of threshold, at about 50–55 rpm; reps of 5–10 min; total time at intensity ~20 min (beginner), 30 (intermediate), 40 (advanced); start with 4 × 5 min; "Recovery between intervals should be equal to the duration of the efforts"; increase workload "by adding intervals"; "a two to three-week block"; beginner and intermediate riders "should separate MT [MuscleTension] workouts by at least a full day"; indoors, "level" or "resistance" mode is better than ERG, which can help beginners focus on cadence.
 - **Adam Pulford, CTS YouTube video (auto-captions):** "Everything has a season including torque training"; heavy lifting in base; build 1: 50–60 rpm at zone 3–4, 1–2 sessions a week for a few weeks; later in the build, a block of at least two weeks of 50–60 rpm zone 5–6 work, twice a week, full recovery, at least 15 min in zone. Low cadence at lower power "doesn't make you stronger".
 
 ### Hebisz & Hebisz 2024 (research)
@@ -351,11 +351,11 @@ See "The study protocol" above. HIIT: 4–6 × 4 min at 90–100% Pmax, 60–70 
 ### Media relay
 
 - **Roadman Cycling Podcast** (auto-captions; the speaker is presumed to be host Anthony Walsh): an eight-week progression, twice a week; "push down towards that 50 rpm if your joints feel good". The nearest source for my move-on rule only. It is also the podcast that got this site started.
-- **Knowledge is Watt #58** (newsletter commentary on Hebisz 2024): earlier versions of this site took three things from it (an FTP estimate for the HIIT, a pedal-force mechanism and a "no clear benefit" quote). They are replaced here by my own derivation from the paper, by Barranco-Gil 2024 and by Hansen & Rønnestad 2017.
+- **Knowledge is Watt #58** (newsletter commentary on Hebisz 2024): background reading only. The HIIT intensity comes from my own derivation from the paper, and the pedal-force and benefit questions from Barranco-Gil 2024 and Hansen & Rønnestad 2017.
 
 ---
 
-## What I'd update this document for
+## What would change my mind
 
 How solid each claim is, and what would change it.
 
@@ -411,8 +411,8 @@ How solid each claim is, and what would change it.
 
 **Media relay**
 
-19. Roadman Cycling Podcast, https://www.youtube.com/watch?v=tcar3G2v73I (auto-captions; provenance and the nearest source for the move-on rule only).
-20. Knowledge is Watt #58, *High Intensity Torque Training Can Increase Cycling Performance*. https://knowledgeiswatt.substack.com/p/58-high-intensity-torque-training (commentary on Hebisz 2024; no longer the basis for any claim here).
+19. Roadman Cycling Podcast, https://www.youtube.com/watch?v=tcar3G2v73I (auto-captions; the episode that inspired this site, and the nearest source for the move-on rule).
+20. Knowledge is Watt #58, *High Intensity Torque Training Can Increase Cycling Performance*. https://knowledgeiswatt.substack.com/p/58-high-intensity-torque-training (commentary on Hebisz 2024; background reading only).
 
 **Zwift**
 

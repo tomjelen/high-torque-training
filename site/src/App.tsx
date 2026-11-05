@@ -67,7 +67,7 @@ function RationaleRoute() {
     <PageShell
       title={RATIONALE_TITLE}
       lastUpdated={RATIONALE_LAST_UPDATED}
-      lastUpdatedTooltip="Date of the most recent substantive update to the research and rationale. Typo fixes and wording tweaks don't bump this date."
+      lastUpdatedTooltip="Date of the most recent substantive update to the research and rationale. Small wording fixes don't change this date."
     >
       <RationalePage />
     </PageShell>

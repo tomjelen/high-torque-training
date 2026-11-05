@@ -10,11 +10,7 @@ export default function AboutPage() {
         <p>
           I'm <a href="https://www.linkedin.com/in/tom-jelen/">Tom Jelen</a>, an AI/ML engineer
           based in Barcelona. For most of the last decade I co-founded and built{' '}
-          <a href="https://abzu.ai">Abzu</a>, working across the full arc from
-          core algorithms to client-facing platforms. Our main product, Feyn / QLattice — an
-          interpretable ML framework built on symbolic regression — placed 1st on the synthetic
-          and 2nd on the real-world track at <a href="https://cavalab.org/srbench/">SRBench</a>
-          {' '}(GECCO 2022; <a href="https://arxiv.org/abs/2104.05417">arXiv:2104.05417</a>). The
+          <a href="https://abzu.ai">Abzu</a>, an interpretable-ML company. The
           common thread, work and otherwise, is methodical curiosity — I learn a domain by digging
           until I understand it well enough to build something in it.
         </p>

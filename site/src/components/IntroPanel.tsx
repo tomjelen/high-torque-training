@@ -66,7 +66,7 @@ export default function IntroPanel({ state, setState }: Props) {
             rel="noopener noreferrer"
             className="text-blue-400 hover:text-blue-300"
           >
-            Roadman Podcast
+            Roadman Cycling Podcast episode
           </a>
           .
         </p>

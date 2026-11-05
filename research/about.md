@@ -1,12 +1,7 @@
 # About
 
 I'm [Tom Jelen](https://www.linkedin.com/in/tom-jelen/), an AI/ML engineer based in Barcelona.
-For most of the last decade I co-founded and built [Abzu](https://abzu.ai), working across the full
-arc from core algorithms to client-facing
-platforms. Our main product, Feyn / QLattice — an interpretable ML framework built on symbolic
-regression — placed 1st on the synthetic and 2nd on the real-world track at
-[SRBench](https://cavalab.org/srbench/) (GECCO 2022;
-[arXiv:2104.05417](https://arxiv.org/abs/2104.05417)). The common thread, work and
+For most of the last decade I co-founded and built [Abzu](https://abzu.ai), an interpretable-ML company. The common thread, work and
 otherwise, is methodical curiosity — I learn a domain by digging until I understand it well enough
 to build something in it.
 
