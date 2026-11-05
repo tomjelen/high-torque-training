@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   High Torque Training — Zwift workout
-  Last updated: 2026-11-04
+  Last updated: 2026-11-05
 
   Site:      https://high-torque.jelen.dk/
   Calendar:  https://high-torque.jelen.dk/content/workouts.md
@@ -12,7 +12,7 @@
     <author>Tom Jelen</author>
     <name>TorqueMax</name>
     <activitySaveName>High Torque: TorqueMax 6x2.5 min 105-110% FTP @ 50-60 rpm</activitySaveName>
-    <description>EVOQ.BIKE's TorqueMax session (Landry Bobo, EVOQ blog, 2026): "around 2-3 minutes at 105-110% of FTP and around 50-60 rpm", "starting with six repetitions and working up to eight". Our file: six 2.5-minute intervals at 110% FTP (the top of EVOQ's range) and 55 rpm, with 4 minutes of easy spin between them. 2.5 min and 110% are our picks inside EVOQ's range; EVOQ gives no recovery, so the 4 minutes are ours. EVOQ warns: "There is an increased risk of injury with these intervals", so do the lower-intensity torque intervals first. TorqueMax is EVOQ's extension of the Hebisz 2024 study to a new format; no study has tested it. The two short openers (30 s at normal cadence) are our addition, not from EVOQ. Seated throughout.</description>
+    <description>EVOQ.BIKE's TorqueMax session (Landry Bobo, EVOQ blog, 2026): "around 2-3 minutes at 105-110% of FTP and around 50-60 rpm", "starting with six repetitions and working up to eight". The workout: six 2.5-minute intervals at 110% FTP (the top of EVOQ's range) and 55 rpm, with 4 minutes of easy spin between them. 2.5 min and 110% are my picks inside EVOQ's range; EVOQ gives no recovery, so the 4 minutes are mine. EVOQ warns: "There is an increased risk of injury with these intervals", so do the lower-intensity torque intervals first. TorqueMax is EVOQ's extension of the Hebisz 2024 study to a new format; no study has tested it. The two short openers (30 s at normal cadence) are my addition, not from EVOQ. Seated throughout.</description>
     <sportType>bike</sportType>
     <tags />
     <workout>
@@ -22,11 +22,11 @@
             <textevent timeoffset="75" duration="20" message="All the research behind this program: high-torque.jelen.dk" />
             <textevent timeoffset="120" duration="30" message="EVOQ warns: 'There is an increased risk of injury with these intervals.' Do the lower-intensity torque intervals before this one." />
             <textevent timeoffset="270" duration="30" message="TorqueMax is EVOQ's term and EVOQ's extension of the Hebisz 2024 study to a new format. No study has tested it. Treat it as coaching practice, not tested science." />
-            <textevent timeoffset="420" duration="25" message="Our picks inside EVOQ's range: 2.5 minutes at 110%, the top of it. EVOQ gives no recovery; the 4 minutes are ours." />
-            <textevent timeoffset="540" duration="30" message="Neal Henderson: 'Generally I do about one of these sessions a week at most two', because they are 'a bit more stressful from a muscular skeletal standpoint' (machine transcript)." />
-            <textevent timeoffset="660" duration="25" message="All intervals are SEATED. Standing lets you use body weight on the pedals, bypassing the forced muscular contraction that makes this training work." />
+            <textevent timeoffset="420" duration="25" message="My picks inside EVOQ's range: 2.5 minutes at 110%, the top of it. EVOQ gives no recovery; the 4 minutes are mine." />
+            <textevent timeoffset="540" duration="30" message="Neal Henderson on big-gear sessions in general: 'Generally I do about one of these sessions a week at most two', because they are 'a bit more stressful from a muscular skeletal standpoint' (machine transcript)." />
+            <textevent timeoffset="660" duration="30" message="All intervals are SEATED. Henderson: less joint compression (machine transcript). My added reason: standing lets body weight push the pedal down instead of your muscles." />
             <textevent timeoffset="750" duration="20" message="If your knees ache at any point during an interval, stop the interval. Don't push through knee discomfort." />
-            <textevent timeoffset="840" duration="20" message="Six intervals. 2.5 minutes each. 4 minutes recovery. Two short openers first: our addition, not from EVOQ." />
+            <textevent timeoffset="840" duration="20" message="Six intervals. 2.5 minutes each. 4 minutes recovery. Two short openers first: my addition, not from EVOQ." />
         </Warmup>
 
         <SteadyState Duration="30" Power="1.10">
@@ -53,7 +53,7 @@
 
         <SteadyState Duration="240" Power="0.50">
             <textevent timeoffset="2" message="Recovery. 4 minutes. Easy spin." />
-            <textevent timeoffset="40" duration="25" message="If your cadence sags below target, lower the workout intensity (FTP bias) rather than grinding." />
+            <textevent timeoffset="40" duration="25" message="My tip: if you can't hold the power at this cadence, lower the workout intensity (FTP bias) a few percent rather than grinding." />
             <textevent timeoffset="180" message="Next interval. Settle to 50-60 rpm. Seated." />
         </SteadyState>
 
@@ -81,7 +81,7 @@
 
         <SteadyState Duration="240" Power="0.50">
             <textevent timeoffset="2" message="Recovery." />
-            <textevent timeoffset="60" duration="25" message="At 250 W FTP, 110% at 55 rpm is about 48 Nm per pedal stroke (our arithmetic). Short reps, high force." />
+            <textevent timeoffset="60" duration="25" message="At 250 W FTP, 110% at 55 rpm is about 48 Nm per pedal stroke (my arithmetic). Short reps, high force." />
             <textevent timeoffset="180" message="Next interval. 50-60 rpm. Seated." />
         </SteadyState>
 
@@ -123,9 +123,9 @@
 
         <Cooldown Duration="900" PowerLow="0.50" PowerHigh="0.40">
             <textevent timeoffset="10" message="TorqueMax complete. Six intervals done. Spin easy at normal cadence." />
-            <textevent timeoffset="150" duration="25" message="Six reps is EVOQ's starting volume; they suggest working up to eight. This file stays at six (our choice)." />
-            <textevent timeoffset="360" duration="20" message="Note how your knees feel. Any ache or tightness? If yes, skip the next torque session and monitor." />
-            <textevent timeoffset="600" duration="25" message="Our rule: no torque sessions on back-to-back days. CTS coach Jim Rutberg says beginner and intermediate riders should separate them by at least a full day." />
+            <textevent timeoffset="150" duration="25" message="Six reps is EVOQ's starting volume; they suggest working up to eight. This file stays at six (my choice)." />
+            <textevent timeoffset="360" duration="25" message="Note how your knees feel. Any ache? My rule: next week, repeat this session instead of moving on. If it keeps coming back, stop torque work and see a professional." />
+            <textevent timeoffset="600" duration="25" message="My rule: no torque sessions on back-to-back days. CTS coach Jim Rutberg says beginner and intermediate riders should separate them by at least a full day." />
         </Cooldown>
     </workout>
 </workout_file>

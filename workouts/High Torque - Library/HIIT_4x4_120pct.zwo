@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   High Torque Training — Zwift workout
-  Last updated: 2026-11-04
+  Last updated: 2026-11-05
 
   Site:      https://high-torque.jelen.dk/
   Calendar:  https://high-torque.jelen.dk/content/workouts.md
@@ -12,21 +12,21 @@
     <author>Tom Jelen</author>
     <name>HIIT 4x4</name>
     <activitySaveName>High Torque: HIIT 4x4 min ~120% FTP @ 60-70 rpm</activitySaveName>
-    <description>The HIIT session from Hebisz and Hebisz (2024, PLoS ONE), weeks 1–4 volume: four 4-minute intervals at 60–70 rpm with 8 minutes of active rest between them. Seated throughout. The study set the intervals at 90–100% of maximal aerobic power (Pmax) and the rest "at an intensity similar to the power achieved at VT1" (the first ventilatory threshold). It gives no FTP. ~120% FTP is our estimate: in the paper's baseline values VT2 is about 75% of Pmax, so 90–100% of Pmax is ~120–136% of VT2, and we take FTP as roughly VT2 and use the bottom of that range. This is the most uncertain number in the library. ~65% FTP for the rest is our estimate the same way (VT1 is about 65% of VT2). The study riders rode outdoors uphill; this is an indoor adaptation at %FTP targets. The two short openers (30 s at normal cadence) are our addition, not from the study.</description>
+    <description>The HIIT session from Hebisz and Hebisz (2024, PLoS ONE), weeks 1–4 volume: four 4-minute intervals at 60–70 rpm with 8 minutes of active rest between them. Seated throughout. The study set the intervals at 90–100% of maximal aerobic power (Pmax) and the rest "at an intensity similar to the power achieved at VT1" (the first ventilatory threshold). It gives no FTP. ~120% FTP is my estimate: in the paper's baseline values VT2 is about 75% of Pmax, so 90–100% of Pmax is ~120–136% of VT2, and I take FTP as roughly VT2 and use the bottom of that range. This is the most uncertain number in the library. ~65% FTP for the rest is my estimate the same way (VT1 is about 65% of VT2). The study riders rode outdoors uphill; this is an indoor adaptation at %FTP targets. The two short openers (30 s at normal cadence) are my addition, not from the study.</description>
     <sportType>bike</sportType>
     <tags />
     <workout>
         <Warmup Duration="900" PowerLow="0.40" PowerHigh="0.75">
             <textevent timeoffset="5" duration="15" message="Warm up at your normal cadence. No low cadence until the first interval." />
             <textevent timeoffset="30" duration="30" message="Source: Hebisz and Hebisz (2024), HIIT session, weeks 1-4. 4x4 min at 90-100% of Pmax (maximal aerobic power), 60-70 rpm, 8 min active rest." />
-            <textevent timeoffset="75" duration="20" message="Session logger and full workout calendar at high-torque.jelen.dk" />
-            <textevent timeoffset="120" duration="30" message="The study gives no FTP. ~120% FTP is our estimate from the paper: VT2 is about 75% of Pmax there, and FTP is roughly VT2. The most uncertain number in the library." />
-            <textevent timeoffset="240" duration="30" message="The study's rest was 'at an intensity similar to the power achieved at VT1'. By the same arithmetic that is about 65% FTP (our estimate)." />
+            <textevent timeoffset="75" duration="20" message="All the research behind this program: high-torque.jelen.dk" />
+            <textevent timeoffset="120" duration="30" message="The study gives no FTP. ~120% FTP is my estimate from the paper: VT2 is about 75% of Pmax there, and FTP is roughly VT2. The most uncertain number in the library." />
+            <textevent timeoffset="240" duration="30" message="The study's rest was 'at an intensity similar to the power achieved at VT1'. By the same arithmetic that is about 65% FTP (my estimate)." />
             <textevent timeoffset="360" duration="25" message="HIIT in the study was at 60-70 rpm. Its sprint (SIT) session was at 50-60. The two ranges are different." />
-            <textevent timeoffset="480" duration="25" message="All intervals are SEATED. Standing lets you use body weight on the pedals, bypassing the forced muscular contraction that makes this training work." />
+            <textevent timeoffset="480" duration="30" message="All intervals are SEATED. Henderson: less joint compression (machine transcript). My added reason: standing lets body weight push the pedal down instead of your muscles." />
             <textevent timeoffset="600" duration="20" message="If your knees ache at any point during an interval, stop the interval. Don't push through knee discomfort." />
             <textevent timeoffset="720" duration="30" message="Tired today? Lower the workout intensity (FTP bias). The study did the same in its own way: on a low-HRV morning, that day's HIIT was ridden at VT1 power." />
-            <textevent timeoffset="840" duration="20" message="Two short openers at normal cadence first. Then the main intervals. The openers are our addition, not from the study." />
+            <textevent timeoffset="840" duration="20" message="Two short openers at normal cadence first. Then the main intervals. The openers are my addition, not from the study." />
         </Warmup>
 
         <SteadyState Duration="30" Power="1.10">
@@ -55,7 +55,7 @@
 
         <SteadyState Duration="480" Power="0.65">
             <textevent timeoffset="2" message="Active rest. 8 minutes at ~65% FTP." />
-            <textevent timeoffset="40" duration="25" message="If your cadence sags below target, lower the workout intensity (FTP bias) rather than grinding." />
+            <textevent timeoffset="40" duration="25" message="My tip: if you can't hold the power at this cadence, lower the workout intensity (FTP bias) a few percent rather than grinding." />
             <textevent timeoffset="120" duration="30" message="Study result: the low-cadence group's absolute VO2max (L/min) rose 8.7% and Pmax 8.1%, both significant. The free-cadence group's changes in VO2max per kg and Pmax were not significant." />
             <textevent timeoffset="300" message="Knee check. Any discomfort that feels joint-related, not muscle burn?" />
             <textevent timeoffset="450" message="Next interval in 30 seconds. Seated. 60-70 rpm." />
@@ -73,8 +73,8 @@
 
         <SteadyState Duration="480" Power="0.65">
             <textevent timeoffset="2" message="Active rest. 8 minutes." />
-            <textevent timeoffset="60" duration="30" message="The study riders did this outdoors, uphill on 6-9% grades, with Pmax from a test of 3-minute steps. Indoors at a %FTP target is our adaptation." />
-            <textevent timeoffset="240" duration="25" message="At 250 W FTP, ~120% at 65 rpm is about 44 Nm per pedal stroke; about 41-48 Nm from 70 to 60 rpm (our arithmetic)." />
+            <textevent timeoffset="60" duration="30" message="The study riders did this outdoors, uphill on 6-9% grades, with Pmax from a test of 3-minute steps. Indoors at a %FTP target is my adaptation." />
+            <textevent timeoffset="240" duration="25" message="At 250 W FTP, ~120% at 65 rpm is about 44 Nm per pedal stroke; about 41-48 Nm from 70 to 60 rpm (my arithmetic)." />
             <textevent timeoffset="450" message="Interval 3 in 30 seconds. Seated. 60-70 rpm." />
         </SteadyState>
 
@@ -107,9 +107,9 @@
 
         <Cooldown Duration="900" PowerLow="0.50" PowerHigh="0.40">
             <textevent timeoffset="10" message="Four intervals done. Spin easy at normal cadence." />
-            <textevent timeoffset="150" duration="20" message="Note how your knees feel. Any ache or tightness? If yes, skip the next torque session and monitor." />
+            <textevent timeoffset="150" duration="25" message="Note how your knees feel. Any ache? My rule: next week, repeat this session instead of moving on. If it keeps coming back, stop torque work and see a professional." />
             <textevent timeoffset="360" duration="30" message="One small study: well-trained women aged 17-20, 12 per group. The paper reports no knee or injury monitoring. Promising, not proven." />
-            <textevent timeoffset="540" duration="25" message="Our rule: no torque sessions on back-to-back days. CTS coach Jim Rutberg says beginner and intermediate riders should separate them by at least a full day." />
+            <textevent timeoffset="540" duration="25" message="My rule: no torque sessions on back-to-back days. CTS coach Jim Rutberg says beginner and intermediate riders should separate them by at least a full day." />
         </Cooldown>
     </workout>
 </workout_file>

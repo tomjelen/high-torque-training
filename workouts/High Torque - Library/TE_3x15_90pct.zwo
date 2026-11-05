@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   High Torque Training — Zwift workout
-  Last updated: 2026-11-04
+  Last updated: 2026-11-05
 
   Site:      https://high-torque.jelen.dk/
   Calendar:  https://high-torque.jelen.dk/content/workouts.md
@@ -12,7 +12,7 @@
     <author>Tom Jelen</author>
     <name>Torque Endurance 3x15</name>
     <activitySaveName>High Torque: Torque Endurance 3x15 min 90% FTP @ 50-60 rpm</activitySaveName>
-    <description>Torque Endurance 3×15: three 15-minute intervals at 90% FTP and 50–60 rpm, with 15 minutes of easy spin between them. Seated throughout. Source: EVOQ / Brendan Housler, the later step of his ladder (EVOQ.BIKE blog, 2020): "Eventually move to 50-60rpm, and extend out to 3 x 15m. Aim for 90-105% FTP." The file holds 90%, the floor of Housler's 90–105% (our choice). 45 min of work is above CTS's ~40 min for advanced riders, and the 15-minute reps are longer than CTS's 5–10 min. Housler gives no recovery; resting as long as the rep is our choice, as John Wakefield and CTS (Jim Rutberg) use. The name "Torque Endurance" is the one used on the EVOQ podcast (auto-captions).</description>
+    <description>Torque Endurance 3×15: three 15-minute intervals at 90% FTP and 50–60 rpm, with 15 minutes of easy spin between them. Seated throughout. Source: EVOQ / Brendan Housler, the later step of his ladder (EVOQ.BIKE blog, 2020): "Eventually move to 50-60rpm, and extend out to 3 x 15m. Aim for 90-105% FTP." The file holds 90%, the floor of Housler's 90–105% (my choice). 45 min of work is above CTS's ~40 min for advanced riders, and the 15-minute reps are longer than CTS's 5–10 min. Housler gives no recovery; resting as long as the rep is my choice, as John Wakefield and CTS (Jim Rutberg) use. The name "Torque Endurance" is the one used on the EVOQ podcast (auto-captions).</description>
     <sportType>bike</sportType>
     <tags />
     <workout>
@@ -20,10 +20,10 @@
             <textevent timeoffset="5" duration="15" message="Warm up at your normal cadence. No low cadence until the first interval." />
             <textevent timeoffset="30" duration="30" message="Source: EVOQ / Brendan Housler (EVOQ.BIKE blog): 'Eventually move to 50-60rpm, and extend out to 3 x 15m. Aim for 90-105% FTP.'" />
             <textevent timeoffset="75" duration="20" message="All the research behind this program: high-torque.jelen.dk" />
-            <textevent timeoffset="120" duration="25" message="The file holds 90% FTP, the floor of Housler's 90-105% range. That is our choice: these are long reps." />
+            <textevent timeoffset="120" duration="25" message="The file holds 90% FTP, the floor of Housler's 90-105% range. That is my choice: these are long reps." />
             <textevent timeoffset="240" duration="30" message="45 minutes of work. That is above CTS's ~40 min for advanced riders, and 15-minute reps are longer than CTS's 5-10 min. A big session." />
-            <textevent timeoffset="360" duration="25" message="Housler gives no recovery. 15 minutes, as long as the rep, is our choice, as John Wakefield and CTS (Jim Rutberg) use." />
-            <textevent timeoffset="480" duration="25" message="All intervals are SEATED. Standing lets you use body weight on the pedals, bypassing the forced muscular contraction that makes this training work." />
+            <textevent timeoffset="360" duration="25" message="Housler gives no recovery. 15 minutes, as long as the rep, is my choice, as John Wakefield and CTS (Jim Rutberg) use." />
+            <textevent timeoffset="480" duration="30" message="All intervals are SEATED. Henderson: less joint compression (machine transcript). My added reason: standing lets body weight push the pedal down instead of your muscles." />
             <textevent timeoffset="600" duration="25" message="Target cadence: 50-60 rpm. In ERG mode, just drop to this cadence. The trainer raises the resistance to hold 90% FTP." />
             <textevent timeoffset="720" duration="20" message="If your knees ache at any point during an interval, stop the interval. Don't push through knee discomfort." />
             <textevent timeoffset="820" duration="20" message="Fifteen minutes is a long time at 50-60 rpm. Settle in early and keep it steady." />
@@ -39,7 +39,7 @@
 
         <SteadyState Duration="900" Power="0.50">
             <textevent timeoffset="10" duration="20" message="Recovery: 15 minutes, as long as the rep. Easy spin at any cadence." />
-            <textevent timeoffset="90" duration="25" message="If your cadence sags below target, lower the workout intensity (FTP bias) rather than grinding." />
+            <textevent timeoffset="90" duration="25" message="My tip: if you can't hold the power at this cadence, lower the workout intensity (FTP bias) a few percent rather than grinding." />
             <textevent timeoffset="300" duration="30" message="Neal Henderson calls long big-gear efforts 'truly a muscular endurance type of thing' (Fast Talk ep. 125, 2020, machine transcript; speaker inferred from context)." />
             <textevent timeoffset="600" message="Knees still feeling fine?" />
             <textevent timeoffset="840" message="Next interval in 1 minute. Seated." />
@@ -55,7 +55,7 @@
 
         <SteadyState Duration="900" Power="0.50">
             <textevent timeoffset="10" message="Recovery. Two down, one to go." />
-            <textevent timeoffset="120" duration="30" message="At 250 W FTP, 90% at 55 rpm is about 39 Nm per pedal stroke, held for 45 minutes in total (our arithmetic)." />
+            <textevent timeoffset="120" duration="30" message="At 250 W FTP, 90% at 55 rpm is about 39 Nm per pedal stroke, held for 45 minutes in total (my arithmetic)." />
             <textevent timeoffset="600" duration="20" message="If your knees are aching, skip the final interval. Protecting the joints is always the right call on torque work." />
             <textevent timeoffset="840" message="Final interval in 1 minute. Seated." />
         </SteadyState>
@@ -70,9 +70,9 @@
 
         <Cooldown Duration="600" PowerLow="0.50" PowerHigh="0.40">
             <textevent timeoffset="30" message="Cool down. Spin easy at normal cadence." />
-            <textevent timeoffset="120" duration="20" message="Note how your knees feel. Any ache or tightness? If yes, skip the next torque session and monitor." />
+            <textevent timeoffset="120" duration="25" message="Note how your knees feel. Any ache? My rule: next week, repeat this session instead of moving on. If it keeps coming back, stop torque work and see a professional." />
             <textevent timeoffset="270" duration="25" message="The name 'Torque Endurance' is the one used on the EVOQ podcast (auto-captions) for these long low-cadence intervals." />
-            <textevent timeoffset="420" duration="25" message="Our rule: no torque sessions on back-to-back days. CTS coach Jim Rutberg says beginner and intermediate riders should separate them by at least a full day." />
+            <textevent timeoffset="420" duration="25" message="My rule: no torque sessions on back-to-back days. CTS coach Jim Rutberg says beginner and intermediate riders should separate them by at least a full day." />
         </Cooldown>
     </workout>
 </workout_file>
