@@ -11,6 +11,13 @@
 
 ## UI/UX (open)
 
+- [ ] Redesign session. Start from the four mockup directions on the Design canvas (private to Tom): https://claude.ai/artifact/RAogbuBEpgWn3KcqawdiJo
+  - A · "This week" dashboard: the current session is the hero, plan strip and next workouts below.
+  - B · Editorial long-read: light paper, serif headlines, the story told in order (why → plan → workouts).
+  - C · Training timeline: "12 weeks. One climb." The power staircase is the hero.
+  - D · Phone at the trainer: today's session, one big Done button, the knee rules at a glance.
+  Pick what to take from each (they can be mixed), then fold in the open items below.
+
 - [ ] White text on the orange buttons ("Done ✓", "Download All", "Yes, restart") is 3.6:1 contrast, under the usual 4.5:1 standard. Options: darker orange (orange-700), dark text on the orange, or leave it.
 - [ ] The slate-500 helper-text tier is 3.74:1 contrast (tracker "LAST 30 DAYS", helper lines, footnote numbers).
 - [ ] The small "how to read the chart" example is unreadable on phones (text ~5px); it now starts collapsed, and could shrink to a legend line. See `documentation/workout-chart.md`.
