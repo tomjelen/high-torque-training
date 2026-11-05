@@ -1,5 +1,5 @@
 import { BUILD_WEEKS, workoutById } from '../data'
-import { ADAPTATION_LENGTH } from './build-plan'
+import { ADAPTATION_LENGTH, BUILD_LENGTH } from './build-plan'
 import { chartWorkoutFor } from '../components/chart-data'
 import type { Zone } from '../components/chart-model'
 import type { BuildWeek, Workout } from '../types'
@@ -7,11 +7,15 @@ import type { BuildWeek, Workout } from '../types'
 // A "step" is one workout of the 12-week build, ridden in consecutive weeks
 // (two per workout today). BUILD_WEEKS stays the source of truth; steps are
 // derived by grouping consecutive weeks that share a workout.
+// `torque` and `torqueLabel` are read from the .zwo once, here, since they
+// never change (see torquePowerFor / torquePowerLabel below).
 export interface BuildStep {
   index: number
   phase: BuildWeek['phase']
   weeks: BuildWeek[]
   workout: Workout
+  torque: { power: number; zone: Zone } | undefined
+  torqueLabel: string | undefined
 }
 
 export const BUILD_STEPS: BuildStep[] = BUILD_WEEKS.reduce<BuildStep[]>((steps, week) => {
@@ -22,7 +26,15 @@ export const BUILD_STEPS: BuildStep[] = BUILD_WEEKS.reduce<BuildStep[]>((steps, 
   }
   const workout = workoutById(week.workoutIds[0])
   if (!workout) throw new Error(`BUILD_WEEKS week ${week.week}: unknown workout ${week.workoutIds[0]}`)
-  steps.push({ index: steps.length, phase: week.phase, weeks: [week], workout })
+  const torque = torquePowerFor(workout)
+  steps.push({
+    index: steps.length,
+    phase: week.phase,
+    weeks: [week],
+    workout,
+    torque,
+    torqueLabel: torquePowerLabel(workout, torque),
+  })
   return steps
 }, [])
 
@@ -41,7 +53,22 @@ export function phaseName(phase: BuildWeek['phase']): string {
 }
 
 export function phaseLength(phase: BuildWeek['phase']): number {
-  return BUILD_WEEKS.filter((w) => w.phase === phase).length
+  return phase === 'adaptation' ? ADAPTATION_LENGTH : BUILD_LENGTH - ADAPTATION_LENGTH
+}
+
+// The first step of the 8-week build.
+export const FIRST_BUILD_STEP: BuildStep = BUILD_STEPS.find((s) => s.phase === 'build')!
+
+// A week (by its running 1–12 number) against progress: done, the one you're
+// on, or later.
+export type WeekStatus = 'done' | 'current' | 'later'
+export function weekStatus(week: BuildWeek, progress: number): WeekStatus {
+  const index = week.week - 1
+  return index < progress ? 'done' : index === progress ? 'current' : 'later'
+}
+
+export function isStepDone(step: BuildStep, progress: number): boolean {
+  return step.weeks.every((w) => weekStatus(w, progress) === 'done')
 }
 
 // The week's number inside its own plan: adaptation 1–4, build 1–8.
@@ -78,8 +105,7 @@ export function torquePowerFor(workout: Workout): { power: number; zone: Zone } 
 
 // "120% FTP", or "~120% FTP" when the workout's own params write it as an
 // estimate (HIIT's ~120% is our estimate from the paper; keep the "~").
-export function torquePowerLabel(workout: Workout): string | undefined {
-  const torque = torquePowerFor(workout)
+export function torquePowerLabel(workout: Workout, torque = torquePowerFor(workout)): string | undefined {
   if (!torque) return undefined
   const pct = Math.round(torque.power * 100)
   const approx = workout.params.some((p) => p.value.includes(`~${pct}%`))

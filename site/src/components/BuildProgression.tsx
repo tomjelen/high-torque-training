@@ -1,7 +1,17 @@
 import WorkoutChart from './WorkoutChart'
 import { chartWorkoutFor, cadenceLabelFor } from './chart-data'
-import { ZONE_FILL } from './chart-model'
-import { BUILD_STEPS, phaseName, phaseWeek, stepTitle, torquePowerFor, torquePowerLabel, weekRangeLabel, type BuildStep } from '../utils/build-steps'
+import { POWER_SCALE_TOP, ZONE_FILL } from './chart-model'
+import {
+  BUILD_STEPS,
+  isStepDone,
+  phaseLength,
+  phaseName,
+  phaseWeek,
+  stepTitle,
+  weekRangeLabel,
+  weekStatus,
+  type BuildStep,
+} from '../utils/build-steps'
 
 // The whole 12-week build at a glance: a progression chart (one bar per week,
 // height = %FTP of the high-torque intervals, read from the .zwo files) with
@@ -9,11 +19,8 @@ import { BUILD_STEPS, phaseName, phaseWeek, stepTitle, torquePowerFor, torquePow
 // on wide screens each card sits under its own two weeks. Phones: chart on
 // top, steps as a vertical list.
 
-// Bar scale: 130% FTP is the top of the chart, like WorkoutChart.
-const SCALE_TOP = 1.3
-const FTP_LINE_PCT = (1 / SCALE_TOP) * 100
-
-type WeekStatus = 'done' | 'current' | 'later'
+// Bar scale: the same top as WorkoutChart.
+const FTP_LINE_PCT = (1 / POWER_SCALE_TOP) * 100
 
 interface Props {
   progress: number
@@ -23,20 +30,16 @@ interface Props {
   detailId: string
 }
 
-function weekStatus(weekIndex: number, progress: number): WeekStatus {
-  return weekIndex < progress ? 'done' : weekIndex === progress ? 'current' : 'later'
-}
-
 function PhaseLabels() {
   const adaptation = BUILD_STEPS.filter((s) => s.phase === 'adaptation').length
   const build = BUILD_STEPS.length - adaptation
   return (
     <div className="grid grid-cols-6 gap-2 mb-1 text-[11px] uppercase tracking-wide text-slate-500">
       <div style={{ gridColumn: `span ${adaptation}` }} className="border-b border-slate-700 pb-1">
-        Adaptation<span className="hidden sm:inline"> · 4 weeks</span>
+        Adaptation<span className="hidden sm:inline"> · {phaseLength('adaptation')} weeks</span>
       </div>
       <div style={{ gridColumn: `span ${build}` }} className="border-b border-slate-700 pb-1">
-        Build<span className="hidden sm:inline"> · 8 weeks</span>
+        Build<span className="hidden sm:inline"> · {phaseLength('build')} weeks</span>
       </div>
     </div>
   )
@@ -55,16 +58,16 @@ function ProgressionChart({ progress }: { progress: number }) {
         </div>
         <div className="absolute inset-0 grid grid-cols-6 gap-2">
           {BUILD_STEPS.map((step) => {
-            const torque = torquePowerFor(step.workout)
-            const heightPct = torque ? (Math.min(torque.power, SCALE_TOP) / SCALE_TOP) * 100 : 0
+            const { torque } = step
+            const heightPct = torque ? (Math.min(torque.power, POWER_SCALE_TOP) / POWER_SCALE_TOP) * 100 : 0
             return (
               <div key={step.index} className="flex flex-col justify-end min-w-0">
                 <div className="text-center text-[11px] font-mono text-slate-300 mb-0.5">
-                  {torquePowerLabel(step.workout) ?? ''}
+                  {step.torqueLabel ?? ''}
                 </div>
                 <div className="flex items-end justify-center gap-1.5" style={{ height: `${heightPct}%` }}>
                   {step.weeks.map((w) => {
-                    const status = weekStatus(w.week - 1, progress)
+                    const status = weekStatus(w, progress)
                     return (
                       <div
                         key={w.week}
@@ -89,7 +92,7 @@ function ProgressionChart({ progress }: { progress: number }) {
               {step.weeks.map((w) => (
                 <span
                   key={w.week}
-                  className={`w-1/3 max-w-9 ${w.week - 1 === progress ? 'text-orange-300 font-semibold' : ''}`}
+                  className={`w-1/3 max-w-9 ${weekStatus(w, progress) === 'current' ? 'text-orange-300 font-semibold' : ''}`}
                 >
                   {phaseWeek(w)}
                 </span>
@@ -111,7 +114,7 @@ function WeekDots({ step, progress }: { step: BuildStep; progress: number }) {
   return (
     <span className="flex gap-1" aria-hidden="true">
       {step.weeks.map((w) => {
-        const status = weekStatus(w.week - 1, progress)
+        const status = weekStatus(w, progress)
         return (
           <span
             key={w.week}
@@ -130,8 +133,8 @@ function WeekDots({ step, progress }: { step: BuildStep; progress: number }) {
 }
 
 function stepStatusText(step: BuildStep, progress: number): string {
-  const statuses = step.weeks.map((w) => weekStatus(w.week - 1, progress))
-  if (statuses.every((s) => s === 'done')) return 'done'
+  if (isStepDone(step, progress)) return 'done'
+  const statuses = step.weeks.map((w) => weekStatus(w, progress))
   if (statuses.includes('current')) {
     const n = statuses.indexOf('current') + 1
     return `current, session ${n} of ${step.weeks.length}`
@@ -186,7 +189,7 @@ export default function BuildProgression({ progress, shownStep, currentStep, onS
                     {stepTitle(step)}
                   </span>
                   <span className="text-xs text-slate-400 truncate">
-                    {torquePowerLabel(step.workout)} FTP · {cadenceLabelFor(step.workout)}
+                    {step.torqueLabel} FTP · {cadenceLabelFor(step.workout)}
                   </span>
                   <span className="sr-only"> ({status})</span>
                 </span>

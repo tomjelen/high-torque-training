@@ -50,6 +50,11 @@ export const ZONE_FILL: Record<Zone, string> = {
 // is explicit and M2's .zwo parser doesn't have to fabricate a ramp zone.
 export const RAMP_FILL = '#7A7A7A'
 
+// Top of the power scale (fraction of FTP), shared by WorkoutChart and the
+// plan's progression bars so they read on the same scale. A maximal sprint
+// (~150% FTP) is clamped here; the exact ceiling is tuning, not contract.
+export const POWER_SCALE_TOP = 1.3
+
 // The cadence (high-torque) accent: an amber hatch over a dark amber ground.
 // This is a *data* colour (req. 10) — the single most important mark on the
 // chart — so it is hardcoded, not tokenized. Shared by WorkoutChart's accent

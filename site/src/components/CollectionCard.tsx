@@ -74,23 +74,21 @@ export default function CollectionCard({ workout, onDidThis }: Props) {
       {workout.sourceNote && <p className="text-xs text-slate-500 m-0 mb-3">{workout.sourceNote}</p>}
 
       <div className="border-t border-slate-700 pt-3 flex items-center justify-end gap-2">
-        <div className="flex items-center gap-2">
-          <a
-            href={`/workouts/${workout.file}`}
-            download
-            className="inline-flex items-center justify-center min-w-11 min-h-11 sm:min-w-8 sm:min-h-8 text-base text-slate-400 hover:text-slate-200 no-underline rounded"
-            title="Download .zwo"
-          >
-            ⤓
-          </a>
-          <button
-            type="button"
-            onClick={onDidThis}
-            className="text-xs font-mono text-slate-400 hover:text-slate-200 border border-slate-700 hover:border-slate-500 min-h-11 px-4 sm:min-h-0 sm:px-2 sm:py-1 rounded cursor-pointer"
-          >
-            ✓ Rode it today
-          </button>
-        </div>
+        <a
+          href={`/workouts/${workout.file}`}
+          download
+          className="inline-flex items-center justify-center min-w-11 min-h-11 sm:min-w-8 sm:min-h-8 text-base text-slate-400 hover:text-slate-200 no-underline rounded"
+          title="Download .zwo"
+        >
+          ⤓
+        </a>
+        <button
+          type="button"
+          onClick={onDidThis}
+          className="text-xs font-mono text-slate-400 hover:text-slate-200 border border-slate-700 hover:border-slate-500 min-h-11 px-4 sm:min-h-0 sm:px-2 sm:py-1 rounded cursor-pointer"
+        >
+          ✓ Rode it today
+        </button>
       </div>
     </article>
   )

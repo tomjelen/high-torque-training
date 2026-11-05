@@ -6,10 +6,9 @@ interface Props {
   setState: React.Dispatch<React.SetStateAction<AppState>>
 }
 
-// Rendered inside the panel the rider is at: the build panel during the
-// build, "After the build" in the library once it's done (see HomePage).
-// Both panels log into state.log; this is the only place that edits or
-// deletes entries.
+// Rendered inside "After the build" in the library (see CollectionPanel).
+// Library cards add entries to state.log; this is the only place that edits
+// or deletes them. The build writes nothing to the log.
 export default function TrackerSection({ state, setState }: Props) {
   function handleDeleteEntry(id: string) {
     setState((prev) => ({ ...prev, log: prev.log.filter((e) => e.id !== id) }))

@@ -4,15 +4,15 @@ import Cite from './Cite'
 interface Props {
   // The build is finished: this is now the rider's current step.
   active: boolean
-  // The session tracker: library sessions log here, always shown.
-  trackerSlot?: ReactNode
+  // The session tracker: library sessions are logged here.
+  children: ReactNode
 }
 
 // "After the build", at the top of the library: the two ways to go on, the
 // mixing hint, where the evidence ends, and the every-session reminder.
 // Wording moved verbatim from the old "How to use" box; it follows the
 // research doc's "After the build" and the calendar.
-export default function AfterBuildCard({ active, trackerSlot }: Props) {
+export default function AfterBuildCard({ active, children }: Props) {
   return (
     <section
       id="after-build"
@@ -73,7 +73,7 @@ export default function AfterBuildCard({ active, trackerSlot }: Props) {
         </p>
       </div>
 
-      {trackerSlot && <div className="mt-4">{trackerSlot}</div>}
+      <div className="mt-4">{children}</div>
     </section>
   )
 }

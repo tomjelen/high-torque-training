@@ -4,7 +4,6 @@ import IntroPanel from './components/IntroPanel'
 import DownloadInstallPanel from './components/DownloadInstallPanel'
 import BuildPlanPanel from './components/BuildPlanPanel'
 import CollectionPanel from './components/CollectionPanel'
-import TrackerSection from './components/TrackerSection'
 import RationalePage from './components/RationalePage'
 import AboutPage from './components/AboutPage'
 import Header from './components/Header'
@@ -44,9 +43,6 @@ function PageShell({
 }
 
 function HomePage({ state, setState }: { state: AppState; setState: React.Dispatch<React.SetStateAction<AppState>> }) {
-  // The tracker lives in "After the build": the build itself doesn't log
-  // (Tom, 2026-11-04). A sticky side column was tried and dropped.
-  const tracker = <TrackerSection state={state} setState={setState} />
   return (
     <PageShell
       title={HOME_TITLE}
@@ -57,7 +53,7 @@ function HomePage({ state, setState }: { state: AppState; setState: React.Dispat
       <IntroPanel state={state} setState={setState} />
       <DownloadInstallPanel state={state} setState={setState} />
       <BuildPlanPanel state={state} setState={setState} />
-      <CollectionPanel state={state} setState={setState} trackerSlot={tracker} />
+      <CollectionPanel state={state} setState={setState} />
     </PageShell>
   )
 }

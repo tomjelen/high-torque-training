@@ -7,8 +7,8 @@ import type { BuildWeek, Workout } from '../types'
 type Props = {
   week: BuildWeek
   workout: Workout
-  // Shown top right instead of "Week N", e.g. "Weeks 7–8".
-  weekLabel?: string
+  // Shown top right, e.g. "Build weeks 3–4".
+  weekLabel: string
 } & (
   | {
       mode: 'current'
@@ -23,7 +23,7 @@ type Props = {
     }
   // Another step of the build, opened from the overview: what it is, but no
   // Done button (Done always marks the current week).
-  | { mode: 'preview'; statusText: string; onBack?: () => void; backLabel?: string }
+  | { mode: 'preview'; statusText: string; onBack: () => void; backLabel: string }
 )
 
 // One session of the 12-week build: what to ride and, for the current week,
@@ -47,7 +47,7 @@ export default function BuildWeekCard(props: Props) {
       <div className="flex flex-col min-w-0">
         <div className="flex items-baseline justify-between gap-2 mb-3">
           <h3 className="text-sm font-semibold text-slate-100 m-0">{workout.name}</h3>
-          <span className="flex-shrink-0 text-xs font-mono text-slate-400">{weekLabel ?? `Week ${week.week}`}</span>
+          <span className="flex-shrink-0 text-xs font-mono text-slate-400">{weekLabel}</span>
         </div>
 
         <WorkoutParams params={workout.params} durationMin={durationMinFor(workout)} />
@@ -84,15 +84,13 @@ export default function BuildWeekCard(props: Props) {
         {props.mode === 'preview' ? (
           <div className="flex flex-col gap-2 text-sm text-slate-400">
             <p className="m-0 text-slate-300 font-semibold">{props.statusText}</p>
-            {props.onBack && (
-              <button
-                type="button"
-                onClick={props.onBack}
-                className="w-full text-sm font-semibold border border-slate-600 hover:border-slate-400 text-slate-200 cursor-pointer rounded py-3 sm:py-1.5 transition-colors"
-              >
-                {props.backLabel ?? '← Back to this week'}
-              </button>
-            )}
+            <button
+              type="button"
+              onClick={props.onBack}
+              className="w-full text-sm font-semibold border border-slate-600 hover:border-slate-400 text-slate-200 cursor-pointer rounded py-3 sm:py-1.5 transition-colors"
+            >
+              {props.backLabel}
+            </button>
           </div>
         ) : (
           <div className="flex flex-col gap-3 text-sm text-slate-400">

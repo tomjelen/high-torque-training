@@ -1,3 +1,4 @@
+import { BUILD_LENGTH } from './utils/build-plan'
 import type { AppState, PanelState } from './types'
 
 const KEY = 'ht-state'
@@ -36,11 +37,11 @@ export const PRERENDER_STATE: AppState = {
 }
 
 function loadPanel(parsed: AppState | null, name: keyof AppState['panels']): PanelState {
-  return { collapsed: parsed?.panels?.[name]?.collapsed ?? false }
+  return { collapsed: parsed?.panels?.[name]?.collapsed ?? DEFAULT_STATE.panels[name].collapsed }
 }
 
 function validProgress(v: unknown): number {
-  return typeof v === 'number' && Number.isInteger(v) && v >= 0 && v <= 12 ? v : 0
+  return typeof v === 'number' && Number.isInteger(v) && v >= 0 && v <= BUILD_LENGTH ? v : 0
 }
 
 export function loadState(isMobile = false): AppState {

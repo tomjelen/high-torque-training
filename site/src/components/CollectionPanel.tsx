@@ -1,20 +1,19 @@
 import Panel from './Panel'
 import AfterBuildCard from './AfterBuildCard'
+import TrackerSection from './TrackerSection'
 import CollectionCard from './CollectionCard'
 import ChartLegend from './ChartLegend'
 import { LIBRARY_WORKOUTS } from '../data'
 import { todayLocalIso } from '../utils/tracker'
 import { isBuildDone } from '../utils/build-plan'
-import type { ReactNode } from 'react'
 import type { AppState, LogEntry } from '../types'
 
 interface Props {
   state: AppState
   setState: React.Dispatch<React.SetStateAction<AppState>>
-  trackerSlot?: ReactNode
 }
 
-export default function CollectionPanel({ state, setState, trackerSlot }: Props) {
+export default function CollectionPanel({ state, setState }: Props) {
   function onToggle(collapsed: boolean) {
     setState((s) => ({ ...s, panels: { ...s.panels, collection: { collapsed } } }))
   }
@@ -35,7 +34,11 @@ export default function CollectionPanel({ state, setState, trackerSlot }: Props)
       collapsed={state.panels.collection.collapsed}
       onToggle={onToggle}
     >
-      <AfterBuildCard active={isBuildDone(state.buildProgress)} trackerSlot={trackerSlot} />
+      {/* The tracker lives in "After the build": the build itself doesn't log
+          (Tom, 2026-11-04). It hides with this panel when collapsed (Tom, ok). */}
+      <AfterBuildCard active={isBuildDone(state.buildProgress)}>
+        <TrackerSection state={state} setState={setState} />
+      </AfterBuildCard>
 
       <div className="mb-4 px-1">
         <ChartLegend />

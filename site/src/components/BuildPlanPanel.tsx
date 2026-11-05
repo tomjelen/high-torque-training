@@ -9,10 +9,21 @@ import WorkoutChart from './WorkoutChart'
 import { chartWorkoutFor } from './chart-data'
 import { workoutById } from '../data'
 import { confettiBurst } from '../lib/confetti'
-import { BUILD_STEPS, nextLabel, phaseLength, phaseName, phaseWeek, stepEndsAt, stepIndexForProgress, stepLabel, stepTitle } from '../utils/build-steps'
+import {
+  BUILD_STEPS,
+  FIRST_BUILD_STEP,
+  isStepDone,
+  nextLabel,
+  phaseLength,
+  phaseName,
+  phaseWeek,
+  stepEndsAt,
+  stepIndexForProgress,
+  stepLabel,
+  stepTitle,
+} from '../utils/build-steps'
 import {
   ADAPTATION_LENGTH,
-  BUILD_LENGTH,
   currentWeek,
   moveOn,
   undoMoveOn,
@@ -42,6 +53,9 @@ const RESET_LABEL: Record<ResetKind, string> = {
   adaptation: 'Restart adaptation',
   build: 'Restart build',
 }
+
+// The green "Adaptation done ✓" / "Build done ✓" lines.
+const DONE_NOTE = 'm-0 mb-4 border-l-4 border-green-700 pl-4 py-1 text-sm text-slate-300'
 
 const RESET_CONFIRM_LABEL: Record<ResetKind, string> = {
   adaptation: 'Yes, restart adaptation',
@@ -98,6 +112,17 @@ export default function BuildPlanPanel({ state, setState }: Props) {
     setState((s) => ({ ...s, panels: { ...s.panels, build: { collapsed } } }))
   }
 
+  // "After the build" sits inside the library panel, which may be collapsed:
+  // open it first, then scroll (a bare #after-build jump into a closed
+  // <details> does nothing in some browsers).
+  function goToAfterBuild(e: React.MouseEvent) {
+    e.preventDefault()
+    setState((s) => ({ ...s, panels: { ...s.panels, collection: { collapsed: false } } }))
+    requestAnimationFrame(() =>
+      document.getElementById('after-build')?.scrollIntoView({ behavior: 'smooth', block: 'start' }),
+    )
+  }
+
   function onToggleChartExplainer(collapsed: boolean) {
     setState((s) => ({ ...s, panels: { ...s.panels, chartExplainer: { collapsed } } }))
   }
@@ -112,7 +137,9 @@ export default function BuildPlanPanel({ state, setState }: Props) {
   // Two plans: "Adaptation · week 3 of 4", "Build · week 2 of 8".
   const status =
     done || !week ? 'done ✓' : `${phaseName(week.phase)} · week ${phaseWeek(week)} of ${phaseLength(week.phase)}`
-  const weekLabel = week ? `${phaseName(week.phase)} week ${phaseWeek(week)}` : undefined
+  // Once the build is done, the overview and the card fade (back to full on
+  // hover/focus). Two wrappers, because the knee box between them never fades.
+  const fade = done ? 'opacity-50 hover:opacity-100 focus-within:opacity-100 transition-opacity' : ''
 
   return (
     <Panel
@@ -120,11 +147,10 @@ export default function BuildPlanPanel({ state, setState }: Props) {
       collapsed={state.panels.build.collapsed}
       onToggle={onToggle}
     >
-
       {done && (
-        <p id={doneId} className="m-0 mb-4 border-l-4 border-green-700 pl-4 py-1 text-sm text-slate-300">
+        <p id={doneId} className={DONE_NOTE}>
           <strong className="text-slate-100">Build done ✓</strong> Adaptation and build ridden.{' '}
-          <a href="#after-build" className="text-blue-400 hover:text-blue-300">
+          <a href="#after-build" onClick={goToAfterBuild} className="text-blue-400 hover:text-blue-300">
             What's next: after the build ↓
           </a>{' '}
           <button
@@ -138,9 +164,9 @@ export default function BuildPlanPanel({ state, setState }: Props) {
       )}
 
       {progress === ADAPTATION_LENGTH && selectedStep === null && (
-        <p className="m-0 mb-4 border-l-4 border-green-700 pl-4 py-1 text-sm text-slate-300">
+        <p className={DONE_NOTE}>
           <strong className="text-slate-100">Adaptation done ✓</strong> On to the build: 8 weeks, starting with{' '}
-          {stepTitle(BUILD_STEPS[stepIndexForProgress(ADAPTATION_LENGTH) ?? 0])}.
+          {stepTitle(FIRST_BUILD_STEP)}.
         </p>
       )}
 
@@ -148,23 +174,22 @@ export default function BuildPlanPanel({ state, setState }: Props) {
           week's card (where you act), then the card. Once the build is done
           the overview and card grey out (still usable); the knee rules stay at
           full strength, they apply to every library session too. */}
-      <div className={done ? 'opacity-50 hover:opacity-100 focus-within:opacity-100 transition-opacity' : ''}>
-      <BuildProgression
-        progress={progress}
-        shownStep={shownStep}
-        currentStep={currentStep}
-        onSelect={(i) => {
-          setSelectedStep(i === currentStep ? null : i)
-          // Phones: the details sit below all six steps, so bring them into
-          // view; otherwise a tap looks like it did nothing.
-          const el = document.getElementById(detailId)
-          if (el && el.getBoundingClientRect().top > window.innerHeight * 0.6) {
-            el.scrollIntoView({ behavior: 'smooth', block: 'start' })
-          }
-        }}
-        detailId={detailId}
-      />
-
+      <div className={fade}>
+        <BuildProgression
+          progress={progress}
+          shownStep={shownStep}
+          currentStep={currentStep}
+          onSelect={(i) => {
+            setSelectedStep(i === currentStep ? null : i)
+            // Phones: the details sit below all six steps, so bring them into
+            // view; otherwise a tap looks like it did nothing.
+            const el = document.getElementById(detailId)
+            if (el && el.getBoundingClientRect().top > window.innerHeight * 0.6) {
+              el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+            }
+          }}
+          detailId={detailId}
+        />
       </div>
 
       <div
@@ -200,7 +225,6 @@ export default function BuildPlanPanel({ state, setState }: Props) {
         </p>
       </div>
 
-
       <details
         open={!state.panels.chartExplainer.collapsed}
         onToggle={(e) => onToggleChartExplainer(!e.currentTarget.open)}
@@ -226,7 +250,7 @@ export default function BuildPlanPanel({ state, setState }: Props) {
         </div>
       </details>
 
-      <div className={done ? 'opacity-50 hover:opacity-100 focus-within:opacity-100 transition-opacity' : ''}>
+      <div className={fade}>
       <div id={detailId} className="mb-4 scroll-mt-20">
         {shown ? (
           <BuildWeekCard
@@ -235,7 +259,7 @@ export default function BuildPlanPanel({ state, setState }: Props) {
             workout={shown.workout}
             weekLabel={stepLabel(shown)}
             statusText={
-              shown.weeks[shown.weeks.length - 1].week - 1 < progress
+              isStepDone(shown, progress)
                 ? `Done · ${stepLabel(shown).toLowerCase()}`
                 : `Coming up in ${stepLabel(shown).toLowerCase()}`
             }
@@ -247,14 +271,14 @@ export default function BuildPlanPanel({ state, setState }: Props) {
           workout && (
             <BuildWeekCard
               mode="current"
-              weekLabel={weekLabel}
+              weekLabel={`${phaseName(week.phase)} week ${phaseWeek(week)}`}
               week={week}
               workout={workout}
               onDone={() => {
                 setState((prev) => ({ ...prev, buildProgress: moveOn(prev.buildProgress) }))
                 // Finishing week 12: confetti (Tom's request), and bring the
                 // "Build done" line into view, since this card disappears.
-                if (progress === BUILD_LENGTH - 1) {
+                if (isBuildDone(moveOn(progress))) {
                   confettiBurst()
                   requestAnimationFrame(() =>
                     document.getElementById(doneId)?.scrollIntoView({ behavior: 'smooth', block: 'center' }),
@@ -269,9 +293,7 @@ export default function BuildPlanPanel({ state, setState }: Props) {
         )}
       </div>
 
-
       <div className="flex flex-col gap-3 text-sm">
-
         <div className="flex flex-wrap items-center gap-2">
           {(['adaptation', 'build'] as const).map((kind) =>
             confirming === kind ? (

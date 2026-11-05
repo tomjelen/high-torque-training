@@ -10,16 +10,16 @@ import {
   RAMP_FILL,
   CADENCE_HATCH_LINE,
   CADENCE_HATCH_BG,
+  POWER_SCALE_TOP,
   type ChartBlock,
   type ChartWorkout,
 } from './chart-model'
 import { buildClusters, type LaidOutBlock } from './chart-clustering'
 
 // Vertical scale: power as a fraction of FTP maps to a bar-top y. Clamped at
-// POWER_TO_TOP so a maximal sprint (~150% FTP) stays the tallest bar without
-// blowing out the scale — the exact ceiling is tuning, not contract.
+// POWER_SCALE_TOP (chart-model) so a maximal sprint (~150% FTP) stays the
+// tallest bar without blowing out the scale.
 const FTP_BASELINE_Y = 80
-const POWER_TO_TOP = 1.3
 
 // Cadence accent strip geometry (below the FTP baseline).
 const ACCENT_Y = 82
@@ -36,7 +36,7 @@ const BLOCK_GAP_PX = 2
 const MIN_WIDTH_FOR_GAP_PX = 3
 
 function yForPower(pct: number): number {
-  const t = Math.min(pct, POWER_TO_TOP) / POWER_TO_TOP
+  const t = Math.min(pct, POWER_SCALE_TOP) / POWER_SCALE_TOP
   return FTP_BASELINE_Y - t * FTP_BASELINE_Y
 }
 

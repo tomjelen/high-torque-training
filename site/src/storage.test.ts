@@ -32,4 +32,8 @@ describe('loadState', () => {
     localStorage.setItem(KEY, JSON.stringify({ buildProgress: v }))
     expect(loadState().buildProgress).toBe(0)
   })
+  test('a panel missing from saved state gets its default, not "open"', () => {
+    localStorage.setItem(KEY, JSON.stringify({ panels: { build: { collapsed: true } } }))
+    expect(loadState().panels).toEqual({ ...DEFAULT_STATE.panels, build: { collapsed: true } })
+  })
 })
