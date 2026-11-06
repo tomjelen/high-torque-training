@@ -82,11 +82,11 @@ describe('chart data join (Workout.file → parsed .zwo blocks)', () => {
   })
 
   it('the how-to example workout id (te-4x8) still exists', () => {
-    // BuildPlanPanel hardcodes this id for the "how to read the chart"
+    // PlanPanel hardcodes this id for the "how to read the chart"
     // example; a rename would silently drop the example chart. Guard it here.
     expect(
       ALL_WORKOUTS.find((w) => w.id === 'te-4x8'),
-      'BuildPlanPanel HOW_TO_CHART id te-4x8 not found in data.ts',
+      'PlanPanel HOW_TO_CHART id te-4x8 not found in data.ts',
     ).toBeDefined()
   })
 

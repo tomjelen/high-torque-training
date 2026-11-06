@@ -52,8 +52,8 @@ export default function UsageGuidelines({ collapsed, onToggle }: Props) {
               mine, not a rule.
             </li>
             <li>
-              After a long break, restart the adaptation or the build, as you see fit. The plan has a
-              button for each: <strong className="text-slate-300">Restart adaptation</strong> and{' '}
+              After a long break, restart the adaptation or the build, as you see fit. Each plan's
+              panel has its own button: <strong className="text-slate-300">Restart adaptation</strong> and{' '}
               <strong className="text-slate-300">Restart build</strong>.
             </li>
           </ul>

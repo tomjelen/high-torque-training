@@ -2,7 +2,7 @@ import { useEffect, useState, type ReactNode } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import IntroPanel from './components/IntroPanel'
 import DownloadInstallPanel from './components/DownloadInstallPanel'
-import BuildPlanPanel from './components/BuildPlanPanel'
+import PlanPanel from './components/PlanPanel'
 import CollectionPanel from './components/CollectionPanel'
 import RationalePage from './components/RationalePage'
 import AboutPage from './components/AboutPage'
@@ -52,7 +52,8 @@ function HomePage({ state, setState }: { state: AppState; setState: React.Dispat
       <h1 className="text-2xl sm:text-3xl font-bold text-slate-100 mt-6 mb-6">Free training plan for Zwift</h1>
       <IntroPanel state={state} setState={setState} />
       <DownloadInstallPanel state={state} setState={setState} />
-      <BuildPlanPanel state={state} setState={setState} />
+      <PlanPanel phase="adaptation" state={state} setState={setState} />
+      <PlanPanel phase="build" state={state} setState={setState} />
       <CollectionPanel state={state} setState={setState} />
     </PageShell>
   )

@@ -1,6 +1,7 @@
 import type { ReactNode, SyntheticEvent } from 'react'
 
 interface PanelProps {
+  id?: string
   heading: ReactNode
   teaser?: ReactNode
   headerAction?: ReactNode
@@ -9,16 +10,17 @@ interface PanelProps {
   children: ReactNode
 }
 
-export default function Panel({ heading, teaser, headerAction, collapsed, onToggle, children }: PanelProps) {
+export default function Panel({ id, heading, teaser, headerAction, collapsed, onToggle, children }: PanelProps) {
   function handleToggle(e: SyntheticEvent<HTMLDetailsElement>) {
     onToggle(!e.currentTarget.open)
   }
 
   return (
     <details
+      id={id}
       open={!collapsed}
       onToggle={handleToggle}
-      className="border border-slate-800 rounded bg-slate-900 mb-4 group"
+      className="border border-slate-800 rounded bg-slate-900 mb-4 group scroll-mt-4"
     >
       <summary className="flex items-center justify-between gap-4 px-4 sm:px-5 py-4 cursor-pointer list-none select-none hover:bg-slate-800/50">
         <div className="flex items-baseline gap-3 min-w-0">

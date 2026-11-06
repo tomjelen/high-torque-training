@@ -56,6 +56,20 @@ export function phaseLength(phase: BuildWeek['phase']): number {
   return phase === 'adaptation' ? ADAPTATION_LENGTH : BUILD_LENGTH - ADAPTATION_LENGTH
 }
 
+// The steps of one plan, in order.
+export function stepsForPhase(phase: BuildWeek['phase']): BuildStep[] {
+  return BUILD_STEPS.filter((s) => s.phase === phase)
+}
+
+// Where `progress` stands against one plan: not started, the plan you're on,
+// or done. The build is "upcoming" until the adaptation is done.
+export type PhaseStatus = 'upcoming' | 'current' | 'done'
+export function phaseStatus(phase: BuildWeek['phase'], progress: number): PhaseStatus {
+  const start = phase === 'adaptation' ? 0 : ADAPTATION_LENGTH
+  const end = start + phaseLength(phase)
+  return progress >= end ? 'done' : progress >= start ? 'current' : 'upcoming'
+}
+
 // The first step of the 8-week build.
 export const FIRST_BUILD_STEP: BuildStep = BUILD_STEPS.find((s) => s.phase === 'build')!
 

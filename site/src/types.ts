@@ -62,6 +62,8 @@ export interface AppState {
   panels: {
     intro: PanelState
     download: PanelState
+    // The two plans: the 4-week adaptation and the 8-week build.
+    adaptation: PanelState
     build: PanelState
     collection: PanelState
     usageGuidelines: PanelState

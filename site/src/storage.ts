@@ -8,7 +8,9 @@ export const DEFAULT_STATE: AppState = {
   panels: {
     intro: { collapsed: false },
     download: { collapsed: false },
-    build: { collapsed: false },
+    adaptation: { collapsed: false },
+    // A first visit starts in the adaptation; the build opens when it's done.
+    build: { collapsed: true },
     collection: { collapsed: false },
     usageGuidelines: { collapsed: true },
     chartExplainer: { collapsed: true },
@@ -29,6 +31,7 @@ export const PRERENDER_STATE: AppState = {
   panels: {
     intro: { collapsed: true },
     download: { collapsed: true },
+    adaptation: { collapsed: true },
     build: { collapsed: true },
     collection: { collapsed: true },
     usageGuidelines: { collapsed: true },
@@ -63,6 +66,7 @@ export function loadState(isMobile = false): AppState {
       panels: {
         intro: loadPanel(parsed, 'intro'),
         download: loadPanel(parsed, 'download'),
+        adaptation: loadPanel(parsed, 'adaptation'),
         build: loadPanel(parsed, 'build'),
         collection: loadPanel(parsed, 'collection'),
         usageGuidelines: loadPanel(parsed, 'usageGuidelines'),

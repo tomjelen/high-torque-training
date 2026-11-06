@@ -2,27 +2,28 @@ import WorkoutChart from './WorkoutChart'
 import { chartWorkoutFor, cadenceLabelFor } from './chart-data'
 import { POWER_SCALE_TOP, ZONE_FILL } from './chart-model'
 import {
-  BUILD_STEPS,
   isStepDone,
-  phaseLength,
-  phaseName,
   phaseWeek,
   stepTitle,
   weekRangeLabel,
   weekStatus,
   type BuildStep,
 } from '../utils/build-steps'
+import type { BuildWeek } from '../types'
 
-// The whole 12-week build at a glance: a progression chart (one bar per week,
-// height = %FTP of the high-torque intervals, read from the .zwo files) with
-// the six step cards underneath. Chart and cards share one 6-column grid, so
-// on wide screens each card sits under its own two weeks. Phones: chart on
-// top, steps as a vertical list.
+// One plan (adaptation or build) at a glance: a progression chart (one bar per
+// week, height = %FTP of the high-torque intervals, read from the .zwo files)
+// with the step cards underneath. Chart and cards share one grid with a column
+// per step, so on wide screens each card sits under its own two weeks; the
+// grid is capped at ~15rem per step so both plans' columns are the same width
+// and their bars compare at a glance. Phones: chart on top, steps as a list.
 
 // Bar scale: the same top as WorkoutChart.
 const FTP_LINE_PCT = (1 / POWER_SCALE_TOP) * 100
 
 interface Props {
+  phase: BuildWeek['phase']
+  steps: BuildStep[]
   progress: number
   shownStep: number | null
   currentStep: number | null
@@ -30,22 +31,9 @@ interface Props {
   detailId: string
 }
 
-function PhaseLabels() {
-  const adaptation = BUILD_STEPS.filter((s) => s.phase === 'adaptation').length
-  const build = BUILD_STEPS.length - adaptation
-  return (
-    <div className="grid grid-cols-6 gap-2 mb-1 text-[11px] uppercase tracking-wide text-slate-500">
-      <div style={{ gridColumn: `span ${adaptation}` }} className="border-b border-slate-700 pb-1">
-        Adaptation<span className="hidden sm:inline"> · {phaseLength('adaptation')} weeks</span>
-      </div>
-      <div style={{ gridColumn: `span ${build}` }} className="border-b border-slate-700 pb-1">
-        Build<span className="hidden sm:inline"> · {phaseLength('build')} weeks</span>
-      </div>
-    </div>
-  )
-}
+const columns = (n: number) => ({ gridTemplateColumns: `repeat(${n}, minmax(0, 1fr))` })
 
-function ProgressionChart({ progress }: { progress: number }) {
+function ProgressionChart({ steps, progress }: { steps: BuildStep[]; progress: number }) {
   return (
     <div aria-hidden="true">
       <div className="relative h-28 sm:h-32">
@@ -56,8 +44,8 @@ function ProgressionChart({ progress }: { progress: number }) {
         >
           <span className="absolute -top-4 left-0 text-[10px] text-slate-500">FTP</span>
         </div>
-        <div className="absolute inset-0 grid grid-cols-6 gap-2">
-          {BUILD_STEPS.map((step) => {
+        <div className="absolute inset-0 grid gap-2" style={columns(steps.length)}>
+          {steps.map((step) => {
             const { torque } = step
             const heightPct = torque ? (Math.min(torque.power, POWER_SCALE_TOP) / POWER_SCALE_TOP) * 100 : 0
             return (
@@ -85,8 +73,8 @@ function ProgressionChart({ progress }: { progress: number }) {
         </div>
       </div>
       {/* Week numbers and cadence under each pair of bars */}
-      <div className="grid grid-cols-6 gap-2 mt-1 border-t border-slate-700 pt-1">
-        {BUILD_STEPS.map((step) => (
+      <div className="grid gap-2 mt-1 border-t border-slate-700 pt-1" style={columns(steps.length)}>
+        {steps.map((step) => (
           <div key={step.index} className="min-w-0 text-center">
             <div className="flex justify-center gap-1.5 text-[10px] font-mono text-slate-500">
               {step.weeks.map((w) => (
@@ -142,26 +130,37 @@ function stepStatusText(step: BuildStep, progress: number): string {
   return 'coming up'
 }
 
-export default function BuildProgression({ progress, shownStep, currentStep, onSelect, detailId }: Props) {
+// What the overview says about each plan. Sources: research/training-calendar.md
+// ("One torque session a week") and the intro's footnote on the adaptation.
+const INTRO: Record<BuildWeek['phase'], string> = {
+  adaptation:
+    'Four weeks, one torque session a week; all other rides at normal cadence. Controlled, below threshold: the power stays the same and the cadence drops. The sessions combine three coaches\' advice for riders new to torque work (Wakefield, Henderson, Schep); the combination and the four-week arrangement are mine.',
+  build:
+    'Eight weeks after the adaptation, one torque session a week; all other rides at normal cadence. The order comes from the coaches (Schep, EVOQ, Henderson for sustained efforts, CTS); two weeks per workout is my arrangement.',
+}
+
+export default function BuildProgression({ phase, steps, progress, shownStep, currentStep, onSelect, detailId }: Props) {
+  const headingId = `${phase}-glance-heading`
   return (
-    <section aria-labelledby="build-glance-heading" className="mb-4">
-      <h3 id="build-glance-heading" className="text-sm font-semibold text-slate-200 m-0 mb-1">
-        The plan at a glance
+    <section aria-labelledby={headingId} className="mb-4">
+      <h3 id={headingId} className="text-sm font-semibold text-slate-200 m-0 mb-1">
+        {phase === 'adaptation' ? 'The adaptation' : 'The build'} at a glance
       </h3>
       <p className="m-0 mb-4 text-xs text-slate-500">
-        A 4-week adaptation, then an 8-week build: one torque session a week; all other rides at normal cadence. Bar height is the power of the high-torque
-        intervals (%FTP, from the workout files); the cadence is under each pair. Progress counts sessions done,
-        not calendar weeks. The order comes from the coaches (Schep, EVOQ, Henderson for sustained efforts, CTS);
-        two weeks per workout is my arrangement.
+        {INTRO[phase]} Bar height is the power of the high-torque intervals (%FTP, from the workout files); the
+        cadence is under each pair. Progress counts sessions done, not calendar weeks.
       </p>
 
-      <PhaseLabels />
+      <div
+        className="lg:max-w-[calc(var(--steps)*15rem)]"
+        style={{ '--steps': steps.length } as React.CSSProperties}
+      >
       <div className="mb-3">
-        <ProgressionChart progress={progress} />
+        <ProgressionChart steps={steps} progress={progress} />
       </div>
 
-      <ol className="m-0 p-0 list-none grid grid-cols-1 lg:grid-cols-6 gap-2">
-        {BUILD_STEPS.map((step) => {
+      <ol className="m-0 p-0 list-none grid grid-cols-1 lg:grid-cols-[repeat(var(--steps),minmax(0,1fr))] gap-2">
+        {steps.map((step) => {
           const chart = chartWorkoutFor(step.workout)
           const selected = shownStep === step.index
           const isCurrent = currentStep === step.index
@@ -181,7 +180,6 @@ export default function BuildProgression({ progress, shownStep, currentStep, onS
                       className={`text-[11px] font-mono ${isCurrent ? 'text-orange-300' : 'text-slate-500'}`}
                     >
                       {weekRangeLabel(step)}
-                      <span className="lg:hidden"> · {phaseName(step.phase)}</span>
                     </span>
                     <WeekDots step={step} progress={progress} />
                   </span>
@@ -203,6 +201,7 @@ export default function BuildProgression({ progress, shownStep, currentStep, onS
           )
         })}
       </ol>
+      </div>
     </section>
   )
 }
