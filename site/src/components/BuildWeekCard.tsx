@@ -1,3 +1,4 @@
+import { useEffect, useId, useRef, useState } from 'react'
 import Cite from './Cite'
 import WorkoutParams from './WorkoutParams'
 import WorkoutChart from './WorkoutChart'
@@ -27,13 +28,25 @@ type Props = {
 )
 
 // One session of the 12-week build: what to ride and, for the current week,
-// one Done button. Done means "the move-on checks passed", which you may only
-// know the day after; not clicking is the repeat. The build doesn't write to
+// one Done button. Done asks the move-on checks in a dialog, which you may
+// only be able to answer the day after; "Yes" moves on, "Not quite" (or not
+// clicking) is the repeat. The build doesn't write to
 // the session log.
 export default function BuildWeekCard(props: Props) {
   const { week, workout, weekLabel } = props
   const chart = chartWorkoutFor(workout)
   const isCurrent = props.mode === 'current'
+  // Done opens a confirmation that asks the move-on checks; only "Yes" moves on.
+  const [asking, setAsking] = useState(false)
+  const dialogRef = useRef<HTMLDialogElement>(null)
+  const doneRef = useRef<HTMLButtonElement>(null)
+  const dialogHeadingId = useId()
+  useEffect(() => {
+    const dialog = dialogRef.current
+    if (!dialog) return
+    if (asking && !dialog.open) dialog.showModal()
+    if (!asking && dialog.open) dialog.close()
+  }, [asking])
 
   return (
     <section
@@ -96,34 +109,64 @@ export default function BuildWeekCard(props: Props) {
           <div className="flex flex-col gap-3 text-sm text-slate-400">
             {/* The calendar's move-on rule: the three checks gate the step
                 change (after its second session); knee pain stops you after
-                any session. */}
-            {props.stepEnds ? (
-              <div>
-                <p className="m-0 mb-1 text-slate-300 font-semibold">
-                  Before moving on to a new workout, click Done when all three were fine. You can click it the day after, once you know:
-                </p>
-                <ul className="m-0 pl-4 space-y-0.5 list-disc">
-                  <li>knees fine, during and after</li>
-                  <li>cadence held</li>
-                  <li>not wrecked the next day</li>
-                </ul>
-              </div>
-            ) : (
-              <p className="m-0 text-slate-300 font-semibold">
-                Click Done when your knees were fine, during and after. You can click it the day after, once you know.
-              </p>
-            )}
+                any session. Done asks them in a dialog. */}
+            <p className="m-0 text-slate-300 font-semibold">
+              {props.stepEnds
+                ? 'Rode it? Done asks three checks: knees, cadence, and how you feel the next day.'
+                : 'Rode it? Done asks one check: your knees, during and after.'}{' '}
+              <span className="font-normal text-slate-400">You can click it the day after, once you know.</span>
+            </p>
             <button
+              ref={doneRef}
               type="button"
-              onClick={props.onDone}
+              onClick={() => setAsking(true)}
               className="w-full text-sm font-semibold bg-orange-600 hover:bg-orange-500 text-white cursor-pointer rounded py-3 sm:py-1.5 transition-colors"
             >
               Done ✓ <span className="font-normal">— {props.nextLabel}</span>
             </button>
-            <p className="m-0">
-              {props.stepEnds ? 'Not all three?' : 'Knee pain?'} Don't click: ride it again next week. Knee pain
-              that keeps coming back → stop torque work and see a professional.
-            </p>
+            <dialog
+              ref={dialogRef}
+              aria-labelledby={dialogHeadingId}
+              onClose={() => {
+                setAsking(false)
+                doneRef.current?.focus()
+              }}
+              className="m-auto w-[min(32rem,calc(100vw-2rem))] rounded border border-slate-600 bg-slate-900 p-5 text-sm text-slate-300 backdrop:bg-slate-950/80"
+            >
+              <h3 id={dialogHeadingId} className="m-0 mb-3 text-base font-semibold text-slate-100">
+                {props.stepEnds ? 'Before you move on — were all three fine?' : 'Were your knees fine, during and after?'}
+              </h3>
+              {props.stepEnds && (
+                <ul className="m-0 mb-3 pl-5 space-y-1 list-disc">
+                  <li>Knees fine, during and after</li>
+                  <li>Cadence held</li>
+                  <li>Not wrecked the next day</li>
+                </ul>
+              )}
+              <p className="m-0 mb-4 text-slate-400">
+                {props.stepEnds ? 'Any "no"' : 'Knee pain'} → ride this session again next week instead. Knee pain that
+                keeps coming back → stop torque work and see a professional.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-2">
+                <button
+                  type="button"
+                  onClick={() => {
+                    setAsking(false)
+                    props.onDone()
+                  }}
+                  className="flex-1 text-sm font-semibold bg-orange-600 hover:bg-orange-500 text-white cursor-pointer rounded px-3 py-3 sm:py-1.5 transition-colors"
+                >
+                  {props.stepEnds ? 'Yes, all fine — move on' : 'Yes, fine — mark it done'}
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setAsking(false)}
+                  className="flex-1 text-sm border border-slate-600 hover:border-slate-400 text-slate-200 cursor-pointer rounded px-3 py-3 sm:py-1.5 transition-colors"
+                >
+                  Not quite — ride it again next week
+                </button>
+              </div>
+            </dialog>
             {week.phase === 'adaptation' && (
               <p className="m-0">Controlled: steady, below your threshold. Heavy legs are normal.</p>
             )}
