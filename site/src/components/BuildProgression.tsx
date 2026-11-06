@@ -2,7 +2,9 @@ import WorkoutChart from './WorkoutChart'
 import { chartWorkoutFor, cadenceLabelFor } from './chart-data'
 import { POWER_SCALE_TOP, ZONE_FILL } from './chart-model'
 import {
+  STEPS_BY_PHASE,
   isStepDone,
+  phaseName,
   phaseWeek,
   stepTitle,
   weekRangeLabel,
@@ -24,7 +26,6 @@ const FTP_LINE_PCT = (1 / POWER_SCALE_TOP) * 100
 
 interface Props {
   phase: BuildWeek['phase']
-  steps: BuildStep[]
   progress: number
   shownStep: number | null
   currentStep: number | null
@@ -33,7 +34,9 @@ interface Props {
 }
 
 // Column count comes from the --steps variable set on the wrapper, shared
-// with the card list so each card sits under its own two weeks.
+// with the card list so each card sits under its own two weeks. (The card
+// list's lg: copy is written out in full: Tailwind only sees literal class
+// names.)
 const STEP_COLUMNS = 'grid-cols-[repeat(var(--steps),minmax(0,1fr))]'
 
 function ProgressionChart({ steps, progress }: { steps: BuildStep[]; progress: number }) {
@@ -142,7 +145,8 @@ const INTRO: Record<BuildWeek['phase'], string> = {
     'Eight weeks after the adaptation, one torque session a week; all other rides at normal cadence. The order comes from the coaches (Schep, EVOQ, Henderson for sustained efforts, CTS); two weeks per workout is my arrangement. Bar height is the power of the high-torque intervals (%FTP, from the workout files); the cadence is under each pair. Progress counts sessions done, not calendar weeks.',
 }
 
-export default function BuildProgression({ phase, steps, progress, shownStep, currentStep, onSelect, detailId }: Props) {
+export default function BuildProgression({ phase, progress, shownStep, currentStep, onSelect, detailId }: Props) {
+  const steps = STEPS_BY_PHASE[phase]
   const headingId = `${phase}-glance-heading`
   // Two steps (the adaptation) leave wide cards: keep text and chart side by
   // side instead of stacking a stretched chart under the text.
@@ -150,68 +154,68 @@ export default function BuildProgression({ phase, steps, progress, shownStep, cu
   return (
     <section aria-labelledby={headingId} className="mb-4">
       <h3 id={headingId} className="text-sm font-semibold text-slate-200 m-0 mb-1">
-        {phase === 'adaptation' ? 'The adaptation' : 'The build'} at a glance
+        The {phaseName(phase).toLowerCase()} at a glance
       </h3>
       <p className="m-0 mb-4 text-xs text-slate-500">
         {INTRO[phase]}
       </p>
 
       <div style={{ '--steps': steps.length } as React.CSSProperties}>
-      {phase === 'build' && (
-        <div className="mb-3">
-          <ProgressionChart steps={steps} progress={progress} />
-        </div>
-      )}
+        {phase === 'build' && (
+          <div className="mb-3">
+            <ProgressionChart steps={steps} progress={progress} />
+          </div>
+        )}
 
-      <ol
-        className={`m-0 p-0 list-none grid grid-cols-1 lg:grid-cols-[repeat(var(--steps),minmax(0,1fr))] gap-2 ${
-          wide ? 'lg:[&_button]:flex-row lg:[&_button]:items-center lg:[&_button]:gap-3' : ''
-        }`}
-      >
-        {steps.map((step) => {
-          const chart = chartWorkoutFor(step.workout)
-          const selected = shownStep === step.index
-          const isCurrent = currentStep === step.index
-          const status = stepStatusText(step, progress)
-          return (
-            <li key={step.index} className="min-w-0">
-              <button
-                type="button"
-                onClick={() => onSelect(step.index)}
-                aria-pressed={selected}
-                aria-controls={detailId}
-                className="w-full h-full text-left rounded border px-3 py-2 cursor-pointer transition-colors flex lg:flex-col gap-3 lg:gap-1 items-center lg:items-stretch border-slate-800 bg-slate-950 hover:border-slate-600 aria-pressed:border-orange-600 aria-pressed:bg-slate-800 aria-pressed:hover:border-orange-600"
-              >
-                <span className="flex-1 min-w-0 flex flex-col gap-0.5">
-                  <span className="flex items-center justify-between gap-2">
-                    <span
-                      className={`text-[11px] font-mono ${isCurrent ? 'text-orange-300' : 'text-slate-500'}`}
-                    >
-                      {weekRangeLabel(step)}
+        <ol
+          className={`m-0 p-0 list-none grid grid-cols-1 lg:grid-cols-[repeat(var(--steps),minmax(0,1fr))] gap-2 ${
+            wide ? 'lg:[&_button]:flex-row lg:[&_button]:items-center lg:[&_button]:gap-3' : ''
+          }`}
+        >
+          {steps.map((step) => {
+            const chart = chartWorkoutFor(step.workout)
+            const selected = shownStep === step.index
+            const isCurrent = currentStep === step.index
+            const status = stepStatusText(step, progress)
+            return (
+              <li key={step.index} className="min-w-0">
+                <button
+                  type="button"
+                  onClick={() => onSelect(step.index)}
+                  aria-pressed={selected}
+                  aria-controls={detailId}
+                  className="w-full h-full text-left rounded border px-3 py-2 cursor-pointer transition-colors flex lg:flex-col gap-3 lg:gap-1 items-center lg:items-stretch border-slate-800 bg-slate-950 hover:border-slate-600 aria-pressed:border-orange-600 aria-pressed:bg-slate-800 aria-pressed:hover:border-orange-600"
+                >
+                  <span className="flex-1 min-w-0 flex flex-col gap-0.5">
+                    <span className="flex items-center justify-between gap-2">
+                      <span
+                        className={`text-[11px] font-mono ${isCurrent ? 'text-orange-300' : 'text-slate-500'}`}
+                      >
+                        {weekRangeLabel(step)}
+                      </span>
+                      <WeekDots step={step} progress={progress} />
                     </span>
-                    <WeekDots step={step} progress={progress} />
+                    <span className="text-sm font-semibold text-slate-100 truncate" title={step.workout.name}>
+                      {stepTitle(step)}
+                    </span>
+                    <span className="text-xs text-slate-400 truncate">
+                      {step.torqueLabel} FTP · {cadenceLabelFor(step.workout)}
+                    </span>
+                    <span className="sr-only"> ({status})</span>
                   </span>
-                  <span className="text-sm font-semibold text-slate-100 truncate" title={step.workout.name}>
-                    {stepTitle(step)}
-                  </span>
-                  <span className="text-xs text-slate-400 truncate">
-                    {step.torqueLabel} FTP · {cadenceLabelFor(step.workout)}
-                  </span>
-                  <span className="sr-only"> ({status})</span>
-                </span>
-                {chart && (
-                  <span
-                    className={`block flex-shrink-0 w-24 sm:w-40 ${wide ? 'lg:w-80' : 'lg:w-full lg:mt-1'}`}
-                    aria-hidden="true"
-                  >
-                    <WorkoutChart workout={{ ...chart, title: '' }} mode="minimal" width={680} showAxisLabels={false} />
-                  </span>
-                )}
-              </button>
-            </li>
-          )
-        })}
-      </ol>
+                  {chart && (
+                    <span
+                      className={`block flex-shrink-0 w-24 sm:w-40 ${wide ? 'lg:w-80' : 'lg:w-full lg:mt-1'}`}
+                      aria-hidden="true"
+                    >
+                      <WorkoutChart workout={{ ...chart, title: '' }} mode="minimal" width={680} showAxisLabels={false} />
+                    </span>
+                  )}
+                </button>
+              </li>
+            )
+          })}
+        </ol>
       </div>
     </section>
   )

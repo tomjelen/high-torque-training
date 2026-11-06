@@ -62,17 +62,20 @@ export const STEPS_BY_PHASE: Record<BuildWeek['phase'], BuildStep[]> = {
   build: BUILD_STEPS.filter((s) => s.phase === 'build'),
 }
 
+// The running week index (0–12) where a plan starts.
+export function phaseStart(phase: BuildWeek['phase']): number {
+  return phase === 'adaptation' ? 0 : ADAPTATION_LENGTH
+}
+
 // Where `progress` stands against one plan: not started, the plan you're on,
 // or done. The build is "upcoming" until the adaptation is done.
-export type PhaseStatus = 'upcoming' | 'current' | 'done'
-export function phaseStatus(phase: BuildWeek['phase'], progress: number): PhaseStatus {
-  const start = phase === 'adaptation' ? 0 : ADAPTATION_LENGTH
-  const end = start + phaseLength(phase)
-  return progress >= end ? 'done' : progress >= start ? 'current' : 'upcoming'
+export function phaseStatus(phase: BuildWeek['phase'], progress: number): 'upcoming' | 'current' | 'done' {
+  const start = phaseStart(phase)
+  return progress >= start + phaseLength(phase) ? 'done' : progress >= start ? 'current' : 'upcoming'
 }
 
 // The first step of the 8-week build.
-export const FIRST_BUILD_STEP: BuildStep = BUILD_STEPS.find((s) => s.phase === 'build')!
+export const FIRST_BUILD_STEP: BuildStep = STEPS_BY_PHASE.build[0]
 
 // A week (by its running 1–12 number) against progress: done, the one you're
 // on, or later.
@@ -88,7 +91,7 @@ export function isStepDone(step: BuildStep, progress: number): boolean {
 
 // The week's number inside its own plan: adaptation 1–4, build 1–8.
 export function phaseWeek(week: BuildWeek): number {
-  return week.phase === 'adaptation' ? week.week : week.week - ADAPTATION_LENGTH
+  return week.week - phaseStart(week.phase)
 }
 
 // "Weeks 1–2" (inside its plan; for places where the plan is already shown).

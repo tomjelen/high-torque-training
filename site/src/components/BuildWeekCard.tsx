@@ -1,4 +1,4 @@
-import { useEffect, useId, useRef, useState } from 'react'
+import { useId, useRef } from 'react'
 import Cite from './Cite'
 import KneeRules from './KneeRules'
 import WorkoutParams from './WorkoutParams'
@@ -37,17 +37,11 @@ export default function BuildWeekCard(props: Props) {
   const { week, workout, weekLabel } = props
   const chart = chartWorkoutFor(workout)
   const isCurrent = props.mode === 'current'
-  // Done opens a confirmation that asks the move-on checks; only "Yes" moves on.
-  const [asking, setAsking] = useState(false)
+  // Done opens a native modal <dialog> asking the move-on checks; only "Yes"
+  // moves on. Escape and "Not quite" just close it.
   const dialogRef = useRef<HTMLDialogElement>(null)
   const doneRef = useRef<HTMLButtonElement>(null)
   const dialogHeadingId = useId()
-  useEffect(() => {
-    const dialog = dialogRef.current
-    if (!dialog) return
-    if (asking && !dialog.open) dialog.showModal()
-    if (!asking && dialog.open) dialog.close()
-  }, [asking])
 
   return (
     <section
@@ -122,7 +116,7 @@ export default function BuildWeekCard(props: Props) {
             <button
               ref={doneRef}
               type="button"
-              onClick={() => setAsking(true)}
+              onClick={() => dialogRef.current?.showModal()}
               className="w-full text-sm font-semibold bg-orange-600 hover:bg-orange-500 text-white cursor-pointer rounded py-3 sm:py-1.5 transition-colors"
             >
               Done ✓ <span className="font-normal">— {props.nextLabel}</span>
@@ -130,10 +124,7 @@ export default function BuildWeekCard(props: Props) {
             <dialog
               ref={dialogRef}
               aria-labelledby={dialogHeadingId}
-              onClose={() => {
-                setAsking(false)
-                doneRef.current?.focus()
-              }}
+              onClose={() => doneRef.current?.focus()}
               className="m-auto w-[min(32rem,calc(100vw-2rem))] rounded border border-slate-600 bg-slate-900 p-5 text-sm text-slate-300 backdrop:bg-slate-950/80"
             >
               <h3 id={dialogHeadingId} className="m-0 mb-3 text-base font-semibold text-slate-100">
@@ -154,11 +145,9 @@ export default function BuildWeekCard(props: Props) {
                 <button
                   type="button"
                   onClick={() => {
-                    // Close now, not after the re-render, so a double click
-                    // can't move on twice.
+                    // Already closed: a second click of a double click.
                     if (!dialogRef.current?.open) return
                     dialogRef.current.close()
-                    setAsking(false)
                     props.onDone()
                   }}
                   className="flex-1 text-sm font-semibold bg-orange-600 hover:bg-orange-500 text-white cursor-pointer rounded px-3 py-3 sm:py-1.5 transition-colors"
@@ -167,7 +156,7 @@ export default function BuildWeekCard(props: Props) {
                 </button>
                 <button
                   type="button"
-                  onClick={() => setAsking(false)}
+                  onClick={() => dialogRef.current?.close()}
                   className="flex-1 text-sm border border-slate-600 hover:border-slate-400 text-slate-200 cursor-pointer rounded px-3 py-3 sm:py-1.5 transition-colors"
                 >
                   Not quite — ride it again next week
