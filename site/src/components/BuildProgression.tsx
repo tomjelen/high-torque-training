@@ -11,12 +11,13 @@ import {
 } from '../utils/build-steps'
 import type { BuildWeek } from '../types'
 
-// One plan (adaptation or build) at a glance: a progression chart (one bar per
-// week, height = %FTP of the high-torque intervals, read from the .zwo files)
-// with the step cards underneath. Chart and cards share one grid with a column
-// per step, so on wide screens each card sits under its own two weeks; the
-// grid is capped at ~15rem per step so both plans' columns are the same width
-// and their bars compare at a glance. Phones: chart on top, steps as a list.
+// One plan (adaptation or build) at a glance: the step cards, and for the
+// build a progression chart above them (one bar per week, height = %FTP of
+// the high-torque intervals, read from the .zwo files). Chart and cards share
+// one full-width grid with a column per step, so on wide screens each card
+// sits under its own two weeks. The adaptation has no bar chart: both its
+// workouts are at 80% FTP, so the bars said nothing the cards don't (Tom,
+// 2026-11-06). Phones: chart on top, steps as a vertical list.
 
 // Bar scale: the same top as WorkoutChart.
 const FTP_LINE_PCT = (1 / POWER_SCALE_TOP) * 100
@@ -134,32 +135,37 @@ function stepStatusText(step: BuildStep, progress: number): string {
 // ("One torque session a week") and the intro's footnote on the adaptation.
 const INTRO: Record<BuildWeek['phase'], string> = {
   adaptation:
-    'Four weeks, one torque session a week; all other rides at normal cadence. Controlled, below threshold: the power stays the same and the cadence drops. The sessions combine three coaches\' advice for riders new to torque work (Wakefield, Henderson, Schep); the combination and the four-week arrangement are mine.',
+    'Four weeks, one torque session a week; all other rides at normal cadence. Controlled, below threshold: the power stays at 80% FTP and the cadence drops. The sessions combine three coaches\' advice for riders new to torque work (Wakefield, Henderson, Schep); the combination and the four-week arrangement are mine. Progress counts sessions done, not calendar weeks.',
   build:
-    'Eight weeks after the adaptation, one torque session a week; all other rides at normal cadence. The order comes from the coaches (Schep, EVOQ, Henderson for sustained efforts, CTS); two weeks per workout is my arrangement.',
+    'Eight weeks after the adaptation, one torque session a week; all other rides at normal cadence. The order comes from the coaches (Schep, EVOQ, Henderson for sustained efforts, CTS); two weeks per workout is my arrangement. Bar height is the power of the high-torque intervals (%FTP, from the workout files); the cadence is under each pair. Progress counts sessions done, not calendar weeks.',
 }
 
 export default function BuildProgression({ phase, steps, progress, shownStep, currentStep, onSelect, detailId }: Props) {
   const headingId = `${phase}-glance-heading`
+  // Two steps (the adaptation) leave wide cards: keep text and chart side by
+  // side instead of stacking a stretched chart under the text.
+  const wide = steps.length <= 2
   return (
     <section aria-labelledby={headingId} className="mb-4">
       <h3 id={headingId} className="text-sm font-semibold text-slate-200 m-0 mb-1">
         {phase === 'adaptation' ? 'The adaptation' : 'The build'} at a glance
       </h3>
       <p className="m-0 mb-4 text-xs text-slate-500">
-        {INTRO[phase]} Bar height is the power of the high-torque intervals (%FTP, from the workout files); the
-        cadence is under each pair. Progress counts sessions done, not calendar weeks.
+        {INTRO[phase]}
       </p>
 
-      <div
-        className="lg:max-w-[calc(var(--steps)*15rem)]"
-        style={{ '--steps': steps.length } as React.CSSProperties}
-      >
-      <div className="mb-3">
-        <ProgressionChart steps={steps} progress={progress} />
-      </div>
+      <div style={{ '--steps': steps.length } as React.CSSProperties}>
+      {phase === 'build' && (
+        <div className="mb-3">
+          <ProgressionChart steps={steps} progress={progress} />
+        </div>
+      )}
 
-      <ol className="m-0 p-0 list-none grid grid-cols-1 lg:grid-cols-[repeat(var(--steps),minmax(0,1fr))] gap-2">
+      <ol
+        className={`m-0 p-0 list-none grid grid-cols-1 lg:grid-cols-[repeat(var(--steps),minmax(0,1fr))] gap-2 ${
+          wide ? 'lg:[&_button]:flex-row lg:[&_button]:items-center lg:[&_button]:gap-3' : ''
+        }`}
+      >
         {steps.map((step) => {
           const chart = chartWorkoutFor(step.workout)
           const selected = shownStep === step.index
@@ -192,7 +198,10 @@ export default function BuildProgression({ phase, steps, progress, shownStep, cu
                   <span className="sr-only"> ({status})</span>
                 </span>
                 {chart && (
-                  <span className="block w-24 sm:w-40 lg:w-full flex-shrink-0 lg:mt-1" aria-hidden="true">
+                  <span
+                    className={`block flex-shrink-0 w-24 sm:w-40 ${wide ? 'lg:w-80' : 'lg:w-full lg:mt-1'}`}
+                    aria-hidden="true"
+                  >
                     <WorkoutChart workout={{ ...chart, title: '' }} mode="minimal" width={680} showAxisLabels={false} />
                   </span>
                 )}
