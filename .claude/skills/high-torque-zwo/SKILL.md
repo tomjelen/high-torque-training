@@ -134,7 +134,7 @@ Every low-cadence workout must include at least one knee warning. Example: "If y
 
 The cooldown knee check has two wordings, by folder (Tom, 2026-11-05):
 
-- **Adaptation files:** "Note how your knees feel. Any ache? My rule: next week, repeat this session instead of moving on. If it keeps coming back, stop torque work and see a professional." (knee rule 4, as on the site's knee box.)
+- **Adaptation files:** "Note how your knees feel. Any ache? My rule: next week, repeat this session instead of moving on. If it keeps coming back, stop torque work and see a professional." (knee rule 4, as in the site's knee rules.)
 - **Library files:** the same without the "My rule: next week, repeat…" sentence: "Note how your knees feel. Any ache? If it keeps coming back, stop torque work and see a professional." (SIT 2 sets opens with "Knee check: how do they feel now compared to during the sprints?" instead.)
 
 Why: the "repeat instead of moving on" rule only makes sense inside the plan. It was added to all twelve files on 2026-11-05 because it reads right when you think of the workouts through the build plan. But the library files are also ridden as free choice after the build, where there is nothing to move on to, and they may sit in someone else's plan. During the build, the site's Done button asks the knee question and covers the repeat. The adaptation files are only ridden in the adaptation, so they keep the rule. Don't add it back to the library files.

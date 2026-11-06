@@ -99,7 +99,7 @@ Any reimplementation must keep all of these true. They are stated in terms of
    (it must then carry enough labelling — title, a key for the marks — to be
    understood alone). The labelling in the standalone case may be provided by
    the *host context* (e.g. `ChartLegend showZones` placed below the SVG by
-   `BuildPlanPanel`) rather than baked into the SVG itself — what matters is
+   `PlanPanel`) rather than baked into the SVG itself — what matters is
    that the page view as a whole is self-explanatory, not that the SVG is
    self-contained. The exact contents of each mode are negotiable; the
    no-duplication-when-embedded and self-explanatory-when-standalone properties
@@ -263,7 +263,7 @@ them in the SVG would violate req. 7 (no-duplication-when-embedded).
 
 **One full-mode "how to read" example in the build-plan panel:**
 
-`site/src/components/BuildPlanPanel.tsx` renders a collapsible "What is the
+`site/src/components/PlanPanel.tsx` renders a collapsible "What is the
 high-torque block?" block containing a full-mode chart of the Torque Endurance
 4×8 workout (four clearly separate marks). It is collapsed by default on return
 visits (persisted as `panels.chartExplainer` in app state) and expanded for new
@@ -297,7 +297,7 @@ live in `chart-model.ts` alongside the zone palette and are imported by both
 and are deliberately not tokenised (req. 10).
 
 `WorkoutChart` no longer renders its own internal SVG legend row. The
-full-mode chart relies on the host context (`BuildPlanPanel`) to supply the
+full-mode chart relies on the host context (`PlanPanel`) to supply the
 key via `<ChartLegend showZones />` placed below the SVG.
 
 ### The data join — `chart-data.ts`
