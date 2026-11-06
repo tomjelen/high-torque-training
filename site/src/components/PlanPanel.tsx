@@ -20,7 +20,7 @@ import {
   stepEndsAt,
   stepIndexForProgress,
   stepLabel,
-  stepsForPhase,
+  STEPS_BY_PHASE,
   stepTitle,
 } from '../utils/build-steps'
 import {
@@ -75,7 +75,7 @@ const DONE_NOTE = 'm-0 mb-4 border-l-4 border-green-700 pl-4 py-1 text-sm text-s
 export default function PlanPanel({ phase, state, setState }: Props) {
   const progress = state.buildProgress
   const status = phaseStatus(phase, progress)
-  const steps = stepsForPhase(phase)
+  const steps = STEPS_BY_PHASE[phase]
   const buildDone = isBuildDone(progress)
   const active = status === 'current' || (phase === 'build' && buildDone)
   const week = status === 'current' ? currentWeek(progress) : null
@@ -106,7 +106,10 @@ export default function PlanPanel({ phase, state, setState }: Props) {
     }
     if (!returnFocus.current) return
     returnFocus.current = false
-    if (restartRef.current && !restartRef.current.disabled) restartRef.current.focus()
+    // A restart usually removes its own button (the plan is back at week 1):
+    // fall back to the panel's header rather than losing focus to <body>.
+    const target = restartRef.current ?? document.querySelector<HTMLElement>(`#${PLAN_PANEL_ID[phase]} summary`)
+    target?.focus()
   }, [confirming])
 
   function closeConfirm() {
@@ -126,6 +129,12 @@ export default function PlanPanel({ phase, state, setState }: Props) {
 
   function backOneWeek() {
     setState((prev) => ({ ...prev, buildProgress: undoMoveOn(prev.buildProgress) }))
+    // Back from build week 1 to adaptation week 4: that card lives in the
+    // adaptation panel, which finishing week 4 collapsed. Reopen it, go there.
+    if (phase === 'build' && progress === ADAPTATION_LENGTH) {
+      setPanels({ adaptation: { collapsed: false }, build: { collapsed: true } })
+      scrollToPanel('adaptation')
+    }
   }
 
   function onDone() {
@@ -278,9 +287,7 @@ export default function PlanPanel({ phase, state, setState }: Props) {
         </div>
 
         {canRestart && (
-          <div className="flex flex-col gap-3 text-sm mb-4">
-            {canRestart && (
-              <div className="flex flex-wrap items-center gap-2">
+              <div className="flex flex-wrap items-center gap-2 text-sm mb-4">
                 {confirming ? (
                   <span
                     className="flex flex-wrap items-center gap-2 text-xs text-slate-300"
@@ -310,8 +317,6 @@ export default function PlanPanel({ phase, state, setState }: Props) {
                   </button>
                 )}
               </div>
-            )}
-          </div>
         )}
 
       </div>

@@ -32,7 +32,9 @@ interface Props {
   detailId: string
 }
 
-const columns = (n: number) => ({ gridTemplateColumns: `repeat(${n}, minmax(0, 1fr))` })
+// Column count comes from the --steps variable set on the wrapper, shared
+// with the card list so each card sits under its own two weeks.
+const STEP_COLUMNS = 'grid-cols-[repeat(var(--steps),minmax(0,1fr))]'
 
 function ProgressionChart({ steps, progress }: { steps: BuildStep[]; progress: number }) {
   return (
@@ -45,7 +47,7 @@ function ProgressionChart({ steps, progress }: { steps: BuildStep[]; progress: n
         >
           <span className="absolute -top-4 left-0 text-[10px] text-slate-500">FTP</span>
         </div>
-        <div className="absolute inset-0 grid gap-2" style={columns(steps.length)}>
+        <div className={`absolute inset-0 grid gap-2 ${STEP_COLUMNS}`}>
           {steps.map((step) => {
             const { torque } = step
             const heightPct = torque ? (Math.min(torque.power, POWER_SCALE_TOP) / POWER_SCALE_TOP) * 100 : 0
@@ -74,7 +76,7 @@ function ProgressionChart({ steps, progress }: { steps: BuildStep[]; progress: n
         </div>
       </div>
       {/* Week numbers and cadence under each pair of bars */}
-      <div className="grid gap-2 mt-1 border-t border-slate-700 pt-1" style={columns(steps.length)}>
+      <div className={`grid gap-2 mt-1 border-t border-slate-700 pt-1 ${STEP_COLUMNS}`}>
         {steps.map((step) => (
           <div key={step.index} className="min-w-0 text-center">
             <div className="flex justify-center gap-1.5 text-[10px] font-mono text-slate-500">

@@ -154,6 +154,10 @@ export default function BuildWeekCard(props: Props) {
                 <button
                   type="button"
                   onClick={() => {
+                    // Close now, not after the re-render, so a double click
+                    // can't move on twice.
+                    if (!dialogRef.current?.open) return
+                    dialogRef.current.close()
                     setAsking(false)
                     props.onDone()
                   }}

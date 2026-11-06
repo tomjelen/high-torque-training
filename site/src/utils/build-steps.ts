@@ -56,9 +56,10 @@ export function phaseLength(phase: BuildWeek['phase']): number {
   return phase === 'adaptation' ? ADAPTATION_LENGTH : BUILD_LENGTH - ADAPTATION_LENGTH
 }
 
-// The steps of one plan, in order.
-export function stepsForPhase(phase: BuildWeek['phase']): BuildStep[] {
-  return BUILD_STEPS.filter((s) => s.phase === phase)
+// The steps of each plan, in order.
+export const STEPS_BY_PHASE: Record<BuildWeek['phase'], BuildStep[]> = {
+  adaptation: BUILD_STEPS.filter((s) => s.phase === 'adaptation'),
+  build: BUILD_STEPS.filter((s) => s.phase === 'build'),
 }
 
 // Where `progress` stands against one plan: not started, the plan you're on,
