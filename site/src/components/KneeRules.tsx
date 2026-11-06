@@ -1,14 +1,14 @@
 import { Link } from 'react-router-dom'
 
 // The knee protection rules: the research doc's "Knee rules", in its order.
-// Shown in the plan you're on, right above this week's card, as one calm
+// Shown inside this week's card, above the Done button, as one calm
 // amber line naming the before-ride rules; it opens to the full list and its
 // sources. The after-ride rule (knee pain → repeat) is asked in the Done
 // dialog every week. The list is in the DOM even when closed (a <details>),
 // so the prerendered page and agents still read it.
 export default function KneeRules() {
   return (
-    <details className="group/knee border-l-4 border-amber-600/70 bg-amber-950/20 rounded-r text-amber-200 text-sm mb-4">
+    <details className="group/knee border-l-4 border-amber-600/70 bg-amber-950/20 rounded-r text-amber-200 text-sm">
       <summary className="flex items-start justify-between gap-3 px-4 py-2.5 cursor-pointer list-none select-none hover:bg-amber-950/30">
         <span>
           <span aria-hidden="true">⚠ </span>

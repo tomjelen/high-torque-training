@@ -2,7 +2,6 @@ import { useEffect, useId, useRef, useState } from 'react'
 import Panel from './Panel'
 import BuildWeekCard from './BuildWeekCard'
 import BuildProgression from './BuildProgression'
-import KneeRules from './KneeRules'
 import UsageGuidelines from './UsageGuidelines'
 import ChartLegend from './ChartLegend'
 import WorkoutChart from './WorkoutChart'
@@ -70,8 +69,9 @@ const DONE_NOTE = 'm-0 mb-4 border-l-4 border-green-700 pl-4 py-1 text-sm text-s
 
 // One of the two plans, in its own panel: the 4-week adaptation or the 8-week
 // build. Both read the one running `buildProgress` (0–12). The plan you're on
-// holds this week's card, the knee rules, the chart explainer and the rules
-// for the plan; once the build is done, the build panel keeps them.
+// holds this week's card (with the knee rules line), the chart explainer and
+// the rules for the plan; once the build is done, the build panel keeps the
+// last two.
 export default function PlanPanel({ phase, state, setState }: Props) {
   const progress = state.buildProgress
   const status = phaseStatus(phase, progress)
@@ -185,7 +185,6 @@ export default function PlanPanel({ phase, state, setState }: Props) {
           ? `week ${phaseWeek(week)} of ${phaseLength(phase)}`
           : ''
   // A finished plan's overview and card fade (back to full on hover/focus).
-  // Two wrappers, because the knee rules line between them never fades.
   const fade = status === 'done' ? 'opacity-50 hover:opacity-100 focus-within:opacity-100 transition-opacity' : ''
   // Restart only means something once the plan has started.
   const canRestart = phase === 'adaptation' ? progress > 0 : progress > ADAPTATION_LENGTH
@@ -219,8 +218,8 @@ export default function PlanPanel({ phase, state, setState }: Props) {
         </p>
       )}
 
-      {/* Order: the plan at a glance, then (in the plan you're on) the knee
-          rules right above this week's card, where you act, then the card. */}
+      {/* Order: the plan at a glance, then this week's card (with the knee
+          rules line beside Done), then the restart button, then reference. */}
       <div className={fade}>
         <BuildProgression
           phase={phase}
@@ -240,35 +239,6 @@ export default function PlanPanel({ phase, state, setState }: Props) {
           detailId={detailId}
         />
       </div>
-
-      {active && <KneeRules />}
-
-      {active && (
-        <details
-          open={!state.panels.chartExplainer.collapsed}
-          onToggle={(e) => setPanels({ chartExplainer: { collapsed: !e.currentTarget.open } })}
-          className="border border-slate-800 rounded bg-slate-950 mb-4 group/explainer"
-        >
-          <summary className="flex items-center justify-between gap-4 px-4 py-3 cursor-pointer list-none select-none hover:bg-slate-800/30 text-sm">
-            <span className="text-slate-300">
-              <strong className="text-slate-200">What is the high-torque block?</strong>
-            </span>
-            <span className="text-slate-500 text-xs flex-shrink-0 group-open/explainer:rotate-180 transition-transform inline-block">▾</span>
-          </summary>
-          <div className="px-4 pb-4 pt-3 border-t border-slate-800">
-            <p className="m-0 mb-3 text-sm text-slate-400">
-              Each bar is one interval — height is effort, left to right is time. The amber hatched
-              blocks mark where you drop to the low-cadence target: the high-torque work.
-            </p>
-            {HOW_TO_CHART && (
-              <div className="mb-3">
-                <WorkoutChart workout={HOW_TO_CHART} mode="full" width={680} showAxisLabels={false} />
-              </div>
-            )}
-            <ChartLegend showZones />
-          </div>
-        </details>
-      )}
 
       <div className={fade}>
         <div id={detailId} className="scroll-mt-20">
@@ -307,8 +277,8 @@ export default function PlanPanel({ phase, state, setState }: Props) {
           )}
         </div>
 
-        {(canRestart || active) && (
-          <div className="flex flex-col gap-3 text-sm">
+        {canRestart && (
+          <div className="flex flex-col gap-3 text-sm mb-4">
             {canRestart && (
               <div className="flex flex-wrap items-center gap-2">
                 {confirming ? (
@@ -341,29 +311,46 @@ export default function PlanPanel({ phase, state, setState }: Props) {
                 )}
               </div>
             )}
-            {active && (
-              <>
-                <p className="m-0 text-xs text-slate-500">
-                  After a long break, restart the adaptation or the build, as you see fit.
-                </p>
-                <p className="m-0 text-xs text-slate-500">
-                  After a break (illness, travel): the adaptation weeks 3–4 session is a good one to come back with (a
-                  suggestion of mine).
-                </p>
-              </>
-            )}
           </div>
         )}
 
-        {active && (
-          <div className="mt-4">
-            <UsageGuidelines
-              collapsed={state.panels.usageGuidelines.collapsed}
-              onToggle={(collapsed) => setPanels({ usageGuidelines: { collapsed } })}
-            />
-          </div>
-        )}
       </div>
+
+      {/* Reference, below everything you act on: what the amber block means,
+          and the rules for the plan. Only in the plan you're on. */}
+      {active && (
+        <details
+          open={!state.panels.chartExplainer.collapsed}
+          onToggle={(e) => setPanels({ chartExplainer: { collapsed: !e.currentTarget.open } })}
+          className="border border-slate-800 rounded bg-slate-950 mb-4 group/explainer"
+        >
+          <summary className="flex items-center justify-between gap-4 px-4 py-3 cursor-pointer list-none select-none hover:bg-slate-800/30 text-sm">
+            <span className="text-slate-300">
+              <strong className="text-slate-200">What is the high-torque block?</strong>
+            </span>
+            <span className="text-slate-500 text-xs flex-shrink-0 group-open/explainer:rotate-180 transition-transform inline-block">▾</span>
+          </summary>
+          <div className="px-4 pb-4 pt-3 border-t border-slate-800">
+            <p className="m-0 mb-3 text-sm text-slate-400">
+              Each bar is one interval — height is effort, left to right is time. The amber hatched
+              blocks mark where you drop to the low-cadence target: the high-torque work.
+            </p>
+            {HOW_TO_CHART && (
+              <div className="mb-3">
+                <WorkoutChart workout={HOW_TO_CHART} mode="full" width={680} showAxisLabels={false} />
+              </div>
+            )}
+            <ChartLegend showZones />
+          </div>
+        </details>
+      )}
+
+      {active && (
+        <UsageGuidelines
+          collapsed={state.panels.usageGuidelines.collapsed}
+          onToggle={(collapsed) => setPanels({ usageGuidelines: { collapsed } })}
+        />
+      )}
     </Panel>
   )
 }

@@ -1,5 +1,6 @@
 import { useEffect, useId, useRef, useState } from 'react'
 import Cite from './Cite'
+import KneeRules from './KneeRules'
 import WorkoutParams from './WorkoutParams'
 import WorkoutChart from './WorkoutChart'
 import { chartWorkoutFor, durationMinFor } from './chart-data'
@@ -107,6 +108,8 @@ export default function BuildWeekCard(props: Props) {
           </div>
         ) : (
           <div className="flex flex-col gap-3 text-sm text-slate-400">
+            {/* Before you ride: the knee rules, right where you act. */}
+            <KneeRules />
             {/* The calendar's move-on rule: the three checks gate the step
                 change (after its second session); knee pain stops you after
                 any session. Done asks them in a dialog. */}
