@@ -14,7 +14,7 @@ export default function UsageGuidelines({ collapsed, onToggle }: Props) {
   // The build's rules in full, with their sources. Wording follows the
   // research doc ("The move-on rule") and the calendar ("Moving on"). The
   // 12-week order is shown by the progression chart, "After the build" lives
-  // in AfterBuildCard, and the every-session rules in the knee box.
+  // in AfterBuildCard, and the every-session rules in the knee rules line (KneeRules).
   return (
     <details open={!collapsed} onToggle={handleToggle} className="border border-slate-800 rounded bg-slate-950 mb-4 group">
       <summary className="flex items-center justify-between gap-4 px-4 py-3 cursor-pointer list-none select-none hover:bg-slate-800/30 text-sm">

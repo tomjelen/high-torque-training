@@ -66,8 +66,8 @@ export default function AfterBuildCard({ active, children }: Props) {
           program. No study tested this site's arrangement. After the build no source says what order to ride things
           in. Each workout keeps its own source label.
         </p>
-        <p className="m-0 text-red-200">
-          <strong className="text-red-100">⚠ Every session:</strong> all low-cadence intervals are seated; warm up
+        <p className="m-0 border-l-4 border-amber-600/70 pl-3 text-amber-200">
+          <strong className="text-amber-100">⚠ Every session:</strong> all low-cadence intervals are seated; warm up
           at normal cadence for about 15 minutes first (every workout includes this warm-up); if your knees ache during an
           interval, stop the interval.
         </p>
