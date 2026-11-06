@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom'
 // so the prerendered page and agents still read it.
 export default function KneeRules() {
   return (
-    <details className="group border-l-4 border-amber-600/70 bg-amber-950/20 rounded-r text-amber-200 text-sm mb-4">
+    <details className="group/knee border-l-4 border-amber-600/70 bg-amber-950/20 rounded-r text-amber-200 text-sm mb-4">
       <summary className="flex items-start justify-between gap-3 px-4 py-2.5 cursor-pointer list-none select-none hover:bg-amber-950/30">
         <span>
           <span aria-hidden="true">⚠ </span>
@@ -16,7 +16,7 @@ export default function KneeRules() {
           ache · not below 50 rpm · not on consecutive days
         </span>
         <span className="flex-shrink-0 text-xs text-amber-300/80 whitespace-nowrap">
-          Knee rules <span className="inline-block group-open:rotate-180 transition-transform">▾</span>
+          Knee rules <span className="inline-block group-open/knee:rotate-180 transition-transform">▾</span>
         </span>
       </summary>
       <div className="px-4 pb-3 pt-1">

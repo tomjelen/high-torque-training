@@ -16,14 +16,14 @@ export default function UsageGuidelines({ collapsed, onToggle }: Props) {
   // 12-week order is shown by the progression chart, "After the build" lives
   // in AfterBuildCard, and the every-session rules in the knee rules line (KneeRules).
   return (
-    <details open={!collapsed} onToggle={handleToggle} className="border border-slate-800 rounded bg-slate-950 mb-4 group">
+    <details open={!collapsed} onToggle={handleToggle} className="border border-slate-800 rounded bg-slate-950 mb-4 group/rules">
       <summary className="flex items-center justify-between gap-4 px-4 py-3 cursor-pointer list-none select-none hover:bg-slate-800/30 text-sm">
         <span className="text-slate-300">
           <strong className="text-slate-200">Rules for the plan</strong>
           {' — '}
           <span className="text-slate-500">moving on, breaks, fitting it into ~10 hours a week</span>
         </span>
-        <span className="text-slate-500 text-xs flex-shrink-0 group-open:rotate-180 transition-transform inline-block">▾</span>
+        <span className="text-slate-500 text-xs flex-shrink-0 group-open/rules:rotate-180 transition-transform inline-block">▾</span>
       </summary>
 
       <div className="px-4 pb-4 pt-3 border-t border-slate-800 text-sm text-slate-400 space-y-5">

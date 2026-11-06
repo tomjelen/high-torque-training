@@ -185,7 +185,7 @@ export default function PlanPanel({ phase, state, setState }: Props) {
           ? `week ${phaseWeek(week)} of ${phaseLength(phase)}`
           : ''
   // A finished plan's overview and card fade (back to full on hover/focus).
-  // Two wrappers, because the knee box between them never fades.
+  // Two wrappers, because the knee rules line between them never fades.
   const fade = status === 'done' ? 'opacity-50 hover:opacity-100 focus-within:opacity-100 transition-opacity' : ''
   // Restart only means something once the plan has started.
   const canRestart = phase === 'adaptation' ? progress > 0 : progress > ADAPTATION_LENGTH
@@ -247,13 +247,13 @@ export default function PlanPanel({ phase, state, setState }: Props) {
         <details
           open={!state.panels.chartExplainer.collapsed}
           onToggle={(e) => setPanels({ chartExplainer: { collapsed: !e.currentTarget.open } })}
-          className="border border-slate-800 rounded bg-slate-950 mb-4 group"
+          className="border border-slate-800 rounded bg-slate-950 mb-4 group/explainer"
         >
           <summary className="flex items-center justify-between gap-4 px-4 py-3 cursor-pointer list-none select-none hover:bg-slate-800/30 text-sm">
             <span className="text-slate-300">
               <strong className="text-slate-200">What is the high-torque block?</strong>
             </span>
-            <span className="text-slate-500 text-xs flex-shrink-0 group-open:rotate-180 transition-transform inline-block">▾</span>
+            <span className="text-slate-500 text-xs flex-shrink-0 group-open/explainer:rotate-180 transition-transform inline-block">▾</span>
           </summary>
           <div className="px-4 pb-4 pt-3 border-t border-slate-800">
             <p className="m-0 mb-3 text-sm text-slate-400">
