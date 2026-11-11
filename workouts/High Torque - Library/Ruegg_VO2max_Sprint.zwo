@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   High Torque Training — Zwift workout
-  Last updated: 2026-11-05
+  Last updated: 2026-11-11
 
   Site:      https://high-torque.jelen.dk/
   Calendar:  https://high-torque.jelen.dk/content/workouts.md
@@ -18,12 +18,12 @@
     <workout>
         <Warmup Duration="1200" PowerLow="0.40" PowerHigh="0.75">
             <textevent timeoffset="5" duration="15" message="Warm up at your normal cadence. No low cadence until the first interval." />
-            <textevent timeoffset="30" duration="25" message="Source: EF Pro Cycling article on Noemi Rüegg's own session. A pro rider's workout, not a research study." />
+            <textevent timeoffset="30" duration="25" message="This is pro rider Noemi Rüegg's own session, from an EF Pro Cycling article. A pro's workout, not a research study." />
             <textevent timeoffset="75" duration="20" message="All the research behind this program: high-torque.jelen.dk" />
             <textevent timeoffset="120" duration="30" message="Each set: 5 minutes at 106-120% FTP and 50-60 rpm, then EF's variation: shift to a lighter gear for a 1-minute max effort. 10 minutes easy between sets." />
-            <textevent timeoffset="240" duration="30" message="EF's text says three to five efforts; I use three. 110% sits inside EF's 106-120% ('VO2 max pace')." />
+            <textevent timeoffset="240" duration="30" message="Today: three sets, the low end of EF's three to five." />
             <textevent timeoffset="360" duration="30" message="Peter Schep (EF Head of Performance): start at 60 rpm and 80-85% FTP, then threshold, then above threshold. Recreational riders 'need to proceed cautiously to limit the risk of injury.'" />
-            <textevent timeoffset="570" duration="30" message="SEATED for the 5-minute blocks. Henderson: less joint compression (machine transcript). My added reason: standing lets body weight push the pedal down instead of your muscles." />
+            <textevent timeoffset="570" duration="30" message="Stay seated for the 5-minute blocks. Coach Neal Henderson's reason: seated riding puts less compression on your joints." />
             <textevent timeoffset="690" duration="20" message="If your knees ache at any point during an interval, stop the interval. Don't push through knee discomfort." />
             <textevent timeoffset="900" duration="25" message="The sprint is in a lighter gear at free cadence. It is not a low-cadence sprint." />
             <textevent timeoffset="1080" duration="20" message="First set in 2 minutes. Find your gear for 50-60 rpm at 110% FTP." />
@@ -51,10 +51,10 @@
         </FreeRide>
 
         <SteadyState Duration="600" Power="0.50">
-            <textevent timeoffset="0" message="Recovery. 10 minutes, as in EF's workout box. Easy spin." />
-            <textevent timeoffset="60" duration="25" message="My tip: if you can't hold the power at this cadence, lower the workout intensity (FTP bias) a few percent rather than grinding." />
+            <textevent timeoffset="0" message="Recovery. 10 minutes, easy spin." />
+            <textevent timeoffset="60" duration="25" message="Tip: if you can't hold the power at this cadence, lower the workout intensity a few percent rather than grinding." />
             <textevent timeoffset="180" duration="25" message="EF's article: the sprint at the end is there to 'better your ability to transfer torque into power.'" />
-            <textevent timeoffset="300" duration="25" message="At 250 W FTP, 110% at 55 rpm is about 48 Nm per pedal stroke (my arithmetic)." />
+            <textevent timeoffset="300" duration="25" message="At 250 W FTP, 110% at 55 rpm is about 48 Nm of torque on each pedal stroke." />
             <textevent timeoffset="420" message="Knee check. How do they feel?" />
             <textevent timeoffset="480" duration="20" message="Set 2 in 2 minutes. Same structure: 5 min at 110% FTP, 50-60 rpm, then 1-min sprint." />
             <textevent timeoffset="540" message="Find your gear. 50-60 rpm. STAY SEATED for the 5-minute block." />
@@ -78,7 +78,7 @@
         <SteadyState Duration="600" Power="0.50">
             <textevent timeoffset="0" message="Recovery. 10 minutes. Last set coming." />
             <textevent timeoffset="120" duration="25" message="Two sets done. If your knees feel anything joint-related, skip set 3. Two sets is still a meaningful session." />
-            <textevent timeoffset="300" duration="25" message="Rüegg recommends focusing on a target number of Nm (torque) (EF article)." />
+            <textevent timeoffset="300" duration="25" message="Rüegg's own tip: focus on a target torque number, in Nm." />
             <textevent timeoffset="480" message="Final set in 2 minutes." />
             <textevent timeoffset="540" message="Find your gear. 50-60 rpm. STAY SEATED for the 5-minute block." />
         </SteadyState>
@@ -101,8 +101,8 @@
         <Cooldown Duration="720" PowerLow="0.50" PowerHigh="0.40">
             <textevent timeoffset="10" message="Rüegg session complete. Spin easy at normal cadence." />
             <textevent timeoffset="180" duration="25" message="Note how your knees feel. Any ache? If it keeps coming back, stop torque work and see a professional." />
-            <textevent timeoffset="360" duration="25" message="My rule: no torque sessions on back-to-back days. CTS coach Jim Rutberg says beginner and intermediate riders should separate them by at least a full day." />
-            <textevent timeoffset="540" duration="30" message="EF's published version of this workout uses a 30-min warm-up and a 30-min cool-down. I use shorter ones for Zwift (scaled)." />
+            <textevent timeoffset="360" duration="25" message="Leave at least a full day before your next torque session. No back-to-back days." />
+            <textevent timeoffset="540" duration="30" message="EF's own version has a 30-minute warm-up and cool-down. Got the time? Keep spinning easy." />
         </Cooldown>
     </workout>
 </workout_file>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   High Torque Training — Zwift workout
-  Last updated: 2026-11-05
+  Last updated: 2026-11-11
 
   Site:      https://high-torque.jelen.dk/
   Calendar:  https://high-torque.jelen.dk/content/workouts.md
@@ -18,11 +18,12 @@
     <workout>
         <Warmup Duration="900" PowerLow="0.40" PowerHigh="0.80">
             <textevent timeoffset="5" duration="15" message="Warm up at your normal cadence. No low cadence until the first interval." />
-            <textevent timeoffset="30" duration="30" message="Source: John Wakefield (That Triathlon Show #465, machine transcript). Riders new to torque work start at around 60-65 rpm, with four 4-minute reps the first time." />
+            <textevent timeoffset="30" duration="25" message="This session comes from coach John Wakefield: when you're new to torque work, start around 60-65 rpm and do four 4-minute reps." />
             <textevent timeoffset="75" duration="20" message="Full research and protocol rationale at high-torque.jelen.dk" />
-            <textevent timeoffset="120" duration="30" message="Wakefield gives no %FTP, only 'below thresholds'. The 80% is my choice, inside Neal Henderson's 75-85% (Fast Talk ep. 125, 2020, machine transcript) and Peter Schep's 80-85%." />
-            <textevent timeoffset="240" duration="25" message="The 4-week adaptation is my arrangement: this session in weeks 1-2, then 4x4 at 50-60 rpm in weeks 3-4. One session a week." />
-            <textevent timeoffset="420" duration="30" message="All intervals are SEATED. Henderson: less joint compression (machine transcript). My added reason: standing lets body weight push the pedal down instead of your muscles." />
+            <textevent timeoffset="120" duration="20" message="This is the start of a 4-week adaptation: one session a week to get your legs and knees used to high torque." />
+            <textevent timeoffset="150" duration="25" message="You ride this one for the first two weeks, at 60-65 rpm. Then two more weeks of the same 4x4, with the cadence dropped to 50-60 rpm." />
+            <textevent timeoffset="185" duration="20" message="50-60 rpm is the lowest cadence the 8-week build uses, so you start the build already used to it." />
+            <textevent timeoffset="420" duration="20" message="Stay seated for every interval. Coach Neal Henderson's reason: seated riding puts less compression on your joints." />
             <textevent timeoffset="600" duration="25" message="Target cadence: 60-65 rpm. In ERG mode, just drop to this cadence. The trainer raises the resistance to hold 80% FTP." />
             <textevent timeoffset="720" duration="20" message="If your knees ache at any point during an interval, stop the interval. Don't push through knee discomfort." />
             <textevent timeoffset="820" duration="20" message="Controlled: steady, below your threshold. Heavy legs are normal." />
@@ -35,8 +36,8 @@
         </SteadyState>
 
         <SteadyState Duration="240" Power="0.50">
-            <textevent timeoffset="10" duration="20" message="Recovery: 4 minutes, as long as the rep (Wakefield's rest = rep). Easy spin at any cadence." />
-            <textevent timeoffset="60" duration="25" message="At the same power, 60-65 rpm means roughly 40-50% more force on each pedal stroke than 90 rpm (my arithmetic). That extra force per stroke is the point of torque work." />
+            <textevent timeoffset="10" duration="20" message="Recovery: 4 minutes, as long as the interval. Easy spin at any cadence." />
+            <textevent timeoffset="60" duration="25" message="At the same power, 60-65 rpm means roughly 40-50% more force on each pedal stroke than 90 rpm. That extra force per stroke is the point of torque work." />
             <textevent timeoffset="150" duration="30" message="Peter Schep, EF Pro Cycling Head of Performance: 'Begin with strength training sessions at 60 rpms at 80 to 85% of your FTP for 15 minutes.'" />
         </SteadyState>
 
@@ -48,7 +49,7 @@
 
         <SteadyState Duration="240" Power="0.50">
             <textevent timeoffset="10" message="Recovery. Spin freely." />
-            <textevent timeoffset="40" duration="30" message="My tip: if you can't hold the power at this cadence, lower the workout intensity (FTP bias) a few percent rather than grinding. These weeks are the low-stakes place to learn this." />
+            <textevent timeoffset="40" duration="30" message="Tip: if you can't hold the power at this cadence, lower the workout intensity a few percent rather than grinding. These weeks are the low-stakes place to learn this." />
             <textevent timeoffset="160" message="Two down, two to go. Knees still feeling fine?" />
         </SteadyState>
 
@@ -60,6 +61,7 @@
 
         <SteadyState Duration="240" Power="0.50">
             <textevent timeoffset="10" message="Recovery. Three down, one to go." />
+            <textevent timeoffset="40" duration="30" message="Why 80% and not easier? EVOQ (Landry Bobo): 'If you go below tempo into zone 2, you probably won't be producing enough torque to make a meaningful difference.'" />
             <textevent timeoffset="160" duration="20" message="If your knees are aching, skip the final interval. Protecting the joints is always the right call on torque work." />
         </SteadyState>
 
@@ -71,9 +73,9 @@
 
         <Cooldown Duration="600" PowerLow="0.50" PowerHigh="0.40">
             <textevent timeoffset="30" message="Cool down. Spin easy at normal cadence." />
-            <textevent timeoffset="120" duration="25" message="Note how your knees feel. Any ache? My rule: next week, repeat this session instead of moving on. If it keeps coming back, stop torque work and see a professional." />
-            <textevent timeoffset="270" duration="30" message="My rule for moving on to adaptation weeks 3-4: after two of these sessions, your knees were fine, you held the cadence, and you weren't wrecked the next day. Otherwise repeat this one." />
-            <textevent timeoffset="420" duration="25" message="My rule: no torque sessions on back-to-back days. CTS coach Jim Rutberg says beginner and intermediate riders should separate them by at least a full day." />
+            <textevent timeoffset="120" duration="25" message="Note how your knees feel. Any ache? Then repeat this session next week instead of moving on. If it keeps coming back, stop torque work and see a professional." />
+            <textevent timeoffset="270" duration="30" message="Ready to drop the cadence? Move on after two of these sessions if your knees were fine, you held the cadence, and you weren't wrecked the next day. Otherwise, repeat this one." />
+            <textevent timeoffset="420" duration="20" message="Leave at least a full day before your next torque session. No back-to-back days." />
         </Cooldown>
     </workout>
 </workout_file>

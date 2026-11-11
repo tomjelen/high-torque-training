@@ -97,7 +97,7 @@ function renderBody(id: string) {
             auto-captions are the weaker of the two.
           </p>
           <p>
-            Zwift facts (zones, FTP bias, ERG behaviour) come from Zwift's own support pages. They are product
+            Zwift facts (zones, workout intensity, ERG behaviour) come from Zwift's own support pages. They are product
             documentation, not training advice, so they sit outside the four categories.
           </p>
           <p>
@@ -770,8 +770,8 @@ function renderBody(id: string) {
             uncertain.
           </p>
           <p>
-            <strong>Tired? Turn it down.</strong> With ERG on, Zwift lets you change the workout intensity ("FTP
-            bias") by ±25% during a workout, so 75–125% of the file's targets, from the Companion app or in game (Zwift
+            <strong>Tired? Turn it down.</strong> With ERG on, Zwift lets you change the workout intensity (a
+            percentage, 100% by default, that you adjust up or down during the ride) by ±25%, so 75–125% of the file's targets, from the Companion app or in game (Zwift
             support, "Workout Mode for Cycling"). The Hebisz study did the same thing in its own way: on a low HRV
             morning, that day's HIIT was ridden at VT1 power.
           </p>
@@ -785,7 +785,7 @@ function renderBody(id: string) {
           </p>
           <p>
             <strong>If you can't hold the power at the cadence (my tip, from my own riding).</strong> Lower the
-            workout intensity (FTP bias) a few percent rather than grinding. If you have already stalled, switch ERG
+            workout intensity a few percent rather than grinding. If you have already stalled, switch ERG
             off from the action bar, spin up to a cadence you can hold, then switch ERG back on or raise the intensity
             again. Zwift gives no procedure for this; it is mine, built on Zwift's own controls. The adaptation weeks
             (at 80%) are the low-stakes place to learn it.

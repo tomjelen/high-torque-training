@@ -3,9 +3,11 @@
 ## After the v2 release (released 2026-11-05)
 
 - [ ] Ride-test the new and changed workouts in Zwift (TE 3×15 and the SIT files can wait until after the build).
-- [ ] Re-download the workout zip: all 12 `.zwo` files changed on 2026-11-05 (text events now in the "I / my" voice).
+- [ ] Re-download the workout zip: all 12 `.zwo` files changed on 2026-11-11 (text events now in a coach voice).
+- [ ] Ride weeks 1–2 again next week with the new text events and note anything that still feels off on the bike (the 2026-11-11 review notes are in `explorations/2026-11-text-event-review-adapt-w1-2.md`, which is git-ignored and local only).
 - [ ] Optional, not blocking (the Whisper transcript is the record): listen to Fast Talk ep. 125 at about 69:24 and 70:14 (feed mp3). Those Henderson quotes are credited to him from context, because the transcript has no speaker labels. Also optional: 12:00–13:30 and 71:00–71:35, to confirm the three lines credited to a co-host.
-- [ ] Vet the 17 proposed text events in `research/text-event-candidates.md` (mark approved / rejected); approved ones get encoded into the `.zwo` files as a separate step.
+- [ ] Vet the 16 remaining proposed text events in `research/text-event-candidates.md` (#1 approved and in use, 2026-11-11). Several still carry capture labels or asides inside the message itself (#3, #8, #12, #17); reword them into the coach voice when approved. Approved ones get encoded into the `.zwo` files as a separate step.
+- [ ] ERG bias review (Tom, 2026-11-11). The site and workouts assume ERG mode is on, because Tom's trainer turns it on automatically for workouts. Riding with ERG off (hitting the targets yourself, by gear and cadence) is an option, maybe a better one for torque work, and a way out of the ERG spiral. Go through the text events ("In ERG mode, just drop to this cadence…", the can't-hold-the-power tip), `workouts/README.md`, the install panel and the rationale's "Riding it in Zwift" section, and present ERG off as a real choice, not only an emergency exit. Already sourced: CTS (Rutberg, written) prefers level/resistance mode to ERG for these intervals and says ERG can help beginners focus on cadence (research doc, "Riding by feel is a fine alternative"). Ride-test ERG off before deciding what to recommend.
 - [ ] Delete `explorations/archive-unverified/` (Tom decides when).
 - [ ] Dependabot: the vitest, js-yaml 4.3.2 and @humanfs/node bumps are still open; the react-router one is superseded by the v7 upgrade; js-yaml 4.3.0 is merged. Merged local branches `feat/workout-chart`, `prerender`, `review-2026-09` can go.
 

@@ -27,7 +27,7 @@ Every source in this document carries one of four trust categories:
 
 Some coach statements exist only as audio. Two labels mark them: **machine transcript** (my own speech-to-text transcription of the audio: Wakefield on That Triathlon Show, Henderson on Fast Talk) and **auto-captions** (YouTube's automatic captions: the CTS/Pulford video, the EVOQ podcast, Roadman). Both are weaker than written text, especially for numbers and for who is speaking; auto-captions are the weaker of the two.
 
-Zwift facts (zones, FTP bias, ERG behaviour) come from Zwift's own support pages. They are product documentation, not training advice, so they sit outside the four categories.
+Zwift facts (zones, workout intensity, ERG behaviour) come from Zwift's own support pages. They are product documentation, not training advice, so they sit outside the four categories.
 
 Anything labelled **mine** (my choice, my estimate, my reading, my arithmetic) is my own call, not taken from a study or coach. I'm a cyclist, not a coach (see About): these fill gaps where no source gives an answer. They may rest on sourced inputs, but the result is mine.
 
@@ -270,11 +270,11 @@ Taking a break from torque work, and coming back later, fits these sources (my r
 
 **The %FTP numbers are the sources' own.** They are already prescribed at low cadence, so I don't lower them further. (On the EVOQ podcast, auto-captions only, the coaches say low-cadence threshold is "most likely going to be lower" than at normal cadence; the source numbers already allow for that.) HIIT at ~120% is the exception: it is my estimate, so it is the most uncertain.
 
-**Tired? Turn it down.** With ERG on, Zwift lets you change the workout intensity ("FTP bias") by ±25% during a workout, so 75–125% of the file's targets, from the Companion app or in game (Zwift support, "Workout Mode for Cycling"). The Hebisz study did the same thing in its own way: on a low HRV morning, that day's HIIT was ridden at VT1 power.
+**Tired? Turn it down.** With ERG on, Zwift lets you change the workout intensity (a percentage, 100% by default, that you adjust up or down during the ride) by ±25%, so 75–125% of the file's targets, from the Companion app or in game (Zwift support, "Workout Mode for Cycling"). The Hebisz study did the same thing in its own way: on a low HRV morning, that day's HIIT was ridden at VT1 power.
 
 **ERG at low cadence has a trap.** In ERG the trainer raises the resistance when your cadence drops, to hold the target power (Zwift support, "ERG Mode in Workouts"). At low cadence that can spiral: cadence sags → resistance climbs → cadence sags more → you stall. Keep the pedals turning steadily through the block. Zwift doesn't end the block when you stall, but restarting a heavy gear at low cadence is hard, so in practice a stall tends to cost you the rest of that interval (mine). Riders used to hard Zwift workouts know this; newcomers should expect it.
 
-**If you can't hold the power at the cadence (my tip, from my own riding).** Lower the workout intensity (FTP bias) a few percent rather than grinding. If you have already stalled, switch ERG off from the action bar, spin up to a cadence you can hold, then switch ERG back on or raise the intensity again. Zwift gives no procedure for this; it is mine, built on Zwift's own controls. The adaptation weeks (at 80%) are the low-stakes place to learn it.
+**If you can't hold the power at the cadence (my tip, from my own riding).** Lower the workout intensity a few percent rather than grinding. If you have already stalled, switch ERG off from the action bar, spin up to a cadence you can hold, then switch ERG back on or raise the intensity again. Zwift gives no procedure for this; it is mine, built on Zwift's own controls. The adaptation weeks (at 80%) are the low-stakes place to learn it.
 
 **Riding by feel is a fine alternative.** CTS (Rutberg, written) prefers "level" or "resistance" mode to ERG for these intervals, and says ERG can help beginners focus on cadence. On the EVOQ podcast (auto-captions only) the advice is to ride by effort or a torque number: "ignore the watts a little bit and just make it hard".
 
@@ -416,4 +416,4 @@ How solid each claim is, and what would change it.
 
 **Zwift**
 
-21. Zwift support: "Workout Mode for Cycling" (FTP bias ±25%) and "ERG Mode in Workouts".
+21. Zwift support: "Workout Mode for Cycling" (workout intensity ±25%) and "ERG Mode in Workouts".

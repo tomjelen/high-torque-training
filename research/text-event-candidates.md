@@ -8,7 +8,7 @@ Messages that could be shown in the `.zwo` workouts (in Zwift, during recovery b
 2. Tom vets it: **approved** (as written, or with his edits), or **rejected** (with a one-line reason, so it isn't proposed again).
 3. Approved entries are encoded into the workout files as a separate step, following `.claude/skills/high-torque-zwo/SKILL.md` (recovery blocks only, a `duration`, "Fact:" prefix for study facts, each fact in one or two workouts at most). The entry then becomes **in use**, with the file(s).
 
-Voice: the author speaks as "I / my" ("my arithmetic", "my reading"); coach and study words are quoted as they are, with their label (written, machine transcript, auto-captions, abstract only, full text).
+Voice (2026-11-11): a coach talking to the rider, not a document. People are credited by name and role ("coach John Wakefield", "EVOQ (Landry Bobo): '…'"); no capture labels (machine transcript, auto-captions, abstract only) and no "my choice / my rule" asides in the message itself. The **Label** column below still records how each source was captured, for vetting; it isn't shown to the rider. See `.claude/skills/high-torque-zwo/SKILL.md`, "Text events".
 
 ## In use
 
@@ -19,7 +19,8 @@ Facts and quotes already in the workouts, so they aren't added twice. Not a full
 | Fact: pedal force stays below about 54% of your maximum (Barranco-Gil 2024) | abstract only | TE 3×8, Threshold 5×5 |
 | Henderson: "Generally I do about one of these sessions a week at most two" | machine transcript | Threshold 5×5, TorqueMax |
 | Henderson: "the first thing I would do is a little bit of tempo…" | machine transcript | Adaptation weeks 3–4 |
-| Schep: "60 rpms at 80 to 85% of your FTP" | written | Adaptation weeks 3–4 |
+| Schep: "60 rpms at 80 to 85% of your FTP" | written | Adaptation weeks 1–2 |
+| EVOQ (Landry Bobo): "If you go below tempo into zone 2…meaningful difference" (approved 2026-11-11) | written | Adaptation weeks 1–2 |
 | Henderson: muscular endurance; Schep: "proceed cautiously"; the study riders' preparation; CTS time-at-intensity dose / "add intervals" | various | several workouts |
 
 ## Proposed (2026-11-05)
@@ -28,7 +29,6 @@ From the text-event review of 2026-11-05. Starred ones fit best.
 
 | # | Message | Research-doc section | Label | Fits | Status |
 |---|---|---|---|---|---|
-| 1 ★ | "Why 80% and not easier? EVOQ (Landry Bobo): 'If you go below tempo into zone 2, you probably won't be producing enough torque to make a meaningful difference.'" | Intensity floor | written | Adaptation weeks 1–2, rest 3 | proposed |
 | 2 ★ | "Zone 2 at low cadence puts less force on the pedal than normal riding at FTP: about 23-25 Nm vs 26.5 Nm at 250 W FTP (my arithmetic). Hence 80%." | Intensity floor | mine | Adaptation weeks 3–4, rest 3 | proposed |
 | 3 | "John Wakefield on rest: 'if I do four minutes, I like a four-minute rest' (machine transcript)." | Source prescription reference › Wakefield | machine transcript | Adaptation weeks 3–4, rest 2 | proposed |
 | 4 ★ | "CTS (Jim Rutberg, written): 'Recovery between intervals should be equal to the duration of the efforts.' That's why I rest as long as the rep." | Source prescription reference › CTS | written | TE 4×8 rest 3, or TE 3×15 rest 2 | proposed |

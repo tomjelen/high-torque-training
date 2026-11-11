@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   High Torque Training — Zwift workout
-  Last updated: 2026-11-05
+  Last updated: 2026-11-11
 
   Site:      https://high-torque.jelen.dk/
   Calendar:  https://high-torque.jelen.dk/content/workouts.md
@@ -18,13 +18,12 @@
     <workout>
         <Warmup Duration="1200" PowerLow="0.40" PowerHigh="0.75">
             <textevent timeoffset="5" duration="15" message="Warm up at your normal cadence. No low cadence until the first sprint." />
-            <textevent timeoffset="30" duration="25" message="Source: Hebisz &amp; Hebisz (2024) SIT protocol, weeks 1-4. 8x30s maximal at 50-60 rpm in 2 sets of 4, 90 s active rest, 25 min between sets." />
+            <textevent timeoffset="30" duration="25" message="This session comes from a 2024 study by Hebisz and Hebisz: 8x30s all-out at 50-60 rpm, in 2 sets of 4, with 90 s active rest and 25 min between sets." />
             <textevent timeoffset="75" duration="20" message="Want to go deeper on the science? high-torque.jelen.dk/rationale" />
-            <textevent timeoffset="120" duration="25" message="This is the study's sprint interval training (SIT) session, adapted for Zwift (indoors, not uphill). Note: SIT uses 50-60 rpm — lower than the HIIT sessions which use 60-70." />
-            <textevent timeoffset="240" duration="25" message="The researchers used 8 x 30-second all-out sprints split into two sets of four, with 25 minutes active rest between sets. Today's session follows the same structure." />
+            <textevent timeoffset="120" duration="25" message="It's the study's sprint session, adapted for Zwift: indoors instead of uphill. Cadence 50-60 rpm, lower than the HIIT sessions." />
             <textevent timeoffset="270" duration="25" message="Cadence target: 50-60 rpm. At sprint intensity, holding 50-60 rpm takes a very hard gear." />
             <textevent timeoffset="420" duration="25" message="The sprints have no power target. ERG switches off for each sprint block; you set the force with your gears." />
-            <textevent timeoffset="570" duration="30" message="SEATED: Every sprint, every second. Henderson: less joint compression (machine transcript). My added reason: standing lets body weight push the pedal down instead of your muscles." />
+            <textevent timeoffset="570" duration="30" message="Stay seated for every sprint, every second. Coach Neal Henderson's reason: seated riding puts less compression on your joints." />
             <textevent timeoffset="720" duration="25" message="KNEE WARNING: If your knees ache during a sprint, stop the sprint. Don't push through knee discomfort. If your knees are not 100% today, skip this session." />
             <textevent timeoffset="900" duration="25" message="Sprints are short — 30 seconds. Recoveries are long — 90 seconds. Use the full 90 seconds." />
             <textevent timeoffset="1050" duration="25" message="The 25-minute break between sets is part of the study design. The paper gives no reason for its length." />
@@ -77,8 +76,7 @@
         </FreeRide>
         <SteadyState Duration="1500" Power="0.65">
             <textevent timeoffset="10" message="Set 1 complete. 25 minutes of active rest now." />
-            <textevent timeoffset="120" duration="25" message="~65% FTP. The study says only 'also at low intensity' for this break; ~65% is my choice, the same level as the 90-second rests." />
-            <textevent timeoffset="300" duration="30" message="The sprint interval (SIT) component of the study was designed alongside high-intensity intervals (HIIT) in a polarized structure. This is the SIT session." />
+            <textevent timeoffset="120" duration="25" message="Keep it easy, around 65% FTP, the same as the short rests." />
             <textevent timeoffset="600" duration="15" message="10 minutes into the rest. How did the first set feel? Knees okay?" />
             <textevent timeoffset="900" duration="30" message="The study riders did SIT from day one, but after at least 3 years of training and 3 months of base work that included strength and jumping exercises." />
             <textevent timeoffset="1200" message="5 minutes to set 2. Stay relaxed. Not long now." />
@@ -130,7 +128,7 @@
             <textevent timeoffset="10" duration="15" message="SIT session done. That was the study's sprint session, adapted for Zwift." />
             <textevent timeoffset="150" duration="20" message="Spin easy at normal cadence." />
             <textevent timeoffset="300" duration="30" message="Knee check: how do they feel now compared to during the sprints? Any ache? If it keeps coming back, stop torque work and see a professional." />
-            <textevent timeoffset="480" duration="25" message="My rule: no torque sessions on back-to-back days. CTS coach Jim Rutberg says beginner and intermediate riders should separate them by at least a full day." />
+            <textevent timeoffset="480" duration="25" message="Leave at least a full day before your next torque session. No back-to-back days." />
             <textevent timeoffset="660" duration="25" message="The study tested SIT and HIIT together in every 4-day cycle. This session is one part of that program, not the whole of it." />
             <textevent timeoffset="840" duration="30" message="One small study: well-trained women aged 17-20, 12 per group. The paper reports no knee or injury monitoring. Promising, not proven." />
         </Cooldown>
